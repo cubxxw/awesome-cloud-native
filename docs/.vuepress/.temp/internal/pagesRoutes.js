@@ -1,8 +1,5 @@
 export const pagesRoutes = [
-  ["v-79fdd481","/home.html",{"title":"项目主页"},["/home","/home.md"]],
   ["v-8daa1a0e","/",{"title":"链学社"},["/index.html","/README.md"]],
-  ["v-2e3eac9e","/slides.html",{"title":"幻灯片页"},["/slides","/slides.md"]],
-  ["v-f7de4e18","/assets/test.html",{"title":""},["/assets/test","/assets/test.md"]],
   ["v-64c6c762","/markdown/1.html",{"title":"Docker概述"},["/markdown/1","/markdown/1.md"]],
   ["v-33ac1c1a","/markdown/10.html",{"title":"容器说明 — 容器的启动和运行"},["/markdown/10","/markdown/10.md"]],
   ["v-30426adc","/markdown/11.html",{"title":"深入理解镜像底层"},["/markdown/11","/markdown/11.md"]],
@@ -54,6 +51,5 @@ export const pagesRoutes = [
   ["v-4ce2eeb0","/markdown/8.html",{"title":"docker帮助启动类命令"},["/markdown/8","/markdown/8.md"]],
   ["v-49793d72","/markdown/9.html",{"title":"docker镜像命令"},["/markdown/9","/markdown/9.md"]],
   ["v-72881372","/markdown/",{"title":"Decker"},["/markdown/index.html","/markdown/README.md"]],
-  ["v-6ae5cbd8","/markdown/toc.html",{"title":""},["/markdown/toc","/markdown/toc.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]

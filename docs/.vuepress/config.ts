@@ -2,8 +2,8 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-09-14 23:35:35
- * @FilePath: \docker\docs\.vuepress\config.ts
+ * @LastEditTime: 2022-09-15 21:38:52
+ * @FilePath: \undefinedd:\文档\最近的\docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
 import { defaultTheme } from 'vuepress'
@@ -17,12 +17,13 @@ import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { tocPlugin } from '@vuepress/plugin-toc'
 export default {
-  dest: 'dist/docs',
-  base: '/docs/',  //打包部署后访问文档应用的根路径
+  //注意，此处需要填写你部署在nginx下的文件夹名称，如果是根目录，那么可以注释掉此行，注释掉后本地打开index.html无法访问
+  //base: "/dist/",
+  dest: './dist',
   lang: 'zh-CN',
   port: 8888,  //设置端口号
   title: '你好',  //主页
-  description: '致力于打造出区块链去中心化的学习平台',
+  description: '链学社致力于打造出区块链去中心化的学习平台',
    // sidebarDepth:2,   //默认显示H1 H2
   head:[
     ["link",{rel:"icon",href:"/img/1.jpg"}]
@@ -46,9 +47,9 @@ export default {
       searchPlugin({
         // 配置项  -- 轻量搜索
       }),      
-      docsearchPlugin({
-        // 配置项 -- 优化搜索 -- 需要登陆
-      }),
+    //   docsearchPlugin({
+    //     // 配置项 -- 优化搜索 -- 需要登陆
+    //   }),
       prismjsPlugin({
         // 配置项  -- 语法高亮
       }),
@@ -62,7 +63,7 @@ export default {
     ],
     theme: defaultTheme({
         //更新时间
-        lastUpdated: 'Last Updated',
+        // lastUpdated: 'Last Updated',
         sidebarDepth: 3,  //侧边菜单深度
     
         //logo -- 夜间和白剑
@@ -97,8 +98,8 @@ export default {
                 text: '关于我',
                 children: [
                   {
-                    text: 'Github首页',
-                    link: 'https://github.com/3293172751',
+                    text: 'Github仓库',
+                    link: 'https://github.com/3293172751/cs-awesome-Block_Chain',
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
                   },
@@ -108,13 +109,6 @@ export default {
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
                   },
-                  {
-                    text: 'Active on /foo/',
-                    link: '/not-foo/',
-                    // 该元素在当前路由路径是 /foo/ 开头时激活
-                    // 支持正则表达式
-                    activeMatch: '^/foo/',
-                  },
                 ],
             },
             {
@@ -122,7 +116,7 @@ export default {
               link: '/',
             },
             {
-              text: 'Github',
+              text: 'Github首页',
               link: 'https://github.com/3293172751/'
             }
           ],
@@ -141,8 +135,8 @@ export default {
                 // SidebarItem
 
                 {
-                  text: 'docker',
-                  link: 'markdown/README.md'
+                  text: 'docker脑图地址',
+                  link: './naotu/'
                 },
                 '/markdown/1.md',
                 '/markdown/2.md',
@@ -175,8 +169,6 @@ export default {
                 },
               ],
             },
-            // 字符串 - 页面文件路径
-            '/markdown/2.md',
           ],
   }),
 }

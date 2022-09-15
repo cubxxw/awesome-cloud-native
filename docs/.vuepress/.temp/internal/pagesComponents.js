@@ -1,14 +1,8 @@
 import { defineAsyncComponent } from 'vue'
 
 export const pagesComponents = {
-  // path: /home.html
-  "v-79fdd481": defineAsyncComponent(() => import(/* webpackChunkName: "v-79fdd481" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/home.html.vue")),
   // path: /
   "v-8daa1a0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8daa1a0e" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/index.html.vue")),
-  // path: /slides.html
-  "v-2e3eac9e": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e3eac9e" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/slides.html.vue")),
-  // path: /assets/test.html
-  "v-f7de4e18": defineAsyncComponent(() => import(/* webpackChunkName: "v-f7de4e18" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/assets/test.html.vue")),
   // path: /markdown/1.html
   "v-64c6c762": defineAsyncComponent(() => import(/* webpackChunkName: "v-64c6c762" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/1.html.vue")),
   // path: /markdown/10.html
@@ -111,8 +105,6 @@ export const pagesComponents = {
   "v-49793d72": defineAsyncComponent(() => import(/* webpackChunkName: "v-49793d72" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/9.html.vue")),
   // path: /markdown/
   "v-72881372": defineAsyncComponent(() => import(/* webpackChunkName: "v-72881372" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/index.html.vue")),
-  // path: /markdown/toc.html
-  "v-6ae5cbd8": defineAsyncComponent(() => import(/* webpackChunkName: "v-6ae5cbd8" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/toc.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/404.html.vue")),
 }

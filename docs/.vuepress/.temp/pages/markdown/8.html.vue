@@ -48,7 +48,7 @@
 <h3 id="docker面试题" tabindex="-1"><a class="header-anchor" href="#docker面试题" aria-hidden="true">#</a> docker面试题</h3>
 <p><strong>谈谈docker虚悬镜像是什么</strong></p>
 <blockquote>
-<p>仓库名、标签都是<none>镜像，俗称虚玄镜像dangling image,这样的仓库没什么用，有时候docker构建时候出问题，建议删除</p>
+<p>仓库名、标签都是<code v-pre>&lt;none&gt;</code>镜像，俗称虚玄镜像dangling image,这样的仓库没什么用，有时候docker构建时候出问题，建议删除</p>
 </blockquote>
 </div></template>
 
