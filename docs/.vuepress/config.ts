@@ -2,7 +2,7 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-09-15 21:38:52
+ * @LastEditTime: 2022-09-17 20:38:12
  * @FilePath: \undefinedd:\文档\最近的\docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
@@ -18,7 +18,7 @@ import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { tocPlugin } from '@vuepress/plugin-toc'
 export default {
   //注意，此处需要填写你部署在nginx下的文件夹名称，如果是根目录，那么可以注释掉此行，注释掉后本地打开index.html无法访问
-  //base: "/dist/",
+  base: "/awesome-docker/",
   dest: './dist',
   lang: 'zh-CN',
   port: 8888,  //设置端口号
