@@ -63,7 +63,7 @@
 <p>🐋 40. <RouterLink to="/markdown/40.html">改造升级微服务工程docker_boot</RouterLink></p>
 <hr>
 <ul>
-<li>[x] <a href="/markdown/%E8%84%91%E5%9B%BE%E7%AC%94%E8%AE%B0" target="_blank" rel="noopener noreferrer"> 🖱️脑图下载<ExternalLinkIcon/></a></li>
+<li>[x] <a href="/markdown/%E8%84%91%E5%9B%BE%E7%AC%94%E8%AE%B0"> 🖱️脑图下载</a></li>
 </ul>
 <hr>
 <h1 id="菜鸟的成长手册" tabindex="-1"><a class="header-anchor" href="#菜鸟的成长手册" aria-hidden="true">#</a> 菜鸟的成长手册<a href="https://github.com/3293172751/cs-awesome-Block_Chain" target="_blank" rel="noopener noreferrer"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"><ExternalLinkIcon/></a></h1>
