@@ -2,8 +2,8 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-09-30 18:05:41
- * @FilePath: \.vuepress\config.ts
+ * @LastEditTime: 2022-10-02 22:45:07
+ * @FilePath: \undefinedd:\文档\最近的\docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
 import { defaultTheme } from 'vuepress'
@@ -20,7 +20,7 @@ import { tocPlugin } from '@vuepress/plugin-toc'
 // import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
 export default {
   //注意，此处需要填写你部署在nginx下的文件夹名称，如果是根目录，那么可以注释掉此行，注释掉后本地打开index.html无法访问
-//   base: "/awesome-docker/",
+  base: "/",
   dest: './dist',
   lang: 'zh-CN',
   port: 8888,  //设置端口号
@@ -32,6 +32,58 @@ export default {
     //设置网站seo标志
   ],
   plugins: [
+    [
+        'vuepress-plugin-baidu-tongji', // 百度统计
+        {
+          hm: 'bf1bd5693b39d433338099c3aa905d50', // 百度统计id，后面有获取教程
+        },
+      ],
+
+    '@vuepress/nprogress', // 切换进度条
+    [
+      'vuepress-plugin-zooming', // 放大图片
+      {
+        selector: '.theme-vdoing-content img:not(.no-zoom)', // 排除class是no-zoom的图片
+        options: {
+          bgColor: 'rgba(0,0,0,0.6)',
+        },
+      },
+    ],
+    [
+     'one-click-copy', // 复制
+        {
+          copySelector: [
+            'div[class*="language-"] pre',
+            'div[class*="aside-code"] aside',
+          ],
+          copyMessage: '复制成功噢⚡',
+          duration: 1000,
+          showInMobile: false,
+        },
+      ],
+
+      [
+        'vuepress-plugin-comment', // 评论
+        {
+          choosen: 'gitalk',
+          options: {
+            clientID: 'd210995bbac6d1b2e377', // 第三方登录 clientID
+            clientSecret: 'bed2940d85cc51731c5832ed893f4e0e5080defa', // 第三方登录 clientSecret
+            repo: 'my-blog-comment',   // 你的存储库
+            owner: '3293172751', // 存储库拥有者，填你的 Github 账户
+            admin: ['3293172751'], // 对仓库有写权限的人，填你的 Github 账户
+            pagerDirection: 'last',
+            id:
+              '<%- (frontmatter.permalink || frontmatter.to.path || "123456789012345").slice(-16) %>', //  页面的唯一标识,长度不能超过50
+            title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
+            labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
+            body:
+              '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname || "123456789012345") %>', // GitHub issue 的内容
+          },
+        },
+      ],
+
+
     backToTopPlugin(),  //返回顶端按钮
     externalLinkIconPlugin({  //链接图标
         locales: {

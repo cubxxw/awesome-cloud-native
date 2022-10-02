@@ -1,5 +1,5 @@
 import clientConfig0 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-active-header-links/lib/client/config.js'
-import clientConfig1 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
+import clientConfig1 from 'D:/文档/最近的/docker/node_modules/@vuepress/theme-default/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
 import clientConfig2 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-theme-data/lib/client/config.js'
 import clientConfig3 from 'D:/文档/最近的/docker/node_modules/@vuepress/theme-default/lib/client/config.js'
 import clientConfig4 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-back-to-top/lib/client/config.js'
