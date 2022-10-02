@@ -1,4 +1,4 @@
-<template><div><h1 id="容器rootfs命令" tabindex="-1"><a class="header-anchor" href="#容器rootfs命令" aria-hidden="true">#</a> 容器rootfs命令</h1>
+<template><div><h1 id="docker提交以及命名空间" tabindex="-1"><a class="header-anchor" href="#docker提交以及命名空间" aria-hidden="true">#</a> docker提交以及命名空间</h1>
 <p>[toc]</p>
 <h2 id="commit" tabindex="-1"><a class="header-anchor" href="#commit" aria-hidden="true">#</a> commit</h2>
 <p>**docker commit 😗*从容器创建一个新的镜像。</p>
@@ -7,16 +7,16 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>OPTIONS说明：</p>
 <ul>
 <li>
-<p>**-a 😗*提交的镜像作者；</p>
+<p><strong><code v-pre>-a</code>：</strong> 提交的镜像作者；</p>
 </li>
 <li>
-<p>**-c 😗*使用Dockerfile指令来创建镜像；</p>
+<p><strong><code v-pre>-c</code> ：</strong> 使用<code v-pre>Dockerfile</code>指令来创建镜像；</p>
 </li>
 <li>
-<p>**-m 😗*提交时的说明文字；</p>
+<p><strong><code v-pre>-m</code> ：</strong> 提交时的说明文字；</p>
 </li>
 <li>
-<p>**-p 😗*在commit时，将容器暂停。</p>
+<p><strong><code v-pre>-p</code> ：</strong> 在<code v-pre>commit</code>时，将容器暂停。</p>
 </li>
 </ul>
 <p><strong>实例 – 在Ubuntu中安装vim</strong></p>
@@ -28,7 +28,7 @@ apt-get install -y vim
 </blockquote>
 <p><strong>此时我们可以理解分层的好处了，就是共享资源，方便复制迁移，就是为了复用</strong></p>
 <p><strong>多个镜像都从相同的镜像base镜像架构而来，那么docker host只需要在磁盘上保存一份base镜像，而且内存中每一层镜像都可以被共享。</strong></p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker commit -m="vim cmd add ok" -a="nsddd" 08d1e4ac02f2  smile/myubuntu：版本号
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> commit <span class="token parameter variable">-m</span><span class="token operator">=</span><span class="token string">"vim cmd add ok"</span> <span class="token parameter variable">-a</span><span class="token operator">=</span><span class="token string">"nsddd"</span> 08d1e4ac02f2  smile/myubuntu：版本号
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://s2.loli.net/2022/05/10/BnLtjb1EIRClfDy.png" alt="image-20220510211036779"></p>
 <p><strong>docker中镜像分层，支持通过扩展现有镜像，创建新的镜像，类似于java继承与一个base基础类，自己再按需扩展，新的镜像就是从base镜像一层层的叠加生成的，每安装一个软件，就在现有的镜像的基础上增加一层镜像。</strong></p>
 <p>将容器<code v-pre>a404c6c174a2</code> 保存为新的镜像,并添加提交人信息和说明信息。</p>
@@ -46,6 +46,19 @@ mymysql             v1                  37af1236adef        15 seconds ago      
 <p><img src="https://s2.loli.net/2022/05/10/AOEd814ryYS5mXC.png" alt="image-20220510210831886"></p>
 <p><strong>注意欸，要在下面的访问凭证设置密码</strong></p>
 <h2 id="完整的阿里云推送和拉取过程" tabindex="-1"><a class="header-anchor" href="#完整的阿里云推送和拉取过程" aria-hidden="true">#</a> 完整的阿里云推送和拉取过程</h2>
+<p><strong>关键过程</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> <span class="token function">ps</span>
+<span class="token function">docker</span> commit <span class="token parameter variable">-m</span><span class="token operator">=</span><span class="token string">"vim cmd add ok"</span> <span class="token parameter variable">-a</span><span class="token operator">=</span><span class="token string">"nsddd"</span> 08d1e4ac02f2  smile/myubuntu
+<span class="token function">docker</span> images
+<span class="token function">docker</span> login <span class="token parameter variable">--username</span><span class="token operator">=</span>3293172751nss registry.cn-hangzhou.aliyuncs.com
+<span class="token function">docker</span> tag 6962da3091d1 registry.cn-hangzhou.aliyuncs.com/nsddd/myubuntu
+<span class="token function">docker</span> push registry.cn-hangzhou.aliyuncs.com/nsddd/myubuntu
+<span class="token function">docker</span> rmi <span class="token parameter variable">-f</span> 6962da3091d1
+<span class="token function">docker</span> images
+<span class="token function">docker</span> rmi <span class="token parameter variable">-f</span> ba6acccedd29   4b9109b3e917 c717164f2c33  717164f2c33
+<span class="token function">docker</span> pull registry.cn-hangzhou.aliyuncs.com/nsddd/myubuntu
+<span class="token function">docker</span> images
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>全过程</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:/<span class="token comment"># docker ps</span>
 CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS      NAMES
 08d1e4ac02f2   ubuntu    <span class="token string">"bash"</span>                   <span class="token number">18</span> minutes ago   Up <span class="token number">18</span> minutes              cranky_babbage

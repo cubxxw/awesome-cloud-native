@@ -49,6 +49,19 @@
 <p>最大的公开仓库是<strong>docker hub(https://hub.docker.com)</strong></p>
 <p>国内也有公开仓库如阿里云、网易云。</p>
 <p><strong>我们可以把镜像发布到仓库中，需要的时候再从仓库中拉取就可以了</strong></p>
+<h2 id="win下安装docker" tabindex="-1"><a class="header-anchor" href="#win下安装docker" aria-hidden="true">#</a> win下安装docker</h2>
+<ol>
+<li>官网上或者GitHub上选择合适的<code v-pre>docker</code>版本</li>
+<li>安装docker</li>
+<li>打开docker</li>
+</ol>
+<p><strong>打开docker有两种方式：</strong></p>
+<ul>
+<li>你可以选择在docker的应用中打开</li>
+<li>或者是对我来说不需要应用直接就在命令行中打开</li>
+</ul>
+<p><img src="https://sm.nsddd.top//typora/image-20220917104645408.png?mail:3293172751@qq.com" alt="image-20220917104645408"></p>
+<h2 id="docker在window下面安装mysql" tabindex="-1"><a class="header-anchor" href="#docker在window下面安装mysql" aria-hidden="true">#</a> docker在window下面安装MySQL</h2>
 </div></template>
 
 

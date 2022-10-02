@@ -1,4 +1,4 @@
-<template><div><h1 id="docker概述" tabindex="-1"><a class="header-anchor" href="#docker概述" aria-hidden="true">#</a> Docker概述</h1>
+<template><div><h1 id="☁️docker概述" tabindex="-1"><a class="header-anchor" href="#☁️docker概述" aria-hidden="true">#</a> ☁️Docker概述</h1>
 <p>[toc]</p>
 <h2 id="😎docker是什么" tabindex="-1"><a class="header-anchor" href="#😎docker是什么" aria-hidden="true">#</a> 😎docker是什么？？？</h2>
 <p>Docker是一个用于开发，交付和运行应用程序的开放平台。Docker使您能够将应用程序与基础架构分开，从而可以快速交付软件。借助Docker，您可以以与管理应用程序相同的方式来管理基础架构。通过利用Docker的快速交付，测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行代码之间的延迟。</p>

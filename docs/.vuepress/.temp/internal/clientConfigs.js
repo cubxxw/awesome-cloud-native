@@ -6,8 +6,9 @@ import clientConfig4 from 'D:/文档/最近的/docker/node_modules/@vuepress/plu
 import clientConfig5 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-external-link-icon/lib/client/config.js'
 import clientConfig6 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-medium-zoom/lib/client/config.js'
 import clientConfig7 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-search/lib/client/config.js'
-import clientConfig8 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-toc/lib/client/config.js'
-import clientConfig9 from 'D:/文档/最近的/docker/docs/.vuepress/client.ts'
+import clientConfig8 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-docsearch/lib/client/config.js'
+import clientConfig9 from 'D:/文档/最近的/docker/node_modules/@vuepress/plugin-toc/lib/client/config.js'
+import clientConfig10 from 'D:/文档/最近的/docker/docs/.vuepress/client.ts'
 
 export const clientConfigs = [
   clientConfig0,
@@ -20,4 +21,5 @@ export const clientConfigs = [
   clientConfig7,
   clientConfig8,
   clientConfig9,
+  clientConfig10,
 ]

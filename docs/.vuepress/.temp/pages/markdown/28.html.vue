@@ -1,4 +1,5 @@
 <template><div><h1 id="编写自定义镜像myubuntu" tabindex="-1"><a class="header-anchor" href="#编写自定义镜像myubuntu" aria-hidden="true">#</a> 编写自定义镜像myubuntu</h1>
+<h2 id="装备" tabindex="-1"><a class="header-anchor" href="#装备" aria-hidden="true">#</a> 装备</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@ubuntu:/text# pwd
 /text
 root@ubuntu:/text# ll

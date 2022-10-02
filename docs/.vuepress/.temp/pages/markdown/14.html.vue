@@ -1,5 +1,6 @@
 <template><div><h1 id="容器数据卷" tabindex="-1"><a class="header-anchor" href="#容器数据卷" aria-hidden="true">#</a> 容器数据卷</h1>
 <p>[toc]</p>
+<h2 id="什么是卷" tabindex="-1"><a class="header-anchor" href="#什么是卷" aria-hidden="true">#</a> 什么是卷？</h2>
 <blockquote>
 <p>卷就是目录或者文件，存在于一个或者多个容器中，有docker挂载到容器，但不属于联合文件系统，因此能逃过Union file system 提供的一些持续存储或者共享数据的特性</p>
 <p><strong>卷的设计目的就是数据持久化，完全独立于容器的生存周期，因此docker不会在容器删除时删除其挂载的数据卷</strong></p>
@@ -42,8 +43,8 @@
 <blockquote>
 <p>cp需要手动拷贝，而容器卷可以实时拷贝</p>
 </blockquote>
-<h3 id="容器卷和主机互联互通" tabindex="-1"><a class="header-anchor" href="#容器卷和主机互联互通" aria-hidden="true">#</a> 容器卷和主机互联互通</h3>
-<h3 id="如何运行" tabindex="-1"><a class="header-anchor" href="#如何运行" aria-hidden="true">#</a> 如何运行</h3>
+<h2 id="容器卷和主机互联互通" tabindex="-1"><a class="header-anchor" href="#容器卷和主机互联互通" aria-hidden="true">#</a> 容器卷和主机互联互通</h2>
+<h2 id="如何运行" tabindex="-1"><a class="header-anchor" href="#如何运行" aria-hidden="true">#</a> 如何运行</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -it --privileged=true -v /宿主机绝对路径目录：/容器内目录   镜像名称
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
 <p>宿主机的绝对路径映射到容器类的目录</p>
@@ -80,7 +81,7 @@ root@ubuntu:/tmp/host_data<span class="token comment"># docker exec -it 37d9f24e
 root@37d9f24e95a3:/<span class="token comment"># cd /tmp/docker_data/ &amp;&amp; ls</span>
 a  a.txt  b.txt  zhuji.txt
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>由此可见，同步回来了，这样对于开发者来说特别方便</strong></p>
-<h3 id="查看容器卷是否挂载成功" tabindex="-1"><a class="header-anchor" href="#查看容器卷是否挂载成功" aria-hidden="true">#</a> 查看容器卷是否挂载成功</h3>
+<h2 id="查看容器卷是否挂载成功" tabindex="-1"><a class="header-anchor" href="#查看容器卷是否挂载成功" aria-hidden="true">#</a> 查看容器卷是否挂载成功</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker inspect 容器id
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>我们看mounts（挂载)下面的json字符串</strong></p>
 <div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code>        <span class="token property">"Mounts"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
@@ -97,27 +98,27 @@ a  a.txt  b.txt  zhuji.txt
 <li>source使指宿主机路径</li>
 <li>destination是指目的容器的路径</li>
 </ul>
-<h3 id="特殊情况下的互联互通" tabindex="-1"><a class="header-anchor" href="#特殊情况下的互联互通" aria-hidden="true">#</a> 特殊情况下的互联互通</h3>
+<h2 id="特殊情况下的互联互通" tabindex="-1"><a class="header-anchor" href="#特殊情况下的互联互通" aria-hidden="true">#</a> 特殊情况下的互联互通</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker stop 容器id
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>我们停止容器id后，此时在主机上创建一个文件，如果此时恢复容器后，会不会同步</strong></p>
 <p><strong>答案：会</strong></p>
 <blockquote>
 <p>因为是双线的同步</p>
 </blockquote>
-<h3 id="了解容器卷的读写规则和映射的添加说明" tabindex="-1"><a class="header-anchor" href="#了解容器卷的读写规则和映射的添加说明" aria-hidden="true">#</a> 了解容器卷的读写规则和映射的添加说明</h3>
+<h2 id="了解容器卷的读写规则和映射的添加说明" tabindex="-1"><a class="header-anchor" href="#了解容器卷的读写规则和映射的添加说明" aria-hidden="true">#</a> 了解容器卷的读写规则和映射的添加说明</h2>
 <ul>
 <li>只读（默认）</li>
 <li>只写</li>
 </ul>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -it --privileged=true -v /宿主机绝对路径目录：/容器内目录   镜像名称
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>上面的命令相当于是在容器后面加了<code v-pre>:rw</code>，是可以读可以写的，我们可以设置为只读或者只写</strong></p>
-<h5 id="_1-设置为只读" tabindex="-1"><a class="header-anchor" href="#_1-设置为只读" aria-hidden="true">#</a> 1. 设置为只读</h5>
+<h3 id="设置为只读" tabindex="-1"><a class="header-anchor" href="#设置为只读" aria-hidden="true">#</a> 设置为只读</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -it --privileged=true -v /宿主机绝对路径目录：/容器内目录:ro   镜像名称
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong><code v-pre>ro</code>:read only</strong></p>
 <p><strong>此时如果宿主机写入内容，可以同步给容器，容器自己只能读入不能写</strong></p>
-<h5 id="_2-设置为只写" tabindex="-1"><a class="header-anchor" href="#_2-设置为只写" aria-hidden="true">#</a> 2.设置为只写</h5>
+<h3 id="设置为只写" tabindex="-1"><a class="header-anchor" href="#设置为只写" aria-hidden="true">#</a> 设置为只写</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -it --privileged=true -v /宿主机绝对路径目录：/容器内目录:wo   镜像名称
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="卷的继承和共享" tabindex="-1"><a class="header-anchor" href="#卷的继承和共享" aria-hidden="true">#</a> 卷的继承和共享</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="卷的继承和共享" tabindex="-1"><a class="header-anchor" href="#卷的继承和共享" aria-hidden="true">#</a> 卷的继承和共享</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -it --privileged=true --volumes-from u1 --name u2 ubuntu
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>u2继承u1</strong></p>
 <p><strong>此时如果u1没了，那么u2依旧可以和主机数据共享</strong></p>

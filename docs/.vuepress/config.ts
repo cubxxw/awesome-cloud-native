@@ -2,8 +2,8 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-09-17 20:38:12
- * @FilePath: \undefinedd:\文档\最近的\docker\docs\.vuepress\config.ts
+ * @LastEditTime: 2022-09-30 18:05:41
+ * @FilePath: \.vuepress\config.ts
  * @blog: https://nsddd.top
  */
 import { defaultTheme } from 'vuepress'
@@ -16,10 +16,12 @@ import { searchPlugin } from '@vuepress/plugin-search'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { tocPlugin } from '@vuepress/plugin-toc'
+
+// import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
 export default {
   //注意，此处需要填写你部署在nginx下的文件夹名称，如果是根目录，那么可以注释掉此行，注释掉后本地打开index.html无法访问
   base: "/awesome-docker/",
-  dest: './dist',
+  dest: '../blog/dist',
   lang: 'zh-CN',
   port: 8888,  //设置端口号
   title: '你好',  //主页
@@ -41,15 +43,29 @@ export default {
           },
         },
       }),
+    //   mdEnhancePlugin({
+    //     // 启用任务列表
+    //     tasklist: true,
+    //   }),
+ 
      mediumZoomPlugin({
         // 配置项 --图片缩放
       }),
       searchPlugin({
         // 配置项  -- 轻量搜索
       }),      
-    //   docsearchPlugin({
-    //     // 配置项 -- 优化搜索 -- 需要登陆
-    //   }),
+      docsearchPlugin({
+        // 配置项 配置上申请下来的 apiKey、indexName、appId
+        apiKey: '661a2d8409a1b3e5ae62094dca33f10d',
+        indexName: 'awesome-docker',
+        appId: 'LIPIDXUN7V',
+        placeholder: '搜索文档',
+        translations: {
+          button: {
+            buttonText: '搜索文档',
+          },
+        }
+    }),
       prismjsPlugin({
         // 配置项  -- 语法高亮
       }),
@@ -76,7 +92,7 @@ export default {
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
         // 你也可以直接将它设置为一个 URL
-        repo: '3293172751/vuepress',
+        repo: '3293172751/awesome-docker',
         tip: '提示',
         warning: '注意',
         danger: '警告',
@@ -95,7 +111,7 @@ export default {
         // 导航栏
         navbar: [
             {
-                text: '关于我',
+                text: '🤵关于我',
                 children: [
                   {
                     text: 'Github仓库',
@@ -109,35 +125,40 @@ export default {
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
                   },
+                  {
+                    text: '知乎',
+                    link: 'https://www.zhihu.com/people/3293172751',
+                    // 该元素将一直处于激活状态
+                    activeMatch: '/',
+                  },
                 ],
             },
             {
-              text: '首页',
+              text: '🏠首页',
               link: '/',
             },
             {
-              text: 'Github首页',
-              link: 'https://github.com/3293172751/'
+              text: '⛓️链学社组织',
+              link: 'https://github.com/C-UB/'
             }
           ],
           
         // 默认主题配置
         sidebar:[
             {
-                text: '回到主页',
+                text: '🏠回到主页',
                 link: '/', 
             },
             // SidebarItem
             {
-              text: 'Docker学习篇',
+                text: '☁️DocCub云盘地址',
+                link: 'http://xxw.nsddd.top/s/q2FP?path=%2F'
+            },
+            {
+              text: '📚Docker学习篇',
               link: '/markdown/',
               children: [
                 // SidebarItem
-
-                {
-                  text: 'docker脑图地址',
-                  link: './naotu/'
-                },
                 '/markdown/1.md',
                 '/markdown/2.md',
                 '/markdown/3.md',
@@ -160,10 +181,32 @@ export default {
                 '/markdown/20.md',
                 '/markdown/21.md',
                 '/markdown/22.md',
+                '/markdown/23.md',
+                '/markdown/24.md',
+                '/markdown/25.md',
+                '/markdown/26.md',
+                '/markdown/27.md',          
+                '/markdown/28.md',
+                '/markdown/29.md',
+                '/markdown/30.md',
+                '/markdown/31.md',
+                '/markdown/32.md',
+                '/markdown/33.md',
+                '/markdown/34.md',
+                '/markdown/35.md',
+                '/markdown/36.md',
+                '/markdown/37.md',          
+                '/markdown/38.md',
+                '/markdown/39.md',
+                '/markdown/40.md',
+                '/markdown/41.md',
+                '/markdown/42.md',
+                '/markdown/43.md',
+                '/markdown/44.md',
                 // 字符串 - 页面文件路径
                 // '/foo/bar.md',
                 {
-                    text: '如何参与贡献？',
+                    text: '💝如何参与贡献？',
                     link: 'https://nsddd.top/archives/contributors',
                   //   children: [],
                 },

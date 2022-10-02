@@ -101,8 +101,50 @@ export const pagesData = {
   "v-4ce2eeb0": () => import(/* webpackChunkName: "v-4ce2eeb0" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/8.html.js").then(({ data }) => data),
   // path: /markdown/9.html
   "v-49793d72": () => import(/* webpackChunkName: "v-49793d72" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/9.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_011.html
+  "v-111c7789": () => import(/* webpackChunkName: "v-111c7789" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_011.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_012.html
+  "v-12d15028": () => import(/* webpackChunkName: "v-12d15028" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_012.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_013.html
+  "v-148628c7": () => import(/* webpackChunkName: "v-148628c7" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_013.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_014.html
+  "v-163b0166": () => import(/* webpackChunkName: "v-163b0166" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_014.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_015.html
+  "v-17efda05": () => import(/* webpackChunkName: "v-17efda05" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_015.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_016.html
+  "v-19a4b2a4": () => import(/* webpackChunkName: "v-19a4b2a4" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_016.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_017.html
+  "v-1b598b43": () => import(/* webpackChunkName: "v-1b598b43" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_017.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_018.html
+  "v-1d0e63e2": () => import(/* webpackChunkName: "v-1d0e63e2" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_018.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_019.html
+  "v-1ec33c81": () => import(/* webpackChunkName: "v-1ec33c81" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_019.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_020.html
+  "v-444dda2b": () => import(/* webpackChunkName: "v-444dda2b" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_020.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_021.html
+  "v-4602b2ca": () => import(/* webpackChunkName: "v-4602b2ca" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_021.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_022.html
+  "v-47b78b69": () => import(/* webpackChunkName: "v-47b78b69" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_022.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_023.html
+  "v-496c6408": () => import(/* webpackChunkName: "v-496c6408" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_023.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_024.html
+  "v-4b213ca7": () => import(/* webpackChunkName: "v-4b213ca7" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_024.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_025.html
+  "v-4cd61546": () => import(/* webpackChunkName: "v-4cd61546" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_025.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_026.html
+  "v-4e8aede5": () => import(/* webpackChunkName: "v-4e8aede5" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_026.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_027.html
+  "v-503fc684": () => import(/* webpackChunkName: "v-503fc684" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_027.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_028.html
+  "v-51f49f23": () => import(/* webpackChunkName: "v-51f49f23" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_028.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_029.html
+  "v-53a977c2": () => import(/* webpackChunkName: "v-53a977c2" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_029.html.js").then(({ data }) => data),
+  // path: /markdown/k8s_030.html
+  "v-7934156c": () => import(/* webpackChunkName: "v-7934156c" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_030.html.js").then(({ data }) => data),
   // path: /markdown/
   "v-72881372": () => import(/* webpackChunkName: "v-72881372" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/index.html.js").then(({ data }) => data),
+  // path: /markdown/toc.html
+  "v-6ae5cbd8": () => import(/* webpackChunkName: "v-6ae5cbd8" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/toc.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
 }

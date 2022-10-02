@@ -1,10 +1,11 @@
-<template><div><h3 id="bridge是什么" tabindex="-1"><a class="header-anchor" href="#bridge是什么" aria-hidden="true">#</a> bridge是什么</h3>
+<template><div><h1 id="bridge是什么" tabindex="-1"><a class="header-anchor" href="#bridge是什么" aria-hidden="true">#</a> bridge是什么</h1>
 <p>[toc]</p>
+<h2 id="bridge是什么-1" tabindex="-1"><a class="header-anchor" href="#bridge是什么-1" aria-hidden="true">#</a> bridge是什么</h2>
 <p>Docker 服务默认会创建一个 docker0 网桥（其上有一个 docker0 内部接口），该桥接网络的名称为docker0，<strong>它在内核层连通了其他的物理或虚拟网卡，这就将所有容器和本地主机都放到同一个物理网络。Docker 默认指定了 docker0 接口 的 IP 地址和子网掩码，==让主机和容器之间可以通过网桥相互通信。==</strong></p>
 <blockquote>
 <p>网桥就是docker0，宿主机和容器之间通信需要网桥，容器与容器通信也要网桥</p>
 </blockquote>
-<h3 id="查看-bridge-网络的详细信息-并通过-grep-获取名称项" tabindex="-1"><a class="header-anchor" href="#查看-bridge-网络的详细信息-并通过-grep-获取名称项" aria-hidden="true">#</a> 查看 bridge 网络的详细信息，并通过 grep 获取名称项</h3>
+<h2 id="查看-bridge-网络的详细信息-并通过-grep-获取名称项" tabindex="-1"><a class="header-anchor" href="#查看-bridge-网络的详细信息-并通过-grep-获取名称项" aria-hidden="true">#</a> 查看 bridge 网络的详细信息，并通过 grep 获取名称项</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@ubuntu:/# docker network inspect bridge | grep name
             "com.docker.network.bridge.name": "docker0",
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>config</strong></p>
@@ -26,8 +27,7 @@ ens33: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 111754  bytes 9680017 (9.6 MB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="案例" tabindex="-1"><a class="header-anchor" href="#案例" aria-hidden="true">#</a> 案例</h3>
-<h5 id="说明" tabindex="-1"><a class="header-anchor" href="#说明" aria-hidden="true">#</a> 说明</h5>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="案例说明" tabindex="-1"><a class="header-anchor" href="#案例说明" aria-hidden="true">#</a> 案例说明</h2>
 <p>1 Docker使用Linux桥接，在宿主机虚拟一个Docker容器网桥(docker0)，Docker启动一个容器时会根据Docker网桥的网段分配给容器一个IP地址，称为Container-IP，同时Docker网桥是每个容器的默认网关。因为在<strong>同一宿主机内的容器都接入同一个网桥，这样容器之间就能够通过容器的Container-IP直接通信。</strong></p>
 <p>2 docker run 的时候，**没有指定network的话默认使用的网桥模式就是bridge，使用的就是docker0。**在宿主机ifconfig,就可以看到docker0和自己create的network(后面讲)eth0，eth1，eth2……代表网卡一，网卡二，网卡三……，lo代表127.0.0.1，即localhost，inet addr用来表示网卡的IP地址</p>
 <p><strong>3. 网桥docker0创建一对对等虚拟设备接口一个叫veth，另一个叫eth0，成对匹配。</strong></p>

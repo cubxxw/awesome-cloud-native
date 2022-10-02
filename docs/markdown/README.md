@@ -1,19 +1,3 @@
-😶‍🌫️Docker[官方文档](https://dockerdocs.cn/)
-
->   学习资料很全，推荐！！！！
-
-[😶‍🌫️我的学习笔记（github）:](https://github.com/3293172751/golang-rearn)
-
----
-
-**区块链技术（也称之为分布式账本技术）**，是一种互联网数据库技术，其特点是去中心化，公开透明，让每一个人均可参与的数据库记录
-
->   ❤️💕💕关于区块链技术，可以关注我，共同学习更多的区块链技术。博客[http://nsddd.top](http://nsddd.top)
->
->   <a href="https://wakatime.com/@3293172751/projects/hngzsvjxqc?start=2022-03-30&end=2022-04-05" title="我的区块链代码时长"> <img src="https://wakatime.com/badge/user/c445b3c6-a2bc-43a2-a24a-0828a17244b4/project/79cf7f10-4f61-42b7-92a8-dfc71cb99f4c.svg"> </a>
-
----
-
 # Decker
 
 ## 为什么要学习 Decker？
@@ -25,25 +9,53 @@
 
 
 
-## 怎么学习docker
+## ⭕怎么学习docker
 
 > 学习docker之前最好有下面基础
 >
-> + [x] [计算机网络 – TCP/IP – 抓包 – Linux网络编程](https://github.com/3293172751/Block_Chain/blob/master/web/README.md) （有一点网络基础就好）
-> + [x] [有Linux的基础](https://github.com/3293172751/CS_COURSE/blob/master/linux/README.md)
+> +  [计算机网络 – TCP/IP – 抓包 – Linux网络编程](https://github.com/3293172751/Block_Chain/blob/master/web/README.md) （有一点网络基础就好）
+> +  [有Linux的基础](https://github.com/3293172751/CS_COURSE/blob/master/linux/README.md)
+> +  [有Git的基础](https://github.com/3293172751/awesome-cs-course/blob/master/Git/README.md)
 >
 > **编程语言不限**
 >
-> - [x] [🖱️GO 基础部分🔥](https://github.com/3293172751/Block_Chain/blob/master/TOC.md)
-> - [ ] [🖱️GO web框架](https://github.com/3293172751/Block_Chain/blob/master/go-web)
-> - [ ] [🖱️Go语言100篇进阶🔥](https://github.com/3293172751/Block_Chain/blob/master/Gomd_super/README.md)
-> - [ ] [🖱️Go 高级篇](https://github.com/3293172751/Block_Chain/blob/master/go-advancend/README.md)
+> -  [🖱️GO 基础部分🔥](https://github.com/3293172751/Block_Chain/blob/master/TOC.md)
+> -  [🖱️GO web框架](https://github.com/3293172751/Block_Chain/blob/master/go-web)
+> -  [🖱️Go语言100篇进阶🔥](https://github.com/3293172751/Block_Chain/blob/master/Gomd_super/README.md)
+> -  [🖱️Go 高级篇](https://github.com/3293172751/Block_Chain/blob/master/go-advancend/README.md)
 >
 > ---
 
-## 目录
+## 🔮学完docker或许你可以试试这些
 
-[😎😎😎脑图地址](./naotu/README.html)
+### 建立你自己的`Docker`
+
+-  [🔱🔧🧰**C** ：500 行代码中的 Linux 容器](https://blog.lizzie.io/linux-containers-in-500-loc.html)
+-  [🔱🔧🧰**Go** ：自己的构建包100 去构建自己的构建包](https://www.infoq.com/articles/build-a-container-golang)
+-  [🔱🔧🧰**Go**：在 Go 中从头开始制造容器](https://www.youtube.com/watch?v=8fi7uSYlOdc)[视频]
+-  [🔱🔧🧰**Python**：Linux 容器研讨会：从头开始重构 Docker](https://github.com/Fewbytes/rubber-docker)
+-  [🔱🔧🧰**Python**：一个概念模仿Docker，用10% Python编写](https://github.com/tonybaloney/mocker)
+-  [🔱🔧🧰**Shell** ：Docker 在大约 100 行 bash 中实现](https://github.com/p8952/bocker)
+
+
+
+### 从docker进阶到k8s
+
+
+
+
+
+## 🅱️最新补充
+
+[💢🚝浅谈 linux 中的根文件系统（rootfs 的原理和介绍）](./41.md)
+
+[💢🚝补充：Docker nginx篇](42.md)
+
+[💢🚝补充：修改docker镜像的映射端口（如何修改镜像配置文件）](43.md)
+
+
+
+## 🗒️Docker基础篇目录
 
 🐋 1. [Docker概述](1.md)
 
@@ -57,7 +69,7 @@
 
 🐋 6. [Docker引擎（engine）详解](6.md)
 
-🐋 7. [镜像配置](7.md)
+🐋 7. [镜像配置 — 加速](7.md)
 
 🐋 8. [docker帮助启动类命令](8.md)
 
@@ -67,7 +79,7 @@
 
 🐋 11. [深入理解镜像底层](11.md)
 
-🐋 12. [容器rootfs命令](12.md)
+🐋 12. [docker提交以及命名空间](12.md)
 
 🐋 13. [使用hub.docker](13.md)
 
@@ -81,7 +93,7 @@
 
 🐋 18. [docker安装redis](18.md)
 
-🐋 19. [Docker高级篇](19.md)
+🐋 19. [mysql主从复制docker版](19.md)
 
 🐋 20. [分布式存储之hash取余算法](20.md)
 
@@ -127,7 +139,11 @@
 
 ---
 
-## 参与贡献
++  [ 🖱️脑图下载](脑图笔记)
+
+---
+
+## ✨参与贡献
 
 **[🫵参与贡献❤️❤️💕💕](https://nsddd.top/archives/contributors)**
 

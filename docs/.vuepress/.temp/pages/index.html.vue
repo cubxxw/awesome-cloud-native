@@ -1,11 +1,11 @@
-<template><div><h2 id="为什么要学习-decker" tabindex="-1"><a class="header-anchor" href="#为什么要学习-decker" aria-hidden="true">#</a> 为什么要学习 Decker？</h2>
+<template><div><h2 id="⚡为什么要学习-decker" tabindex="-1"><a class="header-anchor" href="#⚡为什么要学习-decker" aria-hidden="true">#</a> ⚡为什么要学习 Decker？</h2>
 <blockquote>
 <p>Docker 是世界领先的软件容器平台。
 开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。
 运维人员利用 Docker 可以在隔离容器中并行运行和管理应用，获得更好的计算密度。
 企业利用 Docker 可以构建敏捷的软件交付管道，以更快的速度、更高的安全性和可靠的信誉为 Linux 和 Windows Server 应用发布新功能。</p>
 </blockquote>
-<h2 id="怎么学习docker" tabindex="-1"><a class="header-anchor" href="#怎么学习docker" aria-hidden="true">#</a> 怎么学习docker</h2>
+<h2 id="🎈怎么学习docker" tabindex="-1"><a class="header-anchor" href="#🎈怎么学习docker" aria-hidden="true">#</a> 🎈怎么学习docker</h2>
 <blockquote>
 <p>学习docker之前最好有下面基础</p>
 <ul>
@@ -20,7 +20,7 @@
 <li>[ ] <a href="https://github.com/3293172751/Block_Chain/blob/master/go-advancend/README.md" target="_blank" rel="noopener noreferrer">🖱️Go 高级篇<ExternalLinkIcon/></a></li>
 </ul>
 </blockquote>
-<h2 id="目录" tabindex="-1"><a class="header-anchor" href="#目录" aria-hidden="true">#</a> 目录</h2>
+<h2 id="📚目录" tabindex="-1"><a class="header-anchor" href="#📚目录" aria-hidden="true">#</a> 📚目录</h2>
 <p>🐋 1. <RouterLink to="/markdown/1.html">Docker概述</RouterLink></p>
 <p>🐋 2. <RouterLink to="/markdown/2.html">docker系统架构</RouterLink></p>
 <p>🐋 3. <RouterLink to="/markdown/3.html">docker和传统虚拟机</RouterLink></p>
