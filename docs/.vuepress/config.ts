@@ -2,7 +2,7 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-10-02 22:45:07
+ * @LastEditTime: 2022-10-03 00:33:25
  * @FilePath: \undefinedd:\文档\最近的\docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
@@ -16,6 +16,11 @@ import { searchPlugin } from '@vuepress/plugin-search'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { tocPlugin } from '@vuepress/plugin-toc'
+
+//评论插件
+import Vue from 'vue';
+// import Vssue from 'vssue';
+import GithubV3 from '@vssue/api-github-v3';
 
 // import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
 export default {
@@ -62,13 +67,26 @@ export default {
         },
       ],
 
+    //   '@vssue/vuepress-plugin-vssue',
+    //   {
+    //     // 设置平台，而不是 `api` 
+    //     platform: 'github-v4',
+  
+    //     // 其他的 Vssue 配置
+    //     owner: '3293192751', // 仓库的拥有者的名称
+    //     repo: 'awesome-docker', // 存储 Issue 和评论的仓库的名称
+    //     clientId: '4479c25f1d6cdcd8187f', // 刚保存下来的  Client ID
+    //     clientSecret: 'ddba2162d94a643e601313646380e48904ded8ee', //  刚才保存下来的 Client secrets
+    //     autoCreateIssue: true,//自动创建评论
+    //   },
+
       [
         'vuepress-plugin-comment', // 评论
         {
           choosen: 'gitalk',
           options: {
-            clientID: 'd210995bbac6d1b2e377', // 第三方登录 clientID
-            clientSecret: 'bed2940d85cc51731c5832ed893f4e0e5080defa', // 第三方登录 clientSecret
+            clientID: '4479c25f1d6cdcd8187f', // 第三方登录 clientID
+            clientSecret: 'ddba2162d94a643e601313646380e48904ded8ee', // 第三方登录 clientSecret
             repo: 'my-blog-comment',   // 你的存储库
             owner: '3293172751', // 存储库拥有者，填你的 Github 账户
             admin: ['3293172751'], // 对仓库有写权限的人，填你的 Github 账户

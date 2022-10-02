@@ -25,52 +25,66 @@ export const searchIndex = [
       },
       {
         "level": 2,
-        "title": "Go语言",
-        "slug": "go语言",
-        "link": "#go语言",
+        "title": "🧭导航",
+        "slug": "🧭导航",
+        "link": "#🧭导航",
         "children": []
       },
       {
         "level": 2,
-        "title": "CS系列",
-        "slug": "cs系列",
-        "link": "#cs系列",
+        "title": "📖Go语言",
+        "slug": "📖go语言",
+        "link": "#📖go语言",
         "children": []
       },
       {
         "level": 2,
-        "title": "开发必备技术",
-        "slug": "开发必备技术",
-        "link": "#开发必备技术",
+        "title": "📚CS系列",
+        "slug": "📚cs系列",
+        "link": "#📚cs系列",
         "children": []
       },
       {
         "level": 2,
-        "title": "区块链学习",
-        "slug": "区块链学习",
-        "link": "#区块链学习",
+        "title": "📘开发必备技术",
+        "slug": "📘开发必备技术",
+        "link": "#📘开发必备技术",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📔区块链导航",
+        "slug": "📔区块链导航",
+        "link": "#📔区块链导航",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "🅱️区块链教程",
+        "slug": "🅱️区块链教程",
+        "link": "#🅱️区块链教程",
         "children": [
           {
             "level": 3,
-            "title": "ETH–BTC",
-            "slug": "eth–btc",
-            "link": "#eth–btc",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "项目",
-            "slug": "项目",
-            "link": "#项目",
+            "title": "🗃️项目",
+            "slug": "🗃️项目",
+            "link": "#🗃️项目",
             "children": []
           }
         ]
       },
       {
         "level": 2,
-        "title": "参与贡献💕",
-        "slug": "参与贡献💕",
-        "link": "#参与贡献💕",
+        "title": "✨参与贡献💕",
+        "slug": "✨参与贡献💕",
+        "link": "#✨参与贡献💕",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "",
+        "slug": "",
+        "link": "#",
         "children": []
       },
       {
@@ -93,7 +107,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "☁️Docker概述",
+    "title": "Docker概述",
     "headers": [
       {
         "level": 2,
@@ -708,7 +722,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "☁️docker系统架构",
+    "title": "docker系统架构",
     "headers": [
       {
         "level": 2,
@@ -2405,6 +2419,13 @@ export const searchIndex = [
             "slug": "从docker进阶到k8s",
             "link": "#从docker进阶到k8s",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "💱安装docker",
+            "slug": "💱安装docker",
+            "link": "#💱安装docker",
+            "children": []
           }
         ]
       },
@@ -2431,13 +2452,6 @@ export const searchIndex = [
       }
     ],
     "path": "/markdown/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [],
-    "path": "/markdown/toc.html",
     "pathLocale": "/",
     "extraFields": []
   },

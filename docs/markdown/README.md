@@ -1,5 +1,14 @@
 # Decker
 
+:::
+⚠️ 这将会是一个很特别的仓库
+
+喜欢一定要在[GitHub](https://github.com/3293172751/cs-awesome-Block_Chain)上给个⭐
+
+:::
+
+
+
 ## 为什么要学习 Decker？
 
 > Docker 是世界领先的软件容器平台。
@@ -41,7 +50,28 @@
 
 ### 从docker进阶到k8s
 
+::: warning
+⚠️ 注意，这个板块博主正在努力学习中⚡~关注等待~
+:::
 
+
+
+###  💱安装docker
+
+:::: code-group
+::: code-group-item ubuntu
+
+```bash
+sudo apt install docker
+```
+:::
+::: code-group-item centos
+
+```shell
+yum install docker
+```
+:::
+::::
 
 
 

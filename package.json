@@ -26,6 +26,8 @@
     "vuepress-plugin-zooming": "^1.1.8"
   },
   "dependencies": {
+    "@vssue/api-github-v3": "^1.4.7",
+    "@vssue/api-github-v4": "^1.4.7",
     "vuepress-plugin-md-enhance": "^1.30.0"
   }
 }

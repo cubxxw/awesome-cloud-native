@@ -1,4 +1,8 @@
 <template><div><h1 id="decker" tabindex="-1"><a class="header-anchor" href="#decker" aria-hidden="true">#</a> Decker</h1>
+<p>:::
+⚠️ 这将会是一个很特别的仓库</p>
+<p>喜欢一定要在<a href="https://github.com/3293172751/cs-awesome-Block_Chain" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a>上给个⭐</p>
+<p>:::</p>
 <h2 id="为什么要学习-decker" tabindex="-1"><a class="header-anchor" href="#为什么要学习-decker" aria-hidden="true">#</a> 为什么要学习 Decker？</h2>
 <blockquote>
 <p>Docker 是世界领先的软件容器平台。
@@ -34,6 +38,18 @@
 <li><a href="https://github.com/p8952/bocker" target="_blank" rel="noopener noreferrer">🔱🔧🧰<strong>Shell</strong> ：Docker 在大约 100 行 bash 中实现<ExternalLinkIcon/></a></li>
 </ul>
 <h3 id="从docker进阶到k8s" tabindex="-1"><a class="header-anchor" href="#从docker进阶到k8s" aria-hidden="true">#</a> 从docker进阶到k8s</h3>
+<div class="custom-container warning"><p class="custom-container-title">注意</p>
+<p>⚠️ 注意，这个板块博主正在努力学习中⚡~关注等待~</p>
+</div>
+<h3 id="💱安装docker" tabindex="-1"><a class="header-anchor" href="#💱安装docker" aria-hidden="true">#</a> 💱安装docker</h3>
+<CodeGroup>
+<CodeGroupItem title="ubuntu">
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">docker</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></CodeGroupItem>
+<CodeGroupItem title="centos">
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token function">docker</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></CodeGroupItem>
+</CodeGroup>
 <h2 id="🅱️最新补充" tabindex="-1"><a class="header-anchor" href="#🅱️最新补充" aria-hidden="true">#</a> 🅱️最新补充</h2>
 <p><RouterLink to="/markdown/41.html">💢🚝浅谈 linux 中的根文件系统（rootfs 的原理和介绍）</RouterLink></p>
 <p><RouterLink to="/markdown/42.html">💢🚝补充：Docker nginx篇</RouterLink></p>

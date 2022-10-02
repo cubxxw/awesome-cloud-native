@@ -1,4 +1,4 @@
-<template><div><h1 id="☁️docker系统架构" tabindex="-1"><a class="header-anchor" href="#☁️docker系统架构" aria-hidden="true">#</a> ☁️docker系统架构</h1>
+<template><div><h1 id="docker系统架构" tabindex="-1"><a class="header-anchor" href="#docker系统架构" aria-hidden="true">#</a> docker系统架构</h1>
 <p>[toc]</p>
 <h2 id="docker-的总架构图" tabindex="-1"><a class="header-anchor" href="#docker-的总架构图" aria-hidden="true">#</a> Docker 的总架构图</h2>
 <img src="https://s2.loli.net/2022/05/08/AWZcyjfvLDJmEnq.jpg" alt="img" style="zoom: 33%;" />

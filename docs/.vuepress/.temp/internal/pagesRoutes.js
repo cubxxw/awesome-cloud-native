@@ -1,6 +1,6 @@
 export const pagesRoutes = [
   ["v-8daa1a0e","/",{"title":"Cub链学社（c-universal blockchain）"},["/index.html","/README.md"]],
-  ["v-64c6c762","/markdown/1.html",{"title":"☁️Docker概述"},["/markdown/1","/markdown/1.md"]],
+  ["v-64c6c762","/markdown/1.html",{"title":"Docker概述"},["/markdown/1","/markdown/1.md"]],
   ["v-33ac1c1a","/markdown/10.html",{"title":"容器说明 — 容器的启动和运行"},["/markdown/10","/markdown/10.md"]],
   ["v-30426adc","/markdown/11.html",{"title":"深入理解镜像底层"},["/markdown/11","/markdown/11.md"]],
   ["v-2cd8b99e","/markdown/12.html",{"title":"docker提交以及命名空间"},["/markdown/12","/markdown/12.md"]],
@@ -11,7 +11,7 @@ export const pagesRoutes = [
   ["v-1bc84368","/markdown/17.html",{"title":"docker安装MySQL"},["/markdown/17","/markdown/17.md"]],
   ["v-185e922a","/markdown/18.html",{"title":"docker安装redis"},["/markdown/18","/markdown/18.md"]],
   ["v-14f4e0ec","/markdown/19.html",{"title":"mysql主从复制docker版"},["/markdown/19","/markdown/19.md"]],
-  ["v-615d1624","/markdown/2.html",{"title":"☁️docker系统架构"},["/markdown/2","/markdown/2.md"]],
+  ["v-615d1624","/markdown/2.html",{"title":"docker系统架构"},["/markdown/2","/markdown/2.md"]],
   ["v-1b102d34","/markdown/20.html",{"title":"分布式存储之hash取余算法"},["/markdown/20","/markdown/20.md"]],
   ["v-1cc505d3","/markdown/21.html",{"title":"3主3从redis集群扩缩容配置案例说明"},["/markdown/21","/markdown/21.md"]],
   ["v-1e79de72","/markdown/22.html",{"title":"redis主从扩容"},["/markdown/22","/markdown/22.md"]],
@@ -71,6 +71,5 @@ export const pagesRoutes = [
   ["v-53a977c2","/markdown/k8s_029.html",{"title":""},["/markdown/k8s_029","/markdown/k8s_029.md"]],
   ["v-7934156c","/markdown/k8s_030.html",{"title":""},["/markdown/k8s_030","/markdown/k8s_030.md"]],
   ["v-72881372","/markdown/",{"title":"Decker"},["/markdown/index.html","/markdown/README.md"]],
-  ["v-6ae5cbd8","/markdown/toc.html",{"title":""},["/markdown/toc","/markdown/toc.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
