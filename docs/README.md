@@ -56,6 +56,17 @@ footer: 链学社 | Copyright © 2022-present Evan You
 
 
 
+::: danger 提醒
+⚠️ 注意：脑图页面可能没办法正常渲染，建议在下面📵[**不限速在线个人云盘**](https://xxw.nsddd.top/s/wRSz)里面找到docker脑图
+
+[ 🖱️脑图下载](/markdown/脑图笔记)
+
+图片当初是用sm图库，对于小时访问量有限制，后期会慢慢转到服务器中。
+
+:::
+
+
+
 ## 📚目录
 
 🐋 1. [Docker概述](./markdown/1.md)
@@ -142,15 +153,7 @@ footer: 链学社 | Copyright © 2022-present Evan You
 
 
 
-::: danger
-⚠️ 注意：脑图页面可能没办法正常渲染，建议在下面📵[**不限速在线个人云盘**](https://xxw.nsddd.top/s/wRSz)里面找到docker脑图
-
-[ 🖱️脑图下载](/markdown/脑图笔记)
-:::
-
-
-
-::: danger STOP
+::: danger 继续往下看
 下面是精心打造的菜鸟成长手册，覆盖有多广~~，喜欢请在GitHub仓库给个♥，不胜感激
 
 :::
