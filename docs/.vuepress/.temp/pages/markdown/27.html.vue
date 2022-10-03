@@ -1,8 +1,9 @@
 <template><div><h1 id="虚悬镜像" tabindex="-1"><a class="header-anchor" href="#虚悬镜像" aria-hidden="true">#</a> 虚悬镜像</h1>
 <p>[toc]</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p><strong>前面讲过什么是虚悬镜像·仓库名、标签都是<code v-pre>&lt;none&gt;</code>的镜像，俗称<code v-pre>dangling image</code></strong></p>
-<h3 id="dockerfile写一个" tabindex="-1"><a class="header-anchor" href="#dockerfile写一个" aria-hidden="true">#</a> Dockerfile写一个</h3>
-<h5 id="vim-dockerfile" tabindex="-1"><a class="header-anchor" href="#vim-dockerfile" aria-hidden="true">#</a> vim Dockerfile</h5>
+</div>
+<h2 id="dockerfile写一个" tabindex="-1"><a class="header-anchor" href="#dockerfile写一个" aria-hidden="true">#</a> Dockerfile写一个</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>from ubuntu
 CMD echo 'action is success'
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
@@ -19,7 +20,7 @@ Removing intermediate container 5e5d12d28ce2
 Successfully built 5c2d858f45c0
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://s2.loli.net/2022/05/13/rW3IABKVTEPyXsw.png" alt="image-20220513215042630"></p>
 <p><strong>已经出现</strong></p>
-<h3 id="查看所有虚悬镜像" tabindex="-1"><a class="header-anchor" href="#查看所有虚悬镜像" aria-hidden="true">#</a> 查看所有虚悬镜像</h3>
+<h2 id="查看所有虚悬镜像" tabindex="-1"><a class="header-anchor" href="#查看所有虚悬镜像" aria-hidden="true">#</a> 查看所有虚悬镜像</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@ubuntu:/myfile/test# docker image ls -f dangling=true
 REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
 &lt;none>       &lt;none>    5c2d858f45c0   About a minute ago   72.8MB

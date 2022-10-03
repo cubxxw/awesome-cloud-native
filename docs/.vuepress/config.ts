@@ -2,7 +2,7 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-10-03 00:33:25
+ * @LastEditTime: 2022-10-03 10:04:26
  * @FilePath: \undefinedd:\文档\最近的\docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
@@ -31,7 +31,7 @@ export default {
   port: 8888,  //设置端口号
   title: '你好',  //主页
   description: '链学社致力于打造出区块链去中心化的学习平台',
-   // sidebarDepth:2,   //默认显示H1 H2
+  sidebarDepth:1,   //默认显示H1 H2
   head:[
     ["link",{rel:"icon",href:"/img/1.jpg"}]
     //设置网站seo标志

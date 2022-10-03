@@ -1,4 +1,5 @@
 <template><div><h1 id="docker镜像命令" tabindex="-1"><a class="header-anchor" href="#docker镜像命令" aria-hidden="true">#</a> docker镜像命令</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#镜像仓库">镜像仓库</router-link><ul><li><router-link to="#docker-login-logout-命令">Docker login/logout 命令</router-link></li><li><router-link to="#docker-pull-命令">Docker pull 命令</router-link></li><li><router-link to="#docker-push-命令">Docker push 命令</router-link></li><li><router-link to="#docker-search-命令">Docker search 命令</router-link></li></ul></li><li><router-link to="#本地镜像">本地镜像</router-link><ul><li><router-link to="#docker-images-命令">Docker images 命令</router-link></li><li><router-link to="#docker-rmi-命令">Docker rmi 命令</router-link></li><li><router-link to="#docker-tag-命令">Docker tag 命令</router-link></li><li><router-link to="#docker-build-命令">Docker build 命令</router-link></li><li><router-link to="#docker-history-命令">Docker history 命令</router-link></li><li><router-link to="#docker-save-命令">Docker save 命令</router-link></li></ul></li><li><router-link to="#_2-篇笔记">2 篇笔记</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="镜像仓库" tabindex="-1"><a class="header-anchor" href="#镜像仓库" aria-hidden="true">#</a> 镜像仓库</h2>
 <h3 id="docker-login-logout-命令" tabindex="-1"><a class="header-anchor" href="#docker-login-logout-命令" aria-hidden="true">#</a> Docker login/logout 命令</h3>
@@ -221,7 +222,7 @@ runoob@runoob:~$ ll my_ubuntu_v3.tar
 -rw------- 1 runoob runoob 142102016 Jul 11 01:37 my_ubuntu_v3.ta
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_2-篇笔记" tabindex="-1"><a class="header-anchor" href="#_2-篇笔记" aria-hidden="true">#</a> 2 篇笔记</h2>
 <p><strong>docker prune 命令</strong></p>
-<p>prune 命令用来删除不再使用的 docker 对象。</p>
+<p>prune 命令用来``删除不再使用的 docker 对象。</p>
 <p>删除所有未被 tag 标记和未被容器使用的镜像:</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ docker image prune
 WARNING! This will remove all dangling images.

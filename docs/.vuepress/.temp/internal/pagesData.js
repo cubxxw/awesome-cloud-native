@@ -141,6 +141,8 @@ export const pagesData = {
   "v-53a977c2": () => import(/* webpackChunkName: "v-53a977c2" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_029.html.js").then(({ data }) => data),
   // path: /markdown/k8s_030.html
   "v-7934156c": () => import(/* webpackChunkName: "v-7934156c" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_030.html.js").then(({ data }) => data),
+  // path: /markdown/README%20(copy).html
+  "v-0b49a11f": () => import(/* webpackChunkName: "v-0b49a11f" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/README (copy).html.js").then(({ data }) => data),
   // path: /markdown/
   "v-72881372": () => import(/* webpackChunkName: "v-72881372" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/index.html.js").then(({ data }) => data),
   // path: /404.html

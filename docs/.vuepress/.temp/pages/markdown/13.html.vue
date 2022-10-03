@@ -1,10 +1,15 @@
-<template><div><h1 id="使用hub-docker" tabindex="-1"><a class="header-anchor" href="#使用hub-docker" aria-hidden="true">#</a> 使用hub.docker</h1>
-<h2 id="地址" tabindex="-1"><a class="header-anchor" href="#地址" aria-hidden="true">#</a> <a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer">地址<ExternalLinkIcon/></a></h2>
+<template><div><h1 id="使用hub-docker推送到远程" tabindex="-1"><a class="header-anchor" href="#使用hub-docker推送到远程" aria-hidden="true">#</a> 使用hub.docker推送到远程</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#使用commit">使用commit</router-link></li><li><router-link to="#设定端口映射">设定端口映射</router-link></li><li><router-link to="#修改配置文件使docker支持http">修改配置文件使docker支持http</router-link></li><li><router-link to="#推送mysql到hub-docker">推送mysql到hub.docker</router-link><ul><li><router-link to="#先到hub上面搞一个开源的仓库">先到hub上面搞一个开源的仓库</router-link></li><li><router-link to="#docker-desktop上面推送">docker desktop上面推送</router-link></li></ul></li><li><router-link to="#在ubuntu上面推送">在Ubuntu上面推送</router-link><ul><li><router-link to="#登陆">登陆</router-link></li></ul></li><li><router-link to="#mysql我们可以提交到同一个仓库-但是换个tag">mysql我们可以提交到同一个仓库，但是换个tag</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
+<ul>
+<li>[x] <a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer">地址<ExternalLinkIcon/></a></li>
+</ul>
+<div class="custom-container tip"><p class="custom-container-title">高低说两句</p>
 <p>📖 现在的hub好像并没有因为网路原因导致…….</p>
 <p>🔦 所以目前我认为hub比阿里云更加合适当仓库</p>
 <p>❗下面有分别推送windowns和Linux中的镜像到docker，请耐心看完</p>
+</div>
 <h2 id="使用commit" tabindex="-1"><a class="header-anchor" href="#使用commit" aria-hidden="true">#</a> 使用commit</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker commit -m="vim cmd add ok" -a="nsddd" 08d1e4ac02f2  smile/myubuntu:1.0.0
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="设定端口映射" tabindex="-1"><a class="header-anchor" href="#设定端口映射" aria-hidden="true">#</a> 设定端口映射</h2>

@@ -1,14 +1,14 @@
-<template><div><h1 id="容器数据卷" tabindex="-1"><a class="header-anchor" href="#容器数据卷" aria-hidden="true">#</a> 容器数据卷</h1>
+<template><div><h1 id="容器数据卷读写规则和继承" tabindex="-1"><a class="header-anchor" href="#容器数据卷读写规则和继承" aria-hidden="true">#</a> 容器数据卷读写规则和继承</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#什么是卷">什么是卷？</router-link></li><li><router-link to="#有点类似于redis中的rdb和aof文件">有点类似于redis中的rdb和aof文件</router-link></li><li><router-link to="#运行一个带容器卷存储功能的容器实例">运行一个带容器卷存储功能的容器实例</router-link></li><li><router-link to="#容器卷和主机互联互通">容器卷和主机互联互通</router-link></li><li><router-link to="#如何运行">如何运行</router-link></li><li><router-link to="#查看容器卷是否挂载成功">查看容器卷是否挂载成功</router-link></li><li><router-link to="#特殊情况下的互联互通">特殊情况下的互联互通</router-link></li><li><router-link to="#了解容器卷的读写规则和映射的添加说明">了解容器卷的读写规则和映射的添加说明</router-link><ul><li><router-link to="#设置为只读">设置为只读</router-link></li><li><router-link to="#设置为只写">设置为只写</router-link></li></ul></li><li><router-link to="#卷的继承和共享">卷的继承和共享</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="什么是卷" tabindex="-1"><a class="header-anchor" href="#什么是卷" aria-hidden="true">#</a> 什么是卷？</h2>
 <blockquote>
 <p>卷就是目录或者文件，存在于一个或者多个容器中，有docker挂载到容器，但不属于联合文件系统，因此能逃过Union file system 提供的一些持续存储或者共享数据的特性</p>
 <p><strong>卷的设计目的就是数据持久化，完全独立于容器的生存周期，因此docker不会在容器删除时删除其挂载的数据卷</strong></p>
 </blockquote>
-<p><strong>有点类似于redis中的rdb和aof文件</strong></p>
-<blockquote>
-<p>RDB文件
-1、RDB文件用于保存和还原Redis服务器所有数据库中的所有键值对数据
+<h2 id="有点类似于redis中的rdb和aof文件" tabindex="-1"><a class="header-anchor" href="#有点类似于redis中的rdb和aof文件" aria-hidden="true">#</a> 有点类似于redis中的rdb和aof文件</h2>
+<details class="custom-container details"><summary>RDB文件和aof文件</summary>
+<p>1、RDB文件用于保存和还原Redis服务器所有数据库中的所有键值对数据
 2、SAVE命令由服务器进程直接执行保存操作，该命令会阻塞服务器
 3、BGSAVE命令由子进程执行保存操作，不会阻塞服务器
 注意此时服务器的状态：在处理BGSAVE命令时，服务器处理SAVE、BGSAVE、BGREWRITEAOF三个命令方式与平时不同。</p>
@@ -30,9 +30,11 @@
 6、AOF重写可以产生一个新的AOF文件，新文件与原有文件所保存的数据库状态一样，但是体积更小
 7、AOF重写的功能时通过读取数据库中的键值对来实现的，程序无须对现有AOF文件进行任何读入、分析或者写入操作
 8、执行BGREWRITEAOF命令时，Redis服务器会维护一个AOF重写缓冲区，该缓冲区会在子进程创建新AOF文件期间，记录服务器执行的所有写命令。当子进程完成创建新AOF文件的工作之后，服务器会将重写缓冲区中的所有内容追加到新AOF文件的末尾，使得新旧两个AOF文件所保存的数据库状态一致。最后，服务器用新的AOF文件替换掉旧AOF文件，完成文件重写操作</p>
-</blockquote>
-<p><strong>==可以将docker容器中的数据保存到宿主机的磁盘中==</strong></p>
-<p><strong>运行一个带容器卷存储功能的容器实例</strong></p>
+</details>
+<div class="custom-container warning"><p class="custom-container-title">提醒</p>
+<p>⚠️ 可以将docker容器中的数据保存到宿主机的磁盘中</p>
+</div>
+<h2 id="运行一个带容器卷存储功能的容器实例" tabindex="-1"><a class="header-anchor" href="#运行一个带容器卷存储功能的容器实例" aria-hidden="true">#</a> 运行一个带容器卷存储功能的容器实例</h2>
 <p><strong>特点：</strong></p>
 <ul>
 <li>数据卷可在容器之间共享或重用数据</li>

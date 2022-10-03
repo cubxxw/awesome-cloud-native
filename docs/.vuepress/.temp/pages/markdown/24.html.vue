@@ -1,4 +1,5 @@
 <template><div><h1 id="dockerfile解析" tabindex="-1"><a class="header-anchor" href="#dockerfile解析" aria-hidden="true">#</a> DockerFile解析</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#需求">需求</router-link></li><li><router-link to="#dockerfile">DockerFile</router-link></li><li><router-link to="#应用软件的角度">应用软件的角度</router-link></li><li><router-link to="#dockerfile内容基础">dockerfile内容基础</router-link></li><li><router-link to="#docker执行dockerfile的流程">docker执行dockerfile的流程</router-link></li><li><router-link to="#构建步骤">构建步骤</router-link><ul><li><router-link to="#_1-编写dockerfile文件">1. 编写dockerfile文件</router-link></li><li><router-link to="#_2-docker-build创建镜像">2. docker build创建镜像</router-link></li><li><router-link to="#_3-docker-run依照镜像运行容器实例">3. docker run依照镜像运行容器实例</router-link></li></ul></li></ul></nav>
 <p>[toc]</p>
 <h3 id="需求" tabindex="-1"><a class="header-anchor" href="#需求" aria-hidden="true">#</a> 需求</h3>
 <p><strong>我们在前面学习镜像的时候，不含有vim/ifconfig等命令，所以我们需要重新按照那些命令</strong></p>

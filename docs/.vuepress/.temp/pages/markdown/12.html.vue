@@ -1,9 +1,9 @@
 <template><div><h1 id="docker提交以及命名空间" tabindex="-1"><a class="header-anchor" href="#docker提交以及命名空间" aria-hidden="true">#</a> docker提交以及命名空间</h1>
 <p>[toc]</p>
 <h2 id="commit" tabindex="-1"><a class="header-anchor" href="#commit" aria-hidden="true">#</a> commit</h2>
-<p>**docker commit 😗*从容器创建一个新的镜像。</p>
+<p>**<code v-pre>docker commit</code> **：从容器创建一个新的镜像。</p>
 <p><strong>语法</strong></p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> commit <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span> CONTAINER <span class="token punctuation">[</span>REPOSITORY<span class="token punctuation">[</span>:TAG<span class="token punctuation">]</span><span class="token punctuation">]</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>OPTIONS说明：</p>
 <ul>
 <li>

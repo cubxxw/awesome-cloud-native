@@ -1,14 +1,14 @@
 <template><div><h1 id="docker安装mysql" tabindex="-1"><a class="header-anchor" href="#docker安装mysql" aria-hidden="true">#</a> docker安装MySQL</h1>
 <p>[toc]</p>
-<h3 id="直接查看" tabindex="-1"><a class="header-anchor" href="#直接查看" aria-hidden="true">#</a> 直接查看</h3>
+<h2 id="直接查看" tabindex="-1"><a class="header-anchor" href="#直接查看" aria-hidden="true">#</a> 直接查看</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:/tmp/host_data<span class="token comment"># docker search --limit 3 mysql</span>
 NAME      DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
 mysql     MySQL is a widely used, open-source relation…   <span class="token number">12549</span>     <span class="token punctuation">[</span>OK<span class="token punctuation">]</span>       
 mariadb   MariaDB Server is a high performing <span class="token function">open</span> sou…   <span class="token number">4824</span>      <span class="token punctuation">[</span>OK<span class="token punctuation">]</span>       
 percona   Percona Server is a fork of the MySQL relati…   <span class="token number">575</span>       <span class="token punctuation">[</span>OK<span class="token punctuation">]</span>     
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="拉取" tabindex="-1"><a class="header-anchor" href="#拉取" aria-hidden="true">#</a> 拉取</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="拉取" tabindex="-1"><a class="header-anchor" href="#拉取" aria-hidden="true">#</a> 拉取</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run mysql:5.7
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="运行" tabindex="-1"><a class="header-anchor" href="#运行" aria-hidden="true">#</a> 运行</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="运行" tabindex="-1"><a class="header-anchor" href="#运行" aria-hidden="true">#</a> 运行</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:/tmp/host_data<span class="token comment"># docker run -P -e MYSQL_ROOT_PASSWORD=123456 -d  --name mysql01 mysql:5.7 </span>
 docker: Error response from daemon: Conflict. The container name <span class="token string">"/mysql01"</span> is already <span class="token keyword">in</span> use by container <span class="token string">"646014e4386df9378362b32465d06baf8ff3dd0c79b32a4017c4d189ab7e3a88"</span><span class="token builtin class-name">.</span> You have to remove <span class="token punctuation">(</span>or <span class="token function">rename</span><span class="token punctuation">)</span> that container to be able to reuse that name.
 See <span class="token string">'docker run --help'</span><span class="token builtin class-name">.</span>
@@ -25,7 +25,7 @@ f19e7fbc3d18   v2fly/v2fly-core        <span class="token string">"/usr/bin/v2ra
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>有可能自己的服务器mysql被占用3306所以选择随即动态端口</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>ps -ef|grep mysql
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="进入容器中" tabindex="-1"><a class="header-anchor" href="#进入容器中" aria-hidden="true">#</a> 进入容器中</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="进入容器中" tabindex="-1"><a class="header-anchor" href="#进入容器中" aria-hidden="true">#</a> 进入容器中</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:/tmp/host_data<span class="token comment"># docker exec -it f680877f03bc /bin/bash</span>
 root@f680877f03bc:/<span class="token comment"># mysql -uroot -p</span>
 Enter password: 
@@ -84,7 +84,7 @@ mysql&gt; select * from t1;
 --name mysql_beifen
 mysql:5.7
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -d -p 3306:3306 --privileged=true -v /mysql/log:/var/log/mysql -v /mysql/data:/var/lib/mysql -v /mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 --name mysql_beifen mysql:5.7
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="操作" tabindex="-1"><a class="header-anchor" href="#操作" aria-hidden="true">#</a> 操作</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="操作" tabindex="-1"><a class="header-anchor" href="#操作" aria-hidden="true">#</a> 操作</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>
 mysql> show databases;
 +--------------------+
@@ -118,7 +118,7 @@ mysql> select * from t;
 +------+----------+
 1 row in set (0.00 sec)
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>主机上可以看到同步</strong></p>
-<h3 id="删除同步" tabindex="-1"><a class="header-anchor" href="#删除同步" aria-hidden="true">#</a> 删除同步</h3>
+<h2 id="删除同步" tabindex="-1"><a class="header-anchor" href="#删除同步" aria-hidden="true">#</a> 删除同步</h2>
 <blockquote>
 <p>我们删除MySQL再创建</p>
 </blockquote>

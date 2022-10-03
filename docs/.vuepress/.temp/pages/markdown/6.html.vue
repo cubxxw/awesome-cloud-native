@@ -1,4 +1,5 @@
 <template><div><h1 id="docker引擎-engine-详解" tabindex="-1"><a class="header-anchor" href="#docker引擎-engine-详解" aria-hidden="true">#</a> Docker引擎（engine）详解</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#engine介绍">engine介绍</router-link></li><li><router-link to="#摆脱-lxc">摆脱 LXC</router-link></li><li><router-link to="#摒弃大而全的-docker-deamon">摒弃大而全的 Docker deamon</router-link></li><li><router-link to="#开放容器计划-oci-的影响">开放容器计划（OCI）的影响</router-link></li><li><router-link to="#runc">runc</router-link></li><li><router-link to="#containerd">containerd</router-link></li><li><router-link to="#启动一个新的容器">启动一个新的容器</router-link></li><li><router-link to="#该模型的显著优势">该模型的显著优势</router-link></li><li><router-link to="#shim">shim</router-link></li><li><router-link to="#在-linux-中的实现">在 Linux 中的实现</router-link></li><li><router-link to="#daemon-的作用">daemon 的作用</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="engine介绍" tabindex="-1"><a class="header-anchor" href="#engine介绍" aria-hidden="true">#</a> engine介绍</h2>
 <p><a href="http://c.biancheng.net/docker/" target="_blank" rel="noopener noreferrer">Docker<ExternalLinkIcon/></a> 引擎是用来运行和管理容器的核心软件。通常人们会简单地将其代指为 Docker 或 Docker 平台。</p>
@@ -36,12 +37,12 @@
 <p>它们共同负责容器的创建和运行。</p>
 </blockquote>
 <p>总体逻辑如下图所示。</p>
-<p><img src="https://s2.loli.net/2022/05/08/4sZOnIBaUPReTvm.gif" alt="Docker总体逻辑"></p>
+<p><img src="@source/markdown/images/4sZOnIBaUPReTvm.gif" alt="Docker总体逻辑"></p>
 <p>Docker 首次发布时，Docker 引擎由两个核心组件构成：<code v-pre>LXC</code> 和 <code v-pre>Docker deamon</code>。</p>
 <p><code v-pre>Docker deamon</code> 是单一的二进制文件，包含诸如 Docker 客户端、Docker API、容器运行时、镜像构建等。</p>
 <p><code v-pre>LXC</code> 提供了对诸如命名空间（Namespace）和控制组（CGroup）等基础工具的操作能力，它们是基于 Linux 内核的容器虚拟化技术。</p>
 <p>下图阐释了在 Docker 旧版本中，<code v-pre>Docker deamon</code>、<code v-pre>LXC</code> 和操作系统之间的交互关系。</p>
-<p><img src="https://s2.loli.net/2022/05/08/1tzar8HIcCm2PQf.gif" alt="先前的Docker架构"></p>
+<p><img src="@source/markdown/images/1tzar8HIcCm2PQf.gif" alt="先前的Docker架构"></p>
 <h2 id="摆脱-lxc" tabindex="-1"><a class="header-anchor" href="#摆脱-lxc" aria-hidden="true">#</a> 摆脱 LXC</h2>
 <p>对 <code v-pre>LXC</code> 的依赖自始至终都是个问题。</p>
 <p>首先，<code v-pre>LXC</code> 是基于 Linux 的。这对于一个立志于跨平台的项目来说是个问题。</p>
@@ -86,8 +87,8 @@
 <p>containerd 是由 Docker 公司开发的，并捐献给了云原生计算基金会（Cloud Native Computing Foundation, CNCF）。2017 年 12 月发布了 1.0 版本，具体的发布信息见 GitHub 中的 containerd/ containerd 库的 releases。</p>
 <h2 id="启动一个新的容器" tabindex="-1"><a class="header-anchor" href="#启动一个新的容器" aria-hidden="true">#</a> 启动一个新的容器</h2>
 <p>现在我们对 Docker 引擎已经有了一个总体认识，也了解了一些历史，下面介绍一下创建新容器的过程。</p>
-<p>常用的启动容器的方法就是使用 Docker 命令行工具。下面的<code v-pre>docker container run</code>命令会基于 alpine:latest 镜像启动一个新容器。</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker container run --name ctr1 -it alpine:latest sh
+<p>常用的启动容器的方法就是使用 Docker 命令行工具。下面的<code v-pre>docker container run</code>命令会基于 <code v-pre>alpine:latest</code> 镜像启动一个新容器。</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> container run <span class="token parameter variable">--name</span> ctr1 <span class="token parameter variable">-it</span> alpine:latest <span class="token function">sh</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>当使用 Docker 命令行工具执行如上命令时，Docker 客户端会将其转换为合适的 API 格式，并发送到正确的 API 端点。</p>
 <p>API 是在 daemon 中实现的。这套功能丰富、基于版本的 REST API 已经成为 Docker 的标志，并且被行业接受成为事实上的容器 API。</p>
 <p>一旦 daemon 接收到创建新容器的命令，它就会向 containerd 发出调用。daemon 已经不再包含任何创建容器的代码了！</p>
@@ -96,7 +97,7 @@
 <p>containerd 将 Docker 镜像转换为 OCI bundle，并让 runc 基于此创建一个新的容器。</p>
 <p>然后，runc 与操作系统内核接口进行通信，基于所有必要的工具（Namespace、CGroup等）来创建容器。容器进程作为 runc 的子进程启动，启动完毕后，runc 将会退出。</p>
 <p>至此，容器启动完毕。整个过程如下图所示。</p>
-<p><img src="http://c.biancheng.net/uploads/allimg/190416/4-1Z4161413112O.gif" alt="启动新容器的过程"></p>
+<p><img src="@source/markdown/images/4-1Z4161413112O.gif" alt="启动新容器的过程"></p>
 <h2 id="该模型的显著优势" tabindex="-1"><a class="header-anchor" href="#该模型的显著优势" aria-hidden="true">#</a> 该模型的显著优势</h2>
 <p>将所有的用于启动、管理容器的逻辑和代码从 daemon 中移除，意味着容器运行时与 <code v-pre>Docker deamon</code> 是解耦的，有时称之为“无守护进程的容器（daemonless container）”，如此，对 <code v-pre>Docker deamon</code> 的维护和升级工作不会影响到运行中的容器。</p>
 <p>在旧模型中，所有容器运行时的逻辑都在 daemon 中实现，启动和停止 daemon 会导致宿主机上所有运行中的容器被杀掉。</p>

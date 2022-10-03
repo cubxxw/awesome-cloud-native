@@ -1,8 +1,9 @@
 <template><div><h1 id="_3主3从redis集群扩缩容配置案例说明" tabindex="-1"><a class="header-anchor" href="#_3主3从redis集群扩缩容配置案例说明" aria-hidden="true">#</a> 3主3从redis集群扩缩容配置案例说明</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#关闭防火墙-启动docker后台服务">关闭防火墙+启动docker后台服务</router-link></li><li><router-link to="#新建6个docker实例">新建6个docker实例</router-link></li><li><router-link to="#进入容器redis-node-1并为6台机器构建集群关系">进入容器redis-node-1并为6台机器构建集群关系</router-link></li><li><router-link to="#以6381作为切入点-查看集群状态">以6381作为切入点，查看集群状态</router-link></li><li><router-link to="#主从容错切换迁移案例">主从容错切换迁移案例</router-link></li><li><router-link to="#查看集群信息cluster-check">查看集群信息cluster check</router-link></li></ul></nav>
 <p>[toc]</p>
-<h3 id="关闭防火墙-启动docker后台服务" tabindex="-1"><a class="header-anchor" href="#关闭防火墙-启动docker后台服务" aria-hidden="true">#</a> 关闭防火墙+启动docker后台服务</h3>
+<h2 id="关闭防火墙-启动docker后台服务" tabindex="-1"><a class="header-anchor" href="#关闭防火墙-启动docker后台服务" aria-hidden="true">#</a> 关闭防火墙+启动docker后台服务</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>systemctl strt docker
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="新建6个docker实例" tabindex="-1"><a class="header-anchor" href="#新建6个docker实例" aria-hidden="true">#</a> 新建6个docker实例</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="新建6个docker实例" tabindex="-1"><a class="header-anchor" href="#新建6个docker实例" aria-hidden="true">#</a> 新建6个docker实例</h2>
 <blockquote>
 <p>大规模的扩缩容，如何快速同时启动，docker提供了瞬间可达</p>
 </blockquote>
@@ -32,7 +33,7 @@ redis:6.0.8 --cluster-enabled yes --appendonly yes --port 6386
 
 docker ps
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://s2.loli.net/2022/05/12/eEPbAR1yG45qDig.png" alt="image-20220512164801906"></p>
-<h3 id="进入容器redis-node-1并为6台机器构建集群关系" tabindex="-1"><a class="header-anchor" href="#进入容器redis-node-1并为6台机器构建集群关系" aria-hidden="true">#</a> 进入容器redis-node-1并为6台机器构建集群关系</h3>
+<h2 id="进入容器redis-node-1并为6台机器构建集群关系" tabindex="-1"><a class="header-anchor" href="#进入容器redis-node-1并为6台机器构建集群关系" aria-hidden="true">#</a> 进入容器redis-node-1并为6台机器构建集群关系</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker exec -it redis-node-1 /bin/bash
 
 ifconfig #查看ip	192.168.121.129
@@ -56,7 +57,7 @@ redis-cli --cluster create 192.168.121.129:6381 192.168.121.129:6382 192.168.121
 </li>
 </ul>
 <p>​</p>
-<h3 id="以6381作为切入点-查看集群状态" tabindex="-1"><a class="header-anchor" href="#以6381作为切入点-查看集群状态" aria-hidden="true">#</a> 以6381作为切入点，查看集群状态</h3>
+<h2 id="以6381作为切入点-查看集群状态" tabindex="-1"><a class="header-anchor" href="#以6381作为切入点-查看集群状态" aria-hidden="true">#</a> 以6381作为切入点，查看集群状态</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>redis-cli -p 6381
 cluster info
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
@@ -90,7 +91,7 @@ cc788412e2b72c5a3ea3ba5cd9c80197a554382f <span class="token number">192.168</spa
 <span class="token number">127.0</span>.0.1:638<span class="token operator"><span class="token file-descriptor important">1</span>></span> 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>1,2,3三台机器是master；4，5，6三台机器是slave</strong></p>
 <p><strong>1号主机挂4号，2号主机挂5号，3号挂6号，这个是随机分配的（为什么我的这莫巧我也不知道）</strong></p>
-<h3 id="主从容错切换迁移案例" tabindex="-1"><a class="header-anchor" href="#主从容错切换迁移案例" aria-hidden="true">#</a> 主从容错切换迁移案例</h3>
+<h2 id="主从容错切换迁移案例" tabindex="-1"><a class="header-anchor" href="#主从容错切换迁移案例" aria-hidden="true">#</a> 主从容错切换迁移案例</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token number">127.0</span>.0.1:638<span class="token operator"><span class="token file-descriptor important">1</span>></span> <span class="token builtin class-name">set</span> k1 <span class="token function">vi</span>
 <span class="token punctuation">(</span>error<span class="token punctuation">)</span> MOVED <span class="token number">12706</span> <span class="token number">192.168</span>.121.129:6383
 <span class="token number">127.0</span>.0.1:638<span class="token operator"><span class="token file-descriptor important">1</span>></span> <span class="token builtin class-name">set</span> k1 v1
@@ -133,7 +134,7 @@ OK
 <span class="token operator">-</span><span class="token operator">></span> Redirected <span class="token keyword">to</span> slot <span class="token punctuation">[</span><span class="token number">325</span><span class="token punctuation">]</span> located at <span class="token number">192.168</span><span class="token number">.121</span><span class="token number">.129</span>:<span class="token number">6381</span>
 OK
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>即5号和6号slave不是在1号机，越界了，可以用<code v-pre>-c</code>集群化。会跳转到对应的redis</strong></p>
-<h3 id="查看集群信息cluster-check" tabindex="-1"><a class="header-anchor" href="#查看集群信息cluster-check" aria-hidden="true">#</a> 查看集群信息cluster check</h3>
+<h2 id="查看集群信息cluster-check" tabindex="-1"><a class="header-anchor" href="#查看集群信息cluster-check" aria-hidden="true">#</a> 查看集群信息cluster check</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>redis-cli --cluster check 192.168.121.129:6381
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>将第一台机器停掉</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker stop redis-node-1

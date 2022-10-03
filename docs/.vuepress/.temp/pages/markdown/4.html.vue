@@ -1,4 +1,5 @@
 <template><div><h1 id="docker安装" tabindex="-1"><a class="header-anchor" href="#docker安装" aria-hidden="true">#</a> docker安装</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#安装docker">安装docker</router-link></li><li><router-link to="#docker的基本组成">docker的基本组成</router-link></li><li><router-link to="#win下安装docker">win下安装docker</router-link></li><li><router-link to="#docker在window下面安装mysql">docker在window下面安装MySQL</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="安装docker" tabindex="-1"><a class="header-anchor" href="#安装docker" aria-hidden="true">#</a> 安装docker</h2>
 <ul>
@@ -42,7 +43,7 @@
 </li>
 </ul>
 </blockquote>
-<p><img src="https://s2.loli.net/2022/05/08/jM4BQrA2tPp5NDo.png" alt="image-20220508140536297"><strong>officaial image是官方的镜像</strong></p>
+<p><img src="@source/markdown/images/jM4BQrA2tPp5NDo.png" alt="image-20220508140536297"><strong>officaial image是官方的镜像</strong></p>
 <blockquote>
 <p>类似于github，有公开仓库（public）和私有（private）两种形式</p>
 </blockquote>
@@ -60,8 +61,13 @@
 <li>你可以选择在docker的应用中打开</li>
 <li>或者是对我来说不需要应用直接就在命令行中打开</li>
 </ul>
-<p><img src="https://sm.nsddd.top//typora/image-20220917104645408.png?mail:3293172751@qq.com" alt="image-20220917104645408"></p>
+<p><img src="@source/markdown/images/image-20220917104645408.pngmail3293172751@qq.png" alt="image-20220917104645408"></p>
 <h2 id="docker在window下面安装mysql" tabindex="-1"><a class="header-anchor" href="#docker在window下面安装mysql" aria-hidden="true">#</a> docker在window下面安装MySQL</h2>
+<div class="custom-container warning"><p class="custom-container-title">地址</p>
+<ul>
+<li><a href="https://github.com/3293172751/awesome-cs-course/blob/master/mysql/README.md" target="_blank" rel="noopener noreferrer">这篇在mysql中讲解<ExternalLinkIcon/></a></li>
+</ul>
+</div>
 </div></template>
 
 

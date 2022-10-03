@@ -1,11 +1,12 @@
-<template><div><h1 id="深入理解镜像底层" tabindex="-1"><a class="header-anchor" href="#深入理解镜像底层" aria-hidden="true">#</a> 深入理解镜像底层</h1>
+<template><div><h1 id="镜像底层、联合文件系统" tabindex="-1"><a class="header-anchor" href="#镜像底层、联合文件系统" aria-hidden="true">#</a> 镜像底层、联合文件系统</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#镜像">镜像</router-link></li><li><router-link to="#unionfs-联合文件系统">UnionFS(联合文件系统)</router-link></li><li><router-link to="#特性">特性：</router-link></li><li><router-link to="#重点理解">重点理解</router-link></li><li><router-link to="#docker-架构">Docker 架构</router-link></li></ul></nav>
 <h2 id="镜像" tabindex="-1"><a class="header-anchor" href="#镜像" aria-hidden="true">#</a> 镜像</h2>
 <p><strong>镜像是一种轻量级、可执行的独立软件包，包含运行某个软件所需要的所有内容，我们把应用程序和配置依赖打包成一个可以交付的运行环境，这个打包好的运行环境就叫做Image镜像</strong></p>
 <p><strong>只有通过镜像文件才能生成docker容器实例</strong></p>
 <blockquote>
 <p>我们在使用pull的时候，在下载的时候可以看到docker的镜像好像是一层层的下载</p>
 </blockquote>
-<p><img src="https://s2.loli.net/2022/05/09/YbVFK5hG9pImyH3.png" alt="image-20220509215720680"></p>
+<p><img src="@source/markdown/images/YbVFK5hG9pImyH3.png" alt="image-20220509215720680"></p>
 <p><strong>==所以说镜像是分层的==</strong></p>
 <h2 id="unionfs-联合文件系统" tabindex="-1"><a class="header-anchor" href="#unionfs-联合文件系统" aria-hidden="true">#</a> UnionFS(联合文件系统)</h2>
 <p><strong>联合文件系统是一种分层、轻量级并且高性能的文件系统，它支持对文件的修改操作来为一次提交来一层层的叠加</strong></p>
@@ -57,7 +58,7 @@
 </tr>
 </tbody>
 </table>
-<p><img src="https://s2.loli.net/2022/05/09/Exyomt4GJgAre3k.png" alt="img"></p>
+<p><img src="@source/markdown/images/Exyomt4GJgAre3k.png" alt="img"></p>
 <table>
 <thead>
 <tr>
@@ -84,7 +85,7 @@
 </tr>
 <tr>
 <td style="text-align:left">Docker Registry</td>
-<td style="text-align:left">Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。Docker Hub(<a href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">https://hub.docker.com<ExternalLinkIcon/></a>) 提供了庞大的镜像集合供使用。一个 Docker Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 <strong>&lt;仓库名&gt;:&lt;标签&gt;</strong> 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 <strong>latest</strong> 作为默认标签。</td>
+<td style="text-align:left">Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。Docker Hub(<a href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">https://hub.docker.com<ExternalLinkIcon/></a>) 提供了庞大的镜像集合供使用。一个 Docker Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 <code v-pre>&lt;仓库名&gt;:&lt;标签&gt;</code> 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 <strong>latest</strong> 作为默认标签。</td>
 </tr>
 <tr>
 <td style="text-align:left">Docker Machine</td>

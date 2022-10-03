@@ -1,4 +1,5 @@
 <template><div><h1 id="在-ubuntu-上安装-docker-引擎" tabindex="-1"><a class="header-anchor" href="#在-ubuntu-上安装-docker-引擎" aria-hidden="true">#</a> 在 Ubuntu 上安装 Docker 引擎</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#先决条件">先决条件</router-link><ul><li><router-link to="#操作系统要求">操作系统要求</router-link></li><li><router-link to="#卸载旧版本">卸载旧版本</router-link></li><li><router-link to="#支持的存储驱动程序">支持的存储驱动程序</router-link></li></ul></li><li><router-link to="#安装方法">安装方法</router-link><ul><li><router-link to="#使用存储库安装">使用存储库安装</router-link></li><li><router-link to="#从包安装">从包安装</router-link></li><li><router-link to="#使用便捷脚本安装">使用便捷脚本安装</router-link></li></ul></li><li><router-link to="#卸载-docker-引擎">卸载 Docker 引擎</router-link></li></ul></nav>
 <p>[toc]</p>
 <blockquote>
 <p>**适用于 Linux 的 Docker 桌面 **</p>
@@ -100,7 +101,7 @@ $ sudo apt-get install \
 <p>Docker 引擎已安装并正在运行。该<code v-pre>docker</code>组已创建，但未向其中添加任何用户。您需要使用<code v-pre>sudo</code>来运行 Docker 命令。继续<a href="https://docs.docker.com/engine/install/linux-postinstall/" target="_blank" rel="noopener noreferrer">Linux 后安装<ExternalLinkIcon/></a>以允许非特权用户运行 Docker 命令和其他可选配置步骤。</p>
 <p><strong>查看版本信息：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker info
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><img src="https://s2.loli.net/2022/05/08/IMC5rzTvKxS9Dlf.png" alt="image-20220508171810472" style="zoom: 23%;" />
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><img src="@source/markdown/images/IMC5rzTvKxS9Dlf.png" alt="image-20220508171810472" style="zoom: 23%;" />
 <h4 id="升级-docker-引擎" tabindex="-1"><a class="header-anchor" href="#升级-docker-引擎" aria-hidden="true">#</a> 升级 Docker 引擎</h4>
 <p>要升级 Docker Engine，首先运行<code v-pre>sudo apt-get update</code>，然后按照 <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository" target="_blank" rel="noopener noreferrer">安装说明<ExternalLinkIcon/></a>，选择您要安装的新版本。</p>
 <h3 id="从包安装" tabindex="-1"><a class="header-anchor" href="#从包安装" aria-hidden="true">#</a> 从包安装</h3>

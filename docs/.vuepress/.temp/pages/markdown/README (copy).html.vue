@@ -1,8 +1,8 @@
 <template><div><h1 id="decker" tabindex="-1"><a class="header-anchor" href="#decker" aria-hidden="true">#</a> Decker</h1>
-<div class="custom-container tip"><p class="custom-container-title">提示</p>
-<p>⚠️ 这将会是一个很特别的仓库</p>
+<p>:::
+⚠️ 这将会是一个很特别的仓库</p>
 <p>喜欢一定要在<a href="https://github.com/3293172751/cs-awesome-Block_Chain" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a>上给个⭐</p>
-</div>
+<p>:::</p>
 <h2 id="为什么要学习-decker" tabindex="-1"><a class="header-anchor" href="#为什么要学习-decker" aria-hidden="true">#</a> 为什么要学习 Decker？</h2>
 <blockquote>
 <p>Docker 是世界领先的软件容器平台。
@@ -51,9 +51,6 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></CodeGroupItem>
 </CodeGroup>
 <h2 id="🅱️最新补充" tabindex="-1"><a class="header-anchor" href="#🅱️最新补充" aria-hidden="true">#</a> 🅱️最新补充</h2>
-<div class="custom-container warning"><p class="custom-container-title">温馨提示</p>
-<p>这个板块是后面在使用<code v-pre>docker</code>慢慢补充的</p>
-</div>
 <p><RouterLink to="/markdown/41.html">💢🚝浅谈 linux 中的根文件系统（rootfs 的原理和介绍）</RouterLink></p>
 <p><RouterLink to="/markdown/42.html">💢🚝补充：Docker nginx篇</RouterLink></p>
 <p><RouterLink to="/markdown/43.html">💢🚝补充：修改docker镜像的映射端口（如何修改镜像配置文件）</RouterLink></p>

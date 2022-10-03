@@ -20,6 +20,11 @@
 <li>[ ] <a href="https://github.com/3293172751/Block_Chain/blob/master/go-advancend/README.md" target="_blank" rel="noopener noreferrer">🖱️Go 高级篇<ExternalLinkIcon/></a></li>
 </ul>
 </blockquote>
+<div class="custom-container danger"><p class="custom-container-title">提醒</p>
+<p>⚠️ 注意：脑图页面可能没办法正常渲染，建议在下面📵<a href="https://xxw.nsddd.top/s/wRSz" target="_blank" rel="noopener noreferrer"><strong>不限速在线个人云盘</strong><ExternalLinkIcon/></a>里面找到docker脑图</p>
+<p><a href="/markdown/%E8%84%91%E5%9B%BE%E7%AC%94%E8%AE%B0"> 🖱️脑图下载</a></p>
+<p>图片当初是用sm图库，对于小时访问量有限制，后期会慢慢转到服务器中。</p>
+</div>
 <h2 id="📚目录" tabindex="-1"><a class="header-anchor" href="#📚目录" aria-hidden="true">#</a> 📚目录</h2>
 <p>🐋 1. <RouterLink to="/markdown/1.html">Docker概述</RouterLink></p>
 <p>🐋 2. <RouterLink to="/markdown/2.html">docker系统架构</RouterLink></p>
@@ -62,11 +67,7 @@
 <p>🐋 39. <RouterLink to="/markdown/39.html">Compose核心概念</RouterLink></p>
 <p>🐋 40. <RouterLink to="/markdown/40.html">改造升级微服务工程docker_boot</RouterLink></p>
 <hr>
-<div class="custom-container danger"><p class="custom-container-title">警告</p>
-<p>⚠️ 注意：脑图页面可能没办法正常渲染，建议在下面📵<a href="https://xxw.nsddd.top/s/wRSz" target="_blank" rel="noopener noreferrer"><strong>不限速在线个人云盘</strong><ExternalLinkIcon/></a>里面找到docker脑图</p>
-<p><a href="/markdown/%E8%84%91%E5%9B%BE%E7%AC%94%E8%AE%B0"> 🖱️脑图下载</a></p>
-</div>
-<div class="custom-container danger"><p class="custom-container-title">STOP</p>
+<div class="custom-container danger"><p class="custom-container-title">继续往下看</p>
 <p>下面是精心打造的菜鸟成长手册，覆盖有多广~~，喜欢请在GitHub仓库给个♥，不胜感激</p>
 </div>
 <h1 id="菜鸟的成长手册⚡" tabindex="-1"><a class="header-anchor" href="#菜鸟的成长手册⚡" aria-hidden="true">#</a> 菜鸟的成长手册⚡</h1>

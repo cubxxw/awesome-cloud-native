@@ -1,4 +1,5 @@
-<template><div><h1 id="docker概述" tabindex="-1"><a class="header-anchor" href="#docker概述" aria-hidden="true">#</a> Docker概述</h1>
+<template><div><h1 id="docker是什么-可以做什么" tabindex="-1"><a class="header-anchor" href="#docker是什么-可以做什么" aria-hidden="true">#</a> Docker是什么，可以做什么？</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#😎docker是什么">😎docker是什么？？？</router-link></li><li><router-link to="#docker平台">Docker平台</router-link></li><li><router-link to="#我可以将docker用于什么">我可以将Docker用于什么？</router-link></li><li><router-link to="#docker架构">Docker架构</router-link><ul><li><router-link to="#docker守护程序">Docker守护程序</router-link></li><li><router-link to="#docker客户端">Docker客户端</router-link></li><li><router-link to="#docker注册表">Docker注册表</router-link></li><li><router-link to="#docker对象">Docker对象</router-link></li><li><router-link to="#示例docker-run命令">示例docker run命令</router-link></li></ul></li><li><router-link to="#底层技术">底层技术</router-link><ul><li><router-link to="#docker的目标">docker的目标</router-link></li></ul></li></ul></nav>
 <p>[toc]</p>
 <h2 id="😎docker是什么" tabindex="-1"><a class="header-anchor" href="#😎docker是什么" aria-hidden="true">#</a> 😎docker是什么？？？</h2>
 <p>Docker是一个用于开发，交付和运行应用程序的开放平台。Docker使您能够将应用程序与基础架构分开，从而可以快速交付软件。借助Docker，您可以以与管理应用程序相同的方式来管理基础架构。通过利用Docker的快速交付，测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行代码之间的延迟。</p>
@@ -36,7 +37,7 @@
 <blockquote>
 <p>关于PESTAPI好像是在网路里面有讲</p>
 </blockquote>
-<p><img src="https://dockerdocs.cn/images/architecture.svg" alt="Docker架构图"></p>
+<p><img src="@source/markdown/images/image-20221003095407215.png" alt="image-20221003095407215"></p>
 <blockquote>
 <p>client是客户端，docker_host是一个引擎，如果是有镜像，就会组成一个个服务器实例,是本地的库，如果本地库1没有的话就是从远程库registry上zhao</p>
 </blockquote>
@@ -58,7 +59,7 @@
 <p>容器由其映像以及在创建或启动时为其提供的任何配置选项定义。删除容器后，未存储在持久性存储中的状态更改将消失。</p>
 <h3 id="示例docker-run命令" tabindex="-1"><a class="header-anchor" href="#示例docker-run命令" aria-hidden="true">#</a> 示例<code v-pre>docker run</code>命令</h3>
 <p>以下命令运行一个<code v-pre>ubuntu</code>容器，以交互方式附加到本地命令行会话，然后运行<code v-pre>/bin/bash</code>。</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ docker run -i -t ubuntu /bin/bash    #-it
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-i</span> <span class="token parameter variable">-t</span> ubuntu /bin/bash    <span class="token comment">#-it</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>当您运行此命令时，会发生以下情况（假设您使用的是默认注册表配置）：</strong></p>
 <ol>
 <li>如果您在<code v-pre>ubuntu</code>本地没有该映像，则Docker会将其从已配置的注册表中拉出，就像您已<code v-pre>docker pull ubuntu</code>手动运行一样。</li>
@@ -68,8 +69,11 @@
 <li>Docker启-动容器并执行<code v-pre>/bin/bash</code>。由于容器是交互式运行的，并且已附加到您的终端（由于<code v-pre>-i</code>和<code v-pre>-t</code> 标志），因此您可以在输出记录到终端时使用键盘提供输入。</li>
 <li>当您键入<code v-pre>exit</code>以终止<code v-pre>/bin/bash</code>命令时，容器将停止但不会被删除。您可以重新启动或删除它。</li>
 </ol>
+<div class="custom-container warning"><p class="custom-container-title">提醒</p>
+<p>你甚至可以和容器交互式使用，就像你<code v-pre>ssh</code>进入Linux一样，你可以在进去的那一瞬间指定命令</p>
+</div>
 <h2 id="底层技术" tabindex="-1"><a class="header-anchor" href="#底层技术" aria-hidden="true">#</a> 底层技术</h2>
-<p>Docker用<a href="https://golang.org/" target="_blank" rel="noopener noreferrer">Go编程语言<ExternalLinkIcon/></a>编写，**并利用Linux内核的多种功能来交付其功能。**Docker使用一种称为的技术<code v-pre>namespaces</code>来提供称为容器的隔离工作区。运行容器时，Docker会为该容器创建一组 <em>名称空间</em>。</p>
+<p>Docker用<a href="https://golang.org/" target="_blank" rel="noopener noreferrer">Go编程语言<ExternalLinkIcon/></a>编写，**并利用Linux内核的多种功能来交付其功能。**Docker使用一种称为的技术<code v-pre>namespaces</code>来提供称为容器的隔离工作区。运行容器时，Docker会为该容器创建一组 名称空间。</p>
 <p>这些名称空间提供了一层隔离。容器的每个方面都在单独的名称空间中运行，并且对其的访问仅限于该名称空间。</p>
 <blockquote>
 <p>后面会对docker的底层源码进行解析，有兴趣的可以关注我的博客</p>
@@ -78,7 +82,7 @@
 </ul>
 </blockquote>
 <h3 id="docker的目标" tabindex="-1"><a class="header-anchor" href="#docker的目标" aria-hidden="true">#</a> docker的目标</h3>
-<p><strong>build,ship and Run Any App,Anywhere</strong></p>
+<p>build,ship and Run Any App,Anywhere</p>
 <p><strong>通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的APP（或者web或database）和运行环境能达到“一次镜像，处处运行”</strong></p>
 <p>docker是linux容器技术的一种实现。实现了跨平台和跨服务器。</p>
 </div></template>

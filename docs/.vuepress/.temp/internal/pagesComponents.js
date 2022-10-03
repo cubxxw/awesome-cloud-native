@@ -143,6 +143,8 @@ export const pagesComponents = {
   "v-53a977c2": defineAsyncComponent(() => import(/* webpackChunkName: "v-53a977c2" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_029.html.vue")),
   // path: /markdown/k8s_030.html
   "v-7934156c": defineAsyncComponent(() => import(/* webpackChunkName: "v-7934156c" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/k8s_030.html.vue")),
+  // path: /markdown/README%20(copy).html
+  "v-0b49a11f": defineAsyncComponent(() => import(/* webpackChunkName: "v-0b49a11f" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/README (copy).html.vue")),
   // path: /markdown/
   "v-72881372": defineAsyncComponent(() => import(/* webpackChunkName: "v-72881372" */"D:/文档/最近的/docker/docs/.vuepress/.temp/pages/markdown/index.html.vue")),
   // path: /404.html
