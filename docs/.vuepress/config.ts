@@ -2,7 +2,7 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-10-03 10:04:26
+ * @LastEditTime: 2022-10-03 19:45:11
  * @FilePath: \undefinedd:\文档\最近的\docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
@@ -31,7 +31,7 @@ export default {
   port: 8888,  //设置端口号
   title: '你好',  //主页
   description: '链学社致力于打造出区块链去中心化的学习平台',
-  sidebarDepth:1,   //默认显示H1 H2
+  sidebarDepth: 0,//默认显示H1 H2  -- 1:表示显示H2 H3  -- 2:表示显示H3 H4
   head:[
     ["link",{rel:"icon",href:"/img/1.jpg"}]
     //设置网站seo标志
@@ -66,7 +66,6 @@ export default {
           showInMobile: false,
         },
       ],
-
     //   '@vssue/vuepress-plugin-vssue',
     //   {
     //     // 设置平台，而不是 `api` 
@@ -150,7 +149,7 @@ export default {
     theme: defaultTheme({
         //更新时间
         // lastUpdated: 'Last Updated',
-        sidebarDepth: 3,  //侧边菜单深度
+        sidebarDepth: 1,  //侧边菜单深度
     
         //logo -- 夜间和白剑
         logoDark: 'https://sm.nsddd.top//typora/1.jpg?mail:3293172751@qq.com',
@@ -158,11 +157,20 @@ export default {
         
         // 到github修改页面 如果你按照 `organization组织/repository存储库` 的格式设置它
         // 我们会将它作为一个 GitHub 仓库
-        editLinkText: '在 GitHub 上编辑此页',
+        editLinkText: '在GitHub上贡献此页面',
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
-        // 你也可以直接将它设置为一个 URL
-        repo: '3293172751/awesome-docker',
+        // 假如文档不是放在仓库的根目录下：
+        
+        // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
+        // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
+        repoLabel: '查看源码',
+        
+        docsDir: 'docs',
+        // 假如文档放在一个特定的分支下：
+        docsBranch: 'master',
+        // 你也可以直接将它设置为一个 URL -- gitlab
+        repo: '3293172751/awesome-docker',   // 假如你的文档仓库和项目本身不在一个仓库：
         tip: '提示',
         warning: '注意',
         danger: '警告',
@@ -172,6 +180,7 @@ export default {
           '我们怎么到这来了？',
           '这是一个 404 页面',
           '看起来我们进入了错误的链接',
+          '你可以返回首页<href="https//docker.nsddd.top">首页</a>',
         ],
         backToHome: '返回首页',
         // a11y
@@ -186,18 +195,21 @@ export default {
                   {
                     text: 'Github仓库',
                     link: 'https://github.com/3293172751/cs-awesome-Block_Chain',
+                    target: '_self',
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
                   },
                   {
                     text: '我的博客',
                     link: 'http://nsddd.top',
+                    target: '_self',
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
                   },
                   {
                     text: '知乎',
                     link: 'https://www.zhihu.com/people/3293172751',
+                    target: '_blank',
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
                   },
@@ -208,8 +220,13 @@ export default {
               link: '/',
             },
             {
+                text: '📚Go语言学习',
+                link: 'https://go.nsddd.top',
+            },
+            {
               text: '⛓️链学社组织',
-              link: 'https://github.com/C-UB/'
+              link: 'https://github.com/C-UB/',
+              target:'_blank',
             }
           ],
           
@@ -273,6 +290,8 @@ export default {
                 '/markdown/42.md',
                 '/markdown/43.md',
                 '/markdown/44.md',
+                '/markdown/45.md',
+            
                 // 字符串 - 页面文件路径
                 // '/foo/bar.md',
                 {
@@ -282,6 +301,7 @@ export default {
                 },
               ],
             },
+            
           ],
   }),
 }
