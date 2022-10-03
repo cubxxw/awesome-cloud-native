@@ -1,5 +1,9 @@
 <template><div><h1 id="docker搭建gitlab-服务器" tabindex="-1"><a class="header-anchor" href="#docker搭建gitlab-服务器" aria-hidden="true">#</a> docker搭建Gitlab 服务器</h1>
 <p>[toc]</p>
+<h2 id="警告" tabindex="-1"><a class="header-anchor" href="#警告" aria-hidden="true">#</a> 警告！</h2>
+<div class="custom-container danger"><p class="custom-container-title">⚠️ 警告</p>
+<p>个人纯属爱好，搭建个人的gitlab服务器，gitlab很消耗内存</p>
+</div>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <p>我需要在服务器上面部署一个仓库，方便提交，而且供主机和服务器之间的数据传输</p>
 <ul>

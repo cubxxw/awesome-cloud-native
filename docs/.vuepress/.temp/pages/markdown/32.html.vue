@@ -1,4 +1,5 @@
 <template><div><h1 id="bridge是什么" tabindex="-1"><a class="header-anchor" href="#bridge是什么" aria-hidden="true">#</a> bridge是什么</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#bridge是什么-1">bridge是什么</router-link></li><li><router-link to="#查看-bridge-网络的详细信息-并通过-grep-获取名称项">查看 bridge 网络的详细信息，并通过 grep 获取名称项</router-link></li><li><router-link to="#案例说明">案例说明</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="bridge是什么-1" tabindex="-1"><a class="header-anchor" href="#bridge是什么-1" aria-hidden="true">#</a> bridge是什么</h2>
 <p>Docker 服务默认会创建一个 docker0 网桥（其上有一个 docker0 内部接口），该桥接网络的名称为docker0，<strong>它在内核层连通了其他的物理或虚拟网卡，这就将所有容器和本地主机都放到同一个物理网络。Docker 默认指定了 docker0 接口 的 IP 地址和子网掩码，==让主机和容器之间可以通过网桥相互通信。==</strong></p>

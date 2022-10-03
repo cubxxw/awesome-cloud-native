@@ -1,16 +1,19 @@
-<template><div><h1 id="浅谈-linux-中的根文件系统-rootfs-的原理和介绍" tabindex="-1"><a class="header-anchor" href="#浅谈-linux-中的根文件系统-rootfs-的原理和介绍" aria-hidden="true">#</a> 浅谈 linux 中的根文件系统（rootfs 的原理和介绍）</h1>
+<template><div><h2 id="浅谈-linux-中的根文件系统-rootfs-的原理和介绍" tabindex="-1"><a class="header-anchor" href="#浅谈-linux-中的根文件系统-rootfs-的原理和介绍" aria-hidden="true">#</a> 浅谈 linux 中的根文件系统（rootfs 的原理和介绍）</h2>
+<nav class="table-of-contents"><ul><li><router-link to="#浅谈-linux-中的根文件系统-rootfs-的原理和介绍">浅谈 linux 中的根文件系统（rootfs 的原理和介绍）</router-link></li><li><router-link to="#一、先交代一下文件系统">一、先交代一下文件系统</router-link></li><li><router-link to="#二、什么是根文件系统">二、什么是根文件系统</router-link></li><li><router-link to="#三、根文件系统为什么这么重要">三、根文件系统为什么这么重要</router-link></li><li><router-link to="#四、如何在内核中挂载根文件系统">四、如何在内核中挂载根文件系统</router-link></li><li><router-link to="#五、根文件系统各个常用目录简介">五、根文件系统各个常用目录简介</router-link></li><li><router-link to="#六、顺便说下-linux-文件系统的常用目录">六、顺便说下 linux 文件系统的常用目录</router-link></li></ul></nav>
 <p>[toc]</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>linux 中有一个让很多初学者都不是特别清楚的概念，叫做 “根文件系统”。我接触 linux 前前后后也好几年了，但是对这个问题，至今也不是特别的清楚，至少没法给出一个很全面很到位的解释。于是，今天我们就来理一理这个话题。</p>
-<h1 id="一、先交代一下文件系统" tabindex="-1"><a class="header-anchor" href="#一、先交代一下文件系统" aria-hidden="true">#</a> 一、先交代一下文件系统</h1>
+</div>
+<h2 id="一、先交代一下文件系统" tabindex="-1"><a class="header-anchor" href="#一、先交代一下文件系统" aria-hidden="true">#</a> 一、先交代一下文件系统</h2>
 <p>在开始讨论根文件系统这个话题之前，我们必首先交代一下文件系统这个概念。毕竟，根文件系统只是文件系统中的一种比较特殊的形式而已。根据伟大的百度百科：</p>
 <p>文件系统是操作系统用于明确存储设备（常见的是磁盘，也有基于 NAND Flash 的固态硬盘）或分区上的文件的方法和数据结构；即在存储设备上组织文件的方法。操作系统中负责管理和存储文件信息的软件机构称为文件管理系统，简称文件系统。文件系统由三部分组成：文件系统的接口，对对象操作和管理的软件集合，对象及属性。从系统角度来看，文件系统是对文件存储设备的空间进行组织和分配，负责文件存储并对存入的文件进行保护和检索的系统。具体地说，它负责为用户建立文件，存入、读出、修改、转储文件，控制文件的存取，当用户不再使用时撤销文件等。</p>
 <p>文件系统的重要性，我想大家都很清楚，不用多说了。这里有一句话，我觉得非常精辟而且到位的点出了文件系统在 linux 中的重要性：</p>
 <p>尽管内核是 linux 的核心，但<strong>文件却是用户与操作系统交互所采用的主要工具</strong>。这对 linux 来说尤其如此，这是因为在 UNIX 传统中，它使用文件 I/O 机制管理硬件设备和数据文件。</p>
-<h1 id="二、什么是根文件系统" tabindex="-1"><a class="header-anchor" href="#二、什么是根文件系统" aria-hidden="true">#</a> 二、什么是根文件系统</h1>
+<h2 id="二、什么是根文件系统" tabindex="-1"><a class="header-anchor" href="#二、什么是根文件系统" aria-hidden="true">#</a> 二、什么是根文件系统</h2>
 <p>然后来解释一下 “根文件系统” 这个名词的基本概念。同样引自百度百科的解释：</p>
 <p>根文件系统首先是内核启动时所 mount 的第一个文件系统，内核代码映像文件保存在根文件系统中，而系统引导启动程序会在根文件系统挂载之后从中把一些基本的初始化脚本和服务等加载到<a href="https://so.csdn.net/so/search?q=%E5%86%85%E5%AD%98&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreferrer">内存<ExternalLinkIcon/></a>中去运行。</p>
 <p>展开来细说就是，根文件系统首先是一种文件系统，该文件系统不仅具有普通文件系统的存储数据文件的功能，但是相对于普通的文件系统，它的特殊之处在于，它是内核启动时所挂载（mount）的第一个文件系统，内核代码的映像文件保存在根文件系统中，系统引导启动程序会在根文件系统挂载之后从中把一些初始化脚本（如 rcS,inittab）和服务加载到内存中去运行。我们要明白文件系统和内核是完全独立的两个部分。在嵌入式中移植的内核下载到开发板上，是没有办法真正的启动 Linux 操作系统的，会出现无法加载文件系统的错误。</p>
-<h1 id="三、根文件系统为什么这么重要" tabindex="-1"><a class="header-anchor" href="#三、根文件系统为什么这么重要" aria-hidden="true">#</a> 三、根文件系统为什么这么重要</h1>
+<h2 id="三、根文件系统为什么这么重要" tabindex="-1"><a class="header-anchor" href="#三、根文件系统为什么这么重要" aria-hidden="true">#</a> 三、根文件系统为什么这么重要</h2>
 <p>根文件系统之所以在前面加一个”根 “，说明它是加载其它文件系统的” 根“，那么如果没有这个根，其它的文件系统也就没有办法进行加载的。</p>
 <p>根文件系统包含系统启动时所必须的目录和关键性的文件，以及使其他文件系统得以挂载（mount）所必要的文件。例如：</p>
 <ol>
@@ -21,7 +24,7 @@
 </ol>
 <p>总之：一套 linux 体系，只有内核本身是不能工作的，必须要 rootfs（上的 etc 目录下的配置文件、/bin /sbin 等目录下的 shell 命令，还有 / lib 目录下的库文件等 ···）相配合才能工作。</p>
 <p>Linux 启动时，第一个必须挂载的是根文件系统；若系统不能从指定设备上挂载根文件系统，则系统会出错而退出启动。成功之后可以自动或手动挂载其他的文件系统。因此，一个系统中可以同时存在不同的文件系统。在 Linux 中将一个文件系统与一个存储设备关联起来的过程称为挂载（mount）。使用 mount 命令将一个文件系统附着到当前文件系统层次结构中（根）。在执行挂装时，要提供文件系统类型、文件系统和一个挂装点。根文件系统被挂载到根目录下 “/” 上后，在根目录下就有根文件系统的各个目录，文件：/bin /sbin /mnt 等，再将其他分区挂接到 / mnt 目录上，/mnt 目录下就有这个分区的各个目录和文件。</p>
-<h1 id="四、如何在内核中挂载根文件系统" tabindex="-1"><a class="header-anchor" href="#四、如何在内核中挂载根文件系统" aria-hidden="true">#</a> 四、如何在内核中挂载根文件系统</h1>
+<h2 id="四、如何在内核中挂载根文件系统" tabindex="-1"><a class="header-anchor" href="#四、如何在内核中挂载根文件系统" aria-hidden="true">#</a> 四、如何在内核中挂载根文件系统</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>init/main.c->
 
 start_kernel()->vfs_caches_init(totalram_pages)–>
@@ -73,7 +76,7 @@ root.mnt = mnt;
 [3] 处设置了 vfsmount 中的超级块；
 [4] 处设置了 vfsmount 中的文件挂载点，指向了自己；
 [5] 处设置了 vfsmount 中的父文件系统的 vfsmount 为自己；</p>
-<h1 id="五、根文件系统各个常用目录简介" tabindex="-1"><a class="header-anchor" href="#五、根文件系统各个常用目录简介" aria-hidden="true">#</a> 五、根文件系统各个常用目录简介</h1>
+<h2 id="五、根文件系统各个常用目录简介" tabindex="-1"><a class="header-anchor" href="#五、根文件系统各个常用目录简介" aria-hidden="true">#</a> 五、根文件系统各个常用目录简介</h2>
 <p>正常来说，根文件系统至少包括以下目录：</p>
 <ol>
 <li>/etc/：存储重要的配置文件。</li>
@@ -83,8 +86,7 @@ root.mnt = mnt;
 <li>/dev/：存储设备文件。</li>
 </ol>
 <p>注：五大目录必须存储在根文件系统上，缺一不可。</p>
-<h1 id="六、顺便说下-linux-文件系统的常用目录" tabindex="-1"><a class="header-anchor" href="#六、顺便说下-linux-文件系统的常用目录" aria-hidden="true">#</a> 六、顺便说下 linux 文件系统的常用目录</h1>
-<h3 id="linux-文件系统中一般有如下几个目录" tabindex="-1"><a class="header-anchor" href="#linux-文件系统中一般有如下几个目录" aria-hidden="true">#</a> Linux 文件系统中一般有如下几个目录：</h3>
+<h2 id="六、顺便说下-linux-文件系统的常用目录" tabindex="-1"><a class="header-anchor" href="#六、顺便说下-linux-文件系统的常用目录" aria-hidden="true">#</a> 六、顺便说下 linux 文件系统的常用目录</h2>
 <ol>
 <li><strong>/bin 目录</strong>
 该目录下存放所有用户都可以使用的、基本的命令，这些命令在挂接其它文件系统之前就可以使用，所以 / bin 目录必须和根文件系统在同一个分区中。

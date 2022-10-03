@@ -1,7 +1,8 @@
-<template><div><h1 id="修改docker镜像的映射端口-如何修改镜像配置文件" tabindex="-1"><a class="header-anchor" href="#修改docker镜像的映射端口-如何修改镜像配置文件" aria-hidden="true">#</a> 修改docker镜像的映射端口（如何修改镜像配置文件）</h1>
+<template><div><h1 id="修改或添加docker镜像的映射端口-如何修改镜像配置文件" tabindex="-1"><a class="header-anchor" href="#修改或添加docker镜像的映射端口-如何修改镜像配置文件" aria-hidden="true">#</a> 修改或添加docker镜像的映射端口（如何修改镜像配置文件）</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#停止镜像">停止镜像</router-link></li><li><router-link to="#停止docker服务">停止docker服务</router-link></li><li><router-link to="#进入docker容器内部文件目录">进入docker容器内部文件目录</router-link></li><li><router-link to="#备份原有文件-出现问题后可以还原回去。">备份原有文件，出现问题后可以还原回去。</router-link></li><li><router-link to="#修改hostconfig-json">修改hostconfig.json</router-link></li><li><router-link to="#修改config-v2-json">修改config.v2.json</router-link></li><li><router-link to="#启动docker服务">启动docker服务</router-link></li><li><router-link to="#启动docker容器">启动docker容器</router-link></li><li><router-link to="#docker开启多个端口">docker开启多个端口</router-link></li></ul></nav>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <p><strong>由于一些原因，导致自己开启的端口后面需要用到，所以必须要切换端口映射</strong></p>
-<p><img src="https://sm.nsddd.top//typora/image-20220917190839148.png?mail:3293172751@qq.com" alt="image-20220917190839148"></p>
+<p><img src="@source/markdown/images/image-20220917190839148.pngmail3293172751@qq.png" alt="image-20220917190839148"></p>
 <p>上面可以看到MySQL的端口是<code v-pre>3306</code>，我们将会在后面对它改一下，再加上我们之间没有对容器镜像的配置文件进行操作。</p>
 <blockquote>
 <p>下面是修改配置文件 — 修改MySQL的端口映射过程</p>
@@ -18,7 +19,7 @@ Warning: Stopping docker.service, but it can still be activated by:
 <p>id是容器id开头的那一长串。我的是Ubuntu系统</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@ubuntu:/var/lib/docker/containers# pwd
 /var/lib/docker/containers
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top//typora/image-20220917191657815.png?mail:3293172751@qq.com" alt="image-20220917191657815"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/markdown/images/image-20220917191657815.pngmail3293172751@qq.png" alt="image-20220917191657815"></p>
 </blockquote>
 <p><strong>查找位置，进去</strong></p>
 <p><img src="https://sm.nsddd.top//typora/image-20220917191755516.png?mail:3293172751@qq.com" alt="image-20220917191755516"></p>
@@ -55,8 +56,7 @@ cp config.v2.json config-bak.v2.json
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>"Ports":{"443/tcp":[{"HostIp":"0.0.0.0","HostPort":"443"}],"80/tcp":[{"HostIp":"0.0.0.0","HostPort":"80"}]}
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="启动docker服务" tabindex="-1"><a class="header-anchor" href="#启动docker服务" aria-hidden="true">#</a> 启动docker服务</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>systemctl start docker
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote></blockquote>
-<h2 id="启动docker容器" tabindex="-1"><a class="header-anchor" href="#启动docker容器" aria-hidden="true">#</a> 启动docker容器</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="启动docker容器" tabindex="-1"><a class="header-anchor" href="#启动docker容器" aria-hidden="true">#</a> 启动docker容器</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code> docker start 1f2f202dab24
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top//typora/image-20220917193830270.png?mail:3293172751@qq.com" alt="image-20220917193830270"></p>
 <p>需要注意的是，docker修改完映射端口后，docker的ip可能会发生变化。</p>

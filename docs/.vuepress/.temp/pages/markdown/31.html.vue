@@ -1,17 +1,20 @@
 <template><div><h1 id="docker网络模式" tabindex="-1"><a class="header-anchor" href="#docker网络模式" aria-hidden="true">#</a> docker网络模式</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#总体介绍">总体介绍</router-link></li><li><router-link to="#查看配置">查看配置</router-link></li></ul></nav>
 <h3 id="总体介绍" tabindex="-1"><a class="header-anchor" href="#总体介绍" aria-hidden="true">#</a> 总体介绍</h3>
-<p><img src="https://s2.loli.net/2022/05/14/udMYZbpm9a1vLHJ.jpg" alt="graphic"></p>
+<p><img src="@source/markdown/images/udMYZbpm9a1vLHJ.jpg" alt="graphic"></p>
+<div class="custom-container warning"><p class="custom-container-title">docker网络的几种模式</p>
 <ul>
 <li><strong>bridge模式：使用--network bridge指定，默认使用docker0</strong></li>
 <li><strong>host模式：使用--network host指定</strong></li>
 <li><strong>none模式：使用--network none指定</strong></li>
 <li><strong>container模式：使用--network container:NAME或者容器ID指定</strong></li>
 </ul>
+</div>
 <p><strong>容器实例内默认网络IP生产规则</strong></p>
 <blockquote>
 <p>最常用的是brige，每一个容器都分配、设置ip等</p>
 </blockquote>
-<h3 id="查看配置" tabindex="-1"><a class="header-anchor" href="#查看配置" aria-hidden="true">#</a> 查看配置</h3>
+<h2 id="查看配置" tabindex="-1"><a class="header-anchor" href="#查看配置" aria-hidden="true">#</a> 查看配置</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker inspect cc5b5241882b
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><hr>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:/<span class="token comment"># docker ps</span>

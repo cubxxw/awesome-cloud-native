@@ -1,9 +1,9 @@
 <template><div><h1 id="container是什么" tabindex="-1"><a class="header-anchor" href="#container是什么" aria-hidden="true">#</a> container是什么</h1>
 <p>[toc]</p>
-<h3 id="container网络模式" tabindex="-1"><a class="header-anchor" href="#container网络模式" aria-hidden="true">#</a> container⽹络模式</h3>
+<h2 id="container网络模式" tabindex="-1"><a class="header-anchor" href="#container网络模式" aria-hidden="true">#</a> container⽹络模式</h2>
 <p><strong>新建的容器和已经存在的一个容器共享一个网络ip配置而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。同样，两个容器除了网络方面，其他的如文件系统、进程列表等还是隔离的。</strong></p>
 <p><img src="https://s2.loli.net/2022/05/15/6fVpoYeywxavmUu.jpg" alt="graphic"></p>
-<p>案例</p>
+<h2 id="案例" tabindex="-1"><a class="header-anchor" href="#案例" aria-hidden="true">#</a> 案例</h2>
 <table>
 <thead>
 <tr>
@@ -23,12 +23,11 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>再配置一个8086借用8085</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -d -p 8086:8080 --network container:tomcat85 --name tomcat86 billygoo/tomcat8-jdk8
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>运行结果</strong></p>
-<p><img src="https://s2.loli.net/2022/05/15/QNitcHF6LbfRYoz.png" alt="image-20220515120645211"></p>
+<p><img src="@source/markdown/images/QNitcHF6LbfRYoz.png" alt="image-20220515120645211"></p>
 <p><strong>相当于tomcat86和tomcat85公用同一个ip同一个端口，导致端口冲突</strong></p>
 <p><strong>本案例用tomcat演示不合适。。。演示坑。。。。。。o(╥﹏╥)o</strong></p>
 <hr>
-<p>换一个演示：</p>
-<h3 id="案例2" tabindex="-1"><a class="header-anchor" href="#案例2" aria-hidden="true">#</a> 案例2</h3>
+<h2 id="案例2" tabindex="-1"><a class="header-anchor" href="#案例2" aria-hidden="true">#</a> 案例2</h2>
 <table>
 <thead>
 <tr>

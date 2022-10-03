@@ -1,4 +1,5 @@
 <template><div><h1 id="编写自定义镜像myubuntu" tabindex="-1"><a class="header-anchor" href="#编写自定义镜像myubuntu" aria-hidden="true">#</a> 编写自定义镜像myubuntu</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#装备">装备</router-link></li><li><router-link to="#编写文件">编写文件</router-link></li></ul></nav>
 <h2 id="装备" tabindex="-1"><a class="header-anchor" href="#装备" aria-hidden="true">#</a> 装备</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@ubuntu:/text# pwd
 /text
@@ -7,7 +8,7 @@ total 12
 drwxr-xr-x  2 root root 4096 May 13 06:56 ./
 drwxr-xr-x 33 root root 4096 May 13 06:55 ../
 -rw-r--r--  1 root root  321 May 13 06:56 Mydockerfile
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="编写文件" tabindex="-1"><a class="header-anchor" href="#编写文件" aria-hidden="true">#</a> 编写文件</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="编写文件" tabindex="-1"><a class="header-anchor" href="#编写文件" aria-hidden="true">#</a> 编写文件</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>FROM ubuntu
 MAINTAINER zzyy<span class="token operator">&lt;</span>zzyybs@126.com<span class="token operator">></span>
  
@@ -32,7 +33,7 @@ CMD /bin/bash
 <li>运行</li>
 </ul>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -it 新镜像名字:TAG
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://s2.loli.net/2022/05/13/ATxWkaiCdcJwv2g.png" alt="image-20220513221602143"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="@source/markdown/images/ATxWkaiCdcJwv2g.png" alt="image-20220513221602143"></p>
 </div></template>
 
 
