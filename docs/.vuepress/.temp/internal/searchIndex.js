@@ -1010,35 +1010,35 @@ export const searchIndex = [
     "title": "DockerFile解析",
     "headers": [
       {
-        "level": 3,
+        "level": 2,
         "title": "需求",
         "slug": "需求",
         "link": "#需求",
         "children": []
       },
       {
-        "level": 3,
+        "level": 2,
         "title": "DockerFile",
         "slug": "dockerfile",
         "link": "#dockerfile",
         "children": []
       },
       {
-        "level": 3,
+        "level": 2,
         "title": "应用软件的角度",
         "slug": "应用软件的角度",
         "link": "#应用软件的角度",
         "children": []
       },
       {
-        "level": 3,
+        "level": 2,
         "title": "dockerfile内容基础",
         "slug": "dockerfile内容基础",
         "link": "#dockerfile内容基础",
         "children": []
       },
       {
-        "level": 3,
+        "level": 2,
         "title": "docker执行dockerfile的流程",
         "slug": "docker执行dockerfile的流程",
         "link": "#docker执行dockerfile的流程",
@@ -1049,29 +1049,7 @@ export const searchIndex = [
         "title": "构建步骤",
         "slug": "构建步骤",
         "link": "#构建步骤",
-        "children": [
-          {
-            "level": 3,
-            "title": "1. 编写dockerfile文件",
-            "slug": "_1-编写dockerfile文件",
-            "link": "#_1-编写dockerfile文件",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "2. docker build创建镜像",
-            "slug": "_2-docker-build创建镜像",
-            "link": "#_2-docker-build创建镜像",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "3. docker run依照镜像运行容器实例",
-            "slug": "_3-docker-run依照镜像运行容器实例",
-            "link": "#_3-docker-run依照镜像运行容器实例",
-            "children": []
-          }
-        ]
+        "children": []
       }
     ],
     "path": "/markdown/24.html",
@@ -1118,7 +1096,7 @@ export const searchIndex = [
         "children": [
           {
             "level": 3,
-            "title": "要求：",
+            "title": "要求",
             "slug": "要求",
             "link": "#要求",
             "children": []
@@ -1729,15 +1707,8 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
+    "title": "浅谈 linux 中的根文件系统（rootfs 的原理和介绍）",
     "headers": [
-      {
-        "level": 2,
-        "title": "浅谈 linux 中的根文件系统（rootfs 的原理和介绍）",
-        "slug": "浅谈-linux-中的根文件系统-rootfs-的原理和介绍",
-        "link": "#浅谈-linux-中的根文件系统-rootfs-的原理和介绍",
-        "children": []
-      },
       {
         "level": 2,
         "title": "一、先交代一下文件系统",
@@ -1908,7 +1879,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "修改或添加docker镜像的映射端口（如何修改镜像配置文件）",
+    "title": "修改或添加映射端口-修改镜像配置",
     "headers": [
       {
         "level": 2,
@@ -2411,15 +2382,66 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
-    "headers": [],
+    "title": "k8s介绍",
+    "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "dockerfile",
+        "slug": "dockerfile",
+        "link": "#dockerfile",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "run命令",
+        "slug": "run命令",
+        "link": "#run命令",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "参考",
+        "slug": "参考",
+        "link": "#参考",
+        "children": []
+      }
+    ],
     "path": "/markdown/k8s_011.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
-    "title": "",
-    "headers": [],
+    "title": "docker三驾马车",
+    "headers": [
+      {
+        "level": 3,
+        "title": "Docker Compose",
+        "slug": "docker-compose",
+        "link": "#docker-compose",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker Machine",
+        "slug": "docker-machine",
+        "link": "#docker-machine",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker Swarm",
+        "slug": "docker-swarm",
+        "link": "#docker-swarm",
+        "children": []
+      }
+    ],
     "path": "/markdown/k8s_012.html",
     "pathLocale": "/",
     "extraFields": []
