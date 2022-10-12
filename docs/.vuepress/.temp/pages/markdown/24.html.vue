@@ -20,7 +20,7 @@
 <li>docker镜像是软件的交付品</li>
 <li>docker容器则可以认为是镜像的运行态，也即依照镜像运行的容器实例</li>
 </ul>
-<p><img src="@source/markdown/images/JqBckovlsptOPSE.jpg" alt="graphic"></p>
+<p><img src="https://sm.nsddd.top/smJqBckovlsptOPSE.jpg?xxw@nsddd.top" alt="docker-graphic"></p>
 <h2 id="dockerfile内容基础" tabindex="-1"><a class="header-anchor" href="#dockerfile内容基础" aria-hidden="true">#</a> dockerfile内容基础</h2>
 <ul>
 <li>每条指令必须为<strong>大写字母</strong>并且后至少有一个参数</li>
@@ -30,22 +30,22 @@
 </ul>
 <h2 id="docker执行dockerfile的流程" tabindex="-1"><a class="header-anchor" href="#docker执行dockerfile的流程" aria-hidden="true">#</a> docker执行dockerfile的流程</h2>
 <ol>
-<li>docker从基础镜像中运行一个容器</li>
+<li><code v-pre>docker</code>从基础镜像中运行一个容器</li>
 <li>执行一条指令并对容器做出修改</li>
-<li>执行类似docker commit的操作提交一个新的镜像层</li>
-<li>docker再基于刚提交的镜像运行一个新的容器</li>
-<li>执行dockerfile中的下一条指令直到所有指令都执行完毕</li>
+<li>执行类似<code v-pre>docker commit</code>的操作提交一个新的镜像层</li>
+<li><code v-pre>docker</code>再基于刚提交的镜像运行一个新的容器</li>
+<li>执行<code v-pre>dockerfile</code>中的下一条指令直到所有指令都执行完毕</li>
 </ol>
 <h2 id="构建步骤" tabindex="-1"><a class="header-anchor" href="#构建步骤" aria-hidden="true">#</a> 构建步骤</h2>
 <ol>
 <li>
-<p>编写dockerfile文件</p>
+<p>编写<code v-pre>dockerfile</code>文件</p>
 </li>
 <li>
-<p>docker build创建镜像</p>
+<p><code v-pre>docker build</code>创建镜像</p>
 </li>
 <li>
-<p>docker run依照镜像运行容器实例</p>
+<p><code v-pre>docker run</code> 依照镜像运行容器实例</p>
 </li>
 </ol>
 </div></template>

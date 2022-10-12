@@ -216,18 +216,18 @@ WORKDIR <span class="token variable">$CATALINA_HOME</span>
 <li><strong>cmd是docker run时运行</strong></li>
 <li><strong>run是docker build时运行</strong></li>
 </ul>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>EXPOSE 8080
-CMD ["catalina.sh", "run"]
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>EXPOSE <span class="token number">8080</span>
+CMD <span class="token punctuation">[</span><span class="token string">"catalina.sh"</span>, <span class="token string">"run"</span><span class="token punctuation">]</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>
 <p><code v-pre>entrypoint</code>：也是用来指定一个容器启动时要运行的命令</p>
 <ul>
-<li>类似于cmd指令，可以和cmd一起用</li>
+<li>类似于<code v-pre>cmd</code>指令，可以和<code v-pre>cmd</code>一起用</li>
 </ul>
 </li>
 </ul>
 <h2 id="补充" tabindex="-1"><a class="header-anchor" href="#补充" aria-hidden="true">#</a> 补充：</h2>
-<p>案例如下：假设已通过 Dockerfile 构建了 nginx:test 镜像：</p>
+<p>案例如下：假设已通过 <code v-pre>Dockerfile</code> 构建了 <code v-pre>nginx:test</code> 镜像：</p>
 <p><img src="@source/markdown/images/2W6k1Q4qxgDR9NL.jpg" alt="graphic"></p>
 <table>
 <thead>
@@ -251,9 +251,9 @@ CMD ["catalina.sh", "run"]
 </tbody>
 </table>
 <p><code v-pre>ENV MY_PATH /usr/mytest</code></p>
-<p>这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样；</p>
+<p>这个环境变量可以在后续的任何<code v-pre>RUN</code>指令中使用，这就如同在命令前面指定了环境变量前缀一样；</p>
 <p>也可以在其它指令中直接使用这些环境变量，</p>
-<p>比如：WORKDIR $MY_PATH</p>
+<p>比如：<code v-pre>WORKDIR $MY_PATH</code></p>
 </div></template>
 
 
