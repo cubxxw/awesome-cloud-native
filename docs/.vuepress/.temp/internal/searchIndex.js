@@ -1050,6 +1050,63 @@ export const searchIndex = [
         "slug": "构建步骤",
         "link": "#构建步骤",
         "children": []
+      },
+      {
+        "level": 2,
+        "title": "RUN 执行命令",
+        "slug": "run-执行命令",
+        "link": "#run-执行命令",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "构建镜像",
+        "slug": "构建镜像",
+        "link": "#构建镜像",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "镜像构建上下文（Context）",
+        "slug": "镜像构建上下文-context",
+        "link": "#镜像构建上下文-context",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "其它 docker build 的用法",
+        "slug": "其它-docker-build-的用法",
+        "link": "#其它-docker-build-的用法",
+        "children": [
+          {
+            "level": 3,
+            "title": "直接用 Git repo 进行构建",
+            "slug": "直接用-git-repo-进行构建",
+            "link": "#直接用-git-repo-进行构建",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "用给定的 tar 压缩包构建",
+            "slug": "用给定的-tar-压缩包构建",
+            "link": "#用给定的-tar-压缩包构建",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从标准输入中读取 Dockerfile 进行构建",
+            "slug": "从标准输入中读取-dockerfile-进行构建",
+            "link": "#从标准输入中读取-dockerfile-进行构建",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从标准输入中读取上下文压缩包进行构建",
+            "slug": "从标准输入中读取上下文压缩包进行构建",
+            "link": "#从标准输入中读取上下文压缩包进行构建",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/markdown/24.html",

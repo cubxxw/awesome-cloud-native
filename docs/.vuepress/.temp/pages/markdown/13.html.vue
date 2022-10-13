@@ -75,7 +75,7 @@ f19e7fbc3d18   v2fly/v2fly-core   <span class="token string">"/usr/bin/v2ray -co
 <blockquote>
 <p>我们把标签改为ubuntu，这样的话辨识度高，而且不需要创建多个仓库</p>
 </blockquote>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>tag xiongxinwei/mysql:5.7 3293172751/mysql5.7:ubuntu
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker tag xiongxinwei/mysql:5.7 3293172751/mysql5.7:ubuntu
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>❗❗ <code v-pre>push</code>推送</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker push  3293172751/mysql5.7:ubuntu
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div></template>
