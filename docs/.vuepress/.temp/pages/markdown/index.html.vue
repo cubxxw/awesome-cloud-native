@@ -1,9 +1,9 @@
-<template><div><h1 id="decker" tabindex="-1"><a class="header-anchor" href="#decker" aria-hidden="true">#</a> Decker</h1>
+<template><div><h1 id="docker" tabindex="-1"><a class="header-anchor" href="#docker" aria-hidden="true">#</a> Docker</h1>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>这将会是一个很特别的仓库</p>
 <p>喜欢一定要在<a href="https://github.com/3293172751/cs-awesome-Block_Chain" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a>上给个⭐</p>
 </div>
-<h2 id="为什么要学习-decker" tabindex="-1"><a class="header-anchor" href="#为什么要学习-decker" aria-hidden="true">#</a> 为什么要学习 Decker？</h2>
+<h2 id="为什么要学习-docker" tabindex="-1"><a class="header-anchor" href="#为什么要学习-docker" aria-hidden="true">#</a> 为什么要学习 Docker？</h2>
 <blockquote>
 <p>Docker 是世界领先的软件容器平台。
 开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。

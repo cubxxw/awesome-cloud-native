@@ -71,6 +71,6 @@ export const pagesRoutes = [
   ["v-53a977c2","/markdown/k8s_029.html",{"title":""},["/markdown/k8s_029","/markdown/k8s_029.md"]],
   ["v-7934156c","/markdown/k8s_030.html",{"title":""},["/markdown/k8s_030","/markdown/k8s_030.md"]],
   ["v-0b49a11f","/markdown/README%20(copy).html",{"title":"Decker"},["/markdown/README (copy).html","/markdown/README%20(copy)","/markdown/README (copy).md","/markdown/README%20(copy).md"]],
-  ["v-72881372","/markdown/",{"title":"Decker"},["/markdown/index.html","/markdown/README.md"]],
+  ["v-72881372","/markdown/",{"title":"Docker"},["/markdown/index.html","/markdown/README.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]

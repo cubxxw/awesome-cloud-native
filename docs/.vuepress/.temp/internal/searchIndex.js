@@ -2730,13 +2730,13 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "Decker",
+    "title": "Docker",
     "headers": [
       {
         "level": 2,
-        "title": "为什么要学习 Decker？",
-        "slug": "为什么要学习-decker",
-        "link": "#为什么要学习-decker",
+        "title": "为什么要学习 Docker？",
+        "slug": "为什么要学习-docker",
+        "link": "#为什么要学习-docker",
         "children": []
       },
       {

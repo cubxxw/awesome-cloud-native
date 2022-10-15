@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-8c7a4212","path":"/markdown/50.html","title":"\u7A7A\u767D\u9875","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1665799596000,"contributors":[{"name":"xiongxinwei","email":"3293172751nss@gmail.com","commits":4}]},"filePathRelative":"markdown/50.md"}');export{t as data};
