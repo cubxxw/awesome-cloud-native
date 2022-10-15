@@ -57,6 +57,8 @@
 <p><RouterLink to="/markdown/41.html">💢🚝浅谈 linux 中的根文件系统（rootfs 的原理和介绍）</RouterLink></p>
 <p><RouterLink to="/markdown/42.html">💢🚝补充：Docker nginx篇</RouterLink></p>
 <p><RouterLink to="/markdown/43.html">💢🚝补充：修改docker镜像的映射端口（如何修改镜像配置文件）</RouterLink></p>
+<p><RouterLink to="/markdown/44.html">💢🚝补充：docker搭建Gitlab 服务器</RouterLink></p>
+<p><RouterLink to="/markdown/45.html">💢🚝补充：docker搭建jenkins）</RouterLink></p>
 <h2 id="🗒️docker基础篇目录" tabindex="-1"><a class="header-anchor" href="#🗒️docker基础篇目录" aria-hidden="true">#</a> 🗒️Docker基础篇目录</h2>
 <p>🐋 1. <RouterLink to="/markdown/1.html">Docker概述</RouterLink></p>
 <p>🐋 2. <RouterLink to="/markdown/2.html">docker系统架构</RouterLink></p>

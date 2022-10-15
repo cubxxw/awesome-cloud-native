@@ -1,6 +1,96 @@
 <template><div><h1 id="dockerfile保留字" tabindex="-1"><a class="header-anchor" href="#dockerfile保留字" aria-hidden="true">#</a> dockerfile保留字</h1>
 <p>[toc]</p>
-<h2 id="参考dockerfile" tabindex="-1"><a class="header-anchor" href="#参考dockerfile" aria-hidden="true">#</a> 参考dockerfile</h2>
+<h2 id="参数讲解" tabindex="-1"><a class="header-anchor" href="#参数讲解" aria-hidden="true">#</a> 参数讲解</h2>
+<ul>
+<li>
+<p><code v-pre>from</code>：基础镜像，一般来自哪个（继承）</p>
+</li>
+<li>
+<p><code v-pre>maintainer</code>：镜像维护者的姓名和邮箱地址</p>
+</li>
+<li>
+<p><code v-pre>run</code>：容器构建时候执行的命令（docker build)</p>
+<ul>
+<li>shell格式</li>
+<li>exec格式</li>
+</ul>
+</li>
+<li>
+<p><code v-pre>expose</code>：当前容器对外暴露的端口</p>
+</li>
+<li>
+<p><code v-pre>workdir</code>：指定创建容器后，终端默认登陆进来的工作目录</p>
+</li>
+<li>
+<p><code v-pre>user</code>：指定镜像以什么样的用户进行（一般不用）</p>
+</li>
+<li>
+<p><code v-pre>env</code>：用来在构建镜像过程中设置环境变量</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>ENV CATALINA_HOME /usr/local/tomcat
+ENV <span class="token environment constant">PATH</span> <span class="token variable">$CATALINA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+RUN <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token string">"<span class="token variable">$CATALINA_HOME</span>"</span>
+WORKDIR <span class="token variable">$CATALINA_HOME</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p><code v-pre>add</code>：将宿主目录下的文件拷贝到镜像且自动处理URL和解压的tar压缩包(一般使用copy不适用add)</p>
+</li>
+<li>
+<p><code v-pre>copy</code>：（类似于add），将构建的文件、目录复制到新的一层镜像内</p>
+<p><strong>·     <code v-pre>COPY src dest</code></strong></p>
+<p><strong>·     <code v-pre>COPY [&quot;src&quot;, &quot;dest&quot;]</code></strong></p>
+<p><strong>·     <code v-pre>&lt;src源路径&gt;</code>：源文件或者源目录</strong></p>
+<p><strong>·     <code v-pre>&lt;dest目标路径&gt;</code>：容器内的指定路径，该路径不用事先建好，路径不存在的话，会自动创建。</strong></p>
+</li>
+<li>
+<p><code v-pre>volume</code>：容器卷，相当于<code v-pre>-v</code></p>
+</li>
+<li>
+<p><strong><code v-pre>cmd</code>：启动容器后需要做的事情</strong></p>
+<ul>
+<li><strong>类似于<code v-pre>run</code>，也支持shell或者exec</strong></li>
+<li><strong>dockerfile中可以用多个<code v-pre>cmd</code>指令，但只有最后一个生效，cmd会被docker run之后的参数替换</strong></li>
+<li><strong>可以想到是<code v-pre>bin/bash</code>，catalina.sh将其覆盖</strong></li>
+<li><strong>cmd是docker run时运行</strong></li>
+<li><strong>run是docker build时运行</strong></li>
+</ul>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>EXPOSE <span class="token number">8080</span>
+CMD <span class="token punctuation">[</span><span class="token string">"catalina.sh"</span>, <span class="token string">"run"</span><span class="token punctuation">]</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p><code v-pre>entrypoint</code>：也是用来指定一个容器启动时要运行的命令</p>
+<ul>
+<li>类似于<code v-pre>cmd</code>指令，可以和<code v-pre>cmd</code>一起用</li>
+</ul>
+</li>
+</ul>
+<h2 id="上手" tabindex="-1"><a class="header-anchor" href="#上手" aria-hidden="true">#</a> 上手</h2>
+<blockquote>
+<p>我们以创建一个<code v-pre>dockerfile</code>为例</p>
+</blockquote>
+<p>创建<code v-pre>Dockerfile</code>文件，注意一定要是<code v-pre>D</code>大写</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>touch Dockerfile
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>编写<code v-pre>Dockerfile</code>：</p>
+<blockquote>
+<p>💡 注意：除了<code v-pre>FROM</code>语句其他都是非必须的！</p>
+</blockquote>
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> aloine</span>
+<span class="token comment"># 指定shell语句运行在哪个路径下</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /app  </span>
+<span class="token comment"># 将宿主机的文件拷贝到容器app下面</span>
+<span class="token instruction"><span class="token keyword">COPY</span> src/ /app</span>
+<span class="token comment">#运行的是shell语句</span>
+<span class="token instruction"><span class="token keyword">RUN</span> echo 321 >> 1.txt</span>
+<span class="token comment">#一般执行CMD后就结束了，所以选择的是阻塞式脚本 </span>
+<span class="token instruction"><span class="token keyword">CMD</span> tail -f 1.txt</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行<code v-pre>Dockerfile</code>脚本</p>
+<ul>
+<li><code v-pre>-t</code> 指定名称</li>
+<li><code v-pre>.</code> 指定当前目录下</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker build -t test . 
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>运行</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run test
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="参考dockerfile" tabindex="-1"><a class="header-anchor" href="#参考dockerfile" aria-hidden="true">#</a> 参考dockerfile</h2>
 <p><strong>参考tomcat8的dockerfile入门</strong></p>
 <ul>
 <li><strong>https://github.com/docker-library/tomcat/blob/master/10.0/jdk8/corretto/Dockerfile</strong></li>
@@ -163,70 +253,7 @@ RUN <span class="token builtin class-name">set</span> -eux<span class="token pun
 
 EXPOSE <span class="token number">8080</span>
 CMD <span class="token punctuation">[</span><span class="token string">"catalina.sh"</span>, <span class="token string">"run"</span><span class="token punctuation">]</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="参数讲解" tabindex="-1"><a class="header-anchor" href="#参数讲解" aria-hidden="true">#</a> 参数讲解</h2>
-<ul>
-<li>
-<p><code v-pre>from</code>：基础镜像，一般来自哪个（继承）</p>
-</li>
-<li>
-<p><code v-pre>maintainer</code>：镜像维护者的姓名和邮箱地址</p>
-</li>
-<li>
-<p><code v-pre>run</code>：容器构建时候执行的命令（docker build)</p>
-<ul>
-<li>shell格式</li>
-<li>exec格式</li>
-</ul>
-</li>
-<li>
-<p><code v-pre>expose</code>：当前容器对外暴露的端口</p>
-</li>
-<li>
-<p><code v-pre>workdir</code>：指定创建容器后，终端默认登陆进来的工作目录</p>
-</li>
-<li>
-<p><code v-pre>user</code>：指定镜像以什么样的用户进行（一般不用）</p>
-</li>
-<li>
-<p><code v-pre>env</code>：用来在构建镜像过程中设置环境变量</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>ENV CATALINA_HOME /usr/local/tomcat
-ENV <span class="token environment constant">PATH</span> <span class="token variable">$CATALINA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
-RUN <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token string">"<span class="token variable">$CATALINA_HOME</span>"</span>
-WORKDIR <span class="token variable">$CATALINA_HOME</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
-<li>
-<p><code v-pre>add</code>：将宿主目录下的文件拷贝到镜像且自动处理URL和解压的tar压缩包</p>
-</li>
-<li>
-<p><code v-pre>copy</code>：（类似于add），将构建的文件、目录复制到新的一层镜像内</p>
-<p><strong>·     <code v-pre>COPY src dest</code></strong></p>
-<p><strong>·     <code v-pre>COPY [&quot;src&quot;, &quot;dest&quot;]</code></strong></p>
-<p><strong>·     <code v-pre>&lt;src源路径&gt;</code>：源文件或者源目录</strong></p>
-<p><strong>·     <code v-pre>&lt;dest目标路径&gt;</code>：容器内的指定路径，该路径不用事先建好，路径不存在的话，会自动创建。</strong></p>
-</li>
-<li>
-<p><code v-pre>volume</code>：容器卷，相当于<code v-pre>-v</code></p>
-</li>
-<li>
-<p><strong><code v-pre>cmd</code>：启动容器后需要做的事情</strong></p>
-<ul>
-<li><strong>类似于<code v-pre>run</code>，也支持shell或者exec</strong></li>
-<li><strong>dockerfile中可以用多个<code v-pre>cmd</code>指令，但只有最后一个生效，cmd会被docker run之后的参数替换</strong></li>
-<li><strong>可以想到是<code v-pre>bin/bash</code>，catalina.sh将其覆盖</strong></li>
-<li><strong>cmd是docker run时运行</strong></li>
-<li><strong>run是docker build时运行</strong></li>
-</ul>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>EXPOSE <span class="token number">8080</span>
-CMD <span class="token punctuation">[</span><span class="token string">"catalina.sh"</span>, <span class="token string">"run"</span><span class="token punctuation">]</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
-<li>
-<p><code v-pre>entrypoint</code>：也是用来指定一个容器启动时要运行的命令</p>
-<ul>
-<li>类似于<code v-pre>cmd</code>指令，可以和<code v-pre>cmd</code>一起用</li>
-</ul>
-</li>
-</ul>
-<h2 id="补充" tabindex="-1"><a class="header-anchor" href="#补充" aria-hidden="true">#</a> 补充：</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="补充" tabindex="-1"><a class="header-anchor" href="#补充" aria-hidden="true">#</a> 补充：</h2>
 <p>案例如下：假设已通过 <code v-pre>Dockerfile</code> 构建了 <code v-pre>nginx:test</code> 镜像：</p>
 <p><img src="@source/markdown/images/2W6k1Q4qxgDR9NL.jpg" alt="graphic"></p>
 <table>

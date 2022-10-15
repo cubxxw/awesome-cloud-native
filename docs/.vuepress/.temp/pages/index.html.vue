@@ -68,7 +68,7 @@
 <p>🐋 40. <RouterLink to="/markdown/40.html">改造升级微服务工程docker_boot</RouterLink></p>
 <hr>
 <div class="custom-container danger"><p class="custom-container-title">继续往下看</p>
-<p>下面是精心打造的菜鸟成长手册，覆盖有多广~~，喜欢请在GitHub仓库给个♥，不胜感激</p>
+<p>下面是精心打造的菜鸟成长手册，覆盖有多广~~，喜欢请在GitHub仓库给个❤️ ，不胜感激</p>
 </div>
 <h1 id="菜鸟的成长手册⚡" tabindex="-1"><a class="header-anchor" href="#菜鸟的成长手册⚡" aria-hidden="true">#</a> 菜鸟的成长手册⚡</h1>
 <h2 id="🧭导航" tabindex="-1"><a class="header-anchor" href="#🧭导航" aria-hidden="true">#</a> 🧭导航</h2>

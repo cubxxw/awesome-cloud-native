@@ -1,4 +1,5 @@
 <template><div><h1 id="docker搭建gitlab-服务器" tabindex="-1"><a class="header-anchor" href="#docker搭建gitlab-服务器" aria-hidden="true">#</a> docker搭建Gitlab 服务器</h1>
+<nav class="table-of-contents"><ul><li><router-link to="#警告">警告！</router-link></li><li><router-link to="#前言">前言</router-link></li><li><router-link to="#安装镜像">安装镜像</router-link></li><li><router-link to="#浏览器访问">浏览器访问</router-link><ul><li><router-link to="#修改密码">修改密码</router-link></li></ul></li><li><router-link to="#重置管理员密码">重置管理员密码</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="警告" tabindex="-1"><a class="header-anchor" href="#警告" aria-hidden="true">#</a> 警告！</h2>
 <div class="custom-container danger"><p class="custom-container-title">⚠️ 警告</p>
