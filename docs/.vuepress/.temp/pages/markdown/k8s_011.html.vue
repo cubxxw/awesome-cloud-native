@@ -3,6 +3,15 @@
 <p>[toc]</p>
 <h2 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h2>
 <p><a href="http://kubernetes.io/" target="_blank" rel="noopener noreferrer">Kubernetes<ExternalLinkIcon/></a>是Google基于Borg开源的容器编排调度引擎，作为<a href="http://cncf.io/" target="_blank" rel="noopener noreferrer">CNCF<ExternalLinkIcon/></a>（Cloud Native Computing Foundation）最重要的组件之一，它的目标不仅仅是一个编排系统，而是提供一个规范，可以让你来描述集群的架构，定义服务的最终状态，<code v-pre>Kubernetes</code> 可以帮你将系统自动地达到和维持在这个状态。<code v-pre>Kubernetes</code> 作为云原生应用的基石，相当于一个云操作系统，其重要性不言而喻。</p>
+<div class="custom-container tip"><p class="custom-container-title">sealos 是什么</p>
+<p><strong><a href="https://www.sealos.io/zh-Hans/docs/Intro" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a> 是以 kubernetes 为内核的云操作系统发行版</strong></p>
+<p>早期单机操作系统也是分层架构，后来才演变成 linux windows 这种内核架构，云操作系统从容器诞生之日起分层架构被击穿，未来也会朝着高内聚的&quot;云内核&quot;架构迁移</p>
+<p><img src="http://sm.nsddd.top/smimage-20221017222736688.png" alt="image-20221017222736688"></p>
+<ul>
+<li>从现在开始，把你数据中心所有机器想象成一台&quot;抽象&quot;的超级计算机，sealos 就是用来管理这台超级计算机的操作系统，kubernetes 就是这个操作系统的内核！</li>
+<li>云计算从此刻起再无 IaaS PaaS SaaS 之分，只有云操作系统驱动(CSI CNI CRI 实现) 云操作系统内核(kubernetes) 和 分布式应用组成</li>
+</ul>
+</div>
 <blockquote>
 <p>在这里，我将会从docker到k8s全部遍历一遍</p>
 <ul>
@@ -43,11 +52,11 @@ RUN <span class="token builtin class-name">echo</span> <span class="token string
 <p><code v-pre>RUN</code>指令是用来执行命令行命令的。由于命令行的强大能力，<code v-pre>RUN</code>指令在定制镜像时是最常用的指令之一。其格式有两种：</p>
 <ul>
 <li>
-<p>shell 格式：RUN &lt;命令&gt;，就像直接在命令行中输入的命令一样。刚才写的 Dockerfile 中的 RUN 指令就是这种格式。</p>
+<p><code v-pre>shell</code> 格式：RUN &lt;命令&gt;，就像直接在命令行中输入的命令一样。刚才写的 Dockerfile 中的 RUN 指令就是这种格式。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>RUN <span class="token builtin class-name">echo</span> <span class="token string">'&lt;h1>Hello, Docker!&lt;/h1>'</span> <span class="token operator">></span> /usr/share/nginx/html/index.html
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 <li>
-<p>exec 格式：RUN [&quot;可执行文件&quot;, &quot;参数1&quot;, &quot;参数2&quot;]，这更像是函数调用中的格式。 既然 RUN 就像 Shell 脚本一样可以执行命令，那么我们是否就可以像 Shell 脚本一样把每个命令对应一个 RUN 呢？比如这样：</p>
+<p><code v-pre>exec</code> 格式：RUN [&quot;可执行文件&quot;, &quot;参数1&quot;, &quot;参数2&quot;]，这更像是函数调用中的格式。 既然 RUN 就像 Shell 脚本一样可以执行命令，那么我们是否就可以像 Shell 脚本一样把每个命令对应一个 RUN 呢？比如这样：</p>
 <div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> debian:jessie</span>
 <span class="token instruction"><span class="token keyword">RUN</span> apt-get update</span>
 <span class="token instruction"><span class="token keyword">RUN</span> apt-get install -y gcc libc6-dev make</span>
@@ -60,7 +69,7 @@ RUN <span class="token builtin class-name">echo</span> <span class="token string
 </ul>
 <p>之前说过，Dockerfile 中每一个指令都会建立一层，RUN 也不例外。每一个 RUN 的行为，就和刚才我们手工建立镜像的过程一样：新建立一层，在其上执行这些命令，执行结束后，commit 这一层的修改，构成新的镜像。</p>
 <blockquote>
-<p>Union FS 是有最大层数限制的，比如 AUFS，曾经是最大不得超过 42 层，现在是不得超过 127 层。</p>
+<p><code v-pre>Union FS</code> 是有最大层数限制的，比如 <code v-pre>AUFS</code>，曾经是最大不得超过 42 层，现在是不得超过 127 层。</p>
 </blockquote>
 <h2 id="参考" tabindex="-1"><a class="header-anchor" href="#参考" aria-hidden="true">#</a> 参考</h2>
 <p>https://www.qikqiak.com/k8s-book/</p>

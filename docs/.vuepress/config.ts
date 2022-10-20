@@ -2,8 +2,8 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-10-15 11:52:20
- * @FilePath: \undefinedd:\文档\最近的\awesome-docker\docs\.vuepress\config.ts
+ * @LastEditTime: 2022-10-20 22:40:04
+ * @FilePath: \.sshd:\文档\最近的\awesome-docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
 import { defaultTheme } from 'vuepress'
@@ -252,6 +252,11 @@ export default {
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
                   },
+                  {
+                    text: '⛓️链学社组织',
+                    link: 'https://github.com/C-UB/',
+                    target:'_blank',
+                  },
                 ],
             },
             {
@@ -263,84 +268,157 @@ export default {
                 link: 'https://go.nsddd.top',
             },
             {
-              text: '⛓️链学社组织',
-              link: 'https://github.com/C-UB/',
-              target:'_blank',
-            }
+                text: '⚡ k8s学习篇',
+                link: '/Cloud-Native-k8s/'
+            },
           ],
-          
-        // 默认主题配置
-        sidebar:[
-            {
-                text: '🏠回到主页',
-                link: '/', 
-            },
-            // SidebarItem
-            {
-                text: '☁️DocCub云盘地址',
-                link: 'http://xxw.nsddd.top/s/q2FP?path=%2F'
-            },
-            {
-              text: '📚Docker学习篇',
-              link: '/markdown/',
-              children: [
-                // SidebarItem
-                '/markdown/1.md',
-                '/markdown/2.md',
-                '/markdown/3.md',
-                '/markdown/4.md',
-                '/markdown/5.md',
-                '/markdown/6.md',
-                '/markdown/7.md',          
-                '/markdown/8.md',
-                '/markdown/9.md',
-                '/markdown/10.md',
-                '/markdown/11.md',
-                '/markdown/12.md',
-                '/markdown/13.md',
-                '/markdown/14.md',
-                '/markdown/15.md',
-                '/markdown/16.md',
-                '/markdown/17.md',          
-                '/markdown/18.md',
-                '/markdown/19.md',
-                '/markdown/20.md',
-                '/markdown/21.md',
-                '/markdown/22.md',
-                '/markdown/23.md',
-                '/markdown/24.md',
-                '/markdown/25.md',
-                '/markdown/26.md',
-                '/markdown/27.md',          
-                '/markdown/28.md',
-                '/markdown/29.md',
-                '/markdown/30.md',
-                '/markdown/31.md',
-                '/markdown/32.md',
-                '/markdown/33.md',
-                '/markdown/34.md',
-                '/markdown/35.md',
-                '/markdown/36.md',
-                '/markdown/37.md',          
-                '/markdown/38.md',
-                '/markdown/39.md',
-                '/markdown/40.md',
-                '/markdown/41.md',
-                '/markdown/42.md',
-                '/markdown/43.md',
-                '/markdown/44.md',
-                '/markdown/45.md',
-            
-                // 字符串 - 页面文件路径
-                // '/foo/bar.md',
+          sidebar: {
+            '/markdown/': [
                 {
-                    text: '💝如何参与贡献？',
-                    link: 'https://nsddd.top/archives/contributors',
-                  //   children: [],
+                    text: '🏠回到主页',
+                    link: '/', 
                 },
-              ],
-            },
-            
-          ],
+                // SidebarItem
+                 {
+                    text: '💱个人云盘地址',
+                    link: 'https://xxw.nsddd.top/s/wRSz'
+                 },
+              {
+                text: '🔥 docker学习篇',
+                children: [
+                    '1.md',
+                    '2.md',
+                    '3.md',
+                    '4.md',
+                    '5.md',
+                    '6.md',
+                    '7.md',
+                    '8.md',
+                    '9.md',
+                    '10.md',
+                    '11.md',
+                    '12.md',
+                    '13.md',
+                    '14.md',
+                    '15.md',
+                    '16.md',
+                    '17.md',
+                    '18.md',
+                    '19.md',
+                    '20.md',
+                    '21.md',
+                    '22.md',
+                    '23.md',
+                    '24.md',
+                    '25.md',
+                    '26.md',
+                    '27.md',
+                    '28.md',
+                    '29.md',
+                    '30.md',
+                    '31.md',
+                    '32.md',
+                    '33.md',
+                    '34.md',
+                    '35.md',
+                    '36.md',
+                    '37.md',
+                    '38.md',
+                    '39.md',
+                    '40.md',
+                    '41.md',
+                    '42.md',
+                    '43.md',
+                    '44.md',
+                    '45.md',
+                    '46.md',
+                    '47.md',
+                    '48.md',
+                    '49.md',
+                    '50.md',                    
+                    {
+                        text: '💝如何参与贡献？',
+                        link: 'https://nsddd.top/archives/contributors',
+                    //   children: [],
+                    },  
+                ],
+              },
+            ],
+            '/Cloud-Native-k8s/': [
+                {
+                    text: '🏠回到主页',
+                    link: '/', 
+                },
+                // SidebarItem
+                 {
+                    text: '💱个人云盘地址',
+                    link: 'https://xxw.nsddd.top/s/wRSz'
+                 },
+              {
+                text: '⚡ k8s云原生学习篇',
+                children: [
+                    '1.md',
+                    '2.md',
+                    '3.md',
+                    '4.md',
+                    '5.md',
+                    '6.md',
+                    '7.md',
+                    '8.md',
+                    '9.md',
+                    '10.md',
+                    '11.md',
+                    '12.md',
+                    '13.md',
+                    '14.md',
+                    '15.md',
+                    '16.md',
+                    '17.md',
+                    '18.md',
+                    '19.md',
+                    '20.md',
+                    '21.md',
+                    '22.md',
+                    '23.md',
+                    '24.md',
+                    '25.md',
+                    '26.md',
+                    '27.md',
+                    '28.md',
+                    '29.md',
+                    '30.md',
+                    '31.md',
+                    '32.md',
+                    '33.md',
+                    '34.md',
+                    '35.md',
+                    '36.md',
+                    '37.md',
+                    '38.md',
+                    '39.md',
+                    '40.md',
+                    '41.md',
+                    '42.md',
+                    '43.md',
+                    '44.md',
+                    '45.md',
+                    '46.md',
+                    '47.md',
+                    '48.md',
+                    '49.md',
+                    '50.md',
+                    {
+                        text: '💝如何参与贡献？',
+                        link: 'https://nsddd.top/archives/contributors',
+                        //children: [],
+                    },  
+                ],
+              },
+            ],
+            '/': [
+                '/markdown/README.md"',
+                '/Cloud-Native-k8s/README.md"',
+            ] // 侧边栏配置
+          },
   }),
 }

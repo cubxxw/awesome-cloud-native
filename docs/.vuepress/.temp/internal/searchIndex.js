@@ -2503,30 +2503,8 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "docker三驾马车",
-    "headers": [
-      {
-        "level": 3,
-        "title": "Docker Compose",
-        "slug": "docker-compose",
-        "link": "#docker-compose",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Docker Machine",
-        "slug": "docker-machine",
-        "link": "#docker-machine",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Docker Swarm",
-        "slug": "docker-swarm",
-        "link": "#docker-swarm",
-        "children": []
-      }
-    ],
+    "title": "",
+    "headers": [],
     "path": "/markdown/k8s_012.html",
     "pathLocale": "/",
     "extraFields": []
@@ -2802,6 +2780,2197 @@ export const searchIndex = [
     "extraFields": []
   },
   {
+    "title": "第1节 云平台",
+    "headers": [
+      {
+        "level": 2,
+        "title": "什么是云平台",
+        "slug": "什么是云平台",
+        "link": "#什么是云平台",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "安装服务器并且远程登陆",
+        "slug": "安装服务器并且远程登陆",
+        "link": "#安装服务器并且远程登陆",
+        "children": [
+          {
+            "level": 3,
+            "title": "nginx安装和远程访问",
+            "slug": "nginx安装和远程访问",
+            "link": "#nginx安装和远程访问",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "启动nginx",
+            "slug": "启动nginx",
+            "link": "#启动nginx",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "修改nginx配置端口",
+            "slug": "修改nginx配置端口",
+            "link": "#修改nginx配置端口",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "私有网络VPC",
+        "slug": "私有网络vpc",
+        "link": "#私有网络vpc",
+        "children": [
+          {
+            "level": 3,
+            "title": "VPC（私有网络、专用网络）划分网段",
+            "slug": "vpc-私有网络、专用网络-划分网段",
+            "link": "#vpc-私有网络、专用网络-划分网段",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/1.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第10节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/10.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第11节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/11.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第12节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/12.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第13节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/13.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第14节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/14.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第15节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/15.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第16节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/16.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第17节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/17.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第18节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/18.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第19节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/19.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第2节 docker实用操作",
+    "headers": [
+      {
+        "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "由docker引入k8s",
+        "slug": "由docker引入k8s",
+        "link": "#由docker引入k8s",
+        "children": [
+          {
+            "level": 3,
+            "title": "docker容器化技术",
+            "slug": "docker容器化技术",
+            "link": "#docker容器化技术",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "dockerfile",
+        "slug": "dockerfile",
+        "link": "#dockerfile",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "run命令",
+        "slug": "run命令",
+        "link": "#run命令",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "镜像压缩和发送",
+        "slug": "镜像压缩和发送",
+        "link": "#镜像压缩和发送",
+        "children": [
+          {
+            "level": 3,
+            "title": "远程传输scp",
+            "slug": "远程传输scp",
+            "link": "#远程传输scp",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "新的机器启用镜像",
+            "slug": "新的机器启用镜像",
+            "link": "#新的机器启用镜像",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "推送到远程仓库",
+        "slug": "推送到远程仓库",
+        "link": "#推送到远程仓库",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "将应用打包为镜像",
+        "slug": "将应用打包为镜像",
+        "link": "#将应用打包为镜像",
+        "children": [
+          {
+            "level": 3,
+            "title": "以前的土方法",
+            "slug": "以前的土方法",
+            "link": "#以前的土方法",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "docker解决方案",
+            "slug": "docker解决方案",
+            "link": "#docker解决方案",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": [
+          {
+            "level": 3,
+            "title": "参考",
+            "slug": "参考",
+            "link": "#参考",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/Cloud-Native-k8s/2.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第20节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/20.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第21节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/21.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第22节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/22.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第23节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/23.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第24节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/24.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第25节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/25.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第26节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/26.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第27节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/27.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第28节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/28.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第29节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/29.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第3节 docker三驾马车",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Docker Compose",
+        "slug": "docker-compose",
+        "link": "#docker-compose",
+        "children": [
+          {
+            "level": 3,
+            "title": "使用",
+            "slug": "使用",
+            "link": "#使用",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Docker Machine",
+        "slug": "docker-machine",
+        "link": "#docker-machine",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker Swarm",
+        "slug": "docker-swarm",
+        "link": "#docker-swarm",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/3.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第30节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/30.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第31节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/31.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第32节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/32.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第33节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/33.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第34节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/34.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第35节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/35.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第36节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/36.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第37节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/37.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第38节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/38.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第39节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/39.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第4节 kubernetes(k8s)教程",
+    "headers": [
+      {
+        "level": 2,
+        "title": "正片开始~",
+        "slug": "正片开始",
+        "link": "#正片开始",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "kubernetes(k8s)",
+        "slug": "kubernetes-k8s",
+        "link": "#kubernetes-k8s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k8s架构",
+        "slug": "k8s架构",
+        "link": "#k8s架构",
+        "children": [
+          {
+            "level": 3,
+            "title": "工作方式",
+            "slug": "工作方式",
+            "link": "#工作方式",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "组织架构",
+            "slug": "组织架构",
+            "link": "#组织架构",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "集群架构与组件",
+        "slug": "集群架构与组件",
+        "link": "#集群架构与组件",
+        "children": [
+          {
+            "level": 3,
+            "title": "Master节点",
+            "slug": "master节点",
+            "link": "#master节点",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Work Node节点",
+            "slug": "work-node节点",
+            "link": "#work-node节点",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "etcd数据存储",
+            "slug": "etcd数据存储",
+            "link": "#etcd数据存储",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "核心附件",
+            "slug": "核心附件",
+            "link": "#核心附件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "网络插件",
+            "slug": "网络插件",
+            "link": "#网络插件",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Kubernetes基本概念",
+        "slug": "kubernetes基本概念",
+        "link": "#kubernetes基本概念",
+        "children": [
+          {
+            "level": 3,
+            "title": "Label 资源标签",
+            "slug": "label-资源标签",
+            "link": "#label-资源标签",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Labe Selector标签选择器",
+            "slug": "labe-selector标签选择器",
+            "link": "#labe-selector标签选择器",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Pod资源对象",
+            "slug": "pod资源对象",
+            "link": "#pod资源对象",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Pod控制器（Controller）",
+            "slug": "pod控制器-controller",
+            "link": "#pod控制器-controller",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Service服务资源",
+            "slug": "service服务资源",
+            "link": "#service服务资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Ingress",
+            "slug": "ingress",
+            "link": "#ingress",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Volume存储卷",
+            "slug": "volume存储卷",
+            "link": "#volume存储卷",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Name和Namespace",
+            "slug": "name和namespace",
+            "link": "#name和namespace",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Annotation注解",
+            "slug": "annotation注解",
+            "link": "#annotation注解",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/4.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第40节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/40.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第41节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/41.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第42节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/42.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第43节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/43.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第44节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/44.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第45节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/45.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第46节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/46.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第47节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/47.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第48节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/48.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第49节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/49.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第5节 集群搭建",
+    "headers": [
+      {
+        "level": 2,
+        "title": "购买三台机器",
+        "slug": "购买三台机器",
+        "link": "#购买三台机器",
+        "children": [
+          {
+            "level": 3,
+            "title": "推荐使用一个远程ssh工具",
+            "slug": "推荐使用一个远程ssh工具",
+            "link": "#推荐使用一个远程ssh工具",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创建私有网络",
+            "slug": "创建私有网络",
+            "link": "#创建私有网络",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用交换机划分为隔离网络的小区域",
+            "slug": "使用交换机划分为隔离网络的小区域",
+            "link": "#使用交换机划分为隔离网络的小区域",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "过程截图",
+            "slug": "过程截图",
+            "link": "#过程截图",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "搭建成功",
+            "slug": "搭建成功",
+            "link": "#搭建成功",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "显示图形化界面",
+            "slug": "显示图形化界面",
+            "link": "#显示图形化界面",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "必须要打开安全组的组内通信",
+            "slug": "必须要打开安全组的组内通信",
+            "link": "#必须要打开安全组的组内通信",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "vpc设置端口转化",
+            "slug": "vpc设置端口转化",
+            "link": "#vpc设置端口转化",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "准备链接",
+            "slug": "准备链接",
+            "link": "#准备链接",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "docker安装",
+        "slug": "docker安装",
+        "link": "#docker安装",
+        "children": [
+          {
+            "level": 3,
+            "title": "1、移除以前docker相关包",
+            "slug": "_1、移除以前docker相关包",
+            "link": "#_1、移除以前docker相关包",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2、配置yum源",
+            "slug": "_2、配置yum源",
+            "link": "#_2、配置yum源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "3、安装docker",
+            "slug": "_3、安装docker",
+            "link": "#_3、安装docker",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "4、启动",
+            "slug": "_4、启动",
+            "link": "#_4、启动",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "5、配置加速",
+            "slug": "_5、配置加速",
+            "link": "#_5、配置加速",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "kubeadm创建集群预备环境",
+        "slug": "kubeadm创建集群预备环境",
+        "link": "#kubeadm创建集群预备环境",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "安装kubeadm",
+        "slug": "安装kubeadm",
+        "link": "#安装kubeadm",
+        "children": [
+          {
+            "level": 3,
+            "title": "设置所有机器的主机名称",
+            "slug": "设置所有机器的主机名称",
+            "link": "#设置所有机器的主机名称",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将 SELinux 设置为 permissive 模式",
+            "slug": "将-selinux-设置为-permissive-模式",
+            "link": "#将-selinux-设置为-permissive-模式",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "关闭所有机器的交换分区",
+            "slug": "关闭所有机器的交换分区",
+            "link": "#关闭所有机器的交换分区",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "允许 iptables 检查桥接流量",
+            "slug": "允许-iptables-检查桥接流量",
+            "link": "#允许-iptables-检查桥接流量",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "安装集群的三大件",
+        "slug": "安装集群的三大件",
+        "link": "#安装集群的三大件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用kubeadm引导集群",
+        "slug": "使用kubeadm引导集群",
+        "link": "#使用kubeadm引导集群",
+        "children": [
+          {
+            "level": 3,
+            "title": "下载各个机器需要的镜像",
+            "slug": "下载各个机器需要的镜像",
+            "link": "#下载各个机器需要的镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "初始化主结点",
+            "slug": "初始化主结点",
+            "link": "#初始化主结点",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "根据提示继续",
+            "slug": "根据提示继续",
+            "link": "#根据提示继续",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "加入node节点",
+            "slug": "加入node节点",
+            "link": "#加入node节点",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/5.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第50节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/50.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第51节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/51.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第52节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/52.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第53节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/53.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第54节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/54.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第55节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/55.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第56节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/56.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第57节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/57.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第58节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/58.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第59节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/59.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第6节 sealos",
+    "headers": [
+      {
+        "level": 2,
+        "title": "开始",
+        "slug": "开始",
+        "link": "#开始",
+        "children": [
+          {
+            "level": 3,
+            "title": "什么是sealos?",
+            "slug": "什么是sealos",
+            "link": "#什么是sealos",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Sealos 特性与优势",
+        "slug": "sealos-特性与优势",
+        "link": "#sealos-特性与优势",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "选择rancher还是sealos",
+        "slug": "选择rancher还是sealos",
+        "link": "#选择rancher还是sealos",
+        "children": [
+          {
+            "level": 3,
+            "title": "为什么不用 KeepAlived 和 HAProxy 实现集群高可用",
+            "slug": "为什么不用-keepalived-和-haproxy-实现集群高可用",
+            "link": "#为什么不用-keepalived-和-haproxy-实现集群高可用",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "使用 sealos 快速构建 kubernetes",
+        "slug": "使用-sealos-快速构建-kubernetes",
+        "link": "#使用-sealos-快速构建-kubernetes",
+        "children": [
+          {
+            "level": 3,
+            "title": "构建项目",
+            "slug": "构建项目",
+            "link": "#构建项目",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "核心服务快速启动",
+        "slug": "核心服务快速启动",
+        "link": "#核心服务快速启动",
+        "children": [
+          {
+            "level": 3,
+            "title": "环境准备",
+            "slug": "环境准备",
+            "link": "#环境准备",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "查看内核版本",
+            "slug": "查看内核版本",
+            "link": "#查看内核版本",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/6.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第60节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/60.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第61节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/61.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第62节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/62.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第63节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/63.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第64节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/64.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第65节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/65.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第66节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/66.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第67节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/67.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第68节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/68.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第69节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/69.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第7节 k8s在线实验学习平台",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Play with Kubernetes 介绍",
+        "slug": "play-with-kubernetes-介绍",
+        "link": "#play-with-kubernetes-介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "搭建 Kubernetes 集群",
+        "slug": "搭建-kubernetes-集群",
+        "link": "#搭建-kubernetes-集群",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Kubernetes 集群的使用",
+        "slug": "kubernetes-集群的使用",
+        "link": "#kubernetes-集群的使用",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/7.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第70节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/70.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第71节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/71.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第72节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/72.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第73节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/73.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第74节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/74.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第75节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/75.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第76节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/76.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第77节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/77.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第78节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/78.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第79节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/79.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第8节 k8s自我修复和图形界面",
+    "headers": [
+      {
+        "level": 2,
+        "title": "K8s集群自我恢复能力测试",
+        "slug": "k8s集群自我恢复能力测试",
+        "link": "#k8s集群自我恢复能力测试",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k8s可视化界面",
+        "slug": "k8s可视化界面",
+        "link": "#k8s可视化界面",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/8.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第80节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/80.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第81节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/81.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第82节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/82.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第83节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/83.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第84节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/84.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第85节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/85.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第86节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/86.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第87节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/87.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第88节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/88.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第89节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/89.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第9节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/9.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第90节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/90.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第91节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/91.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第92节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/92.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第93节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/93.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第94节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/94.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第95节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/95.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第96节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/96.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第97节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/97.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第98节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/98.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第99节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/99.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [
+      {
+        "level": 2,
+        "title": "为什么要学习 Docker？",
+        "slug": "为什么要学习-docker",
+        "link": "#为什么要学习-docker",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "⭕怎么学习docker",
+        "slug": "⭕怎么学习docker",
+        "link": "#⭕怎么学习docker",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "🔮学完docker或许你可以试试这些",
+        "slug": "🔮学完docker或许你可以试试这些",
+        "link": "#🔮学完docker或许你可以试试这些",
+        "children": [
+          {
+            "level": 3,
+            "title": "建立你自己的Docker",
+            "slug": "建立你自己的docker",
+            "link": "#建立你自己的docker",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从docker进阶到k8s",
+            "slug": "从docker进阶到k8s",
+            "link": "#从docker进阶到k8s",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "💱安装docker",
+            "slug": "💱安装docker",
+            "link": "#💱安装docker",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "🅱️最新补充",
+        "slug": "🅱️最新补充",
+        "link": "#🅱️最新补充",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "🗒️Docker基础篇目录",
+        "slug": "🗒️docker基础篇目录",
+        "link": "#🗒️docker基础篇目录",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "✨参与贡献",
+        "slug": "✨参与贡献",
+        "link": "#✨参与贡献",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native-k8s/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "",
     "headers": [],
     "path": "/404.html",
@@ -2809,16 +4978,3 @@ export const searchIndex = [
     "extraFields": []
   }
 ]
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateSearchIndex) {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ searchIndex }) => {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  })
-}
