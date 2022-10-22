@@ -1,4 +1,4 @@
-<template><div><h2 id="⚡为什么要学习-decker" tabindex="-1"><a class="header-anchor" href="#⚡为什么要学习-decker" aria-hidden="true">#</a> ⚡为什么要学习 Decker？</h2>
+<template><div><h2 id="⚡为什么要学习-docker" tabindex="-1"><a class="header-anchor" href="#⚡为什么要学习-docker" aria-hidden="true">#</a> ⚡为什么要学习 Docker？</h2>
 <blockquote>
 <p>Docker 是世界领先的软件容器平台。
 开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。

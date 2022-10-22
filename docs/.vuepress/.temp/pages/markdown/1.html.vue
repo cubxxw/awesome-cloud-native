@@ -37,7 +37,7 @@
 <blockquote>
 <p>关于PESTAPI好像是在网路里面有讲</p>
 </blockquote>
-<p><img src="@source/markdown/images/image-20221003095407215.png" alt="image-20221003095407215"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221003095407215.png" alt="image-20221003095407215"></p>
 <blockquote>
 <p>client是客户端，docker_host是一个引擎，如果是有镜像，就会组成一个个服务器实例,是本地的库，如果本地库1没有的话就是从远程库registry上zhao</p>
 </blockquote>
@@ -50,9 +50,9 @@
 <p>使用<code v-pre>docker pull</code>或<code v-pre>docker run</code>命令时，将从配置的注册表中提取所需的图像。使用该<code v-pre>docker push</code>命令时，会将映像推送到已配置的注册表。</p>
 <h3 id="docker对象" tabindex="-1"><a class="header-anchor" href="#docker对象" aria-hidden="true">#</a> Docker对象</h3>
 <p>使用Docker时，您正在创建和使用映像，容器，网络，卷，插件和其他对象。本节是其中一些对象的简要概述。</p>
-<h4 id="图片" tabindex="-1"><a class="header-anchor" href="#图片" aria-hidden="true">#</a> 图片</h4>
-<p>一个<em>图像</em>是用于创建一个码头工人容器指令的只读模板。通常，一个映像<em>基于</em>另一个映像，并进行一些其他自定义。例如，您可以基于该<code v-pre>ubuntu</code> 映像构建映像，但安装Apache Web服务器和您的应用程序，以及运行该应用程序所需的配置详细信息。</p>
-<p>您可以创建自己的图像，也可以仅使用其他人创建并在注册表中发布的图像。要构建自己的映像，您可以 使用简单的语法创建一个<em>Dockerfile</em>，以定义创建映像并运行它所需的步骤。Dockerfile中的每条指令都会在映像中创建一个层。当您更改Dockerfile并重建映像时，仅重建那些已更改的层。与其他虚拟化技术相比，这是使映像如此轻巧，小型和快速的部分原因。</p>
+<h4 id="图像" tabindex="-1"><a class="header-anchor" href="#图像" aria-hidden="true">#</a> 图像</h4>
+<p>一个图像是用于创建一个码头工人容器指令的只读模板。通常，一个映像<em>基于</em>另一个映像，并进行一些其他自定义。例如，您可以基于该<code v-pre>ubuntu</code> 映像构建映像，但安装Apache Web服务器和您的应用程序，以及运行该应用程序所需的配置详细信息。</p>
+<p>您可以创建自己的图像，也可以仅使用其他人创建并在注册表中发布的图像。要构建自己的映像，您可以 使用简单的语法创建一个*<code v-pre>Dockerfile</code>*，以定义创建映像并运行它所需的步骤。Dockerfile中的每条指令都会在映像中创建一个层。当您更改Dockerfile并重建映像时，仅重建那些已更改的层。与其他虚拟化技术相比，这是使映像如此轻巧，小型和快速的部分原因。</p>
 <h4 id="货柜" tabindex="-1"><a class="header-anchor" href="#货柜" aria-hidden="true">#</a> 货柜</h4>
 <p>容器是图像的可运行实例。您可以使用Docker API或CLI创建，启动，停止，移动或删除容器。您可以将容器连接到一个或多个网络，将存储连接到它，甚至根据其当前状态创建一个新映像。</p>
 <p>默认情况下，容器与其他容器及其主机之间的隔离度相对较高。您可以控制容器的网络，存储或其他底层子系统与其他容器或与主机的隔离程度。</p>

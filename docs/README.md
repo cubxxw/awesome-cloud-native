@@ -34,7 +34,7 @@ features:
 footer: 链学社 | Copyright © 2022-present Evan You
 ---
 
-## ⚡为什么要学习 Decker？
+## ⚡为什么要学习 Docker？
 
 > Docker 是世界领先的软件容器平台。
 > 开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。
