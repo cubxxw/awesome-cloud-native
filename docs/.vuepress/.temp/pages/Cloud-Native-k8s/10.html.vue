@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#deployment">Deployment</router-link></li><li><router-link to="#用deployment创建有何不同">用deployment创建有何不同</router-link><ul><li><router-link to="#如果想要真正的删除怎么办">如果想要真正的删除怎么办？</router-link></li></ul></li><li><router-link to="#多副本">多副本</router-link></li><li><router-link to="#工作负载-deployment扩容缩容能力">工作负载-deployment扩容缩容能力</router-link><ul><li><router-link to="#阔缩容">阔缩容</router-link></li><li><router-link to="#你可以直接修改deplot配置文件达到扩缩容">你可以直接修改deplot配置文件达到扩缩容</router-link></li></ul></li><li><router-link to="#自愈和故障转移">自愈和故障转移</router-link></li><li><router-link to="#depoyment滚动和更新能力">depoyment滚动和更新能力</router-link><ul><li><router-link to="#滚动更新">滚动更新</router-link></li></ul></li><li><router-link to="#版本回退">版本回退</router-link></li><li><router-link to="#其他工作负载">其他工作负载</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#deployment">Deployment</router-link></li><li><router-link to="#用deployment创建有何不同">用deployment创建有何不同</router-link><ul><li><router-link to="#如果想要真正的删除怎么办">如果想要真正的删除怎么办？</router-link></li></ul></li><li><router-link to="#多副本">多副本</router-link></li><li><router-link to="#工作负载-deployment扩容缩容能力">工作负载-deployment扩容缩容能力</router-link><ul><li><router-link to="#扩缩容">扩缩容</router-link></li><li><router-link to="#你可以直接修改deplot配置文件达到扩缩容">你可以直接修改deplot配置文件达到扩缩容</router-link></li></ul></li><li><router-link to="#自愈和故障转移">自愈和故障转移</router-link></li><li><router-link to="#depoyment滚动和更新能力">depoyment滚动和更新能力</router-link><ul><li><router-link to="#滚动更新">滚动更新</router-link></li></ul></li><li><router-link to="#版本回退">版本回退</router-link></li><li><router-link to="#其他工作负载">其他工作负载</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="deployment" tabindex="-1"><a class="header-anchor" href="#deployment" aria-hidden="true">#</a> Deployment</h2>
 <p><strong>⚠️ Deployment：控制pod，使pod具有多个副本，自愈，扩缩容等能力~</strong></p>
@@ -40,10 +40,10 @@ kubectl create deployment mytomcat <span class="token parameter variable">--imag
 </div>
 <h3 id="如果想要真正的删除怎么办" tabindex="-1"><a class="header-anchor" href="#如果想要真正的删除怎么办" aria-hidden="true">#</a> 如果想要真正的删除怎么办？</h3>
 <p>我们可以使用<code v-pre>deploy</code>查看部署（deployment简写）：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>[root@k8s-master01 ~]# kubectl get deploy
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># kubectl get deploy</span>
 NAME       READY   UP-TO-DATE   AVAILABLE   AGE
-my-nginx   3/3     3            3           42h
-mytomcat   1/1     1            1           10m
+my-nginx   <span class="token number">3</span>/3     <span class="token number">3</span>            <span class="token number">3</span>           42h
+mytomcat   <span class="token number">1</span>/1     <span class="token number">1</span>            <span class="token number">1</span>           10m
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接下来可以删除了</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># kubectl get deploy</span>
 NAME       READY   UP-TO-DATE   AVAILABLE   AGE
@@ -75,7 +75,7 @@ my-nginx   <span class="token number">3</span>/3     <span class="token number">
 </div>
 <h2 id="工作负载-deployment扩容缩容能力" tabindex="-1"><a class="header-anchor" href="#工作负载-deployment扩容缩容能力" aria-hidden="true">#</a> 工作负载-deployment扩容缩容能力</h2>
 <p>⚡ <strong>将现有的机器（因为满足不了需求）多部署几台pod，这个过程叫做扩容。同样的缩容就是将一些pod下线（流量高峰期过了）</strong></p>
-<h3 id="阔缩容" tabindex="-1"><a class="header-anchor" href="#阔缩容" aria-hidden="true">#</a> 阔缩容</h3>
+<h3 id="扩缩容" tabindex="-1"><a class="header-anchor" href="#扩缩容" aria-hidden="true">#</a> 扩缩容</h3>
 <div class="custom-container tip"><p class="custom-container-title">技巧</p>
 <p>我们可以动态查看pod情况</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>watch -n 1 kubectl get pod 

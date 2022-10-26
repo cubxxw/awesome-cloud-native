@@ -31,7 +31,7 @@
 </blockquote>
 </div>
 <p>⚡ 描述某一个pod是如何运行的</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl describe pod my-nginx-7fb96c846b-m9rjp
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl describe pod my-nginx-7fb96c846b-m9rjp
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><details class="custom-container details"><summary>展开查看详情💡</summary>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master03 ~<span class="token punctuation">]</span><span class="token comment"># kubectl get pod</span>
 NAME                        READY   STATUS    RESTARTS      AGE

@@ -212,9 +212,9 @@ export const searchIndex = [
         "children": [
           {
             "level": 3,
-            "title": "阔缩容",
-            "slug": "阔缩容",
-            "link": "#阔缩容",
+            "title": "扩缩容",
+            "slug": "扩缩容",
+            "link": "#扩缩容",
             "children": []
           },
           {
@@ -358,6 +358,27 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "统一网关",
+        "slug": "统一网关",
+        "link": "#统一网关",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "yaml文件",
+        "slug": "yaml文件",
+        "link": "#yaml文件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "安装nginx测试",
+        "slug": "安装nginx测试",
+        "link": "#安装nginx测试",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
@@ -435,6 +456,13 @@ export const searchIndex = [
             "children": []
           }
         ]
+      },
+      {
+        "level": 2,
+        "title": "删除策略",
+        "slug": "删除策略",
+        "link": "#删除策略",
+        "children": []
       },
       {
         "level": 2,
@@ -1702,7 +1730,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第6节 sealos",
+    "title": "第6节 sealos搭建k8s",
     "headers": [
       {
         "level": 2,
@@ -2553,59 +2581,16 @@ export const searchIndex = [
     "headers": [
       {
         "level": 2,
-        "title": "为什么要学习 Docker？",
-        "slug": "为什么要学习-docker",
-        "link": "#为什么要学习-docker",
+        "title": "⭕学习K8s & 云原生~",
+        "slug": "⭕学习k8s-云原生",
+        "link": "#⭕学习k8s-云原生",
         "children": []
       },
       {
         "level": 2,
-        "title": "⭕怎么学习docker",
-        "slug": "⭕怎么学习docker",
-        "link": "#⭕怎么学习docker",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "🔮学完docker或许你可以试试这些",
-        "slug": "🔮学完docker或许你可以试试这些",
-        "link": "#🔮学完docker或许你可以试试这些",
-        "children": [
-          {
-            "level": 3,
-            "title": "建立你自己的Docker",
-            "slug": "建立你自己的docker",
-            "link": "#建立你自己的docker",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "从docker进阶到k8s",
-            "slug": "从docker进阶到k8s",
-            "link": "#从docker进阶到k8s",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "💱安装docker",
-            "slug": "💱安装docker",
-            "link": "#💱安装docker",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "🅱️最新补充",
-        "slug": "🅱️最新补充",
-        "link": "#🅱️最新补充",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "🗒️Docker基础篇目录",
-        "slug": "🗒️docker基础篇目录",
-        "link": "#🗒️docker基础篇目录",
+        "title": "🗒️K8s & 云原生",
+        "slug": "🗒️k8s-云原生",
+        "link": "#🗒️k8s-云原生",
         "children": []
       },
       {

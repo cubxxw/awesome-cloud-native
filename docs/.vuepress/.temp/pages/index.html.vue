@@ -1,10 +1,10 @@
 <template><div><h2 id="⚡为什么要学习-docker" tabindex="-1"><a class="header-anchor" href="#⚡为什么要学习-docker" aria-hidden="true">#</a> ⚡为什么要学习 Docker？</h2>
-<blockquote>
+<details class="custom-container details"><summary>为什么要学习docker？</summary>
 <p>Docker 是世界领先的软件容器平台。
 开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。
 运维人员利用 Docker 可以在隔离容器中并行运行和管理应用，获得更好的计算密度。
 企业利用 Docker 可以构建敏捷的软件交付管道，以更快的速度、更高的安全性和可靠的信誉为 Linux 和 Windows Server 应用发布新功能。</p>
-</blockquote>
+</details>
 <h2 id="🎈怎么学习docker" tabindex="-1"><a class="header-anchor" href="#🎈怎么学习docker" aria-hidden="true">#</a> 🎈怎么学习docker</h2>
 <blockquote>
 <p>学习docker之前最好有下面基础</p>
@@ -14,10 +14,7 @@
 </ul>
 <p><strong>编程语言不限</strong></p>
 <ul>
-<li>[x] <a href="https://github.com/3293172751/Block_Chain/blob/master/TOC.md" target="_blank" rel="noopener noreferrer">🖱️GO 基础部分🔥<ExternalLinkIcon/></a></li>
-<li>[ ] <a href="https://github.com/3293172751/Block_Chain/blob/master/go-web" target="_blank" rel="noopener noreferrer">🖱️GO web框架<ExternalLinkIcon/></a></li>
-<li>[ ] <a href="https://github.com/3293172751/Block_Chain/blob/master/Gomd_super/README.md" target="_blank" rel="noopener noreferrer">🖱️Go语言100篇进阶🔥<ExternalLinkIcon/></a></li>
-<li>[ ] <a href="https://github.com/3293172751/Block_Chain/blob/master/go-advancend/README.md" target="_blank" rel="noopener noreferrer">🖱️Go 高级篇<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://go.nsddd.top" target="_blank" rel="noopener noreferrer">go语言docs<ExternalLinkIcon/></a></li>
 </ul>
 </blockquote>
 <div class="custom-container danger"><p class="custom-container-title">提醒</p>

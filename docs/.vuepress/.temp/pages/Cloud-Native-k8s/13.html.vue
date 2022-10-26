@@ -122,6 +122,10 @@ deployment.apps/nginx-pv-demo created
 </blockquote>
 </div>
 <p><strong><code v-pre>StorageClass</code>：充当PV的模板，自动为PVC创建PV</strong></p>
+<blockquote>
+<p>存储的时候需要<code v-pre>StorageClass</code>指定块存储或者文件存储~</p>
+<p><strong>我们在前面也是知道了存储是分类的，我们需要指定<code v-pre>StorageClass</code></strong></p>
+</blockquote>
 <p><img src="http://sm.nsddd.top/smimage-20221022220407744.png" alt="image-20221022220407744"></p>
 <h3 id="创建pv池" tabindex="-1"><a class="header-anchor" href="#创建pv池" aria-hidden="true">#</a> 创建pv池</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment">#nfs主节点</span>
@@ -143,7 +147,7 @@ deployment.apps/nginx-pv-demo created
     <span class="token key atrule">storage</span><span class="token punctuation">:</span> 10M
   <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> ReadWriteMany  <span class="token comment"># 可读可写</span>
-  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> nfs
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> nfs   <span class="token comment"># 指定为nfs</span>
   <span class="token key atrule">nfs</span><span class="token punctuation">:</span>
     <span class="token key atrule">path</span><span class="token punctuation">:</span> /nfs/data/01 <span class="token comment"># 01文件夹位置</span>
     <span class="token key atrule">server</span><span class="token punctuation">:</span> 192.168.0.2  <span class="token comment"># 修改eth0地址</span>
@@ -234,6 +238,10 @@ kubectl get <span class="token function">pv</span>
             <span class="token key atrule">claimName</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>pvc
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<h2 id="删除策略" tabindex="-1"><a class="header-anchor" href="#删除策略" aria-hidden="true">#</a> 删除策略</h2>
+<blockquote>
+<p>删除PVC时候是有回收策略的，比如说是要一起删除掉或者是把<code v-pre>PV</code>保留。</p>
+</blockquote>
 <h2 id="configmap" tabindex="-1"><a class="header-anchor" href="#configmap" aria-hidden="true">#</a> ConfigMap</h2>
 <div class="custom-container tip"><p class="custom-container-title">为什么需要ConfigMap</p>
 <p>我们在使用docker的时候，通常是将某一个容器创建时候就挂载，这样就会保存下来。</p>

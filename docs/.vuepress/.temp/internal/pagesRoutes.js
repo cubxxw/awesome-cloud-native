@@ -55,7 +55,7 @@ export const pagesRoutes = [
   ["v-535c4169","/Cloud-Native-k8s/57.html",{"title":"第57节"},["/Cloud-Native-k8s/57","/Cloud-Native-k8s/57.md"]],
   ["v-55111a08","/Cloud-Native-k8s/58.html",{"title":"第58节"},["/Cloud-Native-k8s/58","/Cloud-Native-k8s/58.md"]],
   ["v-56c5f2a7","/Cloud-Native-k8s/59.html",{"title":"第59节"},["/Cloud-Native-k8s/59","/Cloud-Native-k8s/59.md"]],
-  ["v-6719ba31","/Cloud-Native-k8s/6.html",{"title":"第6节 sealos"},["/Cloud-Native-k8s/6","/Cloud-Native-k8s/6.md"]],
+  ["v-6719ba31","/Cloud-Native-k8s/6.html",{"title":"第6节 sealos搭建k8s"},["/Cloud-Native-k8s/6","/Cloud-Native-k8s/6.md"]],
   ["v-7c509051","/Cloud-Native-k8s/60.html",{"title":"第60节"},["/Cloud-Native-k8s/60","/Cloud-Native-k8s/60.md"]],
   ["v-7e0568f0","/Cloud-Native-k8s/61.html",{"title":"第61节"},["/Cloud-Native-k8s/61","/Cloud-Native-k8s/61.md"]],
   ["v-7fba418f","/Cloud-Native-k8s/62.html",{"title":"第62节"},["/Cloud-Native-k8s/62","/Cloud-Native-k8s/62.md"]],
