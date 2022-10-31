@@ -8,6 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
+<nav class="table-of-contents"><ul><li><router-link to="#ingress">Ingress</router-link></li><li><router-link to="#统一网关">统一网关</router-link></li><li><router-link to="#yaml文件">yaml文件</router-link></li><li><router-link to="#安装nginx测试">安装nginx测试</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="ingress" tabindex="-1"><a class="header-anchor" href="#ingress" aria-hidden="true">#</a> Ingress</h2>
 <p><strong>Ingress：service的统一网关入口（nginx实现）</strong></p>

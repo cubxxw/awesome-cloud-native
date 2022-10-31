@@ -506,8 +506,43 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第14节",
+    "title": "第14节 k3s",
     "headers": [
+      {
+        "level": 2,
+        "title": "k3s介绍",
+        "slug": "k3s介绍",
+        "link": "#k3s介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "架构",
+        "slug": "架构",
+        "link": "#架构",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "安装（卸载）k3s",
+        "slug": "安装-卸载-k3s",
+        "link": "#安装-卸载-k3s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "镜像加速",
+        "slug": "镜像加速",
+        "link": "#镜像加速",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "边缘计算",
+        "slug": "边缘计算",
+        "link": "#边缘计算",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -521,8 +556,59 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第15节",
+    "title": "第15节 helm",
     "headers": [
+      {
+        "level": 2,
+        "title": "helm介绍",
+        "slug": "helm介绍",
+        "link": "#helm介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "v2 vs v3",
+        "slug": "v2-vs-v3",
+        "link": "#v2-vs-v3",
+        "children": [
+          {
+            "level": 3,
+            "title": "区别对比",
+            "slug": "区别对比",
+            "link": "#区别对比",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Helm Controller",
+        "slug": "helm-controller",
+        "link": "#helm-controller",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "helm安装",
+        "slug": "helm安装",
+        "link": "#helm安装",
+        "children": [
+          {
+            "level": 3,
+            "title": "用二进制版本安装",
+            "slug": "用二进制版本安装",
+            "link": "#用二进制版本安装",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用脚本安装",
+            "slug": "使用脚本安装",
+            "link": "#使用脚本安装",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -536,8 +622,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第16节",
+    "title": "第16节 Treafik LB",
     "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4607,7 +4700,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "空白页",
+    "title": "docker镜像打包导入到另一台服务器",
     "headers": [],
     "path": "/markdown/46.html",
     "pathLocale": "/",

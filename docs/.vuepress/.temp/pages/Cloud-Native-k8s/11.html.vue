@@ -8,6 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
+<nav class="table-of-contents"><ul><li><router-link to="#service">service</router-link></li><li><router-link to="#将pod统一暴露成一组服务">将pod统一暴露成一组服务</router-link><ul><li><router-link to="#修改nginx配置文件">修改nginx配置文件</router-link></li><li><router-link to="#使用service配置公共地址">使用service配置公共地址</router-link></li></ul></li><li><router-link to="#yaml配置文件实现service">yaml配置文件实现service</router-link></li><li><router-link to="#测试service的服务发现">测试service的服务发现</router-link></li><li><router-link to="#service服务暴露公网nodeport">service服务暴露公网nodeport</router-link></li><li><router-link to="#删除service">删除service</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="service" tabindex="-1"><a class="header-anchor" href="#service" aria-hidden="true">#</a> service</h2>
 <blockquote>

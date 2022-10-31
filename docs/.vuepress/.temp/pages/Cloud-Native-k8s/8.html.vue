@@ -353,17 +353,17 @@ kubectl apply <span class="token parameter variable">-f</span> https://raw.githu
 <p>⚡ 名称空间用来隔离资源，对资源进行划分，默认只是<strong>隔离资源，不隔离网络</strong>。</p>
 <ol>
 <li>
-<p>资源对象的隔离：Service、Deployment、Pod</p>
+<p>资源对象的隔离：<code v-pre>Service</code>、<code v-pre>Deployment</code>、<code v-pre>Pod</code></p>
 </li>
 <li>
-<p>资源配额的隔离：Cpu、Memory</p>
+<p>资源配额的隔离：<code v-pre>Cpu</code>、<code v-pre>Memory</code></p>
 </li>
 </ol>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl create ns hello  <span class="token comment">#创建命名空间</span>
 kubectl delete ns hello  <span class="token comment">#删除命名空间</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>不同命名空间下的service-ip是可以互相访问的，与命名空间无关。</p>
-<p>不同命名空间下的pod名称与dns是访问不到的。pod-ip是不隔离的。</p>
-<p><strong>🔥 查看命令空间</strong></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>不同命名空间下的 <code v-pre>service-ip</code> 是可以互相访问的，与命名空间无关。</p>
+<p>不同命名空间下的 <code v-pre>pod</code> 名称与 <code v-pre>dns</code> 是访问不到的。 <code v-pre>pod-ip</code> 是不隔离的。</p>
+<p><strong>🔥 查看命名空间</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get ns
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022115320381.png" alt="image-20221022115320381"></p>
 <p><strong>每一个应用都有自己的名称空间</strong></p>
@@ -392,7 +392,7 @@ kubectl delect ns hello
 kubectl delect <span class="token parameter variable">-f</span> hello.yaml
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="nc命令" tabindex="-1"><a class="header-anchor" href="#nc命令" aria-hidden="true">#</a> nc命令</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>nc -zv 172.31.0.2 30250
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>访问目的内网ip:30250端口是否正常访问</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>访问目的内网<code v-pre>ip:30250</code>端口是否正常访问</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '7.md' style='float:left'>⬆️上一节🔗  </a><a href = '9.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
