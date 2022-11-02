@@ -22,6 +22,43 @@
 <p><a href="/markdown/%E8%84%91%E5%9B%BE%E7%AC%94%E8%AE%B0"> 🖱️脑图下载</a></p>
 <p>图片当初是用sm图库，对于小时访问量有限制，后期会慢慢转到服务器中。</p>
 </div>
+<h2 id="🔮学完docker或许你可以试试这些" tabindex="-1"><a class="header-anchor" href="#🔮学完docker或许你可以试试这些" aria-hidden="true">#</a> 🔮学完docker或许你可以试试这些</h2>
+<h3 id="建立你自己的docker" tabindex="-1"><a class="header-anchor" href="#建立你自己的docker" aria-hidden="true">#</a> 建立你自己的<code v-pre>Docker</code></h3>
+<ul>
+<li><a href="https://blog.lizzie.io/linux-containers-in-500-loc.html" target="_blank" rel="noopener noreferrer">🔱🔧🧰<strong>C</strong> ：500 行代码中的 Linux 容器<ExternalLinkIcon/></a></li>
+<li><a href="https://www.infoq.com/articles/build-a-container-golang" target="_blank" rel="noopener noreferrer">🔱🔧🧰<strong>Go</strong> ：自己的构建包100 去构建自己的构建包<ExternalLinkIcon/></a></li>
+<li><a href="https://www.youtube.com/watch?v=8fi7uSYlOdc" target="_blank" rel="noopener noreferrer">🔱🔧🧰<strong>Go</strong>：在 Go 中从头开始制造容器<ExternalLinkIcon/></a>[视频]</li>
+<li><a href="https://github.com/Fewbytes/rubber-docker" target="_blank" rel="noopener noreferrer">🔱🔧🧰<strong>Python</strong>：Linux 容器研讨会：从头开始重构 Docker<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/tonybaloney/mocker" target="_blank" rel="noopener noreferrer">🔱🔧🧰<strong>Python</strong>：一个概念模仿Docker，用10% Python编写<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/p8952/bocker" target="_blank" rel="noopener noreferrer">🔱🔧🧰<strong>Shell</strong> ：Docker 在大约 100 行 bash 中实现<ExternalLinkIcon/></a></li>
+</ul>
+<h3 id="从docker进阶到k8s" tabindex="-1"><a class="header-anchor" href="#从docker进阶到k8s" aria-hidden="true">#</a> 从docker进阶到k8s</h3>
+<div class="custom-container warning"><p class="custom-container-title">注意</p>
+<p>⚠️ 正在更新⚡~关注等待~</p>
+<ul>
+<li><RouterLink to="/Cloud-Native-k8s/">k8s &amp; 云原生</RouterLink></li>
+</ul>
+</div>
+<h3 id="💱安装docker" tabindex="-1"><a class="header-anchor" href="#💱安装docker" aria-hidden="true">#</a> 💱安装docker</h3>
+<CodeGroup>
+<CodeGroupItem title="ubuntu">
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">docker</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></CodeGroupItem>
+<CodeGroupItem title="centos">
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token function">docker</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></CodeGroupItem>
+</CodeGroup>
+<h2 id="🅱️最新补充" tabindex="-1"><a class="header-anchor" href="#🅱️最新补充" aria-hidden="true">#</a> 🅱️最新补充</h2>
+<div class="custom-container warning"><p class="custom-container-title">温馨提示</p>
+<p>这个板块是后面在使用<code v-pre>docker</code>慢慢补充的</p>
+</div>
+<p><RouterLink to="/markdown/41.html">💢🚝浅谈 linux 中的根文件系统（rootfs 的原理和介绍）</RouterLink></p>
+<p><RouterLink to="/markdown/47.html">💢🚝补充：docker底层的内核：（rootfs / linux namespace / control groups）</RouterLink></p>
+<p><RouterLink to="/markdown/42.html">💢🚝补充：Docker nginx篇</RouterLink></p>
+<p><RouterLink to="/markdown/43.html">💢🚝补充：修改docker镜像的映射端口（如何修改镜像配置文件）</RouterLink></p>
+<p><RouterLink to="/markdown/44.html">💢🚝补充：docker搭建Gitlab 服务器，Git版本控制流</RouterLink></p>
+<p><RouterLink to="/markdown/45.html">💢🚝补充：docker搭建jenkins，CICD控制流）</RouterLink></p>
+<p><RouterLink to="/markdown/46.html">💢🚝补充：docker网站迁移手段</RouterLink></p>
 <h2 id="📚目录" tabindex="-1"><a class="header-anchor" href="#📚目录" aria-hidden="true">#</a> 📚目录</h2>
 <p>🐋 1. <RouterLink to="/markdown/1.html">Docker概述</RouterLink></p>
 <p>🐋 2. <RouterLink to="/markdown/2.html">docker系统架构</RouterLink></p>

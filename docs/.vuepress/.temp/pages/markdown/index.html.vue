@@ -39,7 +39,10 @@
 </ul>
 <h3 id="从docker进阶到k8s" tabindex="-1"><a class="header-anchor" href="#从docker进阶到k8s" aria-hidden="true">#</a> 从docker进阶到k8s</h3>
 <div class="custom-container warning"><p class="custom-container-title">注意</p>
-<p>⚠️ 注意，这个板块博主正在努力学习中⚡~关注等待~</p>
+<p>⚠️ 正在更新⚡~关注等待~</p>
+<ul>
+<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">k8s &amp; 云原生<ExternalLinkIcon/></a></li>
+</ul>
 </div>
 <h3 id="💱安装docker" tabindex="-1"><a class="header-anchor" href="#💱安装docker" aria-hidden="true">#</a> 💱安装docker</h3>
 <CodeGroup>

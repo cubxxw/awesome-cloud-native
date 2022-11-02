@@ -70,6 +70,76 @@ Docker 是世界领先的软件容器平台。
 
 
 
+## 🔮学完docker或许你可以试试这些
+
+### 建立你自己的`Docker`
+
+-  [🔱🔧🧰**C** ：500 行代码中的 Linux 容器](https://blog.lizzie.io/linux-containers-in-500-loc.html)
+-  [🔱🔧🧰**Go** ：自己的构建包100 去构建自己的构建包](https://www.infoq.com/articles/build-a-container-golang)
+-  [🔱🔧🧰**Go**：在 Go 中从头开始制造容器](https://www.youtube.com/watch?v=8fi7uSYlOdc)[视频]
+-  [🔱🔧🧰**Python**：Linux 容器研讨会：从头开始重构 Docker](https://github.com/Fewbytes/rubber-docker)
+-  [🔱🔧🧰**Python**：一个概念模仿Docker，用10% Python编写](https://github.com/tonybaloney/mocker)
+-  [🔱🔧🧰**Shell** ：Docker 在大约 100 行 bash 中实现](https://github.com/p8952/bocker)
+
+
+
+### 从docker进阶到k8s
+
+::: warning
+⚠️ 正在更新⚡~关注等待~
+
++ [k8s & 云原生](Cloud-Native-k8s/)
+
+:::
+
+
+
+###  💱安装docker
+
+:::: code-group
+::: code-group-item ubuntu
+
+```bash
+sudo apt install docker
+```
+
+:::
+::: code-group-item centos
+
+```shell
+yum install docker
+```
+
+:::
+::::
+
+
+
+## 🅱️最新补充
+
+::: warning 温馨提示
+这个板块是后面在使用`docker`慢慢补充的
+
+:::
+
+
+
+[💢🚝浅谈 linux 中的根文件系统（rootfs 的原理和介绍）](./markdown/41.md)
+
+[💢🚝补充：docker底层的内核：（rootfs / linux namespace / control groups）](./markdown/47.md)
+
+[💢🚝补充：Docker nginx篇](./markdown/42.md)
+
+[💢🚝补充：修改docker镜像的映射端口（如何修改镜像配置文件）](./markdown/43.md)
+
+[💢🚝补充：docker搭建Gitlab 服务器，Git版本控制流](./markdown/44.md)
+
+[💢🚝补充：docker搭建jenkins，CICD控制流）](./markdown/45.md)
+
+[💢🚝补充：docker网站迁移手段](./markdown/46.md)
+
+
+
 ## 📚目录
 
 🐋 1. [Docker概述](./markdown/1.md)

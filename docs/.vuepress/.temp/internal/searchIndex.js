@@ -18,6 +18,42 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "🔮学完docker或许你可以试试这些",
+        "slug": "🔮学完docker或许你可以试试这些",
+        "link": "#🔮学完docker或许你可以试试这些",
+        "children": [
+          {
+            "level": 3,
+            "title": "建立你自己的Docker",
+            "slug": "建立你自己的docker",
+            "link": "#建立你自己的docker",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从docker进阶到k8s",
+            "slug": "从docker进阶到k8s",
+            "link": "#从docker进阶到k8s",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "💱安装docker",
+            "slug": "💱安装docker",
+            "link": "#💱安装docker",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "🅱️最新补充",
+        "slug": "🅱️最新补充",
+        "link": "#🅱️最新补充",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "📚目录",
         "slug": "📚目录",
         "link": "#📚目录",
@@ -633,6 +669,13 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "安装",
+        "slug": "安装",
+        "link": "#安装",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
@@ -644,8 +687,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第17节",
+    "title": "第17节 Service LB",
     "headers": [
+      {
+        "level": 2,
+        "title": "k3s功能拓展——Service LB Controller",
+        "slug": "k3s功能拓展——service-lb-controller",
+        "link": "#k3s功能拓展——service-lb-controller",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -659,8 +709,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第18节",
+    "title": "第18节 rootfs",
     "headers": [
+      {
+        "level": 2,
+        "title": "为什么k3s binary 可以压缩到50MB",
+        "slug": "为什么k3s-binary-可以压缩到50mb",
+        "link": "#为什么k3s-binary-可以压缩到50mb",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4707,8 +4764,66 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "空白页",
-    "headers": [],
+    "title": "docker底层的内核",
+    "headers": [
+      {
+        "level": 2,
+        "title": "底层结构",
+        "slug": "底层结构",
+        "link": "#底层结构",
+        "children": [
+          {
+            "level": 3,
+            "title": "经典云计算架构",
+            "slug": "经典云计算架构",
+            "link": "#经典云计算架构",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "介绍",
+            "slug": "介绍",
+            "link": "#介绍",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "BaaS：区块链即服务",
+            "slug": "baas-区块链即服务",
+            "link": "#baas-区块链即服务",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "docker",
+        "slug": "docker",
+        "link": "#docker",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rootfs",
+        "slug": "rootfs",
+        "link": "#rootfs",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Namespace",
+        "slug": "namespace",
+        "link": "#namespace",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "control groups",
+        "slug": "control-groups",
+        "link": "#control-groups",
+        "children": []
+      }
+    ],
     "path": "/markdown/47.html",
     "pathLocale": "/",
     "extraFields": []
@@ -5379,3 +5494,16 @@ export const searchIndex = [
     "extraFields": []
   }
 ]
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateSearchIndex) {
+    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ searchIndex }) => {
+    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
+  })
+}

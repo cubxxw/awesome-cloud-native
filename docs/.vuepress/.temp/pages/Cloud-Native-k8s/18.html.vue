@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第18节" tabindex="-1"><a class="header-anchor" href="#第18节" aria-hidden="true">#</a> 第18节</h1>
+<h1 id="第18节-rootfs" tabindex="-1"><a class="header-anchor" href="#第18节-rootfs" aria-hidden="true">#</a> 第18节 rootfs</h1>
 <div><a href = '17.md' style='float:left'>⬆️上一节🔗  </a><a href = '19.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
@@ -9,6 +9,7 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="为什么k3s-binary-可以压缩到50mb" tabindex="-1"><a class="header-anchor" href="#为什么k3s-binary-可以压缩到50mb" aria-hidden="true">#</a> 为什么k3s binary 可以压缩到50MB</h2>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '17.md' style='float:left'>⬆️上一节🔗  </a><a href = '19.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

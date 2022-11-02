@@ -271,6 +271,10 @@ export default {
                 text: '⚡ k8s学习篇',
                 link: '/Cloud-Native-k8s/'
             },
+            {
+                text: '⚡ docker学习篇',
+                link: '/markdown/'
+            },
           ],
           sidebar: {
             '/markdown/': [

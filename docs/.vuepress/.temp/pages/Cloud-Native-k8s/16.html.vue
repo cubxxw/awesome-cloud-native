@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#介绍">介绍</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#介绍">介绍</router-link></li><li><router-link to="#安装">安装</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h2>
 <ul>
@@ -21,6 +21,28 @@
 <p><code v-pre>Nginx</code> 和 <code v-pre>Traefik</code> 横向对比：</p>
 <p><img src="http://sm.nsddd.top/smimage-20221031155941634.png" alt="image-20221031155941634"></p>
 </details>
+<h2 id="安装" tabindex="-1"><a class="header-anchor" href="#安装" aria-hidden="true">#</a> 安装</h2>
+<details class="custom-container details"><summary>安装方式</summary>
+<p>treafik支持下面几种安装的方式：</p>
+<ul>
+<li>最简单的方法： 从 <a href="https://github.com/containous/traefik/releases" target="_blank" rel="noopener noreferrer">版本下载<ExternalLinkIcon/></a> 页面下载最新的可执行文件并以这个 <a href="https://raw.githubusercontent.com/containous/traefik/master/traefik.sample.toml" target="_blank" rel="noopener noreferrer">示例配置文件<ExternalLinkIcon/></a> 运行：</li>
+</ul>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>./traefik <span class="token parameter variable">--configFile</span><span class="token operator">=</span>traefik.toml
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
+<li></li>
+<li>
+<p>通过Docker镜像：</p>
+</li>
+</ul>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">8080</span>:8080 <span class="token parameter variable">-p</span> <span class="token number">80</span>:80 <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/traefik.toml:/etc/traefik/traefik.toml traefik
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
+<li></li>
+<li>
+<p>通过源码编译：</p>
+</li>
+</ul>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/containous/traefik
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></details>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '15.md' style='float:left'>⬆️上一节🔗  </a><a href = '17.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
