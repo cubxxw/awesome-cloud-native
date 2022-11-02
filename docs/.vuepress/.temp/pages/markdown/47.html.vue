@@ -114,13 +114,51 @@
 <div class="custom-container tip"><p class="custom-container-title">什么是 Namespace ？</p>
 <p>我们的docker是共享同一个内核的，使用 <code v-pre>Namespace</code> 可以创建隔离，决定进程可以看到或者使用哪些资源。</p>
 </div>
+<p><code v-pre>namespace</code> 是 Linux 内核用来隔离内核资源的方式，通过 namespace 可以让一些进程只能看到与自己相关的一部分资源，而另外一些进程也只能看到与它们自己相关的资源。</p>
+<p><img src="http://sm.nsddd.top/smformat12344" alt="img"></p>
+<div class="custom-container warning"><p class="custom-container-title">进程命名空间查看</p>
+<p>进程命名空间查看：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">ls</span> /proc/<span class="token punctuation">{</span>PD<span class="token punctuation">}</span>/ns
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221031201635589.png" alt="image-20221031201635589"></p>
+</div>
 <h2 id="control-groups" tabindex="-1"><a class="header-anchor" href="#control-groups" aria-hidden="true">#</a> control groups</h2>
+<blockquote>
+<p>从 <strong>2.6.24</strong> 版本开始，<code v-pre>linux</code> 内核提供了一个叫做 <code v-pre>cgroups</code>（控制组）的特性。<code v-pre>cgroups</code> 就是 <code v-pre>control groups</code> 的缩写，用来对一组进程所占用的资源做限制、统计、隔离。也是目前轻量级虚拟化技术 <code v-pre>lxc</code> （linux container）的基础之一。每一组进程就是一个控制组，也就是一个 <code v-pre>cgroup</code>。<code v-pre>cgroups</code> 分为几个子系统，每个子系统代表一种设施或者说是资源控制器，用来调度某一类资源的使用，如 <code v-pre>cpu</code> 时钟、内存、块设备 等。</p>
+</blockquote>
 <div class="custom-container tip"><p class="custom-container-title">什么是 control groups ?</p>
 <p>我们通过 <code v-pre>control groups</code> 技术来约束进程对资源的使用。</p>
 </div>
 <blockquote>
 <p><strong><code v-pre>rootfs</code> 就像是房间的地板，<code v-pre>Namespace</code> 就像是一个墙，隔离每个房间，<code v-pre>control groups</code> 更像一个房顶，防止你跑出去了。</strong></p>
 </blockquote>
+<p><strong>什么是特定：</strong></p>
+<p><code v-pre>cgroups</code> 适用于多种应用场景，从单个进程的资源控制，到实现操作系统层次的虚拟化（OS Level Virtualization）。</p>
+<ol>
+<li>
+<p>限制进程组可以使用的资源数量（Resource limiting ）。比如：memory子系统可以为进程组设定一个memory使用上限，一旦进程组使用的内存达到限额再申请内存，就会出发OOM（out of memory）。</p>
+</li>
+<li>
+<p>进程组的优先级控制（Prioritization ）。比如：可以使用cpu子系统为某个进程组分配特定cpu share。</p>
+</li>
+<li>
+<p>记录进程组使用的资源数量（Accounting ）。比如：可以使用cpuacct子系统记录某个进程组使用的cpu时间</p>
+</li>
+<li>
+<p>进程组隔离（Isolation）。比如：使用ns子系统可以使不同的进程组使用不同的namespace，以达到隔离的目的，不同的进程组有各自的进程、网络、文件系统挂载空间。</p>
+</li>
+</ol>
+<p><strong>Cgroups子系统介绍：</strong></p>
+<ul>
+<li><code v-pre>blkio</code> — 这个子系统为块设备设定输入/输出限制，比如物理设备（磁盘，固态硬盘，USB 等等）。</li>
+<li><code v-pre>cpu</code> — 这个子系统使用调度程序提供对 CPU 的 cgroup 任务访问。</li>
+<li><code v-pre>cpuacct</code> — 这个子系统自动生成 cgroup 中任务所使用的 CPU 报告。</li>
+<li><code v-pre>cpuset</code> — 这个子系统为 cgroup 中的任务分配独立 CPU（在多核系统）和内存节点。</li>
+<li><code v-pre>devices</code> — 这个子系统可允许或者拒绝 cgroup 中的任务访问设备。</li>
+<li><code v-pre>freezer</code> — 这个子系统挂起或者恢复 cgroup 中的任务。</li>
+<li><code v-pre>memory</code> — 这个子系统设定 cgroup 中任务使用的内存限制，并自动生成由那些任务使用的内存资源报告。</li>
+<li><code v-pre>net_cls</code> — 这个子系统使用等级识别符（classid）标记网络数据包，可允许 Linux 流量控制程序（tc）识别从具体 cgroup 中生成的数据包。</li>
+<li><code v-pre>ns</code> — 名称空间子系统。</li>
+</ul>
 </div></template>
 
 

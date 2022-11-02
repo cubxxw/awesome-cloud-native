@@ -318,16 +318,44 @@ redis-conf         <span class="token number">1</span>      19s
 </blockquote>
 <h2 id="secret" tabindex="-1"><a class="header-anchor" href="#secret" aria-hidden="true">#</a> Secret</h2>
 <div class="custom-container tip"><p class="custom-container-title">Secret作用和介绍</p>
-<p>secret用来保存小片敏感数据的k8s资源，例如密码，token，或者秘钥。这类数据当然也可以存放在Pod或者镜像中，但是放在Secret中是为了更方便的控制如何使用数据，并减少暴露的风险。</p>
-<p>用户可以创建自己的secret，系统也会有自己的secret。
-Pod需要先引用才能使用某个secret</p>
+<p><code v-pre>secret</code>用来保存小片敏感数据的k8s资源，例如密码，token，或者秘钥。这类数据当然也可以存放在Pod或者镜像中，但是放在Secret中是为了更方便的控制如何使用数据，并减少暴露的风险。</p>
+<ul>
+<li>
+<p>用户可以创建自己的<code v-pre>secret</code>，系统也会有自己的<code v-pre>secret</code>。</p>
+</li>
+<li>
+<p>Pod需要先引用才能使用某个secret</p>
+</li>
+</ul>
+<p><code v-pre>Secret</code> 类似于 <a href="https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-pod-configmap/" target="_blank" rel="noopener noreferrer">ConfigMap<ExternalLinkIcon/></a> 但专门用于保存机密数据。</p>
 </div>
-<p>Pod有2种方式来使用secret：</p>
+<h3 id="secret的使用" tabindex="-1"><a class="header-anchor" href="#secret的使用" aria-hidden="true">#</a> secret的使用</h3>
+<p><strong>Pod有2种方式来使用<code v-pre>secret</code>：</strong></p>
 <ol>
 <li>作为volume的一个域被一个或多个容器挂载</li>
 <li>在拉取镜像的时候被kubelet引用。</li>
+<li>或许也可以作为容器的环境变量</li>
 </ol>
-<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<div class="custom-container warning"><p class="custom-container-title">注意</p>
+<p>默认情况下，Kubernetes Secret 未加密地存储在 API 服务器的底层数据存储（etcd）中。 任何拥有 API 访问权限的人都可以检索或修改 Secret，任何有权访问 etcd 的人也可以。 此外，任何有权限在命名空间中创建 Pod 的人都可以使用该访问权限读取该命名空间中的任何 Secret； 这包括间接访问，例如创建 Deployment 的能力。</p>
+</div>
+<p><strong>创建一个secret：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl create secret docke-registry xiongxinwei-docker <span class="token punctuation">\</span>
+--docker-username<span class="token operator">=</span><span class="token number">3293172751</span> <span class="token punctuation">\</span>
+--docker-password<span class="token operator">=</span><span class="token number">24643</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. <span class="token punctuation">\</span>
+--docker-email<span class="token operator">=</span><span class="token number">3293172751</span>@qq.com
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container tip"><p class="custom-container-title">命令格式：</p>
+<p>🧷命令格式：</p>
+<ul>
+<li><code v-pre>--docker-server</code>：Docker仓库地址。</li>
+<li><code v-pre>--docker-username</code>：Docker仓库用户名。</li>
+<li><code v-pre>--docker-password</code>：Docker仓库密码。</li>
+<li><code v-pre>--docker-email</code>：Docker仓库邮箱。</li>
+</ul>
+</div>
+<p><strong>获取secret：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kuberctl get secret
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '12.md' style='float:left'>⬆️上一节🔗  </a><a href = '14.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

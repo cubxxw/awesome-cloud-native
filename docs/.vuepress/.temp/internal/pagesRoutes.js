@@ -9,7 +9,7 @@ export const pagesRoutes = [
   ["v-7c59a327","/Cloud-Native-k8s/15.html",{"title":"第15节 helm"},["/Cloud-Native-k8s/15","/Cloud-Native-k8s/15.md"]],
   ["v-7e0e7bc6","/Cloud-Native-k8s/16.html",{"title":"第16节 Treafik LB"},["/Cloud-Native-k8s/16","/Cloud-Native-k8s/16.md"]],
   ["v-7fc35465","/Cloud-Native-k8s/17.html",{"title":"第17节 Service LB"},["/Cloud-Native-k8s/17","/Cloud-Native-k8s/17.md"]],
-  ["v-fd0fa5f8","/Cloud-Native-k8s/18.html",{"title":"第18节 rootfs"},["/Cloud-Native-k8s/18","/Cloud-Native-k8s/18.md"]],
+  ["v-fd0fa5f8","/Cloud-Native-k8s/18.html",{"title":"第18节kubernetes API 访问控制"},["/Cloud-Native-k8s/18","/Cloud-Native-k8s/18.md"]],
   ["v-f9a5f4ba","/Cloud-Native-k8s/19.html",{"title":"第19节"},["/Cloud-Native-k8s/19","/Cloud-Native-k8s/19.md"]],
   ["v-604657b5","/Cloud-Native-k8s/2.html",{"title":"第2节 docker实用操作"},["/Cloud-Native-k8s/2","/Cloud-Native-k8s/2.md"]],
   ["v-ae90b966","/Cloud-Native-k8s/20.html",{"title":"第20节"},["/Cloud-Native-k8s/20","/Cloud-Native-k8s/20.md"]],

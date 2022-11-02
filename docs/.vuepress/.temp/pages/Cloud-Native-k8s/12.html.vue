@@ -99,7 +99,7 @@
 <p>创建应用pod、service</p>
 <div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code>kubectl create deplyment web01 --image=nginx:1.14
 kubectl expose deployment web02  --port=80 --protocol=TCP
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>关联ingress 80端口：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>关联 <code v-pre>ingress 80</code> 端口：</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1beta1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>

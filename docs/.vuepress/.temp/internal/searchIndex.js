@@ -527,7 +527,15 @@ export const searchIndex = [
         "title": "Secret",
         "slug": "secret",
         "link": "#secret",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "secret的使用",
+            "slug": "secret的使用",
+            "link": "#secret的使用",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -709,13 +717,84 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第18节 rootfs",
+    "title": "第18节kubernetes API 访问控制",
     "headers": [
       {
         "level": 2,
-        "title": "为什么k3s binary 可以压缩到50MB",
-        "slug": "为什么k3s-binary-可以压缩到50mb",
-        "link": "#为什么k3s-binary-可以压缩到50mb",
+        "title": "基本概念",
+        "slug": "基本概念",
+        "link": "#基本概念",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "kubernetes 扩展",
+        "slug": "kubernetes-扩展",
+        "link": "#kubernetes-扩展",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. kubectl",
+            "slug": "_1-kubectl",
+            "link": "#_1-kubectl",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2. APIServer",
+            "slug": "_2-apiserver",
+            "link": "#_2-apiserver",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "3. Kubernetes 资源",
+            "slug": "_3-kubernetes-资源",
+            "link": "#_3-kubernetes-资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "4. Controller 控制器",
+            "slug": "_4-controller-控制器",
+            "link": "#_4-controller-控制器",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "5. Schedule 调度器",
+            "slug": "_5-schedule-调度器",
+            "link": "#_5-schedule-调度器",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "6. CNI 网络插件",
+            "slug": "_6-cni-网络插件",
+            "link": "#_6-cni-网络插件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "7. CSI 存储插件",
+            "slug": "_7-csi-存储插件",
+            "link": "#_7-csi-存储插件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "8. CRI 容器运行时",
+            "slug": "_8-cri-容器运行时",
+            "link": "#_8-cri-容器运行时",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Operator",
+        "slug": "operator",
+        "link": "#operator",
         "children": []
       },
       {
@@ -4424,44 +4503,44 @@ export const searchIndex = [
     "headers": [
       {
         "level": 2,
-        "title": "一、先交代一下文件系统",
-        "slug": "一、先交代一下文件系统",
-        "link": "#一、先交代一下文件系统",
+        "title": "先交代一下文件系统",
+        "slug": "先交代一下文件系统",
+        "link": "#先交代一下文件系统",
         "children": []
       },
       {
         "level": 2,
-        "title": "二、什么是根文件系统",
-        "slug": "二、什么是根文件系统",
-        "link": "#二、什么是根文件系统",
+        "title": "什么是根文件系统",
+        "slug": "什么是根文件系统",
+        "link": "#什么是根文件系统",
         "children": []
       },
       {
         "level": 2,
-        "title": "三、根文件系统为什么这么重要",
-        "slug": "三、根文件系统为什么这么重要",
-        "link": "#三、根文件系统为什么这么重要",
+        "title": "根文件系统为什么这么重要",
+        "slug": "根文件系统为什么这么重要",
+        "link": "#根文件系统为什么这么重要",
         "children": []
       },
       {
         "level": 2,
-        "title": "四、如何在内核中挂载根文件系统",
-        "slug": "四、如何在内核中挂载根文件系统",
-        "link": "#四、如何在内核中挂载根文件系统",
+        "title": "如何在内核中挂载根文件系统",
+        "slug": "如何在内核中挂载根文件系统",
+        "link": "#如何在内核中挂载根文件系统",
         "children": []
       },
       {
         "level": 2,
-        "title": "五、根文件系统各个常用目录简介",
-        "slug": "五、根文件系统各个常用目录简介",
-        "link": "#五、根文件系统各个常用目录简介",
+        "title": "根文件系统各个常用目录简介",
+        "slug": "根文件系统各个常用目录简介",
+        "link": "#根文件系统各个常用目录简介",
         "children": []
       },
       {
         "level": 2,
-        "title": "六、顺便说下 linux 文件系统的常用目录",
-        "slug": "六、顺便说下-linux-文件系统的常用目录",
-        "link": "#六、顺便说下-linux-文件系统的常用目录",
+        "title": "顺便说下 linux 文件系统的常用目录",
+        "slug": "顺便说下-linux-文件系统的常用目录",
+        "link": "#顺便说下-linux-文件系统的常用目录",
         "children": []
       }
     ],
@@ -5494,16 +5573,3 @@ export const searchIndex = [
     "extraFields": []
   }
 ]
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateSearchIndex) {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ searchIndex }) => {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  })
-}
