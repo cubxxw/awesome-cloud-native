@@ -2,7 +2,7 @@
 <nav class="table-of-contents"><ul><li><router-link to="#需求">需求</router-link></li><li><router-link to="#dockerfile">DockerFile</router-link></li><li><router-link to="#应用软件的角度">应用软件的角度</router-link></li><li><router-link to="#dockerfile内容基础">dockerfile内容基础</router-link></li><li><router-link to="#docker执行dockerfile的流程">docker执行dockerfile的流程</router-link></li><li><router-link to="#构建步骤">构建步骤</router-link></li><li><router-link to="#run-执行命令">RUN 执行命令</router-link></li><li><router-link to="#构建镜像">构建镜像</router-link></li><li><router-link to="#镜像构建上下文-context">镜像构建上下文（Context）</router-link></li><li><router-link to="#其它-docker-build-的用法">其它 docker build 的用法</router-link><ul><li><router-link to="#直接用-git-repo-进行构建">直接用 Git repo 进行构建</router-link></li><li><router-link to="#用给定的-tar-压缩包构建">用给定的 tar 压缩包构建</router-link></li><li><router-link to="#从标准输入中读取-dockerfile-进行构建">从标准输入中读取 Dockerfile 进行构建</router-link></li><li><router-link to="#从标准输入中读取上下文压缩包进行构建">从标准输入中读取上下文压缩包进行构建</router-link></li></ul></li></ul></nav>
 <p>[toc]</p>
 <h2 id="需求" tabindex="-1"><a class="header-anchor" href="#需求" aria-hidden="true">#</a> 需求</h2>
-<p><strong>我们在前面学习镜像的时候，不含有<code v-pre>vim/ifconfig</code>等命令，所以我们需要重新按照那些命令</strong></p>
+<p><strong>我们在前面学习镜像的时候，不含有<code v-pre>vim/ifconfig</code>等命令，所以我们需要重新安装那些命令</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker commit
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
 <p>对于简单的可能会是一个很好的选择，但是对于随时变化的镜像来说，特别麻烦</p>
@@ -16,9 +16,9 @@
 <p><strong>dockerfile是用来构建docker镜像的文本文件，是由一条条构建镜像所需要的指令和参数构成的脚本</strong></p>
 <h2 id="应用软件的角度" tabindex="-1"><a class="header-anchor" href="#应用软件的角度" aria-hidden="true">#</a> 应用软件的角度</h2>
 <ul>
-<li>dockerfile是软件原材料（写需要的东西）</li>
-<li>docker镜像是软件的交付品</li>
-<li>docker容器则可以认为是镜像的运行态，也即依照镜像运行的容器实例</li>
+<li><code v-pre>dockerfile</code> 是软件原材料（写需要的东西）</li>
+<li><code v-pre>docker</code> 镜像是软件的交付品</li>
+<li><code v-pre>docker</code> 容器则可以认为是镜像的运行态，也即依照镜像运行的容器实例</li>
 </ul>
 <p><img src="https://sm.nsddd.top/smJqBckovlsptOPSE.jpg?xxw@nsddd.top" alt="docker-graphic"></p>
 <h2 id="dockerfile内容基础" tabindex="-1"><a class="header-anchor" href="#dockerfile内容基础" aria-hidden="true">#</a> dockerfile内容基础</h2>
@@ -51,7 +51,7 @@
 <h2 id="run-执行命令" tabindex="-1"><a class="header-anchor" href="#run-执行命令" aria-hidden="true">#</a> RUN 执行命令</h2>
 <p><code v-pre>RUN</code> 指令是用来执行命令行命令的。由于命令行的强大能力，<code v-pre>RUN</code> 指令在定制镜像时是最常用的指令之一。其格式有两种：</p>
 <ul>
-<li><code v-pre>shell</code> 格式：<code v-pre>RUN &lt;命令&gt;</code>，就像直接在命令行中输入的命令一样。刚才写的 Dockerfile 中的 <code v-pre>RUN</code> 指令就是这种格式。</li>
+<li><code v-pre>shell</code> 格式：<code v-pre>RUN &lt;命令&gt;</code>，就像直接在命令行中输入的命令一样。刚才写的 <code v-pre>Dockerfile</code> 中的 <code v-pre>RUN</code> 指令就是这种格式。</li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>RUN <span class="token builtin class-name">echo</span> <span class="token string">'&lt;h1>Hello, Docker!&lt;/h1>'</span> <span class="token operator">></span> /usr/share/nginx/html/index.html
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>

@@ -3,17 +3,15 @@
 <p>[toc]</p>
 <h2 id="自定义镜像mycentosjava8" tabindex="-1"><a class="header-anchor" href="#自定义镜像mycentosjava8" aria-hidden="true">#</a> 自定义镜像mycentosjava8</h2>
 <h3 id="要求" tabindex="-1"><a class="header-anchor" href="#要求" aria-hidden="true">#</a> 要求</h3>
-<p>·     自定义镜像mycentosjava8</p>
-<p>·     要求</p>
-<p>·     Centos7镜像具备vim+ifconfig+jdk8</p>
-<p>·     JDK的下载镜像地址</p>
-<p>·     官网</p>
+<p>·     自定义镜像 <code v-pre>mycentosjava8</code></p>
+<p>·     Centos7镜像具备 <code v-pre>vim+ifconfig+jdk8</code></p>
+<p><strong>官网：</strong></p>
+<p>JDK的下载镜像地址：</p>
 <p><a href="https://www.oracle.com/java/technologies/downloads/#java8" target="_blank" rel="noopener noreferrer">下载地址：https://www.oracle.com/java/technologies/downloads/#java8<ExternalLinkIcon/></a></p>
 <p><img src="@source/markdown/images/LRMtS6w2PDBTxfQ.jpg" alt="graphic"></p>
 <p>·     https://mirrors.yangxingzhen.com/jdk/</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>wget https://mirrors.yangxingzhen.com/jdk/jdk-8u20-linux-x64.tar.gz
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>·     编写</p>
-<p>·     准备编写Dockerfile文件</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>·     准备编写<code v-pre>Dockerfile</code>文件</p>
 <h3 id="拉取镜像" tabindex="-1"><a class="header-anchor" href="#拉取镜像" aria-hidden="true">#</a> 拉取镜像</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> centos /bin/bash
 <span class="token function">docker</span> <span class="token function">ps</span>
@@ -68,8 +66,8 @@ CMD /bin/bash
 </li>
 </ul>
 <h3 id="构建编写的dockerfile-生成新的镜像" tabindex="-1"><a class="header-anchor" href="#构建编写的dockerfile-生成新的镜像" aria-hidden="true">#</a> 构建编写的dockerfile，生成新的镜像</h3>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>vim Dockerfile
-docker build -t centosjava8:1.5 .
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">vim</span> Dockerfile
+<span class="token function">docker</span> build <span class="token parameter variable">-t</span> centosjava8:1.5 <span class="token builtin class-name">.</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>公式：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker build -f dockerfile文件 -t 新镜像名称:TAG .
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>⚠️⚠️⚠️注意，上面TAG后面有个空格，有个点</strong></p>

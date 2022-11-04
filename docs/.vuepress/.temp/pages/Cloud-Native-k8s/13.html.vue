@@ -19,6 +19,13 @@
 </blockquote>
 <p><strong>⚡ k8s将所有的挂载的层次统一管理起来，形成存储层。</strong></p>
 </div>
+<p>kubernetes 集群不会为你处理数据的存储，我们可以为数据库挂载一个磁盘来确保数据的安全。
+你可以选择云存储、本地磁盘、NFS。</p>
+<ul>
+<li>本地磁盘：可以挂载某个节点上的目录，但是这需要限定 pod 在这个节点上运行</li>
+<li>云存储：不限定节点，不受集群影响，安全稳定；需要云服务商提供，裸机集群是没有的。</li>
+<li>NFS：不限定节点，不受集群影响</li>
+</ul>
 <h2 id="环境准备nfs" tabindex="-1"><a class="header-anchor" href="#环境准备nfs" aria-hidden="true">#</a> 环境准备NFS</h2>
 <h3 id="所有结点" tabindex="-1"><a class="header-anchor" href="#所有结点" aria-hidden="true">#</a> 所有结点</h3>
 <p><strong>安装NFS：</strong></p>

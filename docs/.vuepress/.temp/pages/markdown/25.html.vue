@@ -11,18 +11,18 @@
 <li>
 <p><code v-pre>run</code>：容器构建时候执行的命令（docker build)</p>
 <ul>
-<li>shell格式</li>
-<li>exec格式</li>
+<li><code v-pre>shell</code> 格式</li>
+<li><code v-pre>exec</code> 格式</li>
 </ul>
 </li>
 <li>
 <p><code v-pre>expose</code>：当前容器对外暴露的端口</p>
 </li>
 <li>
-<p><code v-pre>workdir</code>：指定创建容器后，终端默认登陆进来的工作目录</p>
+<p><code v-pre>workdir</code>：指定创建容器后，终端 <strong>默认登陆进来的工作目录</strong></p>
 </li>
 <li>
-<p><code v-pre>user</code>：指定镜像以什么样的用户进行（一般不用）</p>
+<p><code v-pre>user</code>：指定镜像以什么样的用户进行（一般不用，默认是 <code v-pre>root</code>）</p>
 </li>
 <li>
 <p><code v-pre>env</code>：用来在构建镜像过程中设置环境变量</p>
@@ -32,14 +32,14 @@ RUN <span class="token function">mkdir</span> <span class="token parameter varia
 WORKDIR <span class="token variable">$CATALINA_HOME</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>
-<p><code v-pre>add</code>：将宿主目录下的文件拷贝到镜像且自动处理URL和解压的tar压缩包(一般使用copy不适用add)</p>
+<p><code v-pre>add</code>：将宿主目录下的文件拷贝到镜像且自动处理URL和解压的tar压缩包(一般使用copy不使用add)</p>
 </li>
 <li>
 <p><code v-pre>copy</code>：（类似于add），将构建的文件、目录复制到新的一层镜像内</p>
-<p><strong>·     <code v-pre>COPY src dest</code></strong></p>
-<p><strong>·     <code v-pre>COPY [&quot;src&quot;, &quot;dest&quot;]</code></strong></p>
-<p><strong>·     <code v-pre>&lt;src源路径&gt;</code>：源文件或者源目录</strong></p>
-<p><strong>·     <code v-pre>&lt;dest目标路径&gt;</code>：容器内的指定路径，该路径不用事先建好，路径不存在的话，会自动创建。</strong></p>
+<p>·     <code v-pre>COPY src dest</code></p>
+<p>·     <code v-pre>COPY [&quot;src&quot;, &quot;dest&quot;]</code></p>
+<p>·     <code v-pre>&lt;src源路径&gt;</code>：源文件或者源目录</p>
+<p>·     <code v-pre>&lt;dest目标路径&gt;</code>：容器内的指定路径，该路径不用事先建好，路径不存在的话，会自动创建。</p>
 </li>
 <li>
 <p><code v-pre>volume</code>：容器卷，相当于<code v-pre>-v</code></p>
@@ -47,22 +47,67 @@ WORKDIR <span class="token variable">$CATALINA_HOME</span>
 <li>
 <p><strong><code v-pre>cmd</code>：启动容器后需要做的事情</strong></p>
 <ul>
-<li><strong>类似于<code v-pre>run</code>，也支持shell或者exec</strong></li>
-<li><strong>dockerfile中可以用多个<code v-pre>cmd</code>指令，但只有最后一个生效，cmd会被docker run之后的参数替换</strong></li>
-<li><strong>可以想到是<code v-pre>bin/bash</code>，catalina.sh将其覆盖</strong></li>
-<li><strong>cmd是docker run时运行</strong></li>
-<li><strong>run是docker build时运行</strong></li>
+<li>类似于<code v-pre>run</code>，也支持 <code v-pre>shell</code> 或者 <code v-pre>exec</code></li>
+<li><code v-pre>dockerfile</code> 中可以用多个<code v-pre>cmd</code>指令，但 <strong>只有最后一个生效</strong>，<code v-pre>cmd</code> 会被 <code v-pre>docker run</code> 之后的参数替换</li>
+<li>可以想到是<code v-pre>bin/bash</code>，<code v-pre>catalina.sh</code> 将其覆盖</li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>EXPOSE <span class="token number">8080</span>
 CMD <span class="token punctuation">[</span><span class="token string">"catalina.sh"</span>, <span class="token string">"run"</span><span class="token punctuation">]</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>
-<p><code v-pre>entrypoint</code>：也是用来指定一个容器启动时要运行的命令</p>
+<p><code v-pre>entrypoint</code>：也是用来指定一个容器启动时要运行的命令，看后面警告信息~</p>
 <ul>
 <li>类似于<code v-pre>cmd</code>指令，可以和<code v-pre>cmd</code>一起用</li>
 </ul>
 </li>
 </ul>
+<div class="custom-container danger"><p class="custom-container-title">CMD 和 RUN 区别</p>
+<ul>
+<li><code v-pre>CMD</code> 是 <code v-pre>docker run</code> 时运行 ⚠️</li>
+<li><code v-pre>RUN</code> 是 <code v-pre>docker build</code> 时运行 ⚠️</li>
+</ul>
+<p><strong><code v-pre>ENTRYPOINT</code> 区别 <code v-pre>CMD</code> 会被 <code v-pre>Dockerfile</code> 后面参数覆盖，<code v-pre>ENTRYPOINT</code> 不会，而且这些参数会被当作参数送给 <code v-pre>ENTRYPOINT</code> 指令指定的程序</strong></p>
+<p><em>⚡组合使用，我们构建 <strong><code v-pre>nginx:test</code>镜像</strong></em>：</p>
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code>FORM nginx
+
+<span class="token instruction"><span class="token keyword">ENTRYPOINT</span> [<span class="token string">"nginx"</span>, <span class="token string">"-c"</span>]  # 定参</span>
+<span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">"/etc/nginx/nginx.conf"</span>]  #变参</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><table>
+<thead>
+<tr>
+<th>时否传参</th>
+<th>按照dockerfile编写<strong>执行</strong></th>
+<th><strong>传参运行</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code v-pre>docker</code> 命令</strong></td>
+<td><code v-pre>docke run nginx:test</code></td>
+<td><code v-pre>docker run nginx:test -c /etc/nginx/new.conf</code></td>
+</tr>
+<tr>
+<td><strong>衍生出的实际命令</strong></td>
+<td><code v-pre>nginx -c /etc/nginx/nginx.conf</code></td>
+<td><code v-pre>nginx -c /etc/nginx/new.conf</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="custom-container warning"><p class="custom-container-title">一些自己的📜 对上面的解释</p>
+<p>我们在使用 <code v-pre>RUN</code> 的时候可以想象为：</p>
+<p><code v-pre>RUN [&quot;./test.php&quot; , &quot;dev&quot;, &quot;offline&quot;]</code> 等价于  <code v-pre>RUN ./test.php dev offline</code></p>
+<p>为什么需要设置环境变量？</p>
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code><span class="token instruction"><span class="token keyword">ENV</span> MY_PATH /usr/mytest</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>环境变量也是可以和 <code v-pre>RUN</code> 一起用的，或者是 工作目录：</p>
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code><span class="token instruction"><span class="token keyword">RUN</span> makir -p <span class="token string">"MY_PATH"</span></span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /MY_PATH</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>就是方便使用而已~</p>
+<p>关于 <code v-pre>ADD</code> 和 <code v-pre>COPY</code> 我比较倾向于 <code v-pre>ADD</code> ，它更强大。能处理 <code v-pre>URL</code> 类似于 <code v-pre>wget</code>，自动帮你下载远程文件。</p>
+<p><code v-pre>Dockerfile</code> 可以有多个 <code v-pre>CMD</code> 指令，但是只有最后一个生效，<code v-pre>CMD</code> 会被 <code v-pre>docker run</code> 之后的参数替换，如：</p>
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code>docker run -it -p 8080:8080 tomcat /bin/bash
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><code v-pre>/bin/bash</code> 最后替换了原有 <code v-pre>CMD</code> ，此时会出现找不到服务器~</p>
+</div>
 <h2 id="上手" tabindex="-1"><a class="header-anchor" href="#上手" aria-hidden="true">#</a> 上手</h2>
 <blockquote>
 <p>我们以创建一个<code v-pre>dockerfile</code>为例</p>
@@ -88,10 +133,13 @@ CMD <span class="token punctuation">[</span><span class="token string">"catalina
 <li><code v-pre>.</code> 指定当前目录下</li>
 </ul>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker build -t test . 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>运行</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>运行：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run test
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="参考dockerfile" tabindex="-1"><a class="header-anchor" href="#参考dockerfile" aria-hidden="true">#</a> 参考dockerfile</h2>
 <p><strong>参考tomcat8的dockerfile入门</strong></p>
+<blockquote>
+<p>不管我们远程拉取的热门容器，或者是自己打包的镜像，都需要 <code v-pre>dockerfile</code> 作为支撑。</p>
+</blockquote>
 <ul>
 <li><strong>https://github.com/docker-library/tomcat/blob/master/10.0/jdk8/corretto/Dockerfile</strong></li>
 </ul>

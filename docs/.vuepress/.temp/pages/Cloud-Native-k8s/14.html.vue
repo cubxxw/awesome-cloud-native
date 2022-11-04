@@ -24,7 +24,7 @@
 <li>移除各种非必要的代码，减少资源占用</li>
 <li>TLS证书管理</li>
 <li>内置Containerd</li>
-<li>内置自运行rootfs</li>
+<li>内置自运行 <code v-pre>rootfs</code></li>
 <li>内置Helm Chart管理机制</li>
 <li>内置L4/L7 LB 支持</li>
 </ul>

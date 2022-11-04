@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#理解pod">理解Pod</router-link></li><li><router-link to="#删除pod">删除pod</router-link></li><li><router-link to="#配置文件创建pod">配置文件创建pod</router-link></li><li><router-link to="#可视化界面创建pod">可视化界面创建pod</router-link></li><li><router-link to="#pod日志">pod日志</router-link></li><li><router-link to="#pod-ip">pod - IP</router-link></li><li><router-link to="#进入pod并修改pod">进入pod并修改pod</router-link></li><li><router-link to="#多容器pod细节">多容器pod细节</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#理解pod">理解Pod</router-link></li><li><router-link to="#删除pod">删除pod</router-link></li><li><router-link to="#配置文件创建pod">配置文件创建pod</router-link></li><li><router-link to="#可视化界面创建pod">可视化界面创建pod</router-link></li><li><router-link to="#pod日志">pod日志</router-link></li><li><router-link to="#pod-ip">pod - IP</router-link></li><li><router-link to="#进入pod并修改pod">进入pod并修改pod</router-link></li><li><router-link to="#多容器pod细节">多容器pod细节</router-link></li><li><router-link to="#更多命令">更多命令</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="理解pod" tabindex="-1"><a class="header-anchor" href="#理解pod" aria-hidden="true">#</a> 理解Pod</h2>
 <blockquote>
@@ -255,6 +255,35 @@ Events:
 </li>
 </ul>
 </div>
+<h2 id="更多命令" tabindex="-1"><a class="header-anchor" href="#更多命令" aria-hidden="true">#</a> 更多命令</h2>
+<p><strong>更多命令：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 查看全部</span>
+kubectl get all
+
+<span class="token comment"># 重新部署</span>
+kubectl rollout restart deployment test-k8s
+
+<span class="token comment"># 命令修改镜像，--record 表示把这个命令记录到操作历史中</span>
+kubectl <span class="token builtin class-name">set</span> image deployment test-k8s test-k8s<span class="token operator">=</span>ccr.ccs.tencentyun.com/k8s-tutorial/test-k8s:v2-with-error <span class="token parameter variable">--record</span>
+
+<span class="token comment"># 暂停运行，暂停后，对 deployment 的修改不会立刻生效，恢复后才应用设置</span>
+kubectl rollout pause deployment test-k8s
+
+<span class="token comment"># 恢复</span>
+kubectl rollout resume deployment test-k8s
+
+<span class="token comment"># 输出到文件</span>
+kubectl get deployment test-k8s <span class="token parameter variable">-o</span> yaml <span class="token operator">>></span> app2.yaml
+
+<span class="token comment"># 删除全部资源</span>
+kubectl delete all <span class="token parameter variable">--all</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><details class="custom-container details"><summary>遗留问题：</summary>
+<ul>
+<li>每次只能访问一个 pod，没有负载均衡自动转发到不同 pod</li>
+<li>访问还需要端口转发</li>
+<li>Pod 重创后 IP 变了，名字也变了</li>
+</ul>
+</details>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '8.md' style='float:left'>⬆️上一节🔗  </a><a href = '10.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
