@@ -29,17 +29,11 @@
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>./traefik <span class="token parameter variable">--configFile</span><span class="token operator">=</span>traefik.toml
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
-<li></li>
-<li>
-<p>通过Docker镜像：</p>
-</li>
+<li>通过Docker镜像：</li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">8080</span>:8080 <span class="token parameter variable">-p</span> <span class="token number">80</span>:80 <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/traefik.toml:/etc/traefik/traefik.toml traefik
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
-<li></li>
-<li>
-<p>通过源码编译：</p>
-</li>
+<li>通过源码编译：</li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/containous/traefik
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></details>

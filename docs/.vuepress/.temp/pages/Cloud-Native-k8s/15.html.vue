@@ -8,9 +8,17 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#helm介绍">helm介绍</router-link></li><li><router-link to="#v2-vs-v3">v2 vs v3</router-link><ul><li><router-link to="#区别对比">区别对比</router-link></li></ul></li><li><router-link to="#helm-controller">Helm Controller</router-link></li><li><router-link to="#helm安装">helm安装</router-link><ul><li><router-link to="#用二进制版本安装">用二进制版本安装</router-link></li><li><router-link to="#使用脚本安装">使用脚本安装</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#helm介绍">helm介绍</router-link></li><li><router-link to="#v2-vs-v3">v2 vs v3</router-link><ul><li><router-link to="#区别对比">区别对比</router-link></li></ul></li><li><router-link to="#helm-controller">Helm Controller</router-link></li><li><router-link to="#helm安装">helm安装</router-link><ul><li><router-link to="#用二进制版本安装">用二进制版本安装</router-link></li><li><router-link to="#使用脚本安装">使用脚本安装</router-link></li></ul></li><li><router-link to="#配置helm源">配置helm源</router-link></li><li><router-link to="#快速上手">快速上手</router-link><ul><li><router-link to="#和docker一样-搜索可用的包">和docker一样，搜索可用的包：</router-link></li><li><router-link to="#helm包拉取">helm包拉取</router-link></li><li><router-link to="#安装集群镜像">安装集群镜像</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="helm介绍" tabindex="-1"><a class="header-anchor" href="#helm介绍" aria-hidden="true">#</a> helm介绍</h2>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>使用 <code v-pre>Helm</code> 我们可以非常方便的就搭建出来 <code v-pre>MongoDB</code> / <code v-pre>MySQL</code> 副本集群，<code v-pre>YAML</code> 文件别人都给我们写好了，直接使用。</p>
+<p><code v-pre>helm</code>的作用就是把许多的资源定义 比如<code v-pre>svc</code>，<code v-pre>deployment</code>，一次性通过全部定义好，放在源里统一管理，这样很容易在其他机器上部署，个人理解这个类似于自动化运维中<code v-pre>ansible</code>中的角色概念，前端项目中的<code v-pre>npm</code>包管理工具,后端项目中的<code v-pre>maven</code>等构建工具一样，类比<code v-pre>Ansible</code>使用角色来整合<code v-pre>playbook.yaml</code>达到复用性。同样的，使用<code v-pre>helm</code>用于整合k8s中的资源对象<code v-pre>yaml</code>文件，实现复用性,同时讲资源文件的参数，和参数值通过<code v-pre>temple</code>和<code v-pre>value</code>进行了分离。</p>
+<ul>
+<li><a href="https://helm.sh/zh/" target="_blank" rel="noopener noreferrer">官网<ExternalLinkIcon/></a></li>
+<li><a href="https://artifacthub.io/" target="_blank" rel="noopener noreferrer">应用中心<ExternalLinkIcon/></a></li>
+</ul>
+</div>
 <details class="custom-container details"><summary>命令速查</summary>
 <p>helm常用命令：</p>
 <p>1、查看服务状态</p>
@@ -140,7 +148,98 @@ $ <span class="token function">chmod</span> <span class="token number">700</span
 $ ./get_helm.sh
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果想直接执行安装，运行</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 <span class="token operator">|</span> <span class="token function">bash</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="配置helm源" tabindex="-1"><a class="header-anchor" href="#配置helm源" aria-hidden="true">#</a> 配置helm源</h2>
+<p><strong>使用helm需要配置yaml源,常见的有阿里。微软，和Github上的源</strong></p>
+<ul>
+<li>阿里云的源 https://apphub.aliyuncs.com</li>
+<li>微软<code v-pre>azure</code>的源 http://mirror.azure.cn/kubernetes/charts/</li>
+</ul>
+<p><strong>查看所有的源：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm repo list  <span class="token comment">#查看所以的源</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>添加指定的源：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm repo <span class="token function">add</span> azure http://mirror.azure.cn/kubernetes/charts/
+
+helm repo <span class="token function">add</span> ali https://apphub.aliyuncs.com
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="快速上手" tabindex="-1"><a class="header-anchor" href="#快速上手" aria-hidden="true">#</a> 快速上手</h2>
+<div class="custom-container warning"><p class="custom-container-title">helm常见用法：</p>
+<p>Helm的常见用法，包括搜索Chart、安装Chart、自定义Chart配置、更新或回滚Release、删除Release、创建自定义Chart、搭建私有仓库等</p>
+</div>
+<p><strong>检测版本的安装：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@VM-4-3-ubuntu:~<span class="token comment"># helm version</span>
+version.BuildInfo<span class="token punctuation">{</span>Version:<span class="token string">"v3.9.2"</span>, GitCommit:<span class="token string">"1addefbfe665c350f4daf868a9adc5600cc064fd"</span>, GitTreeState:<span class="token string">"clean"</span>, GoVersion:<span class="token string">"go1.17.12"</span><span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="和docker一样-搜索可用的包" tabindex="-1"><a class="header-anchor" href="#和docker一样-搜索可用的包" aria-hidden="true">#</a> 和docker一样，搜索可用的包：</h3>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>helm search  repo mysql
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="helm包拉取" tabindex="-1"><a class="header-anchor" href="#helm包拉取" aria-hidden="true">#</a> helm包拉取</h3>
+<p>安装chart可以直接使用命令安装，也可以拉取到本地之后安装，也可以直接通过命名行安装</p>
+<ul>
+<li>本地的Chart压缩包(helm install mysql-1.6.4.tgz)</li>
+<li>一个Chart目录(helm install mysql/)</li>
+<li>一个完整的URL(helm install https://example.com/charts/mysql-1.6.4.tgz)</li>
+</ul>
+<p><strong>chart包拉取：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>helm pull azure/mysql --version=1.6.4
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221104202213778.png" alt="image-20221104202213778"></p>
+<p><strong>helm install：安装Chart：</strong></p>
+<blockquote>
+<p>这个命令是直接拉取安装，而上面的是可以实现离线安装的~</p>
+</blockquote>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm <span class="token function">install</span> db azure/mysql <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token number">1.6</span>.4
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>拉取的chart包详细信息，通过解压之后查看：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>tar -zxvf mysql-1.6.4.tgz
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221104203359659.png" alt="image-20221104203359659"></p>
+<p><strong>关键文件：</strong></p>
+<p><img src="http://sm.nsddd.top/smimage-20221104203553063.png" alt="image-20221104203553063"></p>
+<p><strong>对于下载好的<code v-pre>yaml</code>文件，我们可以修改后使用<code v-pre>helm package</code>重新打包</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">rm</span> <span class="token parameter variable">-rf</span> mysql-1.6.4.tgz <span class="token operator">&amp;&amp;</span> helm package  mysql/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p>此时 <code v-pre>mysql</code> 会被重新打包成 <code v-pre>tar</code></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@VM-4-3-ubuntu:~/helm<span class="token comment"># ls</span>
+mysql  mysql-1.6.4.tgz
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></blockquote>
+<p><strong>下面我们修改chart中的对应镜像为已经下载好的mysql和busybox镜像：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>ansible <span class="token number">192.168</span>.26.82 <span class="token parameter variable">-m</span> shell <span class="token parameter variable">-a</span> <span class="token string">"docker images | grep mysql"</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>通过修好的yaml文件创建chart</strong>， <strong>使用<code v-pre>helm ls</code>查看当前运行的chart</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>helm ls
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>使用<code v-pre>helm install</code>运行Chart</strong></p>
+<blockquote>
+<p><strong>这里我们使用之前的那个mysq chart来安装一个mysql</strong></p>
+</blockquote>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">cd</span> mysql/ <span class="token operator">&amp;&amp;</span> helm <span class="token function">install</span> mydb <span class="token builtin class-name">.</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>查看是否是否运行成功mydb的pod和SVC</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl  get pods
+kubectl  get svc
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>安装一个mysql客户端测试OK：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>yum <span class="token function">install</span>  mariadb <span class="token parameter variable">-y</span>
+mysql <span class="token parameter variable">-h10.107.17.103</span> <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-ptesting</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="安装集群镜像" tabindex="-1"><a class="header-anchor" href="#安装集群镜像" aria-hidden="true">#</a> 安装集群镜像</h3>
+<p><strong>Add repository：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm repo <span class="token function">add</span> redis https://spy86.github.io/redis
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>Install chart：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm <span class="token function">install</span> my-redis redis/redis <span class="token parameter variable">--version</span> <span class="token number">0.1</span>.1
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>使用：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm repo <span class="token function">add</span> bitnami https://charts.bitnami.com/bitnami
+helm <span class="token function">install</span> my-mongo bitnami/mongodb
+
+<span class="token comment"># 指定密码和架构</span>
+helm <span class="token function">install</span> my-mongo bitnami/mongodb <span class="token parameter variable">--set</span> <span class="token assign-left variable">architecture</span><span class="token operator">=</span><span class="token string">"replicaset"</span>,auth.rootPassword<span class="token operator">=</span><span class="token string">"mongopass"</span>
+
+<span class="token comment"># 删除</span>
+helm <span class="token function">ls</span>
+helm delete my-mongo
+
+<span class="token comment"># 查看密码</span>
+kubectl get secret my-mongo-mongodb <span class="token parameter variable">-o</span> json
+kubectl get secret my-mongo-mongodb <span class="token parameter variable">-o</span> yaml <span class="token operator">></span> secret.yaml
+
+<span class="token comment"># 临时运行一个包含 mongo client 的 debian 系统</span>
+kubectl run mongodb-client <span class="token parameter variable">--rm</span> <span class="token parameter variable">--tty</span> <span class="token parameter variable">-i</span> <span class="token parameter variable">--restart</span><span class="token operator">=</span><span class="token string">'Never'</span> <span class="token parameter variable">--image</span> docker.io/bitnami/mongodb:4.4.10-debian-10-r20 <span class="token parameter variable">--command</span> -- <span class="token function">bash</span>
+
+<span class="token comment"># 进去 mongodb</span>
+mongo <span class="token parameter variable">--host</span> <span class="token string">"my-mongo-mongodb"</span> <span class="token parameter variable">-u</span> root <span class="token parameter variable">-p</span> mongopass
+
+<span class="token comment"># 也可以转发集群里的端口到宿主机访问 mongodb</span>
+kubectl port-forward svc/my-mongo-mongodb <span class="token number">27017</span>:27018
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '14.md' style='float:left'>⬆️上一节🔗  </a><a href = '16.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

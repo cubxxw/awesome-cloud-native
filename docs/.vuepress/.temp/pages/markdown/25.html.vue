@@ -72,7 +72,8 @@ CMD <span class="token punctuation">[</span><span class="token string">"catalina
 
 <span class="token instruction"><span class="token keyword">ENTRYPOINT</span> [<span class="token string">"nginx"</span>, <span class="token string">"-c"</span>]  # 定参</span>
 <span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">"/etc/nginx/nginx.conf"</span>]  #变参</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><table>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<table>
 <thead>
 <tr>
 <th>时否传参</th>
@@ -93,7 +94,6 @@ CMD <span class="token punctuation">[</span><span class="token string">"catalina
 </tr>
 </tbody>
 </table>
-</div>
 <div class="custom-container warning"><p class="custom-container-title">一些自己的📜 对上面的解释</p>
 <p>我们在使用 <code v-pre>RUN</code> 的时候可以想象为：</p>
 <p><code v-pre>RUN [&quot;./test.php&quot; , &quot;dev&quot;, &quot;offline&quot;]</code> 等价于  <code v-pre>RUN ./test.php dev offline</code></p>

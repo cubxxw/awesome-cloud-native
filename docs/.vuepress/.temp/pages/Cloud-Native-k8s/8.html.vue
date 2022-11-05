@@ -1,14 +1,14 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第8节-k8s自我修复和图形界面" tabindex="-1"><a class="header-anchor" href="#第8节-k8s自我修复和图形界面" aria-hidden="true">#</a> 第8节 k8s自我修复和图形界面</h1>
+<h1 id="第8节-图形界面和命名空间" tabindex="-1"><a class="header-anchor" href="#第8节-图形界面和命名空间" aria-hidden="true">#</a> 第8节 图形界面和命名空间</h1>
 <div><a href = '7.md' style='float:left'>⬆️上一节🔗  </a><a href = '9.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#k8s集群自我恢复能力测试">K8s集群自我恢复能力测试</router-link></li><li><router-link to="#k8s可视化界面dashboard">k8s可视化界面dashboard</router-link></li><li><router-link to="#命名空间-namespace">命名空间 Namespace</router-link><ul><li><router-link to="#创建一个名称空间">创建一个名称空间</router-link></li><li><router-link to="#nc命令">nc命令</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k8s集群自我恢复能力测试">K8s集群自我恢复能力测试</router-link></li><li><router-link to="#k8s可视化界面dashboard">k8s可视化界面dashboard</router-link></li><li><router-link to="#命名空间-namespace">命名空间 Namespace</router-link><ul><li><router-link to="#创建一个名称空间">创建一个名称空间</router-link></li><li><router-link to="#nc命令">nc命令</router-link></li><li><router-link to="#创建和查询命名空间">创建和查询命名空间</router-link></li></ul></li><li><router-link to="#快速切换命名空间和集群">快速切换命名空间和集群</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="k8s集群自我恢复能力测试" tabindex="-1"><a class="header-anchor" href="#k8s集群自我恢复能力测试" aria-hidden="true">#</a> K8s集群自我恢复能力测试</h2>
 <blockquote>
@@ -361,13 +361,13 @@ kubectl apply <span class="token parameter variable">-f</span> https://raw.githu
 </ol>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl create ns hello  <span class="token comment">#创建命名空间</span>
 kubectl delete ns hello  <span class="token comment">#删除命名空间</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>不同命名空间下的 <code v-pre>service-ip</code> 是可以互相访问的，与命名空间无关。</p>
-<p>不同命名空间下的 <code v-pre>pod</code> 名称与 <code v-pre>dns</code> 是访问不到的。 <code v-pre>pod-ip</code> 是不隔离的。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>不同命名空间下的 <code v-pre>service-ip</code> 是可以互相访问的，与命名空间无关。</strong></p>
+<p><strong>不同命名空间下的 <code v-pre>pod</code> 名称与 <code v-pre>dns</code> 是访问不到的。 <code v-pre>pod-ip</code> 是不隔离的。</strong></p>
 <p><strong>🔥 查看命名空间</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get ns
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022115320381.png" alt="image-20221022115320381"></p>
 <p><strong>每一个应用都有自己的名称空间</strong></p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl get pod -n 
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get pod <span class="token parameter variable">-n</span> 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022122705824.png" alt="image-20221022122705824"></p>
 <p><strong>默认名称空间<code v-pre>default</code>（不可以删除）：</strong></p>
 <ul>
@@ -393,7 +393,33 @@ kubectl delect <span class="token parameter variable">-f</span> hello.yaml
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="nc命令" tabindex="-1"><a class="header-anchor" href="#nc命令" aria-hidden="true">#</a> nc命令</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>nc -zv 172.31.0.2 30250
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>访问目的内网<code v-pre>ip:30250</code>端口是否正常访问</p>
-<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<h3 id="创建和查询命名空间" tabindex="-1"><a class="header-anchor" href="#创建和查询命名空间" aria-hidden="true">#</a> 创建和查询命名空间</h3>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>如果一个集群中部署了多个应用，所有应用都在一起，就不太好管理，也可以导致名字冲突等。
+我们可以使用 namespace 把应用划分到不同的命名空间，跟代码里的 namespace 是一个概念，只是为了划分空间。</p>
+</div>
+<p><strong>演示</strong> <Badge text="演示" /></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 创建命名空间</span>
+kubectl create namespace testapp
+<span class="token comment"># 部署应用到指定的命名空间</span>
+kubectl apply <span class="token parameter variable">-f</span> app.yml <span class="token parameter variable">--namespace</span> testapp
+<span class="token comment"># 查询</span>
+kubectl get pod <span class="token parameter variable">--namespace</span> kube-system
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="快速切换命名空间和集群" tabindex="-1"><a class="header-anchor" href="#快速切换命名空间和集群" aria-hidden="true">#</a> 快速切换命名空间和集群</h2>
+<ul>
+<li><a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener noreferrer">kubens<ExternalLinkIcon/></a></li>
+</ul>
+<p>可以用 <a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener noreferrer">kubens<ExternalLinkIcon/></a> 快速切换 namespace</p>
+<blockquote>
+<p><code v-pre>kubectx</code> + <code v-pre>kubens</code>: Power tools for kubectl</p>
+</blockquote>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 切换命名空间</span>
+kubens kube-system
+<span class="token comment"># 回到上个命名空间</span>
+kubens -
+<span class="token comment"># 切换集群</span>
+kubectx minikube
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '7.md' style='float:left'>⬆️上一节🔗  </a><a href = '9.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>
