@@ -8,25 +8,25 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="k3s介绍" tabindex="-1"><a class="header-anchor" href="#k3s介绍" aria-hidden="true">#</a> k3s介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">k3s — 微型kubernets发行版</p>
 <p>k3s是经CNCF一致性认证的Kubernetes发行版，专为物联网及边缘计算设计。</p>
 <ul>
-<li>[x] <a href="https://www.rancher.cn/k3s/" target="_blank" rel="noopener noreferrer">官方<ExternalLinkIcon/></a></li>
-<li>[x] <a href="https://docs.rancher.cn/" target="_blank" rel="noopener noreferrer">文档<ExternalLinkIcon/></a></li>
-<li>[x] <a href="https://github.com/k3s-io/k3s/" target="_blank" rel="noopener noreferrer">开源地址<ExternalLinkIcon/></a></li>
+<li><a href="https://www.rancher.cn/k3s/" target="_blank" rel="noopener noreferrer">官方<ExternalLinkIcon/></a></li>
+<li><a href="https://docs.rancher.cn/" target="_blank" rel="noopener noreferrer">文档<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/k3s-io/k3s/" target="_blank" rel="noopener noreferrer">开源地址<ExternalLinkIcon/></a></li>
 </ul>
 <p><strong>技术亮点：</strong></p>
 <ul>
 <li>单进程架构简化部署</li>
 <li>移除各种非必要的代码，减少资源占用</li>
-<li>TLS证书管理</li>
-<li>内置Containerd</li>
+<li><code v-pre>TLS</code> 证书管理</li>
+<li>内置 <code v-pre>Containerd</code></li>
 <li>内置自运行 <code v-pre>rootfs</code></li>
-<li>内置Helm Chart管理机制</li>
-<li>内置L4/L7 LB 支持</li>
+<li>内置 <code v-pre>Helm Chart</code> 管理机制</li>
+<li>内置 <code v-pre>L4/L7 LB</code> 支持</li>
 </ul>
 <p><strong>适合场景：</strong></p>
 <ul>
@@ -38,6 +38,11 @@
 <li>嵌入 K8s</li>
 </ul>
 </div>
+<h2 id="k3s和k8s区别" tabindex="-1"><a class="header-anchor" href="#k3s和k8s区别" aria-hidden="true">#</a> k3s和k8s区别</h2>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>K3s是一个独立的服务器，与K8s不同，它是Kubernetes集群的一部分。K8s依靠CRI-O来整合Kubernetes与CRI（容器运行时接口），而K3s使用CRI-O与所有支持的容器运行时兼容。K8s使用kubelet来调度容器，但K3s使用主机的调度机制来调度容器。</p>
+</div>
+<p>k3s有比k8s更严格的安全部署，因为其攻击面小。k3s的另一个优势是，它可以减少安装、运行或更新Kubernetes集群所需的依赖性和步骤。</p>
 <h2 id="架构" tabindex="-1"><a class="header-anchor" href="#架构" aria-hidden="true">#</a> 架构</h2>
 <p>k3s架构就是把k8s核心组件封装成二进制~</p>
 <p>k3s分为<code v-pre>k3s server</code> 和 <code v-pre> k3s agent</code>：</p>
