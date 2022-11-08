@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-1d1a7773","path":"/Cloud-Native/10.html","title":"\u7B2C10\u8282","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"END \u94FE\u63A5","slug":"end-\u94FE\u63A5","link":"#end-\u94FE\u63A5","children":[]}],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"Cloud-Native/10.md"}');export{e as data};
