@@ -275,6 +275,10 @@ export default {
                 text: '⚡ docker学习篇',
                 link: '/markdown/'
             },
+            {
+                text: '🏄‍♂️ 云原生学习篇',
+                link: '/Cloud-Native/'
+            },
           ],
           sidebar: {
             '/markdown/': [
@@ -418,6 +422,37 @@ export default {
                     },  
                 ],
               },
+            ],
+            '/Cloud-Native/': [
+                {
+                    text: '🏠回到主页',
+                    link: '/',
+                },
+                // SidebarItem
+                    {
+                        text: '💱个人云盘地址',
+                        link: 'https://xxw.nsddd.top/s/wRSz'
+                    },
+                {
+                    text: '🏄‍♂️ 云原生学习篇',
+                    children: [
+                        '1.md',
+                        '2.md',
+                        '3.md',
+                        '4.md',
+                        '5.md',
+                        '6.md',
+                        '7.md',
+                        '8.md',
+                        '9.md',
+                        '10.md',
+                        '11.md',
+                        '12.md',    
+                        '13.md',
+                        '14.md',
+                        '15.md',
+                    ],
+                },
             ],
             '/': [
                 '/markdown/README.md"',

@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-5d7a3f6e\",\"path\":\"/Cloud-Native/2.html\",\"title\":\"\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"excerpt\":\"\",\"headers\":[],\"git\":{\"updatedTime\":null,\"contributors\":[]},\"filePathRelative\":\"Cloud-Native/2.md\"}")

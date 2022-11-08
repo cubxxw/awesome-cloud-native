@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-2e21dad3\",\"path\":\"/Cloud-Native/65.html\",\"title\":\"第65节\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"END 链接\",\"slug\":\"end-链接\",\"link\":\"#end-链接\",\"children\":[]}],\"git\":{\"updatedTime\":null,\"contributors\":[]},\"filePathRelative\":\"Cloud-Native/65.md\"}")
