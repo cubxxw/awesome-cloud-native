@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#k8s集群自我恢复能力测试">K8s集群自我恢复能力测试</router-link></li><li><router-link to="#k8s可视化界面dashboard">k8s可视化界面dashboard</router-link></li><li><router-link to="#命名空间-namespace">命名空间 Namespace</router-link><ul><li><router-link to="#创建一个名称空间">创建一个名称空间</router-link></li><li><router-link to="#nc命令">nc命令</router-link></li><li><router-link to="#创建和查询命名空间">创建和查询命名空间</router-link></li></ul></li><li><router-link to="#快速切换命名空间和集群">快速切换命名空间和集群</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k8s集群自我恢复能力测试">K8s集群自我恢复能力测试</router-link></li><li><router-link to="#k8s可视化界面dashboard">k8s可视化界面dashboard</router-link></li><li><router-link to="#命名空间-namespace">命名空间 Namespace</router-link><ul><li><router-link to="#创建一个名称空间">创建一个名称空间</router-link></li><li><router-link to="#nc命令">nc命令</router-link></li><li><router-link to="#创建和查询命名空间">创建和查询命名空间</router-link></li><li><router-link to="#删除命名空间">删除命名空间</router-link></li></ul></li><li><router-link to="#设置默认的命名空间">设置默认的命名空间</router-link></li><li><router-link to="#快速切换命名空间和集群">快速切换命名空间和集群</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="k8s集群自我恢复能力测试" tabindex="-1"><a class="header-anchor" href="#k8s集群自我恢复能力测试" aria-hidden="true">#</a> K8s集群自我恢复能力测试</h2>
 <blockquote>
@@ -405,7 +405,11 @@ kubectl create namespace testapp
 kubectl apply <span class="token parameter variable">-f</span> app.yml <span class="token parameter variable">--namespace</span> testapp
 <span class="token comment"># 查询</span>
 kubectl get pod <span class="token parameter variable">--namespace</span> kube-system
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="快速切换命名空间和集群" tabindex="-1"><a class="header-anchor" href="#快速切换命名空间和集群" aria-hidden="true">#</a> 快速切换命名空间和集群</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="删除命名空间" tabindex="-1"><a class="header-anchor" href="#删除命名空间" aria-hidden="true">#</a> 删除命名空间</h3>
+<p><strong>我们需要先手动删除命名空间下的资源才能删除命名空间。</strong></p>
+<h2 id="设置默认的命名空间" tabindex="-1"><a class="header-anchor" href="#设置默认的命名空间" aria-hidden="true">#</a> 设置默认的命名空间</h2>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kuberctl config set-context <span class="token variable"><span class="token variable">$(</span>kubectl config current-context<span class="token variable">)</span></span> <span class="token parameter variable">--namespace</span><span class="token operator">=</span>develop
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="快速切换命名空间和集群" tabindex="-1"><a class="header-anchor" href="#快速切换命名空间和集群" aria-hidden="true">#</a> 快速切换命名空间和集群</h2>
 <ul>
 <li><a href="https://github.com/ahmetb/kubectx" target="_blank" rel="noopener noreferrer">kubens<ExternalLinkIcon/></a></li>
 </ul>

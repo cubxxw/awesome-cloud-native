@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#helm介绍">helm介绍</router-link></li><li><router-link to="#v2-vs-v3">v2 vs v3</router-link><ul><li><router-link to="#区别对比">区别对比</router-link></li></ul></li><li><router-link to="#helm-controller">Helm Controller</router-link></li><li><router-link to="#helm安装">helm安装</router-link><ul><li><router-link to="#用二进制版本安装">用二进制版本安装</router-link></li><li><router-link to="#使用脚本安装">使用脚本安装</router-link></li></ul></li><li><router-link to="#配置helm源">配置helm源</router-link></li><li><router-link to="#快速上手">快速上手</router-link><ul><li><router-link to="#和docker一样-搜索可用的包">和docker一样，搜索可用的包：</router-link></li><li><router-link to="#helm包拉取">helm包拉取</router-link></li><li><router-link to="#安装集群镜像">安装集群镜像</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#helm介绍">helm介绍</router-link></li><li><router-link to="#v2-vs-v3">v2 vs v3</router-link><ul><li><router-link to="#区别对比">区别对比</router-link></li></ul></li><li><router-link to="#helm-controller">Helm Controller</router-link></li><li><router-link to="#helm安装">helm安装</router-link><ul><li><router-link to="#用二进制版本安装">用二进制版本安装</router-link></li><li><router-link to="#使用脚本安装">使用脚本安装</router-link></li></ul></li><li><router-link to="#配置helm源">配置helm源</router-link></li><li><router-link to="#快速上手">快速上手</router-link><ul><li><router-link to="#和docker一样-搜索可用的包">和docker一样，搜索可用的包：</router-link></li><li><router-link to="#helm包拉取">helm包拉取</router-link></li><li><router-link to="#安装集群镜像">安装集群镜像</router-link></li></ul></li><li><router-link to="#helm-配置安装集群">helm 配置安装集群</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="helm介绍" tabindex="-1"><a class="header-anchor" href="#helm介绍" aria-hidden="true">#</a> helm介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
@@ -239,7 +239,16 @@ mongo <span class="token parameter variable">--host</span> <span class="token st
 
 <span class="token comment"># 也可以转发集群里的端口到宿主机访问 mongodb</span>
 kubectl port-forward svc/my-mongo-mongodb <span class="token number">27017</span>:27018
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="helm-配置安装集群" tabindex="-1"><a class="header-anchor" href="#helm-配置安装集群" aria-hidden="true">#</a> helm 配置安装集群</h2>
+<p><strong>helm 安装过程中有两种方式传递数据：</strong></p>
+<ul>
+<li><code v-pre>-f(或--values)</code>：使用 YAML 文件覆盖默认配置。可以指定多次，优先使用最右边的文件。</li>
+<li><code v-pre>--set</code> ：通过命令行的方式对指定项进行覆盖</li>
+</ul>
+<div class="custom-container danger"><p class="custom-container-title">注意</p>
+<p>如果同时使用两种方式，则 <code v-pre>--set</code> 中的值会被合并到 <code v-pre>-f</code> 中，但是 <code v-pre>–set</code> 中的值优先级更高</p>
+</div>
+<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '14.md' style='float:left'>⬆️上一节🔗  </a><a href = '16.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

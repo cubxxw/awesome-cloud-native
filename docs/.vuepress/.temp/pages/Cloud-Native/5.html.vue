@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第5节-sealer" tabindex="-1"><a class="header-anchor" href="#第5节-sealer" aria-hidden="true">#</a> 第5节 sealer</h1>
+<h1 id="第5节-sealer-runtime" tabindex="-1"><a class="header-anchor" href="#第5节-sealer-runtime" aria-hidden="true">#</a> 第5节 sealer runtime</h1>
 <br>
 <div><a href = '4.md' style='float:left'>⬆️上一节🔗  </a><a href = '6.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
@@ -10,6 +10,21 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="注意" tabindex="-1"><a class="header-anchor" href="#注意" aria-hidden="true">#</a> 注意</h2>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>k8s 从 v1.24 开始，kubernetes 默认容器运行时使用 <code v-pre>containerd</code> ，不再使用 <code v-pre>docker</code>。</p>
+<p>k3s 将所有 kubernetes 控制层面组件都封装到 单个二进制中 ，占用资源小，且包含了 kubernetes 运行时所需要的外部依赖和本地存储提供程序。</p>
+<p>k3s 提供离线安装包，可以避免网络资源访问问题。</p>
+</div>
+<h2 id="离线安装" tabindex="-1"><a class="header-anchor" href="#离线安装" aria-hidden="true">#</a> 离线安装</h2>
+<p>下载离线安装脚本：https://get.k3s.io</p>
+<p>下载<strong>k3s</strong>二进制文件：k3s</p>
+<p>下载必要的<code v-pre>images</code>：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">wget</span> https://ghproxy.com/https://github.com/k3s-io/k3s/releases/download/v1.25.3%2Bk3s1/k3s-airgap-images-amd64.tar
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p><strong>These files are available in the <a href="https://github.com/k3s-io/k3s/" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a> repository</strong></p>
+<p><img src="http://sm.nsddd.top/smimage-20221109164523589.png" alt="image-20221109164523589"></p>
+</blockquote>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <p><strong>议题：</strong></p>
 <ul>
@@ -97,7 +112,7 @@
 </ul>
 <h2 id="issues" tabindex="-1"><a class="header-anchor" href="#issues" aria-hidden="true">#</a> issues</h2>
 <p>我们在路线图中对 k8s、k0s、k3s 运行时支持的工作应该有一个进度记录，应该是让工作进度更加清晰，并吸引更多的参与者加入这个核心工作。这里简单介绍一下部分工作：
-阅读Sealer主分支代码，理解runtime模块中的代码，掌握从cmd模块到runtime模块的代码调用逻辑。
+阅读Sealer主分支代码，理解 <code v-pre>runtime</code> 模块中的代码，掌握从cmd模块到runtime模块的代码调用逻辑。
 通过k8s、k0s、k3s官网阅读并设计运行时接口实现方法。
 为指定的运行时读取和设计 clusterImage。主要参考： <a href="http://sealer.cool/docs/advanced/define-cloudimage.html#customize-the-cloudrootfs" target="_blank" rel="noopener noreferrer">ClusterImage<ExternalLinkIcon/></a>、<a href="https://github.com/sealerio/basefs" target="_blank" rel="noopener noreferrer">basefs<ExternalLinkIcon/></a>。
 类型：<em>功能请求</em></p>

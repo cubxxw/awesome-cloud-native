@@ -121,7 +121,8 @@
 </blockquote>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">git</span> remote <span class="token function">add</span> upstream https://github.com/labring/sealos.git
 <span class="token function">git</span> remote set-url <span class="token parameter variable">--push</span> upstream no-pushing
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用此远程设置，您可以像这样检查 git 远程配置：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221109173951312.png" alt="image-20221109173951312"></p>
+<p>使用此远程设置，您可以像这样检查 git 远程配置：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">git</span> remote <span class="token parameter variable">-v</span>
 origin     https://github.com/<span class="token operator">&lt;</span>your-username<span class="token operator">></span>/sealos.git <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
 origin     https://github.com/<span class="token operator">&lt;</span>your-username<span class="token operator">></span>/sealos.git <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
@@ -204,7 +205,7 @@ upstream   no-pushing <span class="token punctuation">(</span>push<span class="t
 <p><code v-pre>sealos</code>现在只支持<code v-pre>linux</code>，需要<code v-pre>linux</code>服务器来测试。</p>
 <p>一些工具可以非常方便地帮助您启动虚拟机，例如<a href="https://multipass.run/" target="_blank" rel="noopener noreferrer">multipass<ExternalLinkIcon/></a></p>
 <h3 id="构建项目" tabindex="-1"><a class="header-anchor" href="#构建项目" aria-hidden="true">#</a> 构建项目</h3>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">mkdir</span> /sealos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> /sealos <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> clone https://github.com/labring/sealos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> sealos <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> build  <span class="token comment"># 大概可能因为网络原因需要等一段时间~</span>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">mkdir</span> /sealos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> /sealos <span class="token punctuation">;</span> <span class="token function">git</span> clone https://ghproxy.com/https://github.com/labring/sealos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> sealos <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span> <span class="token punctuation">;</span> <span class="token function">make</span> build  <span class="token comment"># 大概可能因为网络原因需要等一段时间~</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>您可以将 <code v-pre>bin</code> 文件 <code v-pre>scp</code> 到您的 <code v-pre>linux</code> 主机。</p>
 <p>如果你使用 <code v-pre>multipaas</code>，你可以将 <code v-pre>bin</code> 目录挂载到 <code v-pre>vm</code>：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>multipass <span class="token function">mount</span> /your-bin-dir <span class="token operator">&lt;</span>name<span class="token operator">></span><span class="token punctuation">[</span>:<span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">]</span>
@@ -216,16 +217,15 @@ upstream   no-pushing <span class="token punctuation">(</span>push<span class="t
 <li>本项目中的 <code v-pre>Makefile</code> 和 <code v-pre>GoReleaser</code> 都有这个设置。</li>
 </ul>
 <h2 id="install-golang" tabindex="-1"><a class="header-anchor" href="#install-golang" aria-hidden="true">#</a> Install golang</h2>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">wget</span> https://go.dev/dl/go1.19.2.linux-amd64.tar.gz
-<span class="token function">tar</span> <span class="token parameter variable">-C</span> /usr/local <span class="token parameter variable">-zxvf</span> go1.19.2.linux-amd64.tar.gz
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">wget</span> <span class="token parameter variable">-o</span> https://go.dev/dl/go1.19.2.linux-amd64.tar.gz <span class="token operator">&amp;&amp;</span> <span class="token function">tar</span> <span class="token parameter variable">-C</span> /usr/local <span class="token parameter variable">-zxvf</span> go1.19.2.linux-amd64.tar.gz
 <span class="token function">cat</span> <span class="token operator">>></span> /etc/profile <span class="token operator">&lt;&lt;</span><span class="token string">EOF
 # set go path
 export PATH=\<span class="token environment constant">$PATH</span>:/usr/local/go/bin
 EOF</span>
 <span class="token builtin class-name">source</span> /etc/profile  <span class="token operator">&amp;&amp;</span> go version
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="build-the-project" tabindex="-1"><a class="header-anchor" href="#build-the-project" aria-hidden="true">#</a> Build the project</h2>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>git clone https://github.com/labring/sealos &amp;&amp; cd sealos
-make build
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="build-the-project" tabindex="-1"><a class="header-anchor" href="#build-the-project" aria-hidden="true">#</a> Build the project</h2>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/labring/sealos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> sealos
+go <span class="token function">env</span> <span class="token parameter variable">-w</span> <span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span>https://goproxy.cn,direct <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> build
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></blockquote>
 <hr>
 <p>😂 让我很喜欢的一点是：<code v-pre>sealos</code>能一次性把环境搭建好，想当年，我真是废了九牛二虎之力才搭建~失败的。</p>

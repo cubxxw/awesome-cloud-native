@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#理解pod">理解Pod</router-link></li><li><router-link to="#删除pod">删除pod</router-link></li><li><router-link to="#配置文件创建pod">配置文件创建pod</router-link></li><li><router-link to="#可视化界面创建pod">可视化界面创建pod</router-link></li><li><router-link to="#pod日志">pod日志</router-link></li><li><router-link to="#pod-ip">pod - IP</router-link></li><li><router-link to="#进入pod并修改pod">进入pod并修改pod</router-link></li><li><router-link to="#多容器pod细节">多容器pod细节</router-link></li><li><router-link to="#更多命令">更多命令</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#理解pod">理解Pod</router-link></li><li><router-link to="#删除pod">删除pod</router-link></li><li><router-link to="#管理对象的两种方式">管理对象的两种方式</router-link><ul><li><router-link to="#命令行指令">命令行指令</router-link></li><li><router-link to="#声明式配置">声明式配置</router-link></li></ul></li><li><router-link to="#yaml-语法">yaml 语法</router-link></li><li><router-link to="#配置对象">配置对象</router-link></li><li><router-link to="#配置文件创建pod">配置文件创建pod</router-link></li><li><router-link to="#可视化界面创建pod">可视化界面创建pod</router-link></li><li><router-link to="#pod日志">pod日志</router-link></li><li><router-link to="#pod-ip">pod - IP</router-link></li><li><router-link to="#进入pod并修改pod">进入pod并修改pod</router-link></li><li><router-link to="#多容器pod细节">多容器pod细节</router-link></li><li><router-link to="#更多命令">更多命令</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="理解pod" tabindex="-1"><a class="header-anchor" href="#理解pod" aria-hidden="true">#</a> 理解Pod</h2>
 <blockquote>
@@ -103,20 +103,48 @@ Events:                      <span class="token operator">&lt;</span>none<span c
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl delete pod mypodName <span class="token parameter variable">-n</span> xxxNamespace
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div>
+<h2 id="管理对象的两种方式" tabindex="-1"><a class="header-anchor" href="#管理对象的两种方式" aria-hidden="true">#</a> 管理对象的两种方式</h2>
+<h3 id="命令行指令" tabindex="-1"><a class="header-anchor" href="#命令行指令" aria-hidden="true">#</a> 命令行指令</h3>
+<p>使用 <code v-pre>kubectl</code> 命令来创建和管理 <code v-pre>kubernetes</code> 对象</p>
+<p>简单、高效快速但是功能有限，操作不容易追溯，多用于开发和调试。</p>
+<h3 id="声明式配置" tabindex="-1"><a class="header-anchor" href="#声明式配置" aria-hidden="true">#</a> 声明式配置</h3>
+<p><code v-pre>kubernetes</code> 使用 <code v-pre>yaml</code> 文件来描述 <code v-pre>kubernetes</code> 对象</p>
+<p>声明式配置就好比申请表，学习难度大而且配置麻烦</p>
+<p>好处是操作留痕迹，适合操作复杂的对象，多用于生产</p>
+<h2 id="yaml-语法" tabindex="-1"><a class="header-anchor" href="#yaml-语法" aria-hidden="true">#</a> yaml 语法</h2>
+<ul>
+<li>缩进代表上下级关系</li>
+<li>缩进时使用空格，不要使用tab，通常使用2个空格</li>
+<li>使用双引号，不要使用单引号</li>
+<li><code v-pre>:</code> 键值对的分隔符，前面不要有空格，后面要有空格</li>
+<li><code v-pre>-</code> 数组的分隔符，前后都要有空格</li>
+<li><code v-pre>#</code> 注释，后面要有空格</li>
+<li><code v-pre>|</code> 多行文本，后面要有空格，后面可以有换行</li>
+<li><code v-pre>&gt;</code> 多行文本，后面要有空格</li>
+<li><code v-pre>---</code> yaml文件的分隔符，前后都要有空格</li>
+</ul>
+<h2 id="配置对象" tabindex="-1"><a class="header-anchor" href="#配置对象" aria-hidden="true">#</a> 配置对象</h2>
+<p><strong>在创建 Kubernetes 对象所对应的 <code v-pre>yaml</code> 文件中，需要配置的字段：</strong></p>
+<ul>
+<li><code v-pre>apiVersion</code> ：Kubernetes API 版本</li>
+<li><code v-pre>Kind</code> ：对象类别，例如 <code v-pre>Pod</code> 、<code v-pre>Deployment</code></li>
+<li><code v-pre>metadata</code> ：描述对象的元数据，包括一个 name 字符串、UID 和 可选的<code v-pre>namespace</code></li>
+<li><code v-pre>spec</code> ：对象的配置</li>
+</ul>
 <h2 id="配置文件创建pod" tabindex="-1"><a class="header-anchor" href="#配置文件创建pod" aria-hidden="true">#</a> 配置文件创建pod</h2>
 <p>我们或许可以用配置文件的方式去创建一个pod~</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># vim pod.yaml </span>
 <span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># kubectl apply -f pod.yaml </span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container tip"><p class="custom-container-title">yaml创建pod格式</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
-<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod  <span class="token comment">#资源类型</span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod  <span class="token comment"># 资源类型</span>
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>  
   <span class="token key atrule">labels</span><span class="token punctuation">:</span>
     <span class="token key atrule">run</span><span class="token punctuation">:</span> myapp
-  <span class="token key atrule">name</span><span class="token punctuation">:</span> myapp  <span class="token comment">#pod名称</span>
-<span class="token key atrule">spec</span><span class="token punctuation">:</span> <span class="token comment">#pod详细配置信息</span>
-  <span class="token key atrule">containers</span><span class="token punctuation">:</span> <span class="token comment">#启动一个容器</span>
-  <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx <span class="token comment">#启动nginx</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> myapp  <span class="token comment"># pod名称</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span> <span class="token comment"># pod详细配置信息</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span> <span class="token comment"># 启动一个容器</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx <span class="token comment"># 启动nginx</span>
     <span class="token key atrule">name</span><span class="token punctuation">:</span> mynginx
   <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> tomcat<span class="token punctuation">:</span>8.5.68
     <span class="token key atrule">name</span><span class="token punctuation">:</span> mytomcat

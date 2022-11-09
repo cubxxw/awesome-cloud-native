@@ -1164,8 +1164,22 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第5节 sealer",
+    "title": "第5节 sealer runtime",
     "headers": [
+      {
+        "level": 2,
+        "title": "注意",
+        "slug": "注意",
+        "link": "#注意",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "离线安装",
+        "slug": "离线安装",
+        "link": "#离线安装",
+        "children": []
+      },
       {
         "level": 2,
         "title": "前言",
@@ -2681,6 +2695,13 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "helm 配置安装集群",
+        "slug": "helm-配置安装集群",
+        "link": "#helm-配置安装集群",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
@@ -2990,7 +3011,15 @@ export const searchIndex = [
         "title": "CRI - Container Runtime Interface（容器运行时接口）",
         "slug": "cri-container-runtime-interface-容器运行时接口",
         "link": "#cri-container-runtime-interface-容器运行时接口",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "镜像的导入导出 ctr",
+            "slug": "镜像的导入导出-ctr",
+            "link": "#镜像的导入导出-ctr",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -3166,8 +3195,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第21节",
+    "title": "第21节 Minikube",
     "headers": [
+      {
+        "level": 2,
+        "title": "关于 Minikube",
+        "slug": "关于-minikube",
+        "link": "#关于-minikube",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -3181,8 +3217,44 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第22节",
+    "title": "第22节 运行有状态应用",
     "headers": [
+      {
+        "level": 2,
+        "title": "运行有状态应用",
+        "slug": "运行有状态应用",
+        "link": "#运行有状态应用",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "创建Mysql数据库",
+        "slug": "创建mysql数据库",
+        "link": "#创建mysql数据库",
+        "children": [
+          {
+            "level": 3,
+            "title": "准备",
+            "slug": "准备",
+            "link": "#准备",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创建持久卷PV，用来存储mysql数据文件",
+            "slug": "创建持久卷pv-用来存储mysql数据文件",
+            "link": "#创建持久卷pv-用来存储mysql数据文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "配置环境变量",
+            "slug": "配置环境变量",
+            "link": "#配置环境变量",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4642,8 +4714,22 @@ export const searchIndex = [
             "slug": "创建和查询命名空间",
             "link": "#创建和查询命名空间",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "删除命名空间",
+            "slug": "删除命名空间",
+            "link": "#删除命名空间",
+            "children": []
           }
         ]
+      },
+      {
+        "level": 2,
+        "title": "设置默认的命名空间",
+        "slug": "设置默认的命名空间",
+        "link": "#设置默认的命名空间",
+        "children": []
       },
       {
         "level": 2,
@@ -4829,6 +4915,42 @@ export const searchIndex = [
         "title": "删除pod",
         "slug": "删除pod",
         "link": "#删除pod",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "管理对象的两种方式",
+        "slug": "管理对象的两种方式",
+        "link": "#管理对象的两种方式",
+        "children": [
+          {
+            "level": 3,
+            "title": "命令行指令",
+            "slug": "命令行指令",
+            "link": "#命令行指令",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "声明式配置",
+            "slug": "声明式配置",
+            "link": "#声明式配置",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "yaml 语法",
+        "slug": "yaml-语法",
+        "link": "#yaml-语法",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "配置对象",
+        "slug": "配置对象",
+        "link": "#配置对象",
         "children": []
       },
       {

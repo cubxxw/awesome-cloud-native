@@ -14,21 +14,45 @@
 </div>
 <p>🧷 参考：https://zhuanlan.zhihu.com/p/33390023</p>
 <h2 id="开放接口" tabindex="-1"><a class="header-anchor" href="#开放接口" aria-hidden="true">#</a> 开放接口</h2>
-<p>Kubernetes作为云原生应用的的基础调度平台，相当于云原生的操作系统，为了便于系统的扩展，Kubernetes中开放的以下接口，可以分别对接不同的后端，来实现自己的业务逻辑：</p>
+<p><code v-pre>Kubernetes</code> 作为云原生应用的的基础调度平台，相当于云原生的操作系统，为了便于系统的扩展，<code v-pre>Kubernetes</code> 中开放的以下接口，可以分别对接不同的后端，来实现自己的业务逻辑：</p>
 <ul>
-<li><strong>CRI（Container Runtime Interface）</strong>：容器运行时接口，提供计算资源</li>
-<li><strong>CNI（Container Network Interface）</strong>：容器网络接口，提供网络资源</li>
-<li><strong>CSI（Container Storage Interface</strong>）：容器存储接口，提供存储资源</li>
+<li><strong>CRI（Container Runtime Interface）</strong> ：容器运行时接口，提供计算资源</li>
+<li><strong>CNI（Container Network Interface）</strong> ：容器网络接口，提供网络资源</li>
+<li><strong>CSI（Container Storage Interface）</strong> ：容器存储接口，提供存储资源</li>
 </ul>
 <p>以上三种资源相当于一个分布式操作系统的最基础的几种资源类型，而Kuberentes是将他们粘合在一起的纽带。</p>
 <p><img src="http://sm.nsddd.top/smv2-7b93f7d22be7fb1644b4564721dda06d_b.jpg" alt="img"></p>
 <h2 id="cri-container-runtime-interface-容器运行时接口" tabindex="-1"><a class="header-anchor" href="#cri-container-runtime-interface-容器运行时接口" aria-hidden="true">#</a> CRI - Container Runtime Interface（容器运行时接口）</h2>
 <p>CRI中定义了<strong>容器</strong>和<strong>镜像</strong>的服务的接口，因为容器运行时与镜像的生命周期是彼此隔离的，因此需要定义两个服务。该接口使用<a href="https://link.zhihu.com/?target=https%3A//developers.google.com/protocol-buffers/" target="_blank" rel="noopener noreferrer">Protocol Buffer<ExternalLinkIcon/></a>，基于<a href="https://link.zhihu.com/?target=https%3A//grpc.io/" target="_blank" rel="noopener noreferrer">gRPC<ExternalLinkIcon/></a>，在kubernetes v1.7+版本中是在<a href="https://link.zhihu.com/?target=https%3A//github.com/kubernetes/kubernetes/tree/master/pkg/kubelet/apis/cri/v1alpha1/runtime" target="_blank" rel="noopener noreferrer">pkg/kubelet/apis/cri/v1alpha1/runtime<ExternalLinkIcon/></a>的<code v-pre>api.proto</code>中定义的。</p>
-<h2 id="cri架构" tabindex="-1"><a class="header-anchor" href="#cri架构" aria-hidden="true">#</a> CRI架构</h2>
+<div class="custom-container tip"><p class="custom-container-title">CRI</p>
+<p>容器运行时接口（CRI） 是<code v-pre>kubelet</code> 和容器运行时之间通信的主要协议，它将 Kubelet 与容器运行时解耦，理论上，实现了 CRI 接口的容器引擎，都可作为 kubernetes 的容器运行时。</p>
+<p><strong>docker 没有实现 CRI 接口，kuebernetes使用 <code v-pre>dockershim</code> 来兼容docker。（v1.24版本移除）</strong></p>
+</div>
+<h3 id="镜像的导入导出-ctr" tabindex="-1"><a class="header-anchor" href="#镜像的导入导出-ctr" aria-hidden="true">#</a> 镜像的导入导出 ctr</h3>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z /<span class="token punctuation">]</span><span class="token comment"># docker ps | grep "nginx"</span>
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z /<span class="token punctuation">]</span><span class="token comment"># docker images| grep "nginx"</span>
+nginx                                    latest     76c69feac34e   <span class="token number">2</span> weeks ago     142MB
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z docker<span class="token punctuation">]</span><span class="token comment"># scp nginx-1.0.tar root@43.142.124.85:/tmp</span>
+
+<span class="token comment">##### 进入 另一台服务器 ###########################</span>
+
+<span class="token punctuation">[</span>root@VM-4-6-centos tmp<span class="token punctuation">]</span><span class="token comment">#  ctr -n k8s.io images import nginx-1.0.tar --platform=linux/amd64</span>
+unpacking docker.io/library/nginx:latest <span class="token punctuation">(</span>sha256:f32fc6316bf00e3792c5796cebd6b30a7616b151c28034132628de06bedd3af7<span class="token punctuation">)</span><span class="token punctuation">..</span>.done
+<span class="token punctuation">[</span>root@VM-4-6-centos tmp<span class="token punctuation">]</span><span class="token comment"># crictl images</span>
+IMAGE                                        TAG                    IMAGE ID            SIZE
+docker.io/library/nginx                      latest                 76c69feac34e8       146MB
+docker.io/rancher/klipper-helm               v0.7.3-build20220613   38b3b9ad736af       83MB
+docker.io/rancher/klipper-lb                 v0.3.5                 dbd43b6716a08       <span class="token number">3</span>.33MB
+docker.io/rancher/local-path-provisioner     v0.0.21                fb9b574e03c34       <span class="token number">11</span>.4MB
+docker.io/rancher/mirrored-coredns-coredns   <span class="token number">1.9</span>.1                  99376d8f35e0a       <span class="token number">14</span>.1MB
+docker.io/rancher/mirrored-library-traefik   <span class="token number">2.9</span>.1                  e6de8578b2384       <span class="token number">33</span>.4MB
+docker.io/rancher/mirrored-metrics-server    v0.6.1                 e57a417f15d36       <span class="token number">28</span>.1MB
+docker.io/rancher/mirrored-pause             <span class="token number">3.6</span>                    6270bb605e12e       301kB
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="cri架构" tabindex="-1"><a class="header-anchor" href="#cri架构" aria-hidden="true">#</a> CRI架构</h2>
 <p>Container Runtime实现了CRI gRPC Server，包括<code v-pre>RuntimeService</code>和<code v-pre>ImageService</code>。该gRPC Server需要监听本地的Unix socket，而kubelet则作为gRPC Client运行。</p>
 <p><img src="http://sm.nsddd.top/smv2-ab209f7c32ceb17ed43dcf6b66056cea_b.jpg" alt="img"></p>
 <h2 id="启用cri" tabindex="-1"><a class="header-anchor" href="#启用cri" aria-hidden="true">#</a> 启用CRI</h2>
-<p>除非集成了rktnetes，否则CRI都是被默认启用了，kubernetes1.7版本开始旧的预集成的docker CRI已经被移除。</p>
+<p>除非集成了<code v-pre>rktnetes</code>，否则CRI都是被默认启用了，<code v-pre>kubernetes1.7</code>版本开始旧的预集成的docker CRI已经被移除。</p>
 <p>要想启用CRI只需要在kubelet的启动参数重传入此参数：<code v-pre>--container-runtime-endpoint</code>远程运行时服务的端点。当前Linux上支持unix socket，windows上支持tcp。例如：<code v-pre>unix:///var/run/dockershim.sock</code>、 <code v-pre>tcp://localhost:373</code>，默认是<code v-pre>unix:///var/run/dockershim.sock</code>，即默认使用本地的docker作为容器运行时。</p>
 <p>关于CRI的详细进展请参考<a href="https://link.zhihu.com/?target=https%3A//github.com/kubernetes/community/blob/master/contributors/devel/container-runtime-interface.md" target="_blank" rel="noopener noreferrer">CRI: the Container Runtime Interface<ExternalLinkIcon/></a>。</p>
 <h2 id="cri接口" tabindex="-1"><a class="header-anchor" href="#cri接口" aria-hidden="true">#</a> CRI接口</h2>
