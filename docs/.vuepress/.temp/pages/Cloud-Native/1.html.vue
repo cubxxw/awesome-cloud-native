@@ -300,29 +300,39 @@ root@VM-4-3-ubuntu:/<span class="token comment"># </span>
 </li>
 <li>
 <p>核心概念，核心组件的作用：</p>
-<div class="language-markdown ext-md line-numbers-mode"><pre v-pre class="language-markdown"><code><span class="token code-snippet code keyword">`kubectl apiserver controller-manager scheduler kubelet kube-proxy etcd`</span>  
-<span class="token blockquote punctuation">></span>这些组件分别是做什么的?
-
-<span class="token list punctuation">+</span> 可以想象sealos很久之后形成的一个集团😂 
-<span class="token list punctuation">+</span> 我们有很多的厂，master主厂，node小厂
-<span class="token blockquote punctuation">></span> Node节点主要包括kubelet、kube-proxy模块和pod对象
-<span class="token blockquote punctuation">></span> Master节点主要包括API Server、Scheduler、Controller manager、etcd几大组件
-
-<span class="token list punctuation">+</span> kubectl 是 Kubernetes 自带的客户端，可以用它来直接操作 Kubernetes 集群。
-<span class="token list punctuation">+</span> Api Server相当于master的秘书，master和node的所有通信都需要走Api Server
-<span class="token list punctuation">+</span> controller-manager就是老大，是公司的决策者，负责集群内 Node、Namespace、Service、Token、Replication 等资源对象的管理，使集群内的资源对象维持在预期的工作状态。
-<span class="token list punctuation">+</span> scheduler就是调度者，如果我们小厂有东西做不出来那么需要scheduler负责对集群内部的资源进行调度，相当于“调度室”。
-
-<span class="token list punctuation">+</span> kubelet 就是小厂的厂长，对每个node进行操控
-<span class="token list punctuation">+</span> <span class="token list punctuation">+</span> kubelet 组件通过 api-server 提供的接口监测到 kube-scheduler 产生的 pod 绑定事件，然后从 etcd 获取 pod 清单，下载镜像并启动容器。
-<span class="token list punctuation">+</span> <span class="token list punctuation">+</span> 同时监视分配给该Node节点的 pods，周期性获取容器状态，再通过api-server通知各个组件。
-<span class="token list punctuation">+</span> kube-proxy这个就好理解了，就相当于sealos下面每个厂的门卫大爷，集团可能不知道哪个资源在哪个厂，但是门卫大爷肯定知道啊，所以各个node的kube-proxy是相通的。
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<blockquote>
 <p><code v-pre>Kube-proxy</code>负责制定数据包的转发策略，并以守护进程的模式对各个节点的<code v-pre>pod</code>信息实时监控并更新转发规则，<code v-pre>service</code>收到请求后会根据<code v-pre>kube-proxy</code>制定好的策略来进行请求的转发，从而实现负载均衡。</p>
 </blockquote>
 <p>可以用一个 <code v-pre>kubectl apply</code> 一个 <code v-pre>deployment</code> 这些组件分别做了哪些事来梳理整个流程</p>
 </li>
 </ul>
+<details class="custom-container details"><summary>核心组件</summary>
+<p><code v-pre>kubectl apiserver controller-manager scheduler kubelet kube-proxy etcd</code></p>
+<blockquote>
+<p>这些组件分别是做什么的?</p>
+</blockquote>
+<ul>
+<li>可以想象sealos很久之后形成的一个集团😂</li>
+<li>我们有很多的厂，master主厂，node小厂</li>
+</ul>
+<blockquote>
+<p>Node节点主要包括kubelet、kube-proxy模块和pod对象
+Master节点主要包括API Server、Scheduler、Controller manager、etcd几大组件</p>
+</blockquote>
+<ul>
+<li>kubectl 是 Kubernetes 自带的客户端，可以用它来直接操作 Kubernetes 集群。</li>
+<li>Api Server相当于master的秘书，master和node的所有通信都需要走Api Server</li>
+<li>controller-manager就是老大，是公司的决策者，负责集群内 Node、Namespace、Service、Token、Replication 等资源对象的管理，使集群内的资源对象维持在预期的工作状态。</li>
+<li>scheduler就是调度者，如果我们小厂有东西做不出来那么需要scheduler负责对集群内部的资源进行调度，相当于“调度室”。</li>
+<li>kubelet 就是小厂的厂长，对每个node进行操控
+<ul>
+<li>kubelet 组件通过 api-server 提供的接口监测到 kube-scheduler 产生的 pod 绑定事件，然后从 etcd 获取 pod 清单，下载镜像并启动容器。</li>
+<li>同时监视分配给该Node节点的 pods，周期性获取容器状态，再通过api-server通知各个组件。</li>
+</ul>
+</li>
+<li>kube-proxy这个就好理解了，就相当于sealos下面每个厂的门卫大爷，集团可能不知道哪个资源在哪个厂，但是门卫大爷肯定知道啊，所以各个node的kube-proxy是相通的。</li>
+</ul>
+</details>
 <p><strong>what is <code v-pre>pod</code>？</strong></p>
 <ul>
 <li><a href="https://docker.nsddd.top/Cloud-Native-k8s/9.html#%E4%BF%AE%E6%94%B9pod" target="_blank" rel="noopener noreferrer">🧷 Go to cub to learn pod <ExternalLinkIcon/></a></li>

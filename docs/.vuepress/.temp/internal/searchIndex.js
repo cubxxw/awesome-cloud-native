@@ -1269,6 +1269,28 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "k0s runtime设计readme",
+        "slug": "k0s-runtime设计readme",
+        "link": "#k0s-runtime设计readme",
+        "children": [
+          {
+            "level": 3,
+            "title": "基础文件",
+            "slug": "基础文件",
+            "link": "#基础文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "介绍",
+            "slug": "介绍",
+            "link": "#介绍",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
