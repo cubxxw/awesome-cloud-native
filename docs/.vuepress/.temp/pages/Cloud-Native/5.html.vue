@@ -47,8 +47,8 @@
 <ul>
 <li>单结点成为高可用~</li>
 </ul>
-<p>docker~ run cmd</p>
-<p>init</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>docker~ run cmd 
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>init</p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>进展</p>
 </div>
@@ -90,7 +90,7 @@
 </ul>
 <h2 id="入口函数" tabindex="-1"><a class="header-anchor" href="#入口函数" aria-hidden="true">#</a> 入口函数</h2>
 <ul>
-<li>ChooseClusterRuntime()：使用Metadata来区分集群Runtime，需要添加一个字段来区分k0s、k3s、k8s</li>
+<li><code v-pre>ChooseClusterRuntime()</code>：使用 <code v-pre>Metadata</code> 来区分集群 <code v-pre>Runtime</code>，需要添加一个字段来区分k0s、k3s、k8s</li>
 </ul>
 <h3 id="附加上下文" tabindex="-1"><a class="header-anchor" href="#附加上下文" aria-hidden="true">#</a> 附加上下文</h3>
 <p>在此处添加有关功能请求的任何其他上下文或屏幕截图。</p>
@@ -120,13 +120,12 @@
 <li><a href="https://github.com/sealerio/sealer/pull/1686" target="_blank" rel="noopener noreferrer">k0s 跟进文档<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/sealerio/sealer/pull/1686/files" target="_blank" rel="noopener noreferrer">1686议题跟进代码<ExternalLinkIcon/></a></li>
 </ul>
-<h2 id="k0s-runtime设计readme" tabindex="-1"><a class="header-anchor" href="#k0s-runtime设计readme" aria-hidden="true">#</a> k0s runtime设计readme</h2>
+<h2 id="k0s-runtime-设计-readme" tabindex="-1"><a class="header-anchor" href="#k0s-runtime-设计-readme" aria-hidden="true">#</a> k0s runtime 设计 readme</h2>
 <ul>
 <li>https://github.com/sealerio/sealer/blob/main/pkg/runtime/k0s/README.md</li>
 </ul>
 <h3 id="基础文件" tabindex="-1"><a class="header-anchor" href="#基础文件" aria-hidden="true">#</a> 基础文件</h3>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">.</span>
-├── amd64
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>├── amd64
 │   ├── bin
 │   │   ├── k0s
 │   │   ├── kubectl
@@ -145,23 +144,23 @@
         ├── containerd.sh
         ├── init-registry.sh
         └── init.sh
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h3>
 <p>我们定义 k0s 运行时有 5 个阶段来安装/扩展/重置集群。</p>
 <p>basefs 包含二进制、shell 脚本、配置文件和镜像。了解有关<a href="https://github.com/sealerio/basefs" target="_blank" rel="noopener noreferrer">sealerio/basefs 的更多信息<ExternalLinkIcon/></a></p>
-<p><a href="https://github.com/k0sproject/k0s" target="_blank" rel="noopener noreferrer">通过执行k0s<ExternalLinkIcon/></a>命令安装文件系统引导集群之前的运行时。</p>
+<p><a href="https://github.com/k0sproject/k0s" target="_blank" rel="noopener noreferrer">通过执行k0s<ExternalLinkIcon/></a> 命令安装文件系统引导集群之前的运行时。</p>
 <ul>
 <li>init
 <ul>
-<li>当 sealer 导致先安装集群时，init 阶段将 rootfs/bin 复制到 init.sh 脚本中的 /usr/bin</li>
+<li>当 sealer 导致先安装集群时，init 阶段将 rootfs/bin 复制到 <code v-pre>init.sh</code> 脚本中的 <code v-pre>/usr/bin</code></li>
 <li>创建引导配置 /etc/k0s/k0s.yaml 以引导控制器初始化</li>
-<li>生成 k0s 加入令牌 /etc/k0s/worker-token 和 /etc/k0s/controller-token，也是私有注册表证书</li>
+<li>生成 k0s 加入令牌 <code v-pre>/etc/k0s/worker-token</code> 和 /etc/k0s/controller-token，也是私有注册表证书</li>
 <li>初始化控制器节点</li>
-<li>获取  ~/.kube/config  的配置以管理集群。</li>
+<li>获取  <code v-pre>~/.kube/config</code>  的配置以管理集群。</li>
 </ul>
 </li>
 <li>join
 <ul>
-<li>加入阶段准备注册表证书，并用于<code v-pre>k0s join</code>扩展集群。</li>
+<li>加入阶段准备注册表证书，并用于 <code v-pre>k0s join</code> 扩展集群。</li>
 </ul>
 </li>
 <li>delete

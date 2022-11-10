@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="k3s介绍" tabindex="-1"><a class="header-anchor" href="#k3s介绍" aria-hidden="true">#</a> k3s介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">k3s — 微型kubernets发行版</p>
@@ -65,9 +65,9 @@
 <p>虽然单节点 k3s 集群可以满足各种用例，但对于 Kubernetes control-plane 的正常运行至关重要的环境，您可以在高可用配置中运行 K3s。一个高可用 K3s 集群由以下几个部分组成：</p>
 <ul>
 <li><strong><code v-pre>K3s server</code> 节点</strong> ：两个或更多的<code v-pre>server</code>节点将为 Kubernetes API 提供服务并运行其他 control-plane 服务</li>
-<li><strong>外部数据库</strong> ：与单节点 k3s 设置中使用的嵌入式 SQLite 数据存储相反，高可用 K3s 需要挂载一个<code v-pre>external database</code>外部数据库作为数据存储的媒介。</li>
+<li><strong>外部数据库</strong> ：与单节点 k3s 设置中使用的嵌入式 <code v-pre>SQLite</code> 数据存储相反，高可用 K3s 需要挂载一个 <code v-pre>external database</code> 外部数据库作为数据存储的媒介。</li>
 </ul>
-<p>K3s高可用架构</p>
+<p><strong>K3s高可用架构：</strong></p>
 <p><img src="http://sm.nsddd.top/sm1660616476551520.png" alt="img"></p>
 <p><strong>固定  <code v-pre>agent</code> 节点的注册地址：</strong></p>
 <p>在高可用   <code v-pre>K3s server</code>  配置中，每个节点还必须使用固定的注册地址向 Kubernetes API 注册，注册后， <code v-pre>agent</code> 节点直接与其中一个  <code v-pre>server</code> 节点建立连接，如下图所示：</p>
@@ -76,7 +76,7 @@
 <p><code v-pre>agent</code> 节点用<code v-pre>k3s agent</code>进程发起的 websocket 连接注册，连接由作为代理进程一部分运行的客户端负载均衡器维护。</p>
 <p><code v-pre>agent</code> 将使用节点集群 secret 以及随机生成的节点密码向   <code v-pre>K3s server</code>  注册，密码存储在 <code v-pre>/etc/rancher/node/password</code>路径下。 <code v-pre>K3s server</code> 将把各个节点的密码存储为 Kubernetes secrets，随后的任何尝试都必须使用相同的密码。节点密码秘密存储在<code v-pre>kube-system</code>命名空间中，名称使用模板<code v-pre>&lt;host&gt;.node-password.k3s</code>。</p>
 <blockquote>
-<p>注意</p>
+<p><strong>注意：</strong></p>
 <ul>
 <li>在 K3s v1.20.2 之前，<code v-pre> K3s  server</code> 将密码存储在<code v-pre>/var/lib/rancher/k3s/server/cred/node-passwd</code>的磁盘上。</li>
 <li>如果您删除了  <code v-pre>agent</code> 的<code v-pre>/etc/rancher/node</code>目录，则需要为该  <code v-pre>agent</code> 重新创建密码文件，或者从  <code v-pre>server</code> 中删除该条目。</li>
@@ -86,23 +86,32 @@
 <p><strong>自动部署的清单：</strong></p>
 <p>位于目录路径<code v-pre>/var/lib/rancher/k3s/server/manifests</code> 的清单在构建时被捆绑到 K3s 二进制文件中，将由<a href="https://github.com/k3s-io/helm-controller#helm-controller" target="_blank" rel="noopener noreferrer">rancher/helm-controller<ExternalLinkIcon/></a>在运行时安装。</p>
 </details>
+<div class="custom-container danger"><p class="custom-container-title">警告</p>
+<p>关于 单结点 扩展为 高可用 状态，或许这并不是一个很容器实现的地方，我们在前面 details 中看到单结点架构和高可用架构的区别，或许我们应该在制作 <code v-pre>runtime</code> 模块 和 <code v-pre>rootfs</code> 的时候更倾向于实现 高可用。</p>
+</div>
 <p><strong>架构图：</strong></p>
 <p><img src="http://sm.nsddd.top/smhow-it-works-k3s.svg" alt="k3s下载"></p>
 <details class="custom-container details"><summary>补充containerd</summary>
 <p>containerd从docker就开始熟悉的，那么自然从docker开始介绍：</p>
 <p><img src="https://sm.nsddd.top/sm952033-20180520115357747-1796034956.png" alt="img"></p>
-<p>从图中可以看出，docker 对容器的管理和操作基本都是通过 containerd 完成的。 那么，containerd 是什么呢？
-<strong>Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。Containerd 可以在宿主机中管理完整的容器生命周期：容器镜像的传输和存储、容器的执行和管理、存储和网络等。</strong> 详细点说，Containerd 负责干下面这些事情：</p>
+<p>从图中可以看出，docker 对容器的管理和操作基本都是通过 containerd 完成的。 那么，containerd 是什么呢？</p>
+<p><strong>Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。Containerd 可以在宿主机中管理完整的容器生命周期：容器镜像的传输和存储、容器的执行和管理、存储和网络等。</strong> 详细点说，Containerd 负责干下面这些事情：</p>
 <ul>
 <li>管理容器的生命周期(从创建容器到销毁容器)</li>
-<li>拉取/推送容器镜像</li>
+<li>拉取 / 推送容器镜像</li>
 <li>存储管理(管理镜像及容器数据的存储)</li>
-<li>调用 runC 运行容器(与 runC 等容器运行时交互)</li>
+<li>调用 <code v-pre>runC</code> 运行容器(与 <code v-pre>runC</code> 等容器运行时交互)</li>
 <li>管理容器网络接口及网络</li>
 </ul>
 <p>⚠️ 注意：<strong>Containerd 被设计成嵌入到一个更大的系统中，而不是直接由开发人员或终端用户使用。</strong></p>
 <p><img src="http://sm.nsddd.top/smimage-20221031142456840.png" alt="image-20221031142456840"></p>
 </details>
+<h2 id="新版本默认支持-etcd" tabindex="-1"><a class="header-anchor" href="#新版本默认支持-etcd" aria-hidden="true">#</a> 新版本默认支持 etcd</h2>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>从 <code v-pre>v1.19.5+k3s1</code> 版本开始，K3s 已添加了对嵌入式 etcd 的完全支持。从 v1.19.1 到 v1.19.4 版本只提供了对嵌入式 etcd 的实验性支持。在 K3s v1.19.1 版本中，嵌入式 etcd 取代了实验性的 Dqlite。这是一个突破性的变化。请注意，不支持从实验性 Dqlite 升级到嵌入式 etcd。如果你尝试升级，升级将不会成功，并且数据将会丢失。</p>
+<p>嵌入式 etcd (HA) 在速度较慢的磁盘上可能会出现性能问题，例如使用 SD 卡运行的 Raspberry Pi。</p>
+<p>⚠️ 注意，如果你使用 docker 作为runtime，请小心 docker 是不认识 <code v-pre>+</code> ，如果你希望的到指定版本，请使用 ： <code v-pre>v1.19.5-k3s1</code></p>
+</div>
 <h2 id="安装-卸载-k3s" tabindex="-1"><a class="header-anchor" href="#安装-卸载-k3s" aria-hidden="true">#</a> 安装（卸载）k3s</h2>
 <div class="custom-container warning"><p class="custom-container-title">启动k3s有多快？</p>
 <p>一行代码搞定 — 仅需30秒，即可启动k3s：</p>
@@ -115,6 +124,8 @@ k3s kubectl get <span class="token function">node</span>
 <span class="token comment"># -s 不输出任何东西  &amp;  -f 连接失败时不显示http错误  &amp; -L参数会让 HTTP 请求跟随服务器的重定向。curl 默认不跟随重定向。</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>同样你可以选择把k3s部署在docker中，这样你就可以很方便的管理k3s</strong></p>
+<p><code v-pre>curl -sfL https://get.k3s.io | sh -</code> 将其 <code v-pre>server</code> 和 <code v-pre>agent</code> 都安装上了。</p>
+<p><strong>如何扩充结点</strong>：</p>
 </blockquote>
 <p><strong>安装选项：</strong></p>
 <ul>
@@ -133,6 +144,55 @@ k3s kubectl get <span class="token function">node</span>
 <span class="token comment"># 或者</span>
 kubectl get all <span class="token parameter variable">-n</span> kube-system
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<h2 id="在线安装的解析" tabindex="-1"><a class="header-anchor" href="#在线安装的解析" aria-hidden="true">#</a> 在线安装的解析</h2>
+<h3 id="指定版本" tabindex="-1"><a class="header-anchor" href="#指定版本" aria-hidden="true">#</a> 指定版本</h3>
+<p><strong>我们前面默认安装最新版，或许我们可以指定版本安装：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_VERSION</span><span class="token operator">=</span>v1.25.3 <span class="token function">sh</span> -
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="指定容器运行时" tabindex="-1"><a class="header-anchor" href="#指定容器运行时" aria-hidden="true">#</a> 指定容器运行时</h3>
+<p><strong>运行时：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--docker"</span> <span class="token function">sh</span> -
+
+<span class="token comment"># Domestic mirror acceleration</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://rancher-mirror.oss-cn-beijing.aliyuncs.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--docker"</span>  <span class="token function">sh</span> -
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>这样我们可以使用 docker 来管理 k3s</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>--docker</code></td>
+<td>N/A</td>
+<td>用 docker 代替 containerd</td>
+</tr>
+<tr>
+<td><code v-pre>--container-runtime-endpoint</code> value</td>
+<td>N/A</td>
+<td>禁用嵌入式 containerd，使用替代的 CRI 实现。</td>
+</tr>
+<tr>
+<td><code v-pre>--pause-image</code> value</td>
+<td>&quot;docker.io/rancher/pause:3.1&quot;</td>
+<td>针对 containerd 或 Docker 的自定义 pause 镜像</td>
+</tr>
+<tr>
+<td><code v-pre>--snapshotter</code> value</td>
+<td>N/A</td>
+<td>覆盖默认的 containerd 快照程序 (默认: &quot;overlayfs&quot;)</td>
+</tr>
+<tr>
+<td><code v-pre>--private-registry</code> value</td>
+<td>&quot;/etc/rancher/k3s/registries.yaml&quot;</td>
+<td>私有镜像仓库配置文件</td>
+</tr>
+</tbody>
+</table>
 <details class="custom-container details"><summary>k3s 安装脚本</summary>
 <p>https://get.k3s.io</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token shebang important">#!/bin/sh</span>
