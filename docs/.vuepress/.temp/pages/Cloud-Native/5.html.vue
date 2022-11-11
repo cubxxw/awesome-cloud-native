@@ -16,6 +16,45 @@
 <p>k3s 将所有 kubernetes 控制层面组件都封装到 单个二进制中 ，占用资源小，且包含了 kubernetes 运行时所需要的外部依赖和本地存储提供程序。</p>
 <p>k3s 提供离线安装包，可以避免网络资源访问问题。</p>
 </div>
+<div class="custom-container warning"><p class="custom-container-title">什么是 运行时</p>
+<p>我们分为广义和侠义</p>
+<ul>
+<li>广义：程序跑起来的时候</li>
+<li>侠义：辅助程序跑起来的代码和环境</li>
+</ul>
+<p>我们或许可以把 runtime 和 compile-time 对比：</p>
+<p>我们都希望编译器发现错误，而不是测试跑的时候发现错误，而且排查很难。</p>
+<ul>
+<li>runtime：内存错误、数字错误</li>
+<li>compile-time：语法错误，语义错误</li>
+</ul>
+<p><strong>侠义上的运行时：</strong></p>
+<ul>
+<li>运行时库（runtime library）<code v-pre>stdio.h</code></li>
+<li>运行时环境（runtime environment）</li>
+</ul>
+<p><strong>运行时环境：</strong></p>
+<ul>
+<li>&quot;无&quot; 运行时 – 依赖 os
+<ul>
+<li>c/c++</li>
+<li>rust</li>
+</ul>
+</li>
+<li>轻运行时
+<ul>
+<li>Golang</li>
+</ul>
+</li>
+<li>重运行时
+<ul>
+<li>java（JVM）</li>
+<li>python（CPython）</li>
+<li>C#（.NET runtime）</li>
+</ul>
+</li>
+</ul>
+</div>
 <h2 id="离线安装" tabindex="-1"><a class="header-anchor" href="#离线安装" aria-hidden="true">#</a> 离线安装</h2>
 <p>下载离线安装脚本：https://get.k3s.io</p>
 <p>下载<strong>k3s</strong>二进制文件：k3s</p>
@@ -62,7 +101,29 @@
 <li>脚本，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 init.sh 和 clean.sh。</li>
 <li>其他静态文件</li>
 </ul>
-<h2 id="问题描述" tabindex="-1"><a class="header-anchor" href="#问题描述" aria-hidden="true">#</a> 问题描述</h2>
+<p>使用 Kubernetes 仪表板构建 ClusterImage：</p>
+<p>FileName：<code v-pre>Kubefile</code></p>
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code><span class="token comment"># base ClusterImage contains all the files that run a kubernetes cluster needed.</span>
+<span class="token comment">#    1. kubernetes components like kubectl kubeadm kubelet and apiserver images ...</span>
+<span class="token comment">#    2. docker engine, and a private registry</span>
+<span class="token comment">#    3. config files, yaml, static files, scripts ...</span>
+<span class="token instruction"><span class="token keyword">FROM</span> registry.cn-qingdao.aliyuncs.com/sealer-io/kubernetes:v1.19.8</span>
+<span class="token comment"># download kubernetes dashboard yaml file</span>
+<span class="token instruction"><span class="token keyword">RUN</span> wget https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml</span>
+<span class="token comment"># when run this ClusterImage, will apply a dashboard manifests</span>
+<span class="token instruction"><span class="token keyword">CMD</span> kubectl apply -f recommended.yaml</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Build it：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>sealer build <span class="token parameter variable">-t</span> registry.cn-qingdao.aliyuncs.com/sealer-io/dashboard:latest <span class="token builtin class-name">.</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>Make it run：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># sealer will install a kubernetes on host 192.168.0.2 then apply the dashboard manifests</span>
+sealer run registry.cn-qingdao.aliyuncs.com/sealer-io/dashboard:latest <span class="token parameter variable">--masters</span> <span class="token number">192.168</span>.0.2 <span class="token parameter variable">--passwd</span> xxx
+<span class="token comment"># check the pod</span>
++
+
+++
+kubectl get pod -A<span class="token operator">|</span><span class="token function">grep</span> dashboard
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="问题描述" tabindex="-1"><a class="header-anchor" href="#问题描述" aria-hidden="true">#</a> 问题描述</h2>
 <p>我们需要更新 k0s 运行时代码以适应新结构。
 类型：功能请求</p>
 <h3 id="描述你想要什么功能" tabindex="-1"><a class="header-anchor" href="#描述你想要什么功能" aria-hidden="true">#</a> 描述你想要什么功能</h3>
