@@ -16,6 +16,7 @@
 <p>k3s 将所有 kubernetes 控制层面组件都封装到 单个二进制中 ，占用资源小，且包含了 kubernetes 运行时所需要的外部依赖和本地存储提供程序。</p>
 <p>k3s 提供离线安装包，可以避免网络资源访问问题。</p>
 </div>
+<h2 id="运行时" tabindex="-1"><a class="header-anchor" href="#运行时" aria-hidden="true">#</a> 运行时</h2>
 <div class="custom-container warning"><p class="custom-container-title">什么是 运行时</p>
 <p>我们分为广义和侠义</p>
 <ul>
@@ -55,6 +56,157 @@
 </li>
 </ul>
 </div>
+<h2 id="目录结构" tabindex="-1"><a class="header-anchor" href="#目录结构" aria-hidden="true">#</a> 目录结构</h2>
+<details class="custom-container details"><summary>目录结构</summary>
+<ul>
+<li>
+<p><strong>/bin</strong>：</p>
+<ul>
+<li><code v-pre>bin</code> 是 <code v-pre>Binaries</code> (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</li>
+</ul>
+</li>
+<li>
+<p><strong>/boot</strong>：</p>
+<ul>
+<li>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</li>
+</ul>
+</li>
+<li>
+<p><strong>/dev</strong> ：</p>
+<ul>
+<li><code v-pre>dev</code> 是 <code v-pre>Device</code>(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</li>
+</ul>
+</li>
+<li>
+<p><strong>/etc</strong>：</p>
+<ul>
+<li><code v-pre>etc</code> <strong>是</strong> <code v-pre>Etcetera</code>(等等**) **的缩写，这个目录用来存放所有的系统管理所需要的配置文件和子目录。</li>
+</ul>
+</li>
+<li>
+<p><strong>/home</strong>：</p>
+<ul>
+<li>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</li>
+</ul>
+</li>
+<li>
+<p><strong>/lib</strong>：</p>
+<ul>
+<li><code v-pre>lib</code> 是Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</li>
+</ul>
+</li>
+<li>
+<p><strong>/lost+found</strong>：</p>
+<ul>
+<li>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</li>
+</ul>
+</li>
+<li>
+<p><strong>/media</strong>：</p>
+<ul>
+<li>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</li>
+</ul>
+</li>
+<li>
+<p><strong>/mnt</strong></p>
+<ul>
+<li>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</li>
+</ul>
+</li>
+<li>
+<p><strong>/opt</strong>：</p>
+<ul>
+<li>opt 是optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</li>
+</ul>
+</li>
+<li>
+<p><strong>/proc</strong>：</p>
+<ul>
+<li>proc 是Processes(进程) 的缩写，/proc是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</li>
+</ul>
+<p>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p><strong>/root</strong>：</p>
+<ul>
+<li>该目录为系统管理员，也称作超级权限者的用户主目录。</li>
+</ul>
+</li>
+<li>
+<p><strong>/sbin</strong>：</p>
+<ul>
+<li>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</li>
+</ul>
+</li>
+<li>
+<p><strong>/selinux</strong>：</p>
+<ul>
+<li>这个目录是 Redhat/CentOS 所特有的目录，Selinux是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</li>
+</ul>
+</li>
+<li>
+<p><strong>/srv</strong>：</p>
+<ul>
+<li>该目录存放一些服务启动之后需要提取的数据。</li>
+</ul>
+</li>
+<li>
+<p><strong>/sys</strong>：</p>
+<ul>
+<li>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs sysfs 文件系统集成了下面3种文件系统的信息：针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。 该文件系统是内核设备树的一个直观反映。 当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</li>
+</ul>
+</li>
+<li>
+<p><strong>/tmp</strong>：</p>
+<ul>
+<li><code v-pre>tmp</code> 是<code v-pre>temporary</code>(临时) 的缩写这个目录是用来存放一些临时文件的。</li>
+</ul>
+</li>
+<li>
+<p><strong>/usr</strong>：</p>
+<ul>
+<li>usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</li>
+</ul>
+</li>
+<li>
+<p><strong>/usr/bin</strong>：</p>
+<ul>
+<li>系统用户使用的应用程序。</li>
+</ul>
+</li>
+<li>
+<p><strong>/usr/sbin</strong>：</p>
+<ul>
+<li><strong>超级用户使用的比较高级的管理程序和系统守护程序。</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>/usr/src</strong>：</p>
+<ul>
+<li>内核源代码默认的放置目录。</li>
+</ul>
+</li>
+<li>
+<p><strong>/var</strong>：</p>
+<ul>
+<li>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</li>
+</ul>
+</li>
+<li>
+<p><strong>/run</strong>：</p>
+<ul>
+<li>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 <code v-pre>/var/run</code> 目录，应该让它指向 <code v-pre>run</code>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>💡 重要的目录结构：</strong></p>
+<p><strong>在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</strong></p>
+<p><code v-pre>-/etc</code>： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p>
+<p><code v-pre>-/bin, /sbin, /usr/bin, /usr/sbin:</code> 这是系统预设的执行文件的放置目录，比如 ls 就是在 <code v-pre>/bin/ls</code> 目录下的。</p>
+<p><strong>值得提出的是，/bin, /usr/bin 是给系统用户使用的指令（除root外的通用户），而/sbin, /usr/sbin 则是给 root 使用的指令。</strong></p>
+<p>-<strong>/var</strong>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 /var/log 目录下，另外 mail 的预设放置也是在这里。</p>
+</details>
 <h2 id="离线安装" tabindex="-1"><a class="header-anchor" href="#离线安装" aria-hidden="true">#</a> 离线安装</h2>
 <p>下载离线安装脚本：https://get.k3s.io</p>
 <p>下载<strong>k3s</strong>二进制文件：k3s</p>
@@ -205,7 +357,60 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
         ├── containerd.sh
         ├── init-registry.sh
         └── init.sh
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="重构相对运行时的列表" tabindex="-1"><a class="header-anchor" href="#重构相对运行时的列表" aria-hidden="true">#</a> 重构相对运行时的列表</h3>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>runtime
+├── interface.go # runtime interface
+└── kubernets
+    ├── join_masters.go     # add master nodes/controlplanes
+    ├── join_worker.go      # add worker nodes
+    ├── common.go           # Enum relative Kubeadm
+    ├── init.go             # create cluster
+    ├── delete_masters.go   # delete master nodes/controlplanes
+    ├── delete_nodes.go     # delete worker nodes
+    ├── kubeadm_runtime.go  # runtime implement
+    ├── kubeadm_type        # kubeadm version type
+    │   └── v1beta1
+    │       └── type.go
+    ├── registry_service.go  # get and set some registry info
+    ├── reset.go             # reset a kubernetes cluster
+    ├── static_file.go       # AuditPolicyYml type
+    ├── update_cert.go       # update certs about kubernetes
+    └── util.go              # util of kubernetes runtime
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="cloud镜像" tabindex="-1"><a class="header-anchor" href="#cloud镜像" aria-hidden="true">#</a> cloud镜像</h3>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>COPY rootfs/* .
+COPY ${ARCH} .
+COPY ImageList manifests
+BASE rootfs cache
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="目录设计" tabindex="-1"><a class="header-anchor" href="#目录设计" aria-hidden="true">#</a> 目录设计</h3>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>├── bin
+│   ├── conntrack
+│   ├── containerd-rootless-setuptool.sh
+│   ├── containerd-rootless.sh
+│   ├── crictl
+│   ├── k0s
+│   ├── kubectl
+│   ├── <span class="token punctuation">..</span>.
+│   └── seautil
+├── etc
+│   ├── admin.conf
+│   ├── Clusterfile  <span class="token comment"># 镜像默认集群文件</span>
+│   ├── daemon.json <span class="token comment"># docker 守护进程配置文件。</span>
+│   ├── docker.service
+│   ├── k0s.yaml <span class="token comment"># k0s config</span>
+│   ├── kubelet.service
+│   └── registry.yml <span class="token comment"># 如果用户想自定义用户名和密码，可以覆盖这个文件。</span>
+├── images
+│   └── registry.tar  <span class="token comment"># 注册docker镜像，将加载此镜像并在集群中运行本地注册表</span>
+├── Metadata
+├── registry <span class="token comment">#是否将此目录挂载到本地注册表</span>
+│   └── <span class="token function">docker</span>
+│       └── registry
+├── scripts
+│   ├── script-wait-for-develop
+└── statics <span class="token comment"># yaml文件, sealer 将渲染这些文件中的值</span>
+    └── audit-policy.yml
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h3>
 <p>我们定义 k0s 运行时有 5 个阶段来安装/扩展/重置集群。</p>
 <p>basefs 包含二进制、shell 脚本、配置文件和镜像。了解有关<a href="https://github.com/sealerio/basefs" target="_blank" rel="noopener noreferrer">sealerio/basefs 的更多信息<ExternalLinkIcon/></a></p>
 <p><a href="https://github.com/k0sproject/k0s" target="_blank" rel="noopener noreferrer">通过执行k0s<ExternalLinkIcon/></a> 命令安装文件系统引导集群之前的运行时。</p>
@@ -240,6 +445,8 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 </ul>
 </li>
 </ul>
+<h2 id="表格-cn" tabindex="-1"><a class="header-anchor" href="#表格-cn" aria-hidden="true">#</a> 表格（CN）</h2>
+<p><img src="http://sm.nsddd.top/smimage-20221113000126421.png" alt="image-20221113000126421"></p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '4.md' style='float:left'>⬆️上一节🔗  </a><a href = '6.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
