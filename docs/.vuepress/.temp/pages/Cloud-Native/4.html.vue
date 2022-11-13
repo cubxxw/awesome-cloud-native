@@ -37,7 +37,7 @@
 <details class="custom-container details"><summary>k3s rootfs</summary>
 <p>goolang 编译时会打包所有的依赖，每个独立的 binary 都会有独立的运行时支持</p>
 <p>k3s把所有的依赖都编译在一个 <code v-pre>binary</code> 中，所有的程序 一份运行时</p>
-<p>借鉴 rootfs (linux) 基于 buildroot 构建的 busybox rootfs</p>
+<p>借鉴 rootfs (linux) 基于 <a href="https://github.com/buildroot/buildroot" target="_blank" rel="noopener noreferrer">buildroot<ExternalLinkIcon/></a> 构建的 busybox rootfs</p>
 <p>参考 <a href="https://github.com/k3s-io/k3s-root" target="_blank" rel="noopener noreferrer">rancher/k3s-root<ExternalLinkIcon/></a> 所有的k3s 构建的 binary 都放在此处</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>/var/lib/rancher/k3s/data/..../bin
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></details>
@@ -59,7 +59,7 @@
 <p><a href="https://www.sealos.io/zh-Hans/docs/cli/apply" target="_blank" rel="noopener noreferrer">https://www.sealos.io/zh-Hans/docs/cli/apply<ExternalLinkIcon/></a></p>
 </li>
 <li>
-<p>Interface interface{}</p>
+<p>Interface <code v-pre>interface{}</code></p>
 </li>
 </ul>
 <p><strong>runtime module list：</strong></p>
@@ -102,14 +102,14 @@
 </blockquote>
 <div class="language-test ext-test line-numbers-mode"><pre v-pre class="language-test"><code>bin  cri  etc  images  Kubefile  opt  README.md  registry  scripts  statics
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>/bin
-/etc
-/images
-/scripts
-/tmp
-/lib
-/run
-/var
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>+ /bin
++ /etc
++ /images
++ /scripts
++ /tmp
++ /lib
++ /run
++ /var
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>为什么有些 <code v-pre>merged</code> 是空的</p>
 </blockquote>

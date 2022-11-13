@@ -124,8 +124,8 @@
 <ul>
 <li>proc 是Processes(进程) 的缩写，/proc是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</li>
 </ul>
-<p>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+<p>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的 <code v-pre>ping</code> 命令，使别人无法 <code v-pre>ping</code> 你的机器：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">></span> /proc/sys/net/ipv4/icmp_echo_ignore_all
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 <li>
 <p><strong>/root</strong>：</p>
@@ -136,13 +136,13 @@
 <li>
 <p><strong>/sbin</strong>：</p>
 <ul>
-<li>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</li>
+<li><code v-pre>s</code> 就是 <code v-pre>Super User</code> 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</li>
 </ul>
 </li>
 <li>
 <p><strong>/selinux</strong>：</p>
 <ul>
-<li>这个目录是 Redhat/CentOS 所特有的目录，Selinux是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</li>
+<li>这个目录是 <code v-pre>Redhat/CentOS</code> 所特有的目录，<code v-pre>Selinux</code>是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放<code v-pre>selinux</code>相关的文件的。</li>
 </ul>
 </li>
 <li>
@@ -184,7 +184,7 @@
 <li>
 <p><strong>/usr/src</strong>：</p>
 <ul>
-<li>内核源代码默认的放置目录。</li>
+<li><strong>内核源代码默认的放置目录。</strong></li>
 </ul>
 </li>
 <li>
@@ -205,7 +205,7 @@
 <p><code v-pre>-/etc</code>： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p>
 <p><code v-pre>-/bin, /sbin, /usr/bin, /usr/sbin:</code> 这是系统预设的执行文件的放置目录，比如 ls 就是在 <code v-pre>/bin/ls</code> 目录下的。</p>
 <p><strong>值得提出的是，/bin, /usr/bin 是给系统用户使用的指令（除root外的通用户），而/sbin, /usr/sbin 则是给 root 使用的指令。</strong></p>
-<p>-<strong>/var</strong>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 /var/log 目录下，另外 mail 的预设放置也是在这里。</p>
+<p>-<strong>/var</strong>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 <code v-pre>/var/log</code> 目录下，另外 <code v-pre>mail</code> 的预设放置也是在这里。</p>
 </details>
 <h2 id="离线安装" tabindex="-1"><a class="header-anchor" href="#离线安装" aria-hidden="true">#</a> 离线安装</h2>
 <p>下载离线安装脚本：https://get.k3s.io</p>
@@ -239,7 +239,7 @@
 <li>单结点成为高可用~</li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>docker~ run cmd 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>init</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>init：</strong></p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>进展</p>
 </div>
@@ -247,10 +247,10 @@
 <ul>
 <li>Bin 文件，如 docker、containerd、crictl、kubeadm、kubectl...</li>
 <li>配置文件，如 kubelet systemd config、docker systemd config、docker daemon.json...</li>
-<li>注册表泊坞窗图像。</li>
+<li>registry images。</li>
 <li>一些元数据，例如 Kubernetes 版本。</li>
-<li>注册表文件，包含所有的docker镜像，比如kubernetes核心组件docker镜像...</li>
-<li>脚本，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 init.sh 和 clean.sh。</li>
+<li>registry file，包含所有的docker镜像，比如kubernetes核心组件docker镜像...</li>
+<li>Script，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 init.sh 和 clean.sh。</li>
 <li>其他静态文件</li>
 </ul>
 <p>使用 Kubernetes 仪表板构建 ClusterImage：</p>
@@ -264,18 +264,16 @@
 <span class="token instruction"><span class="token keyword">RUN</span> wget https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml</span>
 <span class="token comment"># when run this ClusterImage, will apply a dashboard manifests</span>
 <span class="token instruction"><span class="token keyword">CMD</span> kubectl apply -f recommended.yaml</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Build it：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Build it：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>sealer build <span class="token parameter variable">-t</span> registry.cn-qingdao.aliyuncs.com/sealer-io/dashboard:latest <span class="token builtin class-name">.</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>Make it run：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>Make it run：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># sealer will install a kubernetes on host 192.168.0.2 then apply the dashboard manifests</span>
 sealer run registry.cn-qingdao.aliyuncs.com/sealer-io/dashboard:latest <span class="token parameter variable">--masters</span> <span class="token number">192.168</span>.0.2 <span class="token parameter variable">--passwd</span> xxx
 <span class="token comment"># check the pod</span>
-+
 
-++
 kubectl get pod -A<span class="token operator">|</span><span class="token function">grep</span> dashboard
 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="问题描述" tabindex="-1"><a class="header-anchor" href="#问题描述" aria-hidden="true">#</a> 问题描述</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="问题描述" tabindex="-1"><a class="header-anchor" href="#问题描述" aria-hidden="true">#</a> 问题描述</h2>
 <p>我们需要更新 k0s 运行时代码以适应新结构。
 类型：功能请求</p>
 <h3 id="描述你想要什么功能" tabindex="-1"><a class="header-anchor" href="#描述你想要什么功能" aria-hidden="true">#</a> 描述你想要什么功能</h3>
@@ -307,7 +305,7 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 </ul>
 <h3 id="附加上下文" tabindex="-1"><a class="header-anchor" href="#附加上下文" aria-hidden="true">#</a> 附加上下文</h3>
 <p>在此处添加有关功能请求的任何其他上下文或屏幕截图。</p>
-<p>sealos 主议题</p>
+<p><strong>sealos 主议题：</strong></p>
 <ul>
 <li>
 <p><a href="https://github.com/sealerio/sealer/issues?q=is%3Aissue+is%3Aopen+k3s" target="_blank" rel="noopener noreferrer">k3s 所有议题<ExternalLinkIcon/></a></p>
@@ -319,9 +317,16 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 <p>https://github.com/sealerio/sealer/issues/1399</p>
 </li>
 </ul>
-<p>策划文档</p>
+<p><strong>策划文档：</strong></p>
 <ul>
 <li>https://www.yuque.com/zhouxinyuan-6woia/nodno9/iswdqd</li>
+</ul>
+<h2 id="计划" tabindex="-1"><a class="header-anchor" href="#计划" aria-hidden="true">#</a> 计划</h2>
+<ul>
+<li>[x] 熟读k3s官方文档</li>
+<li>[x] 熟悉 k3s 的安装脚本</li>
+<li>[x] 阅读 sealer runtime 的接口逻辑   install / scaleup 接口</li>
+<li>[x] 如何和 rootfs 交互</li>
 </ul>
 <h2 id="issues" tabindex="-1"><a class="header-anchor" href="#issues" aria-hidden="true">#</a> issues</h2>
 <p>我们在路线图中对 k8s、k0s、k3s 运行时支持的工作应该有一个进度记录，应该是让工作进度更加清晰，并吸引更多的参与者加入这个核心工作。这里简单介绍一下部分工作：
@@ -358,24 +363,24 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
         ├── init-registry.sh
         └── init.sh
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="重构相对运行时的列表" tabindex="-1"><a class="header-anchor" href="#重构相对运行时的列表" aria-hidden="true">#</a> 重构相对运行时的列表</h3>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>runtime
-├── interface.go # runtime interface
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>runtime
+├── interface.go <span class="token comment"># runtime interface</span>
 └── kubernets
-    ├── join_masters.go     # add master nodes/controlplanes
-    ├── join_worker.go      # add worker nodes
-    ├── common.go           # Enum relative Kubeadm
-    ├── init.go             # create cluster
-    ├── delete_masters.go   # delete master nodes/controlplanes
-    ├── delete_nodes.go     # delete worker nodes
-    ├── kubeadm_runtime.go  # runtime implement
-    ├── kubeadm_type        # kubeadm version type
+    ├── join_masters.go     <span class="token comment"># add master nodes/controlplanes</span>
+    ├── join_worker.go      <span class="token comment"># add worker nodes</span>
+    ├── common.go           <span class="token comment"># Enum relative Kubeadm</span>
+    ├── init.go             <span class="token comment"># create cluster</span>
+    ├── delete_masters.go   <span class="token comment"># delete master nodes/controlplanes</span>
+    ├── delete_nodes.go     <span class="token comment"># delete worker nodes</span>
+    ├── kubeadm_runtime.go  <span class="token comment"># runtime implement</span>
+    ├── kubeadm_type        <span class="token comment"># kubeadm version type</span>
     │   └── v1beta1
     │       └── type.go
-    ├── registry_service.go  # get and set some registry info
-    ├── reset.go             # reset a kubernetes cluster
-    ├── static_file.go       # AuditPolicyYml type
-    ├── update_cert.go       # update certs about kubernetes
-    └── util.go              # util of kubernetes runtime
+    ├── registry_service.go  <span class="token comment"># get and set some registry info</span>
+    ├── reset.go             <span class="token comment"># reset a kubernetes cluster</span>
+    ├── static_file.go       <span class="token comment"># AuditPolicyYml type</span>
+    ├── update_cert.go       <span class="token comment"># update certs about kubernetes</span>
+    └── util.go              <span class="token comment"># util of kubernetes runtime</span>
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="cloud镜像" tabindex="-1"><a class="header-anchor" href="#cloud镜像" aria-hidden="true">#</a> cloud镜像</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>COPY rootfs/* .
@@ -447,7 +452,19 @@ BASE rootfs cache
 </ul>
 <h2 id="表格-cn" tabindex="-1"><a class="header-anchor" href="#表格-cn" aria-hidden="true">#</a> 表格（CN）</h2>
 <p><img src="http://sm.nsddd.top/smimage-20221113000126421.png" alt="image-20221113000126421"></p>
-<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<h2 id="code-runtime-module" tabindex="-1"><a class="header-anchor" href="#code-runtime-module" aria-hidden="true">#</a> code runtime module</h2>
+<p><strong>util.go：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>/*
+Loads the metadata file from the given rootfs.
+从给定的rootfs加载元数据文件。
+
+Args:
+	rootfs: The rootfs path.
+
+Returns:
+	The metadata object.
+*/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '4.md' style='float:left'>⬆️上一节🔗  </a><a href = '6.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>
