@@ -55,6 +55,14 @@
 <p>kubectl 是我们平时和 Kubernetes 交互使用的最多的客户端工具，常见的运维操作都会通过 kubectl 来完成，kubectl 为我们提供了插件机制来方便扩展。</p>
 <p>kubectl 插件其实就是以<code v-pre>kubectl-</code>为前缀的任意可执行文件 ，执行 kubectl 插件的时候可以通过 <code v-pre>kubectl 插件名 参数</code> 的方式运行插件。</p>
 <p>就像 <code v-pre>Ubuntu</code> 使用 <code v-pre>apt</code> 管理软件，<code v-pre>mac</code> 可以使用 <code v-pre>brew</code> 一样，<code v-pre>kubectl</code> 也有类似的插件管理工具 <code v-pre>krew</code>，同时我们可以从 <a href="https://krew.sigs.kubernetes.io/plugins/" target="_blank" rel="noopener noreferrer">https://krew.sigs.Kubernetes.io/plugins/<ExternalLinkIcon/></a> 查找是否已经存在我们需要的插件</p>
+<p>::: cru rools</p>
+<ul>
+<li>crictl：类 docker 的命令行工具，帮助用户和开发者调试容器问题</li>
+<li>critest：用于验证 CRI 接口的测试工具，验证是否满足 Kubelet 要求</li>
+<li>性能工具：测试接口性能</li>
+</ul>
+<p><strong>目前的 CRI 接口处于 V1 alpha2 版本，CRI 规范能不能更完善？</strong></p>
+<p>:::</p>
 <h3 id="_2-apiserver" tabindex="-1"><a class="header-anchor" href="#_2-apiserver" aria-hidden="true">#</a> 2. APIServer</h3>
 <h4 id="聚合层" tabindex="-1"><a class="header-anchor" href="#聚合层" aria-hidden="true">#</a> 聚合层</h4>
 <p>从 Kubernetes v1.7 版本之后 APIServer 引入了聚合层的功能，这个功能可以让每个开发者都能够实现聚合 API 服务暴露它们需要的接口，这个过程不需要重新编译 Kubernetes 的任何代码。</p>

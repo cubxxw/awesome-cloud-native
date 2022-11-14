@@ -8,8 +8,8 @@
 <blockquote>
 <p>❤️💕💕记录<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
-<hr>
 <p>[TOC]</p>
+<h2 id="项目规范" tabindex="-1"><a class="header-anchor" href="#项目规范" aria-hidden="true">#</a> 项目规范</h2>
 <h2 id="注意" tabindex="-1"><a class="header-anchor" href="#注意" aria-hidden="true">#</a> 注意</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>k8s 从 v1.24 开始，kubernetes 默认容器运行时使用 <code v-pre>containerd</code> ，不再使用 <code v-pre>docker</code>。</p>
@@ -245,13 +245,13 @@
 </div>
 <h2 id="clusterlmage" tabindex="-1"><a class="header-anchor" href="#clusterlmage" aria-hidden="true">#</a> Clusterlmage</h2>
 <ul>
-<li>Bin 文件，如 docker、containerd、crictl、kubeadm、kubectl...</li>
-<li>配置文件，如 kubelet systemd config、docker systemd config、docker daemon.json...</li>
+<li><code v-pre>Bin file</code>，如 docker、containerd、crictl、kubeadm、kubectl...</li>
+<li><code v-pre>config file</code> ，如 kubelet systemd config、docker systemd config、docker daemon.json...</li>
 <li>registry images。</li>
-<li>一些元数据，例如 Kubernetes 版本。</li>
-<li>registry file，包含所有的docker镜像，比如kubernetes核心组件docker镜像...</li>
-<li>Script，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 init.sh 和 clean.sh。</li>
-<li>其他静态文件</li>
+<li><code v-pre>Some metadata</code>，例如 Kubernetes 版本。</li>
+<li><code v-pre>registry file</code>，包含所有的docker镜像，比如kubernetes核心组件docker镜像...</li>
+<li><code v-pre>Script</code>，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 init.sh 和 clean.sh<code v-pre>。</code></li>
+<li><code v-pre>Other static files</code></li>
 </ul>
 <p>使用 Kubernetes 仪表板构建 ClusterImage：</p>
 <p>FileName：<code v-pre>Kubefile</code></p>
@@ -278,17 +278,116 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 类型：功能请求</p>
 <h3 id="描述你想要什么功能" tabindex="-1"><a class="header-anchor" href="#描述你想要什么功能" aria-hidden="true">#</a> 描述你想要什么功能</h3>
 <h2 id="调研" tabindex="-1"><a class="header-anchor" href="#调研" aria-hidden="true">#</a> 调研</h2>
-<p>首先需要调研，然后出一个设计稿，比如install模块怎么和k3s结合</p>
-<p>apply会对比一下新旧集群的差别，然后再确定是否调用runtime来扩缩容集群</p>
+<p>首先需要调研，然后出一个设计稿，比如 install 模块怎么和 k3s 结合</p>
+<p><code v-pre>apply</code> 会对比一下新旧集群的差别，然后再确定是否调用 <code v-pre>runtime</code> 来扩缩容集群</p>
 <blockquote>
-<p>目前k3s还没有实现，k0s在最新代码中还没有适配起来，上面这个文档是在0.8.6版本，也就是9月下旬发布的那个版本代码前设计的，现在的话大体思路一致，如果需要实现k3s的话，首先需要熟读k3s的官方安装文档，其次阅读sealer runtime的接口逻辑，install/scaleup等接口干些什么事儿。最后还需要看一下如何与rootfs进行交互，也就是集群镜像那个部分。如果有兴趣的话，欢迎对sealer进行贡献。k0s、k3s runtime部分的代码会是由我主要负责。</p>
-<p>这个不好说，目前新架构下的cri还没有支持containerd，k0s部分修改起来很快并且已经推动了，预计1个月就可以了，可以期待sealer下个大版本的更新哦如果现在想体验k0s的话，可以切换到9月30号的那次starcomingup的提交，基于那次commit进行编译，k0s镜像的话可以体验一下</p>
-<p>但是不建议上生产哦</p>
-</blockquote>
-<h2 id="先决条件" tabindex="-1"><a class="header-anchor" href="#先决条件" aria-hidden="true">#</a> 先决条件</h2>
+<p>目前k3s还没有实现，k0s在最新代码中还没有适配起来，上面这个文档是在0.8.6版本，也就是9月下旬发布的那个版本代码前设计的，现在的话大体思路一致，如果需要实现k3s的话，首先需要熟读k3s的官方安装文档，其次阅读<code v-pre>sealer runtime</code>的接口逻辑，<code v-pre>install/scaleup</code>等接口干些什么事儿。最后还需要看一下如何与<code v-pre>rootfs</code>进行交互，也就是集群镜像那个部分。</p>
+<p>切换到9月30号的那次<code v-pre>starcomingup</code>的提交，基于那次<code v-pre>commit</code>进行编译，k0s镜像的话可以体验一下</p>
 <ul>
-<li>容器化为基于 CRI<a href="https://github.com/YTGhost" target="_blank" rel="noopener noreferrer">@YTGhost<ExternalLinkIcon/></a>请帮我跟踪这项工作</li>
+<li>scaledown作用于master节点，删除master节点前需要先删除master节点上的pod</li>
+<li></li>
 </ul>
+</blockquote>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>/*
+Install a new cluster.
+
+:param infra: 基础结构对象。
+:param kubeadmConfig: The kubeadm configuration.
+:param masters: The list of master IPs.
+:param workers: The list of worker IPs.
+:returns: None
+:raises: None
+*/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong><em>infradriver</em>:</strong></p>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">// infracontrol将整个集群视为一个操作系统内核，</span>
+<span class="token comment">// 这里的interface函数是目标系统调用。</span>
+<span class="token keyword">type</span> InfraDriver <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">GetHostIPList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>net<span class="token punctuation">.</span>IP
+
+	<span class="token function">GetHostIPListByRole</span><span class="token punctuation">(</span>role <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>net<span class="token punctuation">.</span>IP
+	<span class="token comment">//获取指定角色的ip列表，比如master，node，</span>
+    
+	<span class="token function">GetHostsPlatform</span><span class="token punctuation">(</span>hosts <span class="token punctuation">[</span><span class="token punctuation">]</span>net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span>v1<span class="token punctuation">.</span>Platform<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span>net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//GetHostEnv return merged env with host env and cluster env.</span>
+	<span class="token function">GetHostEnv</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+	<span class="token comment">//GetClusterEnv return cluster.spec.env as map[string]interface{}</span>
+	<span class="token function">GetClusterEnv</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+	<span class="token comment">//GetClusterName ${clusterName}</span>
+	<span class="token function">GetClusterName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+
+	<span class="token comment">//GetClusterImageName ${cluster image Name}</span>
+	<span class="token function">GetClusterImageName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+
+	<span class="token comment">//GetClusterLaunchCmds ${user-defined launch command}</span>
+	<span class="token function">GetClusterLaunchCmds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+
+	<span class="token comment">//GetClusterRootfsPath /var/lib/sealer/data/${clusterName}/rootfs</span>
+	<span class="token function">GetClusterRootfsPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+
+	<span class="token comment">// GetClusterBasePath /var/lib/sealer/data/${clusterName}</span>
+	<span class="token function">GetClusterBasePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+
+	<span class="token comment">// Execute use eg.Go to execute shell cmd concurrently</span>
+	<span class="token function">Execute</span><span class="token punctuation">(</span>hosts <span class="token punctuation">[</span><span class="token punctuation">]</span>net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> f <span class="token keyword">func</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+
+	<span class="token comment">// Copy local files to remote host</span>
+	<span class="token comment">// scp -r /tmp root@192.168.0.2:/root/tmp => Copy("192.168.0.2","tmp","/root/tmp")</span>
+	<span class="token comment">// need check md5sum</span>
+	<span class="token function">Copy</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> localFilePath<span class="token punctuation">,</span> remoteFilePath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+	<span class="token comment">// CopyR copy remote host files to localhost</span>
+	<span class="token function">CopyR</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> remoteFilePath<span class="token punctuation">,</span> localFilePath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+	<span class="token comment">// CmdAsync exec command on remote host, and asynchronous return logs</span>
+	<span class="token function">CmdAsync</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> cmd <span class="token operator">...</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+	<span class="token comment">// Cmd exec command on remote host, and return combined standard output and standard error</span>
+	<span class="token function">Cmd</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> cmd <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+	<span class="token comment">// CmdToString exec command on remote host, and return spilt standard output and standard error</span>
+	<span class="token function">CmdToString</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> cmd<span class="token punctuation">,</span> spilt <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// IsFileExist check remote file exist or not</span>
+	<span class="token function">IsFileExist</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> remoteFilePath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">bool</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+	<span class="token comment">// IsDirExist Remote file existence returns true, nil</span>
+	<span class="token function">IsDirExist</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> remoteDirPath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">bool</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// GetPlatform Get remote platform</span>
+	<span class="token function">GetPlatform</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token punctuation">(</span>v1<span class="token punctuation">.</span>Platform<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+
+	<span class="token function">GetHostName</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+	<span class="token comment">// Ping Ping remote host</span>
+	<span class="token function">Ping</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token builtin">error</span>
+	<span class="token comment">// SetHostName add or update host name on host</span>
+	<span class="token function">SetHostName</span><span class="token punctuation">(</span>host net<span class="token punctuation">.</span>IP<span class="token punctuation">,</span> hostName <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+
+	<span class="token comment">//SetClusterHostAliases set additional HostAliases</span>
+	<span class="token function">SetClusterHostAliases</span><span class="token punctuation">(</span>hosts <span class="token punctuation">[</span><span class="token punctuation">]</span>net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token builtin">error</span>
+
+	<span class="token comment">//DeleteClusterHostAliases delete additional HostAliases</span>
+	<span class="token function">DeleteClusterHostAliases</span><span class="token punctuation">(</span>hosts <span class="token punctuation">[</span><span class="token punctuation">]</span>net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token builtin">error</span>
+
+	<span class="token comment">// SetLvsRule add or update host name on host</span>
+	<span class="token comment">//SetLvsRule(host net.IP, hostName string) error</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="rootfs-module" tabindex="-1"><a class="header-anchor" href="#rootfs-module" aria-hidden="true">#</a> rootfs module</h2>
+<p><strong>interface：</strong></p>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token keyword">type</span> Manager <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> App   <span class="token comment">// App returns the application manager.</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> App <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Root</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>  <span class="token comment">// Root returns the root path of the application.</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>我需要注意的模块：</p>
+<ul>
+<li>apply/driver/</li>
+<li>apply/processor/</li>
+<li><a href="https://github.com/sealerio/sealer/pull/1686/files#diff-ad043994ee0ef6e350ef3520fbab469423b41d1abb8cdb3527b230eb3416d4de" target="_blank" rel="noopener noreferrer">cmd/sealer/cmd/cluster<ExternalLinkIcon/></a></li>
+<li>runtime</li>
+</ul>
+</div>
 <h2 id="安装-放大-缩小-重置-升级" tabindex="-1"><a class="header-anchor" href="#安装-放大-缩小-重置-升级" aria-hidden="true">#</a> 安装/放大/缩小/重置/升级</h2>
 <ul>
 <li>删除注册表交互逻辑</li>
@@ -305,7 +404,7 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 </ul>
 <h3 id="附加上下文" tabindex="-1"><a class="header-anchor" href="#附加上下文" aria-hidden="true">#</a> 附加上下文</h3>
 <p>在此处添加有关功能请求的任何其他上下文或屏幕截图。</p>
-<p><strong>sealos 主议题：</strong></p>
+<h3 id="sealos-主议题" tabindex="-1"><a class="header-anchor" href="#sealos-主议题" aria-hidden="true">#</a> sealos 主议题</h3>
 <ul>
 <li>
 <p><a href="https://github.com/sealerio/sealer/issues?q=is%3Aissue+is%3Aopen+k3s" target="_blank" rel="noopener noreferrer">k3s 所有议题<ExternalLinkIcon/></a></p>
@@ -317,7 +416,7 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 <p>https://github.com/sealerio/sealer/issues/1399</p>
 </li>
 </ul>
-<p><strong>策划文档：</strong></p>
+<h3 id="策划文档" tabindex="-1"><a class="header-anchor" href="#策划文档" aria-hidden="true">#</a> 策划文档</h3>
 <ul>
 <li>https://www.yuque.com/zhouxinyuan-6woia/nodno9/iswdqd</li>
 </ul>
@@ -330,7 +429,7 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 </ul>
 <h2 id="issues" tabindex="-1"><a class="header-anchor" href="#issues" aria-hidden="true">#</a> issues</h2>
 <p>我们在路线图中对 k8s、k0s、k3s 运行时支持的工作应该有一个进度记录，应该是让工作进度更加清晰，并吸引更多的参与者加入这个核心工作。这里简单介绍一下部分工作：
-阅读Sealer主分支代码，理解 <code v-pre>runtime</code> 模块中的代码，掌握从cmd模块到runtime模块的代码调用逻辑。
+阅读Sealer主分支代码，理解 <code v-pre>runtime</code> 模块中的代码，掌握从 cmd 模块到 runtime 模块的代码调用逻辑。
 通过k8s、k0s、k3s官网阅读并设计运行时接口实现方法。
 为指定的运行时读取和设计 clusterImage。主要参考： <a href="http://sealer.cool/docs/advanced/define-cloudimage.html#customize-the-cloudrootfs" target="_blank" rel="noopener noreferrer">ClusterImage<ExternalLinkIcon/></a>、<a href="https://github.com/sealerio/basefs" target="_blank" rel="noopener noreferrer">basefs<ExternalLinkIcon/></a>。
 类型：<em>功能请求</em></p>
@@ -338,11 +437,83 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 <li><a href="https://github.com/sealerio/sealer/pull/1686" target="_blank" rel="noopener noreferrer">k0s 跟进文档<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/sealerio/sealer/pull/1686/files" target="_blank" rel="noopener noreferrer">1686议题跟进代码<ExternalLinkIcon/></a></li>
 </ul>
-<h2 id="k0s-runtime-设计-readme" tabindex="-1"><a class="header-anchor" href="#k0s-runtime-设计-readme" aria-hidden="true">#</a> k0s runtime 设计 readme</h2>
+<h3 id="cluster" tabindex="-1"><a class="header-anchor" href="#cluster" aria-hidden="true">#</a> cluster</h3>
+<p><code v-pre>cluster.go</code>描述整个集群期望状态 -- 几个<code v-pre>master</code>，几个<code v-pre>node</code>，<code v-pre>ssh</code>密码、端口号、集群镜像、贯穿始终，特别特别重要  -- <code v-pre>sealos run</code> 也是渲染成结构体传递给其他模块~**</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>----
+apply.go
+cert.go
+cluster.go
+delete.go
+join.go
+run-app.go
+run.go
+scale-up.go
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="k0s-runtime-design-readme" tabindex="-1"><a class="header-anchor" href="#k0s-runtime-design-readme" aria-hidden="true">#</a> k0s runtime design readme</h2>
+<details class="custom-container details"><summary>install.sh</summary>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">curl</span> https://get.k0s.sh/
+<span class="token comment">#!/bin/sh</span>
+
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${DEBUG}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">set</span> <span class="token parameter variable">-x</span>
+<span class="token keyword">fi</span>
+
+<span class="token function-name function">_k0s_latest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">curl</span> <span class="token parameter variable">-sSLf</span> <span class="token string">"https://docs.k0sproject.io/stable.txt"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">_detect_binary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token assign-left variable">os</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span><span class="token variable">)</span></span>"</span>
+  <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$os</span>"</span> <span class="token keyword">in</span>
+    Linux<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">"k0s"</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">"Unsupported operating system: <span class="token variable">$os</span>"</span> <span class="token operator"><span class="token file-descriptor important">1</span>></span><span class="token file-descriptor important">&amp;2</span><span class="token punctuation">;</span> <span class="token builtin class-name">return</span> <span class="token number">1</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token keyword">esac</span>
+  <span class="token builtin class-name">unset</span> os
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">_detect_arch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token assign-left variable">arch</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> <span class="token parameter variable">-m</span><span class="token variable">)</span></span>"</span>
+  <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$arch</span>"</span> <span class="token keyword">in</span>
+    amd64<span class="token operator">|</span>x86_64<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">"amd64"</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    arm64<span class="token operator">|</span>aarch64<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">"arm64"</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    armv7l<span class="token operator">|</span>armv8l<span class="token operator">|</span>arm<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">"arm"</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">"Unsupported processor architecture: <span class="token variable">$arch</span>"</span> <span class="token operator"><span class="token file-descriptor important">1</span>></span><span class="token file-descriptor important">&amp;2</span><span class="token punctuation">;</span> <span class="token builtin class-name">return</span> <span class="token number">1</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token keyword">esac</span>
+  <span class="token builtin class-name">unset</span> arch
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">_download_url</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"https://github.com/k0sproject/k0s/releases/download/<span class="token variable">$K0S_VERSION</span>/<span class="token variable">$k0sBinary</span>-<span class="token variable">$K0S_VERSION</span>-<span class="token variable">$k0sArch</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">${K0S_VERSION}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token assign-left variable">K0S_VERSION</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>_k0s_latest<span class="token variable">)</span></span>
+  <span class="token keyword">fi</span>
+
+  <span class="token assign-left variable">k0sInstallPath</span><span class="token operator">=</span>/usr/local/bin
+  <span class="token assign-left variable">k0sBinary</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>_detect_binary<span class="token variable">)</span></span>"</span>
+  <span class="token assign-left variable">k0sArch</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>_detect_arch<span class="token variable">)</span></span>"</span>
+  <span class="token assign-left variable">k0sDownloadUrl</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>_download_url<span class="token variable">)</span></span>"</span>
+
+  <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> -- <span class="token string">"<span class="token variable">$k0sInstallPath</span>"</span>
+
+  <span class="token builtin class-name">echo</span> <span class="token string">"Downloading k0s from URL: <span class="token variable">$k0sDownloadUrl</span>"</span>
+
+  <span class="token function">curl</span> <span class="token parameter variable">-sSLf</span> <span class="token string">"<span class="token variable">$k0sDownloadUrl</span>"</span> <span class="token operator">></span><span class="token string">"<span class="token variable">$k0sInstallPath</span>/<span class="token variable">$k0sBinary</span>"</span>
+  <span class="token function">chmod</span> <span class="token number">755</span> -- <span class="token string">"<span class="token variable">$k0sInstallPath</span>/<span class="token variable">$k0sBinary</span>"</span>
+
+  <span class="token builtin class-name">echo</span> <span class="token string">"k0s is now executable in <span class="token variable">$k0sInstallPath</span>"</span>
+<span class="token punctuation">}</span>
+
+main
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
 <ul>
 <li>https://github.com/sealerio/sealer/blob/main/pkg/runtime/k0s/README.md</li>
 </ul>
-<h3 id="基础文件" tabindex="-1"><a class="header-anchor" href="#基础文件" aria-hidden="true">#</a> 基础文件</h3>
+<h3 id="basics-directory-structure" tabindex="-1"><a class="header-anchor" href="#basics-directory-structure" aria-hidden="true">#</a> basics directory structure</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>├── amd64
 │   ├── bin
 │   │   ├── k0s
@@ -383,8 +554,8 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
     └── util.go              <span class="token comment"># util of kubernetes runtime</span>
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="cloud镜像" tabindex="-1"><a class="header-anchor" href="#cloud镜像" aria-hidden="true">#</a> cloud镜像</h3>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>COPY rootfs/* .
-COPY ${ARCH} .
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>COPY rootfs/* <span class="token builtin class-name">.</span>
+COPY <span class="token variable">${ARCH}</span> <span class="token builtin class-name">.</span>
 COPY ImageList manifests
 BASE rootfs cache
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="目录设计" tabindex="-1"><a class="header-anchor" href="#目录设计" aria-hidden="true">#</a> 目录设计</h3>

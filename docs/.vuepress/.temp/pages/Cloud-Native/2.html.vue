@@ -39,7 +39,7 @@
 </blockquote>
 <ul>
 <li>广度，常用分布式软件如 <code v-pre>mysql</code> 集群，<code v-pre>redis</code> 集群，消息队列等逐步覆盖，不断扩展常用分布式应用数量</li>
-<li>深度，基本安装 -&gt; 高可用 -&gt; 可监控 -&gt; 自运维 -&gt; 高性能 / 安全性 -&gt; GUI管控，六个阶段衡量一个分布式应用成熟度</li>
+<li>深度，<code v-pre>基本安装 -&gt; 高可用 -&gt; 可监控 -&gt; 自运维 -&gt; 高性能 / 安全性 -&gt; GUI管控</code>，六个阶段衡量一个分布式应用成熟度</li>
 </ul>
 <p>应用包含三个来源：环界自研应用如函数计算，开源二次封装应用，第三方应用如与讯飞合作的 AI 能力应用与 <code v-pre>sealos</code> 结合。</p>
 <h2 id="运行之后" tabindex="-1"><a class="header-anchor" href="#运行之后" aria-hidden="true">#</a> 运行之后</h2>

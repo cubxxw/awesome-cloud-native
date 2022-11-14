@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#离线安装解释">离线安装解释</router-link><ul><li><router-link to="#步骤">步骤</router-link></li><li><router-link to="#前提条件">前提条件</router-link></li><li><router-link to="#单结点高可用离线安装">单结点高可用离线安装</router-link></li></ul></li><li><router-link to="#卸载k3s">卸载k3s</router-link></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#containerd">containerd</router-link><ul><li><router-link to="#架构图">架构图</router-link></li><li><router-link to="#命令">命令</router-link></li><li><router-link to="#containerd的配置管理">containerd的配置管理</router-link></li></ul></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#安装脚本">安装脚本</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#离线安装解释">离线安装解释</router-link><ul><li><router-link to="#步骤">步骤</router-link></li><li><router-link to="#前提条件">前提条件</router-link></li><li><router-link to="#containerd-手动部署镜像方式">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#docker-手动部署镜像方式">Docker + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-手动部署镜像方式-1">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-私有镜像仓库方式">Containerd + 私有镜像仓库方式</router-link></li></ul></li><li><router-link to="#docker-私有镜像仓库方式">Docker + 私有镜像仓库方式</router-link><ul><li><router-link to="#单结点高可用离线安装">单结点高可用离线安装</router-link></li></ul></li><li><router-link to="#卸载k3s">卸载k3s</router-link></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#containerd">containerd</router-link><ul><li><router-link to="#架构图">架构图</router-link></li><li><router-link to="#命令">命令</router-link></li><li><router-link to="#containerd的配置管理">containerd的配置管理</router-link></li></ul></li><li><router-link to="#二进制工具">二进制工具</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#安装脚本">安装脚本</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="k3s介绍" tabindex="-1"><a class="header-anchor" href="#k3s介绍" aria-hidden="true">#</a> k3s介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">k3s — 微型kubernets发行版</p>
@@ -237,6 +237,16 @@ GLOBAL OPTIONS:
 <p><strong>步骤 2</strong>：安装 K3s，本文提供了两种安装方式，分别是<strong>单节点安装</strong>和<strong>高可用安装</strong>。完成镜像部署后，请在这两种方式中选择一种执行。</p>
 <p><strong>离线升级 K3s 版本</strong>：完成离线安装 K3s 后，您还可以通过脚本升级 K3s 版本，或启用自动升级功能，以保持离线环境中的 K3s 版本与最新的 K3s 版本同步。</p>
 <p><strong>请按照以下步骤准备镜像目录和 K3s 二进制文件：</strong></p>
+<blockquote>
+<p>我认为离线安装的重点在于<strong>K3s 依赖的镜像</strong>部分，因为 K3s 的&quot;安装脚本&quot;和&quot;二进制文件&quot;只需要下载到对应目录，然后赋予相应的权限即可，非常简单。但K3s 依赖的镜像的安装方式取决于你使用的是手动部署镜像还是私有镜像仓库，也取决于容器运行时使用的是 <code v-pre>containerd</code> 还是<code v-pre>docker</code>。</p>
+<p>针对不同的组合形式，可以分为以下几种形式来实现离线安装：</p>
+<ul>
+<li>Containerd + 手动部署镜像方式</li>
+<li>Docker + 手动部署镜像方式</li>
+<li>Containerd + 私有镜像仓库方式</li>
+<li>Docker + 私有镜像仓库方式</li>
+</ul>
+</blockquote>
 <ol>
 <li>
 <p>从<a href="https://github.com/rancher/k3s/releases" target="_blank" rel="noopener noreferrer">K3s GitHub Release<ExternalLinkIcon/></a>页面获取你所运行的 K3s 版本的镜像 tar 文件。(<strong>airgap-images</strong>)</p>
@@ -259,7 +269,175 @@ GLOBAL OPTIONS:
 <p>当使用 <code v-pre>INSTALL_K3S_SKIP_DOWNLOAD</code> 环境变量运行 K3s 脚本时，K3s 将使用本地的脚本和二进制。</p>
 <div class="custom-container warning"><p class="custom-container-title">提醒 u</p>
 <p>您可以在离线环境中执行单节点安装，在一个 server（节点）上安装 K3s，或高可用安装，在多个 server（节点）上安装 K3s。</p>
+<p>对安装脚本进行简单的修改（ghproxy），在最后可以看到 安装脚本~</p>
 </div>
+<h3 id="containerd-手动部署镜像方式" tabindex="-1"><a class="header-anchor" href="#containerd-手动部署镜像方式" aria-hidden="true">#</a> Containerd + 手动部署镜像方式</h3>
+<details class="custom-container details"><summary>展开查看步骤</summary>
+<p>假设你已经将同一版本的 K3s 的安装脚本(<code v-pre>k3s-install.sh</code>)、K3s 的二进制文件(<code v-pre>k3s</code>)、K3s 依赖的镜像(<code v-pre>k3s-airgap-images-amd64.tar</code>)下载到了<code v-pre>/root</code>目录下。</p>
+<p>如果你使用的容器运行时为containerd，在启动 K3s 时，它会检查<code v-pre>/var/lib/rancher/k3s/agent/images/</code>是否存在可用的镜像压缩包，如果存在，就将该镜像导入到 <code v-pre>containerd</code> 镜像列表中。所以我们只需要下载 <code v-pre>K3s</code> 依赖的镜像到<code v-pre>/var/lib/rancher/k3s/agent/images/</code>目录，然后启动 <code v-pre>K3s</code> 即可。</p>
+<p><strong>1. 导入镜像到 <code v-pre>containerd</code> 的镜像列表：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /var/lib/rancher/k3s/agent/images/
+<span class="token function">sudo</span> <span class="token function">cp</span> /root/k3s-airgap-images-amd64.tar /var/lib/rancher/k3s/agent/images/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>2. 将 K3s 安装脚本和 K3s 二进制文件移动到对应目录并授予可执行权限</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">chmod</span> a+x /root/k3s /root/k3s-install.sh
+<span class="token function">sudo</span> <span class="token function">cp</span> /root/k3s /usr/local/bin/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>3. 安装 K3s</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token assign-left variable">INSTALL_K3S_SKIP_DOWNLOAD</span><span class="token operator">=</span>true /root/k3s-install.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></details>
+<details class="custom-container details"><summary>演示</summary>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># cp k3s-install.sh /root/k3s-install.sh</span>
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># ls </span>
+images  k3s  k3s-install.sh  Kubefile  sealer-runtime-demo
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># cp k3s  /root/k3s</span>
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># sudo chmod a+x /root/k3s /root/k3s-install.sh</span>
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># sudo cp /root/k3s /usr/local/bin/</span>
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># INSTALL_K3S_SKIP_DOWNLOAD=true /root/k3s-install.sh</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  Skipping k3s download and verify
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  Skipping installation of SELinux RPM
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  Skipping /usr/local/bin/kubectl symlink to k3s, <span class="token builtin class-name">command</span> exists <span class="token keyword">in</span> <span class="token environment constant">PATH</span> at /usr/bin/kubectl
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  Skipping /usr/local/bin/crictl symlink to k3s, <span class="token builtin class-name">command</span> exists <span class="token keyword">in</span> <span class="token environment constant">PATH</span> at /usr/bin/crictl
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  Skipping /usr/local/bin/ctr symlink to k3s, <span class="token builtin class-name">command</span> exists <span class="token keyword">in</span> <span class="token environment constant">PATH</span> at /usr/bin/ctr
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  Creating <span class="token function">killall</span> script /usr/local/bin/k3s-killall.sh
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  Creating uninstall script /usr/local/bin/k3s-uninstall.sh
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  env: Creating environment <span class="token function">file</span> /etc/systemd/system/k3s.service.env
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  systemd: Creating <span class="token function">service</span> <span class="token function">file</span> /etc/systemd/system/k3s.service
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  systemd: Enabling k3s unit
+Created symlink from /etc/systemd/system/multi-user.target.wants/k3s.service to /etc/systemd/system/k3s.service.
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span>  systemd: Starting k3s
+Failed to restart k3s.service: Unit is not loaded properly: Invalid argument.
+See system logs and <span class="token string">'systemctl status k3s.service'</span> <span class="token keyword">for</span> details.
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># k3s</span>
+NAME:
+   k3s - Kubernetes, but small and simple
+
+USAGE:
+   k3s <span class="token punctuation">[</span>global options<span class="token punctuation">]</span> <span class="token builtin class-name">command</span> <span class="token punctuation">[</span>command options<span class="token punctuation">]</span> <span class="token punctuation">[</span>arguments<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+
+VERSION:
+   v1.25.3+k3s1 <span class="token punctuation">(</span>f2585c16<span class="token punctuation">)</span>
+
+COMMANDS:
+   server           Run management server
+   agent            Run <span class="token function">node</span> agent
+   kubectl          Run kubectl
+   crictl           Run crictl
+   ctr              Run ctr
+   check-config     Run config check
+   etcd-snapshot    Trigger an immediate etcd snapshot
+   secrets-encrypt  Control secrets encryption and keys rotation
+   certificate      Certificates management
+   completion       Install shell completion script
+   help, h          Shows a list of commands or <span class="token builtin class-name">help</span> <span class="token keyword">for</span> one <span class="token builtin class-name">command</span>
+
+GLOBAL OPTIONS:
+   <span class="token parameter variable">--debug</span>                     <span class="token punctuation">(</span>logging<span class="token punctuation">)</span> Turn on debug logs <span class="token punctuation">[</span><span class="token variable">$K3S_DEBUG</span><span class="token punctuation">]</span>
+   --data-dir value, <span class="token parameter variable">-d</span> value  <span class="token punctuation">(</span>data<span class="token punctuation">)</span> Folder to hold state <span class="token punctuation">(</span>default: /var/lib/rancher/k3s or <span class="token variable">${<span class="token environment constant">HOME</span>}</span>/.rancher/k3s <span class="token keyword">if</span> not root<span class="token punctuation">)</span>
+   --help, <span class="token parameter variable">-h</span>                  show <span class="token builtin class-name">help</span>
+   --version, <span class="token parameter variable">-v</span>               print the version
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>验证：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># crictl images</span>
+WARN<span class="token punctuation">[</span>0000<span class="token punctuation">]</span> image connect using default endpoints: <span class="token punctuation">[</span>unix:///var/run/dockershim.sock unix:///run/containerd/containerd.sock unix:///run/crio/crio.sock<span class="token punctuation">]</span>. As the default settings are now deprecated, you should <span class="token builtin class-name">set</span> the endpoint instead. 
+IMAGE                                    TAG                 IMAGE ID            SIZE
+k0sproject/k0s                           latest              6adc65a599f7a       253MB
+nginx                                    latest              76c69feac34e8       142MB
+registry                                 <span class="token number">2.7</span>.1               0d0107588605f       <span class="token number">25</span>.7MB
+sea.hub:5000/calico/apiserver            v3.22.1             b7dd079a4ed76       129MB
+sea.hub:5000/calico/cni                  v3.22.1             2a8ef6985a3e5       236MB
+sea.hub:5000/calico/kube-controllers     v3.22.1             c0c6672a66a59       132MB
+sea.hub:5000/calico/node                 v3.22.1             7a71aca7b60fc       198MB
+sea.hub:5000/calico/pod2daemon-flexvol   v3.22.1             17300d20daf93       <span class="token number">19</span>.7MB
+sea.hub:5000/calico/typha                v3.22.1             f822f80398b9a       127MB
+sea.hub:5000/coredns                     <span class="token number">1.7</span>.0               bfe3a36ebd252       <span class="token number">45</span>.2MB
+sea.hub:5000/etcd                        <span class="token number">3.4</span>.13-0            0369cf4303ffd       253MB
+sea.hub:5000/kube-apiserver              v1.19.8             9ba91a90b7d1b       119MB
+sea.hub:5000/kube-controller-manager     v1.19.8             213ae7795128d       111MB
+sea.hub:5000/kube-proxy                  v1.19.8             ea03182b84a23       118MB
+sea.hub:5000/kube-scheduler              v1.19.8             919a3f36437dc       <span class="token number">46</span>.5MB
+sea.hub:5000/pause                       <span class="token number">3.2</span>                 80d28bedfe5de       683kB
+sea.hub:5000/tigera/operator             v1.25.3             648350e58702c       128MB
+<span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z k3s-offline<span class="token punctuation">]</span><span class="token comment"># kubectl get pods -A</span>
+NAMESPACE          NAME                                              READY   STATUS    RESTARTS   AGE
+calico-apiserver   calico-apiserver-64f668766b-dv2xk                 <span class="token number">1</span>/1     Running   <span class="token number">2</span>          4d17h
+calico-apiserver   calico-apiserver-64f668766b-k49gx                 <span class="token number">1</span>/1     Running   <span class="token number">2</span>          4d17h
+calico-system      calico-kube-controllers-69dfd59986-mq7cv          <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+calico-system      calico-node-pg47k                                 <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+calico-system      calico-typha-84f56b949f-t95jk                     <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+default            myapp                                             <span class="token number">0</span>/3     Pending   <span class="token number">0</span>          4d14h
+kube-system        coredns-55bcc669d7-74xb2                          <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+kube-system        coredns-55bcc669d7-jdkj2                          <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+kube-system        etcd-izbp1evo5cnwagauz3w188z                      <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+kube-system        kube-apiserver-izbp1evo5cnwagauz3w188z            <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+kube-system        kube-controller-manager-izbp1evo5cnwagauz3w188z   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+kube-system        kube-proxy-ssr6t                                  <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+kube-system        kube-scheduler-izbp1evo5cnwagauz3w188z            <span class="token number">1</span>/1     Running   <span class="token number">0</span>          4d17h
+tigera-operator    tigera-operator-7cdb76dd8b-ltbbs                  <span class="token number">1</span>/1     Running   <span class="token number">10</span>         4d17h
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h3 id="docker-手动部署镜像方式" tabindex="-1"><a class="header-anchor" href="#docker-手动部署镜像方式" aria-hidden="true">#</a> Docker + 手动部署镜像方式</h3>
+<details class="custom-container details"><summary>展开查看步骤</summary>
+<p>假设你已经将同一版本的 K3s 的安装脚本(<code v-pre>k3s-install.sh</code>)、K3s 的二进制文件(<code v-pre>k3s</code>)、K3s 依赖的镜像(<code v-pre>k3s-airgap-images-amd64.tar</code>)下载到了<code v-pre>/root</code>目录下。</p>
+<p>与 <code v-pre>containerd</code> 不同，使用 docker 作为容器运行时，启动 <code v-pre>K3s</code> 不会导入 <code v-pre>/var/lib/rancher/k3s/agent/images/</code>目录下的镜像。所以在启动 <code v-pre>K3s</code> 之前我们需要将 <code v-pre>K3s</code> 依赖的镜像手动导入到 <code v-pre>docker</code> 镜像列表中。</p>
+<p><strong>1. 导入镜像到 <code v-pre>docker</code> 的镜像列表：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> load <span class="token parameter variable">-i</span> /root/k3s-airgap-images-amd64.tar
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>2. 将 K3s 安装脚本和 K3s 二进制文件移动到对应目录并授予可执行权限</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">chmod</span> a+x /root/k3s /root/k3s-install.sh
+<span class="token function">sudo</span> <span class="token function">cp</span> /root/k3s /usr/local/bin/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>3. 安装 K3s</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token assign-left variable">INSTALL_K3S_SKIP_DOWNLOAD</span><span class="token operator">=</span>true <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--docker'</span> /root/k3s-install.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></details>
+<h3 id="containerd-手动部署镜像方式-1" tabindex="-1"><a class="header-anchor" href="#containerd-手动部署镜像方式-1" aria-hidden="true">#</a> Containerd + 手动部署镜像方式</h3>
+<details class="custom-container details"><summary>展开查看步骤</summary>
+<p>假设你已经将同一版本的 K3s 的安装脚本(<code v-pre>k3s-install.sh</code>)、K3s 的二进制文件(<code v-pre>k3s</code>)、K3s 依赖的镜像(<code v-pre>k3s-airgap-images-amd64.tar</code>)下载到了<code v-pre>/root</code>目录下。</p>
+<p>如果你使用的容器运行时为containerd，在启动 K3s 时，它会检查<code v-pre>/var/lib/rancher/k3s/agent/images/</code>是否存在可用的镜像压缩包，如果存在，就将该镜像导入到 <code v-pre>containerd</code> 镜像列表中。所以我们只需要下载 <code v-pre>K3s</code> 依赖的镜像到<code v-pre>/var/lib/rancher/k3s/agent/images/</code>目录，然后启动 <code v-pre>K3s</code> 即可。</p>
+<p><strong>1. 导入镜像到 <code v-pre>containerd</code> 的镜像列表：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /var/lib/rancher/k3s/agent/images/
+<span class="token function">sudo</span> <span class="token function">cp</span> /root/k3s-airgap-images-amd64.tar /var/lib/rancher/k3s/agent/images/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>2. 将 K3s 安装脚本和 K3s 二进制文件移动到对应目录并授予可执行权限</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">chmod</span> a+x /root/k3s /root/k3s-install.sh
+<span class="token function">sudo</span> <span class="token function">cp</span> /root/k3s /usr/local/bin/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>3. 安装 K3s</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token assign-left variable">INSTALL_K3S_SKIP_DOWNLOAD</span><span class="token operator">=</span>true /root/k3s-install.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></details>
+<h3 id="containerd-私有镜像仓库方式" tabindex="-1"><a class="header-anchor" href="#containerd-私有镜像仓库方式" aria-hidden="true">#</a> Containerd + 私有镜像仓库方式</h3>
+<details class="custom-container details"><summary>展开查看详细</summary>
+<p>假设你已经将同一版本的 K3s 的安装脚本(<code v-pre>k3s-install.sh</code>)、K3s 的二进制文件(k3s)下载到了<code v-pre>/root</code>目录下。并且 <code v-pre>K3s</code> 所需要的镜像已经上传到了镜像仓库（本例的镜像仓库地址为：http://192.168.64.44:5000）。K3s 所需的镜像列表可以从 <code v-pre>K3s Release</code>页面的<code v-pre>k3s-images.txt</code>获得。</p>
+<p><strong>1. 配置 K3s 镜像仓库</strong></p>
+<p>启动 K3s 默认会从docker.io拉取镜像。使用containerd容器运行时在离线安装时，我们只需要将镜像仓库地址配置到docker.io下的endpoint即可，更多配置说明请参考配置 containerd 镜像仓库完全攻略或<a href="https://docs.rancher.cn/docs/k3s/installation/private-registry/_index/" target="_blank" rel="noopener noreferrer">K3s 官方文档<ExternalLinkIcon/></a>：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/rancher/k3s
+<span class="token function">sudo</span> <span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+mirrors:
+"docker.io":
+endpoint:
+- "http://192.168.64.44:5000"
+- "https://registry-1.docker.io"
+EOF</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>2. 将 K3s 安装脚本和 K3s 二进制文件移动到对应目录并授予可执行权限</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">chmod</span> a+x /root/k3s /root/k3s-install.sh
+<span class="token function">sudo</span> <span class="token function">cp</span> /root/k3s /usr/local/bin/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>3. 安装 K3s</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token assign-left variable">INSTALL_K3S_SKIP_DOWNLOAD</span><span class="token operator">=</span>true /root/k3s-install.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p>稍等片刻，即可查看到 K3s 已经成功启动：</p>
+</blockquote>
+</details>
+<h2 id="docker-私有镜像仓库方式" tabindex="-1"><a class="header-anchor" href="#docker-私有镜像仓库方式" aria-hidden="true">#</a> Docker + 私有镜像仓库方式</h2>
+<details class="custom-container details"><summary>展开查看详细</summary>
+<p>假设你已经将同一版本的 K3s 的安装脚本(k3s-install.sh)、K3s 的二进制文件(k3s)下载到了/root目录下。并且 K3s 所需要的镜像已经上传到了镜像仓库（本例的镜像仓库地址为：http://192.168.64.44:5000）。K3s 所需的镜像列表可以从 K3s Release页面的k3s-images.txt获得。</p>
+<p><strong>1. 配置 K3s 镜像仓库</strong></p>
+<p>Docker 不支持像 containerd 那样可以通过修改 docker.io 对应的 endpoint（默认为 https://registry-1.docker.io）来间接修改默认镜像仓库的地址。但在Docker中可以通过配置registry-mirrors来实现从其他镜像仓库中获取K3s镜像。这样配置之后，会先从registry-mirrors配置的地址拉取镜像，如果获取不到才会从默认的docker.io获取镜像，从而满足了我们的需求。</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">>></span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+{
+"registry-mirrors": ["http://192.168.64.44:5000"]
+}
+EOF</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart <span class="token function">docker</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>2、将 K3s 安装脚本和 K3s 二进制文件移动到对应目录并授予可执行权限</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">chmod</span> a+x /root/k3s /root/k3s-install.sh
+<span class="token function">sudo</span> <span class="token function">cp</span> /root/k3s /usr/local/bin/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>3. 安装k3s：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token assign-left variable">INSTALL_K3S_SKIP_DOWNLOAD</span><span class="token operator">=</span>true <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--docker'</span> /root/k3s-install.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></details>
 <h3 id="单结点高可用离线安装" tabindex="-1"><a class="header-anchor" href="#单结点高可用离线安装" aria-hidden="true">#</a> 单结点高可用离线安装</h3>
 <p><strong>提供要从 server 节点卸载 K3s，和需要从agent结点卸载K3s，推荐使用高可用安装，关于单结点迁移到高可用状态可参考 <a href="https://mp.weixin.qq.com/s/Yax2m2uFw2d4lo5sybHsCw" target="_blank" rel="noopener noreferrer">🧷 这篇文章<ExternalLinkIcon/></a>：</strong></p>
 <CodeGroup>
@@ -360,7 +538,59 @@ EOF</span>
 </div>
 <p><strong>日志：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">tail</span> <span class="token parameter variable">-f</span> /var/lib/rancher/k3s/agent/containerd/containerd.log
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="边缘计算" tabindex="-1"><a class="header-anchor" href="#边缘计算" aria-hidden="true">#</a> 边缘计算</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="二进制工具" tabindex="-1"><a class="header-anchor" href="#二进制工具" aria-hidden="true">#</a> 二进制工具</h2>
+<p>K3s 二进制文件包含许多帮助您管理集群的附加工具。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>k3s server</code></td>
+<td>运行 K3s 管理服务器，它还将启动 Kubernetes 控制平面组件，例如 API 服务器、控制器管理器和调度程序。</td>
+</tr>
+<tr>
+<td><code v-pre>k3s agent</code></td>
+<td>运行 K3s 节点代理。这将导致 K3s 作为工作节点运行，启动 Kubernetes 节点服务<code v-pre>kubelet</code>和<code v-pre>kube-proxy</code>.</td>
+</tr>
+<tr>
+<td><code v-pre>k3s kubectl</code></td>
+<td>运行嵌入式<a href="https://kubernetes.io/docs/docs/reference/kubectl/overview/" target="_blank" rel="noopener noreferrer">kubectl<ExternalLinkIcon/></a> CLI。如果<code v-pre>KUBECONFIG</code>未设置环境变量，这将自动尝试使用在<code v-pre>/etc/rancher/k3s/k3s.yaml</code>启动 K3s 服务器节点时创建的配置文件。</td>
+</tr>
+<tr>
+<td><code v-pre>k3s crictl</code></td>
+<td>运行嵌入式<a href="https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md" target="_blank" rel="noopener noreferrer">crictl<ExternalLinkIcon/></a>。这是一个用于与 Kubernetes 的容器运行时接口 (CRI) 交互的 CLI。对调试很有用。</td>
+</tr>
+<tr>
+<td><code v-pre>k3s ctr</code></td>
+<td>运行嵌入式<a href="https://github.com/projectatomic/containerd/blob/master/docs/cli.md" target="_blank" rel="noopener noreferrer">ctr<ExternalLinkIcon/></a>。这是 containerd 的 CLI，K3s 使用的容器守护进程。对调试很有用。</td>
+</tr>
+<tr>
+<td><code v-pre>k3s etcd-snapshot</code></td>
+<td>对 K3s 集群数据进行按需备份并上传到 S3。有关详细信息，请参阅<a href="https://docs.k3s.io/backup-restore#backup-and-restore-with-embedded-etcd-datastore-experimental" target="_blank" rel="noopener noreferrer">备份和还原<ExternalLinkIcon/></a>。</td>
+</tr>
+<tr>
+<td><code v-pre>k3s secrets-encrypt</code></td>
+<td>将 K3s 配置为在将机密存储在集群中时对其进行加密。有关详细信息，请参阅<a href="https://docs.k3s.io/security/secrets-encryption" target="_blank" rel="noopener noreferrer">秘密加密<ExternalLinkIcon/></a>。</td>
+</tr>
+<tr>
+<td><code v-pre>k3s certificate</code></td>
+<td>证书管理</td>
+</tr>
+<tr>
+<td><code v-pre>k3s completion</code></td>
+<td>为 k3s 生成 shell 完成脚本</td>
+</tr>
+<tr>
+<td><code v-pre>k3s help</code></td>
+<td>显示命令列表或一个命令的帮助</td>
+</tr>
+</tbody>
+</table>
+<h2 id="边缘计算" tabindex="-1"><a class="header-anchor" href="#边缘计算" aria-hidden="true">#</a> 边缘计算</h2>
 <p>k3s 非常支持边缘计算，CICD 的部署，可以给我们带来更好的体验。</p>
 <div class="custom-container tip"><p class="custom-container-title">边缘计算是什么？</p>
 <p>边缘计算是为应用开发者和服务提供商在网络的边缘侧提供云服务和IT环境服务；目标是在靠近数据输入或用户的地方提供计算、存储和网络带宽。</p>
@@ -371,6 +601,7 @@ EOF</span>
 <h2 id="安装脚本" tabindex="-1"><a class="header-anchor" href="#安装脚本" aria-hidden="true">#</a> 安装脚本</h2>
 <details class="custom-container details"><summary>k3s 安装脚本</summary>
 <p>https://get.k3s.io</p>
+<p>Maybe you can try my plan, if you don't choose the domestic route, but you are affected by the firewall. Then you can use <code v-pre>https://ghproxy.com/{github-url}</code></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token shebang important">#!/bin/sh</span>
 <span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>
 <span class="token builtin class-name">set</span> <span class="token parameter variable">-o</span> noglob
@@ -1305,982 +1536,7 @@ EOF</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
 <details class="custom-container details"><summary>国内镜像加速~</summary>
 <p>https://rancher-mirror.oss-cn-beijing.aliyuncs.com/k3s/k3s-install.sh</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token shebang important">#!/bin/sh</span>
-<span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>
-<span class="token builtin class-name">set</span> <span class="token parameter variable">-o</span> noglob
-
-<span class="token comment"># Usage:</span>
-<span class="token comment">#   curl ... | ENV_VAR=... sh -</span>
-<span class="token comment">#       or</span>
-<span class="token comment">#   ENV_VAR=... ./install.sh</span>
-<span class="token comment">#</span>
-<span class="token comment"># Example:</span>
-<span class="token comment">#   Installing a server without traefik:</span>
-<span class="token comment">#     curl ... | INSTALL_K3S_EXEC="--disable=traefik" sh -</span>
-<span class="token comment">#   Installing an agent to point at a server:</span>
-<span class="token comment">#     curl ... | K3S_TOKEN=xxx K3S_URL=https://server-url:6443 sh -</span>
-<span class="token comment">#</span>
-<span class="token comment"># Environment variables:</span>
-<span class="token comment">#   - K3S_*</span>
-<span class="token comment">#     Environment variables which begin with K3S_ will be preserved for the</span>
-<span class="token comment">#     systemd service to use. Setting K3S_URL without explicitly setting</span>
-<span class="token comment">#     a systemd exec command will default the command to "agent", and we</span>
-<span class="token comment">#     enforce that K3S_TOKEN or K3S_CLUSTER_SECRET is also set.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_SKIP_DOWNLOAD</span>
-<span class="token comment">#     If set to true will not download k3s hash or binary.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_FORCE_RESTART</span>
-<span class="token comment">#     If set to true will always restart the K3s service</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_SYMLINK</span>
-<span class="token comment">#     If set to 'skip' will not create symlinks, 'force' will overwrite,</span>
-<span class="token comment">#     default will symlink if command does not exist in path.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_SKIP_ENABLE</span>
-<span class="token comment">#     If set to true will not enable or start k3s service.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_SKIP_START</span>
-<span class="token comment">#     If set to true will not start k3s service.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_VERSION</span>
-<span class="token comment">#     Version of k3s to download from github. Will attempt to download from the</span>
-<span class="token comment">#     stable channel if not specified.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_COMMIT</span>
-<span class="token comment">#     Commit of k3s to download from temporary cloud storage.</span>
-<span class="token comment">#     * (for developer &amp; QA use)</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_BIN_DIR</span>
-<span class="token comment">#     Directory to install k3s binary, links, and uninstall script to, or use</span>
-<span class="token comment">#     /usr/local/bin as the default</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_BIN_DIR_READ_ONLY</span>
-<span class="token comment">#     If set to true will not write files to INSTALL_K3S_BIN_DIR, forces</span>
-<span class="token comment">#     setting INSTALL_K3S_SKIP_DOWNLOAD=true</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_SYSTEMD_DIR</span>
-<span class="token comment">#     Directory to install systemd service and environment files to, or use</span>
-<span class="token comment">#     /etc/systemd/system as the default</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_EXEC or script arguments</span>
-<span class="token comment">#     Command with flags to use for launching k3s in the systemd service, if</span>
-<span class="token comment">#     the command is not specified will default to "agent" if K3S_URL is set</span>
-<span class="token comment">#     or "server" if not. The final systemd command resolves to a combination</span>
-<span class="token comment">#     of EXEC and script args ($@).</span>
-<span class="token comment">#</span>
-<span class="token comment">#     The following commands result in the same behavior:</span>
-<span class="token comment">#       curl ... | INSTALL_K3S_EXEC="--disable=traefik" sh -s -</span>
-<span class="token comment">#       curl ... | INSTALL_K3S_EXEC="server --disable=traefik" sh -s -</span>
-<span class="token comment">#       curl ... | INSTALL_K3S_EXEC="server" sh -s - --disable=traefik</span>
-<span class="token comment">#       curl ... | sh -s - server --disable=traefik</span>
-<span class="token comment">#       curl ... | sh -s - --disable=traefik</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_NAME</span>
-<span class="token comment">#     Name of systemd service to create, will default from the k3s exec command</span>
-<span class="token comment">#     if not specified. If specified the name will be prefixed with 'k3s-'.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_TYPE</span>
-<span class="token comment">#     Type of systemd service to create, will default from the k3s exec command</span>
-<span class="token comment">#     if not specified.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_MIRROR</span>
-<span class="token comment">#     For Chinese users, set INSTALL_K3S_MIRROR=cn to use the mirror address to accelerate</span>
-<span class="token comment">#     k3s binary file download, and the default mirror address is mirror_k3s.rancher.cn</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_SELINUX_WARN</span>
-<span class="token comment">#     If set to true will continue if k3s-selinux policy is not found.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_SKIP_SELINUX_RPM</span>
-<span class="token comment">#     If set to true will skip automatic installation of the k3s RPM.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_CHANNEL_URL</span>
-<span class="token comment">#     Channel URL for fetching k3s download URL.</span>
-<span class="token comment">#     Defaults to 'https://update.k3s.io/v1-release/channels'.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_CHANNEL</span>
-<span class="token comment">#     Channel to use for fetching k3s download URL.</span>
-<span class="token comment">#     Defaults to 'stable'.</span>
-<span class="token comment">#</span>
-<span class="token comment">#   - INSTALL_K3S_REGISTRIES</span>
-<span class="token comment">#     Setup a custom Registry or Mirror</span>
-<span class="token comment">#     Defaults to null.</span>
-
-<span class="token assign-left variable">GITHUB_URL</span><span class="token operator">=</span>https://github.com/k3s-io/k3s/releases
-<span class="token assign-left variable">STORAGE_URL</span><span class="token operator">=</span>https://storage.googleapis.com/k3s-ci-builds
-<span class="token assign-left variable">DOWNLOADER</span><span class="token operator">=</span>
-<span class="token assign-left variable">INSTALL_K3S_MIRROR_URL</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_MIRROR_URL<span class="token operator">:-</span>'rancher-mirror.oss-cn-beijing.aliyuncs.com'}</span>
-
-<span class="token comment"># --- helper functions for logs ---</span>
-<span class="token function-name function">info</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">'[INFO] '</span> <span class="token string">"<span class="token variable">$@</span>"</span>
-<span class="token punctuation">}</span>
-<span class="token function-name function">warn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">'[WARN] '</span> <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token operator">></span><span class="token file-descriptor important">&amp;2</span>
-<span class="token punctuation">}</span>
-<span class="token function-name function">fatal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">'[ERROR] '</span> <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token operator">></span><span class="token file-descriptor important">&amp;2</span>
-    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- fatal if no systemd or openrc ---</span>
-<span class="token function-name function">verify_system</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> /sbin/openrc-run <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">HAS_OPENRC</span><span class="token operator">=</span>true
-        <span class="token builtin class-name">return</span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> /bin/systemctl <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">type</span> systemctl <span class="token operator">></span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">HAS_SYSTEMD</span><span class="token operator">=</span>true
-        <span class="token builtin class-name">return</span>
-    <span class="token keyword">fi</span>
-    fatal <span class="token string">'Can not find systemd or openrc to use as a process supervisor for k3s'</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- add quotes to command arguments ---</span>
-<span class="token function-name function">quote</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token for-or-select variable">arg</span> <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$@</span>"</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-        <span class="token builtin class-name">printf</span> <span class="token string">'%s\n'</span> <span class="token string">"<span class="token variable">$arg</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s/'/'<span class="token entity" title="\\">\\</span><span class="token entity" title="\\">\\</span>''/g;1s/^/'/;\<span class="token variable">$s</span>/\$/'/"</span>
-    <span class="token keyword">done</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- add indentation and trailing slash to quoted args ---</span>
-<span class="token function-name function">quote_indent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token builtin class-name">printf</span> <span class="token string">' \\\n'</span>
-    <span class="token keyword">for</span> <span class="token for-or-select variable">arg</span> <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$@</span>"</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-        <span class="token builtin class-name">printf</span> <span class="token string">'\t%s \\\n'</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>quote <span class="token string">"<span class="token variable">$arg</span>"</span><span class="token variable">)</span></span>"</span>
-    <span class="token keyword">done</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- escape most punctuation characters, except quotes, forward slash, and space ---</span>
-<span class="token function-name function">escape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token builtin class-name">printf</span> <span class="token string">'%s'</span> <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s/\([][!#$%&amp;()*;&lt;=>?\_`{|}]\)/\\\1/g;'</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- escape double quotes ---</span>
-<span class="token function-name function">escape_dq</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token builtin class-name">printf</span> <span class="token string">'%s'</span> <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s/"/\\"/g'</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- ensures $K3S_URL is empty or begins with https://, exiting fatally otherwise ---</span>
-<span class="token function-name function">verify_k3s_url</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">${K3S_URL}</span>"</span> <span class="token keyword">in</span>
-        <span class="token string">""</span><span class="token punctuation">)</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        https://*<span class="token punctuation">)</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        *<span class="token punctuation">)</span>
-            fatal <span class="token string">"Only https:// URLs are supported for K3S_URL (have <span class="token variable">${K3S_URL}</span>)"</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    <span class="token keyword">esac</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- Setup a custom Registry or Mirror</span>
-<span class="token function-name function">setup_registry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token assign-left variable">REGISTRIES_FILE</span><span class="token operator">=</span><span class="token string">"/etc/rancher/k3s/registries.yaml"</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_REGISTRIES}</span>"</span> <span class="token parameter variable">-a</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> <span class="token string">"<span class="token variable">$REGISTRIES_FILE</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">INSTALL_K3S_REGISTRIES</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> $<span class="token punctuation">{</span>INSTALL_K3S_REGISTRIES<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{gsub(/,/," "); print $0}'</span><span class="token variable">`</span></span>
-        <span class="token variable">$SUDO</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token variable"><span class="token variable">`</span><span class="token function">dirname</span> $REGISTRIES_FILE<span class="token variable">`</span></span>
-        <span class="token variable">$SUDO</span> <span class="token function">cat</span> <span class="token operator">>></span> <span class="token variable">$REGISTRIES_FILE</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF
-mirrors:
-  "docker.io":
-    endpoint:
-EOF</span>
-        <span class="token keyword">for</span> <span class="token for-or-select variable">registry</span> <span class="token keyword">in</span> <span class="token variable">${INSTALL_K3S_REGISTRIES}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-            <span class="token builtin class-name">echo</span> <span class="token string">"      - <span class="token variable">$registry</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$REGISTRIES_FILE</span>"</span>
-        <span class="token keyword">done</span>
-    <span class="token keyword">fi</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- define needed environment variables ---</span>
-<span class="token function-name function">setup_env</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment"># --- use command args if passed or create default ---</span>
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token keyword">in</span>
-        <span class="token comment"># --- if we only have flags discover if command should be server or agent ---</span>
-        <span class="token punctuation">(</span>-*<span class="token operator">|</span><span class="token string">""</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">${K3S_URL}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-                <span class="token assign-left variable">CMD_K3S</span><span class="token operator">=</span>server
-            <span class="token keyword">else</span>
-                <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">${K3S_TOKEN}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">${K3S_TOKEN_FILE}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">${K3S_CLUSTER_SECRET}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-                    fatal <span class="token string">"Defaulted k3s exec command to 'agent' because K3S_URL is defined, but K3S_TOKEN, K3S_TOKEN_FILE or K3S_CLUSTER_SECRET is not defined."</span>
-                <span class="token keyword">fi</span>
-                <span class="token assign-left variable">CMD_K3S</span><span class="token operator">=</span>agent
-            <span class="token keyword">fi</span>
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        <span class="token comment"># --- command is provided ---</span>
-        <span class="token punctuation">(</span>*<span class="token punctuation">)</span>
-            <span class="token assign-left variable">CMD_K3S</span><span class="token operator">=</span><span class="token variable">$1</span>
-            <span class="token builtin class-name">shift</span>
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    <span class="token keyword">esac</span>
-
-    verify_k3s_url
-
-    <span class="token assign-left variable">CMD_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${CMD_K3S}</span><span class="token variable"><span class="token variable">$(</span>quote_indent <span class="token string">"<span class="token variable">$@</span>"</span><span class="token variable">)</span></span>"</span>
-
-    <span class="token comment"># --- use systemd name if defined or create default ---</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_NAME}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">SYSTEM_NAME</span><span class="token operator">=</span>k3s-<span class="token variable">${INSTALL_K3S_NAME}</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${CMD_K3S}</span>"</span> <span class="token operator">=</span> server <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token assign-left variable">SYSTEM_NAME</span><span class="token operator">=</span>k3s
-        <span class="token keyword">else</span>
-            <span class="token assign-left variable">SYSTEM_NAME</span><span class="token operator">=</span>k3s-<span class="token variable">${CMD_K3S}</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- check for invalid characters in system name ---</span>
-    <span class="token assign-left variable">valid_chars</span><span class="token operator">=</span><span class="token punctuation">$(</span>printf <span class="token string">'%s'</span> <span class="token string">"<span class="token variable">${SYSTEM_NAME}</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s/[][!#$%&amp;()*;&lt;=>?\_`{|}/[:space:]]/^/g;'</span> <span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${SYSTEM_NAME}</span>"</span> <span class="token operator">!=</span> <span class="token string">"<span class="token variable">${valid_chars}</span>"</span>  <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">invalid_chars</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span> <span class="token string">'%s'</span> <span class="token string">"<span class="token variable">${valid_chars}</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s/[^^]/ /g'</span><span class="token variable">)</span></span>
-        fatal <span class="token string">"Invalid characters for system name:
-            <span class="token variable">${SYSTEM_NAME}</span>
-            <span class="token variable">${invalid_chars}</span>"</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- use sudo if we are not already root ---</span>
-    <span class="token assign-left variable">SUDO</span><span class="token operator">=</span>sudo
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> <span class="token parameter variable">-u</span><span class="token variable">)</span></span> <span class="token parameter variable">-eq</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">SUDO</span><span class="token operator">=</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- use systemd type if defined or create default ---</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_TYPE}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">SYSTEMD_TYPE</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_TYPE}</span>
-    <span class="token keyword">else</span>
-        <span class="token assign-left variable">SYSTEMD_TYPE</span><span class="token operator">=</span>notify
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- use binary install directory if defined or create default ---</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_BIN_DIR}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">BIN_DIR</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_BIN_DIR}</span>
-    <span class="token keyword">else</span>
-        <span class="token comment"># --- use /usr/local/bin if root can write to it, otherwise use /opt/bin if it exists</span>
-        <span class="token assign-left variable">BIN_DIR</span><span class="token operator">=</span>/usr/local/bin
-        <span class="token keyword">if</span> <span class="token operator">!</span> <span class="token variable">$SUDO</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"touch <span class="token variable">${BIN_DIR}</span>/k3s-ro-test &amp;&amp; rm -rf <span class="token variable">${BIN_DIR}</span>/k3s-ro-test"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-d</span> /opt/bin <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-                <span class="token assign-left variable">BIN_DIR</span><span class="token operator">=</span>/opt/bin
-            <span class="token keyword">fi</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- use systemd directory if defined or create default ---</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SYSTEMD_DIR}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">SYSTEMD_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${INSTALL_K3S_SYSTEMD_DIR}</span>"</span>
-    <span class="token keyword">else</span>
-        <span class="token assign-left variable">SYSTEMD_DIR</span><span class="token operator">=</span>/etc/systemd/system
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- set related files from system name ---</span>
-    <span class="token assign-left variable">SERVICE_K3S</span><span class="token operator">=</span><span class="token variable">${SYSTEM_NAME}</span>.service
-    <span class="token assign-left variable">UNINSTALL_K3S_SH</span><span class="token operator">=</span><span class="token variable">${UNINSTALL_K3S_SH<span class="token operator">:-</span>${BIN_DIR}</span>/<span class="token variable">${SYSTEM_NAME}</span>-uninstall.sh<span class="token punctuation">}</span>
-    <span class="token assign-left variable">KILLALL_K3S_SH</span><span class="token operator">=</span><span class="token variable">${KILLALL_K3S_SH<span class="token operator">:-</span>${BIN_DIR}</span>/k3s-killall.sh<span class="token punctuation">}</span>
-
-    <span class="token comment"># --- use service or environment location depending on systemd/openrc ---</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_SYSTEMD}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">FILE_K3S_SERVICE</span><span class="token operator">=</span><span class="token variable">${SYSTEMD_DIR}</span>/<span class="token variable">${SERVICE_K3S}</span>
-        <span class="token assign-left variable">FILE_K3S_ENV</span><span class="token operator">=</span><span class="token variable">${SYSTEMD_DIR}</span>/<span class="token variable">${SERVICE_K3S}</span>.env
-    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_OPENRC}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token variable">$SUDO</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/rancher/k3s
-        <span class="token assign-left variable">FILE_K3S_SERVICE</span><span class="token operator">=</span>/etc/init.d/<span class="token variable">${SYSTEM_NAME}</span>
-        <span class="token assign-left variable">FILE_K3S_ENV</span><span class="token operator">=</span>/etc/rancher/k3s/<span class="token variable">${SYSTEM_NAME}</span>.env
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- get hash of config &amp; exec for currently installed k3s ---</span>
-    <span class="token assign-left variable">PRE_INSTALL_HASHES</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>get_installed_hashes<span class="token variable">)</span></span>
-
-    <span class="token comment"># --- if bin directory is read only skip download ---</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_BIN_DIR_READ_ONLY}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">INSTALL_K3S_SKIP_DOWNLOAD</span><span class="token operator">=</span>true
-    <span class="token keyword">fi</span>
-
-    <span class="token comment"># --- setup channel values</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_MIRROR}</span>"</span> <span class="token operator">=</span> cn <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">INSTALL_K3S_CHANNEL_URL</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${INSTALL_K3S_MIRROR_URL}</span>/k3s/channels"</span>
-    <span class="token keyword">else</span>
-        <span class="token assign-left variable">INSTALL_K3S_CHANNEL_URL</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_CHANNEL_URL<span class="token operator">:-</span>'https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>update.k3s.io<span class="token operator">/</span>v1-release<span class="token operator">/</span>channels'}</span>
-    <span class="token keyword">fi</span>
-    <span class="token assign-left variable">INSTALL_K3S_CHANNEL</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_CHANNEL<span class="token operator">:-</span>'stable'}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- check if skip download environment variable set ---</span>
-<span class="token function-name function">can_skip_download_binary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SKIP_DOWNLOAD}</span>"</span> <span class="token operator">!=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SKIP_DOWNLOAD}</span>"</span> <span class="token operator">!=</span> binary <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token builtin class-name">return</span> <span class="token number">1</span>
-    <span class="token keyword">fi</span>
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">can_skip_download_selinux</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                                                        
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SKIP_DOWNLOAD}</span>"</span> <span class="token operator">!=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SKIP_DOWNLOAD}</span>"</span> <span class="token operator">!=</span> selinux <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span> 
-        <span class="token builtin class-name">return</span> <span class="token number">1</span>                                                                     
-    <span class="token keyword">fi</span>                                                                               
-<span class="token punctuation">}</span>  
-
-<span class="token comment"># --- verify an executable k3s binary is installed ---</span>
-<span class="token function-name function">verify_k3s_is_executable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-x</span> <span class="token variable">${BIN_DIR}</span>/k3s <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        fatal <span class="token string">"Executable k3s binary not found at <span class="token variable">${BIN_DIR}</span>/k3s"</span>
-    <span class="token keyword">fi</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- set arch and suffix, fatal if architecture not supported ---</span>
-<span class="token function-name function">setup_verify_arch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">$ARCH</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">ARCH</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> <span class="token parameter variable">-m</span><span class="token variable">)</span></span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">case</span> <span class="token variable">$ARCH</span> <span class="token keyword">in</span>
-        amd64<span class="token punctuation">)</span>
-            <span class="token assign-left variable">ARCH</span><span class="token operator">=</span>amd64
-            <span class="token assign-left variable">SUFFIX</span><span class="token operator">=</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        x86_64<span class="token punctuation">)</span>
-            <span class="token assign-left variable">ARCH</span><span class="token operator">=</span>amd64
-            <span class="token assign-left variable">SUFFIX</span><span class="token operator">=</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        arm64<span class="token punctuation">)</span>
-            <span class="token assign-left variable">ARCH</span><span class="token operator">=</span>arm64
-            <span class="token assign-left variable">SUFFIX</span><span class="token operator">=</span>-<span class="token variable">${ARCH}</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        s390x<span class="token punctuation">)</span>
-            <span class="token assign-left variable">ARCH</span><span class="token operator">=</span>s390x
-            <span class="token assign-left variable">SUFFIX</span><span class="token operator">=</span>-<span class="token variable">${ARCH}</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        aarch64<span class="token punctuation">)</span>
-            <span class="token assign-left variable">ARCH</span><span class="token operator">=</span>arm64
-            <span class="token assign-left variable">SUFFIX</span><span class="token operator">=</span>-<span class="token variable">${ARCH}</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        arm*<span class="token punctuation">)</span>
-            <span class="token assign-left variable">ARCH</span><span class="token operator">=</span>arm
-            <span class="token assign-left variable">SUFFIX</span><span class="token operator">=</span>-<span class="token variable">${ARCH}</span>hf
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        *<span class="token punctuation">)</span>
-            fatal <span class="token string">"Unsupported architecture <span class="token variable">$ARCH</span>"</span>
-    <span class="token keyword">esac</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- verify existence of network downloader executable ---</span>
-<span class="token function-name function">verify_downloader</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment"># Return failure if it doesn't exist or is no executable</span>
-    <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">command</span> <span class="token parameter variable">-v</span> $1<span class="token variable">)</span></span>"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">return</span> <span class="token number">1</span>
-
-    <span class="token comment"># Set verified executable as our downloader program and return success</span>
-    <span class="token assign-left variable">DOWNLOADER</span><span class="token operator">=</span><span class="token variable">$1</span>
-    <span class="token builtin class-name">return</span> <span class="token number">0</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- create temporary directory and cleanup when done ---</span>
-<span class="token function-name function">setup_tmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token assign-left variable">TMP_DIR</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp <span class="token parameter variable">-d</span> <span class="token parameter variable">-t</span> k3s-install.XXXXXXXXXX<span class="token variable">)</span></span>
-    <span class="token assign-left variable">TMP_HASH</span><span class="token operator">=</span><span class="token variable">${TMP_DIR}</span>/k3s.hash
-    <span class="token assign-left variable">TMP_BIN</span><span class="token operator">=</span><span class="token variable">${TMP_DIR}</span>/k3s.bin
-    <span class="token function-name function">cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token assign-left variable">code</span><span class="token operator">=</span><span class="token variable">$?</span>
-        <span class="token builtin class-name">set</span> +e
-        <span class="token builtin class-name">trap</span> - EXIT
-        <span class="token function">rm</span> <span class="token parameter variable">-rf</span> <span class="token variable">${TMP_DIR}</span>
-        <span class="token builtin class-name">exit</span> <span class="token variable">$code</span>
-    <span class="token punctuation">}</span>
-    <span class="token builtin class-name">trap</span> cleanup INT EXIT
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- use desired k3s version if defined or find version from channel ---</span>
-<span class="token function-name function">get_release_version</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_COMMIT}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token string">"commit <span class="token variable">${INSTALL_K3S_COMMIT}</span>"</span>
-    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_VERSION}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_VERSION}</span>
-    <span class="token keyword">else</span>
-        info <span class="token string">"Finding release for channel <span class="token variable">${INSTALL_K3S_CHANNEL}</span>"</span>
-        <span class="token assign-left variable">version_url</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${INSTALL_K3S_CHANNEL_URL}</span>/<span class="token variable">${INSTALL_K3S_CHANNEL}</span>"</span>
-        <span class="token keyword">case</span> <span class="token variable">$DOWNLOADER</span> <span class="token keyword">in</span>
-            <span class="token function">curl</span><span class="token punctuation">)</span>
-                <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_MIRROR}</span>"</span> <span class="token operator">=</span> cn <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-                    <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-S</span> $<span class="token punctuation">{</span>version_url<span class="token punctuation">}</span><span class="token variable">)</span></span>
-                <span class="token keyword">else</span>
-                    <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-w</span> <span class="token string">'%{url_effective}'</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-S</span> $<span class="token punctuation">{</span>version_url<span class="token punctuation">}</span> <span class="token parameter variable">-o</span> /dev/null <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s|.*/||'</span><span class="token variable">)</span></span>
-                <span class="token keyword">fi</span>
-                <span class="token punctuation">;</span><span class="token punctuation">;</span>
-            <span class="token function">wget</span><span class="token punctuation">)</span>
-                <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_MIRROR}</span>"</span> <span class="token operator">=</span> cn <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-                    <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">wget</span> <span class="token parameter variable">-qO</span> - $<span class="token punctuation">{</span>version_url<span class="token punctuation">}</span><span class="token variable">)</span></span>
-                <span class="token keyword">else</span>
-                    <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">wget</span> <span class="token parameter variable">-SqO</span> /dev/null $<span class="token punctuation">{</span>version_url<span class="token punctuation">}</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> Location <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s|.*/||'</span><span class="token variable">)</span></span>
-                <span class="token keyword">fi</span>
-                <span class="token punctuation">;</span><span class="token punctuation">;</span>
-            *<span class="token punctuation">)</span>
-                fatal <span class="token string">"Incorrect downloader executable '<span class="token variable">$DOWNLOADER</span>'"</span>
-                <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        <span class="token keyword">esac</span>
-    <span class="token keyword">fi</span>
-    info <span class="token string">"Using <span class="token variable">${VERSION_K3S}</span> as release"</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- download from github url ---</span>
-<span class="token function-name function">download</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span> <span class="token variable">$#</span> <span class="token parameter variable">-eq</span> <span class="token number">2</span> <span class="token punctuation">]</span> <span class="token operator">||</span> fatal <span class="token string">'download needs exactly 2 arguments'</span>
-
-    <span class="token keyword">case</span> <span class="token variable">$DOWNLOADER</span> <span class="token keyword">in</span>
-        <span class="token function">curl</span><span class="token punctuation">)</span>
-            <span class="token function">curl</span> <span class="token parameter variable">-o</span> <span class="token variable">$1</span> <span class="token parameter variable">-sfL</span> <span class="token variable">$2</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        <span class="token function">wget</span><span class="token punctuation">)</span>
-            <span class="token function">wget</span> <span class="token parameter variable">-qO</span> <span class="token variable">$1</span> <span class="token variable">$2</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        *<span class="token punctuation">)</span>
-            fatal <span class="token string">"Incorrect executable '<span class="token variable">$DOWNLOADER</span>'"</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    <span class="token keyword">esac</span>
-
-    <span class="token comment"># Abort if download command failed</span>
-    <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-eq</span> <span class="token number">0</span> <span class="token punctuation">]</span> <span class="token operator">||</span> fatal <span class="token string">'Download failed'</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- download hash from github url ---</span>
-<span class="token function-name function">download_hash</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_COMMIT}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">HASH_URL</span><span class="token operator">=</span><span class="token variable">${STORAGE_URL}</span>/k3s<span class="token variable">${SUFFIX}</span>-<span class="token variable">${INSTALL_K3S_COMMIT}</span>.sha256sum
-    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_MIRROR}</span>"</span> <span class="token operator">=</span> cn <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span> <span class="token builtin class-name">echo</span> $<span class="token punctuation">{</span>VERSION_K3S<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/+/-/g'</span> <span class="token variable">)</span></span>
-        <span class="token assign-left variable">HASH_URL</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_MIRROR_URL}</span>/k3s/<span class="token variable">${VERSION_K3S}</span>/sha256sum-<span class="token variable">${ARCH}</span>.txt
-    <span class="token keyword">else</span>
-        <span class="token assign-left variable">HASH_URL</span><span class="token operator">=</span><span class="token variable">${GITHUB_URL}</span>/download/<span class="token variable">${VERSION_K3S}</span>/sha256sum-<span class="token variable">${ARCH}</span>.txt
-    <span class="token keyword">fi</span>
-    info <span class="token string">"Downloading hash <span class="token variable">${HASH_URL}</span>"</span>
-    download <span class="token variable">${TMP_HASH}</span> <span class="token variable">${HASH_URL}</span>
-    <span class="token assign-left variable">HASH_EXPECTED</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">" k3s<span class="token variable">${SUFFIX}</span>$"</span> $<span class="token punctuation">{</span>TMP_HASH<span class="token punctuation">}</span><span class="token variable">)</span></span>
-    <span class="token assign-left variable">HASH_EXPECTED</span><span class="token operator">=</span><span class="token variable">${HASH_EXPECTED<span class="token operator">%%</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">:</span>blank<span class="token operator">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span>*}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- check hash against installed version ---</span>
-<span class="token function-name function">installed_hash_matches</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> <span class="token variable">${BIN_DIR}</span>/k3s <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">HASH_INSTALLED</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>sha256sum $<span class="token punctuation">{</span>BIN_DIR<span class="token punctuation">}</span>/k3s<span class="token variable">)</span></span>
-        <span class="token assign-left variable">HASH_INSTALLED</span><span class="token operator">=</span><span class="token variable">${HASH_INSTALLED<span class="token operator">%%</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">:</span>blank<span class="token operator">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span>*}</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HASH_EXPECTED}</span>"</span> <span class="token operator">=</span> <span class="token string">"<span class="token variable">${HASH_INSTALLED}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token builtin class-name">return</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">fi</span>
-    <span class="token builtin class-name">return</span> <span class="token number">1</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- download binary from github url ---</span>
-<span class="token function-name function">download_binary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_COMMIT}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">BIN_URL</span><span class="token operator">=</span><span class="token variable">${STORAGE_URL}</span>/k3s<span class="token variable">${SUFFIX}</span>-<span class="token variable">${INSTALL_K3S_COMMIT}</span>
-    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_MIRROR}</span>"</span> <span class="token operator">=</span> cn <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">VERSION_K3S</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span> <span class="token builtin class-name">echo</span> $<span class="token punctuation">{</span>VERSION_K3S<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/+/-/g'</span> <span class="token variable">)</span></span>
-        <span class="token assign-left variable">BIN_URL</span><span class="token operator">=</span><span class="token variable">${INSTALL_K3S_MIRROR_URL}</span>/k3s/<span class="token variable">${VERSION_K3S}</span>/k3s<span class="token variable">${SUFFIX}</span>
-    <span class="token keyword">else</span>
-        <span class="token assign-left variable">BIN_URL</span><span class="token operator">=</span><span class="token variable">${GITHUB_URL}</span>/download/<span class="token variable">${VERSION_K3S}</span>/k3s<span class="token variable">${SUFFIX}</span>
-    <span class="token keyword">fi</span>
-    info <span class="token string">"Downloading binary <span class="token variable">${BIN_URL}</span>"</span>
-    download <span class="token variable">${TMP_BIN}</span> <span class="token variable">${BIN_URL}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- verify downloaded binary hash ---</span>
-<span class="token function-name function">verify_binary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    info <span class="token string">"Verifying binary download"</span>
-    <span class="token assign-left variable">HASH_BIN</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>sha256sum $<span class="token punctuation">{</span>TMP_BIN<span class="token punctuation">}</span><span class="token variable">)</span></span>
-    <span class="token assign-left variable">HASH_BIN</span><span class="token operator">=</span><span class="token variable">${HASH_BIN<span class="token operator">%%</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">:</span>blank<span class="token operator">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span>*}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HASH_EXPECTED}</span>"</span> <span class="token operator">!=</span> <span class="token string">"<span class="token variable">${HASH_BIN}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        fatal <span class="token string">"Download sha256 does not match <span class="token variable">${HASH_EXPECTED}</span>, got <span class="token variable">${HASH_BIN}</span>"</span>
-    <span class="token keyword">fi</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- setup permissions and move binary to system directory ---</span>
-<span class="token function-name function">setup_binary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">chmod</span> <span class="token number">755</span> <span class="token variable">${TMP_BIN}</span>
-    info <span class="token string">"Installing k3s to <span class="token variable">${BIN_DIR}</span>/k3s"</span>
-    <span class="token variable">$SUDO</span> <span class="token function">chown</span> root:root <span class="token variable">${TMP_BIN}</span>
-    <span class="token variable">$SUDO</span> <span class="token function">mv</span> <span class="token parameter variable">-f</span> <span class="token variable">${TMP_BIN}</span> <span class="token variable">${BIN_DIR}</span>/k3s
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- setup selinux policy ---</span>
-<span class="token function-name function">setup_selinux</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token variable">${INSTALL_K3S_CHANNEL}</span> <span class="token keyword">in</span> 
-        *testing<span class="token punctuation">)</span>
-            <span class="token assign-left variable">rpm_channel</span><span class="token operator">=</span>testing
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        *latest<span class="token punctuation">)</span>
-            <span class="token assign-left variable">rpm_channel</span><span class="token operator">=</span>latest
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        *<span class="token punctuation">)</span>
-            <span class="token assign-left variable">rpm_channel</span><span class="token operator">=</span>stable
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    <span class="token keyword">esac</span>
-
-    <span class="token assign-left variable">rpm_site</span><span class="token operator">=</span><span class="token string">"rpm.rancher.io"</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${rpm_channel}</span>"</span> <span class="token operator">=</span> <span class="token string">"testing"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">rpm_site</span><span class="token operator">=</span><span class="token string">"rpm-testing.rancher.io"</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token punctuation">[</span> <span class="token parameter variable">-r</span> /etc/os-release <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">.</span> /etc/os-release
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${ID_LIKE<span class="token operator">%%</span><span class="token punctuation">[</span> <span class="token punctuation">]</span>*}</span>"</span> <span class="token operator">=</span> <span class="token string">"suse"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">rpm_target</span><span class="token operator">=</span>sle
-        <span class="token assign-left variable">rpm_site_infix</span><span class="token operator">=</span>microos
-        <span class="token assign-left variable">package_installer</span><span class="token operator">=</span>zypper
-    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${VERSION_ID<span class="token operator">%%</span>.*}</span>"</span> <span class="token operator">=</span> <span class="token string">"7"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">rpm_target</span><span class="token operator">=</span>el7
-        <span class="token assign-left variable">rpm_site_infix</span><span class="token operator">=</span>centos/7
-        <span class="token assign-left variable">package_installer</span><span class="token operator">=</span>yum
-    <span class="token keyword">else</span>
-        <span class="token assign-left variable">rpm_target</span><span class="token operator">=</span>el8
-        <span class="token assign-left variable">rpm_site_infix</span><span class="token operator">=</span>centos/8
-        <span class="token assign-left variable">package_installer</span><span class="token operator">=</span>yum
-    <span class="token keyword">fi</span>
-
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${package_installer}</span>"</span> <span class="token operator">=</span> <span class="token string">"yum"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> /usr/bin/dnf <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">package_installer</span><span class="token operator">=</span>dnf
-    <span class="token keyword">fi</span>
-
-    <span class="token assign-left variable">policy_hint</span><span class="token operator">=</span><span class="token string">"please install:
-    <span class="token variable">${package_installer}</span> install -y container-selinux
-    <span class="token variable">${package_installer}</span> install -y https://<span class="token variable">${rpm_site}</span>/k3s/<span class="token variable">${rpm_channel}</span>/common/<span class="token variable">${rpm_site_infix}</span>/noarch/k3s-selinux-0.4-1.<span class="token variable">${rpm_target}</span>.noarch.rpm
-"</span>
-
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$INSTALL_K3S_SKIP_SELINUX_RPM</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">||</span> can_skip_download_selinux <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-d</span> /usr/share/selinux <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        info <span class="token string">"Skipping installation of SELinux RPM"</span>
-    <span class="token keyword">elif</span>  <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${ID_LIKE<span class="token operator">:-</span>}</span>"</span> <span class="token operator">!=</span> coreos <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${VARIANT_ID<span class="token operator">:-</span>}</span>"</span> <span class="token operator">!=</span> coreos <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        install_selinux_rpm <span class="token variable">${rpm_site}</span> <span class="token variable">${rpm_channel}</span> <span class="token variable">${rpm_target}</span> <span class="token variable">${rpm_site_infix}</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token assign-left variable">policy_error</span><span class="token operator">=</span>fatal
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$INSTALL_K3S_SELINUX_WARN</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${ID_LIKE<span class="token operator">:-</span>}</span>"</span> <span class="token operator">=</span> coreos <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${VARIANT_ID<span class="token operator">:-</span>}</span>"</span> <span class="token operator">=</span> coreos <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">policy_error</span><span class="token operator">=</span>warn
-    <span class="token keyword">fi</span>
-
-    <span class="token keyword">if</span> <span class="token operator">!</span> <span class="token variable">$SUDO</span> chcon <span class="token parameter variable">-u</span> system_u <span class="token parameter variable">-r</span> object_r <span class="token parameter variable">-t</span> container_runtime_exec_t <span class="token variable">${BIN_DIR}</span>/k3s <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token keyword">if</span> <span class="token variable">$SUDO</span> <span class="token function">grep</span> <span class="token string">'^\s*SELINUX=enforcing'</span> /etc/selinux/config <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token variable">$policy_error</span> <span class="token string">"Failed to apply container_runtime_exec_t to <span class="token variable">${BIN_DIR}</span>/k3s, <span class="token variable">${policy_hint}</span>"</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> /usr/share/selinux/packages/k3s.pp <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> /usr/sbin/transactional-update <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            warn <span class="token string">"Please reboot your machine to activate the changes and avoid data loss."</span>
-        <span class="token keyword">else</span>
-            <span class="token variable">$policy_error</span> <span class="token string">"Failed to find the k3s-selinux policy, <span class="token variable">${policy_hint}</span>"</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">fi</span>
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">install_selinux_rpm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-r</span> /etc/redhat-release <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token parameter variable">-r</span> /etc/centos-release <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token parameter variable">-r</span> /etc/oracle-release <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${ID_LIKE<span class="token operator">%%</span><span class="token punctuation">[</span> <span class="token punctuation">]</span>*}</span>"</span> <span class="token operator">=</span> <span class="token string">"suse"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token assign-left variable">repodir</span><span class="token operator">=</span>/etc/yum.repos.d
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-d</span> /etc/zypp/repos.d <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token assign-left variable">repodir</span><span class="token operator">=</span>/etc/zypp/repos.d
-        <span class="token keyword">fi</span>
-        <span class="token builtin class-name">set</span> +o noglob
-        <span class="token variable">$SUDO</span> <span class="token function">rm</span> <span class="token parameter variable">-f</span> <span class="token variable">${repodir}</span>/rancher-k3s-common*.repo
-        <span class="token builtin class-name">set</span> <span class="token parameter variable">-o</span> noglob
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-r</span> /etc/redhat-release <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${3}</span>"</span> <span class="token operator">=</span> <span class="token string">"el7"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token variable">$SUDO</span> yum <span class="token function">install</span> <span class="token parameter variable">-y</span> yum-utils
-            <span class="token variable">$SUDO</span> yum-config-manager <span class="token parameter variable">--enable</span> rhel-7-server-extras-rpms
-        <span class="token keyword">fi</span>
-        <span class="token variable">$SUDO</span> <span class="token function">tee</span> <span class="token variable">${repodir}</span>/rancher-k3s-common.repo <span class="token operator">></span>/dev/null <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
-[rancher-k3s-common-<span class="token variable">${2}</span>]
-name=Rancher K3s Common (<span class="token variable">${2}</span>)
-baseurl=https://<span class="token variable">${1}</span>/k3s/<span class="token variable">${2}</span>/common/<span class="token variable">${4}</span>/noarch
-enabled=1
-gpgcheck=1
-repo_gpgcheck=0
-gpgkey=https://<span class="token variable">${1}</span>/public.key
-EOF</span>
-        <span class="token keyword">case</span> <span class="token variable">${3}</span> <span class="token keyword">in</span>
-        sle<span class="token punctuation">)</span>
-            <span class="token assign-left variable">rpm_installer</span><span class="token operator">=</span><span class="token string">"zypper --gpg-auto-import-keys"</span>
-            <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${TRANSACTIONAL_UPDATE=false}</span>"</span> <span class="token operator">!=</span> <span class="token string">"true"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> /usr/sbin/transactional-update <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-                <span class="token assign-left variable">rpm_installer</span><span class="token operator">=</span><span class="token string">"transactional-update --no-selfupdate -d run <span class="token variable">${rpm_installer}</span>"</span>
-                <span class="token builtin class-name">:</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SKIP_START<span class="token operator">:=</span>true}</span>"</span>
-            <span class="token keyword">fi</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        *<span class="token punctuation">)</span>
-            <span class="token assign-left variable">rpm_installer</span><span class="token operator">=</span><span class="token string">"yum"</span>
-            <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        <span class="token keyword">esac</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${rpm_installer}</span>"</span> <span class="token operator">=</span> <span class="token string">"yum"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> /usr/bin/dnf <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token assign-left variable">rpm_installer</span><span class="token operator">=</span>dnf
-        <span class="token keyword">fi</span>
-        <span class="token comment"># shellcheck disable=SC2086</span>
-        <span class="token variable">$SUDO</span> <span class="token variable">${rpm_installer}</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token string">"k3s-selinux"</span>
-    <span class="token keyword">fi</span>
-    <span class="token builtin class-name">return</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- download and verify k3s ---</span>
-<span class="token function-name function">download_and_verify</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> can_skip_download_binary<span class="token punctuation">;</span> <span class="token keyword">then</span>
-       info <span class="token string">'Skipping k3s download and verify'</span>
-       verify_k3s_is_executable
-       <span class="token builtin class-name">return</span>
-    <span class="token keyword">fi</span>
-
-    setup_verify_arch
-    verify_downloader <span class="token function">curl</span> <span class="token operator">||</span> verify_downloader <span class="token function">wget</span> <span class="token operator">||</span> fatal <span class="token string">'Can not find curl or wget for downloading files'</span>
-    setup_tmp
-    get_release_version
-    download_hash
-
-    <span class="token keyword">if</span> installed_hash_matches<span class="token punctuation">;</span> <span class="token keyword">then</span>
-        info <span class="token string">'Skipping binary downloaded, installed k3s matches hash'</span>
-        <span class="token builtin class-name">return</span>
-    <span class="token keyword">fi</span>
-
-    download_binary
-    verify_binary
-    setup_binary
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- add additional utility links ---</span>
-<span class="token function-name function">create_symlinks</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_BIN_DIR_READ_ONLY}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">return</span>
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SYMLINK}</span>"</span> <span class="token operator">=</span> skip <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">return</span>
-
-    <span class="token keyword">for</span> <span class="token for-or-select variable">cmd</span> <span class="token keyword">in</span> kubectl crictl ctr<span class="token punctuation">;</span> <span class="token keyword">do</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-e</span> <span class="token variable">${BIN_DIR}</span>/<span class="token variable">${cmd}</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SYMLINK}</span>"</span> <span class="token operator">=</span> force <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            <span class="token assign-left variable">which_cmd</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">command</span> <span class="token parameter variable">-v</span> $<span class="token punctuation">{</span>cmd<span class="token punctuation">}</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null <span class="token operator">||</span> <span class="token boolean">true</span><span class="token variable">)</span></span>
-            <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">${which_cmd}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SYMLINK}</span>"</span> <span class="token operator">=</span> force <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-                info <span class="token string">"Creating <span class="token variable">${BIN_DIR}</span>/<span class="token variable">${cmd}</span> symlink to k3s"</span>
-                <span class="token variable">$SUDO</span> <span class="token function">ln</span> <span class="token parameter variable">-sf</span> k3s <span class="token variable">${BIN_DIR}</span>/<span class="token variable">${cmd}</span>
-            <span class="token keyword">else</span>
-                info <span class="token string">"Skipping <span class="token variable">${BIN_DIR}</span>/<span class="token variable">${cmd}</span> symlink to k3s, command exists in PATH at <span class="token variable">${which_cmd}</span>"</span>
-            <span class="token keyword">fi</span>
-        <span class="token keyword">else</span>
-            info <span class="token string">"Skipping <span class="token variable">${BIN_DIR}</span>/<span class="token variable">${cmd}</span> symlink to k3s, already exists"</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">done</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- create killall script ---</span>
-<span class="token function-name function">create_killall</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_BIN_DIR_READ_ONLY}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">return</span>
-    info <span class="token string">"Creating killall script <span class="token variable">${KILLALL_K3S_SH}</span>"</span>
-    <span class="token variable">$SUDO</span> <span class="token function">tee</span> <span class="token variable">${KILLALL_K3S_SH}</span> <span class="token operator">></span>/dev/null <span class="token operator">&lt;&lt;</span> <span class="token punctuation">\</span>EOF
-<span class="token comment">#!/bin/sh</span>
-<span class="token punctuation">[</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> <span class="token parameter variable">-u</span><span class="token variable">)</span></span> <span class="token parameter variable">-eq</span> <span class="token number">0</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">exec</span> <span class="token function">sudo</span> <span class="token variable">$0</span> <span class="token variable">$@</span>
-
-<span class="token keyword">for</span> <span class="token for-or-select variable">bin</span> <span class="token keyword">in</span> /var/lib/rancher/k3s/data/**/bin/<span class="token punctuation">;</span> <span class="token keyword">do</span>
-    <span class="token punctuation">[</span> <span class="token parameter variable">-d</span> <span class="token variable">$bin</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$bin</span><span class="token builtin class-name">:</span><span class="token variable">$bin</span>/aux
-<span class="token keyword">done</span>
-
-<span class="token builtin class-name">set</span> <span class="token parameter variable">-x</span>
-
-<span class="token keyword">for</span> <span class="token for-or-select variable">service</span> <span class="token keyword">in</span> /etc/systemd/system/k3s*.service<span class="token punctuation">;</span> <span class="token keyword">do</span>
-    <span class="token punctuation">[</span> <span class="token parameter variable">-s</span> <span class="token variable">$service</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> systemctl stop <span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> $service<span class="token variable">)</span></span>
-<span class="token keyword">done</span>
-
-<span class="token keyword">for</span> <span class="token for-or-select variable">service</span> <span class="token keyword">in</span> /etc/init.d/k3s*<span class="token punctuation">;</span> <span class="token keyword">do</span>
-    <span class="token punctuation">[</span> <span class="token parameter variable">-x</span> <span class="token variable">$service</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$service</span> stop
-<span class="token keyword">done</span>
-
-<span class="token function-name function">pschildren</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">ps</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">-o</span> <span class="token assign-left variable">ppid</span><span class="token operator">=</span> <span class="token parameter variable">-o</span> <span class="token assign-left variable">pid</span><span class="token operator">=</span> <span class="token operator">|</span> <span class="token punctuation">\</span>
-    <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s/^\s*//g; s/\s\s*/\t/g;'</span> <span class="token operator">|</span> <span class="token punctuation">\</span>
-    <span class="token function">grep</span> <span class="token parameter variable">-w</span> <span class="token string">"^<span class="token variable">$1</span>"</span> <span class="token operator">|</span> <span class="token punctuation">\</span>
-    <span class="token function">cut</span> <span class="token parameter variable">-f2</span>
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">pstree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token for-or-select variable">pid</span> <span class="token keyword">in</span> <span class="token variable">$@</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-        <span class="token builtin class-name">echo</span> <span class="token variable">$pid</span>
-        <span class="token keyword">for</span> <span class="token for-or-select variable">child</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span>pschildren $pid<span class="token variable">)</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-            pstree <span class="token variable">$child</span>
-        <span class="token keyword">done</span>
-    <span class="token keyword">done</span>
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">killtree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">kill</span> <span class="token parameter variable">-9</span> <span class="token variable"><span class="token variable">$(</span>
-        <span class="token punctuation">{</span> <span class="token builtin class-name">set</span> +x<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null<span class="token punctuation">;</span>
-        pstree $@<span class="token punctuation">;</span>
-        <span class="token builtin class-name">set</span> -x<span class="token punctuation">;</span>
-    <span class="token variable">)</span></span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">getshims</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">ps</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">-o</span> <span class="token assign-left variable">pid</span><span class="token operator">=</span> <span class="token parameter variable">-o</span> <span class="token assign-left variable">args</span><span class="token operator">=</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s/^ *//; s/\s\s*/\t/;'</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-w</span> <span class="token string">'k3s/data/[^/]*/bin/containerd-shim'</span> <span class="token operator">|</span> <span class="token function">cut</span> <span class="token parameter variable">-f1</span>
-<span class="token punctuation">}</span>
-
-killtree <span class="token variable"><span class="token variable">$(</span><span class="token punctuation">{</span> <span class="token builtin class-name">set</span> +x<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null<span class="token punctuation">;</span> getshims<span class="token punctuation">;</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">-x</span><span class="token variable">)</span></span>
-
-<span class="token function-name function">do_unmount_and_remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token builtin class-name">set</span> +x
-    <span class="token keyword">while</span> <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> _ path _<span class="token punctuation">;</span> <span class="token keyword">do</span>
-        <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$path</span>"</span> <span class="token keyword">in</span> <span class="token variable">$1</span>*<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$path</span>"</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token keyword">esac</span>
-    <span class="token keyword">done</span> <span class="token operator">&lt;</span> /proc/self/mounts <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-r</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-t</span> <span class="token parameter variable">-n</span> <span class="token number">1</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">'umount "$0" &amp;&amp; rm -rf "$0"'</span>
-    <span class="token builtin class-name">set</span> <span class="token parameter variable">-x</span>
-<span class="token punctuation">}</span>
-
-do_unmount_and_remove <span class="token string">'/run/k3s'</span>
-do_unmount_and_remove <span class="token string">'/var/lib/rancher/k3s'</span>
-do_unmount_and_remove <span class="token string">'/var/lib/kubelet/pods'</span>
-do_unmount_and_remove <span class="token string">'/var/lib/kubelet/plugins'</span>
-do_unmount_and_remove <span class="token string">'/run/netns/cni-'</span>
-
-<span class="token comment"># Remove CNI namespaces</span>
-<span class="token function">ip</span> netns show <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null <span class="token operator">|</span> <span class="token function">grep</span> cni- <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-t</span> <span class="token parameter variable">-n</span> <span class="token number">1</span> <span class="token function">ip</span> netns delete
-
-<span class="token comment"># Delete network interface(s) that match 'master cni0'</span>
-<span class="token function">ip</span> <span class="token function">link</span> show <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'master cni0'</span> <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> ignore iface ignore<span class="token punctuation">;</span> <span class="token keyword">do</span>
-    <span class="token assign-left variable">iface</span><span class="token operator">=</span><span class="token variable">${iface<span class="token operator">%%</span>@*}</span>
-    <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">$iface</span>"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token function">ip</span> <span class="token function">link</span> delete <span class="token variable">$iface</span>
-<span class="token keyword">done</span>
-<span class="token function">ip</span> <span class="token function">link</span> delete cni0
-<span class="token function">ip</span> <span class="token function">link</span> delete flannel.1
-<span class="token function">ip</span> <span class="token function">link</span> delete flannel-v6.1
-<span class="token function">ip</span> <span class="token function">link</span> delete kube-ipvs0
-<span class="token function">ip</span> <span class="token function">link</span> delete flannel-wg
-<span class="token function">ip</span> <span class="token function">link</span> delete flannel-wg-v6
-<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /var/lib/cni/
-iptables-save <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> KUBE- <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> CNI- <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> flannel <span class="token operator">|</span> iptables-restore
-ip6tables-save <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> KUBE- <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> CNI- <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> flannel <span class="token operator">|</span> ip6tables-restore
-EOF
-    <span class="token variable">$SUDO</span> <span class="token function">chmod</span> <span class="token number">755</span> <span class="token variable">${KILLALL_K3S_SH}</span>
-    <span class="token variable">$SUDO</span> <span class="token function">chown</span> root:root <span class="token variable">${KILLALL_K3S_SH}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- create uninstall script ---</span>
-<span class="token function-name function">create_uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_BIN_DIR_READ_ONLY}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">return</span>
-    info <span class="token string">"Creating uninstall script <span class="token variable">${UNINSTALL_K3S_SH}</span>"</span>
-    <span class="token variable">$SUDO</span> <span class="token function">tee</span> <span class="token variable">${UNINSTALL_K3S_SH}</span> <span class="token operator">></span>/dev/null <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
-#!/bin/sh
-set -x
-[ \<span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> <span class="token parameter variable">-u</span><span class="token variable">)</span></span> -eq 0 ] || exec sudo \<span class="token variable">$0</span> \<span class="token variable">$@</span>
-
-<span class="token variable">${KILLALL_K3S_SH}</span>
-
-if command -v systemctl; then
-    systemctl disable <span class="token variable">${SYSTEM_NAME}</span>
-    systemctl reset-failed <span class="token variable">${SYSTEM_NAME}</span>
-    systemctl daemon-reload
-fi
-if command -v rc-update; then
-    rc-update delete <span class="token variable">${SYSTEM_NAME}</span> default
-fi
-
-rm -f <span class="token variable">${FILE_K3S_SERVICE}</span>
-rm -f <span class="token variable">${FILE_K3S_ENV}</span>
-
-remove_uninstall() {
-    rm -f <span class="token variable">${UNINSTALL_K3S_SH}</span>
-}
-trap remove_uninstall EXIT
-
-if (ls <span class="token variable">${SYSTEMD_DIR}</span>/k3s*.service || ls /etc/init.d/k3s*) >/dev/null 2>&amp;1; then
-    set +x; echo 'Additional k3s services installed, skipping uninstall of k3s'; set -x
-    exit
-fi
-
-for cmd in kubectl crictl ctr; do
-    if [ -L <span class="token variable">${BIN_DIR}</span>/\<span class="token variable">$cmd</span> ]; then
-        rm -f <span class="token variable">${BIN_DIR}</span>/\<span class="token variable">$cmd</span>
-    fi
-done
-
-rm -rf /etc/rancher/k3s
-rm -rf /run/k3s
-rm -rf /run/flannel
-rm -rf /var/lib/rancher/k3s
-rm -rf /var/lib/kubelet
-rm -f <span class="token variable">${BIN_DIR}</span>/k3s
-rm -f <span class="token variable">${KILLALL_K3S_SH}</span>
-
-if type yum >/dev/null 2>&amp;1; then
-    yum remove -y k3s-selinux
-    rm -f /etc/yum.repos.d/rancher-k3s-common*.repo
-elif type zypper >/dev/null 2>&amp;1; then
-    uninstall_cmd="zypper remove -y k3s-selinux"
-    if [ "\<span class="token variable">${TRANSACTIONAL_UPDATE=false}</span>" != "true" ] &amp;&amp; [ -x /usr/sbin/transactional-update ]; then
-        uninstall_cmd="transactional-update --no-selfupdate -d run \<span class="token variable">$uninstall_cmd</span>"
-    fi
-    \<span class="token variable">$uninstall_cmd</span>
-    rm -f /etc/zypp/repos.d/rancher-k3s-common*.repo
-fi
-EOF</span>
-    <span class="token variable">$SUDO</span> <span class="token function">chmod</span> <span class="token number">755</span> <span class="token variable">${UNINSTALL_K3S_SH}</span>
-    <span class="token variable">$SUDO</span> <span class="token function">chown</span> root:root <span class="token variable">${UNINSTALL_K3S_SH}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- disable current service if loaded --</span>
-<span class="token function-name function">systemd_disable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token variable">$SUDO</span> systemctl disable <span class="token variable">${SYSTEM_NAME}</span> <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">||</span> <span class="token boolean">true</span>
-    <span class="token variable">$SUDO</span> <span class="token function">rm</span> <span class="token parameter variable">-f</span> /etc/systemd/system/<span class="token variable">${SERVICE_K3S}</span> <span class="token operator">||</span> <span class="token boolean">true</span>
-    <span class="token variable">$SUDO</span> <span class="token function">rm</span> <span class="token parameter variable">-f</span> /etc/systemd/system/<span class="token variable">${SERVICE_K3S}</span>.env <span class="token operator">||</span> <span class="token boolean">true</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- capture current env and create file containing k3s_ variables ---</span>
-<span class="token function-name function">create_env_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    info <span class="token string">"env: Creating environment file <span class="token variable">${FILE_K3S_ENV}</span>"</span>
-    <span class="token variable">$SUDO</span> <span class="token function">touch</span> <span class="token variable">${FILE_K3S_ENV}</span>
-    <span class="token variable">$SUDO</span> <span class="token function">chmod</span> 0600 <span class="token variable">${FILE_K3S_ENV}</span>
-    <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token builtin class-name">export</span> <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> x <span class="token function">v</span><span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token variable">$v</span><span class="token punctuation">;</span> <span class="token keyword">done</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">'^(K3S|CONTAINERD)_'</span> <span class="token operator">|</span> <span class="token variable">$SUDO</span> <span class="token function">tee</span> <span class="token variable">${FILE_K3S_ENV}</span> <span class="token operator">></span>/dev/null
-    <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token builtin class-name">export</span> <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> x <span class="token function">v</span><span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token variable">$v</span><span class="token punctuation">;</span> <span class="token keyword">done</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-Ei</span> <span class="token string">'^(NO|HTTP|HTTPS)_PROXY'</span> <span class="token operator">|</span> <span class="token variable">$SUDO</span> <span class="token function">tee</span> <span class="token parameter variable">-a</span> <span class="token variable">${FILE_K3S_ENV}</span> <span class="token operator">></span>/dev/null
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- write systemd service file ---</span>
-<span class="token function-name function">create_systemd_service_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    info <span class="token string">"systemd: Creating service file <span class="token variable">${FILE_K3S_SERVICE}</span>"</span>
-    <span class="token variable">$SUDO</span> <span class="token function">tee</span> <span class="token variable">${FILE_K3S_SERVICE}</span> <span class="token operator">></span>/dev/null <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
-[Unit]
-Description=Lightweight Kubernetes
-Documentation=https://k3s.io
-Wants=network-online.target
-After=network-online.target
-
-[Install]
-WantedBy=multi-user.target
-
-[Service]
-Type=<span class="token variable">${SYSTEMD_TYPE}</span>
-EnvironmentFile=-/etc/default/%N
-EnvironmentFile=-/etc/sysconfig/%N
-EnvironmentFile=-<span class="token variable">${FILE_K3S_ENV}</span>
-KillMode=process
-Delegate=yes
-# Having non-zero Limit*s causes performance problems due to accounting overhead
-# in the kernel. We recommend using cgroups to do container-local accounting.
-LimitNOFILE=1048576
-LimitNPROC=infinity
-LimitCORE=infinity
-TasksMax=infinity
-TimeoutStartSec=0
-Restart=always
-RestartSec=5s
-ExecStartPre=/bin/sh -xc '! /usr/bin/systemctl is-enabled --quiet nm-cloud-setup.service'
-ExecStartPre=-/sbin/modprobe br_netfilter
-ExecStartPre=-/sbin/modprobe overlay
-ExecStart=<span class="token variable">${BIN_DIR}</span>/k3s <span class="token entity" title="\\">\\</span>
-    <span class="token variable">${CMD_K3S_EXEC}</span>
-
-EOF</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- write openrc service file ---</span>
-<span class="token function-name function">create_openrc_service_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token assign-left variable">LOG_FILE</span><span class="token operator">=</span>/var/log/<span class="token variable">${SYSTEM_NAME}</span>.log
-
-    info <span class="token string">"openrc: Creating service file <span class="token variable">${FILE_K3S_SERVICE}</span>"</span>
-    <span class="token variable">$SUDO</span> <span class="token function">tee</span> <span class="token variable">${FILE_K3S_SERVICE}</span> <span class="token operator">></span>/dev/null <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
-#!/sbin/openrc-run
-
-depend() {
-    after network-online
-    want cgroups
-}
-
-start_pre() {
-    rm -f /tmp/k3s.*
-}
-
-supervisor=supervise-daemon
-name=<span class="token variable">${SYSTEM_NAME}</span>
-command="<span class="token variable">${BIN_DIR}</span>/k3s"
-command_args="<span class="token variable"><span class="token variable">$(</span>escape_dq <span class="token string">"<span class="token variable">${CMD_K3S_EXEC}</span>"</span><span class="token variable">)</span></span>
-    >><span class="token variable">${LOG_FILE}</span> 2>&amp;1"
-
-output_log=<span class="token variable">${LOG_FILE}</span>
-error_log=<span class="token variable">${LOG_FILE}</span>
-
-pidfile="/var/run/<span class="token variable">${SYSTEM_NAME}</span>.pid"
-respawn_delay=5
-respawn_max=0
-
-set -o allexport
-if [ -f /etc/environment ]; then source /etc/environment; fi
-if [ -f <span class="token variable">${FILE_K3S_ENV}</span> ]; then source <span class="token variable">${FILE_K3S_ENV}</span>; fi
-set +o allexport
-EOF</span>
-    <span class="token variable">$SUDO</span> <span class="token function">chmod</span> 0755 <span class="token variable">${FILE_K3S_SERVICE}</span>
-
-    <span class="token variable">$SUDO</span> <span class="token function">tee</span> /etc/logrotate.d/<span class="token variable">${SYSTEM_NAME}</span> <span class="token operator">></span>/dev/null <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
-<span class="token variable">${LOG_FILE}</span> {
-	missingok
-	notifempty
-	copytruncate
-}
-EOF</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- write systemd or openrc service file ---</span>
-<span class="token function-name function">create_service_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_SYSTEMD}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> create_systemd_service_file
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_OPENRC}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> create_openrc_service_file
-    <span class="token builtin class-name">return</span> <span class="token number">0</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- get hashes of the current k3s bin and service files</span>
-<span class="token function-name function">get_installed_hashes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token variable">$SUDO</span> sha256sum <span class="token variable">${BIN_DIR}</span>/k3s <span class="token variable">${FILE_K3S_SERVICE}</span> <span class="token variable">${FILE_K3S_ENV}</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">||</span> <span class="token boolean">true</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- enable and start systemd service ---</span>
-<span class="token function-name function">systemd_enable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    info <span class="token string">"systemd: Enabling <span class="token variable">${SYSTEM_NAME}</span> unit"</span>
-    <span class="token variable">$SUDO</span> systemctl <span class="token builtin class-name">enable</span> <span class="token variable">${FILE_K3S_SERVICE}</span> <span class="token operator">></span>/dev/null
-    <span class="token variable">$SUDO</span> systemctl daemon-reload <span class="token operator">></span>/dev/null
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">systemd_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    info <span class="token string">"systemd: Starting <span class="token variable">${SYSTEM_NAME}</span>"</span>
-    <span class="token variable">$SUDO</span> systemctl restart <span class="token variable">${SYSTEM_NAME}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- enable and start openrc service ---</span>
-<span class="token function-name function">openrc_enable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    info <span class="token string">"openrc: Enabling <span class="token variable">${SYSTEM_NAME}</span> service for default runlevel"</span>
-    <span class="token variable">$SUDO</span> rc-update <span class="token function">add</span> <span class="token variable">${SYSTEM_NAME}</span> default <span class="token operator">></span>/dev/null
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">openrc_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    info <span class="token string">"openrc: Starting <span class="token variable">${SYSTEM_NAME}</span>"</span>
-    <span class="token variable">$SUDO</span> <span class="token variable">${FILE_K3S_SERVICE}</span> restart
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- startup systemd or openrc service ---</span>
-<span class="token function-name function">service_enable_and_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-f</span> <span class="token string">"/proc/cgroups"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> memory /proc/cgroups <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> n n n enabled<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> $enabled<span class="token punctuation">;</span> <span class="token keyword">done</span><span class="token variable">)</span></span>"</span> <span class="token parameter variable">-eq</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">then</span>
-        info <span class="token string">'Failed to find memory cgroup, you may need to add "cgroup_memory=1 cgroup_enable=memory" to your linux cmdline (/boot/cmdline.txt on a Raspberry Pi)'</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SKIP_ENABLE}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">return</span>
-
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_SYSTEMD}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> systemd_enable
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_OPENRC}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> openrc_enable
-
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_SKIP_START}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">return</span>
-
-    <span class="token assign-left variable">POST_INSTALL_HASHES</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>get_installed_hashes<span class="token variable">)</span></span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${PRE_INSTALL_HASHES}</span>"</span> <span class="token operator">=</span> <span class="token string">"<span class="token variable">${POST_INSTALL_HASHES}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${INSTALL_K3S_FORCE_RESTART}</span>"</span> <span class="token operator">!=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        info <span class="token string">'No change detected so skipping service start'</span>
-        <span class="token builtin class-name">return</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_SYSTEMD}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> systemd_start
-    <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${HAS_OPENRC}</span>"</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> openrc_start
-    <span class="token builtin class-name">return</span> <span class="token number">0</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment"># --- re-evaluate args to include env command ---</span>
-<span class="token builtin class-name">eval</span> <span class="token builtin class-name">set</span> -- <span class="token variable"><span class="token variable">$(</span>escape <span class="token string">"<span class="token variable">${INSTALL_K3S_EXEC}</span>"</span><span class="token variable">)</span></span> <span class="token variable"><span class="token variable">$(</span>quote <span class="token string">"<span class="token variable">$@</span>"</span><span class="token variable">)</span></span>
-
-<span class="token comment"># --- run the install process --</span>
-<span class="token punctuation">{</span>
-    verify_system
-    setup_env <span class="token string">"<span class="token variable">$@</span>"</span>
-    download_and_verify
-    setup_selinux
-    create_symlinks
-    create_killall
-    create_uninstall
-    systemd_disable
-    create_env_file
-    create_service_file
-    service_enable_and_start
-<span class="token punctuation">}</span>
-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+</details>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '13.md' style='float:left'>⬆️上一节🔗  </a><a href = '15.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
