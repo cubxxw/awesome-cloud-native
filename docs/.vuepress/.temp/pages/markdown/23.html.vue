@@ -19,10 +19,10 @@
 </ul>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>redis-cli --cluster del-node ip:端口 id
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>实现</strong></p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@ubuntu:/data# redis-cli --cluster del-node 192.168.121.129:6388 b1e31c7e33bf32bf880c8dd8a3c45053381acee3
->>> Removing node b1e31c7e33bf32bf880c8dd8a3c45053381acee3 from cluster 192.168.121.129:6388
->>> Sending CLUSTER FORGET messages to the cluster...
->>> Sending CLUSTER RESET SOFT to the deleted node.
+<div class="language-python ext-py line-numbers-mode"><pre v-pre class="language-python"><code>root@ubuntu<span class="token punctuation">:</span><span class="token operator">/</span>data<span class="token comment"># redis-cli --cluster del-node 192.168.121.129:6388 b1e31c7e33bf32bf880c8dd8a3c45053381acee3</span>
+<span class="token operator">>></span><span class="token operator">></span> Removing node b1e31c7e33bf32bf880c8dd8a3c45053381acee3 <span class="token keyword">from</span> cluster <span class="token number">192.168</span><span class="token number">.121</span><span class="token number">.129</span><span class="token punctuation">:</span><span class="token number">6388</span>
+<span class="token operator">>></span><span class="token operator">></span> Sending CLUSTER FORGET messages to the cluster<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">>></span><span class="token operator">></span> Sending CLUSTER RESET SOFT to the deleted node<span class="token punctuation">.</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>此时8号被干掉了，我们继续清空槽号</p>
 </blockquote>

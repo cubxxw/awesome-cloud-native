@@ -10,14 +10,14 @@
 <hr>
 <p>[TOC]</p>
 <h2 id="k3s" tabindex="-1"><a class="header-anchor" href="#k3s" aria-hidden="true">#</a> k3s</h2>
-<p><em>::: tip</em>
-<em>Mirantis k0s  <strong>vs</strong>  Rancher k3s</em>
-<em>:::</em></p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p><em>Mirantis k0s  <strong>vs</strong>  Rancher k3s</em></p>
 <p>该怎么样选择 k3s 或者 k0s ？ 我想这是一个很令人疑惑的问题。</p>
 <p>使用 kubernetes 或许需要你将机器提高到 2-4 ，但是这并不是很令人满意的，这个要求太高了~</p>
 <p>工作节点 1GB 的内存限制是所有 Kubernetes 集群部署的挑战，也是许多人无法克服的障碍。部署表明，与 K3s 相比，k0s 不一定适用于使用 Traefik 和 Longhorn 的 OCI 上始终空闲的集群。出于这个原因，我目前只能推荐 K3s 作为 Kubernetes 集群部署在 OCI 上，作为一个始终免费的解决方案。</p>
 <p><em>k0s：</em><a href="https://k0sproject.io/" target="_blank" rel="noopener noreferrer">https 😕/k0sproject.io<ExternalLinkIcon/></a></p>
 <p><em>K3s：</em><a href="https://k3s.io/" target="_blank" rel="noopener noreferrer">https 😕/k3s.io<ExternalLinkIcon/></a></p>
+</div>
 <h2 id="mirantis-k0s" tabindex="-1"><a class="header-anchor" href="#mirantis-k0s" aria-hidden="true">#</a> Mirantis k0s</h2>
 <p>K0s 的核心是设计为最轻和最小的，这降低了典型 Kubernetes 发行版的安装和维护复杂性。用户可以在几分钟内部署集群，只需最少的资源和零专业知识即可开始。</p>
 <p>K0s 发行版作为单个库分发和打包，除了内核之外不需要任何主机操作系统依赖项或安装包即可正常运行和运行。任何类型的性能问题都可以在发行版中直接解决，使开发人员可以完全控制库以使环境更加安全。</p>

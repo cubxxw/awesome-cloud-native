@@ -2,8 +2,8 @@
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-06-30 18:06:52
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-10-13 21:43:12
- * @FilePath: \coded:\其他\测试文件夹\script.go
+ * @LastEditTime: 2022-10-20 22:49:35
+ * @FilePath: \undefinedd:\其他\测试文件夹\script.go
  * @Description: github - markdown
  */
 
@@ -83,7 +83,7 @@ func main() {
 	fmt.Scanln(&st)
 
 	var xm string //项目地址
-	fmt.Println("请输入项目的地址")
+	fmt.Println("请输入项目的地址（这个是项目地址，不是blog地址）")
 	fmt.Scanln(&xm)
 	for i := 1; i < n; i++ {
 
@@ -101,12 +101,13 @@ func main() {
 
 		//写入文件时，使用带缓存的 *Writer
 		write := bufio.NewWriter(file)
-		write.WriteString("+ [author](" + xm + ")\n")
+		write.WriteString("+ [🔥 开源地址](" + xm + ")\n")
 		write.WriteString("\n")
 		write.WriteString("# 第" + a1 + "节\n")
 
 		write.WriteString("\n")
 		//批量加入文件，
+		write.WriteString("<br>\n")
 
 		write.WriteString("<div><a href = '" + a3 + ".md" + "' style='float:left'>⬆️上一节🔗  </a><a href = '" + a2 + ".md" + "' style='float: right'>  ⬇️下一节🔗</a></div>\n")
 		write.WriteString("<br>\n")
@@ -114,6 +115,7 @@ func main() {
 		write.WriteString("> ❤️💕💕" + st + "Myblog:[http://nsddd.top](http://nsddd.top/)\n")
 		write.WriteString("\n")
 		write.WriteString("---\n")
+		write.WriteString("[[TOC]]\n")
 		write.WriteString("[TOC]\n")
 		for i := 0; i < 5; i++ {
 			write.WriteString("\n")

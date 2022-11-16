@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-c20517e0\",\"path\":\"/docker-super/34.html\",\"title\":\"第34节\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"END 链接\",\"slug\":\"end-链接\",\"link\":\"#end-链接\",\"children\":[]}],\"git\":{\"updatedTime\":null,\"contributors\":[]},\"filePathRelative\":\"docker-super/34.md\"}")
