@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-3db938a9","path":"/docker-super/19.html","title":"\u7B2C19\u8282","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"END \u94FE\u63A5","slug":"end-\u94FE\u63A5","link":"#end-\u94FE\u63A5","children":[]}],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"docker-super/19.md"}');export{e as data};

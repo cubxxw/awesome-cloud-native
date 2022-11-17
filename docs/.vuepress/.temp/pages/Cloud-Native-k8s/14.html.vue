@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#离线安装解释">离线安装解释</router-link><ul><li><router-link to="#步骤">步骤</router-link></li><li><router-link to="#前提条件">前提条件</router-link></li><li><router-link to="#containerd-手动部署镜像方式">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#docker-手动部署镜像方式">Docker + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-手动部署镜像方式-1">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-私有镜像仓库方式">Containerd + 私有镜像仓库方式</router-link></li></ul></li><li><router-link to="#docker-私有镜像仓库方式">Docker + 私有镜像仓库方式</router-link><ul><li><router-link to="#单结点高可用离线安装">单结点高可用离线安装</router-link></li></ul></li><li><router-link to="#卸载k3s">卸载k3s</router-link></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#containerd">containerd</router-link><ul><li><router-link to="#架构图">架构图</router-link></li><li><router-link to="#命令">命令</router-link></li><li><router-link to="#containerd的配置管理">containerd的配置管理</router-link></li></ul></li><li><router-link to="#二进制工具">二进制工具</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#安装脚本">安装脚本</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#sqlite-和-dqlite">Sqlite 和 Dqlite</router-link></li><li><router-link to="#目录结构">目录结构</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#安装-卸载-k3s">安装（卸载）k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#离线安装解释">离线安装解释</router-link><ul><li><router-link to="#步骤">步骤</router-link></li><li><router-link to="#前提条件">前提条件</router-link></li><li><router-link to="#containerd-手动部署镜像方式">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#docker-手动部署镜像方式">Docker + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-手动部署镜像方式-1">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-私有镜像仓库方式">Containerd + 私有镜像仓库方式</router-link></li></ul></li><li><router-link to="#docker-私有镜像仓库方式">Docker + 私有镜像仓库方式</router-link><ul><li><router-link to="#单结点高可用离线安装">单结点高可用离线安装</router-link></li></ul></li><li><router-link to="#卸载k3s">卸载k3s</router-link></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#containerd">containerd</router-link><ul><li><router-link to="#架构图">架构图</router-link></li><li><router-link to="#命令">命令</router-link></li><li><router-link to="#containerd的配置管理">containerd的配置管理</router-link></li></ul></li><li><router-link to="#二进制工具">二进制工具</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#安装脚本">安装脚本</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="k3s介绍" tabindex="-1"><a class="header-anchor" href="#k3s介绍" aria-hidden="true">#</a> k3s介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">k3s — 微型kubernets发行版</p>
@@ -69,6 +69,13 @@
 </ul>
 <p><strong>K3s高可用架构：</strong></p>
 <p><img src="http://sm.nsddd.top/sm1660616476551520.png" alt="img"></p>
+<blockquote>
+<p>注意：高可用结构同样可以使用<strong>嵌入式数据库</strong></p>
+<p>⚠️ 区别：</p>
+<p><strong>嵌入数据库是指数据在内存中数据库，英文称为–embedded</strong>，又称in-memory embedded database，如H2, HSQL and Derby databases。</p>
+<p><strong>非嵌入式数据库是指数据在磁盘中的数据库</strong>，如MariaDB, MySQL and Oracle。</p>
+</blockquote>
+<p><img src="http://sm.nsddd.top/smimage-20221117173105788.png" alt="image-20221117173105788"></p>
 <p><strong>固定  <code v-pre>agent</code> 节点的注册地址：</strong></p>
 <p>在高可用   <code v-pre>K3s server</code>  配置中，每个节点还必须使用固定的注册地址向 Kubernetes API 注册，注册后， <code v-pre>agent</code> 节点直接与其中一个  <code v-pre>server</code> 节点建立连接，如下图所示：</p>
 <p><img src="http://sm.nsddd.top/sm1660616545857393.svg" alt="k3s-production-setup"></p>
@@ -86,11 +93,28 @@
 <p><strong>自动部署的清单：</strong></p>
 <p>位于目录路径<code v-pre>/var/lib/rancher/k3s/server/manifests</code> 的清单在构建时被捆绑到 K3s 二进制文件中，将由<a href="https://github.com/k3s-io/helm-controller#helm-controller" target="_blank" rel="noopener noreferrer">rancher/helm-controller<ExternalLinkIcon/></a>在运行时安装。</p>
 </details>
+<h2 id="sqlite-和-dqlite" tabindex="-1"><a class="header-anchor" href="#sqlite-和-dqlite" aria-hidden="true">#</a> Sqlite 和 Dqlite</h2>
+<p>我认为我在这里遇到了很多疑惑，关于 Sqlite 和 <a href="https://github.com/canonical/dqlite/blob/master/README_CH.md" target="_blank" rel="noopener noreferrer">Dqlite<ExternalLinkIcon/></a></p>
+<div class="custom-container tip"><p class="custom-container-title">dqlite</p>
+<p>“dqlite”是“distributed SQLite”的简写，即分布式SQLite。意味着 dqlite 通过网络协议扩展 SQLite ，将应用程序的各个实例连接在一起，让它们作为一个高可用的集群，而不依赖外部数据库。</p>
+</div>
+<p>我希望 runtime 可以实现 multi-master ，同样支持的嵌入式和外部DB</p>
 <div class="custom-container danger"><p class="custom-container-title">警告</p>
 <p>关于 单结点 扩展为 高可用 状态，或许这并不是一个很容器实现的地方，我们在前面 details 中看到单结点架构和高可用架构的区别，或许我们应该在制作 <code v-pre>runtime</code> 模块 和 <code v-pre>rootfs</code> 的时候更倾向于实现 高可用。</p>
 </div>
 <p><strong>架构图：</strong></p>
 <p><img src="http://sm.nsddd.top/smhow-it-works-k3s.svg" alt="k3s下载"></p>
+<h2 id="目录结构" tabindex="-1"><a class="header-anchor" href="#目录结构" aria-hidden="true">#</a> 目录结构</h2>
+<ul>
+<li>位于目录路径 /var/lib/<code v-pre>/var/lib/rancher/k3s/server/manifests</code> 的<a href="https://github.com/rancher/k3s/tree/master/manifests" target="_blank" rel="noopener noreferrer">清单<ExternalLinkIcon/></a>在构建时捆绑到 K3s 二进制文件中。这些将由<a href="https://github.com/rancher/helm-controller#helm-controller" target="_blank" rel="noopener noreferrer">rancher/helm-controller.<ExternalLinkIcon/></a>在运行的时候自动安装</li>
+</ul>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:/var/lib/rancher/k3s/server<span class="token comment"># cd manifests/;ls;pwd</span>
+ccm.yaml      local-storage.yaml  rolebindings.yaml
+coredns.yaml  metrics-server      traefik.yaml
+/var/lib/rancher/k3s/server/manifests
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>可以将主要的 k3s 二进制文件放在任何您想要的地方。它会将内容写入 /var/lib/rancher/k3s 和 /etc/rancher，以及 containerd 和 kubelet 用于非持久文件的正常位置 /var/run 下。</li>
+</ul>
 <h2 id="新版本默认支持-etcd" tabindex="-1"><a class="header-anchor" href="#新版本默认支持-etcd" aria-hidden="true">#</a> 新版本默认支持 etcd</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>从 <code v-pre>v1.19.5+k3s1</code> 版本开始，K3s 已添加了对嵌入式 etcd 的完全支持。从 v1.19.1 到 v1.19.4 版本只提供了对嵌入式 etcd 的实验性支持。在 K3s v1.19.1 版本中，嵌入式 etcd 取代了实验性的 Dqlite。这是一个突破性的变化。请注意，不支持从实验性 Dqlite 升级到嵌入式 etcd。如果你尝试升级，升级将不会成功，并且数据将会丢失。</p>
@@ -110,7 +134,7 @@ k3s kubectl get <span class="token function">node</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>同样你可以选择把k3s部署在docker中，这样你就可以很方便的管理k3s</strong></p>
 <p><code v-pre>curl -sfL https://get.k3s.io | sh -</code> 将其 <code v-pre>server</code> 和 <code v-pre>agent</code> 都安装上了。</p>
-<p><strong>如何扩充结点</strong>：</p>
+<p><strong>如何扩充结点</strong></p>
 </blockquote>
 <p><strong>安装选项：</strong></p>
 <ul>

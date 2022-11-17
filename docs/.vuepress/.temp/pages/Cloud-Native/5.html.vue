@@ -230,11 +230,10 @@
 <li>单结点成为高可用~</li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>docker~ run cmd 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>init：</strong></p>
-<div class="custom-container tip"><p class="custom-container-title">提示</p>
-<p>进展</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="clusterlmage" tabindex="-1"><a class="header-anchor" href="#clusterlmage" aria-hidden="true">#</a> Clusterlmage</h2>
+<div class="custom-container tip"><p class="custom-container-title">location</p>
+<p>https://github.com/sealerio/basefs</p>
 </div>
-<h2 id="clusterlmage" tabindex="-1"><a class="header-anchor" href="#clusterlmage" aria-hidden="true">#</a> Clusterlmage</h2>
 <ul>
 <li><code v-pre>Bin file</code>，如 docker、containerd、crictl、kubeadm、kubectl...</li>
 <li><code v-pre>config file</code> ，如 kubelet systemd config、docker systemd config、docker daemon.json...</li>
@@ -582,9 +581,9 @@ BASE rootfs cache
 <ul>
 <li>init
 <ul>
-<li>当 sealer 导致先安装集群时，init 阶段将 rootfs/bin 复制到 <code v-pre>init.sh</code> 脚本中的 <code v-pre>/usr/bin</code></li>
-<li>创建引导配置 /etc/k0s/k0s.yaml 以引导控制器初始化</li>
-<li>生成 k0s 加入令牌 <code v-pre>/etc/k0s/worker-token</code> 和 /etc/k0s/controller-token，也是私有注册表证书</li>
+<li>当 sealer 导致先安装集群时，<code v-pre>init</code> 阶段将 <code v-pre>rootfs/bin</code> 复制到 <code v-pre>init.sh</code> 脚本中的 <code v-pre>/usr/bin</code></li>
+<li>创建引导配置 <code v-pre>/etc/k0s/k0s.yaml</code> 以引导控制器初始化</li>
+<li>生成 <code v-pre>k0s</code> 加入令牌 <code v-pre>/etc/k0s/worker-token</code> 和 <code v-pre>/etc/k0s/controller-token</code>，也是私有注册表证书</li>
 <li>初始化控制器节点</li>
 <li>获取  <code v-pre>~/.kube/config</code>  的配置以管理集群。</li>
 </ul>
@@ -601,12 +600,12 @@ BASE rootfs cache
 </li>
 <li>reset
 <ul>
-<li>通过 k0s 重置以移除该集群并移除由 sealer 生成的集群的任何相关内容。</li>
+<li>通过 <code v-pre>k0s</code> 重置以移除该集群并移除由 <code v-pre>sealer</code> 生成的集群的任何相关内容。</li>
 </ul>
 </li>
 <li>Upgrade
 <ul>
-<li>upgrade 可以升级 k0s 集群。</li>
+<li><code v-pre>upgrade</code> 可以升级 <code v-pre>k0s</code> 集群。</li>
 </ul>
 </li>
 </ul>

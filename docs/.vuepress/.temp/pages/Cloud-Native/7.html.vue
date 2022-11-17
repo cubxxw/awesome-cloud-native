@@ -53,11 +53,19 @@
 <p>比较它们的二进制大小时，典型的 k3s 环境的占用空间是 K0s 的三分之一（50Mb vs150Mb）。<strong>K3s 已经摆脱了运行最小集群所不需要的所有不必要的组件，只添加了一些必要的附加组件，包括开箱即用的 Traefik 入口控制器、负载均衡器和 Helm 图表。</strong></p>
 <p>K0s 不包括任何这些附加组件，但包含所有上游 Kubernetes 库，如存储卷插件和云提供商 API，作为自解压存档，有助于其更大的大小。</p>
 <p>K3s 和 K0s 都使用 Core DNS 和 Metrics 服务器。CoreDNS 为 Kubernetes 提供了一个可扩展的 DNS 服务器，用于将域名转换为 IP 地址。Metrics 服务器从每个节点上的容器运行时公开的 API 中收集资源使用数据。</p>
-<p>k0s 和 k3s 之间的另一个关键区别是如何管理集群状态。默认情况下，K0s 分发依赖于 Kine 作为 etcd（分布式键值数据库）的数据存储，而 k3s 已将 etcd 替换为 SQLite（K3s v1.19.1 版本以后就是默认安装使用的是 etcd ）。</p>
+<p>k0s 和 k3s 之间的另一个关键区别是如何管理集群状态。默认情况下，K0s 分发依赖于 Kine 作为 etcd（分布式键值数据库）的数据存储，而 k3s 已将 etcd 替换为 SQLite <del>（K3s v1.19.1 版本以后就是默认安装使用的是 etcd ）</del>。</p>
 <p>使用 Kine 的 K0s 服务器可以轻松地将 etcd 与 MySQL、Postgres、SQLite、dqlite 等各种其他数据库交换，以实现集群的高可用性。另一方面，K0s 服务器必须与支持的数据库（如 MySQL 和 PostgreSQL）集成，以支持多个实例并使集群具有高可用性。</p>
+<div class="custom-container danger"><p class="custom-container-title">dev删除线解释</p>
+<p>上面的是说错了，我对官方的理解有问题，官方的原话是：</p>
+<p>Embedded etcd replaced experimental Dqlite in the K3s v1.19.1 release. This is a breaking change. Please note that upgrades from experimental Dqlite to embedded etcd are not supported. If you attempt an upgrade it will not succeed and data will be lost.</p>
+<blockquote>
+<p>嵌入式 etcd 在 K3s v1.19.1 版本中取代了实验性 Dqlite。这是一个重大更改。请注意，不支持从实验性 Dqlite 升级到嵌入式 etcd。如果尝试升级，升级将不会成功，数据将丢失。</p>
+</blockquote>
+<p>取代了 <code v-pre>Dqlite</code> ，或许我们该去了解一下 <code v-pre>Dqlite</code>，</p>
+</div>
 <h2 id="选择哪一个-k3s-还是-k0s" tabindex="-1"><a class="header-anchor" href="#选择哪一个-k3s-还是-k0s" aria-hidden="true">#</a> 选择哪一个，k3s 还是 k0s？</h2>
-<p>如果您想要为轻量级环境提供稳定的生产就绪 Kubernetes 发行版，我们仍然会推荐 k3s。默认情况下，K3s 对于轻量级环境是安全的，并且消除了上游 Kubernetes 所排除的膨胀软件。K3s 还将所有 Kubernetes 组件包装到一个简单的启动器中，它支持各种存储后端，并且需要最少的操作系统依赖。</p>
-<p>相比之下，如果您想要一个用于开发或暂存集群的 Kubernetes 发行版，k0s 值得一试。尽管 k0s 是一个年轻的项目并且是一个早期版本，但它正在迅速发展成为一种在任何地方运行 Kubernetes 的强大且通用的方式。当然，有一些粗糙的边缘需要修复，比如支持开箱即用的附加组件和大二进制大小（与 k3s 相比），但我们希望随着项目的成熟，这些障碍能够得到克服。</p>
+<p>如果您想要为轻量级环境提供稳定的生产就绪 <code v-pre>Kubernetes</code> 发行版，我们仍然会推荐 k3s。默认情况下，<code v-pre>K3s</code> 对于轻量级环境是安全的，并且消除了上游 <code v-pre>Kubernetes</code> 所排除的膨胀软件。K3s 还将所有 <code v-pre>Kubernetes</code> 组件包装到一个简单的启动器中，它支持各种存储后端，并且需要最少的操作系统依赖。</p>
+<p>相比之下，如果您想要一个用于开发或暂存集群的 <code v-pre>Kubernetes</code> 发行版，<code v-pre>k0s</code> 值得一试。尽管 <code v-pre>k0s</code> 是一个年轻的项目并且是一个早期版本，但它正在迅速发展成为一种在任何地方运行 <code v-pre>Kubernetes</code> 的强大且通用的方式。当然，有一些粗糙的边缘需要修复，比如支持开箱即用的附加组件和大二进制大小（与 <code v-pre>k3s</code> 相比），但我们希望随着项目的成熟，这些障碍能够得到克服。</p>
 <h2 id="比较-tables" tabindex="-1"><a class="header-anchor" href="#比较-tables" aria-hidden="true">#</a> 比较 tables</h2>
 <table>
 <thead>
@@ -81,7 +89,7 @@
 <tr>
 <td>数据存储</td>
 <td>默认使用 etcd</td>
-<td>SQLite (K3s v1.19.1：etcd)</td>
+<td>SQLite</td>
 </tr>
 <tr>
 <td>控制平面上的工作负载</td>
@@ -116,7 +124,7 @@
 </tbody>
 </table>
 <h2 id="或许还可以带上microk8s" tabindex="-1"><a class="header-anchor" href="#或许还可以带上microk8s" aria-hidden="true">#</a> 或许还可以带上microk8s</h2>
-<p>源自MicroK8s 主文档网页，MicroK8s 是最小、最快、完全符合标准的 Kubernetes，它跟踪上游版本并使集群变得简单。</p>
+<p>源自 <code v-pre>MicroK8s</code> 主文档网页，<code v-pre>MicroK8s</code> 是最小、最快、完全符合标准的 Kubernetes，它跟踪上游版本并使集群变得简单。</p>
 <p>MicroK8s 非常适合离线开发、原型设计和测试。</p>
 <p>在 VM 上使用它作为 CI/CD 的小型、便宜、可靠的 k8s。它也是用于设备的最佳生产级 Kubernetes。</p>
 <p>为 k8s 开发 IoT 应用程序并将它们部署到 Linux 机器上的 MicroK8s。</p>
