@@ -139,7 +139,483 @@
 <h2 id="搭建-etcd" tabindex="-1"><a class="header-anchor" href="#搭建-etcd" aria-hidden="true">#</a> 搭建 etcd</h2>
 <p>可以使用：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>yum install etcd 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>推荐使用 二进制 、 源码编译、docker安装：</strong></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p>yaml 安装的二进制文件：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">etcd</td>
+<td style="text-align:left">/usr/bin/etcd</td>
+</tr>
+<tr>
+<td style="text-align:left">etcdctl</td>
+<td style="text-align:left">/usr/bin/etcdctl</td>
+</tr>
+<tr>
+<td style="text-align:left">etcd.service</td>
+<td style="text-align:left">/lib/systemd/system/etcd.service</td>
+</tr>
+<tr>
+<td style="text-align:left">etcd.conf</td>
+<td style="text-align:left">/etc/etcd/etcd.conf</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>推荐使用 二进制 、 源码编译、docker安装：</strong></p>
+<h3 id="高可用安装-–-避免单点故障" tabindex="-1"><a class="header-anchor" href="#高可用安装-–-避免单点故障" aria-hidden="true">#</a> 高可用安装 – 避免单点故障</h3>
+<div class="custom-container tip"><p class="custom-container-title">启动方式</p>
+<ul>
+<li>静态启动</li>
+<li>etcd 动态发现</li>
+<li>DNS 发现</li>
+</ul>
+</div>
+<p>goreman 是一个 Go语言 编写的多进程管理工具，是对 ruby 下广泛使用的 Foreman 的重写~</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>go get github.com/mattn/goreman
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>安装：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>go <span class="token function">install</span> github.com/mattn/goreman@latest
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>使用goreman 启动 etcd 集群</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>goreman <span class="token parameter variable">-f</span> /opt/procfile start
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="docker部署" tabindex="-1"><a class="header-anchor" href="#docker部署" aria-hidden="true">#</a> docker部署</h2>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>个人比较倾向于这种方式，个人电脑配置不行~</p>
+</div>
+<h3 id="构建思路" tabindex="-1"><a class="header-anchor" href="#构建思路" aria-hidden="true">#</a> 构建思路</h3>
+<table>
+<thead>
+<tr>
+<th>节点名</th>
+<th>IP地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node1</td>
+<td>10.2.36.1</td>
+</tr>
+<tr>
+<td>node2</td>
+<td>10.2.36.2</td>
+</tr>
+<tr>
+<td>node3</td>
+<td>10.2.36.3</td>
+</tr>
+</tbody>
+</table>
+<p>我们需要三个节点，这三个节点可以分布在不同服务器，本案例中，以一台服务器基于Docker运行多个容器来做演示。</p>
+<h3 id="下载etcd镜像" tabindex="-1"><a class="header-anchor" href="#下载etcd镜像" aria-hidden="true">#</a> 下载Etcd镜像</h3>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:~<span class="token comment"># docker pull quay.io/coreos/etcd</span>
+root@ubuntu:~<span class="token comment"># docker images | grep "etcd"</span>
+quay.io/coreos/etcd                                latest                           61ad63875109   <span class="token number">4</span> years ago     <span class="token number">39</span>.5MB
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="创建自定义docker网络" tabindex="-1"><a class="header-anchor" href="#创建自定义docker网络" aria-hidden="true">#</a> 创建自定义Docker网络</h3>
+<blockquote>
+<p><a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker 基础篇<ExternalLinkIcon/></a> 我们知道啦docker网络模式，我们选择<a href="https://docker.nsddd.top/markdown/31.html#%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener noreferrer">自定义网络<ExternalLinkIcon/></a>。</p>
+</blockquote>
+<p>首先构建个自定义网络，因为我们要给各个节点分配IP地址，Docker容器默认网络只能自动配IP无法手动分配。</p>
+<blockquote>
+<p>⚠️ 注意：即使是自定义网络，我选择的也是默认的网桥模式（<em>创建一个新的bridge网络</em>）</p>
+<ol>
+<li><code v-pre>--driver</code>：驱动程序类型</li>
+<li><code v-pre>--subnet</code>：代表网段的 <code v-pre>CIDR</code> 格式的子网</li>
+<li><code v-pre>--gateway</code>：主子网的 <code v-pre>IPV4</code> 和 <code v-pre>IPV6</code> 的网关</li>
+<li><code v-pre>mynet2</code>：是自定义网络名称</li>
+</ol>
+</blockquote>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:~<span class="token comment"># docker network create --driver bridge --subnet=10.2.36.0/16 --gateway=10.2.1.1 mynet2</span>
+be11fe7f1fc8ea9fe30e018297295b8c61a823bb31f647aa4da777fa3eee63a7
+
+root@ubuntu:~<span class="token comment"># docker network ls |grep "mynet2"</span>
+be11fe7f1fc8   mynet2                     bridge    <span class="token builtin class-name">local</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="创建并启动etcd镜像节点" tabindex="-1"><a class="header-anchor" href="#创建并启动etcd镜像节点" aria-hidden="true">#</a> 创建并启动Etcd镜像节点</h3>
+<div class="custom-container tip"><p class="custom-container-title">参数📜 对下面的解释</p>
+<p>如图表：</p>
+<p><img src="http://sm.nsddd.top/smimage-20221118192826609.png" alt="image-20221118192826609"></p>
+</div>
+<details class="custom-container details"><summary>节点 1 🔽</summary>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">2479</span>:2379 <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">2381</span>:2380 <span class="token punctuation">\</span>
+<span class="token parameter variable">--name</span> node1 <span class="token punctuation">\</span>
+<span class="token parameter variable">--network</span><span class="token operator">=</span>mynet2 <span class="token punctuation">\</span>
+<span class="token parameter variable">--ip</span> <span class="token number">10.2</span>.36.1 <span class="token punctuation">\</span>
+quay.io/coreos/etcd:latest <span class="token punctuation">\</span>
+etcd <span class="token punctuation">\</span>
+<span class="token parameter variable">-name</span> node1 <span class="token punctuation">\</span>
+-advertise-client-urls http://10.2.36.1:2379 <span class="token punctuation">\</span>
+-initial-advertise-peer-urls http://10.2.36.1:2380 <span class="token punctuation">\</span>
+-listen-client-urls http://0.0.0.0:2379 -listen-peer-urls http://0.0.0.0:2380 <span class="token punctuation">\</span>
+-initial-cluster-token etcd-cluster <span class="token punctuation">\</span>
+-initial-cluster <span class="token string">"node1=http://10.2.36.1:2380,node2=http://10.2.36.2:2380,node3=http://10.2.36.3:2380"</span> <span class="token punctuation">\</span>
+-initial-cluster-state new
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<details class="custom-container details"><summary>节点 2 🔽</summary>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">2579</span>:2379 <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">2382</span>:2380 <span class="token punctuation">\</span>
+<span class="token parameter variable">--name</span> node2 <span class="token punctuation">\</span>
+<span class="token parameter variable">--network</span><span class="token operator">=</span>mynet2 <span class="token punctuation">\</span>
+<span class="token parameter variable">--ip</span> <span class="token number">10.2</span>.36.2 <span class="token punctuation">\</span>
+quay.io/coreos/etcd:latest <span class="token punctuation">\</span>
+etcd <span class="token punctuation">\</span>
+<span class="token parameter variable">-name</span> node2 <span class="token punctuation">\</span>
+-advertise-client-urls http://10.2.36.2:2379 <span class="token punctuation">\</span>
+-initial-advertise-peer-urls http://10.2.36.2:2380 <span class="token punctuation">\</span>
+-listen-client-urls http://0.0.0.0:2379 -listen-peer-urls http://0.0.0.0:2380 <span class="token punctuation">\</span>
+-initial-cluster-token etcd-cluster <span class="token punctuation">\</span>
+-initial-cluster <span class="token string">"node1=http://10.2.36.1:2380,node2=http://10.2.36.2:2380,node3=http://10.2.36.3:2380"</span> <span class="token punctuation">\</span>
+-initial-cluster-state new
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<details class="custom-container details"><summary>节点 3 🔽</summary>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">2679</span>:2379 <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">2383</span>:2380 <span class="token punctuation">\</span>
+<span class="token parameter variable">--name</span> node3 <span class="token punctuation">\</span>
+<span class="token parameter variable">--network</span><span class="token operator">=</span>mynet2 <span class="token punctuation">\</span>
+<span class="token parameter variable">--ip</span> <span class="token number">10.2</span>.36.3 <span class="token punctuation">\</span>
+quay.io/coreos/etcd:latest <span class="token punctuation">\</span>
+etcd <span class="token punctuation">\</span>
+<span class="token parameter variable">-name</span> node3 <span class="token punctuation">\</span>
+-advertise-client-urls http://10.2.36.3:2379 <span class="token punctuation">\</span>
+-initial-advertise-peer-urls http://10.2.36.3:2380 <span class="token punctuation">\</span>
+-listen-client-urls http://0.0.0.0:2379 -listen-peer-urls http://0.0.0.0:2380 <span class="token punctuation">\</span>
+-initial-cluster-token etcd-cluster <span class="token punctuation">\</span>
+-initial-cluster <span class="token string">"node1=http://10.2.36.1:2380,node2=http://10.2.36.2:2380,node3=http://10.2.36.3:2380"</span> <span class="token punctuation">\</span>
+-initial-cluster-state new
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h3 id="verification" tabindex="-1"><a class="header-anchor" href="#verification" aria-hidden="true">#</a> verification</h3>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:~<span class="token comment"># docker ps | grep "node"</span>
+2986d95eedd4   quay.io/coreos/etcd:latest   <span class="token string">"etcd -name node3 -a…"</span>   <span class="token number">50</span> seconds ago       Up <span class="token number">49</span> seconds   <span class="token number">0.0</span>.0.0:2679-<span class="token operator">></span><span class="token number">2379</span>/tcp, :::2679-<span class="token operator">></span><span class="token number">2379</span>/tcp, <span class="token number">0.0</span>
+93e41bb72642   quay.io/coreos/etcd:latest   <span class="token string">"etcd -name node2 -a…"</span>   <span class="token number">54</span> seconds ago       Up <span class="token number">53</span> seconds   <span class="token number">0.0</span>.0.0:2579-<span class="token operator">></span><span class="token number">2379</span>/tcp, :::2579-<span class="token operator">></span><span class="token number">2379</span>/tcp, <span class="token number">0.0</span>
+bae0df00930c   quay.io/coreos/etcd:latest   <span class="token string">"etcd -name node1 -a…"</span>   About a minute ago   Up <span class="token number">59</span> seconds   <span class="token number">0.0</span>.0.0:2479-<span class="token operator">></span><span class="token number">2379</span>/tcp, :::2479-<span class="token operator">></span><span class="token number">2379</span>/tcp, <span class="token number">0.0</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221118193208499.png" alt="image-20221118193208499"></p>
+<div class="custom-container tip"><p class="custom-container-title">succeed</p>
+<p>通过etcdctl member list命令可以查询出所有集群节点的列表即为成功</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker exec -it node1 etcdctl member list
+docker exec -it node2 etcdctl member list
+docker exec -it node3 etcdctl member list
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221118193514366.png" alt="image-20221118193514366"></p>
+</div>
+<p><strong>自定义网络本身就维护好了主机名和ip的对应关系（ip和域名都能通）</strong></p>
+<h2 id="动态发现启动-etcd" tabindex="-1"><a class="header-anchor" href="#动态发现启动-etcd" aria-hidden="true">#</a> 动态发现启动 etcd</h2>
+<h2 id="etcd-操作" tabindex="-1"><a class="header-anchor" href="#etcd-操作" aria-hidden="true">#</a> etcd 操作</h2>
+<p>基于 etcd 自带的客户端工具 – etcdctl 来进行一些列操作，同样的 v2 和 v3 的版本也是不一样会的</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>etcdctl 是一个命令行，便于我们进行服务测试或者手动修改数据</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">ETCDCTL_API</span><span class="token operator">=</span><span class="token number">2</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">ETCDCTL_API</span><span class="token operator">=</span><span class="token number">3</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>查询：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@ubuntu:/c# docker exec -it node2 etcdctl -v
+etcdctl version: 3.3.8
+API version: 2
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<h3 id="常用命令" tabindex="-1"><a class="header-anchor" href="#常用命令" aria-hidden="true">#</a> 常用命令</h3>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>常用命令分为 <strong>数据库操作</strong> 和 <strong>非数据库操作</strong> 两种类型。</p>
+</div>
+<p><strong>帮助信息：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>etcdctl <span class="token parameter variable">-h</span> 
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>etcd 在键的组织上采用了层次化的空间结构（类似于文件系统中目录的概念），数据库操作围绕对键值和目录的 CRUD [增删改查]（符合 REST 风格的一套操作：Create, Read, Update, Delete）完整生命周期的管理。</p>
+<p><strong>查看集群状态：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>ETCDCTL_API=3 etcdctl endpoint status --cluster -w table
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>常用命令：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 列表</span>
+etcdctl <span class="token function">ls</span> /kube-centos/network/config
+ 
+<span class="token comment"># 查看</span>
+etcdctl get /kube-centos/network/config
+ 
+<span class="token comment"># v2移除</span>
+etcdctl <span class="token function">rm</span> /kube-centos/network/config
+ 
+<span class="token comment"># v3移除</span>
+<span class="token assign-left variable">ETCDCTL_API</span><span class="token operator">=</span><span class="token number">3</span> etcdctl del /kube-centos/network/config
+ 
+<span class="token comment"># 递归移除</span>
+etcdctl <span class="token function">rm</span> <span class="token parameter variable">--recursive</span> registry
+ 
+<span class="token comment"># 修改</span>
+etcdctl mk /kube-centos/network/config <span class="token string">"{ <span class="token entity" title="\&quot;">\"</span>Network<span class="token entity" title="\&quot;">\"</span>: <span class="token entity" title="\&quot;">\"</span>172.30.0.0/16<span class="token entity" title="\&quot;">\"</span>, <span class="token entity" title="\&quot;">\"</span>Backend<span class="token entity" title="\&quot;">\"</span>: { <span class="token entity" title="\&quot;">\"</span>Type<span class="token entity" title="\&quot;">\"</span>: <span class="token entity" title="\&quot;">\"</span>vxlan<span class="token entity" title="\&quot;">\"</span> } }"</span>
+ 
+<span class="token comment"># 命令将数据存到指定位置。这部分数据可以用来灾难恢复</span>
+etcdctl backup
+ 
+<span class="token comment"># 健康检查</span>
+etcdctl endpoint health
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>命令合集：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment">#存储:</span>
+    <span class="token function">curl</span> http://127.0.0.1:4001/v2/keys/testkey <span class="token parameter variable">-XPUT</span> <span class="token parameter variable">-d</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">'testvalue'</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/message2 <span class="token parameter variable">-XPUT</span> <span class="token parameter variable">-d</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">'hello etcd'</span> <span class="token parameter variable">-d</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">5</span>
+ 
+<span class="token comment">#获取:</span>
+    <span class="token function">curl</span> http://127.0.0.1:4001/v2/keys/testkey
+ 
+<span class="token comment">#查看版本:</span>
+    <span class="token function">curl</span>  http://127.0.0.1:4001/version
+ 
+<span class="token comment">#删除:</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/testkey <span class="token parameter variable">-XDELETE</span>
+ 
+<span class="token comment">#监视:</span>
+    窗口1：curl <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/message2 <span class="token parameter variable">-XPUT</span> <span class="token parameter variable">-d</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">'hello etcd 1'</span>
+          <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/message2?wait<span class="token operator">=</span>true
+    窗口2：
+          <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/message2 <span class="token parameter variable">-XPUT</span> <span class="token parameter variable">-d</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">'hello etcd 2'</span>
+ 
+自动创建key:
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/message3 <span class="token parameter variable">-XPOST</span> <span class="token parameter variable">-d</span> <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">'hello etcd 1'</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> <span class="token string">'http://127.0.0.1:4001/v2/keys/message3?recursive=true&amp;sorted=true'</span>
+ 
+<span class="token comment">#创建目录：</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/message8 <span class="token parameter variable">-XPUT</span> <span class="token parameter variable">-d</span> <span class="token assign-left variable">dir</span><span class="token operator">=</span>true
+ 
+<span class="token comment">#删除目录：</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> <span class="token string">'http://127.0.0.1:4001/v2/keys/message7?dir=true'</span> <span class="token parameter variable">-XDELETE</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> <span class="token string">'http://127.0.0.1:4001/v2/keys/message7?recursive=true'</span> <span class="token parameter variable">-XDELETE</span>
+ 
+<span class="token comment">#查看所有key:</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/?recursive<span class="token operator">=</span>true
+ 
+<span class="token comment">#存储数据：</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-s</span> http://127.0.0.1:4001/v2/keys/file <span class="token parameter variable">-XPUT</span> --data-urlencode value@upfile
+ 
+ 
+<span class="token comment">#使用etcdctl客户端：</span>
+ 
+<span class="token comment">#存储:</span>
+    etcdctl <span class="token builtin class-name">set</span> /liuyiling/testkey <span class="token string">"610"</span> <span class="token parameter variable">--ttl</span> <span class="token string">'100'</span>
+                                         --swap-with-value value
+ 
+<span class="token comment">#获取：</span>
+    etcdctl get /liuyiling/testkey
+ 
+<span class="token comment">#更新：</span>
+    etcdctl update /liuyiling/testkey <span class="token string">"world"</span> <span class="token parameter variable">--ttl</span> <span class="token string">'100'</span>
+ 
+<span class="token comment">#删除：</span>
+    etcdctl <span class="token function">rm</span> /liuyiling/testkey
+ 
+<span class="token comment">#使用ca获取：</span>
+etcdctl --cert-file<span class="token operator">=</span>/etc/etcd/ssl/etcd.pem   --key-file<span class="token operator">=</span>/etc/etcd/ssl/etcd-key.pem  --ca-file<span class="token operator">=</span>/etc/etcd/ssl/ca.pem get /message
+ 
+<span class="token comment">#目录管理：</span>
+ 
+    etcdctl mk /liuyiling/testkey <span class="token string">"hello"</span>    类似set,但是如果key已经存在，报错
+ 
+    etcdctl <span class="token function">mkdir</span> /liuyiling 
+ 
+    etcdctl setdir /liuyiling  
+ 
+    etcdctl updatedir /liuyiling      
+ 
+    etcdctl <span class="token function">rmdir</span> /liuyiling    
+ 
+<span class="token comment">#查看：</span>
+    etcdctl <span class="token function">ls</span> <span class="token parameter variable">--recursive</span>
+ 
+<span class="token comment">#监视：</span>
+    etcdctl <span class="token function">watch</span> mykey  <span class="token parameter variable">--forever</span>         +    etcdctl update mykey <span class="token string">"hehe"</span>
+ 
+    <span class="token comment">#监视目录下所有节点的改变</span>
+ 
+    etcdctl exec-watch <span class="token parameter variable">--recursive</span> /foo -- <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"echo hi"</span>
+ 
+    etcdctl exec-watch mykey -- <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">'ls -al'</span>    +    etcdctl update mykey <span class="token string">"hehe"</span>
+ 
+    etcdctl member list
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="对象为键值" tabindex="-1"><a class="header-anchor" href="#对象为键值" aria-hidden="true">#</a> 对象为键值</h4>
+<ol>
+<li>
+<p>set[增:无论是否存在]:<code v-pre>etcdctl set key value</code></p>
+</li>
+<li>
+<p>mk[增:必须不存在]:<code v-pre>etcdctl mk key value</code></p>
+</li>
+<li>
+<p>rm[删]:<code v-pre>etcdctl rm key</code></p>
+</li>
+<li>
+<p>update[改]:<code v-pre>etcdctl update key value</code></p>
+</li>
+<li>
+<p>get[查]:<code v-pre>etcdctl get key</code></p>
+</li>
+</ol>
+<h4 id="对象为目录" tabindex="-1"><a class="header-anchor" href="#对象为目录" aria-hidden="true">#</a> 对象为目录</h4>
+<ol>
+<li>
+<p>setdir[增:无论是否存在]:<code v-pre>etcdctl setdir dir</code></p>
+</li>
+<li>
+<p>mkdir[增:必须不存在]: <code v-pre>etcdctl mkdir dir</code></p>
+</li>
+<li>
+<p>rmdir[删]:<code v-pre>etcdctl rmdir dir</code></p>
+</li>
+<li>
+<p>updatedir[改]:<code v-pre>etcdctl updatedir dir</code></p>
+</li>
+<li>
+<p>ls[查]:<code v-pre>etcdclt ls</code></p>
+</li>
+</ol>
+<h3 id="非数据库操作命令" tabindex="-1"><a class="header-anchor" href="#非数据库操作命令" aria-hidden="true">#</a> 非数据库操作命令</h3>
+<ol>
+<li>
+<p>backup[备份 etcd 的数据]</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>etcdctl backup
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>watch[监测一个键值的变化，一旦键值发生更新，就会输出最新的值并退出]</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>etcdctl watch key
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>exec-watch[监测一个键值的变化，一旦键值发生更新，就执行给定命令]</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>etcdctl exec-watch key <span class="token parameter variable">--sh</span> <span class="token parameter variable">-c</span> <span class="token string">"ls"</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>member[通过 list、add、remove、update 命令列出、添加、删除 、更新etcd 实例到 etcd 集群中]</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>etcdctl member list；etcdctl member add 实例；etcdctl member remove 实例；etcdctl member update 实例。
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>etcdctl cluster-health[检查集群健康状态]</p>
+</li>
+</ol>
+<h3 id="常用配置参数" tabindex="-1"><a class="header-anchor" href="#常用配置参数" aria-hidden="true">#</a> 常用配置参数</h3>
+<p>设置配置文件，默认为<code v-pre>/etc/etcd/etcd.conf</code>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置参数</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">配置参数</td>
+<td style="text-align:left">参数说明</td>
+</tr>
+<tr>
+<td style="text-align:left">-name</td>
+<td style="text-align:left">节点名称</td>
+</tr>
+<tr>
+<td style="text-align:left">-data-dir</td>
+<td style="text-align:left">保存日志和快照的目录，默认为当前工作目录，指定节点的数据存储目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-addr</td>
+<td style="text-align:left">公布的ip地址和端口。 默认为127.0.0.1:2379</td>
+</tr>
+<tr>
+<td style="text-align:left">-bind-addr</td>
+<td style="text-align:left">用于客户端连接的监听地址，默认为-addr配置</td>
+</tr>
+<tr>
+<td style="text-align:left">-peers</td>
+<td style="text-align:left">集群成员逗号分隔的列表，例如 127.0.0.1:2380,127.0.0.1:2381</td>
+</tr>
+<tr>
+<td style="text-align:left">-peer-addr</td>
+<td style="text-align:left">集群服务通讯的公布的IP地址，默认为 127.0.0.1:2380.</td>
+</tr>
+<tr>
+<td style="text-align:left">-peer-bind-addr</td>
+<td style="text-align:left">集群服务通讯的监听地址，默认为-peer-addr配置</td>
+</tr>
+<tr>
+<td style="text-align:left">-wal-dir</td>
+<td style="text-align:left">指定节点的was文件的存储目录，若指定了该参数，wal文件会和其他数据文件分开存储</td>
+</tr>
+<tr>
+<td style="text-align:left">-listen-client-urls</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">-listen-peer-urls</td>
+<td style="text-align:left">监听URL，用于与其他节点通讯</td>
+</tr>
+<tr>
+<td style="text-align:left">-initial-advertise-peer-urls</td>
+<td style="text-align:left">告知集群其他节点url.</td>
+</tr>
+<tr>
+<td style="text-align:left">-advertise-client-urls</td>
+<td style="text-align:left">告知客户端url, 也就是服务的url</td>
+</tr>
+<tr>
+<td style="text-align:left">-initial-cluster-token</td>
+<td style="text-align:left">集群的ID</td>
+</tr>
+<tr>
+<td style="text-align:left">-initial-cluster</td>
+<td style="text-align:left">集群中所有节点</td>
+</tr>
+<tr>
+<td style="text-align:left">-initial-cluster-state</td>
+<td style="text-align:left">-initial-cluster-state=new 表示从无到有搭建etcd集群</td>
+</tr>
+<tr>
+<td style="text-align:left">-discovery-srv</td>
+<td style="text-align:left">用于DNS动态服务发现，指定DNS SRV域名</td>
+</tr>
+<tr>
+<td style="text-align:left">-discovery</td>
+<td style="text-align:left">用于etcd动态发现，指定etcd发现服务的URL [https://discovery.etcd.io/],用环境变量表示</td>
+</tr>
+</tbody>
+</table>
+<h2 id="go-和-etcd-交互" tabindex="-1"><a class="header-anchor" href="#go-和-etcd-交互" aria-hidden="true">#</a> Go 和 etcd 交互</h2>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"context"</span>
+	<span class="token string">"log"</span>
+	<span class="token string">"time"</span>
+
+	<span class="token string">"go.etcd.io/etcd/client/v3"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	cli<span class="token punctuation">,</span> err <span class="token operator">:=</span> clientv3<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span>clientv3<span class="token punctuation">.</span>Config<span class="token punctuation">{</span>
+		Endpoints<span class="token punctuation">:</span>   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"http://10.2.36.1:2479"</span><span class="token punctuation">,</span> <span class="token string">"http://10.2.36.2:2579"</span><span class="token punctuation">,</span> <span class="token string">"http://10.2.36.3:2679"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+		DialTimeout<span class="token punctuation">:</span> <span class="token number">5</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">defer</span> cli<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	testKey <span class="token operator">:=</span> <span class="token string">"/test/key"</span>	<span class="token comment">//设置 key</span>
+	testValue <span class="token operator">:=</span> <span class="token string">"I love docker"</span>  <span class="token comment">//设置 value</span>
+
+	<span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">=</span> cli<span class="token punctuation">.</span><span class="token function">Put</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> testKey<span class="token punctuation">,</span> testValue<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span><span class="token string">"Put failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	res<span class="token punctuation">,</span> err <span class="token operator">:=</span> cli<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> testKey<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span><span class="token string">"Get failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	kvs <span class="token operator">:=</span> res<span class="token punctuation">.</span>Kvs
+	val <span class="token operator">:=</span> <span class="token function">string</span><span class="token punctuation">(</span>kvs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Value<span class="token punctuation">)</span>
+	log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"result:"</span><span class="token punctuation">,</span> val <span class="token operator">==</span> testValue<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="gprc-代理模式" tabindex="-1"><a class="header-anchor" href="#gprc-代理模式" aria-hidden="true">#</a> gPRC 代理模式</h2>
+<div class="custom-container tip"><p class="custom-container-title">gPRC 代理模式 – 实现可伸缩的 etcd API</p>
+<p>gRPC proxy 是在 gRPC 层 运行的无状态 etcd 反向代理</p>
+<p>旨在减少 etcd 集群上的总处理负载</p>
+</div>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '23.md' style='float:left'>⬆️上一节🔗  </a><a href = '25.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
