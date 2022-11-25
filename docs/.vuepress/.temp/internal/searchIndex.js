@@ -326,8 +326,109 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第10节",
+    "title": "第10节 scratch构建runtime(linux)",
     "headers": [
+      {
+        "level": 2,
+        "title": "开始",
+        "slug": "开始",
+        "link": "#开始",
+        "children": [
+          {
+            "level": 3,
+            "title": "rootfs",
+            "slug": "rootfs",
+            "link": "#rootfs",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "nginx",
+            "slug": "nginx",
+            "link": "#nginx",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "dockerfile",
+        "slug": "dockerfile",
+        "link": "#dockerfile",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "构建",
+        "slug": "构建",
+        "link": "#构建",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "效果",
+        "slug": "效果",
+        "link": "#效果",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "dockerfile-ubuntu 构建方式",
+        "slug": "dockerfile-ubuntu-构建方式",
+        "link": "#dockerfile-ubuntu-构建方式",
+        "children": [
+          {
+            "level": 3,
+            "title": "README",
+            "slug": "readme",
+            "link": "#readme",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Base Docker Image",
+            "slug": "base-docker-image",
+            "link": "#base-docker-image",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Installation",
+            "slug": "installation",
+            "link": "#installation",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Usage",
+            "slug": "usage",
+            "link": "#usage",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "dockerfile",
+            "slug": "dockerfile-1",
+            "link": "#dockerfile-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "user",
+        "slug": "user",
+        "link": "#user",
+        "children": [
+          {
+            "level": 3,
+            "title": "pull",
+            "slug": "pull",
+            "link": "#pull",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -341,8 +442,44 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第11节",
+    "title": "第11节 k3s HA ~",
     "headers": [
+      {
+        "level": 2,
+        "title": "准备",
+        "slug": "准备",
+        "link": "#准备",
+        "children": [
+          {
+            "level": 3,
+            "title": "版本",
+            "slug": "版本",
+            "link": "#版本",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "固定ip",
+            "slug": "固定ip",
+            "link": "#固定ip",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "rsync远程同步工具",
+            "slug": "rsync远程同步工具",
+            "link": "#rsync远程同步工具",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "etcd 集群",
+        "slug": "etcd-集群",
+        "link": "#etcd-集群",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -1214,7 +1351,15 @@ export const searchIndex = [
         "title": "Clusterlmage",
         "slug": "clusterlmage",
         "link": "#clusterlmage",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "cluster",
+            "slug": "cluster",
+            "link": "#cluster",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -1296,8 +1441,8 @@ export const searchIndex = [
           {
             "level": 3,
             "title": "cluster",
-            "slug": "cluster",
-            "link": "#cluster",
+            "slug": "cluster-1",
+            "link": "#cluster-1",
             "children": []
           }
         ]
@@ -2889,6 +3034,13 @@ export const searchIndex = [
           },
           {
             "level": 3,
+            "title": "指定数据库",
+            "slug": "指定数据库",
+            "link": "#指定数据库",
+            "children": []
+          },
+          {
+            "level": 3,
             "title": "指定容器运行时",
             "slug": "指定容器运行时",
             "link": "#指定容器运行时",
@@ -2963,6 +3115,20 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "扩展work节点",
+        "slug": "扩展work节点",
+        "link": "#扩展work节点",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "嵌入式数据库高可用",
+        "slug": "嵌入式数据库高可用",
+        "link": "#嵌入式数据库高可用",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "卸载k3s",
         "slug": "卸载k3s",
         "link": "#卸载k3s",
@@ -3016,6 +3182,13 @@ export const searchIndex = [
         "title": "边缘计算",
         "slug": "边缘计算",
         "link": "#边缘计算",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "单节点 SQLite 扩展为 etcd 高可用",
+        "slug": "单节点-sqlite-扩展为-etcd-高可用",
+        "link": "#单节点-sqlite-扩展为-etcd-高可用",
         "children": []
       },
       {
@@ -3409,6 +3582,13 @@ export const searchIndex = [
             "children": []
           }
         ]
+      },
+      {
+        "level": 2,
+        "title": "docker 清理使用的空间",
+        "slug": "docker-清理使用的空间",
+        "link": "#docker-清理使用的空间",
+        "children": []
       },
       {
         "level": 2,
@@ -4410,6 +4590,13 @@ export const searchIndex = [
         "title": "正片开始~",
         "slug": "正片开始",
         "link": "#正片开始",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "为什么 kubernetes 弃用了 docker",
+        "slug": "为什么-kubernetes-弃用了-docker",
+        "link": "#为什么-kubernetes-弃用了-docker",
         "children": []
       },
       {
@@ -8987,8 +9174,75 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "空白页",
-    "headers": [],
+    "title": "Docker Swarm 集群管理",
+    "headers": [
+      {
+        "level": 2,
+        "title": "swarm",
+        "slug": "swarm",
+        "link": "#swarm",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "原理",
+        "slug": "原理",
+        "link": "#原理",
+        "children": [
+          {
+            "level": 3,
+            "title": "共识算法",
+            "slug": "共识算法",
+            "link": "#共识算法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "命令",
+        "slug": "命令",
+        "link": "#命令",
+        "children": [
+          {
+            "level": 3,
+            "title": "初始化集群",
+            "slug": "初始化集群",
+            "link": "#初始化集群",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "服务",
+            "slug": "服务",
+            "link": "#服务",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "其他常用命令",
+        "slug": "其他常用命令",
+        "link": "#其他常用命令",
+        "children": [
+          {
+            "level": 3,
+            "title": "查看集群信息",
+            "slug": "查看集群信息",
+            "link": "#查看集群信息",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "部署服务到集群中",
+            "slug": "部署服务到集群中",
+            "link": "#部署服务到集群中",
+            "children": []
+          }
+        ]
+      }
+    ],
     "path": "/markdown/49.html",
     "pathLocale": "/",
     "extraFields": []
@@ -9067,8 +9321,102 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "空白页",
-    "headers": [],
+    "title": "docker 联合文件系统 深入解读",
+    "headers": [
+      {
+        "level": 2,
+        "title": "作用",
+        "slug": "作用",
+        "link": "#作用",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "命令格式",
+        "slug": "命令格式",
+        "link": "#命令格式",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "筛选",
+        "slug": "筛选",
+        "link": "#筛选",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "docker GraphDriver",
+        "slug": "docker-graphdriver",
+        "link": "#docker-graphdriver",
+        "children": [
+          {
+            "level": 3,
+            "title": "容器内",
+            "slug": "容器内",
+            "link": "#容器内",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "lower",
+            "slug": "lower",
+            "link": "#lower",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "UpperDir",
+            "slug": "upperdir",
+            "link": "#upperdir",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "/proc/<pid>/root",
+        "slug": "proc-pid-root",
+        "link": "#proc-pid-root",
+        "children": [
+          {
+            "level": 3,
+            "title": "获取命名空间",
+            "slug": "获取命名空间",
+            "link": "#获取命名空间",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "获取 PID",
+            "slug": "获取-pid",
+            "link": "#获取-pid",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "查看/proc/<pid>/root",
+            "slug": "查看-proc-pid-root",
+            "link": "#查看-proc-pid-root",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "容器进程目录下有什么？",
+            "slug": "容器进程目录下有什么",
+            "link": "#容器进程目录下有什么",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "最后",
+        "slug": "最后",
+        "link": "#最后",
+        "children": []
+      }
+    ],
     "path": "/markdown/50.html",
     "pathLocale": "/",
     "extraFields": []

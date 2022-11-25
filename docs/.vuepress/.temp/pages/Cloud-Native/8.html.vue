@@ -40,7 +40,7 @@
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">usermod</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-G</span> microk8s <span class="token environment constant">$USER</span>
 <span class="token function">sudo</span> <span class="token function">chown</span> <span class="token parameter variable">-f</span> <span class="token parameter variable">-R</span> <span class="token environment constant">$USER</span> ~/.kube
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>您还需要重新进入会话才能进行组更新：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>su - $USER
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">su</span> - <span class="token environment constant">$USER</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '7.md' style='float:left'>⬆️上一节🔗  </a><a href = '9.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

@@ -92,7 +92,7 @@
 <h3 id="区别对比" tabindex="-1"><a class="header-anchor" href="#区别对比" aria-hidden="true">#</a> 区别对比</h3>
 <p><strong>1、移除了Tiller(from SA to kubeconfig)</strong></p>
 <p>原来Helm v2需要在 Kubernetes 集群中部署<code v-pre>Tiller</code>（<code v-pre>Tiller</code> 用于接收 Helm 的请求，并根据 <code v-pre>Chart</code> 生成 Kubernetes 的部署文件），<code v-pre>Tiller pod</code> 根据自身SA权限部署应用。并且在多租户环境下，为了进行权限管理需要部署多个<code v-pre>Tiller</code>。</p>
-<p><img src="http://sm.nsddd.top/smwebp" alt="img">在 Helm v3 中，Tiller 被移除了。新的 Helm 客户端会像 kubectl 命令一样，读取本地的 kubeconfig 文件，使用我们在 kubeconfig 中预先定义好的SA权限来进行一系列操作。这样做法即简单，又安全。</p>
+<p><img src="http://sm.nsddd.top/smwebp" alt="img">在 Helm v3 中，Tiller 被移除了。<strong>新的 Helm 客户端会像 kubectl 命令一样，读取本地的 kubeconfig 文件，使用我们在 kubeconfig 中预先定义好的SA权限来进行一系列操作。这样做法即简单，又安全。</strong></p>
 <p><strong>2、三方会谈 (Three-way Strategic merge patch)</strong></p>
 <p>会兼容通过第三方修改的属性（如通过kubectl edit修改的属性，在helm upgrade时会考虑进去）</p>
 <p><img src="http://sm.nsddd.top/smwebp2" alt="img"></p>
@@ -159,8 +159,16 @@ $ ./get_helm.sh
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>添加指定的源：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm repo <span class="token function">add</span> azure http://mirror.azure.cn/kubernetes/charts/
 
-helm repo <span class="token function">add</span> ali https://apphub.aliyuncs.com
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="快速上手" tabindex="-1"><a class="header-anchor" href="#快速上手" aria-hidden="true">#</a> 快速上手</h2>
+helm repo <span class="token function">add</span> aliyun https://apphub.aliyuncs.com
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>查看配置的存储库：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>helm search repo stable
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>删除;</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>helm repo remove aliyun
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="custom-container tip"><p class="custom-container-title">搜索</p>
+<p>它会搜索当前仓库所匹配的所有镜像源：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>helm search 
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div>
+<h2 id="快速上手" tabindex="-1"><a class="header-anchor" href="#快速上手" aria-hidden="true">#</a> 快速上手</h2>
 <div class="custom-container warning"><p class="custom-container-title">helm常见用法：</p>
 <p>Helm的常见用法，包括搜索Chart、安装Chart、自定义Chart配置、更新或回滚Release、删除Release、创建自定义Chart、搭建私有仓库等</p>
 </div>

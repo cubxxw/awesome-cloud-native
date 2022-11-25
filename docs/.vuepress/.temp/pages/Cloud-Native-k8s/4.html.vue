@@ -8,13 +8,30 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#正片开始">正片开始~</router-link></li><li><router-link to="#kubernetes-k8s">kubernetes(k8s)</router-link></li><li><router-link to="#k8s架构">k8s架构</router-link><ul><li><router-link to="#工作方式">工作方式</router-link></li><li><router-link to="#组织架构">组织架构</router-link></li></ul></li><li><router-link to="#集群架构与组件">集群架构与组件</router-link><ul><li><router-link to="#master节点">Master节点</router-link></li><li><router-link to="#work-node节点">Work Node节点</router-link></li><li><router-link to="#etcd数据存储">etcd数据存储</router-link></li><li><router-link to="#核心附件">核心附件</router-link></li><li><router-link to="#网络插件">网络插件</router-link></li></ul></li><li><router-link to="#kubernetes基本概念">Kubernetes基本概念</router-link><ul><li><router-link to="#label-资源标签">Label 资源标签</router-link></li><li><router-link to="#labe-selector标签选择器">Labe Selector标签选择器</router-link></li><li><router-link to="#pod资源对象">Pod资源对象</router-link></li><li><router-link to="#pod控制器-controller">Pod控制器（Controller）</router-link></li><li><router-link to="#service服务资源">Service服务资源</router-link></li><li><router-link to="#ingress">Ingress</router-link></li><li><router-link to="#volume存储卷">Volume存储卷</router-link></li><li><router-link to="#name和namespace">Name和Namespace</router-link></li><li><router-link to="#annotation注解">Annotation注解</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#正片开始">正片开始~</router-link></li><li><router-link to="#为什么-kubernetes-弃用了-docker">为什么 kubernetes 弃用了 docker</router-link></li><li><router-link to="#kubernetes-k8s">kubernetes(k8s)</router-link></li><li><router-link to="#k8s架构">k8s架构</router-link><ul><li><router-link to="#工作方式">工作方式</router-link></li><li><router-link to="#组织架构">组织架构</router-link></li></ul></li><li><router-link to="#集群架构与组件">集群架构与组件</router-link><ul><li><router-link to="#master节点">Master节点</router-link></li><li><router-link to="#work-node节点">Work Node节点</router-link></li><li><router-link to="#etcd数据存储">etcd数据存储</router-link></li><li><router-link to="#核心附件">核心附件</router-link></li><li><router-link to="#网络插件">网络插件</router-link></li></ul></li><li><router-link to="#kubernetes基本概念">Kubernetes基本概念</router-link><ul><li><router-link to="#label-资源标签">Label 资源标签</router-link></li><li><router-link to="#labe-selector标签选择器">Labe Selector标签选择器</router-link></li><li><router-link to="#pod资源对象">Pod资源对象</router-link></li><li><router-link to="#pod控制器-controller">Pod控制器（Controller）</router-link></li><li><router-link to="#service服务资源">Service服务资源</router-link></li><li><router-link to="#ingress">Ingress</router-link></li><li><router-link to="#volume存储卷">Volume存储卷</router-link></li><li><router-link to="#name和namespace">Name和Namespace</router-link></li><li><router-link to="#annotation注解">Annotation注解</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="正片开始" tabindex="-1"><a class="header-anchor" href="#正片开始" aria-hidden="true">#</a> 正片开始~</h2>
 <p>Kubernetes 是 Google 团队发起的一个开源项目，它的目标是管理跨多个主机的容器，用于自动部署、扩展和管理容器化的应用程序，主要实现语言为 Go 语言。Kubernetes 的组件和架构还是相对较复杂的。要慢慢学习~</p>
 <blockquote>
 <p>我们急需编排一个容器~</p>
 </blockquote>
+<h2 id="为什么-kubernetes-弃用了-docker" tabindex="-1"><a class="header-anchor" href="#为什么-kubernetes-弃用了-docker" aria-hidden="true">#</a> 为什么 kubernetes 弃用了 docker</h2>
+<div class="custom-container tip"><p class="custom-container-title">很意外</p>
+<p>听到 Kubernetes 从 Kubernetes 版本 1.20 开始弃用对 Docker 作为容器运行时的支持，这似乎有点令人震惊。</p>
+<p>Kubernetes 正在删除对 Docker 作为<strong>容器运行时</strong>的支持。Kubernetes 实际上并不处理在机器上运行容器的过程。相反，它依赖于另一个称为<strong>容器运行时</strong>的软件。.</p>
+</div>
+<p>docker 比 kubernetes 发行的早</p>
+<p>docker本身不兼容 CRI 接口。Kubernetes 适用于所有实现称为容器运行时<strong>接口 （CRI） 标准的容器运行时</strong>。这本质上是 Kubernetes 和容器运行时之间通信的标准方式，任何支持此标准的运行时都会自动与 Kubernetes 配合使用。</p>
+<p>Docker 不实现容器运行时接口 （CRI）。过去，容器运行时没有那么多好的选择，Kubernetes 实现了 Docker shim，这是一个额外的层，用作 Kubernetes 和 Docker 之间的接口。然而，现在有很多运行时可以实现 CRI，Kubernetes 维护对 Docker 的特殊支持不再有意义。</p>
+<div class="custom-container warning"><p class="custom-container-title">弃用的意义</p>
+<p>虽然移除了 docker ，但是还是保留了以前的 dockershim，如果你愿意，你依旧可以使用 docker 容器化引擎提供容器化支持。</p>
+<p>除了docker，还有 containerd、CRI-O</p>
+<p>我会告诉你一个秘密：<strong>Docker实际上不是一个容器运行时</strong>！它实际上是一个工具集合，位于称为<strong>containerd</strong>的容器运行时之上。.</p>
+<p>没错！Docker 不直接运行容器。它只是在单独的底层容器运行时之上创建一个更易于访问且功能更丰富的界面。当它被用作 Kubernetes 的容器运行时时，Docker 只是 Kubernetes 和容器之间的中间人。</p>
+<p>但是，Kubernetes可以直接使用containerd作为容器运行时，这意味着在这个中间人角色中不再需要Docker。Docker仍然有很多东西可以提供，即使在Kubernetes生态系统中也是如此。只是不需要专门用作容器运行时。</p>
+</div>
+<p><strong>Podman 横空出世：</strong></p>
+<p>podman 的定位也是与 docker 兼容，因此也在使用上尽量接近 docker。在使用方面，可以分为两个方面，一是系统构建者的角度，二是系统使用者的角度。</p>
 <h2 id="kubernetes-k8s" tabindex="-1"><a class="header-anchor" href="#kubernetes-k8s" aria-hidden="true">#</a> kubernetes(k8s)</h2>
 <p><a href="http://kubernetes.io/" target="_blank" rel="noopener noreferrer">Kubernetes<ExternalLinkIcon/></a>是Google基于Borg开源的容器编排调度引擎，作为<a href="http://cncf.io/" target="_blank" rel="noopener noreferrer">CNCF<ExternalLinkIcon/></a>（Cloud Native Computing Foundation）最重要的组件之一，它的目标不仅仅是一个编排系统，而是提供一个规范，可以让你来描述集群的架构，定义服务的最终状态，<code v-pre>Kubernetes</code> 可以帮你将系统自动地达到和维持在这个状态。<code v-pre>Kubernetes</code> 作为云原生应用的基石，相当于一个云操作系统，其重要性不言而喻。</p>
 <blockquote>

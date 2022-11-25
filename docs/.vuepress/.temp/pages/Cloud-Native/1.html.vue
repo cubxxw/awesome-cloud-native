@@ -217,7 +217,7 @@ upstream   no-pushing <span class="token punctuation">(</span>push<span class="t
 <li>本项目中的 <code v-pre>Makefile</code> 和 <code v-pre>GoReleaser</code> 都有这个设置。</li>
 </ul>
 <h2 id="install-golang" tabindex="-1"><a class="header-anchor" href="#install-golang" aria-hidden="true">#</a> Install golang</h2>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">wget</span> <span class="token parameter variable">-o</span> https://go.dev/dl/go1.19.2.linux-amd64.tar.gz <span class="token operator">&amp;&amp;</span> <span class="token function">tar</span> <span class="token parameter variable">-C</span> /usr/local <span class="token parameter variable">-zxvf</span> go1.19.2.linux-amd64.tar.gz
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">wget</span> <span class="token parameter variable">-o</span> https://go.dev/dl/go1.19.3.linux-amd64.tar.gz <span class="token operator">&amp;&amp;</span> <span class="token function">tar</span> <span class="token parameter variable">-C</span> /usr/local <span class="token parameter variable">-zxvf</span> go1.19.3.linux-amd64.tar.gz
 <span class="token function">cat</span> <span class="token operator">>></span> /etc/profile <span class="token operator">&lt;&lt;</span><span class="token string">EOF
 # set go path
 export PATH=\<span class="token environment constant">$PATH</span>:/usr/local/go/bin
@@ -227,6 +227,13 @@ EOF</span>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/labring/sealos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> sealos
 go <span class="token function">env</span> <span class="token parameter variable">-w</span> <span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span>https://goproxy.cn,direct <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> build
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></blockquote>
+<div class="custom-container danger"><p class="custom-container-title">自定义环境变量mypath</p>
+<p>root@smile:/usr/local/src# cat /etc/profile.d/mypath</p>
+<h1 id="go语言路径" tabindex="-1"><a class="header-anchor" href="#go语言路径" aria-hidden="true">#</a> GO语言路径</h1>
+<p>export GO_PATH=$&quot;/usr/local/src/go&quot;</p>
+<h1 id="path" tabindex="-1"><a class="header-anchor" href="#path" aria-hidden="true">#</a> path</h1>
+<p>export PATH=$PATH:$GO_PATH/bin</p>
+</div>
 <hr>
 <p>😂 让我很喜欢的一点是：<code v-pre>sealos</code>能一次性把环境搭建好，想当年，我真是废了九牛二虎之力才搭建~失败的。</p>
 <p><img src="http://sm.nsddd.top/smimage-20221019194939030.png" alt="image-20221019194939030"></p>

@@ -178,13 +178,13 @@
 <li>
 <p><strong>/usr/sbin</strong>：</p>
 <ul>
-<li><strong>超级用户使用的比较高级的管理程序和系统守护程序。</strong></li>
+<li><strong><strong>超级用户使用的比较高级的管理程序和系统守护程序</strong>。</strong></li>
 </ul>
 </li>
 <li>
 <p><strong>/usr/src</strong>：</p>
 <ul>
-<li><strong>内核源代码默认的放置目录。</strong></li>
+<li>内核源代码默认的放置目录。</li>
 </ul>
 </li>
 <li>
@@ -234,14 +234,15 @@
 <div class="custom-container tip"><p class="custom-container-title">location</p>
 <p>https://github.com/sealerio/basefs</p>
 </div>
+<h3 id="cluster" tabindex="-1"><a class="header-anchor" href="#cluster" aria-hidden="true">#</a> cluster</h3>
 <ul>
 <li><code v-pre>Bin file</code>，如 docker、containerd、crictl、kubeadm、kubectl...</li>
 <li><code v-pre>config file</code> ，如 kubelet systemd config、docker systemd config、docker daemon.json...</li>
-<li>registry images。</li>
-<li><code v-pre>Some metadata</code>，例如 Kubernetes 版本。</li>
+<li><code v-pre>registry</code> images。</li>
+<li><code v-pre>Some metadata</code>，例如 Kubernetes 版本信息。</li>
 <li><code v-pre>registry file</code>，包含所有的docker镜像，比如kubernetes核心组件docker镜像...</li>
 <li><code v-pre>Script</code>，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 init.sh 和 clean.sh<code v-pre>。</code></li>
-<li><code v-pre>Other static files</code></li>
+<li><code v-pre>Other static files</code> ：其他静态文件</li>
 </ul>
 <p>使用 Kubernetes 仪表板构建 ClusterImage：</p>
 <p>FileName：<code v-pre>Kubefile</code></p>
@@ -425,7 +426,7 @@ Install a new cluster.
 <li><a href="https://github.com/sealerio/sealer/pull/1686" target="_blank" rel="noopener noreferrer">k0s 跟进文档<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/sealerio/sealer/pull/1686/files" target="_blank" rel="noopener noreferrer">1686议题跟进代码<ExternalLinkIcon/></a></li>
 </ul>
-<h3 id="cluster" tabindex="-1"><a class="header-anchor" href="#cluster" aria-hidden="true">#</a> cluster</h3>
+<h3 id="cluster-1" tabindex="-1"><a class="header-anchor" href="#cluster-1" aria-hidden="true">#</a> cluster</h3>
 <p><code v-pre>cluster.go</code>描述整个集群期望状态 -- 几个<code v-pre>master</code>，几个<code v-pre>node</code>，<code v-pre>ssh</code>密码、端口号、集群镜像、贯穿始终，特别特别重要  -- <code v-pre>sealos run</code> 也是渲染成结构体传递给其他模块~**</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>----
 apply.go
@@ -472,7 +473,7 @@ scale-up.go
 <span class="token punctuation">}</span>
 
 <span class="token function-name function">_download_url</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token builtin class-name">echo</span> <span class="token string">"https://github.com/k0sproject/k0s/releases/download/<span class="token variable">$K0S_VERSION</span>/<span class="token variable">$k0sBinary</span>-<span class="token variable">$K0S_VERSION</span>-<span class="token variable">$k0sArch</span>"</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"https://ghproxy.com/https://github.com/k0sproject/k0s/releases/download/<span class="token variable">$K0S_VERSION</span>/<span class="token variable">$k0sBinary</span>-<span class="token variable">$K0S_VERSION</span>-<span class="token variable">$k0sArch</span>"</span>
 <span class="token punctuation">}</span>
 
 <span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -623,7 +624,26 @@ Args:
 Returns:
 	The metadata object.
 */
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="k3s-rootfs" tabindex="-1"><a class="header-anchor" href="#k3s-rootfs" aria-hidden="true">#</a> k3s rootfs</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>metaverse 元宇宙</li>
+<li>metadata 元数据</li>
+</ul>
+<div class="custom-container warning"><p class="custom-container-title">what is metadata?</p>
+<p>描述数据的数据，它是数据的描述和上下文。有助于组织、发现和理解数据。</p>
+<ul>
+<li>业务 metadata</li>
+<li>操作 metadata
+<ul>
+<li>数据所有者、使用者</li>
+<li>数据的访问方式、访问时间、访问限制</li>
+<li>数据的访问权限、组和角色等</li>
+<li>数据处理作业的结果、系统执行日志等等</li>
+<li>数据备份、归档人、归档时间等</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="k3s-rootfs" tabindex="-1"><a class="header-anchor" href="#k3s-rootfs" aria-hidden="true">#</a> k3s rootfs</h2>
 <p><strong>bin:</strong></p>
 <p>主要的二进制：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@ubuntu:/var/lib/rancher/k3s/data/2ef87ff954adbb390309ce4dc07500f29c319f84feec1719bfb5059c8808ec6a/bin<span class="token comment"># ls -al |grep "^-"</span>

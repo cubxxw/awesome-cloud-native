@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#由docker引入k8s">由docker引入k8s</router-link><ul><li><router-link to="#docker容器化技术">docker容器化技术</router-link></li></ul></li><li><router-link to="#dockerfile">dockerfile</router-link></li><li><router-link to="#run命令">run命令</router-link></li><li><router-link to="#镜像压缩和发送">镜像压缩和发送</router-link><ul><li><router-link to="#远程传输scp">远程传输scp</router-link></li><li><router-link to="#新的机器启用镜像">新的机器启用镜像</router-link></li></ul></li><li><router-link to="#推送到远程仓库">推送到远程仓库</router-link></li><li><router-link to="#将应用打包为镜像">将应用打包为镜像</router-link><ul><li><router-link to="#以前的土方法">以前的土方法</router-link></li><li><router-link to="#docker解决方案">docker解决方案</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link><ul><li><router-link to="#参考">参考</router-link></li></ul></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#由docker引入k8s">由docker引入k8s</router-link><ul><li><router-link to="#docker容器化技术">docker容器化技术</router-link></li></ul></li><li><router-link to="#dockerfile">dockerfile</router-link></li><li><router-link to="#run命令">run命令</router-link></li><li><router-link to="#镜像压缩和发送">镜像压缩和发送</router-link><ul><li><router-link to="#远程传输scp">远程传输scp</router-link></li><li><router-link to="#新的机器启用镜像">新的机器启用镜像</router-link></li></ul></li><li><router-link to="#推送到远程仓库">推送到远程仓库</router-link></li><li><router-link to="#将应用打包为镜像">将应用打包为镜像</router-link><ul><li><router-link to="#以前的土方法">以前的土方法</router-link></li><li><router-link to="#docker解决方案">docker解决方案</router-link></li></ul></li><li><router-link to="#docker-清理使用的空间">docker 清理使用的空间</router-link></li><li><router-link to="#end-链接">END 链接</router-link><ul><li><router-link to="#参考">参考</router-link></li></ul></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <ul>
@@ -109,7 +109,14 @@ my_cloudreve.tar
 <div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code>docker build -t java-demo:v1.0 .
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>重新启动：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -d -p 8080:8080 --name myjava java-demo:v1.0
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="docker-清理使用的空间" tabindex="-1"><a class="header-anchor" href="#docker-清理使用的空间" aria-hidden="true">#</a> docker 清理使用的空间</h2>
+<p><strong>清理 Docker 使用的空间：</strong></p>
+<p>建议使用 Docker 命令来清理不再使用的容器。可以使用以下命令清理容器、网络文件、镜像和构建缓存：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> system prune <span class="token parameter variable">-a</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>此外，也可以清除不再使用的卷：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> volumes prune
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>有时候，它可能很快就把磁盘占满了，所以要经常检查它的根目录（的磁盘占用情况），但是不建议手动删除或编辑 Docker 文件，最好使用 prune 命令来释放磁盘空间。</p>
+<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '1.md' style='float:left'>⬆️上一节🔗  </a><a href = '3.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>
