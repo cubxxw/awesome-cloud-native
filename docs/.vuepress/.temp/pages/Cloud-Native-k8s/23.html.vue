@@ -15,6 +15,157 @@
 <p>或许，我们必须熟悉他才可以做更多有意义的work</p>
 <p>在开启了 TLS 的集群中，每当与集群交互的时候少不了的是<a href="https://cloud.tencent.com/solution/tb-digitalid?from=10680" target="_blank" rel="noopener noreferrer">身份认证<ExternalLinkIcon/></a>，使用 kubeconfig（即证书） 和 token 两种认证方式是最简单也最通用的认证方式。</p>
 </div>
+<details class="custom-container details"><summary>针对一次 Kubeconfig 问题的记录</summary>
+<ul>
+<li><a href="https://headworq.org/en/how-to-connect-to-kubernetes/#" target="_blank" rel="noopener noreferrer">关于这次问题的解决方案<ExternalLinkIcon/></a></li>
+</ul>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>赵丽颖
+ 今天 中午 <span class="token number">12</span>:18
+Ladies and gentlemen, after the agent <span class="token function">node</span> deployment, my k3s prompts such an error. What is the cause
+
+
+
+
+<span class="token number">23</span> 条回复
+新增功能
+
+
+icsy7867
+  <span class="token number">26</span> 分钟前
+It shouldn<span class="token string">'t be talking to port 8080.  But 6443.  This usually means kubectl doesn'</span>t have access to the yaml conf.
+同时发送至频道
+
+
+赵丽颖
+  <span class="token number">25</span> 分钟前
+Sorry, I don<span class="token string">'t quite understand the k3s configuration, which files should I modify?
+
+
+icsy7867
+  25 分钟前
+Did you move the config to the location you specified?
+
+
+icsy7867
+  25 分钟前
+And check the permissions
+仅对你可见
+
+
+Slackbot
+  24 分钟前
+/etc/rancher/k3s/config.yaml非有效命令。在 Slack 中，所有以 "/" 字符开始的消息都被解析为命令。
+如果你尝试发送消息而不是运行命令，请尝试在 "/" 前加空格。
+
+
+赵丽颖
+  24 分钟前
+/etc/rancher/k3s/config.yaml 
+
+
+赵丽颖
+  24 分钟前
+This is the position?
+
+
+icsy7867
+  20 分钟前
+Or k3s.yaml.  not next to a computer
+
+
+icsy7867
+  19 分钟前
+Or is it in that directory you specified?  If so try to export that path so kubectl knows where to look
+
+
+赵丽颖
+  19 分钟前
+image.png
+ 
+image.png
+
+
+
+
+赵丽颖
+  18 分钟前
+I didn'</span>t use <span class="token string">'K3S_CONFIG_FILE'</span> to specify it
+
+
+赵丽颖
+  <span class="token number">18</span> 分钟前
+Where should it go?
+
+
+赵丽颖
+  <span class="token number">16</span> 分钟前
+Even though I specify its location, it seems to be blank
+image.png
+ 
+image.png
+
+
+icsy7867
+  <span class="token number">16</span> 分钟前
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">KUBECONFIG</span><span class="token operator">=</span>/etc/rancher/k3s/k3s.yaml
+
+
+icsy7867
+  <span class="token number">16</span> 分钟前
+Try running this
+
+
+icsy7867
+  <span class="token number">14</span> 分钟前
+And <span class="token keyword">then</span> kubectl get nodes
+
+
+赵丽颖
+  <span class="token number">13</span> 分钟前
+Thank you very much <span class="token keyword">for</span> your answer. Are you the maintainer of the k3s community
+
+
+icsy7867
+  <span class="token number">11</span> 分钟前
+Nope.  Just someone <span class="token function">who</span> has stumbled around playing with k3s and happened to see your message :微笑:
+
+
+赵丽颖
+  <span class="token number">9</span> 分钟前
+Nice to meet you. What you met is a junior undergraduate student from China. There is an assignment about k3s
+
+
+icsy7867
+  <span class="token number">5</span> 分钟前
+Neat<span class="token operator">!</span>
+
+
+icsy7867
+  <span class="token number">5</span> 分钟前
+Nice to meet you
+
+
+icsy7867
+  <span class="token number">5</span> 分钟前
+And here<span class="token string">'s a good link
+https://headworq.org/en/how-to-connect-to-kubernetes/
+headworqheadworq
+3 ways to connect to your K3s Kubernetes Cluster
+In this article I'</span>ll show you three Kubernetes Clients – Kubectl, Lens and Kubenav.
+<span class="token number">2021</span> 年 <span class="token number">1</span> 月 <span class="token number">18</span> 日 <span class="token punctuation">(</span><span class="token number">557</span> kB<span class="token punctuation">)</span>
+https://headworq.org/en/how-to-connect-to-kubernetes/
+
+
+
+icsy7867
+  <span class="token number">4</span> 分钟前
+The problem was kubectl was looking <span class="token keyword">for</span> a config file, couldn't <span class="token function">find</span> one and tried a basic setup.
+
+
+赵丽颖
+  <span class="token operator">&lt;</span> <span class="token number">1</span> 分钟前
+yep, great article, thanks so much <span class="token keyword">for</span> your <span class="token builtin class-name">help</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
 <h2 id="命令参数" tabindex="-1"><a class="header-anchor" href="#命令参数" aria-hidden="true">#</a> 命令参数</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl config SUBCOMMAND
 
@@ -71,26 +222,26 @@
 <p>如果 <code v-pre>KUBECONFIG</code> 环境变量存在，<code v-pre>kubectl</code> 使用 <code v-pre>KUBECONFIG</code> 环境变量中列举的文件合并后的有效配置。</p>
 <h2 id="合并-kubeconfig-文件" tabindex="-1"><a class="header-anchor" href="#合并-kubeconfig-文件" aria-hidden="true">#</a> 合并 kubeconfig 文件</h2>
 <p>要查看配置，输入以下命令：</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z ~<span class="token punctuation">]</span><span class="token comment"># kubectl config view</span>
-apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority-data: DATA+OMITTED
-    server: https://apiserver.cluster.local:6443
-  name: kubernetes
-contexts:
-- context:
-    cluster: kubernetes
-    user: kubernetes-admin
-  name: kubernetes-admin@kubernetes
-current-context: kubernetes-admin@kubernetes
-kind: Config
-preferences: <span class="token punctuation">{</span><span class="token punctuation">}</span>
-users:
-- name: kubernetes-admin
-  user:
-    client-certificate-data: REDACTED
-    client-key-data: REDACTED
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">[</span>root@iZbp1evo5cnwagauz3w188Z ~<span class="token punctuation">]</span><span class="token comment"># kubectl config view</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">clusters</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">cluster</span><span class="token punctuation">:</span>
+    <span class="token key atrule">certificate-authority-data</span><span class="token punctuation">:</span> DATA+OMITTED
+    <span class="token key atrule">server</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//apiserver.cluster.local<span class="token punctuation">:</span><span class="token number">6443</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kubernetes
+<span class="token key atrule">contexts</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">context</span><span class="token punctuation">:</span>
+    <span class="token key atrule">cluster</span><span class="token punctuation">:</span> kubernetes
+    <span class="token key atrule">user</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>admin
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>admin@kubernetes
+<span class="token key atrule">current-context</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>admin@kubernetes
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Config
+<span class="token key atrule">preferences</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token key atrule">users</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>admin
+  <span class="token key atrule">user</span><span class="token punctuation">:</span>
+    <span class="token key atrule">client-certificate-data</span><span class="token punctuation">:</span> REDACTED
+    <span class="token key atrule">client-key-data</span><span class="token punctuation">:</span> REDACTED
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如前所述，输出可能来自 kubeconfig 文件，也可能是合并多个 kubeconfig 文件的结果。</p>
 <p><strong>以下是 <code v-pre>kubectl</code> 在合并 kubeconfig 文件时使用的规则。</strong></p>
 <p>如果设置了 <code v-pre>--kubeconfig</code> 参数，则仅使用指定的文件。不进行合并。此参数只能使用一次。</p>
@@ -130,6 +281,22 @@ users:
 </ol>
 <h2 id="文件引用" tabindex="-1"><a class="header-anchor" href="#文件引用" aria-hidden="true">#</a> 文件引用</h2>
 <p>kubeconfig 文件中的文件和路径引用是相对于 kubeconfig 文件的位置。 命令行上的文件引用是相对于当前工作目录的。 在 <code v-pre>$HOME/.kube/config</code> 中，相对路径按相对路径存储，绝对路径按绝对路径存储。</p>
+<h2 id="kubeconfig-两种实现方式" tabindex="-1"><a class="header-anchor" href="#kubeconfig-两种实现方式" aria-hidden="true">#</a> kubeconfig 两种实现方式</h2>
+<ol>
+<li>创建 Kubeconfig 文件
+<ol>
+<li>申请证书</li>
+<li>创建 kuberconfig 文件</li>
+<li>验证 kuberconfig 文件</li>
+</ol>
+</li>
+<li>手动复制证书
+<ol>
+<li>集群环境</li>
+<li>配置方法</li>
+</ol>
+</li>
+</ol>
 <h2 id="代理" tabindex="-1"><a class="header-anchor" href="#代理" aria-hidden="true">#</a> 代理</h2>
 <p>你可以在 <code v-pre>kubeconfig</code> 文件中，为每个集群配置 <code v-pre>proxy-url</code> 来让 <code v-pre>kubectl</code> 使用代理，例如：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>apiVersion: v1

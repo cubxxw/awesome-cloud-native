@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#sqlite-和-dqlite">Sqlite 和 Dqlite</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#在线脚本安装k3s">在线脚本安装k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#安装内容">安装内容</router-link></li><li><router-link to="#执行操作">执行操作</router-link></li><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定数据库">指定数据库</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#离线安装解释">离线安装解释</router-link><ul><li><router-link to="#步骤">步骤</router-link></li><li><router-link to="#前提条件">前提条件</router-link></li><li><router-link to="#containerd-手动部署镜像方式">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#docker-手动部署镜像方式">Docker + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-手动部署镜像方式-1">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-私有镜像仓库方式">Containerd + 私有镜像仓库方式</router-link></li><li><router-link to="#docker-私有镜像仓库方式">Docker + 私有镜像仓库方式</router-link></li><li><router-link to="#单结点高可用离线安装">单结点高可用离线安装</router-link></li></ul></li><li><router-link to="#为kubelet-设置别名">为kubelet 设置别名</router-link></li><li><router-link to="#扩展work节点">扩展work节点</router-link></li><li><router-link to="#cri-cni-csi">CRI CNI  CSI</router-link></li><li><router-link to="#嵌入式数据库高可用">嵌入式数据库高可用</router-link></li><li><router-link to="#ha-部署实验">HA 部署实验</router-link></li><li><router-link to="#卸载k3s">卸载k3s</router-link><ul><li><router-link to="#针对-docker-cri">针对 docker CRI</router-link></li></ul></li><li><router-link to="#k3s-的一些重要目录">k3s 的一些重要目录</router-link><ul><li><router-link to="#var-lib-rancher-k3s">/var/lib/rancher/k3s</router-link></li><li><router-link to="#etc-rancher">/etc/rancher</router-link></li><li><router-link to="#var-run">/var/run</router-link></li></ul></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#containerd">containerd</router-link><ul><li><router-link to="#架构图">架构图</router-link></li><li><router-link to="#命令">命令</router-link></li><li><router-link to="#containerd的配置管理">containerd的配置管理</router-link></li></ul></li><li><router-link to="#二进制工具">二进制工具</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#单节点-sqlite-扩展为-etcd-高可用">单节点 SQLite 扩展为 etcd 高可用</router-link></li><li><router-link to="#安装脚本">安装脚本</router-link><ul><li><router-link to="#理解安装的步骤">理解安装的步骤</router-link></li><li><router-link to="#标志和环境变量">标志和环境变量</router-link></li><li><router-link to="#k3s-server-agent-常用配置">K3s Server/Agent - 常用配置</router-link></li><li><router-link to="#k3s-server-agent-数据库选项">K3s Server/Agent - 数据库选项</router-link></li><li><router-link to="#k3s-安装事项-网络选项">K3s 安装事项 - 网络选项</router-link></li><li><router-link to="#外部数据库">外部数据库</router-link></li><li><router-link to="#集群数据存储选项">集群数据存储选项</router-link></li><li><router-link to="#私有镜像仓库">私有镜像仓库</router-link></li></ul></li><li><router-link to="#安装事项-注意事项">安装事项 - 注意事项</router-link></li><li><router-link to="#k3s-集群升级">K3s 集群升级</router-link></li><li><router-link to="#k3s-备份恢复">K3s 备份恢复</router-link></li><li><router-link to="#cni、cri、c">CNI、CRI、C</router-link><ul><li><router-link to="#k3s-卷和存储">K3s 卷和存储</router-link></li></ul></li><li><router-link to="#k3s-网络相关">K3s 网络相关</router-link></li><li><router-link to="#helm-k3s">helm(k3s)</router-link></li><li><router-link to="#k3s-高级选项">K3s 高级选项</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#sqlite-和-dqlite">Sqlite 和 Dqlite</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#在线脚本安装k3s">在线脚本安装k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#安装内容">安装内容</router-link></li><li><router-link to="#执行操作">执行操作</router-link></li><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定数据库">指定数据库</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#离线安装解释">离线安装解释</router-link><ul><li><router-link to="#步骤">步骤</router-link></li><li><router-link to="#前提条件">前提条件</router-link></li><li><router-link to="#containerd-手动部署镜像方式">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#docker-手动部署镜像方式">Docker + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-手动部署镜像方式-1">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-私有镜像仓库方式">Containerd + 私有镜像仓库方式</router-link></li><li><router-link to="#docker-私有镜像仓库方式">Docker + 私有镜像仓库方式</router-link></li><li><router-link to="#单结点高可用离线安装">单结点高可用离线安装</router-link></li></ul></li><li><router-link to="#为kubelet-设置别名">为kubelet 设置别名</router-link></li><li><router-link to="#扩展work节点">扩展work节点</router-link></li><li><router-link to="#cri-cni-csi">CRI CNI  CSI</router-link></li><li><router-link to="#嵌入式数据库高可用">嵌入式数据库高可用</router-link></li><li><router-link to="#ha-部署实验">HA 部署实验</router-link></li><li><router-link to="#卸载k3s">卸载k3s</router-link><ul><li><router-link to="#针对-docker-cri">针对 docker CRI</router-link></li></ul></li><li><router-link to="#k3s-的一些重要目录">k3s 的一些重要目录</router-link><ul><li><router-link to="#var-lib-rancher-k3s">/var/lib/rancher/k3s</router-link></li><li><router-link to="#etc-rancher">/etc/rancher</router-link></li><li><router-link to="#var-run">/var/run</router-link></li></ul></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#containerd">containerd</router-link><ul><li><router-link to="#架构图">架构图</router-link></li><li><router-link to="#命令">命令</router-link></li><li><router-link to="#containerd的配置管理">containerd的配置管理</router-link></li></ul></li><li><router-link to="#二进制工具">二进制工具</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#单节点-sqlite-扩展为-etcd-高可用">单节点 SQLite 扩展为 etcd 高可用</router-link></li><li><router-link to="#安装脚本">安装脚本</router-link><ul><li><router-link to="#理解安装的步骤">理解安装的步骤</router-link></li><li><router-link to="#标志和环境变量">标志和环境变量</router-link></li><li><router-link to="#k3s-server-agent-常用配置">K3s Server/Agent - 常用配置</router-link></li><li><router-link to="#k3s-server-agent-数据库选项">K3s Server/Agent - 数据库选项</router-link></li><li><router-link to="#k3s-安装事项-网络选项">K3s 安装事项 - 网络选项</router-link></li><li><router-link to="#外部数据库">外部数据库</router-link></li><li><router-link to="#集群数据存储选项">集群数据存储选项</router-link></li><li><router-link to="#私有镜像仓库">私有镜像仓库</router-link></li></ul></li><li><router-link to="#安装事项-注意事项">安装事项 - 注意事项</router-link></li><li><router-link to="#k3s-集群升级">K3s 集群升级</router-link></li><li><router-link to="#k3s-备份恢复">K3s 备份恢复</router-link><ul><li><router-link to="#k3s-卷和存储">K3s 卷和存储</router-link></li></ul></li><li><router-link to="#k3s-网络相关">K3s 网络相关</router-link></li><li><router-link to="#helm-k3s">helm(k3s)</router-link></li><li><router-link to="#k3s-高级选项">K3s 高级选项</router-link></li><li><router-link to="#所遇到的问题">所遇到的问题</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[toc]</p>
 <h2 id="k3s介绍" tabindex="-1"><a class="header-anchor" href="#k3s介绍" aria-hidden="true">#</a> k3s介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">k3s — 微型kubernets发行版</p>
@@ -149,8 +149,9 @@ k3s kubectl get <span class="token function">node</span>
 <span class="token comment"># 或者</span>
 kubectl get all <span class="token parameter variable">-n</span> kube-system
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
-<div class="custom-container danger"><p class="custom-container-title">相比较二进制</p>
+<div class="custom-container danger"><p class="custom-container-title">相比较二进制，推荐脚本安装</p>
 <p>虽然可以通过下载二进制文件进行服务端和工作节点的运行(<code v-pre>./k3s server</code>)，但是一旦我们退出进程，之前创建的节点也就立即销毁了，所以还是建议使用脚本进行安装。</p>
+<p>⚠️ 多说几句：之前不是很理解，xian'z</p>
 </div>
 <h2 id="在线安装的解析" tabindex="-1"><a class="header-anchor" href="#在线安装的解析" aria-hidden="true">#</a> 在线安装的解析</h2>
 <h3 id="安装内容" tabindex="-1"><a class="header-anchor" href="#安装内容" aria-hidden="true">#</a> 安装内容</h3>
@@ -862,7 +863,9 @@ coredns.yaml  metrics-server      traefik.yaml
 <li>
 <p><code v-pre>token、node-token、agent-token</code>：token</p>
 </li>
-<li></li>
+<li>
+<p>主节点的密码存储：<code v-pre>/var/lib/rancher/k3s/server/cred/node-passwd</code></p>
+</li>
 </ul>
 </div>
 <h3 id="etc-rancher" tabindex="-1"><a class="header-anchor" href="#etc-rancher" aria-hidden="true">#</a> <code v-pre>/etc/rancher</code></h3>
@@ -1023,7 +1026,34 @@ crictl info<span class="token operator">|</span><span class="token function">gre
 <blockquote>
 <p>注意：k3s v1.22.2 及更新版本才支持从单节点 k3s 集群转换为内置 etcd 集群</p>
 </blockquote>
-<h2 id="安装脚本" tabindex="-1"><a class="header-anchor" href="#安装脚本" aria-hidden="true">#</a> 安装脚本</h2>
+<p>首先你需要有一个单节点的 k3s 集群，本例使用 1 master 节点、1 worker 节点的 k3s 集群。</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:~/.kube<span class="token comment"># kubectl get node</span>
+NAME          STATUS   ROLES                  AGE    VERSION
+cubnode01     Ready    <span class="token operator">&lt;</span>none<span class="token operator">></span>                 96m    v1.25.4+k3s1
+cubmaster01   Ready    control-plane,master   142m   v1.25.4+k3s1
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>验证集群：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:~/.kube<span class="token comment"># kubectl get deployment,svc</span>
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>   AGE
+service/kubernetes   ClusterIP   <span class="token number">10.43</span>.0.1    <span class="token operator">&lt;</span>none<span class="token operator">></span>        <span class="token number">443</span>/TCP   145m
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>将单节点 K3s 集群转换为内置 etcd 高可用集群</strong></p>
+<p>首先，先停止 k3s 服务：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:~/.kube<span class="token comment"># systemctl stop k3s</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>通过使用 <code v-pre>--cluster-init</code> 标志重新启动你的 <code v-pre>k3s server</code> 来将其转换为 etcd 集群</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:/workspces/runtime<span class="token comment">#  curl -sfL https://get.k3s.io | sh -s - --cluster-init</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>查看 master 节点的角色，来确认是否转换成功：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:/workspces/runtime<span class="token comment"># kubectl get nodes</span>
+NAME          STATUS   ROLES                       AGE    VERSION
+cubmaster01   Ready    control-plane,etcd,master   151m   v1.25.4+k3s1
+cubnode01     Ready    <span class="token operator">&lt;</span>none<span class="token operator">></span>                      105m   v1.25.4+k3s1
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>从上面 ROLES 列可以看到，master 节点的角色增加了 etcd，证明已经通过内置 etcd 数据库重新启动了 k3s 集群。</p>
+<p><strong>验证集群：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@cubmaster01:/workspces/runtime# kubectl get deployment,svc
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.43.0.1    &lt;none>        443/TCP   159m
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>数据库文件：</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>root@cubmaster01:/workspces/runtime# ls /var/lib/rancher/k3s/server/db/
+etcd  state.db.migrated  state.db-shm  state.db-wal
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="安装脚本" tabindex="-1"><a class="header-anchor" href="#安装脚本" aria-hidden="true">#</a> 安装脚本</h2>
 <details class="custom-container details"><summary>k3s 安装脚本</summary>
 <p>https://get.k3s.io</p>
 <p>Maybe you can try my plan, if you don't choose the domestic route, but you are affected by the firewall. Then you can use <code v-pre>https://ghproxy.com/{github-url}</code></p>
@@ -1128,13 +1158,13 @@ crictl info<span class="token operator">|</span><span class="token function">gre
 </tbody>
 </table>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 其实就把对应参数加到systemd配置文件里面去了</span>
-<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--docker"</span> <span class="token function">sh</span> -
 
 <span class="token comment"># 自动化部署(不用获取token值了)</span>
 <span class="token comment"># 主节点和工作节点使用我们指定的key来通信</span>
-<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>rancher-k3s <span class="token function">sh</span> -
 <span class="token function">sudo</span> <span class="token function">cat</span> /var/lib/rancher/k3s/server/token
@@ -1159,17 +1189,18 @@ crictl info<span class="token operator">|</span><span class="token function">gre
 <details class="custom-container details"><summary>展开查看</summary>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># write-kubeconfig</span>
 <span class="token comment"># 将管理客户端的kubeconfig写入这个文件</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">K3S_KUBECONFIG_OUTPUT</span><span class="token operator">=</span>/root/.kube/config <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
+
 <span class="token comment"># 使用docker作为容器运行时</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--docker"</span> <span class="token function">sh</span> -
 
 <span class="token comment"># 指定运行时工具</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--container-runtime-endpoint containerd"</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
@@ -1177,54 +1208,57 @@ $ <span class="token function">curl</span> <span class="token parameter variable
 
 <span class="token comment"># 设置私有镜像仓库配置文件</span>
 <span class="token comment"># 默认配置文件: /etc/rancher/k3s/registries.yaml</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--private-registry xxx"</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
+
 <span class="token comment"># 针对多网卡主机安装K3s集群</span>
 <span class="token comment"># 默认多网卡会使用默认网关的那个卡</span>
-$ rout <span class="token parameter variable">-n</span>
+route <span class="token parameter variable">-n</span>
 
 <span class="token comment"># K3s server</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--node-ip=192.168.100.100"</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
-<span class="token comment"># K3s agent</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token comment"># K3s agent  K3S_URL=https:?</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
-    <span class="token assign-left variable">K3S_URL</span><span class="token operator">=</span>https://192.168.99.211:6443 <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>xxx <span class="token punctuation">\</span>
-    <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--node-ip=192.168.100.100"</span> <span class="token punctuation">\</span>
+    <span class="token assign-left variable">K3S_URL</span><span class="token operator">=</span>https://192.168.71.130:6443 <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>xxx <span class="token punctuation">\</span>
+    <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--node-ip=192.168.71.131"</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
+
 <span class="token comment"># --tls-san</span>
 <span class="token comment"># 在TLS证书中添加其他主机名或IP作为主机备用名称</span>
 <span class="token comment"># 即在公网环境下允许通过公网IP访问控制、操作远程集群</span>
 <span class="token comment"># 或者部署多个Server并使用LB进行负责，就需要保留公网地址</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">"--tls-san 1.1.1.1"</span>  <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 获取配置</span>
-$ kubectl get secret k3s-serving <span class="token parameter variable">-n</span> kube-system <span class="token parameter variable">-o</span> yaml
+kubectl get secret k3s-serving <span class="token parameter variable">-n</span> kube-system <span class="token parameter variable">-o</span> yaml
 
 <span class="token comment"># 然后本机复制公网主节点对应的yaml文件即可本地操作了</span>
-$ <span class="token function">scp</span> ci@1.1.1.1:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+<span class="token function">scp</span> ci@1.1.1.1:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+
 <span class="token comment"># 修改启动的服务对应配置(调整节点的启动的最大Pod数量)</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--kubelet-arg=max-pods=200'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 修改启动的服务对应配置(使用ipvs作为服务调度工具)</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--kube-proxy-arg=proxy-mode=ipvs'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 修改启动的服务对应配置(调整服务启动的端口范围)</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--kube-apiserver-arg=service-node-port-range=40000-50000'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
@@ -1235,47 +1269,51 @@ $ <span class="token function">curl</span> <span class="token parameter variable
 <span class="token comment"># kube-proxy-arg  --kube-proxy-arg=proxy-mode=ipvs</span>
 <span class="token comment"># --data-dir</span>
 <span class="token comment"># 修改K3s数据存储目录</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--data-dir=/opt/k3s-data'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
+
 <span class="token comment"># 禁用组件</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--disable traefik'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 自己加自己需要的服务</span>
-$ <span class="token function">ls</span> /var/lib/rancher/k3s/server/manifests
-$ kubectl get pods <span class="token parameter variable">-A</span> <span class="token operator">|</span> <span class="token function">grep</span> traefik
+<span class="token function">ls</span> /var/lib/rancher/k3s/server/manifests
+kubectl get pods <span class="token parameter variable">-A</span> <span class="token operator">|</span> <span class="token function">grep</span> traefik
+
 <span class="token comment"># 添加label和taint标识</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--node-label foo=bar,hello=world \
         --node-taint key1=value1:NoExecute'</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 查看一下</span>
-$ kubectl describe nodes
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+kubectl describe nodes
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
 <h3 id="k3s-server-agent-数据库选项" tabindex="-1"><a class="header-anchor" href="#k3s-server-agent-数据库选项" aria-hidden="true">#</a> K3s Server/Agent - 数据库选项</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 指定数据源名称</span>
 <span class="token comment"># 标志位: --datastore-endpoint&amp;nbsp;value</span>
 <span class="token comment"># 环境变量: K3S_DATASTORE_ENDPOINT</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--datastore-endpoint&amp;nbsp;etcd'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
+    
+ 
 <span class="token comment"># cron规范中的快照间隔时间</span>
 <span class="token comment"># --etcd-snapshot-schedule-cron&amp;nbsp;value</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--etcd-snapshot-schedule-cron *&amp;nbsp;*/5&amp;nbsp;*&amp;nbsp;*&amp;nbsp;*'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="k3s-安装事项-网络选项" tabindex="-1"><a class="header-anchor" href="#k3s-安装事项-网络选项" aria-hidden="true">#</a> K3s 安装事项 - 网络选项</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="k3s-安装事项-网络选项" tabindex="-1"><a class="header-anchor" href="#k3s-安装事项-网络选项" aria-hidden="true">#</a> K3s 安装事项 - 网络选项</h3>
 <p>默认情况下，<code v-pre>K3s</code> 将以 <code v-pre>flannel</code> 作为 <code v-pre>CNI</code> 运行，使用 <code v-pre>VXLAN</code> 作为默认后端，<code v-pre>CNI</code> 和默认后端都可以通过参数修改。要启用加密，请使用下面的 <code v-pre>IPSec</code> 或 <code v-pre>WireGuard</code> 选项。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 默认安装K3s之后的网络配置</span>
-$ <span class="token function">sudo</span> <span class="token function">cat</span> /var/lib/rancher/k3s/agent/etc/flannel/net-conf.json
+<span class="token function">sudo</span> <span class="token function">cat</span> /var/lib/rancher/k3s/agent/etc/flannel/net-conf.json
 <span class="token punctuation">{</span>
     <span class="token string">"Network"</span><span class="token builtin class-name">:</span> <span class="token string">"10.42.0.0/16"</span>,
     <span class="token string">"EnableIPv6"</span><span class="token builtin class-name">:</span> false,
@@ -1316,23 +1354,23 @@ $ <span class="token function">sudo</span> <span class="token function">cat</spa
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 主节点</span>
 <span class="token comment"># flannel-backend使用host-gw</span>
 <span class="token comment"># 该模式会把对端主机的IP当做默认网管(多Server情况)</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--flannel-backend=host-gw'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 工作节点</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token assign-left variable">K3S_URL</span><span class="token operator">=</span>https://192.168.100.100:6443 <span class="token punctuation">\</span>
     <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>xxx <span class="token function">sh</span> -
 
 <span class="token comment"># 默认的路由信息</span>
-$ route <span class="token parameter variable">-n</span>
+route <span class="token parameter variable">-n</span>
 <span class="token number">0.0</span>.0.0         <span class="token number">172.16</span>.64.1     <span class="token number">0.0</span>.0.0         UG    <span class="token number">100</span>    <span class="token number">0</span>        <span class="token number">0</span> enp0s2
 <span class="token number">10.42</span>.1.0       <span class="token number">172.16</span>.64.9     <span class="token number">255.255</span>.255.0   UG    <span class="token number">0</span>      <span class="token number">0</span>        <span class="token number">0</span> enp0s2
 
 <span class="token comment"># 查看配置之后的网络配置</span>
-$ <span class="token function">sudo</span> <span class="token function">cat</span> /var/lib/rancher/k3s/agent/etc/flannel/net-conf.json
+<span class="token function">sudo</span> <span class="token function">cat</span> /var/lib/rancher/k3s/agent/etc/flannel/net-conf.json
 <span class="token punctuation">{</span>
     <span class="token string">"Network"</span><span class="token builtin class-name">:</span> <span class="token string">"10.42.0.0/16"</span>,
     <span class="token string">"Backend"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
@@ -1343,7 +1381,7 @@ $ <span class="token function">sudo</span> <span class="token function">cat</spa
 <p><strong>Flannel 自身的特性</strong>：当主机在同一子网时，启用 <code v-pre>direct routes</code>(如 <code v-pre>host-gw</code>)。<code v-pre>vxlan</code> 只用于将数据包封装到不同子网的主机上，同子网的主机之间使用  <code v-pre>host-gw</code>，默认值为 <code v-pre>false</code>。</p>
 <p>要添加我们就不能修改其对应的网络配置文件，因为重新安装或者重启都会把这个配置冲掉(变成默认配置)，所以需要折中下。我们自建一个网络配置文件，然后在启动的时候执行从哪个配置文件里面加载对应配置。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># k3s的master和agent</span>
-$ <span class="token function">sudo</span> <span class="token function">cat</span> /etc/flannel/net-conf.json
+<span class="token function">sudo</span> <span class="token function">cat</span> /etc/flannel/net-conf.json
 <span class="token punctuation">{</span>
     <span class="token string">"Network"</span><span class="token builtin class-name">:</span> <span class="token string">"10.42.0.0/16"</span>,
     <span class="token string">"Backend"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
@@ -1353,7 +1391,7 @@ $ <span class="token function">sudo</span> <span class="token function">cat</spa
 <span class="token punctuation">}</span>
 
 <span class="token comment"># k3s master</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--flannel-backend=host-gw'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
@@ -1367,20 +1405,20 @@ $ <span class="token function">curl</span> <span class="token parameter variable
 
 - name: CALICO_IPV4POOL_CIDR
   value: <span class="token string">"192.168.200.0/24"</span>
+
 <span class="token comment"># 通过在主机上运行以下命令，确保设置已被应用(true)</span>
-$ <span class="token function">sudo</span> <span class="token function">cat</span> /etc/cni/net.d/10-canal.conflist
+<span class="token function">sudo</span> <span class="token function">cat</span> /etc/cni/net.d/10-canal.conflist
 
 <span class="token comment"># calico</span>
 <span class="token comment"># 其中--cluster-cidr可不设置</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--flannel-backend=none \
         --cluster-cidr=192.168.200.0/24"'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 启动网络服务</span>
-$ kubectl apply <span class="token parameter variable">-f</span> ./calico.yaml
-
+kubectl apply <span class="token parameter variable">-f</span> ./calico.yaml
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="外部数据库" tabindex="-1"><a class="header-anchor" href="#外部数据库" aria-hidden="true">#</a> 外部数据库</h3>
 <blockquote>
 <p><strong>理解 Server 节点的安装，以及注册 Agent 节点的步骤！</strong></p>
@@ -1391,7 +1429,7 @@ $ kubectl apply <span class="token parameter variable">-f</span> ./calico.yaml
 <li>零个或多个<code v-pre>agent</code> 节点</li>
 <li>外部数据存储(<code v-pre>Etcd/MySQL/PostgRES</code>)</li>
 <li>固定的注册地址(<code v-pre>LB</code>)</li>
-<li>这应该是最适合国内用户的 K3s HA 方案： https://mp.weixin.qq.com/s/0Wk2MzfWqMqt8DfUK_2ICA</li>
+<li>这应该是最适合国内用户的 <strong>K3s HA</strong> 方案： https://mp.weixin.qq.com/s/0Wk2MzfWqMqt8DfUK_2ICA</li>
 </ul>
 <p>虽然单节点 <code v-pre>k3s server</code> 集群可以满足各种用例，但是对于需要稳定运行的重要环境，可以在 <code v-pre>HA</code> 配置中运行 <code v-pre>K3s</code>，如何使用外部数据库安装一个高可用的 <code v-pre>K3s</code> 集群？</p>
 <table>
@@ -1432,20 +1470,21 @@ $ kubectl apply <span class="token parameter variable">-f</span> ./calico.yaml
 </table>
 <details class="custom-container details"><summary>展开查看安装过程</summary>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 1.创建一个外部数据存储</span>
-$ <span class="token function">docker</span> run <span class="token parameter variable">--name</span> some-mysql <span class="token punctuation">\</span>
+<span class="token function">docker</span> run <span class="token parameter variable">--name</span> some-mysql <span class="token punctuation">\</span>
     <span class="token parameter variable">--restart</span><span class="token operator">=</span>unless-stopped <span class="token parameter variable">-p</span> <span class="token number">3306</span>:3306 <span class="token punctuation">\</span>
     <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>password <span class="token parameter variable">-d</span> mysql:5.7
 
 <span class="token comment"># 2.启动k3s-server节点(有读写权限不用加库名)</span>
 <span class="token comment"># mysql://username:password@tcp(hostname:3306)/database-name</span>
 <span class="token comment"># 可加污点 --node-taint CriticalAddonsOnly=true:NoExecute</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token function">sh</span> - server <span class="token punctuation">\</span>
     --datastore-endpoint<span class="token operator">=</span><span class="token string">"mysql://root:password@ip:3306/k3s"</span> <span class="token punctuation">\</span>
     --tls-san <span class="token number">172.31</span>.13.97
+
 <span class="token comment"># 3.配置固定的注册地址(k3s-lb节点)</span>
 <span class="token comment"># Agent节点需要一个URL来注册(LB)</span>
-$ <span class="token function">cat</span> <span class="token operator">>></span> /etc/nginx.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+<span class="token function">cat</span> <span class="token operator">>></span> /etc/nginx.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF
 worker_processes 4;
 worker_rlimit_nofile 40000;
 
@@ -1467,52 +1506,53 @@ stream {
 EOF</span>
 
 <span class="token comment"># 启动服务</span>
-$ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--restart</span><span class="token operator">=</span>unless-stopped <span class="token punctuation">\</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--restart</span><span class="token operator">=</span>unless-stopped <span class="token punctuation">\</span>
   <span class="token parameter variable">-p</span> <span class="token number">6443</span>:6443 <span class="token punctuation">\</span>
   <span class="token parameter variable">-v</span> /etc/nginx.conf:/etc/nginx/nginx.conf <span class="token punctuation">\</span>
   nginx:1.14
+
 <span class="token comment"># 4.加入Agent节点</span>
 <span class="token comment"># Agent会保存LB节点和每个Server节点的IP信息</span>
 <span class="token comment"># cat /var/lib/rancher/k3s/agent/etc/k3s-agent-load-balancer.json</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn
     <span class="token assign-left variable">K3S_URL</span><span class="token operator">=</span>https://172.31.13.97:6443 <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>mynodetoken <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
 
 <span class="token comment"># 5.通过kubeconfig访问K3s集群</span>
-$ kubectl get nodes
+kubectl get nodes
 NAME           STATUS   ROLES                  AGE   VERSION
 k3s-server-1   Ready    control-plane,master   68s   v1.20.7+k3s1
 k3s-server-2   Ready    control-plane,master   66s   v1.20.7+k3s1
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>嵌入式 DB 的高可用</strong></p>
-<p>要在这种模式下运行 <code v-pre>K3s</code>，你必须有奇数的服务器节点，建议从三个节点开始。在嵌入式中，默认使用 <code v-pre>Etcd</code> 作为高可用的数据库。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>嵌入式 DB 的高可用</strong></p>
+<p>要在这种模式下运行 <code v-pre>K3s</code>，你必须有<strong>奇数的服务器节点</strong>（raft)，建议从三个节点开始。在嵌入式中，默认使用 <code v-pre>Etcd</code> 作为高可用的数据库。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 服务器节点(启动etcd集群)</span>
 <span class="token comment"># SECRET我们预定一个key值</span>
 <span class="token comment"># 使用cluster-init标志来启用集群</span>
 <span class="token comment"># 并使用一个标记作为共享的密钥来加入其他服务器到集群中</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+root@cubnode02:/workspces<span class="token comment"># curl -sfL https://get.k3s.io | \</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>SECRET <span class="token punctuation">\</span>
     <span class="token function">sh</span> <span class="token parameter variable">-s</span> - --cluster-init
 
 <span class="token comment"># 查看类型</span>
-$ <span class="token function">sudo</span>  kubectl get nodes
+root@cubnode02:/workspces<span class="token comment"># sudo  kubectl get nodes</span>
 NAME    STATUS  ROLES                      AGE  VERSION
 ip-xxx  Ready   control-plane,etcd,master  19h  v1.23.6+k3s1
 
 <span class="token comment"># 其他服务器节点(2/3)</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+root@cubnode02:/workspces<span class="token comment"># curl -sfL https://get.k3s.io | \</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>SECRET <span class="token punctuation">\</span>
     <span class="token function">sh</span> <span class="token parameter variable">-s</span> - <span class="token parameter variable">--server</span> https://<span class="token operator">&lt;</span>ip-or-host-server<span class="token operator">></span>:6443
 
 <span class="token comment"># 查询ETCD集群状态</span>
 <span class="token comment"># etcd证书默认目录：/var/lib/rancher/k3s/server/tls/etcd</span>
 <span class="token comment"># etcd数据默认目录：/var/lib/rancher/k3s/server/db/etcd</span>
-$ <span class="token assign-left variable">ETCDCTL_ENDPOINTS</span><span class="token operator">=</span><span class="token string">'https://172.31.12.136:2379,\
-    https://172.31.4.43:2379,\
-    https://172.31.4.190:2379'</span> <span class="token punctuation">\</span>
-<span class="token assign-left variable">ETCDCTL_CACERT</span><span class="token operator">=</span><span class="token string">'/var/lib/rancher/k3s/server/tls/etcd/server-ca.crt'</span> <span class="token punctuation">\</span>
-<span class="token assign-left variable">ETCDCTL_CERT</span><span class="token operator">=</span><span class="token string">'/var/lib/rancher/k3s/server/tls/etcd/server-client.crt'</span><span class="token punctuation">\</span>
-<span class="token assign-left variable">ETCDCTL_KEY</span><span class="token operator">=</span><span class="token string">'/var/lib/rancher/k3s/server/tls/etcd/server-client.key'</span> <span class="token punctuation">\</span>
+root@cubnode02:/workspces<span class="token comment"># ETCDCTL_ENDPOINTS='https://172.31.12.136:2379,\</span>
+    https://172.31.4.43:2379,<span class="token punctuation">\</span>
+    https://172.31.4.190:2379<span class="token string">' \
+ETCDCTL_CACERT='</span>/var/lib/rancher/k3s/server/tls/etcd/server-ca.crt<span class="token string">' \
+ETCDCTL_CERT='</span>/var/lib/rancher/k3s/server/tls/etcd/server-client.crt<span class="token string">'\
+ETCDCTL_KEY='</span>/var/lib/rancher/k3s/server/tls/etcd/server-client.key' <span class="token punctuation">\</span>
 <span class="token assign-left variable">ETCDCTL_API</span><span class="token operator">=</span><span class="token number">3</span> etcdctl endpoint status --write-out<span class="token operator">=</span>table
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="集群数据存储选项" tabindex="-1"><a class="header-anchor" href="#集群数据存储选项" aria-hidden="true">#</a> 集群数据存储选项</h3>
 <p>使用 <code v-pre>etcd</code> 以外的数据存储运行 <code v-pre>K8S</code> 的能力使 <code v-pre>K3s</code> 区别于其他 <code v-pre>K8S</code> 发行版。该功能为 <code v-pre>K8S</code> 操作者提供了灵活性，可用的数据存储选项允许你选择一个最适合用例的数据存储。</p>
@@ -1564,8 +1604,7 @@ $ <span class="token assign-left variable">ETCDCTL_ENDPOINTS</span><span class="
 <p><code v-pre>K3s registry</code> 配置目录为： <code v-pre>/etc/rancher/k3s/registries.yaml</code>。<code v-pre>K3s</code> 启动时会检查 <code v-pre>/etc/rancher/k3s/</code> 中是否存在  <code v-pre>registries.yaml</code> 文件，并指示 <code v-pre>containerd</code> 使用文件中定义的镜像仓库。如果你想使用一个私有的镜像仓库，那么你需要在每个使用镜像仓库的节点上以 <code v-pre>root</code> 身份创建这个文件。</p>
 <p>请注意，<code v-pre>server</code> 节点默认是可以调度的。如果你没有在 <code v-pre>server</code> 节点上设置污点，那么将在它们上运行工作负载，请确保在每个 <code v-pre>server</code> 节点上创建  <code v-pre>registries.yaml</code> 文件。</p>
 <p><code v-pre>containerd</code> 使用了类似 <code v-pre>K8S</code> 中 <code v-pre>svc</code> 与 <code v-pre>endpoint</code> 的概念，<code v-pre>svc</code> 可以理解为访问名称，这个名称会解析到对应的 <code v-pre>endpoint</code> 上。也可以理解 <code v-pre>mirror</code> 配置就是一个反向代理，它把客户端的请求代理到 <code v-pre>endpoint</code> 配置的后端镜像仓库。<code v-pre>mirror</code> 名称可以随意填写，但是必须符合 <code v-pre>IP</code> 或域名的定义规则。并且可以配置多个 <code v-pre>endpoint</code>，默认解析到第一个 <code v-pre>endpoint</code>，如果第一个 <code v-pre>endpoint</code> 没有返回数据，则自动切换到第二个 <code v-pre>endpoint</code>，以此类推。</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
-<span class="token comment"># /etc/rancher/k3s/registries.yaml</span>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># /etc/rancher/k3s/registries.yaml</span>
 <span class="token comment"># 同时可以设置多个mirrors地址</span>
 <span class="token comment"># 可以对mirrors设置权限和证书</span>
 mirrors:
@@ -1595,11 +1634,11 @@ configs:
 $ <span class="token function">sudo</span> systemctl restart k3s.service
 $ <span class="token function">sudo</span> crictl pull <span class="token number">172.31</span>.6.200:5000/library/alpine
 $ <span class="token function">sudo</span> crictl pull rancher.ksd.top:5000/library/alpine
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里我们介绍下，如何使用 <code v-pre>TLS</code> 配置。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里我们介绍下，如何使用 <code v-pre>TLS</code> 配置。</p>
 <details class="custom-container details"><summary>展开</summary>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
 <span class="token comment"># 证书颁发机构颁发的证书</span>
-$ <span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+<span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml <span class="token operator">&lt;&lt;</span><span class="token string">EOF
 mirrors:
   "harbor.escapelife.site":
     endpoint:
@@ -1611,10 +1650,10 @@ configs:
       password: Harbor@12345
 EOF</span>
 
-$ <span class="token function">sudo</span> systemctl restart k3s
+<span class="token function">sudo</span> systemctl restart k3s
 
 <span class="token comment"># 自签名证书</span>
-$ <span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+<span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml <span class="token operator">&lt;&lt;</span><span class="token string">EOF
 mirrors:
   "harbor2.escapelife.site":
     endpoint:
@@ -1630,9 +1669,10 @@ configs:
       ca_file:   /home/ubuntu/ca.crt
 EOF</span>
 
-$ <span class="token function">sudo</span> systemctl restart k3s
+<span class="token function">sudo</span> systemctl restart k3s
+
 <span class="token comment"># 不使用TLS证书</span>
-$ <span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+<span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml <span class="token operator">&lt;&lt;</span><span class="token string">EOF
 mirrors:
   "docker.io":
     endpoint:
@@ -1640,12 +1680,12 @@ mirrors:
       - "https://registry-1.docker.io"
 EOF</span>
 
-$ <span class="token function">sudo</span> systemctl restart k3s
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<span class="token function">sudo</span> systemctl restart k3s
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
 <p><code v-pre>K3s</code> 将会在 <code v-pre>/var/lib/rancher/k3s/agent/etc/containerd/config.toml</code> 中为 <code v-pre>containerd</code> 生成 <code v-pre>config.toml</code>。如果要对这个文件进行高级设置，你可以在同一目录中创建另一个名为  <code v-pre>config.toml.tmpl</code> 的文件，此文件将会代替默认设置。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
 <span class="token comment"># 完整示例</span>
-$ <span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml
+<span class="token function">cat</span> <span class="token operator">>></span> /etc/rancher/k3s/registries.yaml
 mirrors:
   <span class="token string">"harbor.escapelife.site"</span><span class="token builtin class-name">:</span>
      endpoint:
@@ -1683,14 +1723,14 @@ configs:
 </ul>
 <p><strong>自动部署的清单</strong></p>
 <ul>
-<li>将由 rancher/helm-controller 在运行时安装</li>
-<li>目录路径：/var/lib/rancher/k3s/server/manifests</li>
-<li>目录下面的每个 yaml 就代表这个一个需要启动的服务</li>
+<li>将由 <code v-pre>rancher/helm-controller</code> 在运行时安装</li>
+<li>目录路径：<code v-pre>/var/lib/rancher/k3s/server/manifests</code></li>
+<li>目录下面的每个 <code v-pre>yaml</code> 就代表这个一个需要启动的服务</li>
 </ul>
 <p>对于我们希望使用的组件，可以在启动的时候禁用默认组件，在手动部署你需要的一些组件(通常是放到一个指定目录下面，随着服务启动自动拉起)，从而达到灵活使用的目的。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 查看所有Pod服务</span>
 <span class="token comment"># 比如helm/coredns也不是自带的就是通过这个方式创建的</span>
-$ <span class="token function">sudo</span> kubectl get pods <span class="token parameter variable">-A</span>
+<span class="token function">sudo</span> kubectl get pods <span class="token parameter variable">-A</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>注册 Agent 节点</strong></p>
 <ol>
 <li>工作节点密码存储：<code v-pre>/etc/rancher/node/password</code></li>
@@ -1698,53 +1738,54 @@ $ <span class="token function">sudo</span> kubectl get pods <span class="token p
 </ol>
 <p>在 <code v-pre>agent</code> 节点运行注册命令，会和 <code v-pre>server</code> 节点发起 <code v-pre>websocket</code> 连接，然后会在工作节点上面创建一个随机的密码。然后会拿着这个密码和工作节点的主机名，发送给主节点。然后主节点会将这个信息在保存(<code v-pre>k8s secrets</code>)起来，随后的任何尝试都必须使用相同的密码。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 工作节点的密码信息(password+hostname)</span>
-$ <span class="token function">sudo</span> <span class="token function">cat</span> /etc/rancher/node/password
+<span class="token function">sudo</span> <span class="token function">cat</span> /etc/rancher/node/password
 
 <span class="token comment"># 查看主节点的密码信息</span>
 <span class="token comment"># https://docs.rancher.cn/docs/k3s/architecture/_index#注册-agent-节点</span>
-$ <span class="token function">sudo</span> kubectl get secret k3s2.node-password.k3s <span class="token parameter variable">-o</span> yaml <span class="token parameter variable">-n</span> kube-system
+<span class="token function">sudo</span> kubectl get secret k3s2.node-password.k3s <span class="token parameter variable">-o</span> yaml <span class="token parameter variable">-n</span> kube-system
 
 <span class="token comment"># 可以查看日志信息验证这个信息的存在</span>
-$ <span class="token function">sudo</span> <span class="token function">tail</span> <span class="token parameter variable">-200f</span> /var/log/syslog <span class="token operator">|</span> <span class="token function">grep</span> k3s
+<span class="token function">sudo</span> <span class="token function">tail</span> <span class="token parameter variable">-200f</span> /var/log/syslog <span class="token operator">|</span> <span class="token function">grep</span> k3s
 
 <span class="token comment"># 发现节点信息提示NotReady状态</span>
 <span class="token comment"># 可以尝试删除节点的密码存储信息，之后会自动获取新的</span>
-$ <span class="token function">sudo</span> kubectl delete secret k3s2.node-password.k3s <span class="token parameter variable">-n</span> kube-system
+<span class="token function">sudo</span> kubectl delete secret k3s2.node-password.k3s <span class="token parameter variable">-n</span> kube-system
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>自定义存储类型</strong></p>
 <p>集群启动之后，默认会启动一个 <code v-pre>local-path</code> 的组件，用于提供服务挂载存储使用，其默认以 <code v-pre>PVC</code> 的形式。之后，将其存储在 <code v-pre>/var/lib/rancher/k3s/server/storageclass</code> 目录下面。</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
-<span class="token comment"># 查看组件</span>
-$ <span class="token function">sudo</span> kubectl get pods <span class="token parameter variable">-A</span>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 查看组件</span>
+<span class="token function">sudo</span> kubectl get pods <span class="token parameter variable">-A</span>
 
 <span class="token comment"># 查看对应存储</span>
-$ <span class="token function">sudo</span> kubectl get storageclass
+<span class="token function">sudo</span> kubectl get storageclass
 
 <span class="token comment"># 可以使用参数修改默认存储地址</span>
 <span class="token comment"># --default-local-storage-path&amp;nbsp;value</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh <span class="token operator">|</span> <span class="token punctuation">\</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
     <span class="token assign-left variable">INSTALL_K3S_EXEC</span><span class="token operator">=</span><span class="token string">'--etcd-snapshot-schedule-cron *&amp;nbsp;*/5&amp;nbsp;*&amp;nbsp;*&amp;nbsp;*'</span> <span class="token punctuation">\</span>
     <span class="token function">sh</span> -
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="k3s-集群升级" tabindex="-1"><a class="header-anchor" href="#k3s-集群升级" aria-hidden="true">#</a> K3s 集群升级</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="k3s-集群升级" tabindex="-1"><a class="header-anchor" href="#k3s-集群升级" aria-hidden="true">#</a> K3s 集群升级</h2>
 <blockquote>
 <p><strong>手动升级 + 自动升级</strong></p>
 </blockquote>
 <p>当升级 <code v-pre>K3s</code> 时，<code v-pre>K3s</code> 服务会重启或停止，但 <code v-pre>K3s</code> 容器会继续运行。要停止所有的 <code v-pre>K3s</code> 容器并重置容器的状态，可以使用  <code v-pre>k3s-killall.sh</code> 脚本。 <code v-pre>killall</code> 脚本清理容器、<code v-pre>K3s</code> 目录和网络组件，同时也删除了 <code v-pre>iptables</code> 链和所有相关规则。集群数据不会被删除。</p>
 <p><strong>手动升级 - 使用安装脚本升级 K3s</strong></p>
 <p>你可以通过使用安装脚本升级 <code v-pre>K3s</code>，或者手动安装所需版本的二进制文件。</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
-<span class="token comment"># 升级到最新stable版本</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token function">sh</span> -
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 升级到最新stable版本</span>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token function">sh</span> -
 
 <span class="token comment"># 升级到latest版本</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_CHANNEL</span><span class="token operator">=</span>latest <span class="token function">sh</span> -
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_CHANNEL</span><span class="token operator">=</span>latest <span class="token function">sh</span> -
 
 <span class="token comment"># 升级到v1.20的最新版本</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_CHANNEL</span><span class="token operator">=</span><span class="token string">"v1.20"</span> <span class="token function">sh</span> -
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_CHANNEL</span><span class="token operator">=</span><span class="token string">"v1.20"</span> <span class="token function">sh</span> -
 
 <span class="token comment"># 升级到指定版本</span>
-$ <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_VERSION</span><span class="token operator">=</span>vX.Y.Z-rc1 <span class="token function">sh</span> -
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>手动升级 - 使用二进制文件手动升级 K3s</strong></p>
+<span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_VERSION</span><span class="token operator">=</span>vX.Y.Z-rc1 <span class="token function">sh</span> -
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>注意和docker的区别，关于版本是 <code v-pre>+</code> 还是 <code v-pre>-</code></p>
+</blockquote>
+<p><strong>手动升级 - 使用二进制文件手动升级 K3s</strong></p>
 <p>你可以通过使用安装脚本升级 <code v-pre>K3s</code>，或者手动安装所需版本的二进制文件。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
 <span class="token comment"># 从发布下载所需版本的K3s二进制文件</span>
@@ -1766,10 +1807,9 @@ $ <span class="token function">curl</span> <span class="token parameter variable
 <li>system-upgrade-controller：https://github.com/rancher/system-upgrade-controller</li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 将system-upgrade-controller安装到您的集群中</span>
-$ kubectl apply <span class="token parameter variable">-f</span> https://github.com/rancher/system-upgrade-controller/releases/download/v0.6.2/system-upgrade-controller.yaml
+kubectl apply <span class="token parameter variable">-f</span> https://github.com/rancher/system-upgrade-controller/releases/download/v0.6.2/system-upgrade-controller.yaml
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><details class="custom-container details"><summary>配置计划</summary>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
-<span class="token comment"># 配置计划</span>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 配置计划</span>
 <span class="token comment"># 建议您最少创建两个计划</span>
 <span class="token comment"># 升级server节点的计划和升级agent节点的计划</span>
 
@@ -1824,7 +1864,7 @@ spec:
   upgrade:
     image: rancher/k3s-upgrade
   channel: https://update.k3s.io/v1-release/channels/stable
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
 <p><img src="http://sm.nsddd.top/smimage-20221126000754469.png" alt="image-20221126000754469"></p>
 <h2 id="k3s-备份恢复" tabindex="-1"><a class="header-anchor" href="#k3s-备份恢复" aria-hidden="true">#</a> K3s 备份恢复</h2>
 <blockquote>
@@ -1834,13 +1874,13 @@ spec:
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 方式1：备份/恢复数据目录</span>
 
 <span class="token comment"># 备份</span>
-$ <span class="token function">cp</span> <span class="token parameter variable">-rf</span> /var/lib/rancher/k3s/server/db /opt/db
+<span class="token function">cp</span> <span class="token parameter variable">-rf</span> /var/lib/rancher/k3s/server/db /opt/db
 
 <span class="token comment"># 恢复</span>
-$ systemctl stop k3s
-$ <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /var/lib/rancher/k3s/server/db
-$ <span class="token function">cp</span> <span class="token parameter variable">-rf</span> /opt/db /var/lib/rancher/k3s/server/db
-$ systemctl start k3s
+systemctl stop k3s
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /var/lib/rancher/k3s/server/db
+<span class="token function">cp</span> <span class="token parameter variable">-rf</span> /opt/db /var/lib/rancher/k3s/server/db
+systemctl start k3s
 
 
 <span class="token comment"># 方式2：通过 SQLite cli</span>
@@ -1853,7 +1893,7 @@ sqlite<span class="token operator">></span> .backup <span class="token string">"
 sqlite<span class="token operator">></span> .exit
 
 <span class="token comment"># 恢复</span>
-$ <span class="token function">sudo</span> systemctl stop k3s
+<span class="token function">sudo</span> systemctl stop k3s
 
 sqlite3 /var/lib/rancher/k3s/server/db/state.db
 SQLite version <span class="token number">3.22</span>.0 <span class="token number">2018</span>-01-22 <span class="token number">18</span>:45:57
@@ -1861,19 +1901,18 @@ Enter <span class="token string">".help"</span> <span class="token keyword">for<
 sqlite<span class="token operator">></span> .restore <span class="token string">'/opt/kine.db'</span>
 sqlite<span class="token operator">></span> .exit
 
-$ <span class="token function">sudo</span> systemctl start k3s
+<span class="token function">sudo</span> systemctl start k3s
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当使用外部数据存储时，备份和恢复操作是在 <code v-pre>K3s</code> 之外处理的。数据库管理员需要对外部数据库进行备份，或者从快照或转储中进行恢复。我们建议将数据库配置为执行定期快照。</p>
 <p><strong>使用外部数据存储进行备份和恢复</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 备份</span>
-$ mysqldump <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span> --all-databases --master-data <span class="token operator">></span> k3s-dbdump.db
+mysqldump <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span> --all-databases --master-data <span class="token operator">></span> k3s-dbdump.db
 
 <span class="token comment"># 恢复</span>
-$ systemctl stop k3s
-$ mysql <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span>  <span class="token operator">&lt;</span> k3s-dbdump.db
-$ systemctl start k3s
+systemctl stop k3s
+mysql <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span>  <span class="token operator">&lt;</span> k3s-dbdump.db
+systemctl start k3s
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>使用嵌入式 etcd 数据存储进行备份和恢复</strong></p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
-<span class="token comment"># 创建快照(K3s默认启用快照)</span>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 创建快照(K3s默认启用快照)</span>
 <span class="token comment"># 快照目录默认: /var/lib/rancher/k3s/server/db/snapshots</span>
 
 <span class="token comment"># 要配置快照间隔或保留的快照数量</span>
@@ -1883,16 +1922,14 @@ $ systemctl start k3s
 --etcd-snapshot-dir            保存数据库快照的目录路径
 --cluster-reset                忘记所有的对等体；成为新集群的唯一成员
 --cluster-reset-restore-path   要恢复的快照文件的路径
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当 <code v-pre>K3s</code> 从备份中恢复时，旧的数据目录将被移动到<code v-pre>/var/lib/rancher/k3s/server/db/etcd-old/</code>。然后 <code v-pre>K3s</code> 会尝试通过创建一个新的数据目录来恢复快照，然后从一个带有一个 <code v-pre>etcd</code> 成员的新 <code v-pre>K3s</code> 集群启动 <code v-pre>etcd</code>。</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
-<span class="token comment"># 从快照恢复集群</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当 <code v-pre>K3s</code> 从备份中恢复时，旧的数据目录将被移动到<code v-pre>/var/lib/rancher/k3s/server/db/etcd-old/</code>。然后 <code v-pre>K3s</code> 会尝试通过创建一个新的数据目录来恢复快照，然后从一个带有一个 <code v-pre>etcd</code> 成员的新 <code v-pre>K3s</code> 集群启动 <code v-pre>etcd</code>。</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 从快照恢复集群</span>
 <span class="token comment"># 使用--cluster-reset选项运行K3s</span>
 <span class="token comment"># 同时给出--cluster-reset-restore-path</span>
-$ ./k3s server <span class="token punctuation">\</span>
+./k3s server <span class="token punctuation">\</span>
     --cluster-reset <span class="token punctuation">\</span>
     --cluster-reset-restore-path<span class="token operator">=</span><span class="token operator">&lt;</span><span class="token environment constant">PATH</span>-TO-SNAPSHOT<span class="token operator">></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="cni、cri、c" tabindex="-1"><a class="header-anchor" href="#cni、cri、c" aria-hidden="true">#</a> CNI、CRI、C</h2>
-<h3 id="k3s-卷和存储" tabindex="-1"><a class="header-anchor" href="#k3s-卷和存储" aria-hidden="true">#</a> K3s 卷和存储</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="k3s-卷和存储" tabindex="-1"><a class="header-anchor" href="#k3s-卷和存储" aria-hidden="true">#</a> K3s 卷和存储</h3>
 <blockquote>
 <p><strong>介绍了如何通过 local storage provider 或 Longhorn 来设置持久存储。</strong></p>
 </blockquote>
@@ -1934,14 +1971,13 @@ $ ./k3s server <span class="token punctuation">\</span>
     <span class="token key atrule">persistentVolumeClaim</span><span class="token punctuation">:</span>
       <span class="token key atrule">claimName</span><span class="token punctuation">:</span> local<span class="token punctuation">-</span>path<span class="token punctuation">-</span>pvc
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>
-<span class="token comment"># 应用yaml服务</span>
-$ kubectl create <span class="token parameter variable">-f</span> pvc.yaml pod.yaml
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 应用yaml服务</span>
+kubectl create <span class="token parameter variable">-f</span> pvc.yaml pod.yaml
 
 <span class="token comment"># 确认PV和PVC已创建</span>
-$ kubectl get <span class="token function">pv</span>
-$ kubectl get pvc
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>设置 Longhorn 支持</strong></p>
+kubectl get <span class="token function">pv</span>
+kubectl get pvc
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>设置 Longhorn 支持</strong></p>
 <p><code v-pre>K3s</code> 支持 <code v-pre>Longhorn</code>(是 <code v-pre>K8s</code> 的一个开源分布式块存储系统)。</p>
 <details class="custom-container details"><summary>pvc.yaml</summary>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>
@@ -1983,12 +2019,12 @@ $ kubectl apply <span class="token punctuation">-</span>f https<span class="toke
     <span class="token key atrule">persistentVolumeClaim</span><span class="token punctuation">:</span>
       <span class="token key atrule">claimName</span><span class="token punctuation">:</span> longhorn<span class="token punctuation">-</span>volv<span class="token punctuation">-</span>pvc
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># 应用yaml服务
-$ kubectl create -f pvc.yaml pod.yaml
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 应用yaml服务</span>
+kubectl create <span class="token parameter variable">-f</span> pvc.yaml pod.yaml
 
-# 确认PV和PVC已创建
-$ kubectl get pv
-$ kubectl get pvc
+<span class="token comment"># 确认PV和PVC已创建</span>
+kubectl get <span class="token function">pv</span>
+kubectl get pvc
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="k3s-网络相关" tabindex="-1"><a class="header-anchor" href="#k3s-网络相关" aria-hidden="true">#</a> K3s 网络相关</h2>
 <p><strong>CoreDNS</strong></p>
 <p><code v-pre>CoreDNS</code> 是在 <code v-pre>agent</code> 节点启动时部署的。要禁用，请在每台服务器上运行 <code v-pre>--``disable coredns</code> 选项。如果你不安装 <code v-pre>CoreDNS</code>，你将需要自己安装一个集群 <code v-pre>DNS</code> 提供商。</p>
@@ -2123,7 +2159,58 @@ timedatectl set-ntp no
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Red Hat 和 CentOS 的额外准备</strong></p>
 <p>建议运行以下命令，关闭 <code v-pre>firewalld</code> 防火墙。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> systemctl disable firewalld <span class="token parameter variable">--now</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="所遇到的问题" tabindex="-1"><a class="header-anchor" href="#所遇到的问题" aria-hidden="true">#</a> 所遇到的问题</h2>
+<ul>
+<li>关于 k3s issue</li>
+<li>关于 讨论</li>
+</ul>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>更多的节点和安装选择问题看下半部分（下一节）</p>
+<blockquote>
+<p>1.master节点的防火墙全部关掉，要不然worker可能连不上master</p>
+</blockquote>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># systemctl stop firewalld &amp;&amp; systemctl disable firewalld &amp;&amp; iptables -F &amp;&amp; iptables -t nat -F &amp;&amp; iptables -t mangle -F &amp;&amp; iptables -X
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p>2.有些.worker可能连不上master，可能有些worker的iptables表混乱了</p>
+</blockquote>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># systemctl stop k3s-agent
+# systemctl stop docker
+# iptables -F &amp;&amp; iptables -t nat -F  &amp;&amp; iptables -t mangle -F
+# systemctl start docker
+# systemctl stop k3s-agent
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>3.有些主机无法根据上面的命令下载docker，提示证书过期</p>
+</blockquote>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>adding repo from: https://mydream.ink/utils/container/docker-ce.repo
+grabbing file https://mydream.ink/utils/container/docker-ce.repo to /etc/yum.repos.d/docker-ce.repo
+Could not fetch/save url https://mydream.ink/utils/container/docker-ce.repo to file /etc/yum.repos.d/docker-ce.repo: [Errno 14] curl#60 - "Peer's Certificate has expired."
+
+因为这些主机的时间不正确，用ntp同步时间即可
+# 安装ntp服务器
+# yum install -y ntp
+# 与一个已知的时间服务器同步
+# ntpdate time.nist.gov
+# 删除本地时间并设置时区为上海
+# rm -rf /etc/localtime
+# ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>4.master 配置 --write-kubeconfig</p>
+</blockquote>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>--write-kubeconfig ~/.kube/config效果为将配置文件写到k8s默认会用的位置，而不是k3s默认的位置/etc/rancher/k3s/k3s.yaml。后者会导致istio、helm需要额外设置或无法运行。
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p>5.命令补全</p>
+</blockquote>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># yum install -y bash-completion
+# source /usr/share/bash-completion/bash_completion
+# source &lt;(kubectl completion bash)
+# echo "source &lt;(kubectl completion bash)" >> ~/.bashrc
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>6.提示需要安装相关软件，根据提示进行安装</p>
+</blockquote>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># yum install -y k3s-selinux-0.1.1-rc1.el7.noarch.rpm
+# yum install -y container-selinux selinux-policy-base
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <div class="custom-container tip"><p class="custom-container-title">about k3s</p>
 <ul>
 <li>
@@ -2154,26 +2241,26 @@ timedatectl set-ntp no
 <p><strong>周边项目：</strong></p>
 <ul>
 <li>
-<p>K3s 周边项目 - k3os：https://github.com/rancher/k3os</p>
+<p><strong>K3s 周边项目 - k3os</strong>：https://github.com/rancher/k3os</p>
 <p>完全基于 <code v-pre>K8S</code> 管理的轻量级操作系统</p>
 </li>
 <li>
-<p>K3s 周边项目 - autok3s：https://github.com/cnrancher/autok3s</p>
+<p><strong>K3s 周边项目 - autok3s</strong>：https://github.com/cnrancher/autok3s</p>
 <p>用于简化 <code v-pre>K3s</code> 集群部署和管理的轻量级工具</p>
 <p>即在阿里云和 <code v-pre>aws</code> 等云服务器上面部署 <code v-pre>k3s</code></p>
 </li>
 <li>
-<p>K3s 周边项目 - k3d：https://github.com/cnrancher/autok3s</p>
+<p><strong>K3s 周边项目 - k3d</strong>：https://github.com/cnrancher/autok3s</p>
 <p>可以在 <code v-pre>k3d</code> 创建容器化的 <code v-pre>k3s</code> 集群  k3d 是一个轻量级包装器，用于在 docker 中运行<a href="https://github.com/rancher/k3s" target="_blank" rel="noopener noreferrer">k3s<ExternalLinkIcon/></a>（Rancher Lab 的最小 Kubernetes 发行版）</p>
 <p>可以使用容器在单台计算机上启动多节点 <code v-pre>k3s</code> 集群</p>
 </li>
 <li>
-<p>K3s 周边项目 - harvester：https://github.com/harvester/harvester</p>
+<p><strong>K3s 周边项目 - harvester</strong>：https://github.com/harvester/harvester</p>
 <p>基于 <code v-pre>K8S</code> 构建的开源超融合基础架构(<code v-pre>HCI</code>)软件</p>
 <p>旨在替换 <code v-pre>vSphere</code> 和 <code v-pre>Nutanix</code> 的开源替代方案</p>
 </li>
 <li>
-<p>K3s 周边项目 - octopus：https://github.com/cnrancher/octopus</p>
+<p><strong>K3s 周边项目 - octopus</strong>：https://github.com/cnrancher/octopus</p>
 <p>主要用于边缘计算相关</p>
 <p>用于 <code v-pre>K8S</code> 和 <code v-pre>k3s</code> 的轻量级云原生设备管理系统</p>
 <p>集群可以将边缘设备作为自定义 <code v-pre>k8s</code> 资源进行管理</p>
