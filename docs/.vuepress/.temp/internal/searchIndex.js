@@ -1513,6 +1513,35 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "CloudRootfs",
+        "slug": "cloudrootfs",
+        "link": "#cloudrootfs",
+        "children": [
+          {
+            "level": 3,
+            "title": "我怎样才能得到 CloudRootfs",
+            "slug": "我怎样才能得到-cloudrootfs",
+            "link": "#我怎样才能得到-cloudrootfs",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "overlay && overlay2",
+            "slug": "overlay-overlay2",
+            "link": "#overlay-overlay2",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "构建自己的 CloudRootfs",
+            "slug": "构建自己的-cloudrootfs",
+            "link": "#构建自己的-cloudrootfs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
@@ -2360,7 +2389,15 @@ export const searchIndex = [
         "title": "关于设计统一的interface",
         "slug": "关于设计统一的interface",
         "link": "#关于设计统一的interface",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "立方体10天前作者",
+            "slug": "立方体10天前作者",
+            "link": "#立方体10天前作者",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -3000,13 +3037,6 @@ export const searchIndex = [
       },
       {
         "level": 2,
-        "title": "目录结构",
-        "slug": "目录结构",
-        "link": "#目录结构",
-        "children": []
-      },
-      {
-        "level": 2,
         "title": "新版本默认支持 etcd",
         "slug": "新版本默认支持-etcd",
         "link": "#新版本默认支持-etcd",
@@ -3014,9 +3044,9 @@ export const searchIndex = [
       },
       {
         "level": 2,
-        "title": "安装（卸载）k3s",
-        "slug": "安装-卸载-k3s",
-        "link": "#安装-卸载-k3s",
+        "title": "在线脚本安装k3s",
+        "slug": "在线脚本安装k3s",
+        "link": "#在线脚本安装k3s",
         "children": []
       },
       {
@@ -3025,6 +3055,20 @@ export const searchIndex = [
         "slug": "在线安装的解析",
         "link": "#在线安装的解析",
         "children": [
+          {
+            "level": 3,
+            "title": "安装内容",
+            "slug": "安装内容",
+            "link": "#安装内容",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "执行操作",
+            "slug": "执行操作",
+            "link": "#执行操作",
+            "children": []
+          },
           {
             "level": 3,
             "title": "指定版本",
@@ -3095,15 +3139,14 @@ export const searchIndex = [
             "slug": "containerd-私有镜像仓库方式",
             "link": "#containerd-私有镜像仓库方式",
             "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Docker + 私有镜像仓库方式",
-        "slug": "docker-私有镜像仓库方式",
-        "link": "#docker-私有镜像仓库方式",
-        "children": [
+          },
+          {
+            "level": 3,
+            "title": "Docker + 私有镜像仓库方式",
+            "slug": "docker-私有镜像仓库方式",
+            "link": "#docker-私有镜像仓库方式",
+            "children": []
+          },
           {
             "level": 3,
             "title": "单结点高可用离线安装",
@@ -3115,9 +3158,23 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "为kubelet 设置别名",
+        "slug": "为kubelet-设置别名",
+        "link": "#为kubelet-设置别名",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "扩展work节点",
         "slug": "扩展work节点",
         "link": "#扩展work节点",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "CRI CNI  CSI",
+        "slug": "cri-cni-csi",
+        "link": "#cri-cni-csi",
         "children": []
       },
       {
@@ -3129,10 +3186,54 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "HA 部署实验",
+        "slug": "ha-部署实验",
+        "link": "#ha-部署实验",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "卸载k3s",
         "slug": "卸载k3s",
         "link": "#卸载k3s",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "针对 docker CRI",
+            "slug": "针对-docker-cri",
+            "link": "#针对-docker-cri",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "k3s 的一些重要目录",
+        "slug": "k3s-的一些重要目录",
+        "link": "#k3s-的一些重要目录",
+        "children": [
+          {
+            "level": 3,
+            "title": "/var/lib/rancher/k3s",
+            "slug": "var-lib-rancher-k3s",
+            "link": "#var-lib-rancher-k3s",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "/etc/rancher",
+            "slug": "etc-rancher",
+            "link": "#etc-rancher",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "/var/run",
+            "slug": "var-run",
+            "link": "#var-run",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -3196,6 +3297,120 @@ export const searchIndex = [
         "title": "安装脚本",
         "slug": "安装脚本",
         "link": "#安装脚本",
+        "children": [
+          {
+            "level": 3,
+            "title": "理解安装的步骤",
+            "slug": "理解安装的步骤",
+            "link": "#理解安装的步骤",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "标志和环境变量",
+            "slug": "标志和环境变量",
+            "link": "#标志和环境变量",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "K3s Server/Agent - 常用配置",
+            "slug": "k3s-server-agent-常用配置",
+            "link": "#k3s-server-agent-常用配置",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "K3s Server/Agent - 数据库选项",
+            "slug": "k3s-server-agent-数据库选项",
+            "link": "#k3s-server-agent-数据库选项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "K3s 安装事项 - 网络选项",
+            "slug": "k3s-安装事项-网络选项",
+            "link": "#k3s-安装事项-网络选项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "外部数据库",
+            "slug": "外部数据库",
+            "link": "#外部数据库",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "集群数据存储选项",
+            "slug": "集群数据存储选项",
+            "link": "#集群数据存储选项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "私有镜像仓库",
+            "slug": "私有镜像仓库",
+            "link": "#私有镜像仓库",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "安装事项 - 注意事项",
+        "slug": "安装事项-注意事项",
+        "link": "#安装事项-注意事项",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "K3s 集群升级",
+        "slug": "k3s-集群升级",
+        "link": "#k3s-集群升级",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "K3s 备份恢复",
+        "slug": "k3s-备份恢复",
+        "link": "#k3s-备份恢复",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "CNI、CRI、C",
+        "slug": "cni、cri、c",
+        "link": "#cni、cri、c",
+        "children": [
+          {
+            "level": 3,
+            "title": "K3s 卷和存储",
+            "slug": "k3s-卷和存储",
+            "link": "#k3s-卷和存储",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "K3s 网络相关",
+        "slug": "k3s-网络相关",
+        "link": "#k3s-网络相关",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "helm(k3s)",
+        "slug": "helm-k3s",
+        "link": "#helm-k3s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "K3s 高级选项",
+        "slug": "k3s-高级选项",
+        "link": "#k3s-高级选项",
         "children": []
       },
       {
@@ -3882,8 +4097,85 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第23节",
+    "title": "第23节 Kubeconfig && token",
     "headers": [
+      {
+        "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "命令参数",
+        "slug": "命令参数",
+        "link": "#命令参数",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用 kubeconfig 文件组织集群访问",
+        "slug": "使用-kubeconfig-文件组织集群访问",
+        "link": "#使用-kubeconfig-文件组织集群访问",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "支持多集群、多用户、多认证机制",
+        "slug": "支持多集群、多用户、多认证机制",
+        "link": "#支持多集群、多用户、多认证机制",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "上下文（Context）",
+        "slug": "上下文-context",
+        "link": "#上下文-context",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "KUBECONFIG 环境变量",
+        "slug": "kubeconfig-环境变量",
+        "link": "#kubeconfig-环境变量",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "合并 kubeconfig 文件",
+        "slug": "合并-kubeconfig-文件",
+        "link": "#合并-kubeconfig-文件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "文件引用",
+        "slug": "文件引用",
+        "link": "#文件引用",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "代理",
+        "slug": "代理",
+        "link": "#代理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "定义集群，用户和 context",
+        "slug": "定义集群-用户和-context",
+        "link": "#定义集群-用户和-context",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "生成kubeconfig的配置步骤",
+        "slug": "生成kubeconfig的配置步骤",
+        "link": "#生成kubeconfig的配置步骤",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -9052,8 +9344,31 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "docker镜像打包导入到另一台服务器",
-    "headers": [],
+    "title": "docker NFS 文件共享和传输",
+    "headers": [
+      {
+        "level": 3,
+        "title": "容器迁移到另一台服务器",
+        "slug": "容器迁移到另一台服务器",
+        "link": "#容器迁移到另一台服务器",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker 基于 NFS 实现容器文件共享",
+        "slug": "docker-基于-nfs-实现容器文件共享",
+        "link": "#docker-基于-nfs-实现容器文件共享",
+        "children": [
+          {
+            "level": 3,
+            "title": "安装",
+            "slug": "安装",
+            "link": "#安装",
+            "children": []
+          }
+        ]
+      }
+    ],
     "path": "/markdown/46.html",
     "pathLocale": "/",
     "extraFields": []
