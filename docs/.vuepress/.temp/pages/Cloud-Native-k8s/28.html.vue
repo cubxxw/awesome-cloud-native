@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第28节" tabindex="-1"><a class="header-anchor" href="#第28节" aria-hidden="true">#</a> 第28节</h1>
+<h1 id="第28节-linux系统移植-分区-rootfs" tabindex="-1"><a class="header-anchor" href="#第28节-linux系统移植-分区-rootfs" aria-hidden="true">#</a> 第28节 Linux系统移植，分区，rootfs</h1>
 <div><a href = '27.md' style='float:left'>⬆️上一节🔗  </a><a href = '29.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
@@ -9,6 +9,16 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="linux系统移植" tabindex="-1"><a class="header-anchor" href="#linux系统移植" aria-hidden="true">#</a> Linux系统移植</h2>
+<p>移植是将 bootloader 的源代码，Linux的内核源代码，文件系统中用户态程序代码根据硬件做出少量修改，尤其是在目标硬件平台运行起来的进程。</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<p>早在Linux中和docker中提到过很多次的 rootfs ，它很重要</p>
+<p>⚠️ 为什么需要根文件系统？</p>
+<p>(1) <strong>init进程</strong>的应用程序在根文件系统上</p>
+<p>(2) 根文件系统提供了 <strong>根目录 /</strong></p>
+<p>(3) 内核启动后的**应用层配置(etc目录)**在根文件系统上。几乎可以认为：<strong>发行版=内核+rootfs</strong></p>
+<p>(4) shell<strong>命令程序</strong>在根文件系统上。譬如ls、cd等命令</p>
+</div>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '27.md' style='float:left'>⬆️上一节🔗  </a><a href = '29.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

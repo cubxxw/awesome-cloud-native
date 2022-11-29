@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<p>[TOC]</p>
+<nav class="table-of-contents"><ul><li><router-link to="#helm介绍">helm介绍</router-link></li><li><router-link to="#k3s-helm">k3s helm</router-link><ul><li><router-link to="#自动部署-helm-charts">自动部署 Helm charts</router-link></li><li><router-link to="#使用-helm-crd">使用 Helm CRD</router-link></li><li><router-link to="#helmchart-字段定义">HelmChart 字段定义</router-link></li><li><router-link to="#使用-helmchartconfig-自定义打包的组件">使用 HelmChartConfig 自定义打包的组件</router-link></li></ul></li><li><router-link to="#v2-vs-v3">v2 vs v3</router-link><ul><li><router-link to="#区别对比">区别对比</router-link></li></ul></li><li><router-link to="#helm-controller">Helm Controller</router-link></li><li><router-link to="#helm安装">helm安装</router-link><ul><li><router-link to="#用二进制版本安装">用二进制版本安装</router-link></li><li><router-link to="#使用脚本安装">使用脚本安装</router-link></li></ul></li><li><router-link to="#配置helm源">配置helm源</router-link></li><li><router-link to="#快速上手">快速上手</router-link><ul><li><router-link to="#和docker一样-搜索可用的包">和docker一样，搜索可用的包：</router-link></li><li><router-link to="#helm包拉取">helm包拉取</router-link></li><li><router-link to="#安装集群镜像">安装集群镜像</router-link></li></ul></li><li><router-link to="#helm-配置安装集群">helm 配置安装集群</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <h2 id="helm介绍" tabindex="-1"><a class="header-anchor" href="#helm介绍" aria-hidden="true">#</a> helm介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>使用 <code v-pre>Helm</code> 我们可以非常方便的就搭建出来 <code v-pre>MongoDB</code> / <code v-pre>MySQL</code> 副本集群，<code v-pre>YAML</code> 文件别人都给我们写好了，直接使用。</p>
@@ -18,6 +18,121 @@
 <li><a href="https://artifacthub.io/" target="_blank" rel="noopener noreferrer">应用中心<ExternalLinkIcon/></a></li>
 </ul>
 </div>
+<h2 id="k3s-helm" tabindex="-1"><a class="header-anchor" href="#k3s-helm" aria-hidden="true">#</a> k3s helm</h2>
+<p>K3s 不需要任何特殊的配置就可以使用 Helm 命令行工具。只要确保你已经按照<a href="http://docs.rancher.cn/docs/k3s/cluster-access/_index/" target="_blank" rel="noopener noreferrer">集群访问<ExternalLinkIcon/></a>一节正确设置了你的 kubeconfig。 K3s 通过 rancher/helm-release CRD 使传统的 Kubernetes 资源清单和 Helm Charts 部署更加容易。</p>
+<h3 id="自动部署-helm-charts" tabindex="-1"><a class="header-anchor" href="#自动部署-helm-charts" aria-hidden="true">#</a> 自动部署 Helm charts</h3>
+<p>在<code v-pre>/var/lib/rancher/k3s/server/manifests</code>中找到的任何 Kubernetes 清单将以类似<code v-pre>kubectl apply</code>的方式自动部署到 K3s。以这种方式部署的 manifests 是作为 AddOn 自定义资源来管理的，可以通过运行<code v-pre>kubectl get addon -A</code>来查看。你会发现打包组件的 AddOns，如 CoreDNS、Local-Storage、Traefik 等。AddOns 是由部署控制器自动创建的，并根据它们在 manifests 目录下的文件名命名。</p>
+<p>也可以将 Helm Chart 作为 AddOns 部署。K3s 包括一个<a href="https://github.com/rancher/helm-controller/" target="_blank" rel="noopener noreferrer">Helm Controller<ExternalLinkIcon/></a>，它使用 HelmChart Custom Resource Definition(CRD)管理 Helm Chart。</p>
+<h3 id="使用-helm-crd" tabindex="-1"><a class="header-anchor" href="#使用-helm-crd" aria-hidden="true">#</a> 使用 Helm CRD</h3>
+<p><a href="https://github.com/rancher/helm-controller#helm-controller" target="_blank" rel="noopener noreferrer">HelmChart CRD<ExternalLinkIcon/></a>捕获了大多数你通常会传递给<code v-pre>helm</code>命令行工具的选项。下面是一个例子，说明如何从默认的 Chart 资源库中部署 Grafana，覆盖一些默认的 Chart 值。请注意，HelmChart 资源本身在 <code v-pre>kube-system</code> 命名空间，但 Chart 资源将被部署到 <code v-pre>monitoring</code> 命名空间。</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> helm.cattle.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> HelmChart
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> grafana
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">chart</span><span class="token punctuation">:</span> stable/grafana
+  <span class="token key atrule">targetNamespace</span><span class="token punctuation">:</span> monitoring
+  <span class="token key atrule">set</span><span class="token punctuation">:</span>
+    <span class="token key atrule">adminPassword</span><span class="token punctuation">:</span> <span class="token string">"NotVerySafePassword"</span>
+  <span class="token key atrule">valuesContent</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span>
+      <span class="token key atrule">tag</span><span class="token punctuation">:</span> master
+    <span class="token key atrule">env</span><span class="token punctuation">:</span>
+      <span class="token key atrule">GF_EXPLORE_ENABLED</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">adminUser</span><span class="token punctuation">:</span> admin
+    <span class="token key atrule">sidecar</span><span class="token punctuation">:</span>
+      <span class="token key atrule">datasources</span><span class="token punctuation">:</span>
+        <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="helmchart-字段定义" tabindex="-1"><a class="header-anchor" href="#helmchart-字段定义" aria-hidden="true">#</a> HelmChart 字段定义</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">Helm Argument / Flag Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">Helm Chart 名称</td>
+<td style="text-align:left">NAME</td>
+</tr>
+<tr>
+<td style="text-align:left">spec.chart</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">仓库中的 Helm Chart 名称，或完整的 HTTPS URL（.tgz）。</td>
+<td style="text-align:left">CHART</td>
+</tr>
+<tr>
+<td style="text-align:left">spec.targetNamespace</td>
+<td style="text-align:left">default</td>
+<td style="text-align:left">Helm Chart 目标命名空间</td>
+<td style="text-align:left"><code v-pre>--namespace</code></td>
+</tr>
+<tr>
+<td style="text-align:left">spec.version</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">Helm Chart 版本(从版本库安装时使用的版本号)</td>
+<td style="text-align:left"><code v-pre>--version</code></td>
+</tr>
+<tr>
+<td style="text-align:left">spec.repo</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">Helm Chart 版本库 URL 地址</td>
+<td style="text-align:left"><code v-pre>--repo</code></td>
+</tr>
+<tr>
+<td style="text-align:left">spec.helmVersion</td>
+<td style="text-align:left">v3</td>
+<td style="text-align:left">Helm 的版本号，可选值为 <code v-pre>v2</code> 和<code v-pre>v3</code>，默认值为 <code v-pre>v3</code></td>
+<td style="text-align:left">N/A</td>
+</tr>
+<tr>
+<td style="text-align:left">spec.set</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">覆盖简单的默认 Chart 值。这些值优先于通过 valuesContent 设置的选项。</td>
+<td style="text-align:left"><code v-pre>--set</code> / <code v-pre>--set-string</code></td>
+</tr>
+<tr>
+<td style="text-align:left">spec.jobImage</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">指定安装 helm chart 时要使用的镜像。如：rancher/klipper-helm:v0.3.0。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">spec.valuesContent</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">通过 YAML 文件内容覆盖复杂的默认 Chart 值。</td>
+<td style="text-align:left"><code v-pre>--values</code></td>
+</tr>
+<tr>
+<td style="text-align:left">spec.chartContent</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">Base64 编码的 Chart 存档.tgz - 覆盖 spec.chart。</td>
+<td style="text-align:left">CHART</td>
+</tr>
+</tbody>
+</table>
+<p>放在<code v-pre>/var/lib/rancher/k3s/server/static/</code>中的内容可以通过 Kubernetes APIServer 从集群内匿名访问。这个 URL 可以使用<code v-pre>spec.chart</code>字段中的特殊变量<code v-pre>%{KUBERNETES_API}%</code>进行模板化。例如，打包后的 Traefik 组件从<code v-pre>https://%{KUBERNETES_API}%/static/charts/traefik-1.81.0.tgz</code>加载其 Chart。</p>
+<h3 id="使用-helmchartconfig-自定义打包的组件" tabindex="-1"><a class="header-anchor" href="#使用-helmchartconfig-自定义打包的组件" aria-hidden="true">#</a> 使用 HelmChartConfig 自定义打包的组件</h3>
+<p>为了允许覆盖作为 HelmCharts（如 Traefik或其他通过helm crd 部署的应用）部署的打包组件的值，从 v1.19.0+k3s1 开始的 K3s 版本支持通过 HelmChartConfig CRD 部署。HelmChartConfig 资源必须与其对应的 HelmChart 的名称和命名空间相匹配，并支持提供额外的 &quot;valuesContent&quot;，它作为一个额外的值文件传递给<code v-pre>helm</code>命令。</p>
+<blockquote>
+<p><strong>注意：</strong> HelmChart 的<code v-pre>spec.set</code>值覆盖了 HelmChart 和 HelmChartConfig 的<code v-pre>spec.valuesContent</code>设置。</p>
+</blockquote>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> helm.cattle.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> HelmChartConfig
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> grafana
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">valuesContent</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    <span class="token key atrule">service</span><span class="token punctuation">:</span>
+      <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果要自定义打包后的 Traefik 入口配置，你可以创建一个名为<code v-pre>/var/lib/rancher/k3s/server/manifests/traefik-config.yaml</code>的文件，并将其填充为以下内容。</p>
 <details class="custom-container details"><summary>命令速查</summary>
 <p>helm常用命令：</p>
 <p>1、查看服务状态</p>

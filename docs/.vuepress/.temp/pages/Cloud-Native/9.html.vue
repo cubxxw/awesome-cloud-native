@@ -27,10 +27,12 @@
 If sqlite couldn't support cluster HA installation? How to specify the database?
 Another question is about install step. AFAIK, k3s support join node by <code v-pre>k3s agent</code> <code v-pre>k3s server</code>, so whether you tried this method?
 Last, k3s support custom private registry, how to config this? and whether k3s could support external CRI? <a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a></p>
+<p>最后，k3s支持自定义私有注册表，如何配置?k3是否可以支持外部CRI?</p>
 <p>🎉about [online\offline]</p>
 <p>🎉 about HA install and  single node</p>
 </div>
 <p>⚠️ k3s <a href="https://github.com/k3s-io/k3s/discussions/6478" target="_blank" rel="noopener noreferrer">discussions 6478<ExternalLinkIcon/></a> 一些答疑和讨论~</p>
+<h3 id="k8s-runtiem-interface-逻辑是什么" tabindex="-1"><a class="header-anchor" href="#k8s-runtiem-interface-逻辑是什么" aria-hidden="true">#</a> k8s runtiem interface 逻辑是什么?</h3>
 <h2 id="关于设计统一的interface" tabindex="-1"><a class="header-anchor" href="#关于设计统一的interface" aria-hidden="true">#</a> 关于设计统一的interface</h2>
 <p><strong>希望在接口 <code v-pre>interface</code>层实现各个模块的功能，统一暴露出去：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>seal run k3s~

@@ -9,6 +9,7 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<nav class="table-of-contents"><ul><li><router-link to="#etcd-介绍">ETCD 介绍</router-link><ul><li><router-link to="#分布式-cap-理论">分布式 CAP 理论</router-link></li><li><router-link to="#etcd-常用术语">etcd 常用术语</router-link></li><li><router-link to="#架构">架构</router-link></li></ul></li><li><router-link to="#搭建-etcd">搭建 etcd</router-link><ul><li><router-link to="#高可用安装-–-避免单点故障">高可用安装 – 避免单点故障</router-link></li></ul></li><li><router-link to="#docker部署">docker部署</router-link><ul><li><router-link to="#构建思路">构建思路</router-link></li><li><router-link to="#下载etcd镜像">下载Etcd镜像</router-link></li><li><router-link to="#创建自定义docker网络">创建自定义Docker网络</router-link></li><li><router-link to="#创建并启动etcd镜像节点">创建并启动Etcd镜像节点</router-link></li><li><router-link to="#verification">verification</router-link></li></ul></li><li><router-link to="#动态发现启动-etcd">动态发现启动 etcd</router-link></li><li><router-link to="#etcd-操作">etcd 操作</router-link><ul><li><router-link to="#常用命令">常用命令</router-link></li><li><router-link to="#非数据库操作命令">非数据库操作命令</router-link></li><li><router-link to="#常用配置参数">常用配置参数</router-link></li></ul></li><li><router-link to="#go-和-etcd-交互">Go 和 etcd 交互</router-link></li><li><router-link to="#gprc-代理模式">gPRC 代理模式</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <h2 id="etcd-介绍" tabindex="-1"><a class="header-anchor" href="#etcd-介绍" aria-hidden="true">#</a> ETCD 介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">etcd address</p>
 <ul>
@@ -16,7 +17,7 @@
 <li><a href="https://etcd.io/" target="_blank" rel="noopener noreferrer">official websize<ExternalLinkIcon/></a></li>
 </ul>
 </div>
-<p>etcd 是分布式系统最关键数据的分布式可靠键值存储，重点是：</p>
+<p>etcd (aid) 是分布式系统最关键数据的分布式可靠键值存储，重点是：</p>
 <ul>
 <li><em>简单</em>：定义明确、面向用户的 API (gRPC)</li>
 <li><em>安全</em>：具有可选客户端证书身份验证的自动 TLS</li>

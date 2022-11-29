@@ -9,6 +9,7 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#命令参数">命令参数</router-link></li><li><router-link to="#使用-kubeconfig-文件组织集群访问">使用 kubeconfig 文件组织集群访问</router-link></li><li><router-link to="#支持多集群、多用户、多认证机制">支持多集群、多用户、多认证机制</router-link></li><li><router-link to="#上下文-context">上下文（Context）</router-link></li><li><router-link to="#kubeconfig-环境变量">KUBECONFIG 环境变量</router-link></li><li><router-link to="#合并-kubeconfig-文件">合并 kubeconfig 文件</router-link></li><li><router-link to="#文件引用">文件引用</router-link></li><li><router-link to="#kubeconfig-两种实现方式">kubeconfig 两种实现方式</router-link></li><li><router-link to="#代理">代理</router-link></li><li><router-link to="#定义集群-用户和-context">定义集群，用户和 context</router-link></li><li><router-link to="#生成kubeconfig的配置步骤">生成kubeconfig的配置步骤</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>在前面安装k3s &amp; k8s 中，我们认识了 kubeconfig，但是我们依旧对这个东西很陌生</p>

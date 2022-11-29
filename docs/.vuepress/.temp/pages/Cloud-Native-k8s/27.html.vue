@@ -1,15 +1,189 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第27节" tabindex="-1"><a class="header-anchor" href="#第27节" aria-hidden="true">#</a> 第27节</h1>
+<h1 id="第27节-k3s-补充-高级" tabindex="-1"><a class="header-anchor" href="#第27节-k3s-补充-高级" aria-hidden="true">#</a> 第27节 k3s 补充（高级）</h1>
 <div><a href = '26.md' style='float:left'>⬆️上一节🔗  </a><a href = '28.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<p>[TOC]</p>
-<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<nav class="table-of-contents"><ul><li><router-link to="#证书轮换">证书轮换</router-link></li><li><router-link to="#自动部署清单">自动部署清单</router-link></li><li><router-link to="#使用-docker-作为容器运行时">使用 Docker 作为容器运行时</router-link><ul><li><router-link to="#可选-将-crictl-与-docker-一起使用">可选：将 crictl 与 Docker 一起使用</router-link></li></ul></li><li><router-link to="#配置-containerd">配置 containerd</router-link></li><li><router-link to="#节点标签和污点">节点标签和污点</router-link></li><li><router-link to="#使用安装脚本启动-server-节点">使用安装脚本启动 Server 节点</router-link></li><li><router-link to="#alpine-linux-安装的额外准备工作">Alpine Linux 安装的额外准备工作</router-link></li><li><router-link to="#运行-k3d-docker-中的-k3s-和-docker-compose">运行 K3d（Docker 中的 K3s）和 docker-compose</router-link></li><li><router-link to="#在-raspbian-buster-上启用旧版的-iptables">在 Raspbian Buster 上启用旧版的 iptables</router-link></li><li><router-link to="#为-raspbian-buster-启用-cgroup">为 Raspbian Buster 启用 cgroup</router-link><ul><li><router-link to="#boot-cmdline-txt-的示例">/boot/cmdline.txt 的示例</router-link></li></ul></li><li><router-link to="#selinux-支持">SELinux 支持</router-link><ul><li><router-link to="#自动安装">自动安装</router-link></li><li><router-link to="#手动安装">手动安装</router-link></li></ul></li><li><router-link to="#red-hat-和-centos-的额外准备">Red Hat 和 CentOS 的额外准备</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<h2 id="证书轮换" tabindex="-1"><a class="header-anchor" href="#证书轮换" aria-hidden="true">#</a> 证书轮换</h2>
+<p>默认情况下，K3s 的证书在 12 个月内过期。</p>
+<p>如果证书已经过期或剩余的时间不足 90 天，则在 K3s 重启时轮换证书。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># 查询K3s证书过期时间
+for i in `ls /var/lib/rancher/k3s/server/tls/*.crt`; do echo $i; openssl x509 -enddate -noout -in $i; done
+
+# 修改系统时间为证书过期前90天或证书过期后
+timedatectl set-ntp no
+date -s 20220807
+
+# 重启K3s服务
+service k3s restart
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="自动部署清单" tabindex="-1"><a class="header-anchor" href="#自动部署清单" aria-hidden="true">#</a> 自动部署清单</h2>
+<p>在<code v-pre>/var/lib/rancher/k3s/server/manifests</code>中找到的任何文件都会以类似<code v-pre>kubectl apply</code>的方式自动部署到 Kubernetes。</p>
+<p>关于部署 Helm charts 的信息，请参阅<a href="../helm/_index">Helm</a>章节。</p>
+<h2 id="使用-docker-作为容器运行时" tabindex="-1"><a class="header-anchor" href="#使用-docker-作为容器运行时" aria-hidden="true">#</a> 使用 Docker 作为容器运行时</h2>
+<p>K3s 包含并默认为<a href="https://containerd.io/" target="_blank" rel="noopener noreferrer">containerd<ExternalLinkIcon/></a>， 一个行业标准的容器运行时。</p>
+<p>要使用 Docker 而不是 containerd,</p>
+<ol>
+<li>
+<p>在 K3s 节点上安装 Docker。可以使用 Rancher 的一个<a href="https://github.com/rancher/install-docker" target="_blank" rel="noopener noreferrer">Docker 安装脚本<ExternalLinkIcon/></a>来安装 Docker：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>curl https://releases.rancher.com/install-docker/19.03.sh | sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>使用<code v-pre>--docker</code>选项安装 K3s：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>curl -sfL https://get.k3s.io | sh -s - --docker
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>国内用户，可以使用以下方法加速安装：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>curl -sfL http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh -s - --docker
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>确认集群可用：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ sudo k3s kubectl get pods --all-namespaces
+NAMESPACE     NAME                                     READY   STATUS      RESTARTS   AGE
+kube-system   local-path-provisioner-6d59f47c7-lncxn   1/1     Running     0          51s
+kube-system   metrics-server-7566d596c8-9tnck          1/1     Running     0          51s
+kube-system   helm-install-traefik-mbkn9               0/1     Completed   1          51s
+kube-system   coredns-8655855d6-rtbnb                  1/1     Running     0          51s
+kube-system   svclb-traefik-jbmvl                      2/2     Running     0          43s
+kube-system   traefik-758cd5fc85-2wz97                 1/1     Running     0          43s
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p>确认 Docker 容器正在运行：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ sudo docker ps
+CONTAINER ID        IMAGE                     COMMAND                  CREATED              STATUS              PORTS               NAMES
+3e4d34729602        897ce3c5fc8f              "entry"                  About a minute ago   Up About a minute                       k8s_lb-port-443_svclb-traefik-jbmvl_kube-system_d46f10c6-073f-4c7e-8d7a-8e7ac18f9cb0_0
+bffdc9d7a65f        rancher/klipper-lb        "entry"                  About a minute ago   Up About a minute                       k8s_lb-port-80_svclb-traefik-jbmvl_kube-system_d46f10c6-073f-4c7e-8d7a-8e7ac18f9cb0_0
+436b85c5e38d        rancher/library-traefik   "/traefik --configfi…"   About a minute ago   Up About a minute                       k8s_traefik_traefik-758cd5fc85-2wz97_kube-system_07abe831-ffd6-4206-bfa1-7c9ca4fb39e7_0
+de8fded06188        rancher/pause:3.1         "/pause"                 About a minute ago   Up About a minute                       k8s_POD_svclb-traefik-jbmvl_kube-system_d46f10c6-073f-4c7e-8d7a-8e7ac18f9cb0_0
+7c6a30aeeb2f        rancher/pause:3.1         "/pause"                 About a minute ago   Up About a minute                       k8s_POD_traefik-758cd5fc85-2wz97_kube-system_07abe831-ffd6-4206-bfa1-7c9ca4fb39e7_0
+ae6c58cab4a7        9d12f9848b99              "local-path-provisio…"   About a minute ago   Up About a minute                       k8s_local-path-provisioner_local-path-provisioner-6d59f47c7-lncxn_kube-system_2dbd22bf-6ad9-4bea-a73d-620c90a6c1c1_0
+be1450e1a11e        9dd718864ce6              "/metrics-server"        About a minute ago   Up About a minute                       k8s_metrics-server_metrics-server-7566d596c8-9tnck_kube-system_031e74b5-e9ef-47ef-a88d-fbf3f726cbc6_0
+4454d14e4d3f        c4d3d16fe508              "/coredns -conf /etc…"   About a minute ago   Up About a minute                       k8s_coredns_coredns-8655855d6-rtbnb_kube-system_d05725df-4fb1-410a-8e82-2b1c8278a6a1_0
+c3675b87f96c        rancher/pause:3.1         "/pause"                 About a minute ago   Up About a minute                       k8s_POD_coredns-8655855d6-rtbnb_kube-system_d05725df-4fb1-410a-8e82-2b1c8278a6a1_0
+4b1fddbe6ca6        rancher/pause:3.1         "/pause"                 About a minute ago   Up About a minute                       k8s_POD_local-path-provisioner-6d59f47c7-lncxn_kube-system_2dbd22bf-6ad9-4bea-a73d-620c90a6c1c1_0
+64d3517d4a95        rancher/pause:3.1         "/pause"
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+</ol>
+<h3 id="可选-将-crictl-与-docker-一起使用" tabindex="-1"><a class="header-anchor" href="#可选-将-crictl-与-docker-一起使用" aria-hidden="true">#</a> 可选：将 crictl 与 Docker 一起使用</h3>
+<p>crictl 为兼容 CRI 的容器运行时提供了 CLI</p>
+<p>如果你想在使用<code v-pre>--docker</code>选项安装 K3s 后使用 crictl，请参考<a href="https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md" target="_blank" rel="noopener noreferrer">官方文档<ExternalLinkIcon/></a>来安装 crictl。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ VERSION="v1.17.0"
+$ curl -L https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-${VERSION}-linux-amd64.tar.gz --output crictl-${VERSION}-linux-amd64.tar.gz
+$ sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
+crictl
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后开始使用 crictl 命令：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ sudo crictl version
+Version:  0.1.0
+RuntimeName:  docker
+RuntimeVersion:  19.03.9
+RuntimeApiVersion:  1.40.0
+$ sudo crictl images
+IMAGE                            TAG                 IMAGE ID            SIZE
+rancher/coredns-coredns          1.6.3               c4d3d16fe508b       44.3MB
+rancher/klipper-helm             v0.2.5              6207e2a3f5225       136MB
+rancher/klipper-lb               v0.1.2              897ce3c5fc8ff       6.1MB
+rancher/library-traefik          1.7.19              aa764f7db3051       85.7MB
+rancher/local-path-provisioner   v0.0.11             9d12f9848b99f       36.2MB
+rancher/metrics-server           v0.3.6              9dd718864ce61       39.9MB
+rancher/pause                    3.1                 da86e6ba6ca19       742kB
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="配置-containerd" tabindex="-1"><a class="header-anchor" href="#配置-containerd" aria-hidden="true">#</a> 配置 containerd</h2>
+<p>K3s 将会在<code v-pre>/var/lib/rancher/k3s/agent/etc/containerd/config.toml</code>中为 containerd 生成 config.toml。</p>
+<p>如果要对这个文件进行高级定制，你可以在同一目录中创建另一个名为 <code v-pre>config.toml.tmpl</code> 的文件，此文件将会代替默认设置。</p>
+<p><code v-pre>config.toml.tmpl</code>将被视为 Go 模板文件，并且<code v-pre>config.Node</code>结构被传递给模板。<a href="https://github.com/rancher/k3s/blob/master/pkg/agent/templates/templates.go#L16-L32" target="_blank" rel="noopener noreferrer">此模板<ExternalLinkIcon/></a>示例介绍了如何使用结构来自定义配置文件。</p>
+<h2 id="节点标签和污点" tabindex="-1"><a class="header-anchor" href="#节点标签和污点" aria-hidden="true">#</a> 节点标签和污点</h2>
+<p>K3s agents 可以通过<code v-pre>--node-label</code>和<code v-pre>--node-taint</code>选项进行配置，这两个选项可以给 kubelet 添加标签和污点。这两个选项只能<a href="https://docs.rancher.cn/docs/k3s/installation/install-options/_index#k3s-agent%E7%9A%84%E6%B3%A8%E5%86%8C%E9%80%89%E9%A1%B9" target="_blank" rel="noopener noreferrer">在注册时<ExternalLinkIcon/></a>添加标签和/或污点，所以它们只能被添加一次，之后不能再通过运行 K3s 命令来改变。</p>
+<p>如果你想在节点注册后更改节点标签和污点，你应该使用<code v-pre>kubectl</code>。关于如何添加<a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/" target="_blank" rel="noopener noreferrer">污点<ExternalLinkIcon/></a>和<a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/#add-a-label-to-a-node" target="_blank" rel="noopener noreferrer">节点标签<ExternalLinkIcon/></a>，请参考 Kubernetes 官方文档。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># 添加label和taint
+curl -sfL https://get.k3s.io | sh -s - --node-label app=k3s --node-taint special=true:NoSchedule
+
+# 查询label和taint
+kubectl get nodes --show-labels
+kubectl describe nodes | grep Taints
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="使用安装脚本启动-server-节点" tabindex="-1"><a class="header-anchor" href="#使用安装脚本启动-server-节点" aria-hidden="true">#</a> 使用安装脚本启动 Server 节点</h2>
+<p>安装脚本将自动检测您的操作系统是使用 systemd 还是 openrc 并启动服务。当使用 openrc 运行时，日志将在<code v-pre>/var/log/k3s.log</code>中创建。</p>
+<p>当使用 systemd 运行时，日志将在<code v-pre>/var/log/syslog</code>中创建，并使用<code v-pre>journalctl -u k3s</code>查看。</p>
+<p>使用安装脚本进行安装和自动启动的示例：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token function">sh</span> -
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>国内用户，可以使用以下方法加速安装：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>curl -sfL http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh -
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>当手动运行 server 时，你应该得到一个类似于下面的输出：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ k3s server
+INFO[2019-01-22T15:16:19.908493986-07:00] Starting k3s dev
+INFO[2019-01-22T15:16:19.908934479-07:00] Running kube-apiserver --allow-privileged=true --authorization-mode Node,RBAC --service-account-signing-key-file /var/lib/rancher/k3s/server/tls/service.key --service-cluster-ip-range 10.43.0.0/16 --advertise-port 6445 --advertise-address 127.0.0.1 --insecure-port 0 --secure-port 6444 --bind-address 127.0.0.1 --tls-cert-file /var/lib/rancher/k3s/server/tls/localhost.crt --tls-private-key-file /var/lib/rancher/k3s/server/tls/localhost.key --service-account-key-file /var/lib/rancher/k3s/server/tls/service.key --service-account-issuer k3s --api-audiences unknown --basic-auth-file /var/lib/rancher/k3s/server/cred/passwd --kubelet-client-certificate /var/lib/rancher/k3s/server/tls/token-node.crt --kubelet-client-key /var/lib/rancher/k3s/server/tls/token-node.key
+Flag --insecure-port has been deprecated, This flag will be removed in a future version.
+INFO[2019-01-22T15:16:20.196766005-07:00] Running kube-scheduler --kubeconfig /var/lib/rancher/k3s/server/cred/kubeconfig-system.yaml --port 0 --secure-port 0 --leader-elect=false
+INFO[2019-01-22T15:16:20.196880841-07:00] Running kube-controller-manager --kubeconfig /var/lib/rancher/k3s/server/cred/kubeconfig-system.yaml --service-account-private-key-file /var/lib/rancher/k3s/server/tls/service.key --allocate-node-cidrs --cluster-cidr 10.42.0.0/16 --root-ca-file /var/lib/rancher/k3s/server/tls/token-ca.crt --port 0 --secure-port 0 --leader-elect=false
+Flag --port has been deprecated, see --secure-port instead.
+INFO[2019-01-22T15:16:20.273441984-07:00] Listening on :6443
+INFO[2019-01-22T15:16:20.278383446-07:00] Writing manifest: /var/lib/rancher/k3s/server/manifests/coredns.yaml
+INFO[2019-01-22T15:16:20.474454524-07:00] Node token is available at /var/lib/rancher/k3s/server/node-token
+INFO[2019-01-22T15:16:20.474471391-07:00] To join node to cluster: k3s agent -s https://10.20.0.3:6443 -t ${NODE_TOKEN}
+INFO[2019-01-22T15:16:20.541027133-07:00] Wrote kubeconfig /etc/rancher/k3s/k3s.yaml
+INFO[2019-01-22T15:16:20.541049100-07:00] Run: k3s kubectl
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>由于 agent 将创建大量的日志，输出可能会更长。默认情况下，server 会将自身注册为一个节点（运行 agent）。</p>
+<h2 id="alpine-linux-安装的额外准备工作" tabindex="-1"><a class="header-anchor" href="#alpine-linux-安装的额外准备工作" aria-hidden="true">#</a> Alpine Linux 安装的额外准备工作</h2>
+<p>设置 Alpine Linux 前，您需要进行以下准备工作：</p>
+<ol>
+<li>
+<p>更新 <strong>/etc/update-extlinux.conf</strong> 添加：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token assign-left variable">default_kernel_opts</span><span class="token operator">=</span><span class="token string">"...  cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory"</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>更新配置并重启：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>update-extlinux
+<span class="token function">reboot</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
+</ol>
+<h2 id="运行-k3d-docker-中的-k3s-和-docker-compose" tabindex="-1"><a class="header-anchor" href="#运行-k3d-docker-中的-k3s-和-docker-compose" aria-hidden="true">#</a> 运行 K3d（Docker 中的 K3s）和 docker-compose</h2>
+<p><a href="https://github.com/rancher/k3d" target="_blank" rel="noopener noreferrer">k3d<ExternalLinkIcon/></a>是一个设计用于在 Docker 中轻松运行 K3s 的工具。</p>
+<p>它可以通过 MacOS 上的<a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">brew<ExternalLinkIcon/></a>工具安装：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>brew <span class="token function">install</span> k3d
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><code v-pre>rancher/k3s</code>镜像也可用于在 Docker 运行的 K3s server 和 agent。</p>
+<p>在 K3s repo 的根目录下有一个<code v-pre>docker-compose.yml</code>，作为如何从 Docker 运行 K3s 的示例。要从这个 repo 中运行<code v-pre>docker-compose</code>，请运行：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">--scale</span> <span class="token assign-left variable">agent</span><span class="token operator">=</span><span class="token number">3</span>
+    <span class="token comment"># kubeconfig is written to current dir</span>
+
+kubectl <span class="token parameter variable">--kubeconfig</span> kubeconfig.yaml get <span class="token function">node</span>
+
+    NAME           STATUS   ROLES    AGE   VERSION
+    497278a2d6a2   Ready    <span class="token operator">&lt;</span>none<span class="token operator">></span>   11s   v1.13.2-k3s2
+    d54c8b17c055   Ready    <span class="token operator">&lt;</span>none<span class="token operator">></span>   11s   v1.13.2-k3s2
+    db7a5a5a5bdd   Ready    <span class="token operator">&lt;</span>none<span class="token operator">></span>   12s   v1.13.2-k3s2
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>要只在 Docker 中运行 agent，使用<code v-pre>docker-compose up agent</code>。</p>
+<p>或者，也可以使用<code v-pre>docker run</code>命令：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>sudo docker run \
+  -d --tmpfs /run \
+  --tmpfs /var/run \
+  -e K3S_URL=${SERVER_URL} \
+  -e K3S_TOKEN=${NODE_TOKEN} \
+  --privileged rancher/k3s:vX.Y.Z
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="在-raspbian-buster-上启用旧版的-iptables" tabindex="-1"><a class="header-anchor" href="#在-raspbian-buster-上启用旧版的-iptables" aria-hidden="true">#</a> 在 Raspbian Buster 上启用旧版的 iptables</h2>
+<p>Raspbian Buster 默认使用<code v-pre>nftables</code>而不是<code v-pre>iptables</code>。 <strong>K3S</strong> 网络功能需要使用<code v-pre>iptables</code>，而不能使用<code v-pre>nftables</code>。 按照以下步骤切换配置<strong>Buster</strong>使用<code v-pre>legacy iptables</code>：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>sudo iptables -F
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+sudo reboot
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="为-raspbian-buster-启用-cgroup" tabindex="-1"><a class="header-anchor" href="#为-raspbian-buster-启用-cgroup" aria-hidden="true">#</a> 为 Raspbian Buster 启用 cgroup</h2>
+<p>标准的 Raspbian Buster 安装没有启用 <code v-pre>cgroups</code>。<strong>K3S</strong> 需要<code v-pre>cgroups</code>来启动 systemd 服务。在<code v-pre>/boot/cmdline.txt</code>中添加<code v-pre>cgroup_memory=1 cgroup_enable=memory</code>就可以启用<code v-pre>cgroups</code>。</p>
+<h3 id="boot-cmdline-txt-的示例" tabindex="-1"><a class="header-anchor" href="#boot-cmdline-txt-的示例" aria-hidden="true">#</a> /boot/cmdline.txt 的示例</h3>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>console=serial0,115200 console=tty1 root=PARTUUID=58b06195-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="selinux-支持" tabindex="-1"><a class="header-anchor" href="#selinux-支持" aria-hidden="true">#</a> SELinux 支持</h2>
+<p><em>从 v1.19.4+k3s1 开始支持。从 v1.17.4+k3s1 开始是试验性的。</em></p>
+<p>如果您在默认启用 SELinux 的系统（如 CentOS）上安装 K3s，您必须确保安装了正确的 SELinux 策略。</p>
+<h3 id="自动安装" tabindex="-1"><a class="header-anchor" href="#自动安装" aria-hidden="true">#</a> 自动安装</h3>
+<p><em>从 v1.19.3+k3s2 开始可用</em>。</p>
+<p>如果在兼容的系统上，如果不执行离线安装，则<a href="https://docs.rancher.cn/docs/k3s/installation/install-options/_index#%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85%E7%9A%84%E9%80%89%E9%A1%B9" target="_blank" rel="noopener noreferrer">安装脚本<ExternalLinkIcon/></a>将从 Rancher RPM 存储库自动安装 SELinux RPM。可以通过设置 <code v-pre>INSTALL_K3S_SKIP_SELINUX_RPM=true</code> 来跳过自动安装。</p>
+<h3 id="手动安装" tabindex="-1"><a class="header-anchor" href="#手动安装" aria-hidden="true">#</a> 手动安装</h3>
+<p>可以使用以下命令安装必要的策略：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>yum install -y container-selinux selinux-policy-base
+yum install -y https://rpm.rancher.io/k3s/latest/common/centos/7/noarch/k3s-selinux-0.2-1.el7_8.noarch.rpm
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>要强制安装脚本记录警告而不是失败，您可以设置以下环境变量： <code v-pre>INSTALL_K3S_SELINUX_WARN=true</code>。</p>
+<h2 id="red-hat-和-centos-的额外准备" tabindex="-1"><a class="header-anchor" href="#red-hat-和-centos-的额外准备" aria-hidden="true">#</a> Red Hat 和 CentOS 的额外准备</h2>
+<p>建议运行以下命令，关闭 firewalld：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>systemctl disable firewalld <span class="token parameter variable">--now</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '26.md' style='float:left'>⬆️上一节🔗  </a><a href = '28.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>
