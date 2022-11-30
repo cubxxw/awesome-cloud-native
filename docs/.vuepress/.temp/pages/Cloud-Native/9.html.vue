@@ -14,11 +14,11 @@
 <p><a href="https://github.com/sealerio/sealer/issues/1859#top" target="_blank" rel="noopener noreferrer">feature] want to implement the k3s runtime module<ExternalLinkIcon/></a>#1859</p>
 <p><a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">3293172751<ExternalLinkIcon/></a> opened this issue 前天 · 4 comments</p>
 <p>What a good start <a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a>! Now i have some suggestions maybe make you more understand about sealer runtime.</p>
-<p>the Achieve Interface step is definitely correct. but it would be some misunderstand about k3s's cluterimage rootfs in your chapter <em><strong>k3s - rootfs</strong></em>, i think we do not need to care too much about k3s install package distribution in this stage. I propose a step which is my learning path of sealer,FYI <a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a> .</p>
+<p>the Achieve Interface step is definitely correct. but it would be some misunderstand about k3s's cluterimage rootfs in your chapter  <em><strong>k3s - rootfs</strong></em> , i think we do not need to care too much about k3s install package distribution in this stage. I propose a step which is my learning path of sealer,FYI <a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a> .</p>
 <ul>
 <li>k8s runtiem interface 逻辑是什么?</li>
 <li>sealer 如何以及何时安装私人注册表?</li>
-<li>runtime module 如何与rootfs中的脚本交互?</li>
+<li>runtime module 如何与 rootfs 中的脚本交互?</li>
 </ul>
 </div>
 <h2 id="k3s-module" tabindex="-1"><a class="header-anchor" href="#k3s-module" aria-hidden="true">#</a> k3s module</h2>
