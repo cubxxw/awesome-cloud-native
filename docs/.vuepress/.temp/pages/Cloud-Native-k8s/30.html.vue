@@ -161,47 +161,12 @@ go <span class="token function">env</span> <span class="token parameter variable
 <p>kubernetes 历史悠久，所以，最好是选择放入到 <code v-pre>$GOPATH/src/k8s.io</code> 最不容易出现错误。</p>
 </div>
 <h2 id="设置git" tabindex="-1"><a class="header-anchor" href="#设置git" aria-hidden="true">#</a> 设置git</h2>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code> <span class="token function">git</span> remote <span class="token function">rm</span> origin 
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code> <span class="token function">git</span> remote <span class="token function">rm</span> origin <span class="token comment"># 不建议删除，如果你使用的不是最新版</span>
  <span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/cubxxw/kubernetes.git
  <span class="token function">git</span> remote <span class="token function">add</span> upstream https://github.com/kubernetes/kubernetes.git
  <span class="token function">git</span> remote set-url <span class="token parameter variable">--push</span> upstream no-pushing
  <span class="token function">git</span> remote -v<span class="token punctuation">;</span> <span class="token function">git</span> branch <span class="token parameter variable">-a</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="编译启动本地单节点集群" tabindex="-1"><a class="header-anchor" href="#编译启动本地单节点集群" aria-hidden="true">#</a> 编译启动本地单节点集群：</h2>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">cd</span> <span class="token variable">$GOPATH</span>/src/k8s.io/kubernetes
-编译单个组建：sudo <span class="token function">make</span> <span class="token assign-left variable">WHAT</span><span class="token operator">=</span><span class="token string">"cmd/kube-apiserver"</span>  
-编译所有组件：sudo <span class="token function">make</span> all  
-启动本地单节点集群： <span class="token function">sudo</span> ./hack/local-up-cluster.sh  
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="开启本地debug功能" tabindex="-1"><a class="header-anchor" href="#开启本地debug功能" aria-hidden="true">#</a> 开启本地debug功能</h2>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">cd</span> <span class="token variable">$GOPATH</span>/src/k8s.io/kubernetes
-<span class="token comment"># kubernetes go编译文件</span>
-<span class="token function">sudo</span> <span class="token function">vim</span> ./hack/lib/golang.sh
-<span class="token comment"># 查找build_binaries()函数 vi语法</span>
-:/build_binaries<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="找到一下bebug判断-注释-一直开启debug能力" tabindex="-1"><a class="header-anchor" href="#找到一下bebug判断-注释-一直开启debug能力" aria-hidden="true">#</a> 找到一下bebug判断，注释，一直开启debug能力</h3>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>	<span class="token assign-left variable">gogcflags</span><span class="token operator">=</span><span class="token string">"all=-trimpath=<span class="token variable">${trimroot}</span> <span class="token variable">${GOGCFLAGS<span class="token operator">:-</span>}</span>"</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${DBG<span class="token operator">:-</span>}</span>"</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token comment"># Debugging - disable optimizations and inlining.</span>
-        <span class="token assign-left variable">gogcflags</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${gogcflags}</span> -N -l"</span>
-    <span class="token keyword">fi</span>
-
-    <span class="token assign-left variable">goldflags</span><span class="token operator">=</span><span class="token string">"all=<span class="token variable"><span class="token variable">$(</span>kube::version::ldflags<span class="token variable">)</span></span> <span class="token variable">${GOLDFLAGS<span class="token operator">:-</span>}</span>"</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${DBG<span class="token operator">:-</span>}</span>"</span> <span class="token operator">!=</span> <span class="token number">1</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token comment"># Not debugging - disable symbols and DWARF.</span>
-        <span class="token assign-left variable">goldflags</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${goldflags}</span> -s -w"</span>
-    <span class="token keyword">fi</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>注释判断，将debug直接放在下面， 再保存即可：</strong></p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>	<span class="token assign-left variable">gogcflags</span><span class="token operator">=</span><span class="token string">"all=-trimpath=<span class="token variable">${trimroot}</span> <span class="token variable">${GOGCFLAGS<span class="token operator">:-</span>}</span>"</span>
-    <span class="token comment"># if [[ "${DBG:-}" == 1 ]]; then</span>
-    <span class="token comment">#     # Debugging - disable optimizations and inlining.</span>
-    <span class="token comment">#     gogcflags="${gogcflags} -N -l"</span>
-    <span class="token comment"># fi</span>
-	<span class="token assign-left variable">gogcflags</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${gogcflags}</span> -N -l"</span>
-    <span class="token assign-left variable">goldflags</span><span class="token operator">=</span><span class="token string">"all=<span class="token variable"><span class="token variable">$(</span>kube::version::ldflags<span class="token variable">)</span></span> <span class="token variable">${GOLDFLAGS<span class="token operator">:-</span>}</span>"</span>
-    <span class="token comment"># if [[ "${DBG:-}" != 1 ]]; then</span>
-    <span class="token comment">#     # Not debugging - disable symbols and DWARF.</span>
-    <span class="token comment">#     goldflags="${goldflags} -s -w"</span>
-    <span class="token comment"># fi</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '29.md' style='float:left'>⬆️上一节🔗  </a><a href = '31.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

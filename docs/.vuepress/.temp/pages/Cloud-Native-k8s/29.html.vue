@@ -22,6 +22,11 @@
 <li><a href="https://github.com/cubxxw/kubernetes" target="_blank" rel="noopener noreferrer">cubxxw - pr<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/kubernauts/Kubernetes-Learning-Resources" target="_blank" rel="noopener noreferrer">社区维护的 kubernetes 学习资源合集<ExternalLinkIcon/></a></li>
 </ul>
+<div class="custom-container warning"><p class="custom-container-title">注意</p>
+<ul>
+<li><a href="https://github.com/kubernetes/community/tree/master/contributors/devel" target="_blank" rel="noopener noreferrer">官方开发者向导 markdown 文件<ExternalLinkIcon/></a></li>
+</ul>
+</div>
 <p><strong>自己的一些资源：</strong></p>
 <ul>
 <li><a href="https://docker.nsddd.top/" target="_blank" rel="noopener noreferrer">云原生学习<ExternalLinkIcon/></a></li>
@@ -35,6 +40,32 @@
 <li>读源码还得有一定积累量，比如你已经读过很多基础包的源码比如 net/http grpc-go 等等</li>
 <li>要尝试着调试，要尝试着练习，要尝试着理解和分析产品理念，更要学会自己设计。</li>
 </ol>
+<h2 id="基础知识" tabindex="-1"><a class="header-anchor" href="#基础知识" aria-hidden="true">#</a> 基础知识</h2>
+<p><strong>基础概念：</strong></p>
+<p>我们需要知道 kubernetes 的基础概念，我们或许在前面有讲解过。</p>
+<p>比如 Build-in 的 API Groups 和 API Objects 有什么，做什么用；</p>
+<p><strong>有一些很重要的工具库：</strong>
+如 <strong>gengo</strong> ，包括 informer 机制；</p>
+<ul>
+<li>Cobra</li>
+<li><a href="https://github.com/emicklei/go-restful" target="_blank" rel="noopener noreferrer">go-restful<ExternalLinkIcon/></a>：REST 要求开发人员以与协议定义一致的方式显式使用 HTTP 方法。这个基本的 REST 设计原则在创建、读取、更新和删除 (CRUD) 操作和 HTTP 方法之间建立了一对一的映射。</li>
+<li>etcd</li>
+</ul>
+<p><strong>Restful 基础：</strong></p>
+<p>简单了解 Restful 概念，如果做过 Restful Service 那么最好了</p>
+<h2 id="阅读方法-其他开源项目类似" tabindex="-1"><a class="header-anchor" href="#阅读方法-其他开源项目类似" aria-hidden="true">#</a> 阅读方法（其他开源项目类似）</h2>
+<ul>
+<li>先整体，后局部（不钻牛角尖）</li>
+<li>深入局部中的学习中去</li>
+<li>耐心，多看代码~</li>
+</ul>
+<h2 id="书籍推荐" tabindex="-1"><a class="header-anchor" href="#书籍推荐" aria-hidden="true">#</a> 书籍推荐</h2>
+<ul>
+<li>Go语言程序设计语言</li>
+<li>深入解刨 Kubernetes</li>
+<li>kubernetes 编程</li>
+<li>kubernetes 源码刨析（这个我买了！！！！！！，不推荐，copy 多干货少）</li>
+</ul>
 <h2 id="视频资源" tabindex="-1"><a class="header-anchor" href="#视频资源" aria-hidden="true">#</a> 视频资源</h2>
 <ul>
 <li>
@@ -60,6 +91,7 @@
 <h2 id="github-精选仓库" tabindex="-1"><a class="header-anchor" href="#github-精选仓库" aria-hidden="true">#</a> GitHub 精选仓库</h2>
 <ul>
 <li><a href="https://github.com/JackyZhangFuDan/K8sSourceCodeDeepDive/" target="_blank" rel="noopener noreferrer">go 开发之旅<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/derekguo001/understanding-kubernetes" target="_blank" rel="noopener noreferrer">kubernetes 源码解读<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '28.md' style='float:left'>⬆️上一节🔗  </a><a href = '30.md' style='float: right'>  ️下一节🔗</a></div></li></ul>

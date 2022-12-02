@@ -285,7 +285,41 @@ $ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24
 <blockquote>
 <p>注意：我们还需要判断输入的是k0s还是k8s，然后根据这个来选择合适的接口接入~</p>
 </blockquote>
-<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<h2 id="test" tabindex="-1"><a class="header-anchor" href="#test" aria-hidden="true">#</a> test</h2>
+<p>测试，关于 makefile</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:/workspces/sealos<span class="token comment"># make help</span>
+
+Usage: <span class="token function">make</span> <span class="token operator">&lt;</span>TARGETS<span class="token operator">></span> <span class="token operator">&lt;</span>OPTIONS<span class="token operator">></span> <span class="token punctuation">..</span>.
+
+Targets:
+  build                Build <span class="token builtin class-name">source</span> code <span class="token keyword">for</span> <span class="token function">host</span> platform.
+  build.multiarch      Build <span class="token builtin class-name">source</span> code <span class="token keyword">for</span> multiple platforms. See option PLATFORMS.
+  lint                 Check syntax and styling of go sources.
+  <span class="token function">format</span>               Gofmt <span class="token punctuation">(</span>reformat<span class="token punctuation">)</span> package sources.
+  coverage             Run unit tests and output <span class="token builtin class-name">test</span> coverage.
+  compress             Compress the binaries using upx <span class="token keyword">for</span> <span class="token function">host</span> platform.
+  compress.multiarch   Compress the binaries using upx <span class="token keyword">for</span> multiple platforms. See option PLATFORMS.
+  verify-license       Verify the license headers <span class="token keyword">for</span> all files.
+  add-license          Ensure <span class="token builtin class-name">source</span> code files have license headers.
+  gen                  Generate all necessary files.
+  tools                Install dependent tools.
+  clean                Remove all files that are created by building.
+  update-contrib       Update list of contributors.
+  <span class="token builtin class-name">help</span>                 Show this <span class="token builtin class-name">help</span> info.
+
+Options:
+  DEBUG            Whether or not to generate debug symbols. Default is <span class="token number">0</span>.
+
+  BINS             Binaries to build. Default is all binaries under cmd.
+                   This option is available when using: <span class="token function">make</span> <span class="token punctuation">{</span>build/compress<span class="token punctuation">}</span><span class="token punctuation">(</span>.multiarch<span class="token punctuation">)</span>
+                   Example: <span class="token function">make</span> build <span class="token assign-left variable">BINS</span><span class="token operator">=</span><span class="token string">"sealos sealctl"</span>
+
+  PLATFORMS        Platform to build for. Default is linux_arm64 and linux_amd64.
+                   This option is available when using: <span class="token function">make</span> <span class="token punctuation">{</span>build/compress<span class="token punctuation">}</span>.multiarch
+                   Example: <span class="token function">make</span> build.multiarch <span class="token assign-left variable">PLATFORMS</span><span class="token operator">=</span><span class="token string">"linux_arm64 linux_amd64"</span>
+
+  V                Set to <span class="token number">1</span> <span class="token builtin class-name">enable</span> verbose build. Default is <span class="token number">0</span>.
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '2.md' style='float:left'>⬆️上一节🔗  </a><a href = '4.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

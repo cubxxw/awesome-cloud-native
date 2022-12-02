@@ -230,7 +230,23 @@
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>When applied to remote-attach configurations, will look for &quot;dlv ... --headless --listen=:&quot; server started externally. In dlv-dap mode, this will apply to all other configurations as well. The extension will try to connect to an external server started with &quot;dlv dap --listen=:&quot; to ask it to launch/attach to the target process.</p>
 </div>
-<p><strong>创建 <code v-pre>.vscode</code> 文件夹（mod rootfs目录），并在下面创建：</strong></p>
+<p><strong>首先我们需要先启动一个 devle server</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>dlv <span class="token parameter variable">--headless</span> debug Test
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>我们可以在另外一台终端或者机器上模拟这个调用：</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:~/go/src/k8s.io/kubernetes<span class="token comment"># dlv connect localhost:40609</span>
+Type <span class="token string">'help'</span> <span class="token keyword">for</span> list of commands.
+<span class="token punctuation">(</span>dlv<span class="token punctuation">)</span> <span class="token builtin class-name">break</span> main.go:32
+Breakpoint <span class="token number">1</span> <span class="token builtin class-name">set</span> at 0x4a05b2 <span class="token keyword">for</span> main.main<span class="token punctuation">(</span><span class="token punctuation">)</span> /workspces/test/main.go:32
+<span class="token punctuation">(</span>dlv<span class="token punctuation">)</span> <span class="token builtin class-name">continue</span>
+<span class="token operator">></span> main.main<span class="token punctuation">(</span><span class="token punctuation">)</span> /workspces/test/main.go:32 <span class="token punctuation">(</span>hits goroutine<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>:1 total:1<span class="token punctuation">)</span> <span class="token punctuation">(</span>PC: 0x4a05b2<span class="token punctuation">)</span>
+    <span class="token number">27</span>:         gid, _ :<span class="token operator">=</span> strconv.ParseInt<span class="token punctuation">(</span>idField, <span class="token number">10</span>, <span class="token number">64</span><span class="token punctuation">)</span>
+    <span class="token number">28</span>:         <span class="token builtin class-name">return</span> gid
+    <span class="token number">29</span>: <span class="token punctuation">}</span>
+    <span class="token number">30</span>:
+    <span class="token number">31</span>: func <span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token operator">=</span><span class="token operator">></span>  <span class="token number">32</span>:         debug<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token number">33</span>: <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>创建 <code v-pre>.vscode</code> 文件夹（mod rootfs目录），并在下面创建：</strong></p>
 <ul>
 <li>
 <p>创建<code v-pre>settings.json</code></p>
@@ -314,8 +330,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="dlv调试指令" tabindex="-1"><a class="header-anchor" href="#dlv调试指令" aria-hidden="true">#</a> <strong>dlv调试指令</strong></h3>
-<h3 id="断点管理" tabindex="-1"><a class="header-anchor" href="#断点管理" aria-hidden="true">#</a> <strong>断点管理</strong></h3>
+<h3 id="goroutine" tabindex="-1"><a class="header-anchor" href="#goroutine" aria-hidden="true">#</a> goroutine</h3>
+<p><strong>dlv 特别支持 goroutine</strong></p>
+<ul>
+<li>goroutine</li>
+<li>gorouties</li>
+<li>thread</li>
+<li>threads</li>
+</ul>
+<h2 id="dlv调试指令" tabindex="-1"><a class="header-anchor" href="#dlv调试指令" aria-hidden="true">#</a> dlv调试指令</h2>
+<h3 id="断点管理" tabindex="-1"><a class="header-anchor" href="#断点管理" aria-hidden="true">#</a> 断点管理</h3>
 <table>
 <thead>
 <tr>
@@ -358,7 +382,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="程序执行中的调试指令" tabindex="-1"><a class="header-anchor" href="#程序执行中的调试指令" aria-hidden="true">#</a> <strong>程序执行中的调试指令</strong></h3>
+<h3 id="程序执行中的调试指令" tabindex="-1"><a class="header-anchor" href="#程序执行中的调试指令" aria-hidden="true">#</a> 程序执行中的调试指令</h3>
 <table>
 <thead>
 <tr>
@@ -407,7 +431,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="参数管理" tabindex="-1"><a class="header-anchor" href="#参数管理" aria-hidden="true">#</a> <strong>参数管理</strong></h3>
+<h3 id="参数管理" tabindex="-1"><a class="header-anchor" href="#参数管理" aria-hidden="true">#</a> 参数管理</h3>
 <table>
 <thead>
 <tr>
@@ -462,7 +486,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="其他" tabindex="-1"><a class="header-anchor" href="#其他" aria-hidden="true">#</a> <strong>其他</strong></h3>
+<h3 id="其他" tabindex="-1"><a class="header-anchor" href="#其他" aria-hidden="true">#</a> 其他</h3>
 <table>
 <thead>
 <tr>
