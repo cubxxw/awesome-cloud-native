@@ -560,7 +560,7 @@ dlv version
     <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="执行方法" tabindex="-1"><a class="header-anchor" href="#执行方法" aria-hidden="true">#</a> 执行方法</h3>
-<p>dlv的debug远程调试需要远端和近端都持有全部的源代码文件。为了方便，这里就不改变GOPATH，在远端直接将整个项目，扔到 <code v-pre>$GOPATH/src</code> 里面。</p>
+<p>**dlv的debug远程调试需要远端和近端都持有全部的源代码文件。**为了方便，这里就不改变GOPATH，在远端直接将整个项目，扔到 <code v-pre>$GOPATH/src</code> 里面。</p>
 <p>源代码文件路径为 <code v-pre>$GOPATH/src/hello/main.go</code></p>
 <p>在近端，直接创建 <code v-pre>hello</code>目录，就把源代码文件直接放在里面。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>dlv debug <span class="token parameter variable">--headless</span> <span class="token parameter variable">--listen</span> <span class="token string">":2345"</span> <span class="token parameter variable">--log</span> --api-version <span class="token number">2</span>

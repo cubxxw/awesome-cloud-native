@@ -260,7 +260,14 @@
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> <span class="token parameter variable">-o</span> get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 $ <span class="token function">chmod</span> <span class="token number">700</span> get_helm.sh
 $ ./get_helm.sh
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果想直接执行安装，运行</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><details class="custom-container details">
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:/workspces/runtime/ingress-nginx<span class="token comment"># ./helm.sh </span>
+Downloading https://get.helm.sh/helm-v3.10.2-linux-amd64.tar.gz
+Verifying checksum<span class="token punctuation">..</span>. Done.
+Preparing to <span class="token function">install</span> helm into /usr/local/bin
+helm installed into /usr/local/bin/helm
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<p>如果想直接执行安装，运行</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 <span class="token operator">|</span> <span class="token function">bash</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="配置helm源" tabindex="-1"><a class="header-anchor" href="#配置helm源" aria-hidden="true">#</a> 配置helm源</h2>
 <p><strong>使用helm需要配置yaml源,常见的有阿里。微软，和Github上的源</strong></p>

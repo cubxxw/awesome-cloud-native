@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第15节" tabindex="-1"><a class="header-anchor" href="#第15节" aria-hidden="true">#</a> 第15节</h1>
+<h1 id="第15节-镜像制作和推送" tabindex="-1"><a class="header-anchor" href="#第15节-镜像制作和推送" aria-hidden="true">#</a> 第15节 镜像制作和推送</h1>
 <div><a href = '14.md' style='float:left'>⬆️上一节🔗  </a><a href = '16.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>

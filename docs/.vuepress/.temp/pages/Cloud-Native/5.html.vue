@@ -221,9 +221,9 @@
 <blockquote>
 <p>Sealos wants to hit the mass market, which is consistent with the direction of k3s. The lightweight k3s is more popular with mass developers.</p>
 </blockquote>
-<p>我们在路线图中对 k8s、k0s、k3s 运行时支持的工作应该有一个进度记录，应该是让工作进度更加清晰，并吸引更多的参与者加入这个核心工作。这里简单介绍一下部分工作：
-阅读 Sealer 主分支代码，理解 runtime 模块中的代码，掌握从 cmd 模块到 runtime 模块的代码调用逻辑。
-通过k8s、k0s、k3s官网阅读并设计运行时接口实现方法。</p>
+<p>我们在路线图中对 k8s、k0s、k3s 运行时支持的工作应该有一个进度记录，应该是让工作进度更加清晰，并吸引更多的参与者加入这个核心工作。这里简单介绍一下部分工作：</p>
+<p>阅读 Sealer 主分支代码，理解 runtime 模块中的代码，掌握从 cmd 模块到 runtime 模块的代码调用逻辑。</p>
+<p>通过k8s、k0s、k3s官网阅读并设计运行时接口实现方法。</p>
 <p>为指定的运行时读取和设计 clusterImage。主要参考： <a href="http://sealer.cool/docs/advanced/define-cloudimage.html#customize-the-cloudrootfs" target="_blank" rel="noopener noreferrer">ClusterImage<ExternalLinkIcon/></a>、<a href="https://github.com/sealerio/basefs" target="_blank" rel="noopener noreferrer">basefs<ExternalLinkIcon/></a>。</p>
 <p>类型：功能请求</p>
 <ul>
@@ -266,9 +266,9 @@ kubectl get pod -A<span class="token operator">|</span><span class="token functi
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="调研" tabindex="-1"><a class="header-anchor" href="#调研" aria-hidden="true">#</a> 调研</h2>
 <p>首先需要调研，然后出一个设计稿，比如 <code v-pre>install</code> 模块怎么和 k3s 结合</p>
-<p><code v-pre>apply</code> 会对比一下新旧集群的差别，然后再确定是否调用 <code v-pre>runtime</code> 来扩缩容集群</p>
+<p><code v-pre>apply</code> 会对比一下新旧集群的差别，然后再确定是否调用  <code v-pre>runtime</code>  来扩缩容集群</p>
 <blockquote>
-<p>目前k3s还没有实现，k0s在最新代码中还没有适配起来，上面这个文档是在0.8.6版本，也就是9月下旬发布的那个版本代码前设计的，现在的话大体思路一致，如果需要实现k3s的话，首先需要熟读k3s的官方安装文档，其次阅读<code v-pre>sealer runtime</code>的接口逻辑，<code v-pre>install/scaleup</code>等接口干些什么事儿。最后还需要看一下如何与<code v-pre>rootfs</code>进行交互，也就是集群镜像那个部分。</p>
+<p>目前k3s还没有实现，<code v-pre>k0s</code> 在最新代码中还没有适配起来，上面这个文档是在0.8.6版本，也就是9月下旬发布的那个版本代码前设计的，现在的话大体思路一致，如果需要实现k3s的话，首先需要熟读k3s的官方安装文档，其次阅读<code v-pre>sealer runtime</code>的接口逻辑，<code v-pre>install/scaleup</code>等接口干些什么事儿。最后还需要看一下如何与<code v-pre>rootfs</code>进行交互，也就是集群镜像那个部分。</p>
 <p>切换到9月30号的那次<code v-pre>starcomingup</code>的提交，基于那次<code v-pre>commit</code>进行编译，k0s镜像的话可以体验一下</p>
 <ul>
 <li>scaledown 作用于master节点，删除master节点前需要先删除master节点上的pod</li>

@@ -69,7 +69,7 @@
 <p>用于根据 OpenAPI 规范形成符合其规定的 API</p>
 </li>
 <li>
-<p>apis 是包含内建 API Groups 和 API Objects 的，而scheme 相关的代码大部分在这里。</p>
+<p>apis 是包含内建 API Groups 和 API Objects 的，而 scheme 相关的代码大部分在这里。</p>
 </li>
 </ul>
 </div>

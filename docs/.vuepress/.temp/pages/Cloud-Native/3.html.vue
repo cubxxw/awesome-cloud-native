@@ -242,8 +242,8 @@ guest   <span class="token comment">#执行镜像的cmd</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><code v-pre>cluster.go</code>描述整个集群期望状态（使用的是命令式） -- 几个<code v-pre>master</code>，几个<code v-pre>node</code>，<code v-pre>ssh</code>密码、端口号、集群镜像、贯穿始终，特别特别重要  -- <code v-pre>sealos run</code>也是渲染成结构体传递给其他模块~</p>
 <ul>
-<li>集群没有，创建</li>
-<li>集群有，字段挨着比对</li>
+<li>集群没有，创建。</li>
+<li>集群有，字段挨着比对。</li>
 </ul>
 <p><strong>现在的写法不是很满意~，对于升级等其他操作需要优化。</strong></p>
 </blockquote>
