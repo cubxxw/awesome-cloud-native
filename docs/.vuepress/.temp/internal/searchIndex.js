@@ -880,6 +880,20 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "join master and join node",
+        "slug": "join-master-and-join-node",
+        "link": "#join-master-and-join-node",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k3s types",
+        "slug": "k3s-types",
+        "link": "#k3s-types",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
@@ -1000,8 +1014,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第19节",
+    "title": "第19节 sealos 部署 k3s",
     "headers": [
+      {
+        "level": 2,
+        "title": "方式",
+        "slug": "方式",
+        "link": "#方式",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",

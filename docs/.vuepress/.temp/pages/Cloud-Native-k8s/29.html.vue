@@ -22,6 +22,10 @@
 <li><a href="https://github.com/cubxxw/kubernetes" target="_blank" rel="noopener noreferrer">cubxxw - pr<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/kubernauts/Kubernetes-Learning-Resources" target="_blank" rel="noopener noreferrer">社区维护的 kubernetes 学习资源合集<ExternalLinkIcon/></a></li>
 </ul>
+<p>**关于 CNCF 的贡献，你需要签署 CLA **</p>
+<ul>
+<li><a href="https://github.com/kubernetes/community/blob/master/CLA.md" target="_blank" rel="noopener noreferrer">Kubernetes CLA  的签署流程<ExternalLinkIcon/></a></li>
+</ul>
 <div class="custom-container warning"><p class="custom-container-title">注意</p>
 <ul>
 <li><a href="https://github.com/kubernetes/community/tree/master/contributors/devel" target="_blank" rel="noopener noreferrer">官方开发者向导 markdown 文件<ExternalLinkIcon/></a></li>

@@ -10,7 +10,7 @@ export const pagesRoutes = [
   ["v-27578b2d","/Cloud-Native/16.html",{"title":"第16节 sealer code"},["/Cloud-Native/16","/Cloud-Native/16.md"]],
   ["v-290c63cc","/Cloud-Native/17.html",{"title":"第17节 规范"},["/Cloud-Native/17","/Cloud-Native/17.md"]],
   ["v-2ac13c6b","/Cloud-Native/18.html",{"title":"第18节 名词解释"},["/Cloud-Native/18","/Cloud-Native/18.md"]],
-  ["v-2c76150a","/Cloud-Native/19.html",{"title":"第19节"},["/Cloud-Native/19","/Cloud-Native/19.md"]],
+  ["v-2c76150a","/Cloud-Native/19.html",{"title":"第19节 sealos 部署 k3s"},["/Cloud-Native/19","/Cloud-Native/19.md"]],
   ["v-5d7a3f6e","/Cloud-Native/2.html",{"title":"第2节 第二阶段"},["/Cloud-Native/2","/Cloud-Native/2.md"]],
   ["v-5200b2b4","/Cloud-Native/20.html",{"title":"第20节"},["/Cloud-Native/20","/Cloud-Native/20.md"]],
   ["v-53b58b53","/Cloud-Native/21.html",{"title":"第21节"},["/Cloud-Native/21","/Cloud-Native/21.md"]],
