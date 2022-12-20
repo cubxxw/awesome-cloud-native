@@ -8,7 +8,21 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#证书轮换">证书轮换</router-link></li><li><router-link to="#自动部署清单">自动部署清单</router-link></li><li><router-link to="#使用-docker-作为容器运行时">使用 Docker 作为容器运行时</router-link><ul><li><router-link to="#可选-将-crictl-与-docker-一起使用">可选：将 crictl 与 Docker 一起使用</router-link></li></ul></li><li><router-link to="#配置-containerd">配置 containerd</router-link></li><li><router-link to="#节点标签和污点">节点标签和污点</router-link></li><li><router-link to="#使用安装脚本启动-server-节点">使用安装脚本启动 Server 节点</router-link></li><li><router-link to="#alpine-linux-安装的额外准备工作">Alpine Linux 安装的额外准备工作</router-link></li><li><router-link to="#运行-k3d-docker-中的-k3s-和-docker-compose">运行 K3d（Docker 中的 K3s）和 docker-compose</router-link></li><li><router-link to="#在-raspbian-buster-上启用旧版的-iptables">在 Raspbian Buster 上启用旧版的 iptables</router-link></li><li><router-link to="#为-raspbian-buster-启用-cgroup">为 Raspbian Buster 启用 cgroup</router-link><ul><li><router-link to="#boot-cmdline-txt-的示例">/boot/cmdline.txt 的示例</router-link></li></ul></li><li><router-link to="#selinux-支持">SELinux 支持</router-link><ul><li><router-link to="#自动安装">自动安装</router-link></li><li><router-link to="#手动安装">手动安装</router-link></li></ul></li><li><router-link to="#red-hat-和-centos-的额外准备">Red Hat 和 CentOS 的额外准备</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#k3s-vs-k3d">k3s vs k3d</router-link></li><li><router-link to="#证书轮换">证书轮换</router-link></li><li><router-link to="#自动部署清单">自动部署清单</router-link></li><li><router-link to="#使用-docker-作为容器运行时">使用 Docker 作为容器运行时</router-link><ul><li><router-link to="#可选-将-crictl-与-docker-一起使用">可选：将 crictl 与 Docker 一起使用</router-link></li></ul></li><li><router-link to="#配置-containerd">配置 containerd</router-link></li><li><router-link to="#节点标签和污点">节点标签和污点</router-link></li><li><router-link to="#使用安装脚本启动-server-节点">使用安装脚本启动 Server 节点</router-link></li><li><router-link to="#alpine-linux-安装的额外准备工作">Alpine Linux 安装的额外准备工作</router-link></li><li><router-link to="#运行-k3d-docker-中的-k3s-和-docker-compose">运行 K3d（Docker 中的 K3s）和 docker-compose</router-link></li><li><router-link to="#在-raspbian-buster-上启用旧版的-iptables">在 Raspbian Buster 上启用旧版的 iptables</router-link></li><li><router-link to="#为-raspbian-buster-启用-cgroup">为 Raspbian Buster 启用 cgroup</router-link><ul><li><router-link to="#boot-cmdline-txt-的示例">/boot/cmdline.txt 的示例</router-link></li></ul></li><li><router-link to="#selinux-支持">SELinux 支持</router-link><ul><li><router-link to="#自动安装">自动安装</router-link></li><li><router-link to="#手动安装">手动安装</router-link></li></ul></li><li><router-link to="#red-hat-和-centos-的额外准备">Red Hat 和 CentOS 的额外准备</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<h2 id="k3s-vs-k3d" tabindex="-1"><a class="header-anchor" href="#k3s-vs-k3d" aria-hidden="true">#</a> k3s vs k3d</h2>
+<p><a href="https://rancher.com/docs/k3s/latest/en/" target="_blank" rel="noopener noreferrer">k3s<ExternalLinkIcon/></a>是一个非常高效和轻量级的完全兼容的 Kubernetes 发行版。</p>
+<p><a href="https://k3d.io/" target="_blank" rel="noopener noreferrer">k3d<ExternalLinkIcon/></a>是一个旨在在 Docker 中轻松运行 k3s 的实用程序，它提供了一个简单的 CLI 来创建、运行、删除具有 1 到 n 个节点的完全合规的 Kubernetes 集群。</p>
+<p><strong>K3s 包括：</strong></p>
+<ul>
+<li><a href="https://github.com/coreos/flannel#flannel" target="_blank" rel="noopener noreferrer">Flannel<ExternalLinkIcon/></a>：一个非常简单的 L2 overlay 网络，满足 Kubernetes 的要求。这是一个<a href="https://github.com/containernetworking/cni#3rd-party-plugins" target="_blank" rel="noopener noreferrer">CNI 插件<ExternalLinkIcon/></a>（Container Network Interface），如<a href="http://docs.projectcalico.org/" target="_blank" rel="noopener noreferrer">Calico<ExternalLinkIcon/></a>、<a href="http://romana.io/" target="_blank" rel="noopener noreferrer">Romana<ExternalLinkIcon/></a>、<a href="https://www.weave.works/products/weave-net/" target="_blank" rel="noopener noreferrer">Weave-net<ExternalLinkIcon/></a>  Flannel 不支持 Kubernetes Network Policy，但可以用 Calico 代替（见下一节）。</li>
+<li><a href="https://coredns.io/" target="_blank" rel="noopener noreferrer">CoreDNS<ExternalLinkIcon/></a>：一个灵活的、可扩展的 DNS 服务器，可以作为 Kubernetes 集群的 DNS</li>
+<li><a href="https://docs.traefik.io/" target="_blank" rel="noopener noreferrer">Traefik<ExternalLinkIcon/></a>是一个现代的 HTTP 反向代理和负载均衡器。在下一节中，我还将展示如何用 Traefik v2 或 Nginx 替换它</li>
+<li><a href="https://github.com/rancher/klipper-lb" target="_blank" rel="noopener noreferrer">Klipper 负载均衡<ExternalLinkIcon/></a>器：使用可用主机端口的服务负载均衡器。</li>
+<li><a href="https://sqlite.org/" target="_blank" rel="noopener noreferrer">SQLite3<ExternalLinkIcon/></a> : 默认使用的存储后端（也支持 MySQL、Postgres 和 etcd3）</li>
+<li><a href="https://containerd.io/" target="_blank" rel="noopener noreferrer">Containerd<ExternalLinkIcon/></a>是一个像 Docker 一样的运行时容器，没有镜像构建部分</li>
+</ul>
+<p>这些组件的选择是为了拥有最轻量级的分布。但正如我们稍后将在本博客中看到的那样，k3s 是一个模块化发行版，其中的组件可以轻松更换。</p>
+<p>最近，k3s作为第一个 Kubernetes 发行版在<a href="https://www.cncf.io/sandbox-projects/" target="_blank" rel="noopener noreferrer">沙箱级别加入了<ExternalLinkIcon/></a><a href="https://sokube.atlassian.net/wiki/spaces/TEC/pages/218234881/NewsRoom" target="_blank" rel="noopener noreferrer">云原生计算基金会<ExternalLinkIcon/></a>(CNCF) （引发了很多<a href="https://github.com/cncf/toc/pull/447" target="_blank" rel="noopener noreferrer">关于 k3s 是否应该成为 kubernetes 子项目的争论<ExternalLinkIcon/></a>）。</p>
 <h2 id="证书轮换" tabindex="-1"><a class="header-anchor" href="#证书轮换" aria-hidden="true">#</a> 证书轮换</h2>
 <p>默认情况下，K3s 的证书在 12 个月内过期。</p>
 <p>如果证书已经过期或剩余的时间不足 90 天，则在 K3s 重启时轮换证书。</p>
@@ -26,10 +40,10 @@ service k3s restart
 <p>关于部署 Helm charts 的信息，请参阅<a href="../helm/_index">Helm</a>章节。</p>
 <h2 id="使用-docker-作为容器运行时" tabindex="-1"><a class="header-anchor" href="#使用-docker-作为容器运行时" aria-hidden="true">#</a> 使用 Docker 作为容器运行时</h2>
 <p>K3s 包含并默认为<a href="https://containerd.io/" target="_blank" rel="noopener noreferrer">containerd<ExternalLinkIcon/></a>， 一个行业标准的容器运行时。</p>
-<p>要使用 Docker 而不是 containerd,</p>
+<p>要使用 Docker 而不是 <code v-pre>containerd</code>。</p>
 <ol>
 <li>
-<p>在 K3s 节点上安装 Docker。可以使用 Rancher 的一个<a href="https://github.com/rancher/install-docker" target="_blank" rel="noopener noreferrer">Docker 安装脚本<ExternalLinkIcon/></a>来安装 Docker：</p>
+<p>在 K3s 节点上安装 <code v-pre>Docker</code>。可以使用 <code v-pre>Rancher</code> 的一个<a href="https://github.com/rancher/install-docker" target="_blank" rel="noopener noreferrer">Docker 安装脚本<ExternalLinkIcon/></a>来安装 Docker：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>curl https://releases.rancher.com/install-docker/19.03.sh | sh
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 <li>
@@ -40,14 +54,14 @@ service k3s restart
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 <li>
 <p>确认集群可用：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ sudo k3s kubectl get pods --all-namespaces
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">sudo</span> k3s kubectl get pods --all-namespaces
 NAMESPACE     NAME                                     READY   STATUS      RESTARTS   AGE
-kube-system   local-path-provisioner-6d59f47c7-lncxn   1/1     Running     0          51s
-kube-system   metrics-server-7566d596c8-9tnck          1/1     Running     0          51s
-kube-system   helm-install-traefik-mbkn9               0/1     Completed   1          51s
-kube-system   coredns-8655855d6-rtbnb                  1/1     Running     0          51s
-kube-system   svclb-traefik-jbmvl                      2/2     Running     0          43s
-kube-system   traefik-758cd5fc85-2wz97                 1/1     Running     0          43s
+kube-system   local-path-provisioner-6d59f47c7-lncxn   <span class="token number">1</span>/1     Running     <span class="token number">0</span>          51s
+kube-system   metrics-server-7566d596c8-9tnck          <span class="token number">1</span>/1     Running     <span class="token number">0</span>          51s
+kube-system   helm-install-traefik-mbkn9               <span class="token number">0</span>/1     Completed   <span class="token number">1</span>          51s
+kube-system   coredns-8655855d6-rtbnb                  <span class="token number">1</span>/1     Running     <span class="token number">0</span>          51s
+kube-system   svclb-traefik-jbmvl                      <span class="token number">2</span>/2     Running     <span class="token number">0</span>          43s
+kube-system   traefik-758cd5fc85-2wz97                 <span class="token number">1</span>/1     Running     <span class="token number">0</span>          43s
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>
 <p>确认 Docker 容器正在运行：</p>
@@ -67,27 +81,27 @@ c3675b87f96c        rancher/pause:3.1         "/pause"                 About a m
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ol>
 <h3 id="可选-将-crictl-与-docker-一起使用" tabindex="-1"><a class="header-anchor" href="#可选-将-crictl-与-docker-一起使用" aria-hidden="true">#</a> 可选：将 crictl 与 Docker 一起使用</h3>
-<p>crictl 为兼容 CRI 的容器运行时提供了 CLI</p>
+<p><code v-pre>crictl</code> 为兼容 <code v-pre>CRI</code> 的容器运行时提供了 <code v-pre>CLI</code></p>
 <p>如果你想在使用<code v-pre>--docker</code>选项安装 K3s 后使用 crictl，请参考<a href="https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md" target="_blank" rel="noopener noreferrer">官方文档<ExternalLinkIcon/></a>来安装 crictl。</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ VERSION="v1.17.0"
-$ curl -L https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-${VERSION}-linux-amd64.tar.gz --output crictl-${VERSION}-linux-amd64.tar.gz
-$ sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token assign-left variable">VERSION</span><span class="token operator">=</span><span class="token string">"v1.17.0"</span>
+$ <span class="token function">curl</span> <span class="token parameter variable">-L</span> https://github.com/kubernetes-sigs/cri-tools/releases/download/<span class="token variable">$VERSION</span>/crictl-<span class="token variable">${VERSION}</span>-linux-amd64.tar.gz <span class="token parameter variable">--output</span> crictl-<span class="token variable">${VERSION}</span>-linux-amd64.tar.gz
+$ <span class="token function">sudo</span> <span class="token function">tar</span> zxvf crictl-<span class="token variable">$VERSION</span>-linux-amd64.tar.gz <span class="token parameter variable">-C</span> /usr/local/bin
 crictl
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后开始使用 crictl 命令：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ sudo crictl version
-Version:  0.1.0
-RuntimeName:  docker
-RuntimeVersion:  19.03.9
-RuntimeApiVersion:  1.40.0
-$ sudo crictl images
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">sudo</span> crictl version
+Version:  <span class="token number">0.1</span>.0
+RuntimeName:  <span class="token function">docker</span>
+RuntimeVersion:  <span class="token number">19.03</span>.9
+RuntimeApiVersion:  <span class="token number">1.40</span>.0
+$ <span class="token function">sudo</span> crictl images
 IMAGE                            TAG                 IMAGE ID            SIZE
-rancher/coredns-coredns          1.6.3               c4d3d16fe508b       44.3MB
+rancher/coredns-coredns          <span class="token number">1.6</span>.3               c4d3d16fe508b       <span class="token number">44</span>.3MB
 rancher/klipper-helm             v0.2.5              6207e2a3f5225       136MB
-rancher/klipper-lb               v0.1.2              897ce3c5fc8ff       6.1MB
-rancher/library-traefik          1.7.19              aa764f7db3051       85.7MB
-rancher/local-path-provisioner   v0.0.11             9d12f9848b99f       36.2MB
-rancher/metrics-server           v0.3.6              9dd718864ce61       39.9MB
-rancher/pause                    3.1                 da86e6ba6ca19       742kB
+rancher/klipper-lb               v0.1.2              897ce3c5fc8ff       <span class="token number">6</span>.1MB
+rancher/library-traefik          <span class="token number">1.7</span>.19              aa764f7db3051       <span class="token number">85</span>.7MB
+rancher/local-path-provisioner   v0.0.11             9d12f9848b99f       <span class="token number">36</span>.2MB
+rancher/metrics-server           v0.3.6              9dd718864ce61       <span class="token number">39</span>.9MB
+rancher/pause                    <span class="token number">3.1</span>                 da86e6ba6ca19       742kB
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="配置-containerd" tabindex="-1"><a class="header-anchor" href="#配置-containerd" aria-hidden="true">#</a> 配置 containerd</h2>
 <p>K3s 将会在<code v-pre>/var/lib/rancher/k3s/agent/etc/containerd/config.toml</code>中为 containerd 生成 config.toml。</p>
 <p>如果要对这个文件进行高级定制，你可以在同一目录中创建另一个名为 <code v-pre>config.toml.tmpl</code> 的文件，此文件将会代替默认设置。</p>

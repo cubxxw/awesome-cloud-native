@@ -34,8 +34,9 @@
 </li>
 <li>
 <p>对于相对功能复杂的非 <code v-pre>main</code> 包，一般都会增加一些使用示例或基本说明，且以 <code v-pre>Package &lt;name&gt;</code> 开头：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>  /*  Package regexp implements a simple library for regular expressions.  The syntax of the regular expressions accepted is:      regexp:          concatenation { '|' concatenation }      concatenation:          { closure }      closure:          term [ '*' | '+' | '?' ]      term:          '^'          '$'          '.'          character          '[' [ '^' ] character-ranges ']'          '(' regexp ')'  */  package regexp
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">/*  Package regexp implements a simple library for regular expressions.  The syntax of the regular expressions accepted is:      regexp:          concatenation { '|' concatenation }      concatenation:          { closure }      closure:          term [ '*' | '+' | '?' ]      term:          '^'          '$'          '.'          character          '[' [ '^' ] character-ranges ']'          '(' regexp ')'  */</span> 
+<span class="token keyword">package</span> regexp
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>
 <p>特别复杂的包说明，可单独创建 <a href="https://github.com/robfig/cron/blob/master/doc.go" target="_blank" rel="noopener noreferrer"><code v-pre>doc.go</code><ExternalLinkIcon/></a> 文件来加以说明。</p>
 </li>
@@ -44,26 +45,26 @@
 <ul>
 <li>
 <p>类型的定义一般都以单数形式描述：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>  // Request represents a request to run a command.  type Request struct { ...
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">// Request represents a request to run a command.  type Request struct { ...</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 <li>
 <p>如果为接口，则一般以以下形式描述：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>  // FileInfo is the interface that describes a file and is returned by Stat and Lstat.  type FileInfo interface { ...
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">// FileInfo is the interface that describes a file and is returned by Stat and Lstat.  type FileInfo interface { ...</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 </ul>
 <h3 id="函数与方法" tabindex="-1"><a class="header-anchor" href="#函数与方法" aria-hidden="true">#</a> 函数与方法</h3>
 <ul>
 <li>
 <p>函数与方法的注释需以函数或方法的名称作为开头：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>  // Post returns *BeegoHttpRequest with POST method.
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">// Post returns *BeegoHttpRequest with POST method.</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 <li>
 <p>如果一句话不足以说明全部问题，则可换行继续进行更加细致的描述：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>  // Copy copies file from source to target path.  // It returns false and error when error occurs in underlying function calls.
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">// Copy copies file from source to target path.  // It returns false and error when error occurs in underlying function calls.</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 <li>
 <p>若函数或方法为判断类型（返回值主要为 <code v-pre>bool</code> 类型），则以 <code v-pre>&lt;name&gt; returns true if</code> 开头：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>  // HasPrefix returns true if name has any string in given slice as prefix.  func HasPrefix(name string, prefixes []string) bool { ...
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">// HasPrefix returns true if name has any string in given slice as prefix.  func HasPrefix(name string, prefixes []string) bool { ... }</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
 </ul>
 <h3 id="其它说明" tabindex="-1"><a class="header-anchor" href="#其它说明" aria-hidden="true">#</a> 其它说明</h3>
@@ -76,8 +77,9 @@
 </li>
 <li>
 <p>当需要特别说明某个问题时，可用 <code v-pre>NOTE:</code> 开头的注释：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code> 复制代码  // NOTE: os.Chmod and os.Chtimes don't recognize symbolic link,  // which will lead "no such file or directory" error.  return os.Symlink(target, dest)
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">// NOTE: os.Chmod and os.Chtimes don't recognize symbolic link,  </span>
+<span class="token comment">// which will lead "no such file or directory" error.  return os.Symlink(target, dest)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
 <h2 id="包括什么" tabindex="-1"><a class="header-anchor" href="#包括什么" aria-hidden="true">#</a> 包括什么</h2>
 <ul>

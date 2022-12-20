@@ -63,6 +63,14 @@
 </blockquote>
 <p>取代了 <code v-pre>Dqlite</code> ，或许我们该去了解一下 <code v-pre>Dqlite</code>，</p>
 </div>
+<h2 id="宏观上对比" tabindex="-1"><a class="header-anchor" href="#宏观上对比" aria-hidden="true">#</a> 宏观上对比</h2>
+<p>开发者的角度来看，k0s、k3s和k8s之间主要存在以下几个区别：</p>
+<ul>
+<li>部署方式不同：k0s、k3s和k8s都可以通过一键部署的方式快速安装，但它们的部署方式略有不同。k0s可以通过一键脚本进行部署，也可以通过多种方式（如Docker、Helm、kubectl等）进行安装；k3s也提供了一键脚本、Docker、Helm等部署方式；k8s则提供了多种安装方式，包括二进制包安装、Docker安装、官方镜像安装等。</li>
+<li>资源消耗不同：由于k0s和k3s都是轻量级的Kubernetes发行版，它们在运行时的资源消耗相对较小。k0s可以在512MB内存的设备上运行，而k3s则可以在1GB内存的设备上运行。相比之下，k8s对系统资源的消耗会更多一些，建议在2GB以上内存的设备上运行。</li>
+<li>功能特性不同：k0s、k3s和k8s都是基于Kubernetes的工具，因此它们在基础功能上有很多相似之处。但由于k0s和k3s都是轻量级的发行版，它们在高级功能方面可能会比k8s稍逊一筹。例如，k0s和k3s目前可能不支持k8s的某些高级功能。例如，k0s目前不支持负载均衡器，不支持持久卷，也不支持自定义资源；k3s目前不支持分布式跟踪、扩展API服务器和网络插件等功能。</li>
+</ul>
+<p>总的来说，k0s、k3s和k8s都是基于Kubernetes的工具，它们都可以用于部署和管理容器化应用，但它们在部署方式、资源消耗和功能特性上存在一定差异。开发者可以根据自己的需求和环境条件来选择适合自己的工具。</p>
 <h2 id="选择哪一个-k3s-还是-k0s" tabindex="-1"><a class="header-anchor" href="#选择哪一个-k3s-还是-k0s" aria-hidden="true">#</a> 选择哪一个，k3s 还是 k0s？</h2>
 <p>如果您想要为轻量级环境提供稳定的生产就绪 <code v-pre>Kubernetes</code> 发行版，我们仍然会推荐 k3s。默认情况下，<code v-pre>K3s</code> 对于轻量级环境是安全的，并且消除了上游 <code v-pre>Kubernetes</code> 所排除的膨胀软件。K3s 还将所有 <code v-pre>Kubernetes</code> 组件包装到一个简单的启动器中，它支持各种存储后端，并且需要最少的操作系统依赖。</p>
 <p>相比之下，如果您想要一个用于开发或暂存集群的 <code v-pre>Kubernetes</code> 发行版，<code v-pre>k0s</code> 值得一试。尽管 <code v-pre>k0s</code> 是一个年轻的项目并且是一个早期版本，但它正在迅速发展成为一种在任何地方运行 <code v-pre>Kubernetes</code> 的强大且通用的方式。当然，有一些粗糙的边缘需要修复，比如支持开箱即用的附加组件和大二进制大小（与 <code v-pre>k3s</code> 相比），但我们希望随着项目的成熟，这些障碍能够得到克服。</p>
@@ -126,8 +134,8 @@
 <h2 id="或许还可以带上microk8s" tabindex="-1"><a class="header-anchor" href="#或许还可以带上microk8s" aria-hidden="true">#</a> 或许还可以带上microk8s</h2>
 <p>源自 <code v-pre>MicroK8s</code> 主文档网页，<code v-pre>MicroK8s</code> 是最小、最快、完全符合标准的 Kubernetes，它跟踪上游版本并使集群变得简单。</p>
 <p>MicroK8s 非常适合离线开发、原型设计和测试。</p>
-<p>在 VM 上使用它作为 CI/CD 的小型、便宜、可靠的 k8s。它也是用于设备的最佳生产级 Kubernetes。</p>
-<p>为 k8s 开发 IoT 应用程序并将它们部署到 Linux 机器上的 MicroK8s。</p>
+<p>在 VM 上使用它作为 <code v-pre>CI/CD</code> 的小型、便宜、可靠的 <code v-pre>k8s</code>。它也是用于设备的最佳生产级 <code v-pre>Kubernetes</code>。</p>
+<p>为 <code v-pre>k8s</code> 开发 <code v-pre>IoT</code> 应用程序并将它们部署到 <code v-pre>Linux</code> 机器上的 <code v-pre>MicroK8s</code>。</p>
 <h2 id="mirantis-k0s-未来" tabindex="-1"><a class="header-anchor" href="#mirantis-k0s-未来" aria-hidden="true">#</a> Mirantis k0s 未来</h2>
 <p>Kubernetes 发行版市场中的 K0s 直接与 Rancher 的 k3s 和 Canonical 的 microk8s 竞争。K3s 是 CNCF 认证的项目，已经得到了社区的大力支持，并且已经成为来自不同领域的各种嵌入式计算组织的一部分。Canonical 的 Microk8s 最近添加了一些功能，使其更适合生产，但与 k3s 相比；它不是用于大规模部署的成熟发行版。</p>
 <p>K0s 有许多突出的特性，例如，Kine 允许集成 MySQL 和 PostgreSQL 等外部数据库，单一的二进制安装和架构支持也与 k3s 非常相似。k0s 社区也期待在 Linux 的控制平面上增加对基于 Microsoft Windows Server 2019 的工作节点的支持，从而允许运行混合工作负载。</p>

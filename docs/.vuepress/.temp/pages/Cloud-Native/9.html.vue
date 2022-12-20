@@ -38,8 +38,8 @@ Last, k3s support custom private registry, how to config this? and whether k3s c
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>seal run k3s~
 seal run k0s~
 seal run kuberntes~
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="立方体10天前作者" tabindex="-1"><a class="header-anchor" href="#立方体10天前作者" aria-hidden="true">#</a> <a href="https://github.com/cubxxw" target="_blank" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/86140903?s=64&amp;v=4" alt="img">立方体<ExternalLinkIcon/></a><a href="https://github.com/k3s-io/k3s/discussions/6478#discussioncomment-4156072" target="_blank" rel="noopener noreferrer">10天前<ExternalLinkIcon/></a>作者</h3>
-<p>另一个问题是关于安装步骤。AFAIK，k3s 支持通过 k3s 代理 k3s 服务器加入节点吗？ 最后，k3s支持自定义私有registry，这个怎么配置？k3s能不能支持外部CRI？</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="作者" tabindex="-1"><a class="header-anchor" href="#作者" aria-hidden="true">#</a> 作者</h3>
+<p>另一个问题是关于安装步骤。AFAIK，k3s 支持通过 k3s 代理 k3s 服务器加入节点吗？ 最后，k3s支持<code v-pre>自定义私有registry</code>，这个怎么配置？k3s能不能支持外部CRI？</p>
 <blockquote>
 <p>k3s支持通过 <code v-pre>k3s agent k3s server</code> 加入节点吗？是的，<code v-pre>k3s agent</code>节点可以加入另一个正在运行的节点的集群<code v-pre>k3s server</code>。这就是你想问的吗？k3s 支持自定义私有注册中心，</p>
 <p>如何配置？您有机会查看文档吗？https://docs.k3s.io/installation/private-registryk3s</p>

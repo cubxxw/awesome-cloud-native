@@ -11,7 +11,7 @@
 <p>[TOC]</p>
 <h2 id="对比" tabindex="-1"><a class="header-anchor" href="#对比" aria-hidden="true">#</a> 对比</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
-<p>数据存储一般都会选择 <code v-pre>/var/lib/</code> 下面，包括 docker 、<strong>k3s</strong>、<strong>kubernetes</strong> 等等</p>
+<p>数据存储一般都会选择 <code v-pre>/var/lib/</code> 下面，包括 <strong>docker</strong> 、<strong>k3s</strong>、<strong>kubernetes</strong> 等等</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@VM-4-6-centos lib<span class="token punctuation">]</span><span class="token comment"># ls rancher/k3s/</span>
 agent  data  server
 
