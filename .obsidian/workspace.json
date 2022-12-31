@@ -11,15 +11,12 @@
             "id": "fcc4b88a0ffa4519",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "未命名.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": -37.32593749999987,
-                  "zoom": 0,
-                  "snapToGrid": false
-                }
+                "file": "docs/Cloud-Native-k8s/36.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -89,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名.canvas",
+                "file": "docs/Cloud-Native-k8s/36.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "未命名.canvas",
+                "file": "docs/Cloud-Native-k8s/36.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.canvas"
+                "file": "docs/Cloud-Native-k8s/36.md"
               }
             }
           },
@@ -170,15 +167,15 @@
   },
   "active": "fcc4b88a0ffa4519",
   "lastOpenFiles": [
-    "docs/Cloud-Native-k8s/36.md",
-    "docs/Cloud-Native-k8s/35.md",
-    "docs/Cloud-Native-k8s/37.md",
     "docs/Cloud-Native-k8s/34.md",
     "docs/Cloud-Native-k8s/33.md",
-    "docs/Cloud-Native-k8s/39.md",
-    "Day Planners/Day Planner-20221230.md",
-    "default/Termius.md",
+    "docs/Cloud-Native-k8s/31.md",
+    "docs/Cloud-Native-k8s/30.md",
+    "docs/Cloud-Native-k8s/29.md",
+    "docs/Cloud-Native-k8s/28.md",
+    "docs/Cloud-Native-k8s/25.md",
     "未命名.canvas",
-    "README.md"
+    "docs/Cloud-Native-k8s/36.md",
+    "docs/Cloud-Native-k8s/35.md"
   ]
 }
