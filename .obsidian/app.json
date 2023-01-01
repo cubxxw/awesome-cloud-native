@@ -1,6 +1,6 @@
 {
   "showLineNumber": false,
-  "vimMode": true,
+  "vimMode": false,
   "promptDelete": false,
   "attachmentFolderPath": "./images",
   "trashOption": "local",
