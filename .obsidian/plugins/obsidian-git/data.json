@@ -1,15 +1,15 @@
 {
   "commitMessage": "vault backup: {{date}}",
-  "autoCommitMessage": "From obsidian vault backup: {{date}}",
+  "autoCommitMessage": "vault backup: {{date}}",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
   "autoSaveInterval": 100,
-  "autoPushInterval": 10,
-  "autoPullInterval": 10,
-  "autoPullOnBoot": true,
+  "autoPushInterval": 0,
+  "autoPullInterval": 0,
+  "autoPullOnBoot": false,
   "disablePush": false,
   "pullBeforePush": true,
   "disablePopups": false,
-  "listChangedFilesInMessageBody": true,
+  "listChangedFilesInMessageBody": false,
   "showStatusBar": true,
   "updateSubmodules": false,
   "syncMethod": "merge",
@@ -19,9 +19,9 @@
   "refreshSourceControl": true,
   "basePath": "",
   "differentIntervalCommitAndPush": true,
-  "changedFilesInStatusBar": true,
+  "changedFilesInStatusBar": false,
   "showedMobileNotice": true,
   "refreshSourceControlTimer": 7000,
   "showBranchStatusBar": true,
-  "setLastSaveToLastCommit": true
+  "setLastSaveToLastCommit": false
 }
