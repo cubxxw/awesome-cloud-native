@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "default/k8s.md",
+                "file": "docs/Cloud-Native-k8s/37.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "default/k8s.md",
+                "file": "docs/Cloud-Native-k8s/37.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "default/k8s.md",
+                "file": "docs/Cloud-Native-k8s/37.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "default/k8s.md"
+                "file": "docs/Cloud-Native-k8s/37.md"
               }
             }
           },
@@ -189,15 +189,15 @@
   },
   "active": "717a25e99171fb1f",
   "lastOpenFiles": [
-    "default/kubernetes.md",
+    "docs/Cloud-Native-k8s/36.md",
+    "docs/Cloud-Native-k8s/38.md",
+    "docs/Cloud-Native-k8s/39.md",
+    "docs/Cloud-Native-k8s/40.md",
     "default/k8s.md",
+    "default/kubernetes.md",
     "未命名.md",
     "docs/Cloud-Native-k8s/29.md",
     "docs/Cloud-Native-k8s/4.md",
-    "docs/Cloud-Native/4.md",
-    "docs/Cloud-Native-k8s/5.md",
-    "docs/Cloud-Native/2.md",
-    "docs/Cloud-Native-k8s/30.md",
-    "docs/Cloud-Native-k8s/20.md"
+    "docs/Cloud-Native/4.md"
   ]
 }
