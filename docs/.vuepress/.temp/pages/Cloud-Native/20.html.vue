@@ -26,7 +26,7 @@
 <ul>
 <li><a href="https://github.com/sealerio/sealer/pull/1909" target="_blank" rel="noopener noreferrer">https://github.com/sealerio/sealer/pull/1909<ExternalLinkIcon/></a></li>
 </ul>
-<h3 id="描述" tabindex="-1"><a class="header-anchor" href="#描述" aria-hidden="true">#</a> 描述</h3>
+<h2 id="描述" tabindex="-1"><a class="header-anchor" href="#描述" aria-hidden="true">#</a> 描述</h2>
 <p>签字人：huaiyou <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=huaiyou.cyz@alibaba-inc.com" target="_blank" rel="noopener noreferrer">huaiyou.cyz@alibaba-inc.com<ExternalLinkIcon/></a></p>
 <p>为了方便基础镜像制作者的使用，我们需要对 sealer 的 rootfs 定义进行规范。</p>
 <p><strong>我主要做了以下设计：</strong></p>
@@ -42,7 +42,7 @@
 <li><code v-pre>bin</code>，<code v-pre>etc</code>，<code v-pre>plugins</code> 这几个目录的使用基本不变，只是明确了使用方式。</li>
 <li>明确定 <code v-pre>scripts</code> 下的不同脚本的用途。</li>
 </ol>
-<h3 id="设计规范" tabindex="-1"><a class="header-anchor" href="#设计规范" aria-hidden="true">#</a> 设计规范</h3>
+<h2 id="设计规范" tabindex="-1"><a class="header-anchor" href="#设计规范" aria-hidden="true">#</a> 设计规范</h2>
 <ul>
 <li><a href="https://github.com/sealerio/sealer/blob/ec9d2b561eaa20ff59bea28303669b3da0d7c4dd/docs/api/cloudrootfs.md" target="_blank" rel="noopener noreferrer">https://github.com/sealerio/sealer/blob/ec9d2b561eaa20ff59bea28303669b3da0d7c4dd/docs/api/cloudrootfs.md<ExternalLinkIcon/></a></li>
 </ul>

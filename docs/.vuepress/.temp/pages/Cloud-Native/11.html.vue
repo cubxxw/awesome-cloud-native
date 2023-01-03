@@ -11,7 +11,7 @@
 <p>[TOC]</p>
 <h2 id="准备" tabindex="-1"><a class="header-anchor" href="#准备" aria-hidden="true">#</a> 准备</h2>
 <p>三台基本配置的机器（避免了docker，测试过，namespace的隔离性并不让我满意）</p>
-<h3 id="版本" tabindex="-1"><a class="header-anchor" href="#版本" aria-hidden="true">#</a> 版本</h3>
+<h2 id="版本" tabindex="-1"><a class="header-anchor" href="#版本" aria-hidden="true">#</a> 版本</h2>
 <ul>
 <li>node：ubuntu22.04、Ubuntu20.04</li>
 <li>master：Ubuntu</li>
@@ -23,7 +23,7 @@
 
 <span class="token comment"># path</span>
 <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$GO_PATH</span>/bin
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="固定ip" tabindex="-1"><a class="header-anchor" href="#固定ip" aria-hidden="true">#</a> 固定ip</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="固定ip" tabindex="-1"><a class="header-anchor" href="#固定ip" aria-hidden="true">#</a> 固定ip</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">>></span> /etc/hosts <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
 192.168.71.130 cubmaster01
 192.168.71.131 cubnode01
@@ -34,7 +34,7 @@ EOF</span>
 <p>使用 DHCP 分配 IP：</p>
 <img src="http://sm.nsddd.top/smimage-20221124170002829.png" alt="image-20221124170002829" style="zoom:33%;" />
 </div>
-<h3 id="rsync远程同步工具" tabindex="-1"><a class="header-anchor" href="#rsync远程同步工具" aria-hidden="true">#</a> rsync远程同步工具</h3>
+<h2 id="rsync远程同步工具" tabindex="-1"><a class="header-anchor" href="#rsync远程同步工具" aria-hidden="true">#</a> rsync远程同步工具</h2>
 <p><strong>rsync主要用于备份和镜像，具有速度快、避免相同内容和支持符号链接的优点</strong></p>
 <blockquote>
 <p>相比较scp,rsync速度更快，只对差异文件做更新</p>

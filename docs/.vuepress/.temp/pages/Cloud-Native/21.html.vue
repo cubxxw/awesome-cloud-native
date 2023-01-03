@@ -36,7 +36,7 @@
 <p>要卸载 k0s 群集，首先需要停止服务 （<code v-pre>k0s stop</code>），然后调用 reset 命令从主机中删除所有与 k0s 相关的文件。</p>
 <p>containerd 守护进程在 Pod 中管理和运行容器。此外，您还可以将 hostPath 卷挂载到 Pod。Calico作为默认的CNI，而kube-router也可用。从本质上讲，你可以使用任何你喜欢的 CNI，因为 k0s 不会以任何方式限制 Kubernetes 配置。</p>
 <p>为了方便用户，k0s 为各种 shell 提供了自动完成脚本：Bash、zsh、fish 和 PowerShell（使用 WSL）。</p>
-<p>k0s 尽可能简约：它是一个没有任何模块或插件的普通 Kubernetes。默认情况下，它不支持云提供商（但是，您可以在启动期间<a href="https://github.com/k0sproject/k0s/blob/main/docs/cloud-providers.md" target="_blank" rel="noopener noreferrer">添加它<ExternalLinkIcon/></a>）。该软件的安装方式与常规 Kubernetes 集群中的安装方式相同——通过声明必要的原语（您可以使用 Helm 和其他此类工具）。</p>
+<p>k0s 尽可能简约：它是一个没有任何模块或插件的普通 Kubernetes。默认情况下，它不支持云提供商（但是，您可以在启动期间 <a href="https://github.com/k0sproject/k0s/blob/main/docs/cloud-providers.md" target="_blank" rel="noopener noreferrer">添加它<ExternalLinkIcon/></a>）。该软件的安装方式与常规 Kubernetes 集群中的安装方式相同——通过声明必要的原语（您可以使用 Helm 和其他此类工具）。</p>
 <h3 id="_2-microk8s型-k8s" tabindex="-1"><a class="header-anchor" href="#_2-microk8s型-k8s" aria-hidden="true">#</a> 2. MicroK8s型 K8s</h3>
 <ul>
 <li>网站： <a href="https://microk8s.io/" target="_blank" rel="noopener noreferrer">microk8s.io<ExternalLinkIcon/></a></li>
@@ -55,7 +55,7 @@
 <span class="token comment"># microk8s kubectl get nodes</span>
 NAME            STATUS   ROLES    AGE    VERSION
 thinkpad        Ready       2m     v1.20.7<span class="token punctuation">-</span>34+df7df22a741dbc
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>请注意，MicroK8s 附带<a href="https://microk8s.io/docs/addons" target="_blank" rel="noopener noreferrer">一组插件<ExternalLinkIcon/></a>。您可以随时启用和禁用它们。例如，以下内容将启用 Kubernetes 仪表板：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>请注意，MicroK8s 附带 <a href="https://microk8s.io/docs/addons" target="_blank" rel="noopener noreferrer">一组插件<ExternalLinkIcon/></a>。您可以随时启用和禁用它们。例如，以下内容将启用 Kubernetes 仪表板：</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token comment"># microk8s enable dashboard</span>
 <span class="token comment"># microk8s status</span>
 microk8s is running
@@ -67,7 +67,7 @@ microk8s is running
     dashboard            <span class="token comment"># The Kubernetes dashboard</span>
     <span class="token punctuation">...</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>与k0s类似，MicroK8s带有一个用于存储容器映像的内部注册表。</p>
-<p>另一个令人兴奋的功能是<code v-pre>microk8s inspect</code>命令。它的作用是分析集群并编译有关其组件的完整报告（作为 tar.gz 文件）以供进一步研究：</p>
+<p>另一个令人兴奋的功能是 <code v-pre>microk8s inspect</code> 命令。它的作用是分析集群并编译有关其组件的完整报告（作为 tar.gz 文件）以供进一步研究：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">ls</span> inspection-report/
 apparmor
 args
@@ -373,7 +373,7 @@ $ minikube profile list
 <li><a href="https://kubevious.io/blog/post/what-is-mirantis-k0s-and-how-it-compares-with-rancher-k3s" target="_blank" rel="noopener noreferrer">什么是米兰蒂斯k0s，它与牧场主k3s有何不同<ExternalLinkIcon/></a></li>
 <li><a href="https://www.cncf.io/wp-content/uploads/2020/08/CNCF-Webinar-Navigating-the-Sea-of-Local-Clusters-.pdf" target="_blank" rel="noopener noreferrer">驾驭 Kubernetes 本地集群的海洋<ExternalLinkIcon/></a></li>
 </ul>
-<h2 id="相关文章" tabindex="-1"><a class="header-anchor" href="#相关文章" aria-hidden="true">#</a> 相关文章：</h2>
+<h2 id="相关文章" tabindex="-1"><a class="header-anchor" href="#相关文章" aria-hidden="true">#</a> 相关文章</h2>
 <ul>
 <li><a href="https://blog.palark.com/comparing-ingress-controllers-for-kubernetes/" target="_blank" rel="noopener noreferrer">比较 Kubernetes 的入口控制器<ExternalLinkIcon/></a></li>
 <li><a href="https://blog.palark.com/open-source-self-hosted-serverless-frameworks-for-kubernetes/" target="_blank" rel="noopener noreferrer">Kubernetes 自托管无服务器框架概述：OpenFaaS、Knative、OpenWhisk、Fission<ExternalLinkIcon/></a></li>

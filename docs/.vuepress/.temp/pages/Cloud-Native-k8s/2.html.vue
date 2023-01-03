@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#由docker引入k8s">由docker引入k8s</router-link><ul><li><router-link to="#docker容器化技术">docker容器化技术</router-link></li></ul></li><li><router-link to="#dockerfile">dockerfile</router-link></li><li><router-link to="#run命令">run命令</router-link></li><li><router-link to="#镜像压缩和发送">镜像压缩和发送</router-link><ul><li><router-link to="#远程传输scp">远程传输scp</router-link></li><li><router-link to="#新的机器启用镜像">新的机器启用镜像</router-link></li></ul></li><li><router-link to="#推送到远程仓库">推送到远程仓库</router-link></li><li><router-link to="#将应用打包为镜像">将应用打包为镜像</router-link><ul><li><router-link to="#以前的土方法">以前的土方法</router-link></li><li><router-link to="#docker解决方案">docker解决方案</router-link></li></ul></li><li><router-link to="#docker-清理使用的空间">docker 清理使用的空间</router-link></li><li><router-link to="#end-链接">END 链接</router-link><ul><li><router-link to="#参考">参考</router-link></li></ul></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#由docker引入k8s">由docker引入k8s</router-link><ul><li><router-link to="#docker容器化技术">docker容器化技术</router-link></li></ul></li><li><router-link to="#dockerfile">dockerfile</router-link></li><li><router-link to="#run命令">run命令</router-link></li><li><router-link to="#镜像压缩和发送">镜像压缩和发送</router-link><ul><li><router-link to="#远程传输scp">远程传输scp</router-link></li><li><router-link to="#新的机器启用镜像">新的机器启用镜像</router-link></li></ul></li><li><router-link to="#推送到远程仓库">推送到远程仓库</router-link></li><li><router-link to="#将应用打包为镜像">将应用打包为镜像</router-link><ul><li><router-link to="#以前的土方法">以前的土方法</router-link></li><li><router-link to="#docker解决方案">docker解决方案</router-link></li></ul></li><li><router-link to="#docker-清理使用的空间">docker 清理使用的空间</router-link><ul><li><router-link to="#dockerinit">Dockerinit</router-link></li></ul></li><li><router-link to="#容器进程和应用进程">容器进程和应用进程</router-link></li><li><router-link to="#linux-绑定挂载机制">Linux 绑定挂载机制</router-link></li><li><router-link to="#end-链接">END 链接</router-link><ul><li><router-link to="#参考">参考</router-link></li></ul></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <ul>
@@ -116,6 +116,40 @@ my_cloudreve.tar
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>此外，也可以清除不再使用的卷：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> volumes prune
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>有时候，它可能很快就把磁盘占满了，所以要经常检查它的根目录（的磁盘占用情况），但是不建议手动删除或编辑 Docker 文件，最好使用 prune 命令来释放磁盘空间。</p>
+<h3 id="dockerinit" tabindex="-1"><a class="header-anchor" href="#dockerinit" aria-hidden="true">#</a> Dockerinit</h3>
+<p>Dockerinit是Docker容器启动时运行的初始化进程。它负责设置容器的环境，包括设置网络、挂载已指定的任何卷，以及执行Dockerfile的ENTRYPOINT或CMD指令中指定的命令。Dockerinit通常由Docker守护进程启动，并在容器中作为PID 1运行。</p>
+<h2 id="容器进程和应用进程" tabindex="-1"><a class="header-anchor" href="#容器进程和应用进程" aria-hidden="true">#</a> 容器进程和应用进程</h2>
+<p>在 Docker 容器中，容器进程是运行容器的进程，应用程序进程是在容器内运行应用程序的进程。容器进程负责管理容器的资源和网络，而应用进程负责运行应用。</p>
+<p><strong>容器进程和应用程序进程之间的一个关键区别是：</strong></p>
+<ul>
+<li>容器进程以特殊权限运行，而应用程序进程没有。</li>
+<li>容器进程可以访问主机系统的资源，并且可以控制在容器内运行的其他进程。</li>
+<li>另一方面，应用进程受限于分配给容器的资源，并且不能访问主机系统的资源或控制在容器中运行的其它进程。</li>
+<li>另一个区别是容器进程通常由 Docker 守护进程启动，而应用程序进程由容器进程启动。</li>
+<li>容器进程通常是创建容器时启动的第一个进程，它负责启动应用程序进程和可能需要的任何其他进程。</li>
+</ul>
+<h2 id="linux-绑定挂载机制" tabindex="-1"><a class="header-anchor" href="#linux-绑定挂载机制" aria-hidden="true">#</a> Linux 绑定挂载机制</h2>
+<p>Docker 使用的是 Linux 的绑定挂载 (bind mount) 技术，这种挂载方式会把宿主机的文件或目录挂载到容器中。</p>
+<p><strong>当你使用 docker run 命令挂载一个目录时，Docker 会把宿主机目录挂载到容器中，并且在容器中对该目录的任何修改会同步到宿主机</strong>。这对于在容器中运行应用程序并将其输出保存到宿主机目录中非常有用。</p>
+<p>例如，假设你有一个应用程序在容器中运行，并生成一些输出文件。你可以使用下面的命令将宿主机的目录挂载到容器中，以便将应用程序的输出保存到宿主机目录中：</p>
+<p><code v-pre>$ docker run -v /host/dir:/container/dir &lt;image&gt;</code></p>
+<p>这将把宿主机的 <code v-pre>/host/dir</code> 目录挂载到容器的 <code v-pre>/container/dir</code> 目录。你也可以使用绝对路径或相对路径来指定源目录和目标目录。</p>
+<p><strong>绑定机制中修改文件会发生什么？</strong></p>
+<p>在使用绑定挂载时，对容器中的文件进行修改会同步到宿主机目录中。</p>
+<p>例如，假设你使用下面的命令将宿主机的 /host/dir 目录挂载到容器的 /container/dir 目录：</p>
+<p><code v-pre>$ docker run -v /host/dir:/container/dir &lt;image&gt;</code></p>
+<p>然后，你在容器中使用以下命令修改 /container/dir 目录中的文件：</p>
+<p><code v-pre>$ echo &quot;new content&quot; &gt; /container/dir/file.txt</code></p>
+<p>这将在容器中创建或覆盖文件 /container/dir/file.txt ，并且对文件的修改会同步到宿主机的 /host/dir/file.txt 文件中。</p>
+<p>同样的，如果你在宿主机上修改 /host/dir/file.txt 文件，那么这些修改也会反映到容器的 /container/dir/file.txt 文件中。</p>
+<p>绑定挂载是一种很有用的功能，可以让你在容器中轻松访问和修改宿主机目录中的文件。</p>
+<p><strong>内核角度分析：</strong></p>
+<p>在 Linux 内核的角度来看，绑定挂载是一种特殊的文件系统挂载方式。</p>
+<p>当你执行 &quot;mount&quot; 命令时，你可以指定一个源路径和一个目标路径。源路径是要挂载的文件系统，目标路径是挂载点，即挂载后文件系统在文件系统树中的位置。</p>
+<p>在绑定挂载的情况下，源路径和目标路径都是在同一个文件系统中的路径。因此，在绑定挂载的情况下，你可以将一个目录挂载到另一个目录上，而不是将一个文件系统挂载到另一个文件系统上。</p>
+<p>绑定挂载可以通过 &quot;mount&quot; 命令的 &quot;--bind&quot; 选项来实现。例如，你可以使用下面的命令将目录 <code v-pre>/host/dir</code> 绑定挂载到目录 <code v-pre>/container/dir </code> 上：</p>
+<p><code v-pre>$ mount --bind /host/dir /container/dir</code></p>
+<p>在这种情况下，对 /container/dir 目录的任何修改都会同步到 /host/dir 目录中。</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '1.md' style='float:left'>⬆️上一节🔗  </a><a href = '3.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
