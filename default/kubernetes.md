@@ -1,0 +1,1 @@
+![[default/images/Kubernetes (k8s) handwritten notes by Mohd Imran.pdf]]

@@ -14,8 +14,35 @@
               "type": "empty",
               "state": {}
             }
+          },
+          {
+            "id": "d11aec6a873da6bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "default/k8s.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "717a25e99171fb1f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "default/k8s.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -81,6 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "default/k8s.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "default/k8s.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +147,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "default/k8s.md"
+              }
             }
           },
           {
@@ -156,17 +187,17 @@
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false
     }
   },
-  "active": "156e259e9938d686",
+  "active": "717a25e99171fb1f",
   "lastOpenFiles": [
+    "default/kubernetes.md",
+    "default/k8s.md",
+    "未命名.md",
     "docs/Cloud-Native-k8s/29.md",
     "docs/Cloud-Native-k8s/4.md",
     "docs/Cloud-Native/4.md",
     "docs/Cloud-Native-k8s/5.md",
     "docs/Cloud-Native/2.md",
     "docs/Cloud-Native-k8s/30.md",
-    "docs/Cloud-Native-k8s/20.md",
-    "docs/Cloud-Native-k8s/25.md",
-    "docs/Cloud-Native-k8s/2.md",
-    "docs/Cloud-Native-k8s/1.md"
+    "docs/Cloud-Native-k8s/20.md"
   ]
 }
