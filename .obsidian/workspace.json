@@ -21,6 +21,19 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "docs/Cloud-Native-k8s/14.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a1199039a0c96934",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "docs/Cloud-Native-k8s/37.md",
                 "mode": "source",
                 "backlinks": true,
@@ -95,9 +108,9 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Cloud-Native-k8s/37.md",
+                "file": "docs/Cloud-Native-k8s/14.md",
                 "collapseAll": false,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -112,9 +125,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Cloud-Native-k8s/37.md",
+                "file": "docs/Cloud-Native-k8s/14.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -135,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Cloud-Native-k8s/37.md"
+                "file": "docs/Cloud-Native-k8s/14.md"
               }
             }
           },
@@ -148,7 +161,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -176,15 +189,15 @@
   },
   "active": "1420f979676ee604",
   "lastOpenFiles": [
-    "docs/Cloud-Native-k8s/35.md",
-    "docs/Cloud-Native-k8s/33.md",
-    "docs/Cloud-Native-k8s/40.md",
-    "docs/Cloud-Native-k8s/49.md",
-    "docs/Cloud-Native-k8s/29.md",
-    "docs/Cloud-Native-k8s/28.md",
-    "docs/Cloud-Native-k8s/6.md",
-    "docs/Cloud-Native-k8s/5.md",
-    "default/kubernetes.md",
-    "default/k8s.md"
+    "docs/Cloud-Native-k8s/15.md",
+    "docs/Cloud-Native-k8s/14.md",
+    "docs/Cloud-Native-k8s/37.md",
+    "default/Kubelet.md",
+    "default/kube-system.md",
+    "docs/Cloud-Native-k8s/38.md",
+    "default/PPT.md",
+    "docs/Cloud-Native-k8s/16.md",
+    "docs/Cloud-Native-k8s/18.md",
+    "docs/Cloud-Native-k8s/13.md"
   ]
 }
