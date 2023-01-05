@@ -8,41 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3596c3e71a63cc08",
-            "type": "leaf",
-            "state": {
-              "type": "mindmap",
-              "state": {}
-            }
-          },
-          {
-            "id": "1420f979676ee604",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Cloud-Native-k8s/14.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a1199039a0c96934",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Cloud-Native-k8s/37.md",
+                "file": "docs/Cloud-Native-k8s/38.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Cloud-Native-k8s/14.md",
+                "file": "docs/Cloud-Native-k8s/38.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -125,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Cloud-Native-k8s/14.md",
+                "file": "docs/Cloud-Native-k8s/38.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -148,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Cloud-Native-k8s/14.md"
+                "file": "docs/Cloud-Native-k8s/38.md"
               }
             }
           },
@@ -187,17 +165,17 @@
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false
     }
   },
-  "active": "1420f979676ee604",
+  "active": "a1199039a0c96934",
   "lastOpenFiles": [
-    "docs/Cloud-Native-k8s/15.md",
-    "docs/Cloud-Native-k8s/14.md",
     "docs/Cloud-Native-k8s/37.md",
-    "default/Kubelet.md",
-    "default/kube-system.md",
+    "default/ReplicaSet.md",
     "docs/Cloud-Native-k8s/38.md",
-    "default/PPT.md",
-    "docs/Cloud-Native-k8s/16.md",
-    "docs/Cloud-Native-k8s/18.md",
-    "docs/Cloud-Native-k8s/13.md"
+    "docs/Cloud-Native-k8s/38 1.md",
+    "default/Re.md",
+    "docs/Cloud-Native-k8s/31.md",
+    "docs/Cloud-Native-k8s/30.md",
+    "docs/Cloud-Native-k8s/29.md",
+    "docs/Cloud-Native-k8s/28.md",
+    "docs/Cloud-Native-k8s/27.md"
   ]
 }
