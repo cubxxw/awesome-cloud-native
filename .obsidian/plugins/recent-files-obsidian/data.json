@@ -1,0 +1,71 @@
+{
+  "recentFiles": [
+    {
+      "basename": "16",
+      "path": "docs/Cloud-Native-k8s/16.md"
+    },
+    {
+      "basename": "38",
+      "path": "docs/Cloud-Native-k8s/38.md"
+    },
+    {
+      "basename": "37",
+      "path": "docs/Cloud-Native-k8s/37.md"
+    },
+    {
+      "basename": "36",
+      "path": "docs/Cloud-Native-k8s/36.md"
+    },
+    {
+      "basename": "18",
+      "path": "docs/Cloud-Native-k8s/18.md"
+    },
+    {
+      "basename": "8",
+      "path": "docs/Cloud-Native-k8s/8.md"
+    },
+    {
+      "basename": "10",
+      "path": "docker/Cloud-Native-k8s/10.md"
+    },
+    {
+      "basename": "9",
+      "path": "docker/Cloud-Native-k8s/9.md"
+    },
+    {
+      "basename": "8",
+      "path": "docker/Cloud-Native-k8s/8.md"
+    },
+    {
+      "basename": "7",
+      "path": "docker/Cloud-Native-k8s/7.md"
+    },
+    {
+      "basename": "6",
+      "path": "docker/Cloud-Native-k8s/6.md"
+    },
+    {
+      "basename": "5",
+      "path": "docker/Cloud-Native-k8s/5.md"
+    },
+    {
+      "basename": "2",
+      "path": "docker/Cloud-Native-k8s/2.md"
+    },
+    {
+      "basename": "slide",
+      "path": "default/slide.md"
+    },
+    {
+      "basename": "20230104-周三",
+      "path": "default/diary/20230104-周三.md"
+    },
+    {
+      "basename": "会议记录模板",
+      "path": "template/会议记录模板.md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": 50,
+  "openType": "tab"
+}
