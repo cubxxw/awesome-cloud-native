@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Cloud-Native-k8s/16.md",
+                "file": "docs/Cloud-Native-k8s/39.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -90,8 +90,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -111,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Cloud-Native-k8s/16.md",
+                "file": "docs/Cloud-Native-k8s/39.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Cloud-Native-k8s/16.md",
+                "file": "docs/Cloud-Native-k8s/39.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Cloud-Native-k8s/16.md"
+                "file": "docs/Cloud-Native-k8s/39.md"
               }
             }
           },
@@ -190,17 +189,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a834e59b32e4e338",
+  "active": "d9c1453c88b21823",
   "lastOpenFiles": [
     "docs/Cloud-Native-k8s/38.md",
+    "docs/Cloud-Native-k8s/39.md",
+    "docs/Cloud-Native-k8s/40.md",
     "docs/Cloud-Native-k8s/37.md",
     "docs/Cloud-Native-k8s/36.md",
+    "docs/Cloud-Native-k8s/35.md",
+    "docs/Cloud-Native-k8s/34.md",
+    "docs/Cloud-Native-k8s/31.md",
     "docs/Cloud-Native-k8s/18.md",
-    "docs/Cloud-Native-k8s/8.md",
-    "docker/Cloud-Native-k8s/10.md",
-    "docker/Cloud-Native-k8s/9.md",
-    "docker/Cloud-Native-k8s/8.md",
-    "docker/Cloud-Native-k8s/7.md",
-    "docker/Cloud-Native-k8s/6.md"
+    "docs/Cloud-Native-k8s/16.md"
   ]
 }
