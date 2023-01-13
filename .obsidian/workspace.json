@@ -90,8 +90,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -190,7 +189,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a834e59b32e4e338",
+  "active": "156e259e9938d686",
   "lastOpenFiles": [
     "docs/Cloud-Native-k8s/41.md",
     "docs/Cloud-Native-k8s/40.md",
