@@ -1,60 +1,116 @@
 {
   "recentFiles": [
     {
-      "basename": "42",
-      "path": "docs/Cloud-Native-k8s/42.md"
+      "basename": "cloc代码统计",
+      "path": "default/cloc代码统计.md"
     },
     {
-      "basename": "41",
-      "path": "docs/Cloud-Native-k8s/41.md"
-    },
-    {
-      "basename": "40",
-      "path": "docs/Cloud-Native-k8s/40.md"
-    },
-    {
-      "basename": "39",
-      "path": "docs/Cloud-Native-k8s/39.md"
-    },
-    {
-      "basename": "37",
-      "path": "docs/Cloud-Native-k8s/37.md"
-    },
-    {
-      "basename": "4",
-      "path": "docs/Cloud-Native-k8s/4.md"
-    },
-    {
-      "basename": "38",
-      "path": "docs/Cloud-Native-k8s/38.md"
+      "basename": "README",
+      "path": "README.md"
     },
     {
       "basename": "36",
-      "path": "docs/Cloud-Native-k8s/36.md"
+      "path": "cs/markdown/36.md"
     },
     {
       "basename": "35",
-      "path": "docs/Cloud-Native-k8s/35.md"
+      "path": "cs/markdown/35.md"
     },
     {
-      "basename": "34",
-      "path": "docs/Cloud-Native-k8s/34.md"
+      "basename": "37",
+      "path": "cs/markdown/37.md"
     },
     {
-      "basename": "31",
-      "path": "docs/Cloud-Native-k8s/31.md"
+      "basename": "33",
+      "path": "cs/markdown/33.md"
     },
     {
-      "basename": "18",
-      "path": "docs/Cloud-Native-k8s/18.md"
+      "basename": "32",
+      "path": "cs/markdown/32.md"
+    },
+    {
+      "basename": "26",
+      "path": "cs/markdown/26.md"
     },
     {
       "basename": "16",
-      "path": "docs/Cloud-Native-k8s/16.md"
+      "path": "cs/markdown/16.md"
     },
     {
-      "basename": "8",
-      "path": "docs/Cloud-Native-k8s/8.md"
+      "basename": "20230106-周五",
+      "path": "default/diary/20230106-周五.md"
+    },
+    {
+      "basename": "20230104-周三",
+      "path": "default/diary/20230104-周三.md"
+    },
+    {
+      "basename": "Drawing 2023-01-05 20.17.59.excalidraw",
+      "path": "Excalidraw/Drawing 2023-01-05 20.17.59.excalidraw.md"
+    },
+    {
+      "basename": "1",
+      "path": "docker/markdown/1.md"
+    },
+    {
+      "basename": "ch2-01",
+      "path": "go_bible/gopl-zh.github.com/ch2/ch2-01.md"
+    },
+    {
+      "basename": "Drawing 2023-01-05 20.17.27.excalidraw",
+      "path": "Excalidraw/Drawing 2023-01-05 20.17.27.excalidraw.md"
+    },
+    {
+      "basename": "README",
+      "path": "cs/build-your-own-x/README.md"
+    },
+    {
+      "basename": "4j99mhe",
+      "path": "cs/images/4j99mhe.png"
+    },
+    {
+      "basename": "ch2-02",
+      "path": "go_bible/gopl-zh.github.com/ch2/ch2-02.md"
+    },
+    {
+      "basename": "copy",
+      "path": "images/copy.pdf"
+    },
+    {
+      "basename": "group",
+      "path": "images/group.png"
+    },
+    {
+      "basename": "k3s上",
+      "path": "images/k3s上.pdf"
+    },
+    {
+      "basename": "README",
+      "path": "cryptology/README.md"
+    },
+    {
+      "basename": "20230105-周四",
+      "path": "default/diary/20230105-周四.md"
+    },
+    {
+      "basename": "未命名思维导图 1",
+      "path": "default/未命名思维导图 1.md"
+    },
+    {
+      "basename": "17",
+      "path": "docker/Cloud-Native-k8s/17.md"
+    },
+    {
+      "basename": "未命名思维导图",
+      "path": "default/未命名思维导图.md"
+    },
+    {
+      "basename": "19",
+      "path": "docker/Cloud-Native-k8s/19.md"
+    },
+    {
+      "basename": "13",
+      "path": "docker/Cloud-Native-k8s/13.md"
     },
     {
       "basename": "10",
@@ -87,10 +143,6 @@
     {
       "basename": "slide",
       "path": "default/slide.md"
-    },
-    {
-      "basename": "20230104-周三",
-      "path": "default/diary/20230104-周三.md"
     },
     {
       "basename": "会议记录模板",

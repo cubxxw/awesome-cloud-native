@@ -2,8 +2,8 @@
  * @Description: docker的配置
  * @Author: xiongxinwei 3293172751nss@gmail.com
  * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2022-10-20 22:40:04
- * @FilePath: \.sshd:\文档\最近的\awesome-docker\docs\.vuepress\config.ts
+ * @LastEditTime: 2023-02-14 22:28:26
+ * @FilePath: \undefinedd:\文档\最近的\awesome-docker\docs\.vuepress\config.ts
  * @blog: https://nsddd.top
  */
 import { defaultTheme } from 'vuepress'
@@ -451,6 +451,37 @@ export default {
                         '13.md',
                         '14.md',
                         '15.md',
+                        '16.md',
+                        '17.md',
+                        '18.md',
+                        '19.md',
+                        '20.md',
+                        '21.md',
+                        '22.md',
+                        '23.md',
+                        '24.md',
+                        '25.md',
+                        '26.md',
+                        '27.md',
+                        '28.md',
+                        '29.md',
+                        '30.md',
+                        '31.md',
+                        '32.md',
+                        '33.md',
+                        '34.md',
+                        '35.md',
+                        '36.md',
+                        '37.md',
+                        '38.md',
+                        '39.md',
+                        '40.md',
+                        '41.md',
+                        '42.md',
+                        '43.md',
+                        '44.md',
+                        '45.md',
+                        '46.md',
                     ],
                 },
             ],
