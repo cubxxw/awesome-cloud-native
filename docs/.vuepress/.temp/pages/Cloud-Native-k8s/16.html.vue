@@ -1,4 +1,6 @@
-<template><div><ul>
+<template><div><div class="language-dataview ext-dataview line-numbers-mode"><pre v-pre class="language-dataview"><code>list
+from #kubernetes
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第16节-treafik-lb" tabindex="-1"><a class="header-anchor" href="#第16节-treafik-lb" aria-hidden="true">#</a> 第16节 Treafik LB</h1>

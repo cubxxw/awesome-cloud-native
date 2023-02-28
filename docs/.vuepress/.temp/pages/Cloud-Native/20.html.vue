@@ -31,7 +31,7 @@
 <p>为了方便基础镜像制作者的使用，我们需要对 sealer 的 rootfs 定义进行规范。</p>
 <p><strong>我主要做了以下设计：</strong></p>
 <ol>
-<li>bin 等和 plugins 的用途基本相同，只是明确了使用方法。</li>
+<li><code v-pre>bin</code> 等和 <code v-pre>plugins</code> 的用途基本相同，只是明确了使用方法。</li>
 <li>阐明 Metadata、README.md 和 imageList 的用途。</li>
 <li>新增 yamls 和 charts 两个目录，为用户提供更灵活扩展基础镜像的能力。</li>
 <li>最后明确了scripts下不同脚本的用途。</li>
@@ -85,8 +85,8 @@
 COPY <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span>
 sealer build <span class="token parameter variable">-t</span> kuberntes:v1.18.3 <span class="token builtin class-name">.</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="hooks" tabindex="-1"><a class="header-anchor" href="#hooks" aria-hidden="true">#</a> Hooks</h2>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>FROM kubernetes:1.18.3
-COPY preHook.sh /scripts/
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> kubernetes:1.18.3</span>
+<span class="token instruction"><span class="token keyword">COPY</span> preHook.sh /scripts/</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>preHook.sh will execute after init.sh before kubeadm init master0</p>
 <h2 id="registry" tabindex="-1"><a class="header-anchor" href="#registry" aria-hidden="true">#</a> Registry</h2>
 <p>registry container name must be 'sealer-registry'</p>

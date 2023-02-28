@@ -52,16 +52,16 @@ cp /etc/redis/redis.conf /redis/redis/
 </li>
 </ul>
 <h3 id="创建redis实例" tabindex="-1"><a class="header-anchor" href="#创建redis实例" aria-hidden="true">#</a> 创建redis实例</h3>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -p 6379:6379 --name myredi01
---priviledged=true 
--v /redis/redis/redis.conf:/etc/redis/redis.conf 
--v /redis/redis/data:/data 
--d redis
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker run -p 6379:6379 --name myredi01 \
+--privileged=true \
+-v /redis/redis/redis.conf:/etc/redis/redis.conf \
+-v /redis/redis/data:/data \
+-d redis \
 redis-server /etc/redis/redis.conf
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>docker run -p 6379:6379 --name myredi01 --priviledged=true  -v /redis/redis/redis.conf:/etc/redis/redis.conf  -v /redis/redis/data:/data  -d redis redis-server /etc/redis/redis.conf</p>
 </blockquote>
-<p>**以前是<code v-pre>/bin/bash</code>**现在是<code v-pre>redis-server</code></p>
+<p><strong>以前是<code v-pre>/bin/bash</code></strong> 现在是<code v-pre>redis-server</code></p>
 </div></template>
 
 

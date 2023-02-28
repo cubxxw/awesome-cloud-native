@@ -22,6 +22,7 @@
 <li><a href="https://github.com/cubxxw/kubernetes" target="_blank" rel="noopener noreferrer">cubxxw - pr<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/kubernauts/Kubernetes-Learning-Resources" target="_blank" rel="noopener noreferrer">社区维护的 kubernetes 学习资源合集<ExternalLinkIcon/></a></li>
 <li><a href="https://blog.opskumu.com/borg.html" target="_blank" rel="noopener noreferrer">Kubernetes源码必读的 Google 大规模集群管理器 Borg<ExternalLinkIcon/></a></li>
+<li><a href="https://www.cnblogs.com/sunsky303/p/14371768.html" target="_blank" rel="noopener noreferrer">etcd：从应用场景到实现原理的全方位解读<ExternalLinkIcon/></a> 和 <a href="https://blog.51cto.com/nileader/1040007" target="_blank" rel="noopener noreferrer">ZooKeeper典型应用场景一览<ExternalLinkIcon/></a></li>
 </ul>
 <p>**关于 CNCF 的贡献，你需要签署 CLA **</p>
 <ul>
@@ -30,6 +31,7 @@
 <div class="custom-container warning"><p class="custom-container-title">注意</p>
 <ul>
 <li><a href="https://github.com/kubernetes/community/tree/master/contributors/devel" target="_blank" rel="noopener noreferrer">官方开发者向导 markdown 文件<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md" target="_blank" rel="noopener noreferrer">Kubernetes ownes 所有者md介绍<ExternalLinkIcon/></a></li>
 </ul>
 </div>
 <p><strong>自己的一些资源：</strong></p>
@@ -53,9 +55,9 @@
 <p><strong>有一些很重要的工具库：</strong>
 如 <strong>gengo</strong> ，包括 informer 机制；</p>
 <ul>
-<li>Cobra</li>
+<li>Cobra：命令行阿，docker、Kubernetes、sealos、sealer、ks 都具备的~</li>
 <li><a href="https://github.com/emicklei/go-restful" target="_blank" rel="noopener noreferrer">go-restful<ExternalLinkIcon/></a>：REST 要求开发人员以与协议定义一致的方式显式使用 HTTP 方法。这个基本的 REST 设计原则在创建、读取、更新和删除 (CRUD) 操作和 HTTP 方法之间建立了一对一的映射。</li>
-<li>etcd</li>
+<li>etcd：和 fabric 一样采用 raft 共识机制的数据库，在 k3s 中很深的讲解和应用。</li>
 </ul>
 <p><strong>Restful 基础：</strong></p>
 <p>简单了解 Restful 概念，如果做过 Restful Service 那么最好了</p>
@@ -65,12 +67,49 @@
 <li>深入局部中的学习中去</li>
 <li>耐心，多看代码~</li>
 </ul>
+<h2 id="学习方法" tabindex="-1"><a class="header-anchor" href="#学习方法" aria-hidden="true">#</a> 学习方法</h2>
+<blockquote>
+<p>参考2022GSoC 谷歌开源之夏活动，对于学院的解答。</p>
+<p>我是opensuse组织的GSoC'22贡献者，我想知道我可以如何学习和贡献k8s社区。我知道k8s的基础知识，但现在我想学习一些中级和高级概念，以便我可以在未来为k8s做出贡献。非常需要帮助</p>
+</blockquote>
+<ol>
+<li>Start learning each part of k8s.</li>
+<li>For example, start with Scheduler part.</li>
+<li>Go to k8s github and look into the code https://github.com/kubernetes/kubernetes</li>
+<li>It will be the best place to start</li>
+<li>Read about scheduler and find described logic in the source code.</li>
+<li>But first i think that you need to learn how each part is communicating and for what it is responsible.</li>
+<li>It is great that you wish to contribute.</li>
+<li>after that, learn everything about different Workloads (StatefulSet, ReplicaSet, DaemonSet etc.)</li>
+<li>then services and ingress</li>
+<li>then pv/pvc</li>
+<li>then go deeper and learn about Container Runtime Interface (CRI)</li>
+<li>and about Network Interface (CNI)</li>
+<li>and how they are communicating</li>
+<li>between themselves and with the host machine</li>
+<li>i guess that should give you a good grasp of how everything is working internally</li>
+<li>you can always check kubernetes api specification if you are looking for something what you have not learned yet</li>
+</ol>
+<h3 id="阶段型方法" tabindex="-1"><a class="header-anchor" href="#阶段型方法" aria-hidden="true">#</a> 阶段型方法</h3>
+<ol>
+<li><strong>第一阶段</strong> 先了解k8s，是什么，能做什么，架构，核心资源对象，设计理念，发展历程等等</li>
+<li><strong>第二阶段</strong> 开始使用k8s, 自己创建pod, deploy, job等资源。能够基于k8s开发一下组件，比如实现一个controller监听pod的创建删除等。【看山是山】</li>
+<li><strong>第三阶段</strong> 开始阅读源码，了解底层实现。这个过程会对k8s有一个更深的理解。比如创建一个pod的完成历程是什么样的，k8s gc机制到底是怎么实现的。namespaces删除的时候怎么做到删除所有资源后在删除的。【看山不是山】 这里推荐源码阅读方式：理论+实践结合。
+<ol>
+<li>理论：通过ide之间各种跳转阅读源码</li>
+<li>实践：自己动手在[关键代码]处增加日志，通过查看日志输出理解源码 （repo也介绍了如何二进制搭建一套K8s集群）</li>
+</ol>
+</li>
+<li><strong>第四阶段</strong> 再排查问题中进一步深入k8s的理解</li>
+</ol>
 <h2 id="书籍推荐" tabindex="-1"><a class="header-anchor" href="#书籍推荐" aria-hidden="true">#</a> 书籍推荐</h2>
 <ul>
-<li>Go语言程序设计语言</li>
-<li>深入解刨 Kubernetes</li>
+<li>Go语言程序设计语言 （买了，建议有一些其他语言基础 &amp;&amp; Go语言基础再看最好）</li>
+<li>深入解刨 Kubernetes （这个我也买了，emmm，特别完美的一本书，作者有自己的讲解，是个大佬）</li>
 <li>kubernetes 编程</li>
 <li>kubernetes 源码刨析（这个我买了！！！！！！，不推荐，copy 多干货少）</li>
+<li>docker 容器与容器云 （还没开始看）</li>
+<li>docker 开发指南 （还没开始看）</li>
 </ul>
 <h2 id="视频资源" tabindex="-1"><a class="header-anchor" href="#视频资源" aria-hidden="true">#</a> 视频资源</h2>
 <ul>
@@ -87,6 +126,7 @@
 <h2 id="网站资源" tabindex="-1"><a class="header-anchor" href="#网站资源" aria-hidden="true">#</a> 网站资源</h2>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/K6ynL_9nSTLCTy0_2xCobg" target="_blank" rel="noopener noreferrer">从 0 实现一个 k8s 的 CNI 网络插件<ExternalLinkIcon/></a></li>
+<li><a href="https://cloud.redhat.com/blog/kubernetes-deep-dive-code-generation-customresources" target="_blank" rel="noopener noreferrer">Kubernetes Deep Dive：CustomResources 的代码生成<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="推荐书籍" tabindex="-1"><a class="header-anchor" href="#推荐书籍" aria-hidden="true">#</a> 推荐书籍</h2>
 <ul>
@@ -115,6 +155,8 @@
 <ul>
 <li><a href="https://github.com/JackyZhangFuDan/K8sSourceCodeDeepDive/" target="_blank" rel="noopener noreferrer">go 开发之旅<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/derekguo001/understanding-kubernetes" target="_blank" rel="noopener noreferrer">kubernetes 源码解读<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/dtsola/best-practices-for-cloud-native" target="_blank" rel="noopener noreferrer">云原生（Cloud Native）、容器化（Docker）、容器编排（k8s）、服务网格（Istio）、无服务器（Serverless）、微服务、CI/CD、DevOps相关内容总结。<ExternalLinkIcon/></a></li>
+<li><a href="https://jimmysong.io/kubernetes-handbook/" target="_blank" rel="noopener noreferrer">Kubernetes 中文指南/云原生应用架构实战手册<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="数据统计和收集" tabindex="-1"><a class="header-anchor" href="#数据统计和收集" aria-hidden="true">#</a> 数据统计和收集</h2>
 <h3 id="cncf-数据" tabindex="-1"><a class="header-anchor" href="#cncf-数据" aria-hidden="true">#</a> CNCF 数据</h3>
@@ -138,7 +180,7 @@
 <p>slack：<a href="http://slack.k8s.io/" target="_blank" rel="noopener noreferrer">http://slack.k8s.io/<ExternalLinkIcon/></a></p>
 <p>YouTube： <a href="https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg" target="_blank" rel="noopener noreferrer">https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg<ExternalLinkIcon/></a></p>
 <h3 id="源码统计" tabindex="-1"><a class="header-anchor" href="#源码统计" aria-hidden="true">#</a> 源码统计</h3>
-<p><code v-pre>Kubernetes</code> 代码特别庞大，使用 cloc 统计：</p>
+<p><code v-pre>Kubernetes</code> 代码特别庞大，使用 cloc 统计 <strong>（⏱️ 2023-02-07）</strong>：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>PS D:<span class="token punctuation">\</span>文档<span class="token punctuation">\</span>my<span class="token operator">></span> cloc.exe .<span class="token punctuation">\</span>kubernetes<span class="token punctuation">\</span>
    <span class="token number">23056</span> text files.
    <span class="token number">17722</span> unique files.
@@ -175,9 +217,9 @@ CSV                               <span class="token number">2</span>           
 DOS Batch                         <span class="token number">1</span>              <span class="token number">2</span>             <span class="token number">17</span>              <span class="token number">2</span>
 HTML                              <span class="token number">2</span>              <span class="token number">0</span>              <span class="token number">0</span>              <span class="token number">2</span>
 NAnt script                       <span class="token number">1</span>              <span class="token number">0</span>              <span class="token number">0</span>              <span class="token number">1</span>
---------------------------------------------------------------------------------
+-----------------------------------------------------------
 SUM:                          <span class="token number">17722</span>         <span class="token number">558866</span>        <span class="token number">1065772</span>        <span class="token number">4992368</span>
---------------------------------------------------------------------------------
+-----------------------------------------------------------
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '28.md' style='float:left'>⬆️上一节🔗  </a><a href = '30.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

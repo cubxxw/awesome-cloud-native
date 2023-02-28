@@ -843,6 +843,13 @@ export const searchIndex = [
     "headers": [
       {
         "level": 2,
+        "title": "架构图",
+        "slug": "架构图",
+        "link": "#架构图",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
@@ -1315,8 +1322,109 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第22节",
+    "title": "第22节 sealer 1.9.1新年规划",
     "headers": [
+      {
+        "level": 2,
+        "title": "准备",
+        "slug": "准备",
+        "link": "#准备",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "我的任务",
+        "slug": "我的任务",
+        "link": "#我的任务",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "解决的问题",
+        "slug": "解决的问题",
+        "link": "#解决的问题",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "文档支持",
+        "slug": "文档支持",
+        "link": "#文档支持",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "解决方案",
+        "slug": "解决方案",
+        "link": "#解决方案",
+        "children": [
+          {
+            "level": 3,
+            "title": "跑程序",
+            "slug": "跑程序",
+            "link": "#跑程序",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "test",
+        "slug": "test",
+        "link": "#test",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rootless",
+        "slug": "rootless",
+        "link": "#rootless",
+        "children": [
+          {
+            "level": 3,
+            "title": "安装时候没有权限打开目录",
+            "slug": "安装时候没有权限打开目录",
+            "link": "#安装时候没有权限打开目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "目录",
+            "slug": "目录",
+            "link": "#目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "sudo",
+            "slug": "sudo",
+            "link": "#sudo",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "myidea",
+        "slug": "myidea",
+        "link": "#myidea",
+        "children": [
+          {
+            "level": 3,
+            "title": "sealer 组",
+            "slug": "sealer-组",
+            "link": "#sealer-组",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "新服务器测试",
+        "slug": "新服务器测试",
+        "link": "#新服务器测试",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -1330,8 +1438,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第23节",
+    "title": "第23节 docker rootless",
     "headers": [
+      {
+        "level": 2,
+        "title": "docker rootless",
+        "slug": "docker-rootless",
+        "link": "#docker-rootless",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -1345,8 +1460,22 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第24节",
+    "title": "第24节 Kubernetes rootless design",
     "headers": [
+      {
+        "level": 2,
+        "title": "以非 root 用户身份运行 Kubernetes 节点组件",
+        "slug": "以非-root-用户身份运行-kubernetes-节点组件",
+        "link": "#以非-root-用户身份运行-kubernetes-节点组件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "staging/src/k8s.io/client-go/",
+        "slug": "staging-src-k8s-io-client-go",
+        "link": "#staging-src-k8s-io-client-go",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -1360,13 +1489,271 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第25节",
+    "title": "第25节 Buildah / podman 以及在 rootless 模式下工作原理",
     "headers": [
       {
         "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
+        "title": "什么是 Buildah",
+        "slug": "什么是-buildah",
+        "link": "#什么是-buildah",
+        "children": [
+          {
+            "level": 3,
+            "title": "为什么选择Buildah",
+            "slug": "为什么选择buildah",
+            "link": "#为什么选择buildah",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Podman",
+            "slug": "podman",
+            "link": "#podman",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Buildah and Podman",
+            "slug": "buildah-and-podman",
+            "link": "#buildah-and-podman",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "podman rootless",
+            "slug": "podman-rootless",
+            "link": "#podman-rootless",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "builah 教程",
+        "slug": "builah-教程",
+        "link": "#builah-教程",
+        "children": [
+          {
+            "level": 3,
+            "title": "rootless user",
+            "slug": "rootless-user",
+            "link": "#rootless-user",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "安装后验证",
+            "slug": "安装后验证",
+            "link": "#安装后验证",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从 scratch 开始构建镜像",
+            "slug": "从-scratch-开始构建镜像",
+            "link": "#从-scratch-开始构建镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "镜像",
+            "slug": "镜像",
+            "link": "#镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah mount",
+            "slug": "buildah-mount",
+            "link": "#buildah-mount",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah umount",
+            "slug": "buildah-umount",
+            "link": "#buildah-umount",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah unshare",
+            "slug": "buildah-unshare",
+            "link": "#buildah-unshare",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "无根 Buildah 的工作原理：在非特权环境中构建容器",
+        "slug": "无根-buildah-的工作原理-在非特权环境中构建容器",
+        "link": "#无根-buildah-的工作原理-在非特权环境中构建容器",
+        "children": [
+          {
+            "level": 3,
+            "title": "直接使用 buildah",
+            "slug": "直接使用-buildah",
+            "link": "#直接使用-buildah",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah problems whit rootless",
+            "slug": "buildah-problems-whit-rootless",
+            "link": "#buildah-problems-whit-rootless",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "fuse-overlayfs",
+        "slug": "fuse-overlayfs",
+        "link": "#fuse-overlayfs",
+        "children": [
+          {
+            "level": 3,
+            "title": "启用支持以构建非特权容器",
+            "slug": "启用支持以构建非特权容器",
+            "link": "#启用支持以构建非特权容器",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Podman",
+        "slug": "podman-1",
+        "link": "#podman-1",
+        "children": [
+          {
+            "level": 3,
+            "title": "install",
+            "slug": "install",
+            "link": "#install",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "构建",
+            "slug": "构建",
+            "link": "#构建",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "查看镜像",
+            "slug": "查看镜像",
+            "link": "#查看镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "安装 slirp4netns",
+            "slug": "安装-slirp4netns",
+            "link": "#安装-slirp4netns",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "确保fuse-overlayfs已安装",
+            "slug": "确保fuse-overlayfs已安装",
+            "link": "#确保fuse-overlayfs已安装",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "启用用户命名空间 （centos 7/8 测试）",
+            "slug": "启用用户命名空间-centos-7-8-测试",
+            "link": "#启用用户命名空间-centos-7-8-测试",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "/etc/subuid和/etc/subgid配置",
+            "slug": "etc-subuid和-etc-subgid配置",
+            "link": "#etc-subuid和-etc-subgid配置",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "启动非特权 ping",
+            "slug": "启动非特权-ping",
+            "link": "#启动非特权-ping",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "用户操作",
+            "slug": "用户操作",
+            "link": "#用户操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "用户配置文件",
+            "slug": "用户配置文件",
+            "link": "#用户配置文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用卷",
+            "slug": "使用卷",
+            "link": "#使用卷",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Podman 在 rootless 下是如何工作的",
+        "slug": "podman-在-rootless-下是如何工作的",
+        "link": "#podman-在-rootless-下是如何工作的",
+        "children": [
+          {
+            "level": 3,
+            "title": "使用“podman top”显示用户名称空间",
+            "slug": "使用-podman-top-显示用户名称空间",
+            "link": "#使用-podman-top-显示用户名称空间",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "user namaspace",
+            "slug": "user-namaspace",
+            "link": "#user-namaspace",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "going forward",
+            "slug": "going-forward",
+            "link": "#going-forward",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Podman 如何创建用户名称空间",
+            "slug": "podman-如何创建用户名称空间",
+            "link": "#podman-如何创建用户名称空间",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "设置命名空间后，podman 接下来会发生什么",
+            "slug": "设置命名空间后-podman-接下来会发生什么",
+            "link": "#设置命名空间后-podman-接下来会发生什么",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Links",
+        "slug": "links",
+        "link": "#links",
         "children": []
       }
     ],
@@ -1375,8 +1762,101 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第26节",
+    "title": "第26节 OCI，CRI，runc，containerd，cri-containerd，dockershim等组件解释",
     "headers": [
+      {
+        "level": 2,
+        "title": "层级调用关系",
+        "slug": "层级调用关系",
+        "link": "#层级调用关系",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "OCI（Open Container Initiative）",
+        "slug": "oci-open-container-initiative",
+        "link": "#oci-open-container-initiative",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "RunC",
+        "slug": "runc",
+        "link": "#runc",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "cantainerd",
+        "slug": "cantainerd",
+        "link": "#cantainerd",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "docker与containerd、runc的关系图",
+        "slug": "docker与containerd、runc的关系图",
+        "link": "#docker与containerd、runc的关系图",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "CRI（Container Runtime Interface ）",
+        "slug": "cri-container-runtime-interface",
+        "link": "#cri-container-runtime-interface",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "docker与k8s调用containerd的关系图",
+        "slug": "docker与k8s调用containerd的关系图",
+        "link": "#docker与k8s调用containerd的关系图",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "cri-containerd",
+        "slug": "cri-containerd",
+        "link": "#cri-containerd",
+        "children": [
+          {
+            "level": 3,
+            "title": "CRI Plugin调用流程",
+            "slug": "cri-plugin调用流程",
+            "link": "#cri-plugin调用流程",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "k8s对runtime调用的演进",
+        "slug": "k8s对runtime调用的演进",
+        "link": "#k8s对runtime调用的演进",
+        "children": [
+          {
+            "level": 3,
+            "title": "dockershim",
+            "slug": "dockershim",
+            "link": "#dockershim",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "CRI-O",
+            "slug": "cri-o",
+            "link": "#cri-o",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "切换 CRI 时 要注意什么",
+            "slug": "切换-cri-时-要注意什么",
+            "link": "#切换-cri-时-要注意什么",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -1390,8 +1870,51 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第27节",
+    "title": "第27节 unshare 和 newuidmap",
     "headers": [
+      {
+        "level": 2,
+        "title": "对比",
+        "slug": "对比",
+        "link": "#对比",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "about newuidmap",
+        "slug": "about-newuidmap",
+        "link": "#about-newuidmap",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "about unshare",
+        "slug": "about-unshare",
+        "link": "#about-unshare",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "runuseer",
+        "slug": "runuseer",
+        "link": "#runuseer",
+        "children": [
+          {
+            "level": 3,
+            "title": "权限管理",
+            "slug": "权限管理",
+            "link": "#权限管理",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "关于 rootless 的配置问题",
+            "slug": "关于-rootless-的配置问题",
+            "link": "#关于-rootless-的配置问题",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -1405,8 +1928,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第28节",
+    "title": "第28节 sudo rootless",
     "headers": [
+      {
+        "level": 2,
+        "title": "comment",
+        "slug": "comment",
+        "link": "#comment",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -1420,13 +1950,42 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第29节",
+    "title": "第29节 Feat/support nvidia docker and nonroot #2048",
     "headers": [
       {
         "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
+        "title": "Proposal",
+        "slug": "proposal",
+        "link": "#proposal",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Learn  GitHub modify someone else's pull request and commit",
+        "slug": "learn-github-modify-someone-else-s-pull-request-and-commit",
+        "link": "#learn-github-modify-someone-else-s-pull-request-and-commit",
+        "children": [
+          {
+            "level": 3,
+            "title": "Add remote repository",
+            "slug": "add-remote-repository",
+            "link": "#add-remote-repository",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "PR Site Solutions",
+        "slug": "pr-site-solutions",
+        "link": "#pr-site-solutions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END Links",
+        "slug": "end-links",
+        "link": "#end-links",
         "children": []
       }
     ],
@@ -1543,8 +2102,43 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第30节",
+    "title": "第30节  localRegistry's info into a secret in namespace kube-system #2056",
     "headers": [
+      {
+        "level": 2,
+        "title": "Issue Description",
+        "slug": "issue-description",
+        "link": "#issue-description",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "namespace",
+        "slug": "namespace",
+        "link": "#namespace",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Registry",
+        "slug": "registry",
+        "link": "#registry",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Secrets",
+        "slug": "secrets",
+        "link": "#secrets",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关键目录",
+        "slug": "关键目录",
+        "link": "#关键目录",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -2414,6 +3008,35 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "newest",
+        "slug": "newest",
+        "link": "#newest",
+        "children": [
+          {
+            "level": 3,
+            "title": "Issue Description",
+            "slug": "issue-description",
+            "link": "#issue-description",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Describe what feature you want",
+            "slug": "describe-what-feature-you-want",
+            "link": "#describe-what-feature-you-want",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Additional context",
+            "slug": "additional-context",
+            "link": "#additional-context",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
@@ -3262,6 +3885,65 @@ export const searchIndex = [
     "extraFields": []
   },
   {
+    "title": "sealer rootless design",
+    "headers": [
+      {
+        "level": 2,
+        "title": "🔍 Desired state",
+        "slug": "🔍-desired-state",
+        "link": "#🔍-desired-state",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📖 Solution Ideas",
+        "slug": "📖-solution-ideas",
+        "link": "#📖-solution-ideas",
+        "children": [
+          {
+            "level": 3,
+            "title": "🖊️ TODO",
+            "slug": "🖊️-todo",
+            "link": "#🖊️-todo",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "🏷️ Error logged",
+            "slug": "🏷️-error-logged",
+            "link": "#🏷️-error-logged",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "🔥 Conclusion",
+        "slug": "🔥-conclusion",
+        "link": "#🔥-conclusion",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "🗃️ Reference",
+        "slug": "🗃️-reference",
+        "link": "#🗃️-reference",
+        "children": [
+          {
+            "level": 3,
+            "title": "Advance of right",
+            "slug": "advance-of-right",
+            "link": "#advance-of-right",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/Cloud-Native/TODO.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "第1节 云平台",
     "headers": [
       {
@@ -3715,9 +4397,9 @@ export const searchIndex = [
       },
       {
         "level": 2,
-        "title": "在线脚本安装k3s",
-        "slug": "在线脚本安装k3s",
-        "link": "#在线脚本安装k3s",
+        "title": "在线 [[docs/Cloud-Native-k8s/15#第15节 k3s 补充|脚本安装]]  k3s",
+        "slug": "在线-docs-cloud-native-k8s-15-第15节-k3s-补充-脚本安装-k3s",
+        "link": "#在线-docs-cloud-native-k8s-15-第15节-k3s-补充-脚本安装-k3s",
         "children": []
       },
       {
@@ -4372,7 +5054,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第16节 Treafik LB",
+    "title": "Treafik LB",
     "headers": [
       {
         "level": 2,
@@ -5728,6 +6410,21 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "学习方法",
+        "slug": "学习方法",
+        "link": "#学习方法",
+        "children": [
+          {
+            "level": 3,
+            "title": "阶段型方法",
+            "slug": "阶段型方法",
+            "link": "#阶段型方法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
         "title": "书籍推荐",
         "slug": "书籍推荐",
         "link": "#书籍推荐",
@@ -6128,6 +6825,79 @@ export const searchIndex = [
         "title": "pkg",
         "slug": "pkg",
         "link": "#pkg",
+        "children": [
+          {
+            "level": 3,
+            "title": "apis 目录的详解",
+            "slug": "apis-目录的详解",
+            "link": "#apis-目录的详解",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "其他目录解释",
+            "slug": "其他目录解释",
+            "link": "#其他目录解释",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "RBAC",
+            "slug": "rbac",
+            "link": "#rbac",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "OWENERS 维护者的列表",
+            "slug": "oweners-维护者的列表",
+            "link": "#oweners-维护者的列表",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "代码生成器",
+            "slug": "代码生成器",
+            "link": "#代码生成器",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "staging",
+        "slug": "staging",
+        "link": "#staging",
+        "children": [
+          {
+            "level": 3,
+            "title": "使用 Kubernetes 代码中的暂存存储库",
+            "slug": "使用-kubernetes-代码中的暂存存储库",
+            "link": "#使用-kubernetes-代码中的暂存存储库",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "src/k8s",
+        "slug": "src-k8s",
+        "link": "#src-k8s",
+        "children": [
+          {
+            "level": 3,
+            "title": "staging/src/k8s.io/api/",
+            "slug": "staging-src-k8s-io-api",
+            "link": "#staging-src-k8s-io-api",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "pkg/apis/apps/ 目录和 staging/src/k8s.io/api/apps/目录",
+        "slug": "pkg-apis-apps-目录和-staging-src-k8s-io-api-apps-目录",
+        "link": "#pkg-apis-apps-目录和-staging-src-k8s-io-api-apps-目录",
         "children": []
       },
       {
@@ -6644,8 +7414,50 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第38节",
+    "title": "第38节 一些疑问和解答3",
     "headers": [
+      {
+        "level": 2,
+        "title": "tty 和 stdin和docker关系",
+        "slug": "tty-和-stdin和docker关系",
+        "link": "#tty-和-stdin和docker关系",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "ownerReference 字段",
+        "slug": "ownerreference-字段",
+        "link": "#ownerreference-字段",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "ReplicaSet",
+        "slug": "replicaset",
+        "link": "#replicaset",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "ReplicaSet 对象和 Deployment 对象对比",
+        "slug": "replicaset-对象和-deployment-对象对比",
+        "link": "#replicaset-对象和-deployment-对象对比",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "StatefluSet 如何保证有状态的",
+        "slug": "statefluset-如何保证有状态的",
+        "link": "#statefluset-如何保证有状态的",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "StatefulSet 控制器",
+        "slug": "statefulset-控制器",
+        "link": "#statefulset-控制器",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -6659,8 +7471,57 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第39节",
+    "title": "第 39 节 关于 Kubernetes 的一些疑问 4",
     "headers": [
+      {
+        "level": 2,
+        "title": "Pod API 字段",
+        "slug": "pod-api-字段",
+        "link": "#pod-api-字段",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Kubernetes源码的哪个位置",
+        "slug": "kubernetes源码的哪个位置",
+        "link": "#kubernetes源码的哪个位置",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "DeamonSet",
+        "slug": "deamonset",
+        "link": "#deamonset",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "声明式 API",
+        "slug": "声明式-api",
+        "link": "#声明式-api",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "kubectl create 和 kubectl apply 命令有什么区别",
+        "slug": "kubectl-create-和-kubectl-apply-命令有什么区别",
+        "link": "#kubectl-create-和-kubectl-apply-命令有什么区别",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "patch操作",
+        "slug": "patch操作",
+        "link": "#patch操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "声明式 API 的一些工作原理",
+        "slug": "声明式-api-的一些工作原理",
+        "link": "#声明式-api-的一些工作原理",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -6846,8 +7707,29 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第40节",
+    "title": "第40节 Istio",
     "headers": [
+      {
+        "level": 2,
+        "title": "项目地址",
+        "slug": "项目地址",
+        "link": "#项目地址",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "架构",
+        "slug": "架构",
+        "link": "#架构",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -6861,7 +7743,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第41节",
+    "title": "第41节 代码生成",
     "headers": [
       {
         "level": 2,
@@ -6876,8 +7758,29 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第42节",
+    "title": "第 42 节 Kubernetes 的多租户",
     "headers": [
+      {
+        "level": 2,
+        "title": "PBAC",
+        "slug": "pbac",
+        "link": "#pbac",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "多租户",
+        "slug": "多租户",
+        "link": "#多租户",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关联",
+        "slug": "关联",
+        "link": "#关联",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -6891,8 +7794,51 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第43节",
+    "title": "第43节 kubernetes 的贡献学习",
     "headers": [
+      {
+        "level": 2,
+        "title": "Kubernetes的共享指南",
+        "slug": "kubernetes的共享指南",
+        "link": "#kubernetes的共享指南",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "CNCF 2023",
+        "slug": "cncf-2023",
+        "link": "#cncf-2023",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Kubernetes 的贡献手册",
+        "slug": "kubernetes-的贡献手册",
+        "link": "#kubernetes-的贡献手册",
+        "children": [
+          {
+            "level": 3,
+            "title": "贡献",
+            "slug": "贡献",
+            "link": "#贡献",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "基本知识",
+            "slug": "基本知识",
+            "link": "#基本知识",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "开始之前",
+            "slug": "开始之前",
+            "link": "#开始之前",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -6906,8 +7852,22 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第44节",
+    "title": "第44节 kubernetes 资源内部版本和外部版本",
     "headers": [
+      {
+        "level": 2,
+        "title": "资源的外部版本和资源的内部版本",
+        "slug": "资源的外部版本和资源的内部版本",
+        "link": "#资源的外部版本和资源的内部版本",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "外部版本了的资源类型定义",
+        "slug": "外部版本了的资源类型定义",
+        "link": "#外部版本了的资源类型定义",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -6921,14 +7881,115 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第45节",
+    "title": "第45节 namespace 通信问题",
     "headers": [
+      {
+        "level": 2,
+        "title": "Linux namesapce",
+        "slug": "linux-namesapce",
+        "link": "#linux-namesapce",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "namespace kind",
+        "slug": "namespace-kind",
+        "link": "#namespace-kind",
+        "children": [
+          {
+            "level": 3,
+            "title": "Mount (mnt)",
+            "slug": "mount-mnt",
+            "link": "#mount-mnt",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Process ID (pid)",
+            "slug": "process-id-pid",
+            "link": "#process-id-pid",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Network (net)",
+            "slug": "network-net",
+            "link": "#network-net",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Inter-process Communication (ipc）",
+            "slug": "inter-process-communication-ipc",
+            "link": "#inter-process-communication-ipc",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "UTS",
+            "slug": "uts",
+            "link": "#uts",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "User ID (user)",
+            "slug": "user-id-user",
+            "link": "#user-id-user",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Control group (cgroup) Namespace",
+            "slug": "control-group-cgroup-namespace",
+            "link": "#control-group-cgroup-namespace",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Time Namespace",
+            "slug": "time-namespace",
+            "link": "#time-namespace",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "不同命名空间的网络如何通信",
+        "slug": "不同命名空间的网络如何通信",
+        "link": "#不同命名空间的网络如何通信",
+        "children": [
+          {
+            "level": 3,
+            "title": "实践",
+            "slug": "实践",
+            "link": "#实践",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "实战",
+        "slug": "实战",
+        "link": "#实战",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "Links",
+            "slug": "links",
+            "link": "#links",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/Cloud-Native-k8s/45.html",

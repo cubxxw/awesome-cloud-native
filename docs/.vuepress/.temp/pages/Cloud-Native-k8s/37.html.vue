@@ -24,7 +24,7 @@
 <p>在 Kubernetes 中，每个容器都是在一个虚拟网络中运行的，并且容器间的网络通信是通过网络插件实现的。如果没有网络插件，容器之间就无法进行网络通信，也无法与外界进行网络通信。</p>
 <p>因此，如果不部署网络插件，Kubernetes 集群将无法正常工作。</p>
 <h2 id="kube-system" tabindex="-1"><a class="header-anchor" href="#kube-system" aria-hidden="true">#</a> kube-system</h2>
-<p>&quot;kube-system&quot; 是 Kubernetes 系统保留的一个命名空间。</p>
+<p>&quot;[[kube-system]]&quot; 是 [[default/kubernetes]] 系统保留的一个命名空间。</p>
 <p>在 Kubernetes 集群中，你可以为你的应用创建多个命名空间，用来组织和管理资源。比如，你可以创建一个 &quot;production&quot; 命名空间用来部署生产环境的应用，另外一个 &quot;staging&quot; 命名空间用来部署测试环境的应用。</p>
 <p>&quot;kube-system&quot; 命名空间是 Kubernetes 系统保留的一个命名空间，用来部署 Kubernetes 系统组件，比如 kube-dns、kube-proxy、kube-apiserver 等。这些组件是 Kubernetes 集群必需的，负责实现集群的基础功能。</p>
 <p>假设我们有一个应用，由两个容器组成，一个是 Web 服务器容器，另一个是数据库容器。</p>
@@ -38,9 +38,9 @@
 <h2 id="master-节点会运行-kubelet-组件吗-它是-worker-节点专属的功能吗" tabindex="-1"><a class="header-anchor" href="#master-节点会运行-kubelet-组件吗-它是-worker-节点专属的功能吗" aria-hidden="true">#</a> master 节点会运行 kubelet 组件吗，它是 worker 节点专属的功能吗</h2>
 <p>在一般情况下，Master 节点是不会运行 kubelet 组件的。</p>
 <p>Kubernetes 集群由 Master 节点和 Worker 节点组成。Master 节点负责管理整个集群，比如调度容器、维护集群状态等。Worker 节点负责运行容器，提供计算和存储资源。</p>
-<p>Kubelet 组件是运行在 Worker 节点上的，负责管理该节点上的容器。它会接收来自 Master 节点的指令，然后根据指令在 Worker 节点上运行、停止或删除容器。它还会将容器的状态信息汇报给 Master 节点，以便 Master 节点可以维护集群的状态。</p>
+<p>[[Kubelet|kubelet👍 ]] 组件是运行在 Worker 节点上的，负责管理该节点上的容器。它会接收来自 Master 节点的指令，然后根据指令在 Worker 节点上运行、停止或删除容器。它还会将容器的状态信息汇报给 Master 节点，以便 Master 节点可以维护集群的状态。</p>
 <p>所以，Kubelet 组件是 Worker 节点专属的功能，通常是运行在 Worker 节点上的。 Master 节点并不会运行 Kubelet 组件，而是运行其他组件来管理集群。</p>
-<p>但是，也有一些特殊情况下 Master 节点会运行 Kubelet 组件，比如在较小的测试集群中，Master 节点可能会同时承担 Worker 节点的角色，因此也会运行 Kubelet 组件。但这种情况并不常见，通常情况下 Master 节点不会运行 Kubelet 组件。</p>
+<p>但是，也有一些特殊情况下 Master 节点会运行 [[Kubelet#概要|kubelet]] 组件，比如在较小的测试集群中，Master 节点可能会同时承担 Worker 节点的角色，因此也会运行 [[Kubelet#^ea79c2|kubelet]] 组件。但这种情况并不常见，通常情况下 Master 节点不会运行 Kubelet 组件。</p>
 <p>在单节点情况下，该节点既是 Master 节点，又是 Worker 节点。这种情况下，该节点上会同时运行 Master 节点所需的组件和 Worker 节点所需的组件。</p>
 <p>在单节点的 Kubernetes 集群中，通常会运行下列组件：</p>
 <ul>
@@ -48,15 +48,15 @@
 <li>kube-apiserver：提供了 Kubernetes API 的服务端。</li>
 <li>kube-controller-manager：负责管理集群状态的控制器。</li>
 <li>kube-scheduler：负责调度容器的调度器。</li>
-<li>kubelet：负责管理容器的组件。</li>
+<li>[[default/Kubelet|kubelet]]：负责管理容器的组件。</li>
 <li>kube-proxy：负责实现容器间的网络隔离和负载均衡的组件。</li>
 </ul>
 <h2 id="master-节点本身是不能运行-pod-的。" tabindex="-1"><a class="header-anchor" href="#master-节点本身是不能运行-pod-的。" aria-hidden="true">#</a> Master 节点本身是不能运行 Pod 的。</h2>
-<p>在 Kubernetes 集群中，Pod 是最小的调度单元，代表一组相关的容器。每个 Pod 都有一个唯一的 Pod IP，用来实现容器间的网络通信。</p>
-<p>Master 节点负责管理整个集群，但它本身并不能运行 Pod。它只能将 Pod 调度到 Worker 节点上，然后由 Worker 节点上的 Kubelet 组件来管理这些 Pod。</p>
-<p>如果你想在 Master 节点上运行一个 Pod，那么你需要将该 Pod 调度到 Master 节点所在的 Worker 节点上，然后由 Kubelet 组件来管理这个 Pod。但是，这种情况并不常见，通常情况下 Pod 是运行在 Worker 节点上的。</p>
+<p>在 [[default/kubernetes|Kubernetes]] 集群中，Pod 是最小的调度单元，代表一组相关的容器。每个 Pod 都有一个唯一的 Pod IP，用来实现容器间的网络通信。</p>
+<p>Master 节点负责管理整个集群，但它本身并不能运行 Pod。它只能将 Pod 调度到 Worker 节点上，然后由 Worker 节点上的 [[default/Kubelet|Kubelet]] 组件来管理这些 Pod。</p>
+<p>如果你想在 Master 节点上运行一个 Pod，那么你需要将该 Pod 调度到 Master 节点所在的 Worker 节点上，然后由 [[default/Kubelet|Kubelet]] 组件来管理这个 Pod。但是，这种情况并不常见，通常情况下 Pod 是运行在 Worker 节点上的。</p>
 <p>在单节点的 Kubernetes 集群中，该节点既是 Master 节点，又是 Worker 节点。因此，在这种情况下，你可以将 Pod 调度到该节点上运行。</p>
-<p>通常，你可以使用 Node 调度策略将 Pod 调度到该节点上运行。Node 调度策略可以指定一个 Pod 应该运行在哪个节点上。你可以使用如下方式将 Pod 调度到单节点的 Kubernetes 集群中：</p>
+<p>通常，你可以使用 Node 调度策略将 Pod 调度到该节点上运行。Node 调度策略可以指定一个 Pod 应该运行在哪个节点上。你可以使用如下方式将 Pod 调度到单节点的 [[default/kubernetes|Kubernetes]] 集群中：</p>
 <ol>
 <li>在 Pod 的调度规则中使用 nodeSelector 字段指定节点名称。例如：</li>
 </ol>

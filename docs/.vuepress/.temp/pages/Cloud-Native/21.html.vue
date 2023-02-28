@@ -165,7 +165,7 @@ a5da036de5d10       7813cf876a0d4       <span class="token number">3</span> minu
 <p>除了发行版之外，还有一个 <strong>k3d</strong> 实用程序，用于管理 Docker 容器中运行的 k3s 节点。它在Linux中运行，可以使用<a href="https://k3d.io/#install-script" target="_blank" rel="noopener noreferrer">Bash脚本<ExternalLinkIcon/></a>进行安装.</p>
 <p>要启动集群，您只需要创建 Docker 容器和网络的权限。</p>
 <p>以下命令可用于创建群集：</p>
-<div class="language-undefined ext-undefined line-numbers-mode"><pre v-pre class="language-undefined"><code>$ k3d cluster create mycluster --servers 1 --agents 2
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ k3d cluster create mycluster <span class="token parameter variable">--servers</span> <span class="token number">1</span> <span class="token parameter variable">--agents</span> <span class="token number">2</span>
 $ kubectl get nodes
 NAME                  STATUS   ROLES                  AGE   VERSION
 k3d-mycluster-agent-0    Ready                     30s   v1.20.6+k3s1

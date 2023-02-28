@@ -15,7 +15,7 @@
 <p>2.安装Sealos后，创建一个配置文件，指定k3s部署的详细信息，例如集群中的节点数量和它们的网络设置。</p>
 <p>3.使用<code v-pre>sealos install</code>命令使用前面创建的配置文件来部署k3s。这将设置所有必要的组件，如etcd和Kubernetes控制平面，来运行k3s集群。</p>
 <p>4.部署完成后，您可以使用<code v-pre>kubectl</code>命令行工具来管理和与您的k3s集群交互。</p>
-<p>请注意，这只是使用Sealos部署k3s的一般概述。有关特定的说明和更多详细信息，您可以参考Sealos和k3s文档。</p>
+<p>请注意，这只是使用 Sealos 部署 k3s 的一般概述。有关特定的说明和更多详细信息，您可以参考 Sealos 和 k3s 文档。</p>
 <h3 id="sealos" tabindex="-1"><a class="header-anchor" href="#sealos" aria-hidden="true">#</a> sealos</h3>
 <p>Sealos is a tool for deploying Kubernetes clusters. It can be used to deploy a lightweight and easy-to-use Kubernetes distribution called k3s. To use Sealos to deploy k3s, you can follow these steps:</p>
 <ol>

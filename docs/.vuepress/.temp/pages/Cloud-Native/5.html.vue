@@ -122,7 +122,7 @@
 <li>
 <p><strong>/proc</strong>：</p>
 <ul>
-<li>proc 是Processes(进程) 的缩写，/proc是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</li>
+<li><code v-pre>proc</code> 是<code v-pre>Processes</code>(进程) 的缩写，<code v-pre>/proc</code>是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</li>
 </ul>
 <p>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的 <code v-pre>ping</code> 命令，使别人无法 <code v-pre>ping</code> 你的机器：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">></span> /proc/sys/net/ipv4/icmp_echo_ignore_all
@@ -205,7 +205,7 @@
 <p><code v-pre>-/etc</code>： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p>
 <p><code v-pre>-/bin, /sbin, /usr/bin, /usr/sbin:</code> 这是系统预设的执行文件的放置目录，比如 ls 就是在 <code v-pre>/bin/ls</code> 目录下的。</p>
 <p><strong>值得提出的是，/bin, /usr/bin 是给系统用户使用的指令（除root外的通用户），而/sbin, /usr/sbin 则是给 root 使用的指令。</strong></p>
-<p>-<strong>/var</strong>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 <code v-pre>/var/log</code> 目录下，另外 <code v-pre>mail</code> 的预设放置也是在这里。</p>
+<p><code v-pre>-/var</code>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 <code v-pre>/var/log</code> 目录下，另外 <code v-pre>mail</code> 的预设放置也是在这里。</p>
 </details>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <p><strong>议题：</strong></p>
@@ -241,7 +241,7 @@
 <li><code v-pre>registry</code> images。</li>
 <li><code v-pre>Some metadata</code>，例如 Kubernetes 版本信息。</li>
 <li><code v-pre>registry file</code>，包含所有的docker镜像，比如kubernetes核心组件docker镜像...</li>
-<li><code v-pre>Script</code>，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 init.sh 和 clean.sh<code v-pre>。</code></li>
+<li><code v-pre>Script</code>，一些用于安装 docker 和 kubelet 的 shell 脚本... sealer 将调用 <code v-pre>init.sh</code> 和 <code v-pre>clean.sh</code>。</li>
 <li><code v-pre>Other static files</code> ：其他静态文件</li>
 </ul>
 <p>使用 Kubernetes 仪表板构建 ClusterImage：</p>

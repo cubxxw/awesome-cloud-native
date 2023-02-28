@@ -92,8 +92,7 @@ COPY ImageList manifests
 BASE rootfs cache
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><em>Kuberfile - k3s:</em></p>
 <blockquote>
-<p>My talking about packaging up a minimal Linux distribution to run K3s, similar to https://github.com/rancher/k3os? Or mean just the root filesystem, such as we provide with k3s via https://github.com/k3s-io/k3s-root ?</p>
-<p>⚠️</p>
+<p>My talking about packaging up a minimal Linux distribution to run K3s, similar to https://github.com/rancher/k3os? Or mean just the root filesystem, such as we provide with k3s via https://github.com/k3s-io/k3s-root ?⚠️</p>
 </blockquote>
 <ol>
 <li><a href="https://docker.nsddd.top/Cloud-Native-k8s/14.html#%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85%E7%9A%84%E8%A7%A3%E6%9E%90" target="_blank" rel="noopener noreferrer">Online<ExternalLinkIcon/></a> Installation</li>
@@ -205,6 +204,61 @@ COPY . .
 </tr>
 </tbody>
 </table>
+<h2 id="newest" tabindex="-1"><a class="header-anchor" href="#newest" aria-hidden="true">#</a> newest</h2>
+<ul>
+<li><a href="https://github.com/sealerio/sealer/issues/1978" target="_blank" rel="noopener noreferrer">issue 1978<ExternalLinkIcon/></a></li>
+</ul>
+<h3 id="issue-description" tabindex="-1"><a class="header-anchor" href="#issue-description" aria-hidden="true">#</a> Issue Description</h3>
+<p>Support k3s cluster installation.
+Type: <em>feature request</em></p>
+<h3 id="describe-what-feature-you-want" tabindex="-1"><a class="header-anchor" href="#describe-what-feature-you-want" aria-hidden="true">#</a> Describe what feature you want</h3>
+<h4 id="step" tabindex="-1"><a class="header-anchor" href="#step" aria-hidden="true">#</a> step</h4>
+<ol>
+<li>Deploy the private mirror registry (ref: https://docs.rancher.cn/docs/k3s/installation/airgap/_index)
+a. Distribute the k3s configuration to connect to private registry. (ref: https://docs.rancher.cn/docs/k3s/installation/private-registry/_index)</li>
+<li>Get k3s binary and move to /usr/local/bin or /usr/bin.</li>
+<li>Get k3s-install script from https://get.k3s.io/ (this would be contained by rootfs).</li>
+<li>Install k3s offline on master0 as a server (not HA cluster).</li>
+<li>Joining k3s agent and sever use k3s-install script.</li>
+<li>Using scripts to delete node (ref: https://docs.rancher.cn/docs/k3s/installation/uninstall/_index). To force delete need to exec k3s-killall.sh. (ref: https://docs.rancher.cn/docs/k3s/upgrades/killall/_index)</li>
+<li>Upgrades need to follow basic upgrade, upgrade from sever node one by one! (ref: https://docs.rancher.cn/docs/k3s/upgrades/basic/_index)</li>
+</ol>
+<h4 id="rootfs" tabindex="-1"><a class="header-anchor" href="#rootfs" aria-hidden="true">#</a> rootfs</h4>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">.</span>
+├── bin
+│   ├── conntrack
+│   ├── containerd-rootless-setuptool.sh
+│   ├── containerd-rootless.sh
+│   ├── crictl
+│   ├── k3s
+│   ├── kubectl
+│   ├── nerdctl
+│   └── seautil
+├── cri
+│   └── docker.tar.gz
+├── custom-resources.yaml
+├── etc
+│   ├── registries.yaml
+│   ├── daemon.json
+│   ├── docker.service
+│   ├── k3s.yaml
+│   └── registry_config.yml
+├── images
+│   └── docker-amd64-registry-image.tar.gz
+├── Kubefile
+├── lib
+│   ├── gperf-3.1.tar.gz
+│   ├── install_libseccomp.sh
+│   └── libseccomp-2.5.4.tar.gz
+├── manifests
+│   └── imageList
+└── scripts
+    ├── docker.sh
+    ├── k3s-install.sh
+    ├── init-registry.sh
+    └── uninstall-docker.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="additional-context" tabindex="-1"><a class="header-anchor" href="#additional-context" aria-hidden="true">#</a> Additional context</h3>
+<p>Add any other context or screenshots about the feature request here.</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '5.md' style='float:left'>⬆️上一节🔗  </a><a href = '7.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
