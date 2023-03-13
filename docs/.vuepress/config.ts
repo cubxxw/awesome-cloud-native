@@ -1,11 +1,3 @@
-/*
- * @Description: docker的配置
- * @Author: xiongxinwei 3293172751nss@gmail.com
- * @Date: 2022-09-14 11:48:44
- * @LastEditTime: 2023-02-14 22:28:26
- * @FilePath: \undefinedd:\文档\最近的\awesome-docker\docs\.vuepress\config.ts
- * @blog: https://nsddd.top
- */
 import { defaultTheme } from 'vuepress'
 /* 导入插件 */
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
