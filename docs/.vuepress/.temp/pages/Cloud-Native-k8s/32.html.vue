@@ -10,12 +10,13 @@
 <hr>
 <p>[TOC]</p>
 <h2 id="分类" tabindex="-1"><a class="header-anchor" href="#分类" aria-hidden="true">#</a> 分类</h2>
+<p><strong>Kubernetes 是Go语言开发的，相对来说大部分结构还是很清晰的。</strong></p>
 <p>Kubernetes的代码都在kubernetes目录下，如图，根据功能主要分成以下几类：
 1、<code v-pre>文档类</code>（api、docs、logo）
 2、<code v-pre>工具类</code>（build、cluster、Godeps、hack、staging、translations）
 3、<code v-pre>代码类</code>（cmd、pkg、plugin、test、third_party）</p>
 <p>工具类主要用到的build目录下的文件，自己动手编译的时候会用到；</p>
-<p><strong>核心代码集中在cmd和pkg中。</strong></p>
+<p><strong>核心代码集中在cmd和pkg中。这两个是 Kubernetes 最重要的两个包~</strong></p>
 <p>cmd内部包含各个组件的入口，具体核心的实现部分在pkg目录下。</p>
 <p>我们每一个 可执行文件都对应 cmd</p>
 <p><strong>关于其他目录：</strong></p>
@@ -52,7 +53,32 @@
 ├── <span class="token builtin class-name">test</span>
 ├── third_party
 └── vendor
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="pkg" tabindex="-1"><a class="header-anchor" href="#pkg" aria-hidden="true">#</a> pkg</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>makefile 支持交叉编译的；</strong></p>
+<p>Kubernetes 的编译方法有三种，makefile 和 docker 是支持交叉编译的。</p>
+<h2 id="api" tabindex="-1"><a class="header-anchor" href="#api" aria-hidden="true">#</a> api</h2>
+<p>顾名思义，</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ tree api/ <span class="token parameter variable">-L</span> <span class="token number">2</span>
+api/
+├── api-rules
+│   ├── aggregator_violation_exceptions.list
+│   ├── apiextensions_violation_exceptions.list
+│   ├── codegen_violation_exceptions.list
+│   ├── README.md
+│   ├── sample_apiserver_violation_exceptions.list
+│   └── violation_exceptions.list
+├── openapi-spec
+│   ├── README.md
+│   ├── swagger.json
+│   └── v3
+└── OWNERS
+
+<span class="token number">3</span> directories, <span class="token number">9</span> files
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>我们可以看到 <code v-pre>swagger.json</code></strong></p>
+<blockquote>
+<p>我们都知道 api 声明都是有一个 json 文件，通过声明拉取所有的 API</p>
+<p>如果我们需要看 API 文档，看 <code v-pre>swagger.json</code></p>
+</blockquote>
+<h2 id="pkg" tabindex="-1"><a class="header-anchor" href="#pkg" aria-hidden="true">#</a> pkg</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>大量的 kubernetes 的源码所在，除了被抽离为单独组件的部分，例如 api server 的代码，proxy 组件的代码，kubelet 组件的代码。</p>
 <ul>
@@ -270,6 +296,9 @@ drwxr-xr-x  <span class="token number">2</span> root root  <span class="token nu
 <p>OWNERS 文件中的 <code v-pre>labels</code> 字段包含一个标签列表，表示与该目录相关的主题或关注点。这些标签可以帮助您快速了解该目录所关注的内容。例如，在本例中，该目录与 <code v-pre>sig/auth</code> 主题有关。</p>
 <p>OWNERS 文件是用于描述与目录相关的信息的文件，例如审核员和关注点。这些信息有助于协调和管理该目录中的代码。</p>
 <p>❓ 我们提到了代码生成器，其实再 《深入解析Kubernetes的源码》 这本书中，我们了解到了代码生成器，但是书中写的逻辑不是很清晰，导致对 代码生成器 的理解不是很透彻~</p>
+<blockquote>
+<p>🐭 所以还是推荐看 《深入剖析Kubernetes》</p>
+</blockquote>
 <h3 id="代码生成器" tabindex="-1"><a class="header-anchor" href="#代码生成器" aria-hidden="true">#</a> 代码生成器</h3>
 <p>Kubernetes的代码生成器是一种工具，用于生成Kubernetes的API对象代码。它可以根据用户的输入，自动生成Kubernetes API对象的 Go 代码。Kubernetes的代码生成器使用了一种叫做 OpenAPI 的技术，可以通过定义 API 对象的模型来生成代码。</p>
 <p>Kubernetes的代码生成器有许多优点，例如：</p>
@@ -465,6 +494,7 @@ authentication         CONTRIBUTING.md     extensions    networking   resource
 <li>总的来说，pkg/apis/目录中的代码是Kubernetes中API资源的抽象接口，而staging/src/k8s.io/api/目录中的代码则是这些接口的具体实现。</li>
 </ol>
 <h2 id="cmd" tabindex="-1"><a class="header-anchor" href="#cmd" aria-hidden="true">#</a> cmd</h2>
+<p><strong>cmd 算是 入口，也是命令行的定义地方。</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:~/go/src/k8s.io/kubernetes<span class="token comment"># tree -L 1 cmd</span>
 cmd
 ├── clicheck
@@ -496,6 +526,21 @@ cmd
 <p><code v-pre>kube-apiserver</code> 中有 <code v-pre>apiserver.go</code> 文件，就是 <code v-pre>apiserver</code> 启动入口</p>
 </div>
 </div>
+<p>cmd 有很多的子目录，不同的子目录都对应的接口，比如上面的 <code v-pre>API Server</code></p>
+<p>我们甚至可以直接在里面 <code v-pre>go build</code> ：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token builtin class-name">cd</span> cmd/kube-apiserver<span class="token punctuation">;</span><span class="token function">ls</span>
+apiserver.go  app  OWNERS
+❯ go build apiserver.go
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>不过一般使用 功能强大 的 Makefile ，而且Makefile支持交叉编译。</strong></p>
+<p>Kubernetes 是很多组件的 二进制 相互配合 部署起来的。</p>
+<h3 id="kube-apiserver" tabindex="-1"><a class="header-anchor" href="#kube-apiserver" aria-hidden="true">#</a> kube-apiserver</h3>
+<p>以 kube-apiserver cmd 目录为例：</p>
+<p><img src="http://sm.nsddd.top/sm202303031350297.png" alt="image-20230303135004177"></p>
+<p>📜 对上面的解释：</p>
+<ul>
+<li><code v-pre>options</code> ： 一般里面的 options 是解析 入参，并且进行入参校验</li>
+<li>里面的核心都是调到 <code v-pre>pkg/*</code> 下面的，比如说 api、apis对象</li>
+</ul>
 <h2 id="build" tabindex="-1"><a class="header-anchor" href="#build" aria-hidden="true">#</a> build</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@cubmaster01:~/go/src/k8s.io/kubernetes<span class="token comment"># tree -L 1 build</span>
 build
@@ -777,7 +822,9 @@ plugin/
         │   └── rbac
         ├── doc.go
         └── OWNERS
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="test" tabindex="-1"><a class="header-anchor" href="#test" aria-hidden="true">#</a> test</h2>
+<p>e2e 测试代码</p>
+<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '31.md' style='float:left'>⬆️上一节🔗  </a><a href = '33.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

@@ -9,7 +9,7 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
-<h1 id="loadbalance" tabindex="-1"><a class="header-anchor" href="#loadbalance" aria-hidden="true">#</a> LoadBalance</h1>
+<h2 id="loadbalance" tabindex="-1"><a class="header-anchor" href="#loadbalance" aria-hidden="true">#</a> LoadBalance</h2>
 <p>LoadBalance 通常分成两种类型：Client Side 和 Server side。</p>
 <p><strong>通常的配置如下：</strong></p>
 <ul>

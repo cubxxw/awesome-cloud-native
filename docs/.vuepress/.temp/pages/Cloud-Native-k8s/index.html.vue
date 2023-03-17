@@ -42,66 +42,37 @@
 <p>🐋 11. <RouterLink to="/Cloud-Native-k8s/11.html">第11节 service</RouterLink></p>
 <p>🐋 12. <RouterLink to="/Cloud-Native-k8s/12.html">第12节 Ingress</RouterLink></p>
 <p>🐋 13. <RouterLink to="/Cloud-Native-k8s/13.html">第13节 存储抽象</RouterLink></p>
-<!--
-
-🐋 14. [容器数据卷](14.md)
-
-🐋 15. [docker基础篇最后补充-资源](15.md)
-
-🐋 16. [tomcat安装挂载](16.md)
-
-🐋 17. [docker安装MySQL](17.md)
-
-🐋 18. [docker安装redis](18.md)
-
-🐋 19. [mysql主从复制docker版](19.md)
-
-🐋 20. [分布式存储之hash取余算法](20.md)
-
-🐋 21. [3主3从redis集群扩缩容配置案例说明](21.md)
-
-🐋 22. [redis主从扩容](22.md)
-
-🐋 23. [redis主从缩容](23.md)
-
-🐋 24. [DockerFile解析](24.md)
-
-🐋 25. [dockerfile保留字](25.md)
-
-🐋 26. [dockerfile案例](26.md)
-
-🐋 27. [虚悬镜像](27.md)
-
-🐋 28. [编写自定义镜像myubuntu](28.md)
-
-🐋 29. [Docker微服务实战](29.md)
-
-🐋 30. [docker 网络](30.md)
-
-🐋 31. [docker网络模式](31.md)
-
-🐋 32. [bridge是什么](32.md)
-
-🐋 33. [host是什么](33.md)
-
-🐋 34. [none是什么](34.md)
-
-🐋 35. [container是什么](35.md)
-
-🐋 36. [自定义网络格式](36.md)
-
-🐋 37. [Docker平台架构图解](37.md)
-
-🐋 38. [docker-compose容器编排](38.md)
-
-🐋 39. [Compose核心概念](39.md)
-
-🐋 40. [改造升级微服务工程docker_boot](40.md)
-
-+  [ 🖱️脑图下载](脑图笔记)
-
----
--->
+<p>🐋 14. <RouterLink to="/Cloud-Native-k8s/14.html">第14节 k3s</RouterLink></p>
+<p>🐋 15. <RouterLink to="/Cloud-Native-k8s/15.html">第15节 k3s 补充</RouterLink></p>
+<p>🐋 16. <RouterLink to="/Cloud-Native-k8s/16.html">第16节 Treafik LB</RouterLink></p>
+<p>🐋 17. <RouterLink to="/Cloud-Native-k8s/17.html">第17节 Service LB</RouterLink></p>
+<p>🐋 18. <RouterLink to="/Cloud-Native-k8s/18.html">第18节kubernetes API 访问控制</RouterLink></p>
+<p>🐋 19. <RouterLink to="/Cloud-Native-k8s/19.html">第21节 Minikube</RouterLink></p>
+<p>🐋 20. <RouterLink to="/Cloud-Native-k8s/20.html">第22节 运行有状态应用</RouterLink></p>
+<p>🐋 21. <RouterLink to="/Cloud-Native-k8s/21.html">第23节 Kubeconfig &amp;&amp; token</RouterLink></p>
+<p>🐋 22. <RouterLink to="/Cloud-Native-k8s/22.html">第24节 ETCD</RouterLink></p>
+<p>🐋 23. <RouterLink to="/Cloud-Native-k8s/23.html">第25节 raft 算法</RouterLink></p>
+<p>🐋 24. <RouterLink to="/Cloud-Native-k8s/24.html">第26节 helm 教程</RouterLink></p>
+<p>🐋 25. <RouterLink to="/Cloud-Native-k8s/25.html">第27节 k3s 补充（高级）</RouterLink></p>
+<p>🐋 26. <RouterLink to="/Cloud-Native-k8s/26.html">第28节 Linux系统移植，分区，rootfs</RouterLink></p>
+<p>🐋 27. <RouterLink to="/Cloud-Native-k8s/27.html">第29节 kubernetes 源码解析资源</RouterLink></p>
+<p>🐋 28. <RouterLink to="/Cloud-Native-k8s/28.html">编写自定义镜像myubuntu</RouterLink></p>
+<p>🐋 29. <RouterLink to="/Cloud-Native-k8s/29.html">Docker微服务实战</RouterLink></p>
+<p>🐋 30. <RouterLink to="/Cloud-Native-k8s/30.html">docker 网络</RouterLink></p>
+<p>🐋 31. <RouterLink to="/Cloud-Native-k8s/31.html">docker网络模式</RouterLink></p>
+<p>🐋 32. <RouterLink to="/Cloud-Native-k8s/32.html">bridge是什么</RouterLink></p>
+<p>🐋 33. <RouterLink to="/Cloud-Native-k8s/33.html">host是什么</RouterLink></p>
+<p>🐋 34. <RouterLink to="/Cloud-Native-k8s/34.html">none是什么</RouterLink></p>
+<p>🐋 35. <RouterLink to="/Cloud-Native-k8s/35.html">container是什么</RouterLink></p>
+<p>🐋 36. <RouterLink to="/Cloud-Native-k8s/36.html">自定义网络格式</RouterLink></p>
+<p>🐋 37. <RouterLink to="/Cloud-Native-k8s/37.html">Docker平台架构图解</RouterLink></p>
+<p>🐋 38. <RouterLink to="/Cloud-Native-k8s/38.html">docker-compose容器编排</RouterLink></p>
+<p>🐋 39. <RouterLink to="/Cloud-Native-k8s/39.html">Compose核心概念</RouterLink></p>
+<p>🐋 40. <RouterLink to="/Cloud-Native-k8s/40.html">改造升级微服务工程docker_boot</RouterLink></p>
+<ul>
+<li><a href="%E8%84%91%E5%9B%BE%E7%AC%94%E8%AE%B0"> 🖱️脑图下载</a></li>
+</ul>
+<hr>
 <h2 id="✨参与贡献" tabindex="-1"><a class="header-anchor" href="#✨参与贡献" aria-hidden="true">#</a> ✨参与贡献</h2>
 <p><strong><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer">🫵参与贡献❤️❤️💕💕<ExternalLinkIcon/></a></strong></p>
 <p><strong>要求：</strong></p>

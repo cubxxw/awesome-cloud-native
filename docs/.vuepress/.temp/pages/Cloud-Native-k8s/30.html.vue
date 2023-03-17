@@ -135,7 +135,7 @@ Go OS/Arch: linux/amd64
 <span class="token builtin class-name">source</span> /etc/profile.d
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container danger"><p class="custom-container-title">警告</p>
 <p>有一些比较深的设置：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>sudo vim /etc/sudoers  
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">vim</span> /etc/sudoers  
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div>
 <p>在secure_path一行加入如下目录：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>/usr/local/go/bin （这个是<span class="token variable">$GOPATH</span>/bin目录）
@@ -166,7 +166,24 @@ go <span class="token function">env</span> <span class="token parameter variable
  <span class="token function">git</span> remote <span class="token function">add</span> upstream https://github.com/kubernetes/kubernetes.git
  <span class="token function">git</span> remote set-url <span class="token parameter variable">--push</span> upstream no-pushing
  <span class="token function">git</span> remote -v<span class="token punctuation">;</span> <span class="token function">git</span> branch <span class="token parameter variable">-a</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="kubernetes-makefile" tabindex="-1"><a class="header-anchor" href="#kubernetes-makefile" aria-hidden="true">#</a> Kubernetes Makefile</h2>
+<p>或许可以直接编译， 事实上 Kubernetes 官方也推荐 Kind 工具。</p>
+<p>在 Kubernetes 中的 Github README.md 文档中介绍了：</p>
+<h3 id="to-start-developing-k8s" tabindex="-1"><a class="header-anchor" href="#to-start-developing-k8s" aria-hidden="true">#</a> To start developing K8s</h3>
+<p><a href="https://git.k8s.io/community" target="_blank" rel="noopener noreferrer">社区存储库<ExternalLinkIcon/></a>包含了所有关于从源代码构建Kubernetes的信息，包括如何贡献代码和文档，联系谁等等。</p>
+<p><strong>如果您想立即构建Kubernetes，有两种选择：</strong></p>
+<h4 id="你有一个工作的go语言环境。" tabindex="-1"><a class="header-anchor" href="#你有一个工作的go语言环境。" aria-hidden="true">#</a> 你有一个工作的Go语言环境。</h4>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>mkdir <span class="token operator">-</span>p $GOPATH<span class="token operator">/</span>src<span class="token operator">/</span>k8s<span class="token punctuation">.</span>io
+cd $GOPATH<span class="token operator">/</span>src<span class="token operator">/</span>k8s<span class="token punctuation">.</span>io
+git clone https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>kubernetes<span class="token operator">/</span>kubernetes
+cd kubernetes
+<span class="token builtin">make</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="您有一个工作的docker环境。" tabindex="-1"><a class="header-anchor" href="#您有一个工作的docker环境。" aria-hidden="true">#</a> 您有一个工作的Docker环境。</h4>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>git clone https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>kubernetes<span class="token operator">/</span>kubernetes
+cd kubernetes
+<span class="token builtin">make</span> quick<span class="token operator">-</span>release
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>For the full story, head over to the <a href="https://git.k8s.io/community/contributors/devel#readme" target="_blank" rel="noopener noreferrer">developer's documentation<ExternalLinkIcon/></a>.</p>
+<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '29.md' style='float:left'>⬆️上一节🔗  </a><a href = '31.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

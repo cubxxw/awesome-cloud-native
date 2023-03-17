@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#deployment">Deployment</router-link></li><li><router-link to="#用deployment创建有何不同">用deployment创建有何不同</router-link><ul><li><router-link to="#如果想要真正的删除怎么办">如果想要真正的删除怎么办？</router-link></li></ul></li><li><router-link to="#多副本">多副本</router-link></li><li><router-link to="#工作负载-deployment扩容缩容能力">工作负载-deployment扩容缩容能力</router-link><ul><li><router-link to="#扩缩容">扩缩容</router-link></li><li><router-link to="#你可以直接修改deplot配置文件达到扩缩容">你可以直接修改deplot配置文件达到扩缩容</router-link></li></ul></li><li><router-link to="#自愈和故障转移">自愈和故障转移</router-link></li><li><router-link to="#depoyment滚动和更新能力">depoyment滚动和更新能力</router-link><ul><li><router-link to="#滚动更新">滚动更新</router-link></li></ul></li><li><router-link to="#版本回退">版本回退</router-link></li><li><router-link to="#其他工作负载">其他工作负载</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#deployment">Deployment</router-link></li><li><router-link to="#用deployment创建有何不同">用deployment创建有何不同</router-link><ul><li><router-link to="#如果想要真正的删除怎么办">如果想要真正的删除怎么办？</router-link></li></ul></li><li><router-link to="#多副本">多副本</router-link></li><li><router-link to="#工作负载-deployment扩容缩容能力">工作负载-deployment扩容缩容能力</router-link><ul><li><router-link to="#扩缩容">扩缩容</router-link></li><li><router-link to="#你可以直接修改deplot配置文件达到扩缩容">你可以直接修改deplot配置文件达到扩缩容</router-link></li></ul></li><li><router-link to="#yaml-声明式创建">yaml 声明式创建</router-link></li><li><router-link to="#自愈和故障转移">自愈和故障转移</router-link></li><li><router-link to="#depoyment滚动和更新能力">depoyment滚动和更新能力</router-link><ul><li><router-link to="#滚动更新">滚动更新</router-link></li></ul></li><li><router-link to="#版本回退">版本回退</router-link></li><li><router-link to="#其他工作负载">其他工作负载</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="deployment" tabindex="-1"><a class="header-anchor" href="#deployment" aria-hidden="true">#</a> Deployment</h2>
 <p><strong>⚠️ Deployment：控制pod，使pod具有多个副本，自愈，扩缩容等能力~</strong></p>
@@ -99,6 +99,7 @@ my-nginx   <span class="token number">3</span>/3     <span class="token number">
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>当然你也可以用可视化界面实现（点击缩放：可以实现扩容和缩容）</p>
 </div>
+<h2 id="yaml-声明式创建" tabindex="-1"><a class="header-anchor" href="#yaml-声明式创建" aria-hidden="true">#</a> yaml 声明式创建</h2>
 <h2 id="自愈和故障转移" tabindex="-1"><a class="header-anchor" href="#自愈和故障转移" aria-hidden="true">#</a> 自愈和故障转移</h2>
 <div class="custom-container tip"><p class="custom-container-title">自愈和故障转移</p>
 <p>当我们有一台<code v-pre>pod</code>出现问题，<code v-pre>depoyment</code>会感知到错误，然后将其修复（杀死重启）。</p>

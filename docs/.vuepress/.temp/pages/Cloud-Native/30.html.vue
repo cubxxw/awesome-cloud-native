@@ -25,6 +25,7 @@
 <blockquote>
 <p>你好，sealer是搭建Kubernetes的工具，现在sealer有一个任务，需要将 localRegistry's info into a <code v-pre>secret</code> in namespace <code v-pre>kube-system</code>，Some component can use this <code v-pre>secret</code>.</p>
 <p><code v-pre>Kube-system</code> 是 Kubernetes 系统相关的所有对象组成的命名空间。请问我该怎么实现这个功能</p>
+<p>localRegistry的信息在命名空间kube-system中变成了一个“秘密”，一些组件可以使用这个“秘密”。</p>
 </blockquote>
 <p>API 集群配置文件（yaml文件）</p>
 <p>端口密码，转存到 System namespace</p>
@@ -59,11 +60,11 @@
 <p><strong>查看 namespace 中所有 secret 对象：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ kubectl get secrets <span class="token parameter variable">-n</span> kube-system
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
-<p>您应该能够看到一个名为<code v-pre>&lt;registry-name&gt;-secret</code>的Secret对象，其中<code v-pre>&lt;registry-name&gt;</code>是您在安装Docker Registry时指定的名称。此Secret对象包含Docker Registry的登录凭证，包括用户名和密码等信息。您可以使用以下命令获取Secret对象的详细信息：</p>
+<p>您应该能够看到一个名为<code v-pre>&lt;registry-name&gt;-secret</code>的Secret对象，其中<code v-pre>&lt;registry-name&gt;</code>是您在安装Docker Registry时指定的名称。此Secret对象包含 Docker Registry 的登录凭证，包括用户名和密码等信息。您可以使用以下命令获取Secret对象的详细信息：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ kubectl describe secret <span class="token operator">&lt;</span>registry-name<span class="token operator">></span>-secret <span class="token parameter variable">-n</span> kube-system
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>如果您安装的是其他类型的容器镜像仓库，例如Harbor或Nexus等，那么这些容器镜像仓库的信息可能存储在其他位置。</p>
 </blockquote>
-<p>以下是一个示例yaml文件，其中包含了一个名为<code v-pre>registry-secret</code>的Secret对象，用于存储Docker Registry的登录凭证。请将其中的占位符（<code v-pre>&lt;registry-url&gt;</code>、<code v-pre>&lt;registry-username&gt;</code>和<code v-pre>&lt;registry-password&gt;</code>）替换为您的Docker Registry的URL、用户名和密码。</p>
+<p>以下是一个示例yaml文件，其中包含了一个名为<code v-pre>registry-secret</code>的Secret对象，用于存储 <code v-pre>Docker Registry</code> 的登录凭证。请将其中的占位符（<code v-pre>&lt;registry-url&gt;</code>、<code v-pre>&lt;registry-username&gt;</code>和<code v-pre>&lt;registry-password&gt;</code>）替换为您的Docker Registry的URL、用户名和密码。</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Secret
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
@@ -108,7 +109,7 @@ kubectl get secret <span class="token operator">&lt;</span>registry-secret-name<
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这将在<code v-pre>kube-system</code>命名空间中创建一个名为<code v-pre>registry-secret</code>的Secret对象，并将其存储到Kubernetes中。</p>
 <p><strong>在需要使用登录凭证的组件中引用Secret对象</strong></p>
-<p>最后，您可以在需要使用Docker Registry的组件中引用上述创建的Secret对象。例如，可以将以下配置添加到Deployment对象的spec.template.spec.containers[].imagePullSecrets数组中：</p>
+<p>最后，您可以在需要使用Docker Registry的组件中引用上述创建的Secret对象。例如，可以将以下配置添加到Deployment对象的 <code v-pre>spec.template.spec.containers[].imagePullSecrets</code> 数组中：</p>
 <div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code><span class="token punctuation">{</span>
     <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"registry-secret"</span>
 <span class="token punctuation">}</span>
@@ -204,7 +205,48 @@ kubectl get secret <span class="token operator">&lt;</span>registry-secret-name<
 	<span class="token punctuation">}</span>
 	<span class="token keyword">return</span> home
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="localregistry" tabindex="-1"><a class="header-anchor" href="#localregistry" aria-hidden="true">#</a> localregistry</h2>
+<p><strong>文件：</strong></p>
+<p><code v-pre>/root/.sealer/Clusterfile</code></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get cm <span class="token parameter variable">-n</span> kube-system sealer-clusterfile  <span class="token parameter variable">-oyaml</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p>这是一个在 Kubernetes 集群中使用的命令，它用于获取名为 sealer-clusterfile 的 ConfigMap 的 YAML 格式，该 ConfigMap 位于 kube-system 命名空间中。输出将包括 ConfigMap 的名称、命名空间、标签和数据。由于使用了 <code v-pre>-oyaml</code> 标志，输出将以 YAML 格式呈现。</p>
+</blockquote>
+<p><strong>Clusterfile:</strong></p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> sealer.io/v2
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Cluster
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">creationTimestamp</span><span class="token punctuation">:</span> <span class="token null important">null</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>cluster
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containerRuntime</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> LocalRegistryDomain=sea.hub
+  <span class="token punctuation">-</span> LocalRegistryPort=5000
+  <span class="token punctuation">-</span> LocalRegistryURL=sea.hub<span class="token punctuation">:</span><span class="token number">5000</span>
+  <span class="token punctuation">-</span> RegistryDomain=sea.hub
+  <span class="token punctuation">-</span> RegistryPort=5000
+  <span class="token punctuation">-</span> RegistryURL=sea.hub<span class="token punctuation">:</span><span class="token number">5000</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">ips</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> 192.168.137.133
+    <span class="token key atrule">roles</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> master
+    <span class="token key atrule">ssh</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/sealerio/kubernetes<span class="token punctuation">:</span>v1.22.15
+  <span class="token key atrule">registry</span><span class="token punctuation">:</span>
+    <span class="token key atrule">localRegistry</span><span class="token punctuation">:</span>
+      <span class="token key atrule">cert</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      <span class="token key atrule">domain</span><span class="token punctuation">:</span> sea.hub
+      <span class="token key atrule">ha</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">insecure</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5000</span>
+  <span class="token key atrule">ssh</span><span class="token punctuation">:</span>
+    <span class="token key atrule">pk</span><span class="token punctuation">:</span> /root/.ssh/id_rsa
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token string">"22"</span>
+    <span class="token key atrule">user</span><span class="token punctuation">:</span> root
+<span class="token key atrule">status</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '29.md' style='float:left'>⬆️上一节🔗  </a><a href = '31.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

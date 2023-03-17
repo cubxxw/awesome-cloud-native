@@ -152,14 +152,14 @@ root@moelove:~#
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ol>
 <li>从用 unshare(1) 启动的新 shell 中，我们可以在 <code v-pre>/proc/[pid]/cgroup</code> 文件中看到，新 shell 和以上示例中的进程：</li>
 </ol>
-<div class="language-plain ext-plain line-numbers-mode"><pre v-pre class="language-plain"><code>root@moelove:~# cat /proc/self/cgroup | grep freezer
-7:freezer:/
-root@moelove:~# cat /proc/1/cgroup | grep freezer
-7:freezer:/..
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>root@moelove:~<span class="token comment"># cat /proc/self/cgroup | grep freezer</span>
+<span class="token number">7</span>:freezer:/
+root@moelove:~<span class="token comment"># cat /proc/1/cgroup | grep freezer</span>
+<span class="token number">7</span>:freezer:/<span class="token punctuation">..</span>
 
-# 第一个示例进程
-root@moelove:~# cat /proc/1489125/cgroup | grep freezer
-7:freezer:/../moelove-sub
+<span class="token comment"># 第一个示例进程</span>
+root@moelove:~<span class="token comment"># cat /proc/1489125/cgroup | grep freezer</span>
+<span class="token number">7</span>:freezer:/<span class="token punctuation">..</span>/moelove-sub
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
 <li>从上面的示例中，我们可以看到新 shell 的 freezer cgroup 关系中，当新的 cgroup namespace 创建时，freezer cgroup 的根目录与它的关系也就建立了。</li>
 </ol>

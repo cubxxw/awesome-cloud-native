@@ -9,7 +9,7 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
-<nav class="table-of-contents"><ul><li><router-link to="#etcd-介绍">ETCD 介绍</router-link><ul><li><router-link to="#分布式-cap-理论">分布式 CAP 理论</router-link></li><li><router-link to="#etcd-常用术语">etcd 常用术语</router-link></li><li><router-link to="#架构">架构</router-link></li></ul></li><li><router-link to="#搭建-etcd">搭建 etcd</router-link><ul><li><router-link to="#高可用安装-–-避免单点故障">高可用安装 – 避免单点故障</router-link></li></ul></li><li><router-link to="#docker部署">docker部署</router-link><ul><li><router-link to="#构建思路">构建思路</router-link></li><li><router-link to="#下载etcd镜像">下载Etcd镜像</router-link></li><li><router-link to="#创建自定义docker网络">创建自定义Docker网络</router-link></li><li><router-link to="#创建并启动etcd镜像节点">创建并启动Etcd镜像节点</router-link></li><li><router-link to="#verification">verification</router-link></li></ul></li><li><router-link to="#动态发现启动-etcd">动态发现启动 etcd</router-link></li><li><router-link to="#etcd-操作">etcd 操作</router-link><ul><li><router-link to="#常用命令">常用命令</router-link></li><li><router-link to="#非数据库操作命令">非数据库操作命令</router-link></li><li><router-link to="#常用配置参数">常用配置参数</router-link></li></ul></li><li><router-link to="#go-和-etcd-交互">Go 和 etcd 交互</router-link></li><li><router-link to="#gprc-代理模式">gPRC 代理模式</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#etcd-介绍">ETCD 介绍</router-link><ul><li><router-link to="#分布式-cap-理论">分布式 CAP 理论</router-link></li><li><router-link to="#etcd-常用术语">etcd 常用术语</router-link></li><li><router-link to="#架构">架构</router-link></li></ul></li><li><router-link to="#搭建-etcd">搭建 etcd</router-link><ul><li><router-link to="#高可用安装-–-避免单点故障">高可用安装 – 避免单点故障</router-link></li></ul></li><li><router-link to="#docker部署">docker部署</router-link><ul><li><router-link to="#构建思路">构建思路</router-link></li><li><router-link to="#下载etcd镜像">下载Etcd镜像</router-link></li><li><router-link to="#创建自定义docker网络">创建自定义Docker网络</router-link></li><li><router-link to="#创建并启动etcd镜像节点">创建并启动Etcd镜像节点</router-link></li><li><router-link to="#verification">verification</router-link></li></ul></li><li><router-link to="#动态发现启动-etcd">动态发现启动 etcd</router-link></li><li><router-link to="#etcd-操作">etcd 操作</router-link><ul><li><router-link to="#常用命令">常用命令</router-link></li><li><router-link to="#非数据库操作命令">非数据库操作命令</router-link></li><li><router-link to="#常用配置参数">常用配置参数</router-link></li></ul></li><li><router-link to="#go-和-etcd-交互">Go 和 etcd 交互</router-link></li><li><router-link to="#gprc-代理模式">gPRC 代理模式</router-link></li><li><router-link to="#直接访问etcd的数据">直接访问etcd的数据</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <h2 id="etcd-介绍" tabindex="-1"><a class="header-anchor" href="#etcd-介绍" aria-hidden="true">#</a> ETCD 介绍</h2>
 <div class="custom-container tip"><p class="custom-container-title">etcd address</p>
 <ul>
@@ -37,18 +37,57 @@
 <blockquote>
 <p>是不是可以理解我们之前无论是部署 hedoop 还是 kubernetes ，都是存在一个问题：尽量选择奇数的节点，真是因为 raft。</p>
 </blockquote>
+<p>etcd是CoreOS基于Raft开发的分布式key-value存储，可用于服务发现、共享配置以及一致性保障(如数据库选主、分布式锁等)</p>
+<ul>
+<li>基本的key-value存储</li>
+<li>监听机制（分布式消息队列，查询数据，返回结果同时数据变化需要主动告诉）</li>
+<li>key的过期以及续约机制，用于监控和服务发现</li>
+<li>原子CAS和CAD，用于分布式锁和leader选举</li>
+</ul>
 <h3 id="分布式-cap-理论" tabindex="-1"><a class="header-anchor" href="#分布式-cap-理论" aria-hidden="true">#</a> 分布式 CAP 理论</h3>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>consistency(一致性)、Availability(可用性)、Partition tolerance(分区容错性)</p>
+<blockquote>
+<p>ETCD是一个高可用的键值存储系统，它选择了CP理论。在CAP理论中，C表示一致性（Consistency），P表示分区容错性（Partition tolerance），A表示可用性（Availability）。ETCD选择了CP理论，这意味着在网络出现分区（Partition）的情况下，ETCD会保持一致性（Consistency）而牺牲可用性（Availability）。这是因为在分区发生时，节点之间的通信会被中断，为了确保数据一致，ETCD会停止接受新的写请求，直到网络分区被处理好并且所有节点之间的数据达成一致。</p>
+</blockquote>
+<p>CAP理论指的是分布式系统的三个核心属性：一致性（Consistency）、可用性（Availability）和分区容错性（Partition Tolerance）。这三个属性的具体含义如下：</p>
+<ul>
+<li>C ➡️ <strong>一致性</strong>：在分布式系统中的所有节点中，具有相同数据的所有节点在任何时间点都可以读取到相同的数据。</li>
+<li>A ➡️ <strong>可用性</strong>：在分布式系统中的节点可以在任何时间点对外提供服务和响应请求。</li>
+<li>P ➡️ <strong>分区容错性</strong>：在分布式系统中的节点可以在任何时间点保持相互连接并维护系统的正常运行，即使节点之间出现网络分区或者其他故障。</li>
+</ul>
 <p>这三个特性只能同时实现两点，不能三点同时兼顾~</p>
 <p>分布式系统的基本特性：<strong>Partition tolerance(分区容错性) 必须要满足</strong></p>
+<blockquote>
+<p><strong>⚠️ 为什么一定要保证 Partitiion tolerance？</strong></p>
+<blockquote>
+<p>分区容错性，代表当分布式节点发生分区（A、B节点互相连接不上）此时的分布式系统是否还提供服务（是否容错），如果没有了P，代表发生分区之后整个分布式集群不能使用，这显然是不行的。</p>
+</blockquote>
+<p>下面看看保证P与不保证P的集群是什么样的：</p>
+<ul>
+<li>如果没了P，理论上集群不容许任何一个节点发生分区，当<strong>没有分区</strong>发生时确实可以保证AC（谁能保证集群系统的节点百分百不会出问题呢？能保证也不需要讨论AC问题了），当发生分区时整个集群不可用，没有现实意义</li>
+<li>如果保证P，说明集群就只能从A和C选择其一</li>
+</ul>
+</blockquote>
 <p>consistency(一致性)、Availability(可用性) 二选一：</p>
 <ul>
 <li>银行选择数据一致性</li>
 <li>大众网页选择服务可用性</li>
 </ul>
 <p><strong>etcd 归根结底是一个存储组件，可以实现配置共享和服务发现~</strong></p>
+<blockquote>
+<p>不一定需要强一致性（其实可以Raft、Zab协议可以做到基本可用+强一致性（线性一致性），基本可以算是分布式一致性算法，非要归类的话我认为其属于CP模型），或许可以最终一致性</p>
+</blockquote>
 </div>
+<p>其实同样的，关于 k3s 自己内置的轻量 SQLite，即使选择 HA 模式的 Dqlite，它主要做了这些事情：</p>
+<ol>
+<li>提供一个 raft 的解决方案，基于一个叫 c-raft 的 raft 轻量级实现。</li>
+<li>sqlite 封装起来，把它存储层注册一个定制 driver 来操作数据。</li>
+<li>CAP 理论中，和大多数 <strong>分布式数据库</strong> 一样，dqlite 选择了 CP。</li>
+<li>保证了数据一致性</li>
+<li>保证了强一致性，用户请求需要在服务器中所有的分区里面完成了一致性才返回</li>
+<li>但是，不保证每一个请求都能得到没有报错的响应一般。</li>
+</ol>
 <h3 id="etcd-常用术语" tabindex="-1"><a class="header-anchor" href="#etcd-常用术语" aria-hidden="true">#</a> etcd 常用术语</h3>
 <table>
 <thead>
@@ -617,6 +656,50 @@ etcdctl --cert-file<span class="token operator">=</span>/etc/etcd/ssl/etcd.pem  
 <p>gRPC proxy 是在 gRPC 层 运行的无状态 etcd 反向代理</p>
 <p>旨在减少 etcd 集群上的总处理负载</p>
 </div>
+<h2 id="直接访问etcd的数据" tabindex="-1"><a class="header-anchor" href="#直接访问etcd的数据" aria-hidden="true">#</a> 直接访问etcd的数据</h2>
+<p>先用 sealer 快速安装一个 Kubernetes 的测试单节点：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@dev ~<span class="token punctuation">]</span><span class="token comment"># /root/workspces/sealer/_output/bin/sealer/linux_amd64/sealer run docker.io/sealerio/kubernetes:v1.22.15 --masters  192.168.137.133</span>
+<span class="token punctuation">[</span>root@dev ~<span class="token punctuation">]</span><span class="token comment"># kubectl get nodes</span>
+NAME          STATUS     ROLES                  AGE   VERSION
+cubmaster01   NotReady   control-plane,master   47s   v1.22.15
+<span class="token punctuation">[</span>root@dev ~<span class="token punctuation">]</span><span class="token comment"># kubectl get node -A</span>
+NAME          STATUS     ROLES                  AGE   VERSION
+cubmaster01   NotReady   control-plane,master   49s   v1.22.15
+<span class="token punctuation">[</span>root@dev ~<span class="token punctuation">]</span><span class="token comment"># kubectl get pod -A</span>
+NAMESPACE     NAME                                  READY   STATUS    RESTARTS   AGE
+kube-system   coredns-697ddfb55c-49jss              <span class="token number">0</span>/1     Pending   <span class="token number">0</span>          38s
+kube-system   coredns-697ddfb55c-spknp              <span class="token number">0</span>/1     Pending   <span class="token number">0</span>          38s
+kube-system   etcd-cubmaster01                      <span class="token number">1</span>/1     Running   <span class="token number">0</span>          53s
+kube-system   kube-apiserver-cubmaster01            <span class="token number">1</span>/1     Running   <span class="token number">0</span>          51s
+kube-system   kube-controller-manager-cubmaster01   <span class="token number">1</span>/1     Running   <span class="token number">49</span>         54s
+kube-system   kube-proxy-mcxwj                      <span class="token number">1</span>/1     Running   <span class="token number">0</span>          39s
+kube-system   kube-scheduler-cubmaster01            <span class="token number">1</span>/1     Running   <span class="token number">49</span>         51s
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>在Master节点上指定查看命名空间kube-system下的Pod信息</strong></p>
+<p>可以看到有一个名为<code v-pre>etcd-cubmaster01</code>的Pod</p>
+<p><strong>在Master节点上进入运行etcd的容器内部</strong></p>
+<blockquote>
+<p>⚠️ 注意，貌似不支持 本地 bash 进入：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@dev ~<span class="token punctuation">]</span><span class="token comment"># kubectl -n kube-system exec -it etcd-cubmaster01 -- bash</span>
+OCI runtime <span class="token builtin class-name">exec</span> failed: <span class="token builtin class-name">exec</span> failed: container_linux.go:349: starting container process caused <span class="token string">"exec: <span class="token entity" title="\&quot;">\"</span>bash<span class="token entity" title="\&quot;">\"</span>: executable file not found in <span class="token environment constant">$PATH</span>"</span><span class="token builtin class-name">:</span> unknown
+<span class="token builtin class-name">command</span> terminated with <span class="token builtin class-name">exit</span> code <span class="token number">126</span>
+<span class="token punctuation">[</span>root@dev ~<span class="token punctuation">]</span><span class="token comment"># kubectl -n kube-system exec -it etcd-cubmaster01 -- sh</span>
+sh-5.0<span class="token comment"># </span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></blockquote>
+<p><strong>查询数据：</strong></p>
+<p>查询所有以<code v-pre>/</code>开头的key的名称</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code> etcdctl <span class="token parameter variable">--endpoints</span> https://localhost:2379 <span class="token parameter variable">--cert</span> /etc/kubernetes/pki/etcd/server.crt <span class="token parameter variable">--key</span> /etc/kubernetes/pki/etcd/server.key <span class="token parameter variable">--cacert</span> /etc/kubernetes/pki/etcd/ca.crt get --keys-only <span class="token parameter variable">--prefix</span> /
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>这样的话，我就能知道新建的 registry 的记录</strong></p>
+<ul>
+<li><code v-pre>--keys-only</code>:表示只列出key，不查看具体的键值对信息.</li>
+<li><code v-pre>--prefix /</code>:表示查询所有key名以<code v-pre>/</code>开头的键值对</li>
+</ul>
+<p><strong>查看key为<code v-pre>/registry/services/specs/default/kubernetes</code>的value</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>etcdctl <span class="token parameter variable">--endpoints</span> https://localhost:2379 <span class="token parameter variable">--cert</span> /etc/kubernetes/pki/etcd/server.crt <span class="token parameter variable">--key</span> /etc/kubernetes/pki/etcd/server.key <span class="token parameter variable">--cacert</span> /etc/kubernetes/pki/etcd/ca.crt get <span class="token parameter variable">--prefix</span> /registry/services/specs/default/kubernetes
+ /registry/services/specs/default/kubernetes
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>可以看到有一些乱码。这是因为 <strong>这个value是GRPC协议的存储，因此该value时以Protobuf的形式存储的</strong>。因此有一些乱码。</p>
+<blockquote>
+<p>etcd还支持监听的功能，这使得etcd有了消息机制。</p>
+</blockquote>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '23.md' style='float:left'>⬆️上一节🔗  </a><a href = '25.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

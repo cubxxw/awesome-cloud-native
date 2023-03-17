@@ -8,7 +8,7 @@
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<nav class="table-of-contents"><ul><li><router-link to="#购买三台机器">购买三台机器</router-link><ul><li><router-link to="#推荐使用一个远程ssh工具">推荐使用一个远程ssh工具</router-link></li><li><router-link to="#创建私有网络">创建私有网络</router-link></li><li><router-link to="#使用交换机划分为隔离网络的小区域">使用交换机划分为隔离网络的小区域</router-link></li><li><router-link to="#过程截图">过程截图</router-link></li><li><router-link to="#搭建成功">搭建成功</router-link></li><li><router-link to="#显示图形化界面">显示图形化界面</router-link></li><li><router-link to="#必须要打开安全组的组内通信">必须要打开安全组的组内通信</router-link></li><li><router-link to="#vpc设置端口转化">vpc设置端口转化</router-link></li><li><router-link to="#准备链接">准备链接</router-link></li></ul></li><li><router-link to="#docker安装">docker安装</router-link><ul><li><router-link to="#_1、移除以前docker相关包">1、移除以前docker相关包</router-link></li><li><router-link to="#_2、配置yum源">2、配置yum源</router-link></li><li><router-link to="#_3、安装docker">3、安装docker</router-link></li><li><router-link to="#_4、启动">4、启动</router-link></li><li><router-link to="#_5、配置加速">5、配置加速</router-link></li></ul></li><li><router-link to="#kubeadm创建集群预备环境">kubeadm创建集群预备环境</router-link></li><li><router-link to="#安装kubeadm">安装kubeadm</router-link><ul><li><router-link to="#设置所有机器的主机名称">设置所有机器的主机名称</router-link></li><li><router-link to="#将-selinux-设置为-permissive-模式">将 SELinux 设置为 permissive 模式</router-link></li><li><router-link to="#关闭所有机器的交换分区">关闭所有机器的交换分区</router-link></li><li><router-link to="#允许-iptables-检查桥接流量">允许 iptables 检查桥接流量</router-link></li></ul></li><li><router-link to="#安装集群的三大件">安装集群的三大件</router-link></li><li><router-link to="#使用kubeadm引导集群">使用kubeadm引导集群</router-link><ul><li><router-link to="#下载各个机器需要的镜像">下载各个机器需要的镜像</router-link></li><li><router-link to="#初始化主结点">初始化主结点</router-link></li><li><router-link to="#根据提示继续">根据提示继续</router-link></li><li><router-link to="#加入node节点">加入node节点</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#购买三台机器">购买三台机器</router-link><ul><li><router-link to="#推荐使用一个远程ssh工具">推荐使用一个远程ssh工具</router-link></li><li><router-link to="#创建私有网络">创建私有网络</router-link></li><li><router-link to="#使用交换机划分为隔离网络的小区域">使用交换机划分为隔离网络的小区域</router-link></li><li><router-link to="#过程截图">过程截图</router-link></li><li><router-link to="#搭建成功">搭建成功</router-link></li><li><router-link to="#显示图形化界面">显示图形化界面</router-link></li><li><router-link to="#必须要打开安全组的组内通信">必须要打开安全组的组内通信</router-link></li><li><router-link to="#vpc设置端口转化">vpc设置端口转化</router-link></li><li><router-link to="#准备链接">准备链接</router-link></li></ul></li><li><router-link to="#docker安装">docker安装</router-link><ul><li><router-link to="#_1、移除以前docker相关包">1、移除以前docker相关包</router-link></li><li><router-link to="#_2、配置yum源">2、配置yum源</router-link></li><li><router-link to="#_3、安装docker">3、安装docker</router-link></li><li><router-link to="#_4、启动">4、启动</router-link></li><li><router-link to="#_5、配置加速">5、配置加速</router-link></li></ul></li><li><router-link to="#kubeadm创建集群预备环境">kubeadm创建集群预备环境</router-link><ul><li><router-link to="#安装kubeadm">安装kubeadm</router-link></li><li><router-link to="#设置所有机器的主机名称">设置所有机器的主机名称</router-link></li><li><router-link to="#将-selinux-设置为-permissive-模式">将 SELinux 设置为 permissive 模式</router-link></li><li><router-link to="#关闭所有机器的交换分区">关闭所有机器的交换分区</router-link></li><li><router-link to="#允许-iptables-检查桥接流量">允许 iptables 检查桥接流量</router-link></li></ul></li><li><router-link to="#安装集群的三大件">安装集群的三大件</router-link></li><li><router-link to="#使用kubeadm引导集群">使用kubeadm引导集群</router-link><ul><li><router-link to="#下载各个机器需要的镜像">下载各个机器需要的镜像</router-link></li><li><router-link to="#初始化主结点">初始化主结点</router-link></li><li><router-link to="#根据提示继续">根据提示继续</router-link></li><li><router-link to="#加入node节点">加入node节点</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="购买三台机器" tabindex="-1"><a class="header-anchor" href="#购买三台机器" aria-hidden="true">#</a> 购买三台机器</h2>
 <blockquote>
@@ -147,7 +147,8 @@ EOF</span>
 <span class="token function">sudo</span> systemctl daemon-reload
 <span class="token function">sudo</span> systemctl restart <span class="token function">docker</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="kubeadm创建集群预备环境" tabindex="-1"><a class="header-anchor" href="#kubeadm创建集群预备环境" aria-hidden="true">#</a> kubeadm创建集群预备环境</h2>
-<h2 id="安装kubeadm" tabindex="-1"><a class="header-anchor" href="#安装kubeadm" aria-hidden="true">#</a> 安装kubeadm</h2>
+<p>虽然有了 Kubernetes 的一些 预开发版本，比如说 k3s、 k0s、 minikuber、Kind、但是官方还是最推荐的 Kubeadm，而且在 kubernetes 1.3版本后也是可以将 kubeadm 用于生产环境。</p>
+<h3 id="安装kubeadm" tabindex="-1"><a class="header-anchor" href="#安装kubeadm" aria-hidden="true">#</a> 安装kubeadm</h3>
 <ul>
 <li>
 <p>一台兼容的 Linux 主机。Kubernetes 项目为基于 Debian 和 Red Hat 的 Linux 发行版以及一些不提供包管理器的发行版提供通用的指令</p>
@@ -237,7 +238,7 @@ EOF</span>
 <li>加入node结点</li>
 </ol>
 <blockquote>
-<p>其实在<code v-pre>k8s</code>中，除了<code v-pre>kubelet</code>，剩下的镜像都是以容器的方式运行。<code v-pre>kubelet</code>类似于厂长，我们为了避免下载中断，所以准备的是脚本。</p>
+<p>其实在<code v-pre>k8s</code>中，除了<code v-pre>kubelet</code> （因为 kubelet 不能被阉割，它是容器和宿主机的桥梁），剩下的镜像都是以容器的方式运行。<code v-pre>kubelet</code>类似于厂长，我们为了避免下载中断，所以准备的是脚本。</p>
 </blockquote>
 <h3 id="下载各个机器需要的镜像" tabindex="-1"><a class="header-anchor" href="#下载各个机器需要的镜像" aria-hidden="true">#</a> 下载各个机器需要的镜像</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">tee</span> ./images.sh <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
@@ -283,48 +284,54 @@ kubeadm init <span class="token punctuation">\</span>
 --pod-network-cidr<span class="token operator">=</span><span class="token number">192.168</span>.0.0/16
 
 <span class="token comment">#所有网络范围不重叠</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>📜 对上面的解释：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>参考：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubeadm init --pod-network-cidr<span class="token operator">=</span><span class="token number">10.244</span>.0.0/16 --apiserver-advertise-address<span class="token operator">=</span><span class="token number">192.168</span>.131.128
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></blockquote>
+<p>📜 对上面的解释：</p>
 <blockquote>
 <p>一定要注意每一个结点都需要能 <code v-pre>ping</code>通<code v-pre>cluster-endpoint</code></p>
 <p>主节点初始化：注意版本和网络范围的配置，这个挺麻烦的后面除非特别深入这一块，否则不要改。</p>
 <p><code v-pre>--apiserver-advertise-address</code>一定要改成自己的<code v-pre>master</code>结点的<code v-pre>ip</code></p>
 <p><strong>如果要改：</strong></p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>--service-cidr=10.96.0.0/16 \
---pod-network-cidr=192.168.0.0/16
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>--service-cidr<span class="token operator">=</span><span class="token number">10.96</span>.0.0/16 <span class="token punctuation">\</span>
+--pod-network-cidr<span class="token operator">=</span><span class="token number">192.168</span>.0.0/16
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>所有网络范围一定不能重叠！！！</p>
 <p><code v-pre>--apiserver-advertise-address</code> 可以设置 control-plane 节点 API server 的 通告地址。
 <code v-pre>--control-plane-endpoint</code> 可以设置所有control-plane 节点的 shared endpoint。
 <code v-pre>--control-plane-endpoint</code> 允许IP地址，也允许DNS names。请联系管理员设置DNS和IP的映射。</p>
 </blockquote>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>
-Your Kubernetes control-plane has initialized successfully!
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>你的Kubernetes控制平面已经初始化成功<span class="token operator">!</span>
 
-To start using your cluster, you need to run the following as a regular user:
+要开始使用您的集群，您需要作为普通用户运行以下命令:
 
-  mkdir -p $HOME/.kube
-  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token environment constant">$HOME</span>/.kube
+  <span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-i</span> /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+  <span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> <span class="token parameter variable">-u</span><span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> <span class="token parameter variable">-g</span><span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
 
-Alternatively, if you are the root user, you can run:
+或者，如果你是root用户，你可以运行:
 
-  export KUBECONFIG=/etc/kubernetes/admin.conf
+  <span class="token builtin class-name">export</span> <span class="token assign-left variable">KUBECONFIG</span><span class="token operator">=</span>/etc/kubernetes/admin.conf
 
-You should now deploy a pod network to the cluster.
-Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+现在应该将pod网络部署到集群。
+Run <span class="token string">"kubectl apply -f [podnetwork].yaml"</span> with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
-You can now join any number of control-plane nodes by copying certificate authorities
-and service account keys on each node and then running the following as root:
+您现在可以通过复制证书颁发机构来加入任意数量的控制平面节点
+和每个节点上的服务帐户密钥，然后以root身份运行以下命令:
 
-  kubeadm join cluster-endpoint:6443 --token hums8f.vyx71prsg74ofce7 \
-    --discovery-token-ca-cert-hash sha256:a394d059dd51d68bb007a532a037d0a477131480ae95f75840c461e85e2c6ae3 \
+  kubeadm <span class="token function">join</span> cluster-endpoint:6443 <span class="token parameter variable">--token</span> hums8f.vyx71prsg74ofce7 <span class="token punctuation">\</span>
+    --discovery-token-ca-cert-hash sha256:a394d059dd51d68bb007a532a037d0a477131480ae95f75840c461e85e2c6ae3 <span class="token punctuation">\</span>
     --control-plane 
 
-Then you can join any number of worker nodes by running the following on each as root:
+然后你可以加入任意数量的工作节点，在每个工作节点上以root身份运行以下命令:
 
-kubeadm join cluster-endpoint:6443 --token hums8f.vyx71prsg74ofce7 \
+kubeadm <span class="token function">join</span> cluster-endpoint:6443 <span class="token parameter variable">--token</span> hums8f.vyx71prsg74ofce7 <span class="token punctuation">\</span>
     --discovery-token-ca-cert-hash sha256:a394d059dd51d68bb007a532a037d0a477131480ae95f75840c461e85e2c6ae3
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>继续：</strong></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>注意替换 token</p>
+</blockquote>
+<p><strong>继续：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment">#查看集群所有节点</span>
 kubectl get nodes
 
@@ -338,7 +345,7 @@ kubectl apply <span class="token parameter variable">-f</span> xxxx.yaml
 kubectl get pods <span class="token parameter variable">-A</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="根据提示继续" tabindex="-1"><a class="header-anchor" href="#根据提示继续" aria-hidden="true">#</a> 根据提示继续</h3>
 <p>master成功后提示如下：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221018185049721.png" alt="image-20221018185049721"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221018185049721.png" alt=""></p>
 <p>1、设置<code v-pre>.kube/config</code></p>
 <p>2、安装网络组件</p>
 <ul>
@@ -354,6 +361,7 @@ kubectl apply <span class="token parameter variable">-f</span> calico.yaml
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubeadm token create --print-join-command
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><em><strong>高可用部署方式，也是在这一步的时候，使用添加主节点的命令即可</strong></em></p>
 </blockquote>
+<p>当然，这些其实都是小问题，后期的运维和维护才是 大 boss， 这也是我们穷尽一生去学习的。</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '4.md' style='float:left'>⬆️上一节🔗  </a><a href = '6.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

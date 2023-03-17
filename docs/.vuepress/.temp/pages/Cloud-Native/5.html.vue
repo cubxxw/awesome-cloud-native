@@ -10,7 +10,98 @@
 </blockquote>
 <p>[TOC]</p>
 <h2 id="项目规范" tabindex="-1"><a class="header-anchor" href="#项目规范" aria-hidden="true">#</a> 项目规范</h2>
-<h2 id="注意" tabindex="-1"><a class="header-anchor" href="#注意" aria-hidden="true">#</a> 注意</h2>
+<p>Here is my clusterfile: 下面是我的集群文件：</p>
+<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> sealer.cloud/v2
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Cluster
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>test<span class="token punctuation">-</span>cluster
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/sealerio/k0s<span class="token punctuation">:</span>v1<span class="token punctuation">-</span>24<span class="token punctuation">-</span>10<span class="token punctuation">-</span>seaerio<span class="token punctuation">-</span><span class="token number">1</span>
+  <span class="token key atrule">containerRuntime</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> containerd
+  <span class="token key atrule">ssh</span><span class="token punctuation">:</span>
+    <span class="token key atrule">passwd</span><span class="token punctuation">:</span> Sealer123
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">ips</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> xxx.xxx.xxx.xxx <span class="token punctuation">]</span>
+      <span class="token key atrule">roles</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> master <span class="token punctuation">]</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">ips</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> xxx.xxx.xxx.xxx <span class="token punctuation">]</span>
+      <span class="token key atrule">roles</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> node <span class="token punctuation">]</span>
+  <span class="token key atrule">registry</span><span class="token punctuation">:</span>
+    <span class="token key atrule">localRegistry</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ha</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Test cases: 测试用例：
+我们需要保证所有操作都处于节点就绪状态。</p>
+<ul>
+<li>run: sealer run docker.io/sealerio/k0s:v1-24-10-seaerio-1 -m 10.1.0.218 -n 10.1.0.215 -p Sealer123
+运行：封口机运行docker.io/sealerio/k0s:v1-24-10-seaerio-1-m10.1.0.218-n10.1.0.215-p封口机123</li>
+<li>scale-up: sealer scale-up -m 10.1.0.216-10.1.0.217 -n 10.1.0.219 -p Sealer123
+按比例放大：封口机按比例放大-m 10.1.0.216-10.1.0.217 -n10.1.0.219-p封口机123
+failed in Registry HA mode. (seautil not found)
+在注册表HA模式下失败。（未找到seautil）
+successed in Registry not HA mode.
+在非HA模式下注册成功。</li>
+<li>delete: sealer delete -m 10.1.0.216
+删除：封口机删除-m10.1.0.216</li>
+<li>delete -a 删除-a</li>
+<li>1master + 3 node install and delete.
+1主节点+ 3节点安装和删除。</li>
+<li>3master + 1 node install and delete.
+3主节点+ 1节点安装和删除。</li>
+</ul>
+<h2 id="for-k0s" tabindex="-1"><a class="header-anchor" href="#for-k0s" aria-hidden="true">#</a> For k0s</h2>
+<p>The build content all your need, following is an x86_64 arch case:</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">.</span>
+├── amd64
+│   ├── bin
+│   │   ├── conntrack
+│   │   ├── containerd-rootless-setuptool.sh
+│   │   ├── containerd-rootless.sh
+│   │   ├── crictl
+│   │   ├── k0s
+│   │   ├── kubectl
+│   │   ├── nerdctl
+│   │   └── seautil
+│   ├── cri
+│   │   └── containerd.tar.gz
+│   └── images
+│       └── nerdctl-amd64-registry-image.tar.gz
+├── imageList
+├── Kubefile
+└── rootfs
+    ├── etc
+    │   ├── containerd-config.toml
+    │   ├── containerd.service
+    │   └── registry_config.yml
+    ├── lib
+    ├── manifests
+    └── scripts
+        ├── containerd.sh
+        ├── init-kube.sh
+        ├── init-registry.sh
+        └── uninstall-containerd.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Kubefile:</p>
+<div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> scratch</span>
+<span class="token instruction"><span class="token keyword">COPY</span> rootfs .</span>
+<span class="token instruction"><span class="token keyword">COPY</span> amd64 .</span>
+<span class="token instruction"><span class="token keyword">COPY</span> imageList manifests</span>
+<span class="token instruction"><span class="token keyword">LABEL</span> <span class="token string">"cluster.alpha.sealer.io/cluster-runtime-version"</span>=<span class="token string">"v1.24.10"</span></span>
+<span class="token instruction"><span class="token keyword">LABEL</span> <span class="token string">"cluster.alpha.sealer.io/cluster-runtime-type"</span>=<span class="token string">"k0s"</span></span>
+<span class="token instruction"><span class="token keyword">LABEL</span> <span class="token string">"cluster.alpha.sealer.io/container-runtime-type"</span>=<span class="token string">"containerd"</span></span>
+<span class="token instruction"><span class="token keyword">LABEL</span> <span class="token string">"cluster.alpha.sealer.io/container-runtime-version"</span>=<span class="token string">"1.5.12"</span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>imageList:</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>quay.io/k0sproject/apiserver-network-proxy-agent:0.0.32-k0s1
+docker.io/coredns/coredns:1.7.1
+registry.k8s.io/kube-proxy:v1.24.10
+registry.k8s.io/metrics-server/metrics-server:v0.5.2
+registry.k8s.io/pause:3.6
+docker.io/cloudnativelabs/kube-router:v1.4.0
+quay.io/k0sproject/cni-node:1.1.1-k0s.0
+docker.io/calico/cni:v3.23.5
+docker.io/calico/kube-controllers:v3.23.5
+docker.io/calico/node:v3.23.5
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>build:</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>sealer build <span class="token parameter variable">-f</span> Kubefile <span class="token parameter variable">-t</span> my-k0s:1.24.10 <span class="token builtin class-name">.</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="注意" tabindex="-1"><a class="header-anchor" href="#注意" aria-hidden="true">#</a> 注意</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>k8s 从 v1.24 开始，kubernetes 默认容器运行时使用 <code v-pre>containerd</code> ，不再使用 <code v-pre>docker</code>。</p>
 <p>k3s 将所有 kubernetes 控制层面组件都封装到 单个二进制中 ，占用资源小，且包含了 kubernetes 运行时所需要的外部依赖和本地存储提供程序。</p>
