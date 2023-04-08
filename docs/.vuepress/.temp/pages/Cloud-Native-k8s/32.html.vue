@@ -11,11 +11,11 @@
 <p>[TOC]</p>
 <h2 id="分类" tabindex="-1"><a class="header-anchor" href="#分类" aria-hidden="true">#</a> 分类</h2>
 <p><strong>Kubernetes 是Go语言开发的，相对来说大部分结构还是很清晰的。</strong></p>
-<p>Kubernetes的代码都在kubernetes目录下，如图，根据功能主要分成以下几类：
+<p>Kubernetes的代码都在 kubernetes目录下，如图，根据功能主要分成以下几类：
 1、<code v-pre>文档类</code>（api、docs、logo）
 2、<code v-pre>工具类</code>（build、cluster、Godeps、hack、staging、translations）
 3、<code v-pre>代码类</code>（cmd、pkg、plugin、test、third_party）</p>
-<p>工具类主要用到的build目录下的文件，自己动手编译的时候会用到；</p>
+<p>工具类主要用到的 build目录下的文件，自己动手编译的时候会用到；</p>
 <p><strong>核心代码集中在cmd和pkg中。这两个是 Kubernetes 最重要的两个包~</strong></p>
 <p>cmd内部包含各个组件的入口，具体核心的实现部分在pkg目录下。</p>
 <p>我们每一个 可执行文件都对应 cmd</p>
@@ -824,6 +824,169 @@ plugin/
         └── OWNERS
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="test" tabindex="-1"><a class="header-anchor" href="#test" aria-hidden="true">#</a> test</h2>
 <p>e2e 测试代码</p>
+<h2 id="kubernetes-的-etc-目录" tabindex="-1"><a class="header-anchor" href="#kubernetes-的-etc-目录" aria-hidden="true">#</a> Kubernetes 的 ETC 目录</h2>
+<p>Kubernetes 是一个广泛使用的容器编排平台，下面是 Kubernetes 的目录和文件，包括了平台的核心组件和证书等相关文件。</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>├── audit-policy.yml
+├── controller-manager.conf
+├── kubeadm.yaml
+├── kubelet.conf
+├── manifests
+│   ├── etcd.yaml
+│   ├── kube-apiserver.yaml
+│   ├── kube-controller-manager.yaml
+│   └── kube-scheduler.yaml
+├── pki
+│   ├── apiserver.crt
+│   ├── apiserver-etcd-client.crt
+│   ├── apiserver-etcd-client.key
+│   ├── apiserver.key
+│   ├── apiserver-kubelet-client.crt
+│   ├── apiserver-kubelet-client.key
+│   ├── ca.crt
+│   ├── ca.key
+│   ├── etcd
+│   │   ├── ca.crt
+│   │   ├── ca.key
+│   │   ├── healthcheck-client.crt
+│   │   ├── healthcheck-client.key
+│   │   ├── peer.crt
+│   │   ├── peer.key
+│   │   ├── server.crt
+│   │   └── server.key
+│   ├── front-proxy-ca.crt
+│   ├── front-proxy-ca.key
+│   ├── front-proxy-client.crt
+│   ├── front-proxy-client.key
+│   ├── sa.key
+│   └── sa.pub
+└── scheduler.conf
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="audit-policy-yml" tabindex="-1"><a class="header-anchor" href="#audit-policy-yml" aria-hidden="true">#</a> audit-policy.yml</h3>
+<p><code v-pre>audit-policy.yml</code> 是 Kubernetes 的审核策略文件，它规定了哪些事件需要被记录，以及记录的内容。</p>
+<h3 id="controller-manager-conf" tabindex="-1"><a class="header-anchor" href="#controller-manager-conf" aria-hidden="true">#</a> controller-manager.conf</h3>
+<p><code v-pre>controller-manager.conf</code> 是 Kubernetes 的控制器管理器的配置文件。</p>
+<h3 id="kubeadm-yaml" tabindex="-1"><a class="header-anchor" href="#kubeadm-yaml" aria-hidden="true">#</a> kubeadm.yaml</h3>
+<p><code v-pre>kubeadm.yaml</code> 是 Kubernetes 的初始化配置文件，包含了初始化集群所需要的信息。</p>
+<h3 id="kubelet-conf" tabindex="-1"><a class="header-anchor" href="#kubelet-conf" aria-hidden="true">#</a> kubelet.conf</h3>
+<p><code v-pre>kubelet.conf</code> 是 Kubernetes 的 kubelet 组件的配置文件。</p>
+<h3 id="manifests" tabindex="-1"><a class="header-anchor" href="#manifests" aria-hidden="true">#</a> manifests</h3>
+<p><code v-pre>manifests</code> 目录包含 Kubernetes 的核心组件的配置文件，它们是：</p>
+<ul>
+<li><code v-pre>etcd.yaml</code>: etcd 是 Kubernetes 集群的数据库，存储了集群的状态信息。</li>
+<li><code v-pre>kube-apiserver.yaml</code>: kube-apiserver 是 Kubernetes 的 API 服务器，负责处理 API 请求。</li>
+<li><code v-pre>kube-controller-manager.yaml</code>: kube-controller-manager 是 Kubernetes 的控制器管理器，负责管理集群的各种控制器。</li>
+<li><code v-pre>kube-scheduler.yaml</code>: kube-scheduler 是 Kubernetes 的调度器，负责将 Pod 分配到合适的节点上运行。</li>
+</ul>
+<h3 id="pki" tabindex="-1"><a class="header-anchor" href="#pki" aria-hidden="true">#</a> pki</h3>
+<p><code v-pre>pki</code> 目录包含 Kubernetes 的证书和密钥文件，它们是：</p>
+<ul>
+<li><code v-pre>apiserver.crt</code>: kube-apiserver 的证书。</li>
+<li><code v-pre>apiserver-etcd-client.crt</code> 和 <code v-pre>apiserver-etcd-client.key</code>: kube-apiserver 和 etcd 之间通信的证书和密钥。</li>
+<li><code v-pre>apiserver.key</code>: kube-apiserver 的私钥。</li>
+<li><code v-pre>apiserver-kubelet-client.crt</code> 和 <code v-pre>apiserver-kubelet-client.key</code>: kube-apiserver 和 kubelet 之间通信的证书和密钥。</li>
+<li><code v-pre>ca.crt</code> 和 <code v-pre>ca.key</code>: Kubernetes 的根证书和密钥。</li>
+<li><code v-pre>etcd</code> 目录：etcd 的证书和密钥文件。</li>
+<li><code v-pre>front-proxy-ca.crt</code> 和 <code v-pre>front-proxy-ca.key</code>: 前置代理的证书和密钥。</li>
+<li><code v-pre>front-proxy-client.crt</code> 和 <code v-pre>front-proxy-client.key</code>: 前置代理和 kube-apiserver 之间通信的证书和密钥。</li>
+<li><code v-pre>sa.key</code> 和 <code v-pre>sa.pub</code>: Kubernetes 的 Service Account 的证书和密钥。</li>
+</ul>
+<h3 id="scheduler-conf" tabindex="-1"><a class="header-anchor" href="#scheduler-conf" aria-hidden="true">#</a> scheduler.conf</h3>
+<p><code v-pre>scheduler.conf</code> 是 Kubernetes 的调度器的配置文件。</p>
+<h3 id="补充" tabindex="-1"><a class="header-anchor" href="#补充" aria-hidden="true">#</a> 补充</h3>
+<p>这里可以在 补充部分 sealer 的实现实现：</p>
+<details class="custom-container details"><summary>展开如下：</summary>
+<p>SaveAll函数用于将所有配置信息保存到文件中。</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>func <span class="token punctuation">(</span>c *ClusterFile<span class="token punctuation">)</span> SaveAll<span class="token punctuation">(</span>opts SaveOptions<span class="token punctuation">)</span> error <span class="token punctuation">{</span>
+	var <span class="token punctuation">(</span>
+		clusterfileBytes <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span>byte
+		config           <span class="token punctuation">[</span><span class="token punctuation">]</span>byte
+		plugin           <span class="token punctuation">[</span><span class="token punctuation">]</span>byte
+	<span class="token punctuation">)</span>
+	fileName :<span class="token operator">=</span> common.GetDefaultClusterfile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	err :<span class="token operator">=</span> os.MkdirAll<span class="token punctuation">(</span>filepath.Dir<span class="token punctuation">(</span>fileName<span class="token punctuation">)</span>, os.ModePerm<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+		<span class="token builtin class-name">return</span> fmt.Errorf<span class="token punctuation">(</span><span class="token string">"failed to mkdir %s: %v"</span>, fileName, err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	cluster, err :<span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>c.cluster<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+		<span class="token builtin class-name">return</span> err
+	<span class="token punctuation">}</span>
+	
+	clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, cluster<span class="token punctuation">)</span>
+
+	<span class="token keyword">if</span> len<span class="token punctuation">(</span>c.configs<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> _, cg :<span class="token operator">=</span> range c.configs <span class="token punctuation">{</span>
+			config, err <span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>cg<span class="token punctuation">)</span>
+			<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+				<span class="token builtin class-name">return</span> err
+			<span class="token punctuation">}</span>
+			clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, config<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> len<span class="token punctuation">(</span>c.plugins<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> _, p :<span class="token operator">=</span> range c.plugins <span class="token punctuation">{</span>
+			plugin, err <span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+			<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+				<span class="token builtin class-name">return</span> err
+			<span class="token punctuation">}</span>
+			clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, plugin<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> len<span class="token punctuation">(</span>c.kubeadmConfig.InitConfiguration.TypeMeta.Kind<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		initConfiguration, err :<span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>c.kubeadmConfig.InitConfiguration<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+			<span class="token builtin class-name">return</span> err
+		<span class="token punctuation">}</span>
+		clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, initConfiguration<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> len<span class="token punctuation">(</span>c.kubeadmConfig.JoinConfiguration.TypeMeta.Kind<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		joinConfiguration, err :<span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>c.kubeadmConfig.JoinConfiguration<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+			<span class="token builtin class-name">return</span> err
+		<span class="token punctuation">}</span>
+		clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, joinConfiguration<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token keyword">if</span> len<span class="token punctuation">(</span>c.kubeadmConfig.ClusterConfiguration.TypeMeta.Kind<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		clusterConfiguration, err :<span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>c.kubeadmConfig.ClusterConfiguration<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+			<span class="token builtin class-name">return</span> err
+		<span class="token punctuation">}</span>
+		clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, clusterConfiguration<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> len<span class="token punctuation">(</span>c.kubeadmConfig.KubeletConfiguration.TypeMeta.Kind<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		kubeletConfiguration, err :<span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>c.kubeadmConfig.KubeletConfiguration<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+			<span class="token builtin class-name">return</span> err
+		<span class="token punctuation">}</span>
+		clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, kubeletConfiguration<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> len<span class="token punctuation">(</span>c.kubeadmConfig.KubeProxyConfiguration.TypeMeta.Kind<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		kubeProxyConfiguration, err :<span class="token operator">=</span> yaml.Marshal<span class="token punctuation">(</span>c.kubeadmConfig.KubeProxyConfiguration<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+			<span class="token builtin class-name">return</span> err
+		<span class="token punctuation">}</span>
+		clusterfileBytes <span class="token operator">=</span> append<span class="token punctuation">(</span>clusterfileBytes, kubeProxyConfiguration<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	content :<span class="token operator">=</span> bytes.Join<span class="token punctuation">(</span>clusterfileBytes, <span class="token punctuation">[</span><span class="token punctuation">]</span>byte<span class="token punctuation">(</span><span class="token string">"---<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">))</span>
+	err <span class="token operator">=</span> utilsos.NewCommonWriter<span class="token punctuation">(</span>fileName<span class="token punctuation">)</span>.WriteFile<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> nil <span class="token punctuation">{</span>
+		<span class="token builtin class-name">return</span> fmt.Errorf<span class="token punctuation">(</span><span class="token string">"failed to save clusterfile to disk:%v"</span>, err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> opts.CommitToCluster <span class="token punctuation">{</span>
+		<span class="token builtin class-name">return</span> saveToCluster<span class="token punctuation">(</span>content, opts.ConfPath<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token builtin class-name">return</span> nil
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>有意思的是：部分的 Kubernetes 的保存中，config 和 plug 是以一维切片的形式存储的，而clusterfileBytes 用来收集 所有的 内容，使用的是二维数组的方式存储的，KubeadmConfig 是随便存储的。获取到 config 和 plug 也只是 判断是否为 0</p>
+</details>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '31.md' style='float:left'>⬆️上一节🔗  </a><a href = '33.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

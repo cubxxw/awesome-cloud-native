@@ -22,8 +22,18 @@
 <p>和普通的开源项目也有区别，Kubernetes 不仅仅要求你对每一次 PR 提交 CA 证书。同时，如果不是完成一个小的漏洞或者修复，那么要求你提前给出 feature 设计， issue 的方案。</p>
 <p>或者 Kubernetes 社区不会对你的 PR 进行审核。</p>
 </blockquote>
+<p>官方提供了一个文档，本开发人员指南适用于希望编写直接访问Kubernetes API的代码或希望直接为Kubernetes项目做出贡献的任何人。它假定您对《用户指南》和《群集管理指南》中的概念有一定的了解。</p>
+<ul>
+<li><a href="https://github.com/kubernetes/community/tree/master/contributors/devel#readme" target="_blank" rel="noopener noreferrer">为 Kubernetes 项目开发和贡献代码的人 ~<ExternalLinkIcon/></a></li>
+</ul>
+<p>如果这是你的第一个 PR 请求，那么会给你提醒：</p>
+<p>It looks like this is your first time opening a pull request in this project!</p>
+<p>Be sure to review the <a href="https://github.com/kubernetes/community/blob/71c4a616a43c4b6eead99c0f98d46f135afd635b/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">contributing guidelines<ExternalLinkIcon/></a> and <a href="https://github.com/kubernetes/community/blob/71c4a616a43c4b6eead99c0f98d46f135afd635b/code-of-conduct.md" target="_blank" rel="noopener noreferrer">code of conduct<ExternalLinkIcon/></a>.</p>
+<p><strong>Reporting a security vulnerability?</strong>
+Check out the project's <a href="https://github.com/kubernetes/community/security/policy" target="_blank" rel="noopener noreferrer">security policy<ExternalLinkIcon/></a>.</p>
+<p><strong>他会告诉你，请阅读第一篇共享指南~</strong></p>
 <h2 id="cncf-2023" tabindex="-1"><a class="header-anchor" href="#cncf-2023" aria-hidden="true">#</a> CNCF 2023</h2>
-<p><strong>当我回顾 2022 年时，我对我们共同克服和取得的成就深感自豪。尽管我们已经面临并将继续应对的集体挑战，但云原生生态系统已经飙升。我们欢迎新的行业、项目，并将我们的社区扩大到 710 万云原生开发人员，超过了丹麦的人口！</strong></p>
+<p><strong>当我回顾 2022 年时，我对我们共同克服和取得的成就深感自豪。尽管我们已经面临并将继续应对的集体挑战，但云原生生态系统已经飙升。我们欢迎新的行业、项目，并将我们的社区扩大到 710 万云原生开发人员，超过了丹麦（丹麦：WTM）的人口！</strong></p>
 <p>贡献者和成员的成长：</p>
 <p><img src="http://sm.nsddd.top/sm202301081550482.png" alt="image-20230108154959742"></p>
 <p>我们可以看到，今年我们迎来了 220 多名新成员加入 CNCF。</p>

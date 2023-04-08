@@ -41,7 +41,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="修改containerd-所用的镜像库地址" tabindex="-1"><a class="header-anchor" href="#修改containerd-所用的镜像库地址" aria-hidden="true">#</a> 修改ContainerD 所用的镜像库地址</h2>
 <p><strong>Containerd应用</strong>:</p>
 <p>containerd的默认配置文件为<code v-pre>/etc/containerd/config.toml</code>，可通过命令：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>containerd config default ##查看默认配置
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>containerd config default <span class="token comment">##查看默认配置</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>修改信息</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>containerd config default <span class="token operator">></span> ~/config.toml  
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>然后编辑<code v-pre>～config.toml</code>去添加信息：</p>

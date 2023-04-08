@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第29节-kubernetes-源码解析资源" tabindex="-1"><a class="header-anchor" href="#第29节-kubernetes-源码解析资源" aria-hidden="true">#</a> 第29节 kubernetes 源码解析资源</h1>
+<h1 id="第29节-cloudnative-kubernetes-学习资源整理" tabindex="-1"><a class="header-anchor" href="#第29节-cloudnative-kubernetes-学习资源整理" aria-hidden="true">#</a> 第29节 CloudNative / Kubernetes 学习资源整理</h1>
 <div><a href = '28.md' style='float:left'>⬆️上一节🔗  </a><a href = '30.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
@@ -15,6 +15,7 @@
 <p>与其重要的，是对 kubernetes 资源的收集。</p>
 <p><em><strong>⚠️ 所有资源均是采用外链连接，书本资源或不放连接，其他均为自己感受和总结。如有侵权请联系删除。</strong></em></p>
 </div>
+<p>⚠️ **注意，这篇文章将永久保存在 notion，将会不断地更新下去，提供了可写通道，如果你有更好的资源，欢迎补充在notion上，地址是：<a href="https://nsddd.notion.site/CloudNative-2f278e98ed274999829333272415c72d" target="_blank" rel="noopener noreferrer">https://nsddd.notion.site/CloudNative-2f278e98ed274999829333272415c72d<ExternalLinkIcon/></a> **</p>
 <p><strong>关于kubernetes：</strong></p>
 <ul>
 <li><a href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer">官网<ExternalLinkIcon/></a></li>
@@ -26,19 +27,24 @@
 </ul>
 <p>**关于 CNCF 的贡献，你需要签署 CLA **</p>
 <ul>
-<li><a href="https://github.com/kubernetes/community/blob/master/CLA.md" target="_blank" rel="noopener noreferrer">Kubernetes CLA  的签署流程<ExternalLinkIcon/></a></li>
+<li>
+<p><a href="https://github.com/kubernetes/community/blob/master/CLA.md" target="_blank" rel="noopener noreferrer">Kubernetes CLA  的签署流程<ExternalLinkIcon/></a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/community/tree/master/contributors/devel" target="_blank" rel="noopener noreferrer">官方开发者向导 markdown 文件<ExternalLinkIcon/></a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md" target="_blank" rel="noopener noreferrer">Kubernetes ownes 所有者md介绍<ExternalLinkIcon/></a></p>
+</li>
 </ul>
-<div class="custom-container warning"><p class="custom-container-title">注意</p>
-<ul>
-<li><a href="https://github.com/kubernetes/community/tree/master/contributors/devel" target="_blank" rel="noopener noreferrer">官方开发者向导 markdown 文件<ExternalLinkIcon/></a></li>
-<li><a href="https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md" target="_blank" rel="noopener noreferrer">Kubernetes ownes 所有者md介绍<ExternalLinkIcon/></a></li>
-</ul>
-</div>
-<p><strong>自己的一些资源：</strong></p>
+<p><strong>自己写作的一些资源：</strong></p>
 <ul>
 <li><a href="https://docker.nsddd.top/" target="_blank" rel="noopener noreferrer">云原生学习<ExternalLinkIcon/></a></li>
 <li><a href="https://go.nsddd.top/" target="_blank" rel="noopener noreferrer">golang 学习<ExternalLinkIcon/></a></li>
 </ul>
+<blockquote>
+<p>都收纳到 awesome 仓库中，覆盖 📚 菜鸟成长手册🚀 CS系列 、云原生系列、区块链系列、web3系列🔥、Golang系列💡...... 访问 GitHub👀 https://github.com/cubxxw/awesome-cs-cloudnative-blockchain</p>
+</blockquote>
 <h2 id="最好需要什么" tabindex="-1"><a class="header-anchor" href="#最好需要什么" aria-hidden="true">#</a> 最好需要什么</h2>
 <ol>
 <li>如果说第一步的话，那必须要了解 docker 容器底层原理和 Linux 内核基础相关。</li>
@@ -61,6 +67,14 @@
 </ul>
 <p><strong>Restful 基础：</strong></p>
 <p>简单了解 Restful 概念，如果做过 Restful Service 那么最好了</p>
+<p><strong>熟悉一些常见的设计模式：</strong></p>
+<ul>
+<li>参考：https://www.yuque.com/aceld/lfhu8y/rg6nsf</li>
+</ul>
+<p><strong>熟悉常用的算法，熟悉操作系统（尤其是 Linux 的基础知识），熟悉网络的一些协议和原理。</strong></p>
+<blockquote>
+<p>Kubernetes 有很多复杂的地方，尤其是网络和存储，希望以后可以成为 ×</p>
+</blockquote>
 <h2 id="阅读方法-其他开源项目类似" tabindex="-1"><a class="header-anchor" href="#阅读方法-其他开源项目类似" aria-hidden="true">#</a> 阅读方法（其他开源项目类似）</h2>
 <ul>
 <li>先整体，后局部（不钻牛角尖）</li>
@@ -94,9 +108,9 @@
 <ol>
 <li><strong>第一阶段</strong> 先了解k8s，是什么，能做什么，架构，核心资源对象，设计理念，发展历程等等</li>
 <li><strong>第二阶段</strong> 开始使用k8s, 自己创建pod, deploy, job等资源。能够基于k8s开发一下组件，比如实现一个controller监听pod的创建删除等。【看山是山】</li>
-<li><strong>第三阶段</strong> 开始阅读源码，了解底层实现。这个过程会对k8s有一个更深的理解。比如创建一个pod的完成历程是什么样的，k8s gc机制到底是怎么实现的。namespaces删除的时候怎么做到删除所有资源后在删除的。【看山不是山】 这里推荐源码阅读方式：理论+实践结合。
+<li><strong>第三阶段</strong> 开始阅读源码，了解底层实现。这个过程会对k8s有一个更深的理解。比如创建一个pod的完成历程是什么样的，k8s gc 机制到底是怎么实现的。namespaces删除的时候怎么做到删除所有资源后在删除的。【看山不是山】 这里推荐源码阅读方式：理论+实践结合。
 <ol>
-<li>理论：通过ide之间各种跳转阅读源码</li>
+<li>理论：通过 ide 之间各种跳转阅读源码</li>
 <li>实践：自己动手在[关键代码]处增加日志，通过查看日志输出理解源码 （repo也介绍了如何二进制搭建一套K8s集群）</li>
 </ol>
 </li>
@@ -108,8 +122,19 @@
 <li>深入解刨 Kubernetes （这个我也买了，emmm，特别完美的一本书，作者有自己的讲解，是个大佬）</li>
 <li>kubernetes 编程</li>
 <li>kubernetes 源码刨析（这个我买了！！！！！！，不推荐，copy 多干货少）</li>
+<li>第一本 docker 书</li>
+<li>深入理解计算机系统 / 现代操作系统</li>
 <li>docker 容器与容器云 （还没开始看）</li>
+<li>Kubernetes 权威指南（熟练使用、贯穿场景）</li>
 <li>docker 开发指南 （还没开始看）</li>
+<li><a href="https://golang.coding3min.com/" target="_blank" rel="noopener noreferrer">Go语言精进之路<ExternalLinkIcon/></a></li>
+<li>Istio （服务网格 推荐 https://academy.tetrate.io/courses/take/istio-fundamentals-zh/lessons/26470007-1-0）</li>
+<li><a href="https://lib.jimmysong.io/what-is-ebpf/" target="_blank" rel="noopener noreferrer">eBPF<ExternalLinkIcon/></a></li>
+<li><a href="https://lib.jimmysong.io/kubernetes-hardening-guidance/" target="_blank" rel="noopener noreferrer">Kubernetes 加固指南<ExternalLinkIcon/></a></li>
+<li><a href="https://lib.jimmysong.io/cloud-native-infra/" target="_blank" rel="noopener noreferrer">云原生基础架构<ExternalLinkIcon/></a></li>
+<li><a href="https://lib.jimmysong.io/kubernetes-handbook/" target="_blank" rel="noopener noreferrer">Kubernetes 基础教程<ExternalLinkIcon/></a></li>
+<li><a href="https://lib.jimmysong.io/migrating-to-cloud-native-application-architectures/the-rise-of-cloud-native/" target="_blank" rel="noopener noreferrer">迁移到云原生应用程序<ExternalLinkIcon/></a></li>
+<li><a href="https://jimmysong.io/kubernetes-handbook/" target="_blank" rel="noopener noreferrer">Kubernetes 中文指南/云原生应用架构实战手册<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="视频资源" tabindex="-1"><a class="header-anchor" href="#视频资源" aria-hidden="true">#</a> 视频资源</h2>
 <ul>
@@ -121,6 +146,9 @@
 </li>
 <li>
 <p><a href="https://space.bilibili.com/547971176?share_from=space&amp;share_medium=iphone&amp;share_plat=ios&amp;share_session_id=DE3B8DC0-6E79-4FCC-A128-21D5FB84D251&amp;share_source=WEIXIN&amp;share_tag=s_i&amp;timestamp=1669727447&amp;unique_k=TjDCl4U" target="_blank" rel="noopener noreferrer">插座煤电 深入理解 k8s 网络<ExternalLinkIcon/></a></p>
+</li>
+<li>
+<p>极客时间 云原生 训练营课程（十五节）</p>
 </li>
 </ul>
 <h2 id="网站资源" tabindex="-1"><a class="header-anchor" href="#网站资源" aria-hidden="true">#</a> 网站资源</h2>
@@ -160,67 +188,77 @@
 </ul>
 <h2 id="数据统计和收集" tabindex="-1"><a class="header-anchor" href="#数据统计和收集" aria-hidden="true">#</a> 数据统计和收集</h2>
 <h3 id="cncf-数据" tabindex="-1"><a class="header-anchor" href="#cncf-数据" aria-hidden="true">#</a> CNCF 数据</h3>
+<ul>
+<li>
 <p>网站：<a href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer">kubernetes.io<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>资料库：<a href="https://github.com/kubernetes/kubernetes" target="_blank" rel="noopener noreferrer">github.com/kubernetes/kubernetes<ExternalLinkIcon/></a> 94,767</p>
+</li>
+<li>
 <p>Crunchbase：<a href="https://www.crunchbase.com/organization/cloud-native-computing-foundation" target="_blank" rel="noopener noreferrer">crunchbase.com/organization/cloud-native-computing-foundation<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>领英：<a href="https://www.linkedin.com/company/cloud-native-computing-foundation" target="_blank" rel="noopener noreferrer">linkedin.com/company/cloud-native-computing-foundation<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>推特：<a href="https://twitter.com/kubernetesio" target="_blank" rel="noopener noreferrer">@kubernetesio<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>第一次提交：<a href="https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56%22" target="_blank" rel="noopener noreferrer">9年前<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>贡献者：<a href="https://github.com/kubernetes/kubernetes/graphs/contributors" target="_blank" rel="noopener noreferrer">500+<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>最新推文：<a href="https://twitter.com/kubernetesio" target="_blank" rel="noopener noreferrer">2个月前<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>公认: 2016-03-10</p>
+</li>
+<li>
 <p>已毕业：2018-03-06</p>
+</li>
+<li>
 <p>总部：<a href="https://landscape.cncf.io/?grouping=headquarters&amp;headquarters=san-francisco-california" target="_blank" rel="noopener noreferrer">加利福尼亚州旧金山<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>孵化：7 年前</p>
+</li>
+<li>
 <p>开发统计：<a href="https://k8s.devstats.cncf.io/" target="_blank" rel="noopener noreferrer">https://k8s.devstats.cncf.io/<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>艺术品： <a href="https://github.com/cncf/artwork/blob/master/examples/graduated.md#kubernetes-logos" target="_blank" rel="noopener noreferrer">https://github.com/cncf/artwork/blob/master/examples/graduated.md#kubernetes-logos<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>stackoverflow：<a href="https://stackoverflow.com/questions/tagged/kubernetes" target="_blank" rel="noopener noreferrer">https://stackoverflow.com/questions/tagged/kubernetes<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>博客：<a href="http://blog.kubernetes.io/" target="_blank" rel="noopener noreferrer">http://blog.kubernetes.io/<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>邮件列表：<a href="https://groups.google.com/forum/#!forum/kubernetes-dev" target="_blank" rel="noopener noreferrer">https://groups.google.com/forum/#!forum/kubernetes-dev<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>slack：<a href="http://slack.k8s.io/" target="_blank" rel="noopener noreferrer">http://slack.k8s.io/<ExternalLinkIcon/></a></p>
+</li>
+<li>
 <p>YouTube： <a href="https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg" target="_blank" rel="noopener noreferrer">https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg<ExternalLinkIcon/></a></p>
+</li>
+</ul>
 <h3 id="源码统计" tabindex="-1"><a class="header-anchor" href="#源码统计" aria-hidden="true">#</a> 源码统计</h3>
-<p><code v-pre>Kubernetes</code> 代码特别庞大，使用 cloc 统计 <strong>（⏱️ 2023-02-07）</strong>：</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>PS D:<span class="token punctuation">\</span>文档<span class="token punctuation">\</span>my<span class="token operator">></span> cloc.exe .<span class="token punctuation">\</span>kubernetes<span class="token punctuation">\</span>
-   <span class="token number">23056</span> text files.
-   <span class="token number">17722</span> unique files.
-    <span class="token number">5806</span> files ignored.
-
-github.com/AlDanial/cloc <span class="token function">v</span> <span class="token number">1.94</span>  <span class="token assign-left variable">T</span><span class="token operator">=</span><span class="token number">228.54</span> s <span class="token punctuation">(</span><span class="token number">77.5</span> files/s, <span class="token number">28953.4</span> lines/s<span class="token punctuation">)</span>
---------------------------------------------------------------------------------
-Language                      files          blank        comment           code
---------------------------------------------------------------------------------
-Go                            <span class="token number">15020</span>         <span class="token number">517320</span>        <span class="token number">1010720</span>        <span class="token number">3922880</span>
-JSON                            <span class="token number">341</span>              <span class="token number">2</span>              <span class="token number">0</span>         <span class="token number">779037</span>
-YAML                           <span class="token number">1182</span>            <span class="token number">612</span>           <span class="token number">1326</span>         <span class="token number">132857</span>
-Markdown                        <span class="token number">458</span>          <span class="token number">22121</span>              <span class="token number">0</span>          <span class="token number">80538</span>
-Bourne Shell                    <span class="token number">328</span>           <span class="token number">6343</span>          <span class="token number">12485</span>          <span class="token number">31159</span>
-Protocol Buffers                <span class="token number">124</span>           <span class="token number">5811</span>          <span class="token number">19566</span>          <span class="token number">11531</span>
-PO File                          <span class="token number">12</span>           <span class="token number">1873</span>          <span class="token number">13392</span>          <span class="token number">11261</span>
-Assembly                         <span class="token number">48</span>           <span class="token number">2696</span>            <span class="token number">883</span>           <span class="token number">7754</span>
-Text                             <span class="token number">28</span>            <span class="token number">195</span>              <span class="token number">0</span>           <span class="token number">6612</span>
-PowerShell                        <span class="token number">7</span>            <span class="token number">398</span>           <span class="token number">1018</span>           <span class="token number">2485</span>
-<span class="token function">make</span>                             <span class="token number">59</span>            <span class="token number">527</span>            <span class="token number">891</span>           <span class="token number">1844</span>
-Starlark                         <span class="token number">24</span>             <span class="token number">68</span>              <span class="token number">0</span>            <span class="token number">904</span>
-C/C++ Header                      <span class="token number">1</span>            <span class="token number">399</span>           <span class="token number">4367</span>            <span class="token number">839</span>
-Bourne Again Shell               <span class="token number">10</span>             <span class="token number">58</span>             <span class="token number">72</span>            <span class="token number">449</span>
-<span class="token function">sed</span>                               <span class="token number">4</span>              <span class="token number">4</span>             <span class="token number">32</span>            <span class="token number">445</span>
-Dockerfile                       <span class="token number">46</span>            <span class="token number">201</span>            <span class="token number">680</span>            <span class="token number">408</span>
-Python                            <span class="token number">7</span>            <span class="token number">119</span>            <span class="token number">159</span>            <span class="token number">406</span>
-SVG                               <span class="token number">4</span>              <span class="token number">4</span>              <span class="token number">4</span>            <span class="token number">398</span>
-<span class="token function">zsh</span>                               <span class="token number">1</span>             <span class="token number">14</span>              <span class="token number">3</span>            <span class="token number">191</span>
-C                                 <span class="token number">5</span>             <span class="token number">42</span>             <span class="token number">54</span>            <span class="token number">140</span>
-ANTLR Grammar                     <span class="token number">1</span>             <span class="token number">31</span>             <span class="token number">17</span>            <span class="token number">138</span>
-TOML                              <span class="token number">5</span>             <span class="token number">24</span>             <span class="token number">86</span>             <span class="token number">74</span>
-INI                               <span class="token number">1</span>              <span class="token number">2</span>              <span class="token number">0</span>             <span class="token number">10</span>
-CSV                               <span class="token number">2</span>              <span class="token number">0</span>              <span class="token number">0</span>              <span class="token number">3</span>
-DOS Batch                         <span class="token number">1</span>              <span class="token number">2</span>             <span class="token number">17</span>              <span class="token number">2</span>
-HTML                              <span class="token number">2</span>              <span class="token number">0</span>              <span class="token number">0</span>              <span class="token number">2</span>
-NAnt script                       <span class="token number">1</span>              <span class="token number">0</span>              <span class="token number">0</span>              <span class="token number">1</span>
------------------------------------------------------------
-SUM:                          <span class="token number">17722</span>         <span class="token number">558866</span>        <span class="token number">1065772</span>        <span class="token number">4992368</span>
------------------------------------------------------------
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<p><code v-pre>Kubernetes</code> 代码特别庞大，使用 cloc 统计 <strong>（⏱️ 2023-03-17）</strong>：</p>
+<p><img src="http://sm.nsddd.top/sm202303172221221.png" alt="image-20230317222140890"></p>
+<h3 id="其他源码统计" tabindex="-1"><a class="header-anchor" href="#其他源码统计" aria-hidden="true">#</a> 其他源码统计</h3>
+<p><strong>⚠️ 数据截止到 2023 年 3 月 17 日</strong></p>
+<ul>
+<li>Istio :  SUN：514910 （GO：339739）</li>
+<li>Kind : 21060</li>
+<li>Minikube:  178446</li>
+<li>sealos: 116277</li>
+</ul>
+<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '28.md' style='float:left'>⬆️上一节🔗  </a><a href = '30.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>

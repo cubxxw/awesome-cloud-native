@@ -143,6 +143,4240 @@ export const searchIndex = [
     "extraFields": []
   },
   {
+    "title": "第1节 第一阶段",
+    "headers": [
+      {
+        "level": 2,
+        "title": "任务分配",
+        "slug": "任务分配",
+        "link": "#任务分配",
+        "children": [
+          {
+            "level": 3,
+            "title": "资源🗓️",
+            "slug": "资源🗓️",
+            "link": "#资源🗓️",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "贡献文档",
+        "slug": "贡献文档",
+        "link": "#贡献文档",
+        "children": [
+          {
+            "level": 3,
+            "title": "🧷 补充阅读",
+            "slug": "🧷-补充阅读",
+            "link": "#🧷-补充阅读",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "💡 步骤",
+            "slug": "💡-步骤",
+            "link": "#💡-步骤",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "文档规范",
+            "slug": "文档规范",
+            "link": "#文档规范",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "使用 sealos 快速构建 kubernetes",
+        "slug": "使用-sealos-快速构建-kubernetes",
+        "link": "#使用-sealos-快速构建-kubernetes",
+        "children": [
+          {
+            "level": 3,
+            "title": "构建项目",
+            "slug": "构建项目",
+            "link": "#构建项目",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Install golang",
+        "slug": "install-golang",
+        "link": "#install-golang",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Build the project",
+        "slug": "build-the-project",
+        "link": "#build-the-project",
+        "children": [
+          {
+            "level": 3,
+            "title": "远程连接",
+            "slug": "远程连接",
+            "link": "#远程连接",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "遇到的坑和解决方案",
+            "slug": "遇到的坑和解决方案",
+            "link": "#遇到的坑和解决方案",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "使用 sealos 快速构建 kubernetes",
+        "slug": "使用-sealos-快速构建-kubernetes-1",
+        "link": "#使用-sealos-快速构建-kubernetes-1",
+        "children": [
+          {
+            "level": 3,
+            "title": "添加到环境变量",
+            "slug": "添加到环境变量",
+            "link": "#添加到环境变量",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "k8s入门文档",
+        "slug": "k8s入门文档",
+        "link": "#k8s入门文档",
+        "children": [
+          {
+            "level": 3,
+            "title": "docker、k8s、云原生笔记",
+            "slug": "docker、k8s、云原生笔记",
+            "link": "#docker、k8s、云原生笔记",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "任务块",
+            "slug": "任务块",
+            "link": "#任务块",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "多结点",
+            "slug": "多结点",
+            "link": "#多结点",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "构建项目",
+            "slug": "构建项目-1",
+            "link": "#构建项目-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "核心服务快速启动",
+        "slug": "核心服务快速启动",
+        "link": "#核心服务快速启动",
+        "children": [
+          {
+            "level": 3,
+            "title": "环境准备",
+            "slug": "环境准备",
+            "link": "#环境准备",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "查看内核版本",
+            "slug": "查看内核版本",
+            "link": "#查看内核版本",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "单节点",
+            "slug": "单节点",
+            "link": "#单节点",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/1.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第10节 scratch构建runtime(linux)",
+    "headers": [
+      {
+        "level": 2,
+        "title": "开始",
+        "slug": "开始",
+        "link": "#开始",
+        "children": [
+          {
+            "level": 3,
+            "title": "rootfs",
+            "slug": "rootfs",
+            "link": "#rootfs",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "nginx",
+            "slug": "nginx",
+            "link": "#nginx",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "dockerfile",
+        "slug": "dockerfile",
+        "link": "#dockerfile",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "构建",
+        "slug": "构建",
+        "link": "#构建",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "效果",
+        "slug": "效果",
+        "link": "#效果",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "dockerfile-ubuntu 构建方式",
+        "slug": "dockerfile-ubuntu-构建方式",
+        "link": "#dockerfile-ubuntu-构建方式",
+        "children": [
+          {
+            "level": 3,
+            "title": "README",
+            "slug": "readme",
+            "link": "#readme",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Base Docker Image",
+            "slug": "base-docker-image",
+            "link": "#base-docker-image",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Installation",
+            "slug": "installation",
+            "link": "#installation",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Usage",
+            "slug": "usage",
+            "link": "#usage",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "dockerfile",
+            "slug": "dockerfile-1",
+            "link": "#dockerfile-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "user",
+        "slug": "user",
+        "link": "#user",
+        "children": [
+          {
+            "level": 3,
+            "title": "pull",
+            "slug": "pull",
+            "link": "#pull",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/10.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第11节 k3s HA ~",
+    "headers": [
+      {
+        "level": 2,
+        "title": "准备",
+        "slug": "准备",
+        "link": "#准备",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "版本",
+        "slug": "版本",
+        "link": "#版本",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "固定ip",
+        "slug": "固定ip",
+        "link": "#固定ip",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rsync远程同步工具",
+        "slug": "rsync远程同步工具",
+        "link": "#rsync远程同步工具",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/11.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第12节 sealer 数据存储目录",
+    "headers": [
+      {
+        "level": 2,
+        "title": "对比",
+        "slug": "对比",
+        "link": "#对比",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第一层",
+        "slug": "第一层",
+        "link": "#第一层",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第二层 data - cluster",
+        "slug": "第二层-data-cluster",
+        "link": "#第二层-data-cluster",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/12.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第13节 go context 上下文",
+    "headers": [
+      {
+        "level": 2,
+        "title": "context",
+        "slug": "context",
+        "link": "#context",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "我们需要它",
+        "slug": "我们需要它",
+        "link": "#我们需要它",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "它和 select 多路复用",
+        "slug": "它和-select-多路复用",
+        "link": "#它和-select-多路复用",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "创建context",
+        "slug": "创建context",
+        "link": "#创建context",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "源码",
+        "slug": "源码",
+        "link": "#源码",
+        "children": [
+          {
+            "level": 3,
+            "title": "context 所有函数、接口和结构体",
+            "slug": "context-所有函数、接口和结构体",
+            "link": "#context-所有函数、接口和结构体",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "canceler",
+            "slug": "canceler",
+            "link": "#canceler",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "结构体",
+        "slug": "结构体",
+        "link": "#结构体",
+        "children": [
+          {
+            "level": 3,
+            "title": "emptyCtx",
+            "slug": "emptyctx",
+            "link": "#emptyctx",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "cancelCtx",
+            "slug": "cancelctx",
+            "link": "#cancelctx",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "timerCtx",
+            "slug": "timerctx",
+            "link": "#timerctx",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "valueCtx",
+            "slug": "valuectx",
+            "link": "#valuectx",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "如何使用 context",
+        "slug": "如何使用-context",
+        "link": "#如何使用-context",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "传递共享的数据",
+        "slug": "传递共享的数据",
+        "link": "#传递共享的数据",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "取消 goroutine",
+        "slug": "取消-goroutine",
+        "link": "#取消-goroutine",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "防止 goroutine 泄漏",
+        "slug": "防止-goroutine-泄漏",
+        "link": "#防止-goroutine-泄漏",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "context 真的这么好吗",
+        "slug": "context-真的这么好吗",
+        "link": "#context-真的这么好吗",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "总结",
+        "slug": "总结",
+        "link": "#总结",
+        "children": [
+          {
+            "level": 3,
+            "title": "参考资料",
+            "slug": "参考资料",
+            "link": "#参考资料",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/13.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第14节 go 调试 测试 以及调试工具 dlv",
+    "headers": [
+      {
+        "level": 2,
+        "title": "调试Go工程",
+        "slug": "调试go工程",
+        "link": "#调试go工程",
+        "children": [
+          {
+            "level": 3,
+            "title": "demo",
+            "slug": "demo",
+            "link": "#demo",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "vscode一键生成测试",
+        "slug": "vscode一键生成测试",
+        "link": "#vscode一键生成测试",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "测试",
+        "slug": "测试",
+        "link": "#测试",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "完整性的测试",
+        "slug": "完整性的测试",
+        "link": "#完整性的测试",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "vscode 远程调试",
+        "slug": "vscode-远程调试",
+        "link": "#vscode-远程调试",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "dlv + VSCode + Go开发环境搭建",
+        "slug": "dlv-vscode-go开发环境搭建",
+        "link": "#dlv-vscode-go开发环境搭建",
+        "children": [
+          {
+            "level": 3,
+            "title": "常用指令",
+            "slug": "常用指令",
+            "link": "#常用指令",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "goroutine",
+            "slug": "goroutine",
+            "link": "#goroutine",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "dlv调试指令",
+        "slug": "dlv调试指令",
+        "link": "#dlv调试指令",
+        "children": [
+          {
+            "level": 3,
+            "title": "断点管理",
+            "slug": "断点管理",
+            "link": "#断点管理",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "程序执行中的调试指令",
+            "slug": "程序执行中的调试指令",
+            "link": "#程序执行中的调试指令",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "参数管理",
+            "slug": "参数管理",
+            "link": "#参数管理",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "其他",
+            "slug": "其他",
+            "link": "#其他",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "安装 dlv",
+        "slug": "安装-dlv",
+        "link": "#安装-dlv",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "添加debug方案",
+        "slug": "添加debug方案",
+        "link": "#添加debug方案",
+        "children": [
+          {
+            "level": 3,
+            "title": "执行方法",
+            "slug": "执行方法",
+            "link": "#执行方法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "dlv 💡简单的一个案例",
+        "slug": "dlv-💡简单的一个案例",
+        "link": "#dlv-💡简单的一个案例",
+        "children": [
+          {
+            "level": 3,
+            "title": "dlv前端(gdlv)",
+            "slug": "dlv前端-gdlv",
+            "link": "#dlv前端-gdlv",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "结论",
+            "slug": "结论",
+            "link": "#结论",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "总结",
+        "slug": "总结",
+        "link": "#总结",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/14.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第15节 about",
+    "headers": [
+      {
+        "level": 2,
+        "title": "架构图",
+        "slug": "架构图",
+        "link": "#架构图",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/15.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第16节 sealer code",
+    "headers": [
+      {
+        "level": 2,
+        "title": "filepath.Join",
+        "slug": "filepath-join",
+        "link": "#filepath-join",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "join master and join node",
+        "slug": "join-master-and-join-node",
+        "link": "#join-master-and-join-node",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k0s types",
+        "slug": "k0s-types",
+        "link": "#k0s-types",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "runtime/cluster-runtime",
+        "slug": "runtime-cluster-runtime",
+        "link": "#runtime-cluster-runtime",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "clusterfile",
+        "slug": "clusterfile",
+        "link": "#clusterfile",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "checker",
+        "slug": "checker",
+        "link": "#checker",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "client",
+        "slug": "client",
+        "link": "#client",
+        "children": [
+          {
+            "level": 3,
+            "title": "docker",
+            "slug": "docker",
+            "link": "#docker",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Kubernetes",
+            "slug": "kubernetes",
+            "link": "#kubernetes",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/16.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第17节 规范",
+    "headers": [
+      {
+        "level": 2,
+        "title": "注释规范",
+        "slug": "注释规范",
+        "link": "#注释规范",
+        "children": [
+          {
+            "level": 3,
+            "title": "包级别",
+            "slug": "包级别",
+            "link": "#包级别",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "结构、接口及其它类型",
+            "slug": "结构、接口及其它类型",
+            "link": "#结构、接口及其它类型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "函数与方法",
+            "slug": "函数与方法",
+            "link": "#函数与方法",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "其它说明",
+            "slug": "其它说明",
+            "link": "#其它说明",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "包括什么",
+        "slug": "包括什么",
+        "link": "#包括什么",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "命名规则",
+        "slug": "命名规则",
+        "link": "#命名规则",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "测试用例",
+        "slug": "测试用例",
+        "link": "#测试用例",
+        "children": [
+          {
+            "level": 3,
+            "title": "使用示例",
+            "slug": "使用示例",
+            "link": "#使用示例",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/17.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第18节 名词解释",
+    "headers": [
+      {
+        "level": 2,
+        "title": "名词",
+        "slug": "名词",
+        "link": "#名词",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "配置",
+        "slug": "配置",
+        "link": "#配置",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/18.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第19节 sealos 部署 k3s",
+    "headers": [
+      {
+        "level": 2,
+        "title": "方式",
+        "slug": "方式",
+        "link": "#方式",
+        "children": [
+          {
+            "level": 3,
+            "title": "sealos",
+            "slug": "sealos",
+            "link": "#sealos",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/19.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第2节 第二阶段",
+    "headers": [
+      {
+        "level": 2,
+        "title": "关于sealos搭建k8s",
+        "slug": "关于sealos搭建k8s",
+        "link": "#关于sealos搭建k8s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关于sealos",
+        "slug": "关于sealos",
+        "link": "#关于sealos",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "解决方案",
+        "slug": "解决方案",
+        "link": "#解决方案",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "运行之后",
+        "slug": "运行之后",
+        "link": "#运行之后",
+        "children": [
+          {
+            "level": 3,
+            "title": "构建镜像",
+            "slug": "构建镜像",
+            "link": "#构建镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "chart 的基本结构",
+            "slug": "chart-的基本结构",
+            "link": "#chart-的基本结构",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "编写一个简单的 Chart 示例",
+            "slug": "编写一个简单的-chart-示例",
+            "link": "#编写一个简单的-chart-示例",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Clusterfile文件",
+        "slug": "clusterfile文件",
+        "link": "#clusterfile文件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/2.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第20节 新会议改变basefs",
+    "headers": [
+      {
+        "level": 2,
+        "title": "开始",
+        "slug": "开始",
+        "link": "#开始",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关于rootfs的安排",
+        "slug": "关于rootfs的安排",
+        "link": "#关于rootfs的安排",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "描述",
+        "slug": "描述",
+        "link": "#描述",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "设计规范",
+        "slug": "设计规范",
+        "link": "#设计规范",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "cloud rootfs",
+        "slug": "cloud-rootfs",
+        "link": "#cloud-rootfs",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Hooks",
+        "slug": "hooks",
+        "link": "#hooks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Registry",
+        "slug": "registry",
+        "link": "#registry",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/20.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第21节 用于本地实验的小型 Kubernetes：k0s、MicroK8s、kind、k3s 和 Minikube",
+    "headers": [
+      {
+        "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "工具",
+        "slug": "工具",
+        "link": "#工具",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. K0s",
+            "slug": "_1-k0s",
+            "link": "#_1-k0s",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2. MicroK8s型 K8s",
+            "slug": "_2-microk8s型-k8s",
+            "link": "#_2-microk8s型-k8s",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "3. kind",
+            "slug": "_3-kind",
+            "link": "#_3-kind",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "4. K3S（和K3D）",
+            "slug": "_4-k3s-和k3d",
+            "link": "#_4-k3s-和k3d",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "5. minikube",
+            "slug": "_5-minikube",
+            "link": "#_5-minikube",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "6. 替代解决方案",
+            "slug": "_6-替代解决方案",
+            "link": "#_6-替代解决方案",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "支持的操作系统",
+        "slug": "支持的操作系统",
+        "link": "#支持的操作系统",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "比较表",
+        "slug": "比较表",
+        "link": "#比较表",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "结论",
+        "slug": "结论",
+        "link": "#结论",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "有用的外部链接",
+        "slug": "有用的外部链接",
+        "link": "#有用的外部链接",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "相关文章",
+        "slug": "相关文章",
+        "link": "#相关文章",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/21.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第22节 sealer 1.9.1新年规划",
+    "headers": [
+      {
+        "level": 2,
+        "title": "准备",
+        "slug": "准备",
+        "link": "#准备",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "我的任务",
+        "slug": "我的任务",
+        "link": "#我的任务",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "解决的问题",
+        "slug": "解决的问题",
+        "link": "#解决的问题",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "文档支持",
+        "slug": "文档支持",
+        "link": "#文档支持",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "解决方案",
+        "slug": "解决方案",
+        "link": "#解决方案",
+        "children": [
+          {
+            "level": 3,
+            "title": "跑程序",
+            "slug": "跑程序",
+            "link": "#跑程序",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "test",
+        "slug": "test",
+        "link": "#test",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rootless",
+        "slug": "rootless",
+        "link": "#rootless",
+        "children": [
+          {
+            "level": 3,
+            "title": "安装时候没有权限打开目录",
+            "slug": "安装时候没有权限打开目录",
+            "link": "#安装时候没有权限打开目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "目录",
+            "slug": "目录",
+            "link": "#目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "sudo",
+            "slug": "sudo",
+            "link": "#sudo",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "myidea",
+        "slug": "myidea",
+        "link": "#myidea",
+        "children": [
+          {
+            "level": 3,
+            "title": "sealer 组",
+            "slug": "sealer-组",
+            "link": "#sealer-组",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "新服务器测试",
+        "slug": "新服务器测试",
+        "link": "#新服务器测试",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/22.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第23节 docker rootless",
+    "headers": [
+      {
+        "level": 2,
+        "title": "docker rootless",
+        "slug": "docker-rootless",
+        "link": "#docker-rootless",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/23.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第24节 Kubernetes rootless design",
+    "headers": [
+      {
+        "level": 2,
+        "title": "以非 root 用户身份运行 Kubernetes 节点组件",
+        "slug": "以非-root-用户身份运行-kubernetes-节点组件",
+        "link": "#以非-root-用户身份运行-kubernetes-节点组件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "staging/src/k8s.io/client-go/",
+        "slug": "staging-src-k8s-io-client-go",
+        "link": "#staging-src-k8s-io-client-go",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/24.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第25节 Buildah / podman 以及在 rootless 模式下工作原理",
+    "headers": [
+      {
+        "level": 2,
+        "title": "什么是 Buildah",
+        "slug": "什么是-buildah",
+        "link": "#什么是-buildah",
+        "children": [
+          {
+            "level": 3,
+            "title": "为什么选择Buildah",
+            "slug": "为什么选择buildah",
+            "link": "#为什么选择buildah",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Podman",
+            "slug": "podman",
+            "link": "#podman",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Buildah and Podman",
+            "slug": "buildah-and-podman",
+            "link": "#buildah-and-podman",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "podman rootless",
+            "slug": "podman-rootless",
+            "link": "#podman-rootless",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "builah 教程",
+        "slug": "builah-教程",
+        "link": "#builah-教程",
+        "children": [
+          {
+            "level": 3,
+            "title": "rootless user",
+            "slug": "rootless-user",
+            "link": "#rootless-user",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "安装后验证",
+            "slug": "安装后验证",
+            "link": "#安装后验证",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从 scratch 开始构建镜像",
+            "slug": "从-scratch-开始构建镜像",
+            "link": "#从-scratch-开始构建镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "镜像",
+            "slug": "镜像",
+            "link": "#镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah mount",
+            "slug": "buildah-mount",
+            "link": "#buildah-mount",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah umount",
+            "slug": "buildah-umount",
+            "link": "#buildah-umount",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah unshare",
+            "slug": "buildah-unshare",
+            "link": "#buildah-unshare",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "无根 Buildah 的工作原理：在非特权环境中构建容器",
+        "slug": "无根-buildah-的工作原理-在非特权环境中构建容器",
+        "link": "#无根-buildah-的工作原理-在非特权环境中构建容器",
+        "children": [
+          {
+            "level": 3,
+            "title": "直接使用 buildah",
+            "slug": "直接使用-buildah",
+            "link": "#直接使用-buildah",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "buildah problems whit rootless",
+            "slug": "buildah-problems-whit-rootless",
+            "link": "#buildah-problems-whit-rootless",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "fuse-overlayfs",
+        "slug": "fuse-overlayfs",
+        "link": "#fuse-overlayfs",
+        "children": [
+          {
+            "level": 3,
+            "title": "启用支持以构建非特权容器",
+            "slug": "启用支持以构建非特权容器",
+            "link": "#启用支持以构建非特权容器",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Podman",
+        "slug": "podman-1",
+        "link": "#podman-1",
+        "children": [
+          {
+            "level": 3,
+            "title": "install",
+            "slug": "install",
+            "link": "#install",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "构建",
+            "slug": "构建",
+            "link": "#构建",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "查看镜像",
+            "slug": "查看镜像",
+            "link": "#查看镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "安装 slirp4netns",
+            "slug": "安装-slirp4netns",
+            "link": "#安装-slirp4netns",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "确保fuse-overlayfs已安装",
+            "slug": "确保fuse-overlayfs已安装",
+            "link": "#确保fuse-overlayfs已安装",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "启用用户命名空间 （centos 7/8 测试）",
+            "slug": "启用用户命名空间-centos-7-8-测试",
+            "link": "#启用用户命名空间-centos-7-8-测试",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "/etc/subuid和/etc/subgid配置",
+            "slug": "etc-subuid和-etc-subgid配置",
+            "link": "#etc-subuid和-etc-subgid配置",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "启动非特权 ping",
+            "slug": "启动非特权-ping",
+            "link": "#启动非特权-ping",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "用户操作",
+            "slug": "用户操作",
+            "link": "#用户操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "用户配置文件",
+            "slug": "用户配置文件",
+            "link": "#用户配置文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用卷",
+            "slug": "使用卷",
+            "link": "#使用卷",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Podman 在 rootless 下是如何工作的",
+        "slug": "podman-在-rootless-下是如何工作的",
+        "link": "#podman-在-rootless-下是如何工作的",
+        "children": [
+          {
+            "level": 3,
+            "title": "使用“podman top”显示用户名称空间",
+            "slug": "使用-podman-top-显示用户名称空间",
+            "link": "#使用-podman-top-显示用户名称空间",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "user namaspace",
+            "slug": "user-namaspace",
+            "link": "#user-namaspace",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "going forward",
+            "slug": "going-forward",
+            "link": "#going-forward",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Podman 如何创建用户名称空间",
+            "slug": "podman-如何创建用户名称空间",
+            "link": "#podman-如何创建用户名称空间",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "设置命名空间后，podman 接下来会发生什么",
+            "slug": "设置命名空间后-podman-接下来会发生什么",
+            "link": "#设置命名空间后-podman-接下来会发生什么",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Links",
+        "slug": "links",
+        "link": "#links",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/25.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第26节 OCI，CRI，runc，containerd，cri-containerd，dockershim等组件解释",
+    "headers": [
+      {
+        "level": 2,
+        "title": "层级调用关系",
+        "slug": "层级调用关系",
+        "link": "#层级调用关系",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "OCI（Open Container Initiative）",
+        "slug": "oci-open-container-initiative",
+        "link": "#oci-open-container-initiative",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "RunC",
+        "slug": "runc",
+        "link": "#runc",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "cantainerd",
+        "slug": "cantainerd",
+        "link": "#cantainerd",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "docker与containerd、runc的关系图",
+        "slug": "docker与containerd、runc的关系图",
+        "link": "#docker与containerd、runc的关系图",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "CRI（Container Runtime Interface ）",
+        "slug": "cri-container-runtime-interface",
+        "link": "#cri-container-runtime-interface",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "docker与k8s调用containerd的关系图",
+        "slug": "docker与k8s调用containerd的关系图",
+        "link": "#docker与k8s调用containerd的关系图",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "cri-containerd",
+        "slug": "cri-containerd",
+        "link": "#cri-containerd",
+        "children": [
+          {
+            "level": 3,
+            "title": "CRI Plugin调用流程",
+            "slug": "cri-plugin调用流程",
+            "link": "#cri-plugin调用流程",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "k8s对runtime调用的演进",
+        "slug": "k8s对runtime调用的演进",
+        "link": "#k8s对runtime调用的演进",
+        "children": [
+          {
+            "level": 3,
+            "title": "dockershim",
+            "slug": "dockershim",
+            "link": "#dockershim",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "CRI-O",
+            "slug": "cri-o",
+            "link": "#cri-o",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "切换 CRI 时 要注意什么",
+            "slug": "切换-cri-时-要注意什么",
+            "link": "#切换-cri-时-要注意什么",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/26.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第27节 unshare 和 newuidmap",
+    "headers": [
+      {
+        "level": 2,
+        "title": "对比",
+        "slug": "对比",
+        "link": "#对比",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "about newuidmap",
+        "slug": "about-newuidmap",
+        "link": "#about-newuidmap",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "about unshare",
+        "slug": "about-unshare",
+        "link": "#about-unshare",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "runuseer",
+        "slug": "runuseer",
+        "link": "#runuseer",
+        "children": [
+          {
+            "level": 3,
+            "title": "权限管理",
+            "slug": "权限管理",
+            "link": "#权限管理",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "关于 rootless 的配置问题",
+            "slug": "关于-rootless-的配置问题",
+            "link": "#关于-rootless-的配置问题",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/27.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第28节 sudo rootless",
+    "headers": [
+      {
+        "level": 2,
+        "title": "comment",
+        "slug": "comment",
+        "link": "#comment",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/28.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第29节 Feat/support nvidia docker and nonroot #2048",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Proposal",
+        "slug": "proposal",
+        "link": "#proposal",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Learn  GitHub modify someone else's pull request and commit",
+        "slug": "learn-github-modify-someone-else-s-pull-request-and-commit",
+        "link": "#learn-github-modify-someone-else-s-pull-request-and-commit",
+        "children": [
+          {
+            "level": 3,
+            "title": "Add remote repository",
+            "slug": "add-remote-repository",
+            "link": "#add-remote-repository",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "PR Site Solutions",
+        "slug": "pr-site-solutions",
+        "link": "#pr-site-solutions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END Links",
+        "slug": "end-links",
+        "link": "#end-links",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/29.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第3节 项目结构",
+    "headers": [
+      {
+        "level": 2,
+        "title": "目录结构",
+        "slug": "目录结构",
+        "link": "#目录结构",
+        "children": [
+          {
+            "level": 3,
+            "title": "controllers",
+            "slug": "controllers",
+            "link": "#controllers",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "cmd",
+            "slug": "cmd",
+            "link": "#cmd",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "desktop 前端部分",
+        "slug": "desktop-前端部分",
+        "link": "#desktop-前端部分",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "cloud是以前写的一些东西 – 不重要",
+        "slug": "cloud是以前写的一些东西-–-不重要",
+        "link": "#cloud是以前写的一些东西-–-不重要",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "scripts 一些脚本",
+        "slug": "scripts-一些脚本",
+        "link": "#scripts-一些脚本",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "service",
+        "slug": "service",
+        "link": "#service",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "pkg 大量的实现部分",
+        "slug": "pkg-大量的实现部分",
+        "link": "#pkg-大量的实现部分",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "types 类型",
+        "slug": "types-类型",
+        "link": "#types-类型",
+        "children": [
+          {
+            "level": 3,
+            "title": "rountime",
+            "slug": "rountime",
+            "link": "#rountime",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "ssh库",
+            "slug": "ssh库",
+            "link": "#ssh库",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "目的",
+        "slug": "目的",
+        "link": "#目的",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "test",
+        "slug": "test",
+        "link": "#test",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/3.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第30节  localRegistry's info into a secret in namespace kube-system #2056",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Issue Description",
+        "slug": "issue-description",
+        "link": "#issue-description",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "namespace",
+        "slug": "namespace",
+        "link": "#namespace",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Registry",
+        "slug": "registry",
+        "link": "#registry",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Secrets",
+        "slug": "secrets",
+        "link": "#secrets",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关键目录",
+        "slug": "关键目录",
+        "link": "#关键目录",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "localregistry",
+        "slug": "localregistry",
+        "link": "#localregistry",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/30.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第31节 horizon",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Horizon",
+        "slug": "horizon",
+        "link": "#horizon",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Why Horizon",
+        "slug": "why-horizon",
+        "link": "#why-horizon",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Features",
+        "slug": "features",
+        "link": "#features",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "RPAC & Member",
+        "slug": "rpac-member",
+        "link": "#rpac-member",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Architecture",
+        "slug": "architecture",
+        "link": "#architecture",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "How to install",
+        "slug": "how-to-install",
+        "link": "#how-to-install",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Requirements",
+        "slug": "requirements",
+        "link": "#requirements",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Installation Process",
+        "slug": "installation-process",
+        "link": "#installation-process",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/31.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第32节 horizon issues #46",
+    "headers": [
+      {
+        "level": 2,
+        "title": "helm install --set host",
+        "slug": "helm-install-set-host",
+        "link": "#helm-install-set-host",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "procedure",
+        "slug": "procedure",
+        "link": "#procedure",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/32.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第33节 sealos PR",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Problem Description",
+        "slug": "problem-description",
+        "link": "#problem-description",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Solution",
+        "slug": "solution",
+        "link": "#solution",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Tasks",
+        "slug": "tasks",
+        "link": "#tasks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/33.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第34节 localregistry save Kubernetes secret",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Kubernetes 的 Marshal",
+        "slug": "kubernetes-的-marshal",
+        "link": "#kubernetes-的-marshal",
+        "children": [
+          {
+            "level": 3,
+            "title": "yaml.Builder",
+            "slug": "yaml-builder",
+            "link": "#yaml-builder",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "k8s.io/apimachinery/pkg/runtime/serializer/json",
+            "slug": "k8s-io-apimachinery-pkg-runtime-serializer-json",
+            "link": "#k8s-io-apimachinery-pkg-runtime-serializer-json",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "yaml.Unmarshal",
+        "slug": "yaml-unmarshal",
+        "link": "#yaml-unmarshal",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "yaml.NewDecoder",
+        "slug": "yaml-newdecoder",
+        "link": "#yaml-newdecoder",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k8s.io/apimachinery/pkg",
+        "slug": "k8s-io-apimachinery-pkg",
+        "link": "#k8s-io-apimachinery-pkg",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "context",
+        "slug": "context",
+        "link": "#context",
+        "children": [
+          {
+            "level": 3,
+            "title": "context.Background()",
+            "slug": "context-background",
+            "link": "#context-background",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/34.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第35节 学习、加入开源的阶段性",
+    "headers": [
+      {
+        "level": 2,
+        "title": "第一阶段：简单看源码阶段",
+        "slug": "第一阶段-简单看源码阶段",
+        "link": "#第一阶段-简单看源码阶段",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第二阶段：整理源代码",
+        "slug": "第二阶段-整理源代码",
+        "link": "#第二阶段-整理源代码",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第三阶段：整理 + 输出分享",
+        "slug": "第三阶段-整理-输出分享",
+        "link": "#第三阶段-整理-输出分享",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第四阶段：开发克隆版",
+        "slug": "第四阶段-开发克隆版",
+        "link": "#第四阶段-开发克隆版",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第五阶段：生产化落地",
+        "slug": "第五阶段-生产化落地",
+        "link": "#第五阶段-生产化落地",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第六阶段：开发知识产品",
+        "slug": "第六阶段-开发知识产品",
+        "link": "#第六阶段-开发知识产品",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第七阶段：开发自己的开源项目",
+        "slug": "第七阶段-开发自己的开源项目",
+        "link": "#第七阶段-开发自己的开源项目",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第八阶段：商业化自己的开源项目",
+        "slug": "第八阶段-商业化自己的开源项目",
+        "link": "#第八阶段-商业化自己的开源项目",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "总结",
+        "slug": "总结",
+        "link": "#总结",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/35.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第36节 Feature Request: Local Installation with k3s Support for HorizonCD",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Background",
+        "slug": "background",
+        "link": "#background",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Objective",
+        "slug": "objective",
+        "link": "#objective",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Design",
+        "slug": "design",
+        "link": "#design",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Implementation Steps",
+        "slug": "implementation-steps",
+        "link": "#implementation-steps",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Tasks",
+        "slug": "tasks",
+        "link": "#tasks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/36.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第37节 sealos question",
+    "headers": [
+      {
+        "level": 2,
+        "title": "makefile",
+        "slug": "makefile",
+        "link": "#makefile",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/37.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第38节 RFC: Sealer 问题提案(中英文)",
+    "headers": [
+      {
+        "level": 2,
+        "title": "问题",
+        "slug": "问题",
+        "link": "#问题",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "RFC:",
+        "slug": "rfc",
+        "link": "#rfc",
+        "children": [
+          {
+            "level": 3,
+            "title": "改进 Makefile 结构",
+            "slug": "改进-makefile-结构",
+            "link": "#改进-makefile-结构",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "优化 GitHub Actions 流程",
+            "slug": "优化-github-actions-流程",
+            "link": "#优化-github-actions-流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "目录设计",
+            "slug": "目录设计",
+            "link": "#目录设计",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "改进版本控制",
+            "slug": "改进版本控制",
+            "link": "#改进版本控制",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "版本接口设计方案",
+            "slug": "版本接口设计方案",
+            "link": "#版本接口设计方案",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Other RFC",
+        "slug": "other-rfc",
+        "link": "#other-rfc",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Tasks",
+        "slug": "tasks",
+        "link": "#tasks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Problem",
+        "slug": "problem",
+        "link": "#problem",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "RFC:",
+        "slug": "rfc-1",
+        "link": "#rfc-1",
+        "children": [
+          {
+            "level": 3,
+            "title": "Improve Makefile Structure",
+            "slug": "improve-makefile-structure",
+            "link": "#improve-makefile-structure",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Optimize GitHub Actions Workflow",
+            "slug": "optimize-github-actions-workflow",
+            "link": "#optimize-github-actions-workflow",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Directory Design",
+            "slug": "directory-design",
+            "link": "#directory-design",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Improve Version Control",
+            "slug": "improve-version-control",
+            "link": "#improve-version-control",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Version Interface Design Scheme",
+            "slug": "version-interface-design-scheme",
+            "link": "#version-interface-design-scheme",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Other RFC",
+        "slug": "other-rfc-1",
+        "link": "#other-rfc-1",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Tasks",
+        "slug": "tasks-1",
+        "link": "#tasks-1",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/38.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第39节 Update containers vendor 更新容器供应商",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Issue Description",
+        "slug": "issue-description",
+        "link": "#issue-description",
+        "children": [
+          {
+            "level": 3,
+            "title": "Describe what feature you want",
+            "slug": "describe-what-feature-you-want",
+            "link": "#describe-what-feature-you-want",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "[optimize] add a new parameter to LoadOptions",
+        "slug": "optimize-add-a-new-parameter-to-loadoptions",
+        "link": "#optimize-add-a-new-parameter-to-loadoptions",
+        "children": [
+          {
+            "level": 3,
+            "title": "Set up temporary directory",
+            "slug": "set-up-temporary-directory",
+            "link": "#set-up-temporary-directory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "计划",
+        "slug": "计划",
+        "link": "#计划",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/39.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第4节 第二阶段 第二部分",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Before",
+        "slug": "before",
+        "link": "#before",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "problem",
+        "slug": "problem",
+        "link": "#problem",
+        "children": [
+          {
+            "level": 3,
+            "title": "3293172751 commented 2 days ago",
+            "slug": "_3293172751-commented-2-days-ago",
+            "link": "#_3293172751-commented-2-days-ago",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "cuisongliu commented yesterday",
+            "slug": "cuisongliu-commented-yesterday",
+            "link": "#cuisongliu-commented-yesterday",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "rootfs runtime design",
+            "slug": "rootfs-runtime-design",
+            "link": "#rootfs-runtime-design",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "My questions, suggestions？",
+        "slug": "my-questions-suggestions",
+        "link": "#my-questions-suggestions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "else",
+        "slug": "else",
+        "link": "#else",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/4.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第40节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/40.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第41节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/41.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第42节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/42.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第43节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/43.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第44节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/44.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第45节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/45.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第46节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/46.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第47节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/47.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第48节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/48.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第49节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/49.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第5节 sealer runtime",
+    "headers": [
+      {
+        "level": 2,
+        "title": "项目规范",
+        "slug": "项目规范",
+        "link": "#项目规范",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "For k0s",
+        "slug": "for-k0s",
+        "link": "#for-k0s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "注意",
+        "slug": "注意",
+        "link": "#注意",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "运行时",
+        "slug": "运行时",
+        "link": "#运行时",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "目录结构",
+        "slug": "目录结构",
+        "link": "#目录结构",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": [
+          {
+            "level": 3,
+            "title": "What is the problem this feature will solve?",
+            "slug": "what-is-the-problem-this-feature-will-solve",
+            "link": "#what-is-the-problem-this-feature-will-solve",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Clusterlmage",
+        "slug": "clusterlmage",
+        "link": "#clusterlmage",
+        "children": [
+          {
+            "level": 3,
+            "title": "cluster",
+            "slug": "cluster",
+            "link": "#cluster",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "调研",
+        "slug": "调研",
+        "link": "#调研",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "runtime/types",
+        "slug": "runtime-types",
+        "link": "#runtime-types",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "rootfs module",
+        "slug": "rootfs-module",
+        "link": "#rootfs-module",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "data",
+        "slug": "data",
+        "link": "#data",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "安装/放大/缩小/重置/升级",
+        "slug": "安装-放大-缩小-重置-升级",
+        "link": "#安装-放大-缩小-重置-升级",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "更改 basefs 脚本",
+        "slug": "更改-basefs-脚本",
+        "link": "#更改-basefs-脚本",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "入口函数",
+        "slug": "入口函数",
+        "link": "#入口函数",
+        "children": [
+          {
+            "level": 3,
+            "title": "附加上下文",
+            "slug": "附加上下文",
+            "link": "#附加上下文",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "sealos 主议题",
+            "slug": "sealos-主议题",
+            "link": "#sealos-主议题",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "策划文档",
+            "slug": "策划文档",
+            "link": "#策划文档",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "计划",
+        "slug": "计划",
+        "link": "#计划",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "issues",
+        "slug": "issues",
+        "link": "#issues",
+        "children": [
+          {
+            "level": 3,
+            "title": "cluster",
+            "slug": "cluster-1",
+            "link": "#cluster-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "k0s runtime design readme",
+        "slug": "k0s-runtime-design-readme",
+        "link": "#k0s-runtime-design-readme",
+        "children": [
+          {
+            "level": 3,
+            "title": "basics directory structure",
+            "slug": "basics-directory-structure",
+            "link": "#basics-directory-structure",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "重构相对运行时的列表",
+            "slug": "重构相对运行时的列表",
+            "link": "#重构相对运行时的列表",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "cloud镜像",
+            "slug": "cloud镜像",
+            "link": "#cloud镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "目录设计",
+            "slug": "目录设计",
+            "link": "#目录设计",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Clusterfile 和 KubeadmConfig",
+            "slug": "clusterfile-和-kubeadmconfig",
+            "link": "#clusterfile-和-kubeadmconfig",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "介绍",
+            "slug": "介绍",
+            "link": "#介绍",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "表格（CN）",
+        "slug": "表格-cn",
+        "link": "#表格-cn",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "code runtime module",
+        "slug": "code-runtime-module",
+        "link": "#code-runtime-module",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k3s rootfs",
+        "slug": "k3s-rootfs",
+        "link": "#k3s-rootfs",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "CloudRootfs",
+        "slug": "cloudrootfs",
+        "link": "#cloudrootfs",
+        "children": [
+          {
+            "level": 3,
+            "title": "我怎样才能得到 CloudRootfs",
+            "slug": "我怎样才能得到-cloudrootfs",
+            "link": "#我怎样才能得到-cloudrootfs",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "overlay && overlay2",
+            "slug": "overlay-overlay2",
+            "link": "#overlay-overlay2",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "构建自己的 CloudRootfs",
+            "slug": "构建自己的-cloudrootfs",
+            "link": "#构建自己的-cloudrootfs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "卸载",
+        "slug": "卸载",
+        "link": "#卸载",
+        "children": [
+          {
+            "level": 3,
+            "title": "k0s",
+            "slug": "k0s",
+            "link": "#k0s",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "k3s",
+            "slug": "k3s",
+            "link": "#k3s",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/5.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第50节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/50.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第51节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/51.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第52节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/52.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第53节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/53.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第54节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/54.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第55节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/55.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第56节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/56.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第57节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/57.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第58节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/58.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第59节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/59.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第6节 k3s Runtime Design",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Idea",
+        "slug": "idea",
+        "link": "#idea",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "module list",
+        "slug": "module-list",
+        "link": "#module-list",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "interface(☕in preparation…)",
+        "slug": "interface-☕in-preparation",
+        "link": "#interface-☕in-preparation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "achieve interface",
+        "slug": "achieve-interface",
+        "link": "#achieve-interface",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "CloudRootfs",
+        "slug": "cloudrootfs",
+        "link": "#cloudrootfs",
+        "children": [
+          {
+            "level": 3,
+            "title": "k3s - rootfs",
+            "slug": "k3s-rootfs",
+            "link": "#k3s-rootfs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "About the k3s difference",
+        "slug": "about-the-k3s-difference",
+        "link": "#about-the-k3s-difference",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "version",
+        "slug": "version",
+        "link": "#version",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Embedded Component Versions",
+        "slug": "embedded-component-versions",
+        "link": "#embedded-component-versions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "newest",
+        "slug": "newest",
+        "link": "#newest",
+        "children": [
+          {
+            "level": 3,
+            "title": "Issue Description",
+            "slug": "issue-description",
+            "link": "#issue-description",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Describe what feature you want",
+            "slug": "describe-what-feature-you-want",
+            "link": "#describe-what-feature-you-want",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Additional context",
+            "slug": "additional-context",
+            "link": "#additional-context",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/6.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第60节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/60.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第61节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/61.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第62节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/62.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第63节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/63.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第64节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/64.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第65节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/65.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第66节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/66.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第67节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/67.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第68节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/68.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第69节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/69.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第7节 k3s vs k0s",
+    "headers": [
+      {
+        "level": 2,
+        "title": "k3s",
+        "slug": "k3s",
+        "link": "#k3s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Mirantis k0s",
+        "slug": "mirantis-k0s",
+        "link": "#mirantis-k0s",
+        "children": [
+          {
+            "level": 3,
+            "title": "单二进制",
+            "slug": "单二进制",
+            "link": "#单二进制",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "支持各种容器运行时、网络和存储接口",
+            "slug": "支持各种容器运行时、网络和存储接口",
+            "link": "#支持各种容器运行时、网络和存储接口",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "它选择隔离控制平面",
+            "slug": "它选择隔离控制平面",
+            "link": "#它选择隔离控制平面",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "适用于各种数据存储后端的 Kine",
+            "slug": "适用于各种数据存储后端的-kine",
+            "link": "#适用于各种数据存储后端的-kine",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "控制平面节点通信的连接性",
+            "slug": "控制平面节点通信的连接性",
+            "link": "#控制平面节点通信的连接性",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Rancher k3s",
+        "slug": "rancher-k3s",
+        "link": "#rancher-k3s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k3s 与 k0s",
+        "slug": "k3s-与-k0s",
+        "link": "#k3s-与-k0s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "宏观上对比",
+        "slug": "宏观上对比",
+        "link": "#宏观上对比",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "选择哪一个，k3s 还是 k0s？",
+        "slug": "选择哪一个-k3s-还是-k0s",
+        "link": "#选择哪一个-k3s-还是-k0s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "比较 tables",
+        "slug": "比较-tables",
+        "link": "#比较-tables",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "或许还可以带上microk8s",
+        "slug": "或许还可以带上microk8s",
+        "link": "#或许还可以带上microk8s",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Mirantis k0s 未来",
+        "slug": "mirantis-k0s-未来",
+        "link": "#mirantis-k0s-未来",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/7.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第70节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/70.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第71节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/71.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第72节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/72.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第73节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/73.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第74节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/74.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第75节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/75.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第76节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/76.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第77节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/77.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第78节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/78.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第79节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/79.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第8节 MicroK8s",
+    "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "insatll",
+        "slug": "insatll",
+        "link": "#insatll",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/8.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第80节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/80.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第81节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/81.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第82节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/82.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第83节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/83.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第84节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/84.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第85节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/85.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第86节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/86.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第87节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/87.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第88节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/88.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第89节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/89.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第9节 sealer runtime Stage 2 (including biweekly meetings)",
+    "headers": [
+      {
+        "level": 2,
+        "title": "code module",
+        "slug": "code-module",
+        "link": "#code-module",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k3s module",
+        "slug": "k3s-module",
+        "link": "#k3s-module",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "k8s runtiem interface 逻辑是什么?",
+        "slug": "k8s-runtiem-interface-逻辑是什么",
+        "link": "#k8s-runtiem-interface-逻辑是什么",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关于设计统一的interface",
+        "slug": "关于设计统一的interface",
+        "link": "#关于设计统一的interface",
+        "children": [
+          {
+            "level": 3,
+            "title": "作者",
+            "slug": "作者",
+            "link": "#作者",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "注册表",
+            "slug": "注册表",
+            "link": "#注册表",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "rootfs交互",
+            "slug": "rootfs交互",
+            "link": "#rootfs交互",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/9.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第90节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/90.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第91节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/91.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第92节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/92.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第93节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/93.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第94节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/94.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第95节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/95.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第96节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/96.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第97节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/97.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第98节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/98.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "第99节",
+    "headers": [
+      {
+        "level": 2,
+        "title": "END 链接",
+        "slug": "end-链接",
+        "link": "#end-链接",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/99.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "",
+    "headers": [
+      {
+        "level": 2,
+        "title": "⭕学习K8s & 云原生~",
+        "slug": "⭕学习k8s-云原生",
+        "link": "#⭕学习k8s-云原生",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "🗒️sealer",
+        "slug": "🗒️sealer",
+        "link": "#🗒️sealer",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "✨参与贡献",
+        "slug": "✨参与贡献",
+        "link": "#✨参与贡献",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "sealer rootless design",
+    "headers": [
+      {
+        "level": 2,
+        "title": "🔍 Desired state",
+        "slug": "🔍-desired-state",
+        "link": "#🔍-desired-state",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📖 Solution Ideas",
+        "slug": "📖-solution-ideas",
+        "link": "#📖-solution-ideas",
+        "children": [
+          {
+            "level": 3,
+            "title": "🖊️ TODO",
+            "slug": "🖊️-todo",
+            "link": "#🖊️-todo",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "🏷️ Error logged",
+            "slug": "🏷️-error-logged",
+            "link": "#🏷️-error-logged",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "🔥 Conclusion",
+        "slug": "🔥-conclusion",
+        "link": "#🔥-conclusion",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "🗃️ Reference",
+        "slug": "🗃️-reference",
+        "link": "#🗃️-reference",
+        "children": [
+          {
+            "level": 3,
+            "title": "Advance of right",
+            "slug": "advance-of-right",
+            "link": "#advance-of-right",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/Cloud-Native/TODO.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "第1节 云平台",
     "headers": [
       {
@@ -2649,7 +6883,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第29节 kubernetes 源码解析资源",
+    "title": "第29节 CloudNative / Kubernetes 学习资源整理",
     "headers": [
       {
         "level": 2,
@@ -2754,6 +6988,13 @@ export const searchIndex = [
             "title": "源码统计",
             "slug": "源码统计",
             "link": "#源码统计",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "其他源码统计",
+            "slug": "其他源码统计",
+            "link": "#其他源码统计",
             "children": []
           }
         ]
@@ -3242,6 +7483,70 @@ export const searchIndex = [
         "slug": "test",
         "link": "#test",
         "children": []
+      },
+      {
+        "level": 2,
+        "title": "Kubernetes 的 ETC 目录",
+        "slug": "kubernetes-的-etc-目录",
+        "link": "#kubernetes-的-etc-目录",
+        "children": [
+          {
+            "level": 3,
+            "title": "audit-policy.yml",
+            "slug": "audit-policy-yml",
+            "link": "#audit-policy-yml",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "controller-manager.conf",
+            "slug": "controller-manager-conf",
+            "link": "#controller-manager-conf",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm.yaml",
+            "slug": "kubeadm-yaml",
+            "link": "#kubeadm-yaml",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubelet.conf",
+            "slug": "kubelet-conf",
+            "link": "#kubelet-conf",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "manifests",
+            "slug": "manifests",
+            "link": "#manifests",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "pki",
+            "slug": "pki",
+            "link": "#pki",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "scheduler.conf",
+            "slug": "scheduler-conf",
+            "link": "#scheduler-conf",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "补充",
+            "slug": "补充",
+            "link": "#补充",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
@@ -7498,8 +11803,393 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第64节",
+    "title": "第64节 kubeadm概述、原理、以及部分源码阅读",
     "headers": [
+      {
+        "level": 2,
+        "title": "kubeadm",
+        "slug": "kubeadm",
+        "link": "#kubeadm",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "kubeadm init",
+        "slug": "kubeadm-init",
+        "link": "#kubeadm-init",
+        "children": [
+          {
+            "level": 3,
+            "title": "选项",
+            "slug": "选项",
+            "link": "#选项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从父命令继承的选项",
+            "slug": "从父命令继承的选项",
+            "link": "#从父命令继承的选项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "初始化流程",
+            "slug": "初始化流程",
+            "link": "#初始化流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用kubeadm的初始化阶段",
+            "slug": "使用kubeadm的初始化阶段",
+            "link": "#使用kubeadm的初始化阶段",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "为kubeadm init指定配置文件",
+            "slug": "为kubeadm-init指定配置文件",
+            "link": "#为kubeadm-init指定配置文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用自定义证书",
+            "slug": "使用自定义证书",
+            "link": "#使用自定义证书",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "指定 CRI",
+            "slug": "指定-cri",
+            "link": "#指定-cri",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "离线运行 kubeadm",
+            "slug": "离线运行-kubeadm",
+            "link": "#离线运行-kubeadm",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "kubeadm join",
+        "slug": "kubeadm-join",
+        "link": "#kubeadm-join",
+        "children": [
+          {
+            "level": 3,
+            "title": "命令阶段",
+            "slug": "命令阶段",
+            "link": "#命令阶段",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "选项",
+            "slug": "选项-1",
+            "link": "#选项-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "加入流程",
+            "slug": "加入流程",
+            "link": "#加入流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用kubeadm的加入阶段",
+            "slug": "使用kubeadm的加入阶段",
+            "link": "#使用kubeadm的加入阶段",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "kubeadm upgrade",
+        "slug": "kubeadm-upgrade",
+        "link": "#kubeadm-upgrade",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "kubeadm config",
+        "slug": "kubeadm-config",
+        "link": "#kubeadm-config",
+        "children": [
+          {
+            "level": 3,
+            "title": "kubeadm config upload from-file",
+            "slug": "kubeadm-config-upload-from-file",
+            "link": "#kubeadm-config-upload-from-file",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm config view",
+            "slug": "kubeadm-config-view",
+            "link": "#kubeadm-config-view",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "kubeadm reset",
+        "slug": "kubeadm-reset",
+        "link": "#kubeadm-reset",
+        "children": [
+          {
+            "level": 3,
+            "title": "清理外部etcd",
+            "slug": "清理外部etcd",
+            "link": "#清理外部etcd",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "kubeadm token",
+        "slug": "kubeadm-token",
+        "link": "#kubeadm-token",
+        "children": [
+          {
+            "level": 3,
+            "title": "kubeadm token create",
+            "slug": "kubeadm-token-create",
+            "link": "#kubeadm-token-create",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm token delete",
+            "slug": "kubeadm-token-delete",
+            "link": "#kubeadm-token-delete",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm token generate",
+            "slug": "kubeadm-token-generate",
+            "link": "#kubeadm-token-generate",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm token list",
+            "slug": "kubeadm-token-list",
+            "link": "#kubeadm-token-list",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "kubeadm version",
+        "slug": "kubeadm-version",
+        "link": "#kubeadm-version",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "kubeadm alpha",
+        "slug": "kubeadm-alpha",
+        "link": "#kubeadm-alpha",
+        "children": [
+          {
+            "level": 3,
+            "title": "kubeadm alpha certs renew",
+            "slug": "kubeadm-alpha-certs-renew",
+            "link": "#kubeadm-alpha-certs-renew",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "renew",
+            "slug": "renew",
+            "link": "#renew",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "all",
+            "slug": "all",
+            "link": "#all",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm alpha kubeconfig user",
+            "slug": "kubeadm-alpha-kubeconfig-user",
+            "link": "#kubeadm-alpha-kubeconfig-user",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "kubeadm init phase",
+        "slug": "kubeadm-init-phase",
+        "link": "#kubeadm-init-phase",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "kubeadm join phase",
+        "slug": "kubeadm-join-phase",
+        "link": "#kubeadm-join-phase",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "细节",
+        "slug": "细节",
+        "link": "#细节",
+        "children": [
+          {
+            "level": 3,
+            "title": "常量和著名的值与路径",
+            "slug": "常量和著名的值与路径",
+            "link": "#常量和著名的值与路径",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm初始化流程的内部设计",
+            "slug": "kubeadm初始化流程的内部设计",
+            "link": "#kubeadm初始化流程的内部设计",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "预检查（preflight)",
+            "slug": "预检查-preflight",
+            "link": "#预检查-preflight",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "生成必要的证书",
+            "slug": "生成必要的证书",
+            "link": "#生成必要的证书",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "为控制平面组件生成kubeconfig文件",
+            "slug": "为控制平面组件生成kubeconfig文件",
+            "link": "#为控制平面组件生成kubeconfig文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "为控制平面组件生成pod吊舱清单",
+            "slug": "为控制平面组件生成pod吊舱清单",
+            "link": "#为控制平面组件生成pod吊舱清单",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "为本地etcd生成静态Pod清单",
+            "slug": "为本地etcd生成静态pod清单",
+            "link": "#为本地etcd生成静态pod清单",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "可选的动态Kublet配置",
+            "slug": "可选的动态kublet配置",
+            "link": "#可选的动态kublet配置",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "等待控制平面启动",
+            "slug": "等待控制平面启动",
+            "link": "#等待控制平面启动",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "（在v1.9中为可选的alpha级别）写入kubelet基本配置",
+            "slug": "在v1-9中为可选的alpha级别-写入kubelet基本配置",
+            "link": "#在v1-9中为可选的alpha级别-写入kubelet基本配置",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将kubeadm集群配置保存在ConfigMap中，供以后使用",
+            "slug": "将kubeadm集群配置保存在configmap中-供以后使用",
+            "link": "#将kubeadm集群配置保存在configmap中-供以后使用",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "标记主节点",
+            "slug": "标记主节点",
+            "link": "#标记主节点",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "配置TLS引导用于节点加入集群",
+            "slug": "配置tls引导用于节点加入集群",
+            "link": "#配置tls引导用于节点加入集群",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "安装插件",
+            "slug": "安装插件",
+            "link": "#安装插件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "可选的自托管",
+            "slug": "可选的自托管",
+            "link": "#可选的自托管",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubeadm join phase的内部设计",
+            "slug": "kubeadm-join-phase的内部设计",
+            "link": "#kubeadm-join-phase的内部设计",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "预先（preflight）检查",
+            "slug": "预先-preflight-检查",
+            "link": "#预先-preflight-检查",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "发现cluster-info",
+            "slug": "发现cluster-info",
+            "link": "#发现cluster-info",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "TLS引导",
+            "slug": "tls引导",
+            "link": "#tls引导",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7513,8 +12203,237 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第65节",
+    "title": "第65节 eBPF 刨析以及源码学习",
     "headers": [
+      {
+        "level": 2,
+        "title": "开始",
+        "slug": "开始",
+        "link": "#开始",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "改变内核很困难？",
+        "slug": "改变内核很困难",
+        "link": "#改变内核很困难",
+        "children": [
+          {
+            "level": 3,
+            "title": "向内核添加新功能",
+            "slug": "向内核添加新功能",
+            "link": "#向内核添加新功能",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "内核模块",
+            "slug": "内核模块",
+            "link": "#内核模块",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "eBPF 验证和安全",
+            "slug": "ebpf-验证和安全",
+            "link": "#ebpf-验证和安全",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "eBPF 程序的动态加载",
+            "slug": "ebpf-程序的动态加载",
+            "link": "#ebpf-程序的动态加载",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "eBPF 程序",
+        "slug": "ebpf-程序",
+        "link": "#ebpf-程序",
+        "children": [
+          {
+            "level": 3,
+            "title": "附属于事件的自定义程序",
+            "slug": "附属于事件的自定义程序",
+            "link": "#附属于事件的自定义程序",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从函数中进入或退出",
+            "slug": "从函数中进入或退出",
+            "link": "#从函数中进入或退出",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Tracepoints",
+            "slug": "tracepoints",
+            "link": "#tracepoints",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Perf 事件",
+            "slug": "perf-事件",
+            "link": "#perf-事件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Linux 安全模块接口",
+            "slug": "linux-安全模块接口",
+            "link": "#linux-安全模块接口",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "网络接口——eXpress Data Path",
+            "slug": "网络接口——express-data-path",
+            "link": "#网络接口——express-data-path",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "套接字和其他网络钩子",
+            "slug": "套接字和其他网络钩子",
+            "link": "#套接字和其他网络钩子",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "eBPF Map",
+            "slug": "ebpf-map",
+            "link": "#ebpf-map",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Opensnoop 示例",
+            "slug": "opensnoop-示例",
+            "link": "#opensnoop-示例",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "libbpf-tools Makefile",
+            "slug": "libbpf-tools-makefile",
+            "link": "#libbpf-tools-makefile",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Opensnoop 用户空间代码",
+            "slug": "opensnoop-用户空间代码",
+            "link": "#opensnoop-用户空间代码",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "eBPF 的复杂性",
+        "slug": "ebpf-的复杂性",
+        "link": "#ebpf-的复杂性",
+        "children": [
+          {
+            "level": 3,
+            "title": "BCC 对可移植性的处理方法",
+            "slug": "bcc-对可移植性的处理方法",
+            "link": "#bcc-对可移植性的处理方法",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "CO-RE",
+            "slug": "co-re",
+            "link": "#co-re",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Linux 内核知识",
+            "slug": "linux-内核知识",
+            "link": "#linux-内核知识",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "编排多个 eBPF 程序",
+        "slug": "编排多个-ebpf-程序",
+        "link": "#编排多个-ebpf-程序",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "云原生环境中的 eBPF",
+        "slug": "云原生环境中的-ebpf",
+        "link": "#云原生环境中的-ebpf",
+        "children": [
+          {
+            "level": 3,
+            "title": "每台主机一个内核",
+            "slug": "每台主机一个内核",
+            "link": "#每台主机一个内核",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "eBPF 与 sidecar 模式的比较",
+            "slug": "ebpf-与-sidecar-模式的比较",
+            "link": "#ebpf-与-sidecar-模式的比较",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "eBPF 和进程隔离",
+            "slug": "ebpf-和进程隔离",
+            "link": "#ebpf-和进程隔离",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "eBPF 工具",
+        "slug": "ebpf-工具",
+        "link": "#ebpf-工具",
+        "children": [
+          {
+            "level": 3,
+            "title": "网络",
+            "slug": "网络",
+            "link": "#网络",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "可观测性",
+            "slug": "可观测性",
+            "link": "#可观测性",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "安全",
+            "slug": "安全",
+            "link": "#安全",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "网络安全",
+            "slug": "网络安全",
+            "link": "#网络安全",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7528,8 +12447,302 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第66节",
+    "title": "第66节 CRD",
     "headers": [
+      {
+        "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": [
+          {
+            "level": 3,
+            "title": "项目 demo",
+            "slug": "项目-demo",
+            "link": "#项目-demo",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Operator 功能设计",
+            "slug": "operator-功能设计",
+            "link": "#operator-功能设计",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "kubebuilder 架构图",
+            "slug": "kubebuilder-架构图",
+            "link": "#kubebuilder-架构图",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "installation kubebuilder",
+        "slug": "installation-kubebuilder",
+        "link": "#installation-kubebuilder",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "create a project",
+        "slug": "create-a-project",
+        "link": "#create-a-project",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "create an API",
+        "slug": "create-an-api",
+        "link": "#create-an-api",
+        "children": [
+          {
+            "level": 3,
+            "title": "API 定义",
+            "slug": "api-定义",
+            "link": "#api-定义",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "CRD 部署",
+            "slug": "crd-部署",
+            "link": "#crd-部署",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "安装自定义资源的实例",
+            "slug": "安装自定义资源的实例",
+            "link": "#安装自定义资源的实例",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "在集群上运行",
+            "slug": "在集群上运行",
+            "link": "#在集群上运行",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "卸载CRD",
+            "slug": "卸载crd",
+            "link": "#卸载crd",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "取消部署 controller",
+            "slug": "取消部署-controller",
+            "link": "#取消部署-controller",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "CR 部署",
+        "slug": "cr-部署",
+        "link": "#cr-部署",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "guestbook 生成的代码和结构",
+        "slug": "guestbook-生成的代码和结构",
+        "link": "#guestbook-生成的代码和结构",
+        "children": [
+          {
+            "level": 3,
+            "title": "cmd",
+            "slug": "cmd",
+            "link": "#cmd",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "groups, versions, kinds, and resources",
+        "slug": "groups-versions-kinds-and-resources",
+        "link": "#groups-versions-kinds-and-resources",
+        "children": [
+          {
+            "level": 3,
+            "title": "create an API",
+            "slug": "create-an-api-1",
+            "link": "#create-an-api-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "为什么要创建 API？",
+            "slug": "为什么要创建-api",
+            "link": "#为什么要创建-api",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Single Group to Multi-Group",
+            "slug": "single-group-to-multi-group",
+            "link": "#single-group-to-multi-group",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "add new api",
+            "slug": "add-new-api",
+            "link": "#add-new-api",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "controller",
+        "slug": "controller",
+        "link": "#controller",
+        "children": [
+          {
+            "level": 3,
+            "title": "实现 Controller",
+            "slug": "实现-controller",
+            "link": "#实现-controller",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "按名称加载CronJob",
+            "slug": "按名称加载cronjob",
+            "link": "#按名称加载cronjob",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "列出所有活动作业，并更新状态",
+            "slug": "列出所有活动作业-并更新状态",
+            "link": "#列出所有活动作业-并更新状态",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "根据历史限制清理旧作业",
+            "slug": "根据历史限制清理旧作业",
+            "link": "#根据历史限制清理旧作业",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "检查是否停止",
+            "slug": "检查是否停止",
+            "link": "#检查是否停止",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "获取下一次计划运行",
+            "slug": "获取下一次计划运行",
+            "link": "#获取下一次计划运行",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "运行一个新的作业，如果它是按计划进行的，没有超过截止日期，也没有被我们的并发策略阻塞",
+            "slug": "运行一个新的作业-如果它是按计划进行的-没有超过截止日期-也没有被我们的并发策略阻塞",
+            "link": "#运行一个新的作业-如果它是按计划进行的-没有超过截止日期-也没有被我们的并发策略阻塞",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "当我们看到一个正在运行的作业或者到了下一个计划运行的时间时重新排队",
+            "slug": "当我们看到一个正在运行的作业或者到了下一个计划运行的时间时重新排队",
+            "link": "#当我们看到一个正在运行的作业或者到了下一个计划运行的时间时重新排队",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "启动 Controller",
+            "slug": "启动-controller",
+            "link": "#启动-controller",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "部署 Controller",
+            "slug": "部署-controller",
+            "link": "#部署-controller",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "资源清理",
+            "slug": "资源清理",
+            "link": "#资源清理",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Client-go",
+        "slug": "client-go",
+        "link": "#client-go",
+        "children": [
+          {
+            "level": 3,
+            "title": "Client-go",
+            "slug": "client-go-1",
+            "link": "#client-go-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Client-go目录结构",
+            "slug": "client-go目录结构",
+            "link": "#client-go目录结构",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "获取 Client-go",
+            "slug": "获取-client-go",
+            "link": "#获取-client-go",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "sample-controller",
+        "slug": "sample-controller",
+        "link": "#sample-controller",
+        "children": [
+          {
+            "level": 3,
+            "title": "代码生成器",
+            "slug": "代码生成器",
+            "link": "#代码生成器",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "脚本自动生成",
+            "slug": "脚本自动生成",
+            "link": "#脚本自动生成",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将 operator 部署到Kubernetes集群",
+            "slug": "将-operator-部署到kubernetes集群",
+            "link": "#将-operator-部署到kubernetes集群",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -8351,3891 +13564,6 @@ export const searchIndex = [
       }
     ],
     "path": "/Cloud-Native-k8s/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第1节 第一阶段",
-    "headers": [
-      {
-        "level": 2,
-        "title": "任务分配",
-        "slug": "任务分配",
-        "link": "#任务分配",
-        "children": [
-          {
-            "level": 3,
-            "title": "资源🗓️",
-            "slug": "资源🗓️",
-            "link": "#资源🗓️",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "贡献文档",
-        "slug": "贡献文档",
-        "link": "#贡献文档",
-        "children": [
-          {
-            "level": 3,
-            "title": "🧷 补充阅读",
-            "slug": "🧷-补充阅读",
-            "link": "#🧷-补充阅读",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "💡 步骤",
-            "slug": "💡-步骤",
-            "link": "#💡-步骤",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "文档规范",
-            "slug": "文档规范",
-            "link": "#文档规范",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "使用 sealos 快速构建 kubernetes",
-        "slug": "使用-sealos-快速构建-kubernetes",
-        "link": "#使用-sealos-快速构建-kubernetes",
-        "children": [
-          {
-            "level": 3,
-            "title": "构建项目",
-            "slug": "构建项目",
-            "link": "#构建项目",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Install golang",
-        "slug": "install-golang",
-        "link": "#install-golang",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Build the project",
-        "slug": "build-the-project",
-        "link": "#build-the-project",
-        "children": [
-          {
-            "level": 3,
-            "title": "远程连接",
-            "slug": "远程连接",
-            "link": "#远程连接",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "遇到的坑和解决方案",
-            "slug": "遇到的坑和解决方案",
-            "link": "#遇到的坑和解决方案",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "使用 sealos 快速构建 kubernetes",
-        "slug": "使用-sealos-快速构建-kubernetes-1",
-        "link": "#使用-sealos-快速构建-kubernetes-1",
-        "children": [
-          {
-            "level": 3,
-            "title": "添加到环境变量",
-            "slug": "添加到环境变量",
-            "link": "#添加到环境变量",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "k8s入门文档",
-        "slug": "k8s入门文档",
-        "link": "#k8s入门文档",
-        "children": [
-          {
-            "level": 3,
-            "title": "docker、k8s、云原生笔记",
-            "slug": "docker、k8s、云原生笔记",
-            "link": "#docker、k8s、云原生笔记",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "任务块",
-            "slug": "任务块",
-            "link": "#任务块",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "多结点",
-            "slug": "多结点",
-            "link": "#多结点",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "构建项目",
-            "slug": "构建项目-1",
-            "link": "#构建项目-1",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "核心服务快速启动",
-        "slug": "核心服务快速启动",
-        "link": "#核心服务快速启动",
-        "children": [
-          {
-            "level": 3,
-            "title": "环境准备",
-            "slug": "环境准备",
-            "link": "#环境准备",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "查看内核版本",
-            "slug": "查看内核版本",
-            "link": "#查看内核版本",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "单节点",
-            "slug": "单节点",
-            "link": "#单节点",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/1.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第10节 scratch构建runtime(linux)",
-    "headers": [
-      {
-        "level": 2,
-        "title": "开始",
-        "slug": "开始",
-        "link": "#开始",
-        "children": [
-          {
-            "level": 3,
-            "title": "rootfs",
-            "slug": "rootfs",
-            "link": "#rootfs",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "nginx",
-            "slug": "nginx",
-            "link": "#nginx",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "dockerfile",
-        "slug": "dockerfile",
-        "link": "#dockerfile",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "构建",
-        "slug": "构建",
-        "link": "#构建",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "效果",
-        "slug": "效果",
-        "link": "#效果",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "dockerfile-ubuntu 构建方式",
-        "slug": "dockerfile-ubuntu-构建方式",
-        "link": "#dockerfile-ubuntu-构建方式",
-        "children": [
-          {
-            "level": 3,
-            "title": "README",
-            "slug": "readme",
-            "link": "#readme",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Base Docker Image",
-            "slug": "base-docker-image",
-            "link": "#base-docker-image",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Installation",
-            "slug": "installation",
-            "link": "#installation",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Usage",
-            "slug": "usage",
-            "link": "#usage",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "dockerfile",
-            "slug": "dockerfile-1",
-            "link": "#dockerfile-1",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "user",
-        "slug": "user",
-        "link": "#user",
-        "children": [
-          {
-            "level": 3,
-            "title": "pull",
-            "slug": "pull",
-            "link": "#pull",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/10.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第11节 k3s HA ~",
-    "headers": [
-      {
-        "level": 2,
-        "title": "准备",
-        "slug": "准备",
-        "link": "#准备",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "版本",
-        "slug": "版本",
-        "link": "#版本",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "固定ip",
-        "slug": "固定ip",
-        "link": "#固定ip",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "rsync远程同步工具",
-        "slug": "rsync远程同步工具",
-        "link": "#rsync远程同步工具",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/11.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第12节 sealer 数据存储目录",
-    "headers": [
-      {
-        "level": 2,
-        "title": "对比",
-        "slug": "对比",
-        "link": "#对比",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "第一层",
-        "slug": "第一层",
-        "link": "#第一层",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "第二层 data - cluster",
-        "slug": "第二层-data-cluster",
-        "link": "#第二层-data-cluster",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/12.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第13节 go context 上下文",
-    "headers": [
-      {
-        "level": 2,
-        "title": "context",
-        "slug": "context",
-        "link": "#context",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "我们需要它",
-        "slug": "我们需要它",
-        "link": "#我们需要它",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "它和 select 多路复用",
-        "slug": "它和-select-多路复用",
-        "link": "#它和-select-多路复用",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "创建context",
-        "slug": "创建context",
-        "link": "#创建context",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "源码",
-        "slug": "源码",
-        "link": "#源码",
-        "children": [
-          {
-            "level": 3,
-            "title": "context 所有函数、接口和结构体",
-            "slug": "context-所有函数、接口和结构体",
-            "link": "#context-所有函数、接口和结构体",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "canceler",
-            "slug": "canceler",
-            "link": "#canceler",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "结构体",
-        "slug": "结构体",
-        "link": "#结构体",
-        "children": [
-          {
-            "level": 3,
-            "title": "emptyCtx",
-            "slug": "emptyctx",
-            "link": "#emptyctx",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "cancelCtx",
-            "slug": "cancelctx",
-            "link": "#cancelctx",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "timerCtx",
-            "slug": "timerctx",
-            "link": "#timerctx",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "valueCtx",
-            "slug": "valuectx",
-            "link": "#valuectx",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "如何使用 context",
-        "slug": "如何使用-context",
-        "link": "#如何使用-context",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "传递共享的数据",
-        "slug": "传递共享的数据",
-        "link": "#传递共享的数据",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "取消 goroutine",
-        "slug": "取消-goroutine",
-        "link": "#取消-goroutine",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "防止 goroutine 泄漏",
-        "slug": "防止-goroutine-泄漏",
-        "link": "#防止-goroutine-泄漏",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "context 真的这么好吗",
-        "slug": "context-真的这么好吗",
-        "link": "#context-真的这么好吗",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "总结",
-        "slug": "总结",
-        "link": "#总结",
-        "children": [
-          {
-            "level": 3,
-            "title": "参考资料",
-            "slug": "参考资料",
-            "link": "#参考资料",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/13.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第14节 go 调试 测试 以及调试工具 dlv",
-    "headers": [
-      {
-        "level": 2,
-        "title": "调试Go工程",
-        "slug": "调试go工程",
-        "link": "#调试go工程",
-        "children": [
-          {
-            "level": 3,
-            "title": "demo",
-            "slug": "demo",
-            "link": "#demo",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "vscode一键生成测试",
-        "slug": "vscode一键生成测试",
-        "link": "#vscode一键生成测试",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "测试",
-        "slug": "测试",
-        "link": "#测试",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "完整性的测试",
-        "slug": "完整性的测试",
-        "link": "#完整性的测试",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "vscode 远程调试",
-        "slug": "vscode-远程调试",
-        "link": "#vscode-远程调试",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "dlv + VSCode + Go开发环境搭建",
-        "slug": "dlv-vscode-go开发环境搭建",
-        "link": "#dlv-vscode-go开发环境搭建",
-        "children": [
-          {
-            "level": 3,
-            "title": "常用指令",
-            "slug": "常用指令",
-            "link": "#常用指令",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "goroutine",
-            "slug": "goroutine",
-            "link": "#goroutine",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "dlv调试指令",
-        "slug": "dlv调试指令",
-        "link": "#dlv调试指令",
-        "children": [
-          {
-            "level": 3,
-            "title": "断点管理",
-            "slug": "断点管理",
-            "link": "#断点管理",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "程序执行中的调试指令",
-            "slug": "程序执行中的调试指令",
-            "link": "#程序执行中的调试指令",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "参数管理",
-            "slug": "参数管理",
-            "link": "#参数管理",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "其他",
-            "slug": "其他",
-            "link": "#其他",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "安装 dlv",
-        "slug": "安装-dlv",
-        "link": "#安装-dlv",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "添加debug方案",
-        "slug": "添加debug方案",
-        "link": "#添加debug方案",
-        "children": [
-          {
-            "level": 3,
-            "title": "执行方法",
-            "slug": "执行方法",
-            "link": "#执行方法",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "dlv 💡简单的一个案例",
-        "slug": "dlv-💡简单的一个案例",
-        "link": "#dlv-💡简单的一个案例",
-        "children": [
-          {
-            "level": 3,
-            "title": "dlv前端(gdlv)",
-            "slug": "dlv前端-gdlv",
-            "link": "#dlv前端-gdlv",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "结论",
-            "slug": "结论",
-            "link": "#结论",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "总结",
-        "slug": "总结",
-        "link": "#总结",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/14.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第15节 about",
-    "headers": [
-      {
-        "level": 2,
-        "title": "架构图",
-        "slug": "架构图",
-        "link": "#架构图",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/15.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第16节 sealer code",
-    "headers": [
-      {
-        "level": 2,
-        "title": "filepath.Join",
-        "slug": "filepath-join",
-        "link": "#filepath-join",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "join master and join node",
-        "slug": "join-master-and-join-node",
-        "link": "#join-master-and-join-node",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "k0s types",
-        "slug": "k0s-types",
-        "link": "#k0s-types",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "runtime/cluster-runtime",
-        "slug": "runtime-cluster-runtime",
-        "link": "#runtime-cluster-runtime",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "clusterfile",
-        "slug": "clusterfile",
-        "link": "#clusterfile",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "checker",
-        "slug": "checker",
-        "link": "#checker",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "client",
-        "slug": "client",
-        "link": "#client",
-        "children": [
-          {
-            "level": 3,
-            "title": "docker",
-            "slug": "docker",
-            "link": "#docker",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Kubernetes",
-            "slug": "kubernetes",
-            "link": "#kubernetes",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/16.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第17节 规范",
-    "headers": [
-      {
-        "level": 2,
-        "title": "注释规范",
-        "slug": "注释规范",
-        "link": "#注释规范",
-        "children": [
-          {
-            "level": 3,
-            "title": "包级别",
-            "slug": "包级别",
-            "link": "#包级别",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "结构、接口及其它类型",
-            "slug": "结构、接口及其它类型",
-            "link": "#结构、接口及其它类型",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "函数与方法",
-            "slug": "函数与方法",
-            "link": "#函数与方法",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "其它说明",
-            "slug": "其它说明",
-            "link": "#其它说明",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "包括什么",
-        "slug": "包括什么",
-        "link": "#包括什么",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "命名规则",
-        "slug": "命名规则",
-        "link": "#命名规则",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "测试用例",
-        "slug": "测试用例",
-        "link": "#测试用例",
-        "children": [
-          {
-            "level": 3,
-            "title": "使用示例",
-            "slug": "使用示例",
-            "link": "#使用示例",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/17.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第18节 名词解释",
-    "headers": [
-      {
-        "level": 2,
-        "title": "名词",
-        "slug": "名词",
-        "link": "#名词",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "配置",
-        "slug": "配置",
-        "link": "#配置",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/18.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第19节 sealos 部署 k3s",
-    "headers": [
-      {
-        "level": 2,
-        "title": "方式",
-        "slug": "方式",
-        "link": "#方式",
-        "children": [
-          {
-            "level": 3,
-            "title": "sealos",
-            "slug": "sealos",
-            "link": "#sealos",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/19.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第2节 第二阶段",
-    "headers": [
-      {
-        "level": 2,
-        "title": "关于sealos搭建k8s",
-        "slug": "关于sealos搭建k8s",
-        "link": "#关于sealos搭建k8s",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "关于sealos",
-        "slug": "关于sealos",
-        "link": "#关于sealos",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "解决方案",
-        "slug": "解决方案",
-        "link": "#解决方案",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "运行之后",
-        "slug": "运行之后",
-        "link": "#运行之后",
-        "children": [
-          {
-            "level": 3,
-            "title": "构建镜像",
-            "slug": "构建镜像",
-            "link": "#构建镜像",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "chart 的基本结构",
-            "slug": "chart-的基本结构",
-            "link": "#chart-的基本结构",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "编写一个简单的 Chart 示例",
-            "slug": "编写一个简单的-chart-示例",
-            "link": "#编写一个简单的-chart-示例",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Clusterfile文件",
-        "slug": "clusterfile文件",
-        "link": "#clusterfile文件",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/2.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第20节 新会议改变basefs",
-    "headers": [
-      {
-        "level": 2,
-        "title": "开始",
-        "slug": "开始",
-        "link": "#开始",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "关于rootfs的安排",
-        "slug": "关于rootfs的安排",
-        "link": "#关于rootfs的安排",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "描述",
-        "slug": "描述",
-        "link": "#描述",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "设计规范",
-        "slug": "设计规范",
-        "link": "#设计规范",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "cloud rootfs",
-        "slug": "cloud-rootfs",
-        "link": "#cloud-rootfs",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Hooks",
-        "slug": "hooks",
-        "link": "#hooks",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Registry",
-        "slug": "registry",
-        "link": "#registry",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/20.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第21节 用于本地实验的小型 Kubernetes：k0s、MicroK8s、kind、k3s 和 Minikube",
-    "headers": [
-      {
-        "level": 2,
-        "title": "前言",
-        "slug": "前言",
-        "link": "#前言",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "工具",
-        "slug": "工具",
-        "link": "#工具",
-        "children": [
-          {
-            "level": 3,
-            "title": "1. K0s",
-            "slug": "_1-k0s",
-            "link": "#_1-k0s",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "2. MicroK8s型 K8s",
-            "slug": "_2-microk8s型-k8s",
-            "link": "#_2-microk8s型-k8s",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "3. kind",
-            "slug": "_3-kind",
-            "link": "#_3-kind",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "4. K3S（和K3D）",
-            "slug": "_4-k3s-和k3d",
-            "link": "#_4-k3s-和k3d",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "5. minikube",
-            "slug": "_5-minikube",
-            "link": "#_5-minikube",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "6. 替代解决方案",
-            "slug": "_6-替代解决方案",
-            "link": "#_6-替代解决方案",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "支持的操作系统",
-        "slug": "支持的操作系统",
-        "link": "#支持的操作系统",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "比较表",
-        "slug": "比较表",
-        "link": "#比较表",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "结论",
-        "slug": "结论",
-        "link": "#结论",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "有用的外部链接",
-        "slug": "有用的外部链接",
-        "link": "#有用的外部链接",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "相关文章",
-        "slug": "相关文章",
-        "link": "#相关文章",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/21.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第22节 sealer 1.9.1新年规划",
-    "headers": [
-      {
-        "level": 2,
-        "title": "准备",
-        "slug": "准备",
-        "link": "#准备",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "我的任务",
-        "slug": "我的任务",
-        "link": "#我的任务",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "解决的问题",
-        "slug": "解决的问题",
-        "link": "#解决的问题",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "文档支持",
-        "slug": "文档支持",
-        "link": "#文档支持",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "解决方案",
-        "slug": "解决方案",
-        "link": "#解决方案",
-        "children": [
-          {
-            "level": 3,
-            "title": "跑程序",
-            "slug": "跑程序",
-            "link": "#跑程序",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "test",
-        "slug": "test",
-        "link": "#test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "rootless",
-        "slug": "rootless",
-        "link": "#rootless",
-        "children": [
-          {
-            "level": 3,
-            "title": "安装时候没有权限打开目录",
-            "slug": "安装时候没有权限打开目录",
-            "link": "#安装时候没有权限打开目录",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "目录",
-            "slug": "目录",
-            "link": "#目录",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "sudo",
-            "slug": "sudo",
-            "link": "#sudo",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "myidea",
-        "slug": "myidea",
-        "link": "#myidea",
-        "children": [
-          {
-            "level": 3,
-            "title": "sealer 组",
-            "slug": "sealer-组",
-            "link": "#sealer-组",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "新服务器测试",
-        "slug": "新服务器测试",
-        "link": "#新服务器测试",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/22.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第23节 docker rootless",
-    "headers": [
-      {
-        "level": 2,
-        "title": "docker rootless",
-        "slug": "docker-rootless",
-        "link": "#docker-rootless",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/23.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第24节 Kubernetes rootless design",
-    "headers": [
-      {
-        "level": 2,
-        "title": "以非 root 用户身份运行 Kubernetes 节点组件",
-        "slug": "以非-root-用户身份运行-kubernetes-节点组件",
-        "link": "#以非-root-用户身份运行-kubernetes-节点组件",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "staging/src/k8s.io/client-go/",
-        "slug": "staging-src-k8s-io-client-go",
-        "link": "#staging-src-k8s-io-client-go",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/24.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第25节 Buildah / podman 以及在 rootless 模式下工作原理",
-    "headers": [
-      {
-        "level": 2,
-        "title": "什么是 Buildah",
-        "slug": "什么是-buildah",
-        "link": "#什么是-buildah",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么选择Buildah",
-            "slug": "为什么选择buildah",
-            "link": "#为什么选择buildah",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Podman",
-            "slug": "podman",
-            "link": "#podman",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Buildah and Podman",
-            "slug": "buildah-and-podman",
-            "link": "#buildah-and-podman",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "podman rootless",
-            "slug": "podman-rootless",
-            "link": "#podman-rootless",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "builah 教程",
-        "slug": "builah-教程",
-        "link": "#builah-教程",
-        "children": [
-          {
-            "level": 3,
-            "title": "rootless user",
-            "slug": "rootless-user",
-            "link": "#rootless-user",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "安装后验证",
-            "slug": "安装后验证",
-            "link": "#安装后验证",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "从 scratch 开始构建镜像",
-            "slug": "从-scratch-开始构建镜像",
-            "link": "#从-scratch-开始构建镜像",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "镜像",
-            "slug": "镜像",
-            "link": "#镜像",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "buildah mount",
-            "slug": "buildah-mount",
-            "link": "#buildah-mount",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "buildah umount",
-            "slug": "buildah-umount",
-            "link": "#buildah-umount",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "buildah unshare",
-            "slug": "buildah-unshare",
-            "link": "#buildah-unshare",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "无根 Buildah 的工作原理：在非特权环境中构建容器",
-        "slug": "无根-buildah-的工作原理-在非特权环境中构建容器",
-        "link": "#无根-buildah-的工作原理-在非特权环境中构建容器",
-        "children": [
-          {
-            "level": 3,
-            "title": "直接使用 buildah",
-            "slug": "直接使用-buildah",
-            "link": "#直接使用-buildah",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "buildah problems whit rootless",
-            "slug": "buildah-problems-whit-rootless",
-            "link": "#buildah-problems-whit-rootless",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "fuse-overlayfs",
-        "slug": "fuse-overlayfs",
-        "link": "#fuse-overlayfs",
-        "children": [
-          {
-            "level": 3,
-            "title": "启用支持以构建非特权容器",
-            "slug": "启用支持以构建非特权容器",
-            "link": "#启用支持以构建非特权容器",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Podman",
-        "slug": "podman-1",
-        "link": "#podman-1",
-        "children": [
-          {
-            "level": 3,
-            "title": "install",
-            "slug": "install",
-            "link": "#install",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "构建",
-            "slug": "构建",
-            "link": "#构建",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "查看镜像",
-            "slug": "查看镜像",
-            "link": "#查看镜像",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "安装 slirp4netns",
-            "slug": "安装-slirp4netns",
-            "link": "#安装-slirp4netns",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "确保fuse-overlayfs已安装",
-            "slug": "确保fuse-overlayfs已安装",
-            "link": "#确保fuse-overlayfs已安装",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "启用用户命名空间 （centos 7/8 测试）",
-            "slug": "启用用户命名空间-centos-7-8-测试",
-            "link": "#启用用户命名空间-centos-7-8-测试",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "/etc/subuid和/etc/subgid配置",
-            "slug": "etc-subuid和-etc-subgid配置",
-            "link": "#etc-subuid和-etc-subgid配置",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "启动非特权 ping",
-            "slug": "启动非特权-ping",
-            "link": "#启动非特权-ping",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "用户操作",
-            "slug": "用户操作",
-            "link": "#用户操作",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "用户配置文件",
-            "slug": "用户配置文件",
-            "link": "#用户配置文件",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "使用卷",
-            "slug": "使用卷",
-            "link": "#使用卷",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Podman 在 rootless 下是如何工作的",
-        "slug": "podman-在-rootless-下是如何工作的",
-        "link": "#podman-在-rootless-下是如何工作的",
-        "children": [
-          {
-            "level": 3,
-            "title": "使用“podman top”显示用户名称空间",
-            "slug": "使用-podman-top-显示用户名称空间",
-            "link": "#使用-podman-top-显示用户名称空间",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "user namaspace",
-            "slug": "user-namaspace",
-            "link": "#user-namaspace",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "going forward",
-            "slug": "going-forward",
-            "link": "#going-forward",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Podman 如何创建用户名称空间",
-            "slug": "podman-如何创建用户名称空间",
-            "link": "#podman-如何创建用户名称空间",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "设置命名空间后，podman 接下来会发生什么",
-            "slug": "设置命名空间后-podman-接下来会发生什么",
-            "link": "#设置命名空间后-podman-接下来会发生什么",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Links",
-        "slug": "links",
-        "link": "#links",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/25.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第26节 OCI，CRI，runc，containerd，cri-containerd，dockershim等组件解释",
-    "headers": [
-      {
-        "level": 2,
-        "title": "层级调用关系",
-        "slug": "层级调用关系",
-        "link": "#层级调用关系",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "OCI（Open Container Initiative）",
-        "slug": "oci-open-container-initiative",
-        "link": "#oci-open-container-initiative",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "RunC",
-        "slug": "runc",
-        "link": "#runc",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "cantainerd",
-        "slug": "cantainerd",
-        "link": "#cantainerd",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "docker与containerd、runc的关系图",
-        "slug": "docker与containerd、runc的关系图",
-        "link": "#docker与containerd、runc的关系图",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "CRI（Container Runtime Interface ）",
-        "slug": "cri-container-runtime-interface",
-        "link": "#cri-container-runtime-interface",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "docker与k8s调用containerd的关系图",
-        "slug": "docker与k8s调用containerd的关系图",
-        "link": "#docker与k8s调用containerd的关系图",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "cri-containerd",
-        "slug": "cri-containerd",
-        "link": "#cri-containerd",
-        "children": [
-          {
-            "level": 3,
-            "title": "CRI Plugin调用流程",
-            "slug": "cri-plugin调用流程",
-            "link": "#cri-plugin调用流程",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "k8s对runtime调用的演进",
-        "slug": "k8s对runtime调用的演进",
-        "link": "#k8s对runtime调用的演进",
-        "children": [
-          {
-            "level": 3,
-            "title": "dockershim",
-            "slug": "dockershim",
-            "link": "#dockershim",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "CRI-O",
-            "slug": "cri-o",
-            "link": "#cri-o",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "切换 CRI 时 要注意什么",
-            "slug": "切换-cri-时-要注意什么",
-            "link": "#切换-cri-时-要注意什么",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/26.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第27节 unshare 和 newuidmap",
-    "headers": [
-      {
-        "level": 2,
-        "title": "对比",
-        "slug": "对比",
-        "link": "#对比",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "about newuidmap",
-        "slug": "about-newuidmap",
-        "link": "#about-newuidmap",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "about unshare",
-        "slug": "about-unshare",
-        "link": "#about-unshare",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "runuseer",
-        "slug": "runuseer",
-        "link": "#runuseer",
-        "children": [
-          {
-            "level": 3,
-            "title": "权限管理",
-            "slug": "权限管理",
-            "link": "#权限管理",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "关于 rootless 的配置问题",
-            "slug": "关于-rootless-的配置问题",
-            "link": "#关于-rootless-的配置问题",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/27.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第28节 sudo rootless",
-    "headers": [
-      {
-        "level": 2,
-        "title": "comment",
-        "slug": "comment",
-        "link": "#comment",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/28.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第29节 Feat/support nvidia docker and nonroot #2048",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Proposal",
-        "slug": "proposal",
-        "link": "#proposal",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Learn  GitHub modify someone else's pull request and commit",
-        "slug": "learn-github-modify-someone-else-s-pull-request-and-commit",
-        "link": "#learn-github-modify-someone-else-s-pull-request-and-commit",
-        "children": [
-          {
-            "level": 3,
-            "title": "Add remote repository",
-            "slug": "add-remote-repository",
-            "link": "#add-remote-repository",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "PR Site Solutions",
-        "slug": "pr-site-solutions",
-        "link": "#pr-site-solutions",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END Links",
-        "slug": "end-links",
-        "link": "#end-links",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/29.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第3节 项目结构",
-    "headers": [
-      {
-        "level": 2,
-        "title": "目录结构",
-        "slug": "目录结构",
-        "link": "#目录结构",
-        "children": [
-          {
-            "level": 3,
-            "title": "controllers",
-            "slug": "controllers",
-            "link": "#controllers",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "cmd",
-            "slug": "cmd",
-            "link": "#cmd",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "desktop 前端部分",
-        "slug": "desktop-前端部分",
-        "link": "#desktop-前端部分",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "cloud是以前写的一些东西 – 不重要",
-        "slug": "cloud是以前写的一些东西-–-不重要",
-        "link": "#cloud是以前写的一些东西-–-不重要",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "scripts 一些脚本",
-        "slug": "scripts-一些脚本",
-        "link": "#scripts-一些脚本",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "service",
-        "slug": "service",
-        "link": "#service",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "pkg 大量的实现部分",
-        "slug": "pkg-大量的实现部分",
-        "link": "#pkg-大量的实现部分",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "types 类型",
-        "slug": "types-类型",
-        "link": "#types-类型",
-        "children": [
-          {
-            "level": 3,
-            "title": "rountime",
-            "slug": "rountime",
-            "link": "#rountime",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "ssh库",
-            "slug": "ssh库",
-            "link": "#ssh库",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "目的",
-        "slug": "目的",
-        "link": "#目的",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "test",
-        "slug": "test",
-        "link": "#test",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/3.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第30节  localRegistry's info into a secret in namespace kube-system #2056",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Issue Description",
-        "slug": "issue-description",
-        "link": "#issue-description",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "namespace",
-        "slug": "namespace",
-        "link": "#namespace",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Registry",
-        "slug": "registry",
-        "link": "#registry",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Secrets",
-        "slug": "secrets",
-        "link": "#secrets",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "关键目录",
-        "slug": "关键目录",
-        "link": "#关键目录",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "localregistry",
-        "slug": "localregistry",
-        "link": "#localregistry",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/30.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第31节 horizon",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Horizon",
-        "slug": "horizon",
-        "link": "#horizon",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Why Horizon",
-        "slug": "why-horizon",
-        "link": "#why-horizon",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Features",
-        "slug": "features",
-        "link": "#features",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "RPAC & Member",
-        "slug": "rpac-member",
-        "link": "#rpac-member",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Architecture",
-        "slug": "architecture",
-        "link": "#architecture",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "How to install",
-        "slug": "how-to-install",
-        "link": "#how-to-install",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Requirements",
-        "slug": "requirements",
-        "link": "#requirements",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Installation Process",
-        "slug": "installation-process",
-        "link": "#installation-process",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/31.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第32节 horizon issues #46",
-    "headers": [
-      {
-        "level": 2,
-        "title": "helm install --set host",
-        "slug": "helm-install-set-host",
-        "link": "#helm-install-set-host",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "procedure",
-        "slug": "procedure",
-        "link": "#procedure",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/32.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第33节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/33.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第34节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/34.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第35节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/35.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第36节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/36.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第37节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/37.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第38节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/38.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第39节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/39.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第4节 第二阶段 第二部分",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Before",
-        "slug": "before",
-        "link": "#before",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "problem",
-        "slug": "problem",
-        "link": "#problem",
-        "children": [
-          {
-            "level": 3,
-            "title": "3293172751 commented 2 days ago",
-            "slug": "_3293172751-commented-2-days-ago",
-            "link": "#_3293172751-commented-2-days-ago",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "cuisongliu commented yesterday",
-            "slug": "cuisongliu-commented-yesterday",
-            "link": "#cuisongliu-commented-yesterday",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "rootfs runtime design",
-            "slug": "rootfs-runtime-design",
-            "link": "#rootfs-runtime-design",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "My questions, suggestions？",
-        "slug": "my-questions-suggestions",
-        "link": "#my-questions-suggestions",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "else",
-        "slug": "else",
-        "link": "#else",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/4.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第40节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/40.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第41节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/41.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第42节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/42.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第43节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/43.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第44节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/44.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第45节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/45.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第46节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/46.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第47节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/47.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第48节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/48.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第49节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/49.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第5节 sealer runtime",
-    "headers": [
-      {
-        "level": 2,
-        "title": "项目规范",
-        "slug": "项目规范",
-        "link": "#项目规范",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "For k0s",
-        "slug": "for-k0s",
-        "link": "#for-k0s",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "注意",
-        "slug": "注意",
-        "link": "#注意",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "运行时",
-        "slug": "运行时",
-        "link": "#运行时",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "目录结构",
-        "slug": "目录结构",
-        "link": "#目录结构",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "前言",
-        "slug": "前言",
-        "link": "#前言",
-        "children": [
-          {
-            "level": 3,
-            "title": "What is the problem this feature will solve?",
-            "slug": "what-is-the-problem-this-feature-will-solve",
-            "link": "#what-is-the-problem-this-feature-will-solve",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Clusterlmage",
-        "slug": "clusterlmage",
-        "link": "#clusterlmage",
-        "children": [
-          {
-            "level": 3,
-            "title": "cluster",
-            "slug": "cluster",
-            "link": "#cluster",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "调研",
-        "slug": "调研",
-        "link": "#调研",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "runtime/types",
-        "slug": "runtime-types",
-        "link": "#runtime-types",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "rootfs module",
-        "slug": "rootfs-module",
-        "link": "#rootfs-module",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "data",
-        "slug": "data",
-        "link": "#data",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "安装/放大/缩小/重置/升级",
-        "slug": "安装-放大-缩小-重置-升级",
-        "link": "#安装-放大-缩小-重置-升级",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "更改 basefs 脚本",
-        "slug": "更改-basefs-脚本",
-        "link": "#更改-basefs-脚本",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "入口函数",
-        "slug": "入口函数",
-        "link": "#入口函数",
-        "children": [
-          {
-            "level": 3,
-            "title": "附加上下文",
-            "slug": "附加上下文",
-            "link": "#附加上下文",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "sealos 主议题",
-            "slug": "sealos-主议题",
-            "link": "#sealos-主议题",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "策划文档",
-            "slug": "策划文档",
-            "link": "#策划文档",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "计划",
-        "slug": "计划",
-        "link": "#计划",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "issues",
-        "slug": "issues",
-        "link": "#issues",
-        "children": [
-          {
-            "level": 3,
-            "title": "cluster",
-            "slug": "cluster-1",
-            "link": "#cluster-1",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "k0s runtime design readme",
-        "slug": "k0s-runtime-design-readme",
-        "link": "#k0s-runtime-design-readme",
-        "children": [
-          {
-            "level": 3,
-            "title": "basics directory structure",
-            "slug": "basics-directory-structure",
-            "link": "#basics-directory-structure",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "重构相对运行时的列表",
-            "slug": "重构相对运行时的列表",
-            "link": "#重构相对运行时的列表",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "cloud镜像",
-            "slug": "cloud镜像",
-            "link": "#cloud镜像",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "目录设计",
-            "slug": "目录设计",
-            "link": "#目录设计",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Clusterfile 和 KubeadmConfig",
-            "slug": "clusterfile-和-kubeadmconfig",
-            "link": "#clusterfile-和-kubeadmconfig",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "介绍",
-            "slug": "介绍",
-            "link": "#介绍",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "表格（CN）",
-        "slug": "表格-cn",
-        "link": "#表格-cn",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "code runtime module",
-        "slug": "code-runtime-module",
-        "link": "#code-runtime-module",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "k3s rootfs",
-        "slug": "k3s-rootfs",
-        "link": "#k3s-rootfs",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "CloudRootfs",
-        "slug": "cloudrootfs",
-        "link": "#cloudrootfs",
-        "children": [
-          {
-            "level": 3,
-            "title": "我怎样才能得到 CloudRootfs",
-            "slug": "我怎样才能得到-cloudrootfs",
-            "link": "#我怎样才能得到-cloudrootfs",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "overlay && overlay2",
-            "slug": "overlay-overlay2",
-            "link": "#overlay-overlay2",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "构建自己的 CloudRootfs",
-            "slug": "构建自己的-cloudrootfs",
-            "link": "#构建自己的-cloudrootfs",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "卸载",
-        "slug": "卸载",
-        "link": "#卸载",
-        "children": [
-          {
-            "level": 3,
-            "title": "k0s",
-            "slug": "k0s",
-            "link": "#k0s",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "k3s",
-            "slug": "k3s",
-            "link": "#k3s",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/5.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第50节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/50.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第51节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/51.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第52节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/52.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第53节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/53.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第54节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/54.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第55节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/55.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第56节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/56.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第57节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/57.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第58节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/58.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第59节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/59.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第6节 k3s Runtime Design",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Idea",
-        "slug": "idea",
-        "link": "#idea",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "module list",
-        "slug": "module-list",
-        "link": "#module-list",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "interface(☕in preparation…)",
-        "slug": "interface-☕in-preparation",
-        "link": "#interface-☕in-preparation",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "achieve interface",
-        "slug": "achieve-interface",
-        "link": "#achieve-interface",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "CloudRootfs",
-        "slug": "cloudrootfs",
-        "link": "#cloudrootfs",
-        "children": [
-          {
-            "level": 3,
-            "title": "k3s - rootfs",
-            "slug": "k3s-rootfs",
-            "link": "#k3s-rootfs",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "About the k3s difference",
-        "slug": "about-the-k3s-difference",
-        "link": "#about-the-k3s-difference",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "version",
-        "slug": "version",
-        "link": "#version",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Embedded Component Versions",
-        "slug": "embedded-component-versions",
-        "link": "#embedded-component-versions",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "newest",
-        "slug": "newest",
-        "link": "#newest",
-        "children": [
-          {
-            "level": 3,
-            "title": "Issue Description",
-            "slug": "issue-description",
-            "link": "#issue-description",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Describe what feature you want",
-            "slug": "describe-what-feature-you-want",
-            "link": "#describe-what-feature-you-want",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "Additional context",
-            "slug": "additional-context",
-            "link": "#additional-context",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/6.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第60节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/60.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第61节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/61.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第62节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/62.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第63节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/63.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第64节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/64.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第65节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/65.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第66节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/66.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第67节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/67.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第68节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/68.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第69节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/69.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第7节 k3s vs k0s",
-    "headers": [
-      {
-        "level": 2,
-        "title": "k3s",
-        "slug": "k3s",
-        "link": "#k3s",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Mirantis k0s",
-        "slug": "mirantis-k0s",
-        "link": "#mirantis-k0s",
-        "children": [
-          {
-            "level": 3,
-            "title": "单二进制",
-            "slug": "单二进制",
-            "link": "#单二进制",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "支持各种容器运行时、网络和存储接口",
-            "slug": "支持各种容器运行时、网络和存储接口",
-            "link": "#支持各种容器运行时、网络和存储接口",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "它选择隔离控制平面",
-            "slug": "它选择隔离控制平面",
-            "link": "#它选择隔离控制平面",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "适用于各种数据存储后端的 Kine",
-            "slug": "适用于各种数据存储后端的-kine",
-            "link": "#适用于各种数据存储后端的-kine",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "控制平面节点通信的连接性",
-            "slug": "控制平面节点通信的连接性",
-            "link": "#控制平面节点通信的连接性",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Rancher k3s",
-        "slug": "rancher-k3s",
-        "link": "#rancher-k3s",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "k3s 与 k0s",
-        "slug": "k3s-与-k0s",
-        "link": "#k3s-与-k0s",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "宏观上对比",
-        "slug": "宏观上对比",
-        "link": "#宏观上对比",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "选择哪一个，k3s 还是 k0s？",
-        "slug": "选择哪一个-k3s-还是-k0s",
-        "link": "#选择哪一个-k3s-还是-k0s",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "比较 tables",
-        "slug": "比较-tables",
-        "link": "#比较-tables",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "或许还可以带上microk8s",
-        "slug": "或许还可以带上microk8s",
-        "link": "#或许还可以带上microk8s",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "Mirantis k0s 未来",
-        "slug": "mirantis-k0s-未来",
-        "link": "#mirantis-k0s-未来",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/7.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第70节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/70.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第71节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/71.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第72节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/72.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第73节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/73.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第74节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/74.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第75节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/75.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第76节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/76.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第77节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/77.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第78节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/78.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第79节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/79.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第8节 MicroK8s",
-    "headers": [
-      {
-        "level": 2,
-        "title": "介绍",
-        "slug": "介绍",
-        "link": "#介绍",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "insatll",
-        "slug": "insatll",
-        "link": "#insatll",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/8.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第80节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/80.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第81节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/81.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第82节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/82.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第83节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/83.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第84节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/84.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第85节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/85.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第86节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/86.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第87节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/87.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第88节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/88.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第89节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/89.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第9节 sealer runtime Stage 2 (including biweekly meetings)",
-    "headers": [
-      {
-        "level": 2,
-        "title": "code module",
-        "slug": "code-module",
-        "link": "#code-module",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "k3s module",
-        "slug": "k3s-module",
-        "link": "#k3s-module",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "k8s runtiem interface 逻辑是什么?",
-        "slug": "k8s-runtiem-interface-逻辑是什么",
-        "link": "#k8s-runtiem-interface-逻辑是什么",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "关于设计统一的interface",
-        "slug": "关于设计统一的interface",
-        "link": "#关于设计统一的interface",
-        "children": [
-          {
-            "level": 3,
-            "title": "作者",
-            "slug": "作者",
-            "link": "#作者",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "注册表",
-            "slug": "注册表",
-            "link": "#注册表",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "rootfs交互",
-            "slug": "rootfs交互",
-            "link": "#rootfs交互",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/9.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第90节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/90.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第91节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/91.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第92节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/92.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第93节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/93.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第94节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/94.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第95节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/95.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第96节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/96.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第97节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/97.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第98节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/98.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "第99节",
-    "headers": [
-      {
-        "level": 2,
-        "title": "END 链接",
-        "slug": "end-链接",
-        "link": "#end-链接",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/99.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "",
-    "headers": [
-      {
-        "level": 2,
-        "title": "⭕学习K8s & 云原生~",
-        "slug": "⭕学习k8s-云原生",
-        "link": "#⭕学习k8s-云原生",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "🗒️sealer",
-        "slug": "🗒️sealer",
-        "link": "#🗒️sealer",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "✨参与贡献",
-        "slug": "✨参与贡献",
-        "link": "#✨参与贡献",
-        "children": []
-      }
-    ],
-    "path": "/Cloud-Native/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "sealer rootless design",
-    "headers": [
-      {
-        "level": 2,
-        "title": "🔍 Desired state",
-        "slug": "🔍-desired-state",
-        "link": "#🔍-desired-state",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "📖 Solution Ideas",
-        "slug": "📖-solution-ideas",
-        "link": "#📖-solution-ideas",
-        "children": [
-          {
-            "level": 3,
-            "title": "🖊️ TODO",
-            "slug": "🖊️-todo",
-            "link": "#🖊️-todo",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "🏷️ Error logged",
-            "slug": "🏷️-error-logged",
-            "link": "#🏷️-error-logged",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "🔥 Conclusion",
-        "slug": "🔥-conclusion",
-        "link": "#🔥-conclusion",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "🗃️ Reference",
-        "slug": "🗃️-reference",
-        "link": "#🗃️-reference",
-        "children": [
-          {
-            "level": 3,
-            "title": "Advance of right",
-            "slug": "advance-of-right",
-            "link": "#advance-of-right",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/Cloud-Native/TODO.html",
     "pathLocale": "/",
     "extraFields": []
   },

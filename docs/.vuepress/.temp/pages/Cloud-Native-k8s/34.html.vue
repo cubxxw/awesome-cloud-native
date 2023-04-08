@@ -84,7 +84,7 @@
 <h3 id="api-group-1" tabindex="-1"><a class="header-anchor" href="#api-group-1" aria-hidden="true">#</a> API-group</h3>
 <p>将整个 kubernetes API 资源分成各个组，可以带来很多好处：</p>
 <ul>
-<li>各组可以单独打开或者关闭[7]</li>
+<li>各组可以单独打开或者关闭</li>
 <li>各组可以有独立的版本，在不影响其他组的情况下单独向前衍化</li>
 <li>同一个资源可以同时存在于多个不同组中，这样就可以同时支持某个特定资源稳定版本与实验版本</li>
 </ul>
