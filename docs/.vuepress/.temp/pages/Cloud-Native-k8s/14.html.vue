@@ -830,7 +830,7 @@ lrwxrwxrwx  <span class="token number">1</span> root root        <span class="to
 lrwxrwxrwx  <span class="token number">1</span> root root        <span class="token number">3</span> Nov <span class="token number">25</span> 04:31 kubectl -<span class="token operator">></span> k3s
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Linux 系统下提供 ln 指令来进行文件链接</p>
 <p>我们可以看到这里面有很多的连接文件，同样的，其实在 k3s 的 rootfs bin目录下也是这样的</p>
-<p>::: detatils 软连接 &amp; 硬连接
+<p>:::detatils 软连接 &amp; 硬连接
 <code v-pre>ln</code> 指令默认创建的是硬链接，如果加入了<code v-pre>-s</code>参数，则会生成一个软链接。</p>
 <p><strong>硬连接：</strong></p>
 <p>在 Linux 中，多个文件名指向同一索引节点是存在的，所以硬连接指通过索引节点来进行的连接，即每一个硬链接都是一个指向对应区域的文件。</p>

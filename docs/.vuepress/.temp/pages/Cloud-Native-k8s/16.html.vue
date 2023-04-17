@@ -94,7 +94,7 @@ spec:
 <p>https://doc.traefik.io/traefik/operations/dashboard/</p>
 <p>https://doc.traefik.io/traefik/middlewares/basicauth/#general</p>
 <h2 id="service-load-balancer" tabindex="-1"><a class="header-anchor" href="#service-load-balancer" aria-hidden="true">#</a> Service Load Balancer</h2>
-<p>K3s 提供了一个名为<a href="https://github.com/rancher/klipper-lb" target="_blank" rel="noopener noreferrer">Klipper Load Balancer<ExternalLinkIcon/></a>的负载均衡器，它可以使用可用的主机端口。 允许创建 LoadBalancer 类型的 Service，但不包括 LB 的实现。某些 LB 服务需要云提供商，例如 Amazon EC2 或 Microsoft Azure。相比之下，K3s service LB 使得可以在没有云提供商的情况下使用 LB 服务。</p>
+<p>K3s 提供了一个名为<a href="https://github.com/rancher/klipper-lb" target="_blank" rel="noopener noreferrer">Klipper Load Balancer<ExternalLinkIcon/></a>的负载均衡器，它可以使用可用的主机端口。 允许创建 LoadBalancer 类型的 Service，但不包括 LB 的实现。某些 LB 服务需要云提供商，例如 Amazon EC2 或 Microsoft Azure。相比之下，<code v-pre>K3s service LB</code> 使得可以在没有云提供商的情况下使用 LB 服务。</p>
 <h3 id="service-lb-如何工作" tabindex="-1"><a class="header-anchor" href="#service-lb-如何工作" aria-hidden="true">#</a> Service LB 如何工作</h3>
 <p>K3s 创建了一个控制器，该控制器为 service load balancer 创建了一个 Pod，这个 Pod 是<a href="https://kubernetes.io/docs/concepts/services-networking/service/" target="_blank" rel="noopener noreferrer">Service<ExternalLinkIcon/></a>类型的 Kubernetes 对象。</p>
 <p>对于每个 service load balancer，都会创建一个<a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/" target="_blank" rel="noopener noreferrer">DaemonSet<ExternalLinkIcon/></a>。 DaemonSet 在每个节点上创建一个前缀为<code v-pre>svc</code>的 Pod。</p>
@@ -107,7 +107,7 @@ spec:
 <h3 id="从节点中排除-service-lb" tabindex="-1"><a class="header-anchor" href="#从节点中排除-service-lb" aria-hidden="true">#</a> 从节点中排除 Service LB</h3>
 <p>要排除节点使用 Service LB，请将以下标签添加到不应排除的节点上：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>svccontroller.k3s.cattle.io/enablelb
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>如果使用标签，则 service load balancer 仅在标记的节点上运行。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>如果使用标签，则 <code v-pre>service load balancer</code> 仅在标记的节点上运行。</p>
 <h3 id="禁用-service-lb" tabindex="-1"><a class="header-anchor" href="#禁用-service-lb" aria-hidden="true">#</a> 禁用 Service LB</h3>
 <p>要禁用嵌入式 LB，请使用<code v-pre>--disable servicelb</code>选项运行 k3s server。</p>
 <p>如果您希望运行其他 LB，例如 MetalLB，这是必需的。</p>

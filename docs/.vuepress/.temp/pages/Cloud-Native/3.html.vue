@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第3节-项目结构" tabindex="-1"><a class="header-anchor" href="#第3节-项目结构" aria-hidden="true">#</a> 第3节 项目结构</h1>
+<h1 id="第3节-学习-sealos-的项目结构" tabindex="-1"><a class="header-anchor" href="#第3节-学习-sealos-的项目结构" aria-hidden="true">#</a> 第3节 学习 sealos 的项目结构</h1>
 <br>
 <div><a href = '2.md' style='float:left'>⬆️上一节🔗  </a><a href = '4.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>

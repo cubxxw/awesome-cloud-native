@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第1节-第一阶段" tabindex="-1"><a class="header-anchor" href="#第1节-第一阶段" aria-hidden="true">#</a> 第1节 第一阶段</h1>
+<h1 id="第1节-开源社区的一份完整的贡献规范" tabindex="-1"><a class="header-anchor" href="#第1节-开源社区的一份完整的贡献规范" aria-hidden="true">#</a> 第1节 开源社区的一份完整的贡献规范</h1>
 <div><a href = '../README.md' style='float:left'>⬆️主目录🔗  </a><a href = '2.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>

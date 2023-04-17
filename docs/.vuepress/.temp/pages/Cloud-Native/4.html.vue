@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第4节-第二阶段-第二部分" tabindex="-1"><a class="header-anchor" href="#第4节-第二阶段-第二部分" aria-hidden="true">#</a> 第4节 第二阶段 第二部分</h1>
+<h1 id="第4节-第一份设计稿" tabindex="-1"><a class="header-anchor" href="#第4节-第一份设计稿" aria-hidden="true">#</a> 第4节 第一份设计稿</h1>
 <br>
 <div><a href = '3.md' style='float:left'>⬆️上一节🔗  </a><a href = '5.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
@@ -18,10 +18,10 @@
 <li>spring boot  –  dockerfile</li>
 </ul>
 <h2 id="problem" tabindex="-1"><a class="header-anchor" href="#problem" aria-hidden="true">#</a> problem</h2>
-<h3 id="_3293172751-commented-2-days-ago" tabindex="-1"><a class="header-anchor" href="#_3293172751-commented-2-days-ago" aria-hidden="true">#</a> <strong><a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">3293172751<ExternalLinkIcon/></a></strong> commented <a href="https://github.com/labring/sealos/issues/1943#issuecomment-1295060720" target="_blank" rel="noopener noreferrer">2 days ago<ExternalLinkIcon/></a></h3>
+<h3 id="cubxxw-commented-2-days-ago" tabindex="-1"><a class="header-anchor" href="#cubxxw-commented-2-days-ago" aria-hidden="true">#</a> cubxxw commented 2 days ago</h3>
 <p><a href="https://github.com/k3s-io/k3s" target="_blank" rel="noopener noreferrer">k3s - github<ExternalLinkIcon/></a>，I wonder if I need a tutorial on <a href="https://k3s.io/" target="_blank" rel="noopener noreferrer">k3s.io<ExternalLinkIcon/></a>，what should I pay attention to when I use it❓ Do I need to write the functions next to k8s to keep them <strong>together,</strong> or <strong>separate❓</strong> <a href="https://github.com/fanux" target="_blank" rel="noopener noreferrer">@fanux<ExternalLinkIcon/></a></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>sealos run k0s:latest --masters xxx --nodes xxxx --passwd xxxx
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="cuisongliu-commented-yesterday" tabindex="-1"><a class="header-anchor" href="#cuisongliu-commented-yesterday" aria-hidden="true">#</a> <strong><a href="https://github.com/cuisongliu" target="_blank" rel="noopener noreferrer">cuisongliu<ExternalLinkIcon/></a></strong> commented <a href="https://github.com/labring/sealos/issues/1943#issuecomment-1295680848" target="_blank" rel="noopener noreferrer">yesterday<ExternalLinkIcon/></a></h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="cuisongliu-commented-yesterday" tabindex="-1"><a class="header-anchor" href="#cuisongliu-commented-yesterday" aria-hidden="true">#</a> cuisongliu commented yesterday</h3>
 <p><a href="https://github.com/k3s-io/k3s" target="_blank" rel="noopener noreferrer">k3s - github<ExternalLinkIcon/></a>，I wonder if I need a tutorial on <a href="https://k3s.io/" target="_blank" rel="noopener noreferrer">k3s.io<ExternalLinkIcon/></a>，what should I pay attention to when I use it❓ Do I need to write the functions next to k8s to keep them <strong>together,</strong> or <strong>separate❓</strong></p>
 <ol>
 <li>runtime interface need spilt kubeadm and k3s</li>

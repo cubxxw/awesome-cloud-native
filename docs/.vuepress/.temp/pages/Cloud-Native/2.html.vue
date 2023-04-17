@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第2节-第二阶段" tabindex="-1"><a class="header-anchor" href="#第2节-第二阶段" aria-hidden="true">#</a> 第2节 第二阶段</h1>
+<h1 id="第2节-使用-sealos-搭建-k8s-helm学习" tabindex="-1"><a class="header-anchor" href="#第2节-使用-sealos-搭建-k8s-helm学习" aria-hidden="true">#</a> 第2节 使用 sealos 搭建 k8s，helm学习</h1>
 <br>
 <div><a href = '1.md' style='float:left'>⬆️上一节🔗  </a><a href = '3.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
