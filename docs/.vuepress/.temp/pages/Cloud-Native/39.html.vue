@@ -11,13 +11,19 @@
 <p>[TOC]</p>
 <h2 id="issue-description" tabindex="-1"><a class="header-anchor" href="#issue-description" aria-hidden="true">#</a> Issue Description</h2>
 <ul>
-<li>https://github.com/containers/common/issues/1376</li>
-<li>https://github.com/sealerio/sealer/issues/2147</li>
+<li>
+<p>https://github.com/containers/common/issues/1376</p>
+</li>
+<li>
+<p>https://github.com/sealerio/sealer/issues/2147</p>
+</li>
+<li>
+<p>[ ] support set load tmp dir for save and load, we could set <code v-pre>tmp-dir</code> flag to <code v-pre>sysContext.BigFilesTemporaryDir</code>.</p>
+</li>
+<li>
+<p>[ ] Waiting for a separate functions Or string flag from containers SDK, which will not guess what type of input tar file. this is more time-saving.</p>
+</li>
 </ul>
-<ol>
-<li>support set load tmp dir for save and load, we could set <code v-pre>tmp-dir</code> flag to <code v-pre>sysContext.BigFilesTemporaryDir</code>.</li>
-<li>Waiting for a separate functions Or string flag from containers SDK, which will not guess what type of input tar file. this is more time-saving.</li>
-</ol>
 <p>more to see : <a href="https://github.com/containers/common/issues/1376" target="_blank" rel="noopener noreferrer">containers/common#1376<ExternalLinkIcon/></a></p>
 <h3 id="describe-what-feature-you-want" tabindex="-1"><a class="header-anchor" href="#describe-what-feature-you-want" aria-hidden="true">#</a> Describe what feature you want</h3>
 <p>for 1 , we could use <code v-pre>--tmp-dir</code> flag to do it.</p>
