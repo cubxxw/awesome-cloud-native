@@ -35,7 +35,7 @@
 <li><code v-pre>CreateAdvancedTextMessage(ctx context.Context, text string, messageEntities []*sdk_struct.MessageEntity) (*sdk_struct.MsgStruct, error)</code>：这个方法用于创建一个高级文本消息，支持自定义消息实体。它接收一个上下文对象<code v-pre>ctx</code>、一个字符串<code v-pre>text</code>和一个<code v-pre>sdk_struct.MessageEntity</code>类型的切片<code v-pre>messageEntities</code>作为参数，返回一个指向<code v-pre>sdk_struct.MsgStruct</code>类型对象的指针和一个错误对象。该方法首先创建一个空的<code v-pre>sdk_struct.MsgStruct</code>对象<code v-pre>s</code>，然后调用<code v-pre>initBasicInfo</code>方法来初始化消息的基本信息，包括消息类型和内容类型。接下来，将文本消息内容<code v-pre>text</code>赋值给<code v-pre>s.MessageEntityElem.Text</code>字段，并将<code v-pre>sdk_struct.MessageEntity</code>类型的切片<code v-pre>messageEntities</code>赋值给<code v-pre>s.MessageEntityElem.MessageEntityList</code>字段。最后，将<code v-pre>s.MessageEntityElem</code>结构体序列化成<code v-pre>JSON</code>格式的字符串并赋值给<code v-pre>s.Content</code>字段，并返回<code v-pre>s</code>指针和<code v-pre>nil</code>。</li>
 </ol>
 <h3 id="结构体字段" tabindex="-1"><a class="header-anchor" href="#结构体字段" aria-hidden="true">#</a> 结构体字段</h3>
-<p>这是一个很重并且很大的一个消息结构体，MsgStruct 结构体是我们给客户端用到的结构体。</p>
+<p>这是一个很重并且很大的一个消息结构体，<code v-pre>MsgStruct</code> 结构体是我们给客户端用到的结构体。</p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token keyword">type</span> MsgStruct <span class="token keyword">struct</span> <span class="token punctuation">{</span>
 	ClientMsgID          <span class="token builtin">string</span>                <span class="token string">`json:"clientMsgID,omitempty"`</span>
 	ServerMsgID          <span class="token builtin">string</span>                <span class="token string">`json:"serverMsgID,omitempty"`</span>

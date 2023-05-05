@@ -10,7 +10,8 @@
 <hr>
 <p>[TOC]</p>
 <hr>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>**替换：**
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>name: CONTRIBUTING.md
+**替换：**
 
 <span class="token punctuation">{</span>name<span class="token punctuation">}</span> -<span class="token operator">></span> log
 
@@ -25,7 +26,7 @@
 <span class="token punctuation">{</span>wechat<span class="token punctuation">}</span> -<span class="token operator">></span> 替换为图片连接地址
 
 <span class="token punctuation">{</span>twitter<span class="token punctuation">}</span> -<span class="token operator">></span> 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
 <h1 id="contributing-to-name" tabindex="-1"><a class="header-anchor" href="#contributing-to-name" aria-hidden="true">#</a> Contributing to {name}</h1>
 <p>So, you want to hack on {name}? Yay!</p>
 <p>First of all, thank you for considering contributing to our project! We appreciate your time and effort, and we value any contribution, whether it's reporting a bug, suggesting a new feature, or submitting a pull request.</p>

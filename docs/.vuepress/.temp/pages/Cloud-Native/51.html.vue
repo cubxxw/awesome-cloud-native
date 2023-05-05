@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第51节" tabindex="-1"><a class="header-anchor" href="#第51节" aria-hidden="true">#</a> 第51节</h1>
+<h1 id="第51节-k8sgpt" tabindex="-1"><a class="header-anchor" href="#第51节-k8sgpt" aria-hidden="true">#</a> 第51节 k8sgpt</h1>
 <div><a href = '50.md' style='float:left'>⬆️上一节🔗  </a><a href = '52.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
@@ -9,6 +9,102 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h2>
+<p>我也是 k8sgpt 社区的一员，参与 k8sgpt 社区的打造和维护，它让 Kubernetes 和 AI 结合起来，非常棒~</p>
+<p>这是它的GitHub 地址：</p>
+<ul>
+<li><a href="https://github.com/k8sgpt-ai/k8sgpt" target="_blank" rel="noopener noreferrer">k8sgpt<ExternalLinkIcon/></a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Person</th>
+<th>Organization</th>
+<th>Other Affiliations</th>
+<th>GitHub Username</th>
+<th>Gitlab Username</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alex Jones</td>
+<td>Canonical</td>
+<td>CNCF TAG App Delivery, Open Feature</td>
+<td><a href="https://github.com/AlexsJones" target="_blank" rel="noopener noreferrer">alexsjones<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Thomas Schuetz</td>
+<td></td>
+<td>CNCF TAG App Delivery, Keptn</td>
+<td><a href="https://github.com/thschue" target="_blank" rel="noopener noreferrer">thschue<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Brad McCoy</td>
+<td>Basiq</td>
+<td>CNCF, CDF, Keptn</td>
+<td><a href="https://github.com/bradmccoydev" target="_blank" rel="noopener noreferrer">bradmccoydev<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Johannes Kleinlercher</td>
+<td>suXess-IT</td>
+<td>CNCF App Delivery</td>
+<td><a href="https://github.com/jkleinlercher" target="_blank" rel="noopener noreferrer">jkleinlercher<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Roberth Strand</td>
+<td>Amesto Fortytwo</td>
+<td>CNCF App Delivery, OpenGitOps, Cloud Native Norway</td>
+<td><a href="https://github.com/roberthstrand" target="_blank" rel="noopener noreferrer">roberthstrand<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Alexandre Steppé</td>
+<td>NapoleonGames</td>
+<td></td>
+<td><a href="https://github.com/HatiCode" target="_blank" rel="noopener noreferrer">Haticode<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Matthis Holleville</td>
+<td>Agicap</td>
+<td></td>
+<td><a href="https://github.com/matthisholleville" target="_blank" rel="noopener noreferrer">matthisholleville<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Peter Pan</td>
+<td>DaoCloud</td>
+<td></td>
+<td><a href="https://github.com/panpan0000" target="_blank" rel="noopener noreferrer">panpan0000<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Aisuko Li</td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/Aisuko" target="_blank" rel="noopener noreferrer">aisuko<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Rakshit Gondwal</td>
+<td></td>
+<td>WeMakeDevs</td>
+<td><a href="https://github.com/rakshitgondwal" target="_blank" rel="noopener noreferrer">rakshitgondwal<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Xinwei Xiong</td>
+<td>OpenIMSDK</td>
+<td></td>
+<td><a href="https://github.com/cubxxw" target="_blank" rel="noopener noreferrer">cubxxw<ExternalLinkIcon/></a></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '50.md' style='float:left'>⬆️上一节🔗  </a><a href = '52.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

@@ -3409,8 +3409,51 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第49节",
+    "title": "第49节 在 Sealos 上开发一款 AI 自动云原生化项目自动上线工具",
     "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": [
+          {
+            "level": 3,
+            "title": "技术领域：",
+            "slug": "技术领域",
+            "link": "#技术领域",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "开源协议：",
+            "slug": "开源协议",
+            "link": "#开源协议",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "项目简述：",
+            "slug": "项目简述",
+            "link": "#项目简述",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "产出要求",
+        "slug": "产出要求",
+        "link": "#产出要求",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "什么是 Auto-GPT",
+        "slug": "什么是-auto-gpt",
+        "link": "#什么是-auto-gpt",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -3719,14 +3762,101 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第50节",
+    "title": "第50节 如何安装和使用自主人工智能工具Auto-GPT",
     "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "什么是 AutoGPT",
+        "slug": "什么是-autogpt",
+        "link": "#什么是-autogpt",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "它是如何工作的",
+        "slug": "它是如何工作的",
+        "link": "#它是如何工作的",
+        "children": [
+          {
+            "level": 3,
+            "title": "可以做哪些事情",
+            "slug": "可以做哪些事情",
+            "link": "#可以做哪些事情",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "搭建和设置环境",
+        "slug": "搭建和设置环境",
+        "link": "#搭建和设置环境",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "运行",
+        "slug": "运行",
+        "link": "#运行",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "AutoGPT 插件",
+        "slug": "autogpt-插件",
+        "link": "#autogpt-插件",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Auto GPT 和 LLM 的未来",
+        "slug": "auto-gpt-和-llm-的未来",
+        "link": "#auto-gpt-和-llm-的未来",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Auto-GPT替代品： 用AgentGPT实现任务自动化",
+        "slug": "auto-gpt替代品-用agentgpt实现任务自动化",
+        "link": "#auto-gpt替代品-用agentgpt实现任务自动化",
+        "children": [
+          {
+            "level": 3,
+            "title": "打开使用",
+            "slug": "打开使用",
+            "link": "#打开使用",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "参考文章",
+            "slug": "参考文章",
+            "link": "#参考文章",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "连接",
+            "slug": "连接",
+            "link": "#连接",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/Cloud-Native/50.html",
@@ -3734,8 +3864,15 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第51节",
+    "title": "第51节 k8sgpt",
     "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -3749,8 +3886,64 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第52节",
+    "title": "第52节 community 编写指南",
     "headers": [
+      {
+        "level": 2,
+        "title": "开始",
+        "slug": "开始",
+        "link": "#开始",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Getting started",
+        "slug": "getting-started",
+        "link": "#getting-started",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Contributing",
+        "slug": "contributing",
+        "link": "#contributing",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Code of Conduct",
+        "slug": "code-of-conduct",
+        "link": "#code-of-conduct",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Interested Parties",
+        "slug": "interested-parties",
+        "link": "#interested-parties",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Charter",
+        "slug": "charter",
+        "link": "#charter",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Adopters",
+        "slug": "adopters",
+        "link": "#adopters",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "License",
+        "slug": "license",
+        "link": "#license",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -3764,8 +3957,43 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第53节",
+    "title": "第53节 CloudBuildAI",
     "headers": [
+      {
+        "level": 2,
+        "title": "Project Overview",
+        "slug": "project-overview",
+        "link": "#project-overview",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Project Purpose",
+        "slug": "project-purpose",
+        "link": "#project-purpose",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Quick Start",
+        "slug": "quick-start",
+        "link": "#quick-start",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Project License",
+        "slug": "project-license",
+        "link": "#project-license",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Contributor Guidelines",
+        "slug": "contributor-guidelines",
+        "link": "#contributor-guidelines",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -3779,8 +4007,44 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第54节",
+    "title": "第54节 OpenIM 重构确定协议",
     "headers": [
+      {
+        "level": 2,
+        "title": "确定协议",
+        "slug": "确定协议",
+        "link": "#确定协议",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "案例",
+        "slug": "案例",
+        "link": "#案例",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "internal/interaction 结构",
+        "slug": "internal-interaction-结构",
+        "link": "#internal-interaction-结构",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "新协议",
+        "slug": "新协议",
+        "link": "#新协议",
+        "children": [
+          {
+            "level": 3,
+            "title": "向信息同步协程发送数据",
+            "slug": "向信息同步协程发送数据",
+            "link": "#向信息同步协程发送数据",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -3794,8 +4058,106 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第55节",
+    "title": "第55节 0000-template.md",
     "headers": [
+      {
+        "level": 2,
+        "title": "Meta",
+        "slug": "meta",
+        "link": "#meta",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📇Topics",
+        "slug": "📇topics",
+        "link": "#📇topics",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Summary",
+        "slug": "summary",
+        "link": "#summary",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Definitions",
+        "slug": "definitions",
+        "link": "#definitions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Motivation",
+        "slug": "motivation",
+        "link": "#motivation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "What it is",
+        "slug": "what-it-is",
+        "link": "#what-it-is",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "How it Works",
+        "slug": "how-it-works",
+        "link": "#how-it-works",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Migration",
+        "slug": "migration",
+        "link": "#migration",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Drawbacks",
+        "slug": "drawbacks",
+        "link": "#drawbacks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Alternatives",
+        "slug": "alternatives",
+        "link": "#alternatives",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Prior Art",
+        "slug": "prior-art",
+        "link": "#prior-art",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Unresolved Questions",
+        "slug": "unresolved-questions",
+        "link": "#unresolved-questions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Spec. Changes (OPTIONAL)",
+        "slug": "spec-changes-optional",
+        "link": "#spec-changes-optional",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "History",
+        "slug": "history",
+        "link": "#history",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
