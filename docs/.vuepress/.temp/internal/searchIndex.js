@@ -4171,8 +4171,29 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第56节",
+    "title": "第56节 adopters",
     "headers": [
+      {
+        "level": 2,
+        "title": "❓ Why are adopters needed",
+        "slug": "❓-why-are-adopters-needed",
+        "link": "#❓-why-are-adopters-needed",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📇 We'd like you to leave a message",
+        "slug": "📇-we-d-like-you-to-leave-a-message",
+        "link": "#📇-we-d-like-you-to-leave-a-message",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "OpenIM",
+        "slug": "openim",
+        "link": "#openim",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",

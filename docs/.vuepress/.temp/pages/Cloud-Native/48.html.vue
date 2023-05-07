@@ -27,6 +27,8 @@
 
 <span class="token punctuation">{</span>twitter<span class="token punctuation">}</span> -<span class="token operator">></span> 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
+<p><strong>Google docs:</strong></p>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vTqvLkjWjchvA-TBGMNVsbjKx_aqZedOQ-No5zm_2kmiMuluK3zy1VlVAY2y3hgbWvw6zF1ZLLib8l1/pub?embedded=true"></iframe>
 <h1 id="contributing-to-name" tabindex="-1"><a class="header-anchor" href="#contributing-to-name" aria-hidden="true">#</a> Contributing to {name}</h1>
 <p>So, you want to hack on {name}? Yay!</p>
 <p>First of all, thank you for considering contributing to our project! We appreciate your time and effort, and we value any contribution, whether it's reporting a bug, suggesting a new feature, or submitting a pull request.</p>
@@ -111,7 +113,7 @@
 <p>To propose PR for the {name} item, we assume you have registered a GitHub ID. Then you could finish the preparation in the following steps:</p>
 <ol>
 <li>
-<p>Fork the repository({name})</p>
+<p><strong>Fork</strong> the repository({name})</p>
 </li>
 <li>
 <p><strong>CLONE</strong> your own repository to master locally. Use <code v-pre>git clone https://github.com/&lt;your-username&gt;/{name}.git</code> to clone repository to your local machine. Then you can create new branches to finish the change you wish to make.</p>
@@ -120,7 +122,7 @@
 <p><strong>Set Remote</strong> upstream to be <code v-pre>https://github.com/{github}.git</code> using the following two commands:</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">git</span> remote <span class="token function">add</span> upstream https://github.com/<span class="token punctuation">{</span>github<span class="token punctuation">}</span>.git
 ❯ <span class="token function">git</span> remote set-url <span class="token parameter variable">--push</span> upstream no-pushing
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>With this remote setting, you can check your git remote configuration like this:</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>With this remote setting, you can check your <strong>git remote configuration</strong> like this:</p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>❯ git remote <span class="token operator">-</span>v
 origin     https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span><span class="token operator">&lt;</span>your<span class="token operator">-</span>username<span class="token operator">></span><span class="token operator">/</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">.</span>git <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
 origin     https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span><span class="token operator">&lt;</span>your<span class="token operator">-</span>username<span class="token operator">></span><span class="token operator">/</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">.</span>git <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
@@ -140,14 +142,14 @@ upstream   no<span class="token operator">-</span>pushing <span class="token pun
 <li>
 <p><strong>Commit your changes</strong> to your local branch, lint before committing and commit with sign-off</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">git</span> rebase upstream/main
-❯ <span class="token function">make</span> <span class="token function">link</span>	  <span class="token comment"># golangci-lint run -c .golangci.yml</span>
+❯ <span class="token function">make</span> lint	  <span class="token comment"># golangci-lint run -c .golangci.yml</span>
 ❯ <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>  <span class="token comment"># add changes to staging</span>
 ❯ <span class="token function">git</span> commit <span class="token parameter variable">-a</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-m</span> <span class="token string">"message for your changes"</span> <span class="token comment"># -s adds a Signed-off-by trailer</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>
 <p><strong>Push your branch</strong>  to your forked repository, it is recommended to have only one commit for a <strong>PR</strong>.</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># sync up with upstream</span>
-❯ <span class="token function">git</span> fetch upstream main
+❯ <span class="token function">git</span> fetch upstream
 ❯ <span class="token function">git</span> rebase upstream/main
 ❯ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span>	<span class="token operator">&lt;</span>commit-id<span class="token operator">></span> <span class="token comment"># rebase with interactive mode to squash your commits into a single one</span>
 ❯ <span class="token function">git</span> push <span class="token comment"># push to the remote repository, if it's a first time push, run git push --set-upstream origin &lt;new-branch></span>
@@ -228,7 +230,7 @@ upstream   no<span class="token operator">-</span>pushing <span class="token pun
 </ul>
 <p><strong>⚠️ DCO check:</strong></p>
 <p>We have a <a href="https://github.com/apps/dco" target="_blank" rel="noopener noreferrer">DCO check<ExternalLinkIcon/></a> which runs on every <strong>PR</strong> to verify that the commit has been signed off.</p>
-<p>Once <a href="https://github.com/apps/dco#usage" target="_blank" rel="noopener noreferrer">installed<ExternalLinkIcon/></a>, this integration will set the <a href="https://developer.github.com/v3/repos/statuses/" target="_blank" rel="noopener noreferrer">status<ExternalLinkIcon/></a> to <code v-pre>failed</code> if commits in a Pull Request do not contain a valid <code v-pre>Signed-off-by</code> line.</p>
+<p>Once <a href="https://github.com/apps/dco#usage" target="_blank" rel="noopener noreferrer">installed<ExternalLinkIcon/></a>, this integration will set the <a href="https://developer.github.com/v3/repos/statuses/" target="_blank" rel="noopener noreferrer">status<ExternalLinkIcon/></a> to <code v-pre>failed</code> if commits in a <strong>Pull Request</strong> do not contain a valid <code v-pre>Signed-off-by</code> line.</p>
 <p>To sign off the last commit you made, you can use:</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">git</span> commit <span class="token parameter variable">--amend</span> <span class="token parameter variable">--signoffgit</span> commit <span class="token parameter variable">--amend</span> <span class="token parameter variable">--signoff</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>Contributors <em>sign-off</em>  that they adhere to these requirements by adding a <code v-pre>Signed-off-by</code> line to commit messages.</p>

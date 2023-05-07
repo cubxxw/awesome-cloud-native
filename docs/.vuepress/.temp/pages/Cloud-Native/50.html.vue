@@ -10,7 +10,7 @@
 <hr>
 <p>[TOC]</p>
 <h2 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h2>
-<p>很早之前就了解到了 Auto-GPT，作为 GitHub 上近期增长速度最快的项目（没有之一），Auto-GPT 在开源社区可谓是人尽皆知，甚至 star 已经很快就超过 Kubernetes，目前有 123k star。</p>
+<p>很早之前就了解到了 Auto-GPT，作为 GitHub 上近期增长速度最快的项目（没有之一），Auto-GPT 在开源社区可谓是人尽皆知，甚至 star 已经很快就超过 Kubernetes，目前有 <code v-pre>125k star</code>。</p>
 <p>得益于 Auto-GPT 的出色技术，可以高精度和高效率地自动执行许多任务。 它利用了 GPT-4 强大的自然语言处理功能。</p>
 <p>我们甚至可以通过它来实现更多的自动化的工作，比如说前一节 <RouterLink to="/Cloud-Native/49.html">在 Sealos 上开发一款 AI 自动云原生化项目自动上线工具</RouterLink></p>
 <h2 id="什么是-autogpt" tabindex="-1"><a class="header-anchor" href="#什么是-autogpt" aria-hidden="true">#</a> 什么是 AutoGPT</h2>

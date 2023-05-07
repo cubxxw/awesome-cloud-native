@@ -10,8 +10,8 @@
 <hr>
 <p>[TOC]</p>
 <h2 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h2>
-<p>我也是 k8sgpt 社区的一员，参与 k8sgpt 社区的打造和维护，它让 Kubernetes 和 AI 结合起来，非常棒~</p>
-<p>这是它的GitHub 地址：</p>
+<p>我也是 k8sgpt 社区的一员，参与 <code v-pre>k8sgpt</code> 社区的打造和维护，它让 Kubernetes 和 AI 结合起来，非常棒~</p>
+<p>这是它的 GitHub 地址：</p>
 <ul>
 <li><a href="https://github.com/k8sgpt-ai/k8sgpt" target="_blank" rel="noopener noreferrer">k8sgpt<ExternalLinkIcon/></a></li>
 </ul>

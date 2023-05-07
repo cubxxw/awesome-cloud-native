@@ -89,7 +89,9 @@ This section is not intended to be binding, but as discussion of an RFC unfolds,
 <h2 id="history" tabindex="-1"><a class="header-anchor" href="#history" aria-hidden="true">#</a> History</h2>
 <!--
 ## Amended
+
 ### Meta
+
 [meta-1]: #meta-1
 - Name: (fill in the amendment name: Variable Rename)
 - Start Date: (fill in today's date: YYYY-MM-DD)

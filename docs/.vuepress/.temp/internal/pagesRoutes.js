@@ -51,7 +51,7 @@ export const pagesRoutes = [
   ["v-145c2358","/Cloud-Native/53.html",{"title":"第53节 CloudBuildAI"},["/Cloud-Native/53","/Cloud-Native/53.md"]],
   ["v-10f2721a","/Cloud-Native/54.html",{"title":"第54节 OpenIM 重构确定协议"},["/Cloud-Native/54","/Cloud-Native/54.md"]],
   ["v-0d88c0dc","/Cloud-Native/55.html",{"title":"第55节 0000-template.md"},["/Cloud-Native/55","/Cloud-Native/55.md"]],
-  ["v-0a1f0f9e","/Cloud-Native/56.html",{"title":"第56节"},["/Cloud-Native/56","/Cloud-Native/56.md"]],
+  ["v-0a1f0f9e","/Cloud-Native/56.html",{"title":"第56节 adopters"},["/Cloud-Native/56","/Cloud-Native/56.md"]],
   ["v-06b55e60","/Cloud-Native/57.html",{"title":"第57节"},["/Cloud-Native/57","/Cloud-Native/57.md"]],
   ["v-034bad22","/Cloud-Native/58.html",{"title":"第58节"},["/Cloud-Native/58","/Cloud-Native/58.md"]],
   ["v-000f020e","/Cloud-Native/59.html",{"title":"第59节"},["/Cloud-Native/59","/Cloud-Native/59.md"]],
