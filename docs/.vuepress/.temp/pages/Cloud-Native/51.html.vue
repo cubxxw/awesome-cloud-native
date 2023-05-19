@@ -105,6 +105,14 @@
 </tr>
 </tbody>
 </table>
+<h2 id="快速开始" tabindex="-1"><a class="header-anchor" href="#快速开始" aria-hidden="true">#</a> 快速开始</h2>
+<p>目前默认的AI提供商是OpenAI，您将需要从OpenAI生成API密钥</p>
+<p>运行 <code v-pre>k8sgpt auth new</code> 在k8sgpt中设置。</p>
+<p>运行 <code v-pre>k8sgpt filters</code> 以管理分析仪使用的活动过滤器。默认情况下，在分析期间执行所有过滤器。</p>
+<ul>
+<li>运行 <code v-pre>k8sgpt analyze</code> 以运行扫描。</li>
+<li>并使用 <code v-pre>k8sgpt analyze --explain</code> 获取有关问题的更详细说明。</li>
+</ul>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '50.md' style='float:left'>⬆️上一节🔗  </a><a href = '52.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

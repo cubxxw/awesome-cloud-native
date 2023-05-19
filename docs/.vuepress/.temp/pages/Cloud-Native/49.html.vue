@@ -15,7 +15,7 @@
 <li><a href="https://github.com/labring/sealos" target="_blank" rel="noopener noreferrer">GitHub 地址<ExternalLinkIcon/></a></li>
 </ul>
 <h3 id="技术领域" tabindex="-1"><a class="header-anchor" href="#技术领域" aria-hidden="true">#</a> 技术领域：</h3>
-<p>熟悉 golang, Docker kubernetes 等技术，了解 chatGPT autoGPT 等AI技术的使用</p>
+<p>熟悉 golang、Docker、kubernetes 等技术，了解 chatGPT、autoGPT 等AI技术的使用</p>
 <h3 id="开源协议" tabindex="-1"><a class="header-anchor" href="#开源协议" aria-hidden="true">#</a> 开源协议：</h3>
 <ul>
 <li>apache-2</li>

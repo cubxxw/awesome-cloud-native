@@ -9,6 +9,11 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
+<p>🔮 在我的 Slack 工作区中，集成了多个 AI，分别有 ChatGPT 4、ChatGPT 3.5、Claude ……</p>
+<p>我们可以通过 Slack 免费并且无限制的和 AI 交互，欢迎大家加入到 Slack，这里是 链接：</p>
+<p><a href="https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ" target="_blank" rel="noopener noreferrer">https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ<ExternalLinkIcon/></a></p>
+<p><img src="http://sm.nsddd.top/sm202305142151717.png" alt="image-20230514215132365"></p>
 <h2 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h2>
 <p>很早之前就了解到了 Auto-GPT，作为 GitHub 上近期增长速度最快的项目（没有之一），Auto-GPT 在开源社区可谓是人尽皆知，甚至 star 已经很快就超过 Kubernetes，目前有 <code v-pre>125k star</code>。</p>
 <p>得益于 Auto-GPT 的出色技术，可以高精度和高效率地自动执行许多任务。 它利用了 GPT-4 强大的自然语言处理功能。</p>

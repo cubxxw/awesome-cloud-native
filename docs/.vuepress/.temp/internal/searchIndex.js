@@ -3356,9 +3356,9 @@ export const searchIndex = [
       },
       {
         "level": 2,
-        "title": "Code of ConductCode of Conduct",
-        "slug": "code-of-conductcode-of-conduct",
-        "link": "#code-of-conductcode-of-conduct",
+        "title": "Code of Conduct",
+        "slug": "code-of-conduct",
+        "link": "#code-of-conduct",
         "children": []
       },
       {
@@ -3766,6 +3766,13 @@ export const searchIndex = [
     "headers": [
       {
         "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "介绍",
         "slug": "介绍",
         "link": "#介绍",
@@ -3871,6 +3878,13 @@ export const searchIndex = [
         "title": "介绍",
         "slug": "介绍",
         "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "快速开始",
+        "slug": "快速开始",
+        "link": "#快速开始",
         "children": []
       },
       {
@@ -4058,7 +4072,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第55节 0000-template.md",
+    "title": "第55节 RFC 模板设计 0000-template.md",
     "headers": [
       {
         "level": 2,
@@ -4207,8 +4221,86 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第57节",
+    "title": "第57节 提案 sealer 构建工程设计",
     "headers": [
+      {
+        "level": 2,
+        "title": "起因",
+        "slug": "起因",
+        "link": "#起因",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "案例",
+        "slug": "案例",
+        "link": "#案例",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "模块方案",
+        "slug": "模块方案",
+        "link": "#模块方案",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "makefile",
+        "slug": "makefile",
+        "link": "#makefile",
+        "children": [
+          {
+            "level": 3,
+            "title": "可观测的编译信息",
+            "slug": "可观测的编译信息",
+            "link": "#可观测的编译信息",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "工具包",
+            "slug": "工具包",
+            "link": "#工具包",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "工具说明",
+            "slug": "工具说明",
+            "link": "#工具说明",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "设计技巧",
+            "slug": "设计技巧",
+            "link": "#设计技巧",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "存在的问题",
+            "slug": "存在的问题",
+            "link": "#存在的问题",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "构建脚本优化",
+            "slug": "构建脚本优化",
+            "link": "#构建脚本优化",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "CICD actions 的改进策略",
+            "slug": "cicd-actions-的改进策略",
+            "link": "#cicd-actions-的改进策略",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4222,8 +4314,108 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第58节",
+    "title": "第58节 lychee 实现 docs 检查",
     "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "安装",
+        "slug": "安装",
+        "link": "#安装",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用",
+        "slug": "使用",
+        "link": "#使用",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker Usage",
+        "slug": "docker-usage",
+        "link": "#docker-usage",
+        "children": [
+          {
+            "level": 3,
+            "title": "GitHub Token",
+            "slug": "github-token",
+            "link": "#github-token",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Commandline Parameter参数",
+            "slug": "commandline-parameter参数",
+            "link": "#commandline-parameter参数",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "错误码 （Exit codes）",
+            "slug": "错误码-exit-codes",
+            "link": "#错误码-exit-codes",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Ignoring links",
+            "slug": "ignoring-links",
+            "link": "#ignoring-links",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Caching",
+            "slug": "caching",
+            "link": "#caching",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "用作自己的库",
+        "slug": "用作自己的库",
+        "link": "#用作自己的库",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "actions",
+        "slug": "actions",
+        "link": "#actions",
+        "children": [
+          {
+            "level": 3,
+            "title": "Usage",
+            "slug": "usage",
+            "link": "#usage",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Alternative approach (替代方法)",
+            "slug": "alternative-approach-替代方法",
+            "link": "#alternative-approach-替代方法",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "标志",
+        "slug": "标志",
+        "link": "#标志",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4237,8 +4429,92 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第59节",
+    "title": "第59节 [RFC #0001] OpenIMSDK cicd robot machine proposal",
     "headers": [
+      {
+        "level": 2,
+        "title": "Meta",
+        "slug": "meta",
+        "link": "#meta",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📇Topics",
+        "slug": "📇topics",
+        "link": "#📇topics",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Summary",
+        "slug": "summary",
+        "link": "#summary",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Definitions",
+        "slug": "definitions",
+        "link": "#definitions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Motivation",
+        "slug": "motivation",
+        "link": "#motivation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "What it is",
+        "slug": "what-it-is",
+        "link": "#what-it-is",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "How it Works",
+        "slug": "how-it-works",
+        "link": "#how-it-works",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Migration",
+        "slug": "migration",
+        "link": "#migration",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Drawbacks",
+        "slug": "drawbacks",
+        "link": "#drawbacks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Alternatives",
+        "slug": "alternatives",
+        "link": "#alternatives",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Prior Art",
+        "slug": "prior-art",
+        "link": "#prior-art",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Unresolved Questions",
+        "slug": "unresolved-questions",
+        "link": "#unresolved-questions",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4360,8 +4636,64 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第60节",
+    "title": "第60节 高级的 Githook 设计",
     "headers": [
+      {
+        "level": 2,
+        "title": "社区不规范怎么办",
+        "slug": "社区不规范怎么办",
+        "link": "#社区不规范怎么办",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "如何设计",
+        "slug": "如何设计",
+        "link": "#如何设计",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "如何使用",
+        "slug": "如何使用",
+        "link": "#如何使用",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "slug": "contents",
+        "link": "#contents",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "可复用的安装脚本",
+        "slug": "可复用的安装脚本",
+        "link": "#可复用的安装脚本",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "git commit 设置",
+        "slug": "git-commit-设置",
+        "link": "#git-commit-设置",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "push",
+        "slug": "push",
+        "link": "#push",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "actions",
+        "slug": "actions",
+        "link": "#actions",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4375,7 +4707,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第61节",
+    "title": "第61节 release 设计与实现",
     "headers": [
       {
         "level": 2,
@@ -4390,8 +4722,51 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第62节",
+    "title": "第62节 对日志的处理 — 自动生成 CHANGELOG",
     "headers": [
+      {
+        "level": 2,
+        "title": "why",
+        "slug": "why",
+        "link": "#why",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "版本号",
+        "slug": "版本号",
+        "link": "#版本号",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "保持行为的一致性",
+        "slug": "保持行为的一致性",
+        "link": "#保持行为的一致性",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "git chglog",
+        "slug": "git-chglog",
+        "link": "#git-chglog",
+        "children": [
+          {
+            "level": 3,
+            "title": "快速开始",
+            "slug": "快速开始",
+            "link": "#快速开始",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用帮助",
+            "slug": "使用帮助",
+            "link": "#使用帮助",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4405,8 +4780,93 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第63节",
+    "title": "第63节 README 模板和设计",
     "headers": [
+      {
+        "level": 2,
+        "title": "Awesome features",
+        "slug": "awesome-features",
+        "link": "#awesome-features",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Quickstart",
+        "slug": "quickstart",
+        "link": "#quickstart",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Contributing & Development",
+        "slug": "contributing-development",
+        "link": "#contributing-development",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "community meeting",
+        "slug": "community-meeting",
+        "link": "#community-meeting",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "about OpenIM",
+        "slug": "about-openim",
+        "link": "#about-openim",
+        "children": [
+          {
+            "level": 3,
+            "title": "common",
+            "slug": "common",
+            "link": "#common",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "OpenIM Links",
+            "slug": "openim-links",
+            "link": "#openim-links",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "SDKs",
+            "slug": "sdks",
+            "link": "#sdks",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Demos",
+            "slug": "demos",
+            "link": "#demos",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Used By",
+        "slug": "used-by",
+        "link": "#used-by",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "License",
+        "slug": "license",
+        "link": "#license",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Thanks to our contributors!",
+        "slug": "thanks-to-our-contributors",
+        "link": "#thanks-to-our-contributors",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -4420,14 +4880,107 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第64节",
+    "title": "第64节 automation: 为飞书文档制作后台",
     "headers": [
+      {
+        "level": 2,
+        "title": "开始",
+        "slug": "开始",
+        "link": "#开始",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "解决方案",
+        "slug": "解决方案",
+        "link": "#解决方案",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "架构图",
+        "slug": "架构图",
+        "link": "#架构图",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "目录设计",
+        "slug": "目录设计",
+        "link": "#目录设计",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "飞书 API",
+        "slug": "飞书-api",
+        "link": "#飞书-api",
+        "children": [
+          {
+            "level": 3,
+            "title": "文档",
+            "slug": "文档",
+            "link": "#文档",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "表格",
+            "slug": "表格",
+            "link": "#表格",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "接入指南",
+            "slug": "接入指南",
+            "link": "#接入指南",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "飞书创建 robot 的步骤",
+            "slug": "飞书创建-robot-的步骤",
+            "link": "#飞书创建-robot-的步骤",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "目录说明",
+        "slug": "目录说明",
+        "link": "#目录说明",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "表设计",
+        "slug": "表设计",
+        "link": "#表设计",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "开源社的一些链接",
+            "slug": "开源社的一些链接",
+            "link": "#开源社的一些链接",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "导航",
+            "slug": "导航",
+            "link": "#导航",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/Cloud-Native/64.html",
@@ -4435,8 +4988,22 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第65节",
+    "title": "第65节 slack API 开发",
     "headers": [
+      {
+        "level": 2,
+        "title": "介绍",
+        "slug": "介绍",
+        "link": "#介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "实战：一个简单的Slack Webhook应用",
+        "slug": "实战-一个简单的slack-webhook应用",
+        "link": "#实战-一个简单的slack-webhook应用",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -13945,8 +14512,144 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第70节",
+    "title": "第70节 Kubernetes 社区规范",
     "headers": [
+      {
+        "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Community",
+        "slug": "community",
+        "link": "#community",
+        "children": [
+          {
+            "level": 3,
+            "title": "Makefile",
+            "slug": "makefile",
+            "link": "#makefile",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Kubernetes增强建议（KEP）",
+        "slug": "kubernetes增强建议-kep",
+        "link": "#kubernetes增强建议-kep",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "第一次参与 Kubernetes",
+        "slug": "第一次参与-kubernetes",
+        "link": "#第一次参与-kubernetes",
+        "children": [
+          {
+            "level": 3,
+            "title": "修改自己的 kubectl fork",
+            "slug": "修改自己的-kubectl-fork",
+            "link": "#修改自己的-kubectl-fork",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Find a good first topic",
+            "slug": "find-a-good-first-topic",
+            "link": "#find-a-good-first-topic",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Github中的问题分配",
+            "slug": "github中的问题分配",
+            "link": "#github中的问题分配",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "选择合适的 sig",
+            "slug": "选择合适的-sig",
+            "link": "#选择合适的-sig",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "SIG专用贡献指南",
+            "slug": "sig专用贡献指南",
+            "link": "#sig专用贡献指南",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Kubernetes 分类指南",
+        "slug": "kubernetes-分类指南",
+        "link": "#kubernetes-分类指南",
+        "children": [
+          {
+            "level": 3,
+            "title": "权限和机器人",
+            "slug": "权限和机器人",
+            "link": "#权限和机器人",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "标签分类",
+            "slug": "标签分类",
+            "link": "#标签分类",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "进行搜索",
+            "slug": "进行搜索",
+            "link": "#进行搜索",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "按类型分类问题",
+            "slug": "按类型分类问题",
+            "link": "#按类型分类问题",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Help Wanted/Good First Issues",
+            "slug": "help-wanted-good-first-issues",
+            "link": "#help-wanted-good-first-issues",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Kind Labels",
+            "slug": "kind-labels",
+            "link": "#kind-labels",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Define Priority",
+            "slug": "define-priority",
+            "link": "#define-priority",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "找到并设置正确的SIG来拥有问题",
+            "slug": "找到并设置正确的sig来拥有问题",
+            "link": "#找到并设置正确的sig来拥有问题",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -13960,14 +14663,130 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第71节",
+    "title": "第71节 Prow及其生态系统",
     "headers": [
+      {
+        "level": 2,
+        "title": "why?",
+        "slug": "why",
+        "link": "#why",
+        "children": [
+          {
+            "level": 3,
+            "title": "hello world",
+            "slug": "hello-world",
+            "link": "#hello-world",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "查看测试结果",
+            "slug": "查看测试结果",
+            "link": "#查看测试结果",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "功能和特性",
+        "slug": "功能和特性",
+        "link": "#功能和特性",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Documentation",
+        "slug": "documentation",
+        "link": "#documentation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用自己的Prow部署",
+        "slug": "使用自己的prow部署",
+        "link": "#使用自己的prow部署",
+        "children": [
+          {
+            "level": 3,
+            "title": "GitHub APP",
+            "slug": "github-app",
+            "link": "#github-app",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "如何做一个 github-bot",
+        "slug": "如何做一个-github-bot",
+        "link": "#如何做一个-github-bot",
+        "children": [
+          {
+            "level": 3,
+            "title": "actions 关闭和操作 issue",
+            "slug": "actions-关闭和操作-issue",
+            "link": "#actions-关闭和操作-issue",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "再来一个：Issues Translate Chinese Action",
+            "slug": "再来一个-issues-translate-chinese-action",
+            "link": "#再来一个-issues-translate-chinese-action",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "如何使用指定的GitHub robot 代替 GitHub actions",
+            "slug": "如何使用指定的github-robot-代替-github-actions",
+            "link": "#如何使用指定的github-robot-代替-github-actions",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Lighthouse",
+            "slug": "lighthouse",
+            "link": "#lighthouse",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "基础满足",
+            "slug": "基础满足",
+            "link": "#基础满足",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
         "slug": "end-链接",
         "link": "#end-链接",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "Link",
+            "slug": "link",
+            "link": "#link",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "参考文章",
+            "slug": "参考文章",
+            "link": "#参考文章",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "导航",
+            "slug": "导航",
+            "link": "#导航",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/Cloud-Native-k8s/71.html",
