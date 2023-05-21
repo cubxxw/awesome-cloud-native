@@ -38,6 +38,65 @@
 <ul>
 <li><RouterLink to="/Cloud-Native/50.html">详细介绍</RouterLink></li>
 </ul>
+<h2 id="go-gpt3" tabindex="-1"><a class="header-anchor" href="#go-gpt3" aria-hidden="true">#</a> go-gpt3</h2>
+<p>go-gpt3 是一个 OpenAI GPT-3 API 客户端，使 <code v-pre>Go/Golang</code> 程序能够与 <code v-pre>gpt3 API</code> 进行交互。</p>
+<p>支持使用带或不带流式处理的完成 API。</p>
+<h3 id="user" tabindex="-1"><a class="header-anchor" href="#user" aria-hidden="true">#</a> user</h3>
+<p>调用主 gpt-3 API 的简单用法，完成：</p>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>client <span class="token operator">:=</span> gpt3<span class="token punctuation">.</span><span class="token function">NewClient</span><span class="token punctuation">(</span>apiKey<span class="token punctuation">)</span>
+resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> client<span class="token punctuation">.</span><span class="token function">Completion</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> gpt3<span class="token punctuation">.</span>CompletionRequest<span class="token punctuation">{</span>
+    Prompt<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"2, 3, 5, 7, 11,"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text<span class="token punctuation">)</span>
+<span class="token comment">// prints " 13, 17, 19, 23, 29, 31", etc</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="documentation" tabindex="-1"><a class="header-anchor" href="#documentation" aria-hidden="true">#</a> Documentation</h3>
+<p>尝试这些示例中的任何一种，将内容放入 <code v-pre>main.go</code> 并运行 <code v-pre>go run main.go</code> 。我建议使用 go 模块，在这种情况下，您还需要在测试存储库中运行 <code v-pre>go mod init</code> 。或者，您可以克隆此存储库并使用 <code v-pre>go run cmd/test/main.go</code> 运行测试脚本。</p>
+<p>但是我们知道，我们如果希望运行 chatgpt ，我们期望有一个 API</p>
+<p>这是和 AutoGPT 一样的：</p>
+<p>如下所示的 <code v-pre>.env</code> 文件才能使用这些示例：</p>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>API_KEY<span class="token operator">=</span><span class="token operator">&lt;</span>openAI API Key<span class="token operator">></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>💡简单的一个案例如下：</strong></p>
+<div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"context"</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"log"</span>
+	<span class="token string">"os"</span>
+
+	<span class="token string">"github.com/PullRequestInc/go-gpt3"</span>
+	<span class="token string">"github.com/joho/godotenv"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	godotenv<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	apiKey <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Getenv</span><span class="token punctuation">(</span><span class="token string">"API_KEY"</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> apiKey <span class="token operator">==</span> <span class="token string">""</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatalln</span><span class="token punctuation">(</span><span class="token string">"Missing API KEY"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	ctx <span class="token operator">:=</span> context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	client <span class="token operator">:=</span> gpt3<span class="token punctuation">.</span><span class="token function">NewClient</span><span class="token punctuation">(</span>apiKey<span class="token punctuation">)</span>
+
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> client<span class="token punctuation">.</span><span class="token function">Completion</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> gpt3<span class="token punctuation">.</span>CompletionRequest<span class="token punctuation">{</span>
+		Prompt<span class="token punctuation">:</span>    <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"The first thing you should know about javascript is"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+		MaxTokens<span class="token punctuation">:</span> gpt3<span class="token punctuation">.</span><span class="token function">IntPtr</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		Stop<span class="token punctuation">:</span>      <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"."</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+		Echo<span class="token punctuation">:</span>      <span class="token boolean">true</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatalln</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>Text<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过 <code v-pre>os.Getenv</code> 获取到环境变量的值，其中的环境变量使用的是 <code v-pre>API_KEY</code> 来进行设置</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">API_KEY</span><span class="token operator">=</span><span class="token string">"**********************************"</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="链接" tabindex="-1"><a class="header-anchor" href="#链接" aria-hidden="true">#</a> 链接</h2>
+<ul>
+<li><a href="https://github.com/sashabaranov/go-openai/" target="_blank" rel="noopener noreferrer">API<ExternalLinkIcon/></a></li>
+</ul>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '48.md' style='float:left'>⬆️上一节🔗  </a><a href = '50.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

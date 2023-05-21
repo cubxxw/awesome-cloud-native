@@ -154,6 +154,15 @@
 <li><a href="https://github.com/kaqijiang/Auto-GPT-ZH" target="_blank" rel="noopener noreferrer">Auto-GPT-ZH 自主 GPT4 实验<ExternalLinkIcon/></a></li>
 <li><a href="https://matt-rickard.com/a-high-level-llmops-architecture" target="_blank" rel="noopener noreferrer">高级 LLMOps 架构<ExternalLinkIcon/></a></li>
 </ul>
+<p>Some of the resources I used to create this project:</p>
+<ul>
+<li><a href="https://github.com/Significant-Gravitas/Auto-GPT" target="_blank" rel="noopener noreferrer">Significant-Gravitas/Auto-GPT<ExternalLinkIcon/></a> is the main inspiration for this project.</li>
+<li><a href="https://github.com/tiktoken-go/tokenizer" target="_blank" rel="noopener noreferrer">tiktoken-go/tokenizer<ExternalLinkIcon/></a> to count tokens before sending the prompt to OpenAI.</li>
+<li><a href="https://github.com/pavel-one/EdgeGPT-Go" target="_blank" rel="noopener noreferrer">pavel-one/EdgeGPT-Go<ExternalLinkIcon/></a> to connect to Bing Chat.</li>
+<li><a href="https://github.com/PullRequestInc/go-gpt3" target="_blank" rel="noopener noreferrer">PullRequestInc/go-gpt3<ExternalLinkIcon/></a> to send requests to OpenAI.</li>
+<li><a href="https://github.com/Danny-Dasilva/CycleTLS" target="_blank" rel="noopener noreferrer">Danny-Dasilva/CycleTLS<ExternalLinkIcon/></a> to mimic the browser when connecting to Bing Chat.</li>
+<li><a href="https://github.com/chromedp/chromedp" target="_blank" rel="noopener noreferrer">chromedp/chromedp<ExternalLinkIcon/></a> to control the browser from golang code.</li>
+</ul>
 <h3 id="连接" tabindex="-1"><a class="header-anchor" href="#连接" aria-hidden="true">#</a> 连接</h3>
 <ul><li><div><a href = '49.md' style='float:left'>⬆️上一节🔗  </a><a href = '51.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

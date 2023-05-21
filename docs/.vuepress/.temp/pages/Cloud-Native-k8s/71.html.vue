@@ -192,7 +192,7 @@ jobs:
 <p>[On issue]转换后的文件将作为拉取请求创建。</p>
 <p>[On pull request]转换后的文件将通过新提交添加到pull request中。</p>
 <p>换句话说，如果你继续评论一个问题，新的PR将不断被创建。如果你一直在PR上评论，新的提交将不断地被添加到该PR中。</p>
-<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>/gpt-translate README.md README_zh.md traditional-chinese
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>/gpt-translate README.md README_zh-CN.md traditional-chinese
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>actions 文件：</p>
 <p><a href="https://github.com/kubbot" target="_blank" rel="noopener noreferrer">@kubbot<ExternalLinkIcon/></a></p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token comment"># .github/workflows/gpt-translate.yml</span>

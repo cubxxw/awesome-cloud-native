@@ -13,7 +13,7 @@
 <p>什么是 lychee？</p>
 <p>⚡ 用Rust编写的快速、异步、基于流的链接检查器。</p>
 <p>在Markdown、HTML、reStructuredText或任何其他文本文件或网站中查找损坏的超链接和邮件地址！</p>
-<p>可作为命令行实用程序、库和GitHub Action使用。</p>
+<p>可作为命令行实用程序、库和 GitHub Action使用。</p>
 <h2 id="安装" tabindex="-1"><a class="header-anchor" href="#安装" aria-hidden="true">#</a> 安装</h2>
 <p>在基于APT/dpkg的Linux发行版（例如Debian、Ubuntu、Linux Mint和Kali Linux），以下命令将安装所有必需的构建依赖项，包括Rust工具链和 <code v-pre>cargo</code> ：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sSf</span> <span class="token string">'https://sh.rustup.rs'</span> <span class="token operator">|</span> <span class="token function">sh</span>
