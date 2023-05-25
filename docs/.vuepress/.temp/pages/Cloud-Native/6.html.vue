@@ -6,7 +6,7 @@
 <div><a href = '5.md' style='float:left'>⬆️上一节🔗  </a><a href = '7.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -71,7 +71,7 @@
 	<span class="token comment">//UpdateCert(certs []string) error</span>
     <span class="token function">NewK0sRuntime</span><span class="token punctuation">(</span>cluster <span class="token operator">*</span>v2<span class="token punctuation">.</span>Cluster<span class="token punctuation">)</span><span class="token punctuation">(</span>runtime<span class="token punctuation">.</span>Installer<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> 
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><em><strong>demo:</strong> <a href="https://github.com/3293172751/sealer-runtime-demo" target="_blank" rel="noopener noreferrer">🧷 Runtime interface demonstration<ExternalLinkIcon/></a></em></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><em><strong>demo:</strong> <a href="https://github.com/cubxxw/sealer-runtime-demo" target="_blank" rel="noopener noreferrer">🧷 Runtime interface demonstration<ExternalLinkIcon/></a></em></p>
 <h2 id="achieve-interface" tabindex="-1"><a class="header-anchor" href="#achieve-interface" aria-hidden="true">#</a> achieve interface</h2>
 <ol>
 <li>Support k3s to init、join、upgrade、reset k3s cluster</li>

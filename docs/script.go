@@ -38,7 +38,7 @@ func main() {
 	// }
 	fmt.Println("欢迎使用xiongxinwei构建的脚本，" + "一键构建GitHub的文档结构\n" + "关于我：\n" +
 		"	+ 博客：http://nsddd.top\n" +
-		"	+ GitHub地址: https://github.com/3293172751")
+		"	+ GitHub地址: https://github.com/cubxxw")
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("请选择是否(yes\\no)创建目录")

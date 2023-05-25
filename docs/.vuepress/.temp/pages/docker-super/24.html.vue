@@ -1,5 +1,5 @@
 <template><div><ul>
-<li><a href="https://github.com/3293172751/awesome-cloud-native" target="_blank" rel="noopener noreferrer">🔥 开源地址<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cloud-native" target="_blank" rel="noopener noreferrer">🔥 开源地址<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第24节" tabindex="-1"><a class="header-anchor" href="#第24节" aria-hidden="true">#</a> 第24节</h1>
 <br>

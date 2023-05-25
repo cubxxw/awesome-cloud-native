@@ -17,7 +17,7 @@
 <p>云计算平台也称为<a href="https://baike.baidu.com/item/%E4%BA%91%E5%B9%B3%E5%8F%B0/3963188?fromModule=lemma_inlink" target="_blank" rel="noopener noreferrer">云平台<ExternalLinkIcon/></a>，是指基于硬件资源和软件资源的服务，提供计算、网络和存储能力。云计算平台可以划分为3类：以<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/9827490?fromModule=lemma_inlink" target="_blank" rel="noopener noreferrer">数据存储<ExternalLinkIcon/></a>为主的存储型云平台，以数据处理为主的计算型云平台以及计算和数据存储处理兼顾的<a href="https://baike.baidu.com/item/%E7%BB%BC%E5%90%88/3374369?fromModule=lemma_inlink" target="_blank" rel="noopener noreferrer">综合<ExternalLinkIcon/></a>云计算<a href="https://baike.baidu.com/item/%E5%B9%B3%E5%8F%B0/1064049?fromModule=lemma_inlink" target="_blank" rel="noopener noreferrer">平台<ExternalLinkIcon/></a>。</p>
 <h2 id="安装服务器并且远程登陆" tabindex="-1"><a class="header-anchor" href="#安装服务器并且远程登陆" aria-hidden="true">#</a> 安装服务器并且远程登陆</h2>
 <ul>
-<li><a href="https://github.com/3293172751/awesome-cs-course/blob/master/linux/README.md" target="_blank" rel="noopener noreferrer">Linux教程<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/linux/README.md" target="_blank" rel="noopener noreferrer">Linux教程<ExternalLinkIcon/></a></li>
 </ul>
 <h3 id="nginx安装和远程访问" tabindex="-1"><a class="header-anchor" href="#nginx安装和远程访问" aria-hidden="true">#</a> nginx安装和远程访问</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>yum install nginx

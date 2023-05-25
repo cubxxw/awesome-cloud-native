@@ -5,7 +5,7 @@
 <div><a href = '68.md' style='float:left'>⬆️上一节🔗  </a><a href = '70.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s，docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -22,7 +22,7 @@
 <tbody>
 <tr>
 <td style="text-align:left">WIP</td>
-<td style="text-align:left">Work in progress, do not merge yet.</td>
+<td style="text-align:left">Work in progress， do not merge yet.</td>
 <td style="text-align:left">开发中</td>
 </tr>
 <tr>
@@ -43,7 +43,7 @@
 <tr>
 <td style="text-align:left">RFC</td>
 <td style="text-align:left">request for comments.</td>
-<td style="text-align:left">我觉得这个想法很好, 我们来一起讨论下</td>
+<td style="text-align:left">我觉得这个想法很好， 我们来一起讨论下</td>
 </tr>
 <tr>
 <td style="text-align:left">IIRC</td>
@@ -67,7 +67,7 @@
 <p>k8s 使用 <code v-pre>owners</code> 文件的灵感来自于<a href="https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md" target="_blank" rel="noopener noreferrer">Chromium OWNERS文件<ExternalLinkIcon/></a></p>
 <p>owners 文件主要是为了解决代码审查过程中的问题：</p>
 <ol>
-<li>项目中代码审查的速度, 受到能够审查代码的人员数量的限制；</li>
+<li>项目中代码审查的速度， 受到能够审查代码的人员数量的限制；</li>
 <li>一个人的代码审查的质量受到他们对所审查代码的熟悉程度的限制。</li>
 </ol>
 <p><strong>owners：</strong></p>
@@ -76,9 +76,9 @@
 <ul>
 <li>approvers: 一组Github的用户名或者别名，他们能够 <code v-pre>/approve</code> 一个 PR</li>
 <li>labels: a list of GitHub labels to automatically apply to a PR</li>
-<li>options: a map of options for how to interpret this OWNERS file, currently only one:
+<li>options: a map of options for how to interpret this OWNERS file， currently only one:
 <ul>
-<li>no_parent_owners: defaults to <code v-pre>false</code> if not present; if <code v-pre>true</code>, exclude parent OWNERS files. Allows the use case where <code v-pre>a/deep/nested/OWNERS</code> file prevents <code v-pre>a/OWNERS</code> file from having any effect on <code v-pre>a/deep/nested/bit/of/code</code></li>
+<li>no_parent_owners: defaults to <code v-pre>false</code> if not present; if <code v-pre>true</code>， exclude parent OWNERS files. Allows the use case where <code v-pre>a/deep/nested/OWNERS</code> file prevents <code v-pre>a/OWNERS</code> file from having any effect on <code v-pre>a/deep/nested/bit/of/code</code></li>
 </ul>
 </li>
 <li>lreviewers: a list of GitHub usernames or aliases that are good candidates to <code v-pre>/lgtm</code> a PR</li>
@@ -107,17 +107,17 @@ reviewers:
 </ul>
 <p><strong>CODEOWNERS 文件和 OWNERS 文件主要区别是：</strong></p>
 <ol>
-<li>.CODEOWNERS 文件是 GitHub 提供的,它使用了 GitHub 的代码所有权功能。而 .OWNERS 文件是 Git 本身的一个约定,GitHub 识别并提供了支持。</li>
-<li>.CODEOWNERS 文件支持更加精细的模式匹配,可以匹配文件路径,文件扩展名,甚至文件内容。而 .OWNERS 只支持基本的文件路径匹配。</li>
-<li>.CODEOWNERS 中列出的审核者可以是个人用户,团队,也可以是外部的电子邮件地址。.OWNERS 只支持 GitHub 用户和团队。</li>
-<li>更新 .CODEOWNERS 文件会自动通知被指定为所有者的人员。而 .OWNERS 文件需要人工通知。</li>
-<li>CODEOWNERS文件中的审核者列表仅控制与文件相关的代码更改的审核者，而不是整个目录或仓库。当有人向仓库推送包含CODEOWNERS规则的文件更改时，GitHub会自动请求列出的审核者来review这些更改。</li>
-<li>OWNERs文件控制整个目录或仓库的审核者，而不仅仅是与文件相关的更改。当有人向仓库提交代码更改时，GitHub会根据OWNERS文件中的规则来确定哪些人需要审查和批准更改。</li>
+<li><code v-pre>CODEOWNERS</code>  文件是 GitHub 提供的，它使用了 GitHub 的代码所有权功能。而  <code v-pre>OWNERS</code>  文件是 Git 本身的一个约定，GitHub 识别并提供了支持。</li>
+<li><code v-pre>CODEOWNERS</code>  文件支持更加精细的模式匹配，可以匹配文件路径，文件扩展名，甚至文件内容。而  <code v-pre>OWNERS</code>  只支持基本的文件路径匹配。</li>
+<li><code v-pre>CODEOWNERS</code>  中列出的审核者可以是个人用户，团队，也可以是外部的电子邮件地址。 <code v-pre>OWNERS</code>  只支持 GitHub 用户和团队。</li>
+<li>更新  <code v-pre>CODEOWNERS</code>  文件会自动通知被指定为所有者的人员。而  <code v-pre>OWNERS</code>  文件需要人工通知。</li>
+<li><code v-pre>CODEOWNERS</code>文件中的审核者列表仅控制与文件相关的代码更改的审核者，而不是整个目录或仓库。当有人向仓库推送包含<code v-pre>CODEOWNERS</code>规则的文件更改时，GitHub会自动请求列出的审核者来review这些更改。</li>
+<li><code v-pre>OWNERs</code>文件控制整个目录或仓库的审核者，而不仅仅是与文件相关的更改。当有人向仓库提交代码更改时，GitHub会根据<code v-pre>OWNERS</code>文件中的规则来确定哪些人需要审查和批准更改。</li>
 </ol>
-<p>除此之外,这两个文件在作用上是完全相同的:指定目录或文件的审核责任人。</p>
+<p>除此之外，这两个文件在作用上是完全相同的:指定目录或文件的审核责任人。</p>
 <blockquote>
 <p><strong>Note</strong></p>
-<p>所以总体来说,建议优先使用 .CODEOWNERS 文件,因为它支持更丰富的功能,并且有 GitHub 的官方支持。.OWNERS 文件仅在需要兼容 Git 本身的情况下使用。两者也可以同时存在,GitHub 会同时识别。但如果有规则冲突,会以 .CODEOWNERS 文件为准。</p>
+<p>所以总体来说，建议优先使用  <code v-pre>CODEOWNERS</code>  文件，因为它支持更丰富的功能，并且有 GitHub 的官方支持。 <code v-pre>OWNERS</code>  文件仅在需要兼容 Git 本身的情况下使用。两者也可以同时存在，GitHub 会同时识别。但如果有规则冲突，会以  <code v-pre>CODEOWNERS</code>  文件为准。</p>
 </blockquote>
 <p><strong>CODEOWNERS 文件语法：</strong></p>
 <p>CODEOWNERS 文件通常包含两列:</p>
@@ -127,7 +127,7 @@ reviewers:
 <li><code v-pre>*.go</code> 匹配所有 <code v-pre>.go</code> 后缀的文件</li>
 <li><code v-pre>dir/</code> 匹配 <code v-pre>dir</code> 目录下的所有文件</li>
 </ul>
-<p>第二列是审核者列表,用于指定谁可以审核匹配的文件。可以是个人的 GitHub 用户名，也可以是团队名。例如:</p>
+<p>第二列是审核者列表，用于指定谁可以审核匹配的文件。可以是个人的 GitHub 用户名，也可以是团队名。例如:</p>
 <ul>
 <li><code v-pre>@octocat</code> 表示 GitHub 用户名为 <code v-pre>octocat</code> 的用户</li>
 <li><code v-pre>@github/team-name</code> 表示 GitHub 的 <code v-pre>team-name</code> 团队</li>

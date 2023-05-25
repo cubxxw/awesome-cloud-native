@@ -65,7 +65,7 @@
 <h2 id="docker在window下面安装mysql" tabindex="-1"><a class="header-anchor" href="#docker在window下面安装mysql" aria-hidden="true">#</a> docker在window下面安装MySQL</h2>
 <div class="custom-container warning"><p class="custom-container-title">地址</p>
 <ul>
-<li><a href="https://github.com/3293172751/awesome-cs-course/blob/master/mysql/README.md" target="_blank" rel="noopener noreferrer">这篇在mysql中讲解<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/mysql/README.md" target="_blank" rel="noopener noreferrer">这篇在mysql中讲解<ExternalLinkIcon/></a></li>
 </ul>
 </div>
 </div></template>

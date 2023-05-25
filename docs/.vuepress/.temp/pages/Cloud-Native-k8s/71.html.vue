@@ -225,7 +225,31 @@ jobs:
 <p>目前，Lighthouse支持标准的Prow插件，并处理将webhook推送到分支，然后在您选择的代理上触发管道执行。</p>
 <p>Lighthouse使用与Prow相同的 <code v-pre>config.yaml</code> 和 <code v-pre>plugins.yaml</code> 进行配置。</p>
 <h3 id="基础满足" tabindex="-1"><a class="header-anchor" href="#基础满足" aria-hidden="true">#</a> 基础满足</h3>
-<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<h3 id="创建-access-tokens" tabindex="-1"><a class="header-anchor" href="#创建-access-tokens" aria-hidden="true">#</a> 创建 access tokens</h3>
+<p>https://github.com/settings/tokens （<em>需要在 <code v-pre>.env</code> 里配置</em>）</p>
+<h3 id="创建-webhook" tabindex="-1"><a class="header-anchor" href="#创建-webhook" aria-hidden="true">#</a> 创建 webhook</h3>
+<p>https://github.com/用户名/项目名/settings/hooks/new</p>
+<ul>
+<li>Payload URL: <a href="http://www.example.com:8000/" target="_blank" rel="noopener noreferrer">www.example.com:8000<ExternalLinkIcon/></a></li>
+<li>Content type: application/json</li>
+<li>trigger: Send me everything.</li>
+<li>Secret: xxx （<em>需要在 .env 里配置</em>）</li>
+</ul>
+<h3 id="开发运行" tabindex="-1"><a class="header-anchor" href="#开发运行" aria-hidden="true">#</a> 开发运行</h3>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>npm install
+cp env .env
+vim .env
+npm start
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="部署" tabindex="-1"><a class="header-anchor" href="#部署" aria-hidden="true">#</a> 部署</h3>
+<p>本项目使用 <a href="https://github.com/Unitech/pm2" target="_blank" rel="noopener noreferrer">pm2<ExternalLinkIcon/></a> 进行服务管理，发布前请先全局安装 <a href="https://github.com/Unitech/pm2" target="_blank" rel="noopener noreferrer">pm2<ExternalLinkIcon/></a></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>npm install pm2 -g
+npm run deploy
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>后台启动该服务后，可以通过 <code v-pre>pm2 ls</code> 来查看服务名称为 <code v-pre>github-bot</code> 的运行状态。具体 <a href="https://github.com/Unitech/pm2" target="_blank" rel="noopener noreferrer">pm2<ExternalLinkIcon/></a> 使用，请访问：https://github.com/Unitech/pm2</p>
+<h3 id="日志系统说明" tabindex="-1"><a class="header-anchor" href="#日志系统说明" aria-hidden="true">#</a> 日志系统说明</h3>
+<p>本系统 <code v-pre>logger</code> 服务基于 <a href="https://github.com/log4js-node/log4js-node" target="_blank" rel="noopener noreferrer">log4js<ExternalLinkIcon/></a>。 在根目录的 <code v-pre>.env</code> 文件中有个参数 <code v-pre>LOG_TYPE</code> 默认为 <code v-pre>console</code>，参数值说明：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>console - 通过 console 输出log。
+file - 将所有相关log输出到更根目录的 `log` 文件夹中。
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <h3 id="link" tabindex="-1"><a class="header-anchor" href="#link" aria-hidden="true">#</a> Link</h3>
 <ul>
 <li><a href="https://docs.prow.k8s.io/docs/overview/" target="_blank" rel="noopener noreferrer">prow docs<ExternalLinkIcon/></a></li>

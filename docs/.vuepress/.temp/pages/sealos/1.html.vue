@@ -5,7 +5,7 @@
 <div><a href = '../README.md' style='float:left'>⬆️主目录🔗  </a><a href = '2.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">k8s、docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">k8s、docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -83,7 +83,7 @@
 </ol>
 <h3 id="💡-步骤" tabindex="-1"><a class="header-anchor" href="#💡-步骤" aria-hidden="true">#</a> 💡 步骤</h3>
 <ul>
-<li>[x] <a href="https://github.com/3293172751/awesome-cs-course/blob/master/Git/README.md" target="_blank" rel="noopener noreferrer">git的教程<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://github.com/cubxxw/awesome-cs-course/blob/master/Git/README.md" target="_blank" rel="noopener noreferrer">git的教程<ExternalLinkIcon/></a></li>
 </ul>
 <p>⬇️ 大致流程如下：</p>
 <ol>
@@ -117,7 +117,7 @@
 <p>您还可以查看<a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer">docusaurus<ExternalLinkIcon/></a>，以编写具有更丰富功能的文档。</p>
 <p><strong>1. 将“远程上游”设置为</strong>使用以下两个命令：<code v-pre>https://github.com/labring/sealos.git</code></p>
 <blockquote>
-<p><a href="https://github.com/3293172751/awesome-cs-course/blob/master/Git/markdown/git-adds.md" target="_blank" rel="noopener noreferrer">🧷 git添加远程仓库的两种方式<ExternalLinkIcon/></a></p>
+<p><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/Git/markdown/git-adds.md" target="_blank" rel="noopener noreferrer">🧷 git添加远程仓库的两种方式<ExternalLinkIcon/></a></p>
 </blockquote>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">git</span> remote <span class="token function">add</span> upstream https://github.com/labring/sealos.git
 <span class="token function">git</span> remote set-url <span class="token parameter variable">--push</span> upstream no-pushing
@@ -232,7 +232,7 @@ make build
 <p><img src="http://sm.nsddd.top/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
 <h3 id="远程连接" tabindex="-1"><a class="header-anchor" href="#远程连接" aria-hidden="true">#</a> 远程连接</h3>
 <ul>
-<li>[x] <a href="https://github.com/3293172751/awesome-cs-course/blob/master/linux/linux-web/7.md" target="_blank" rel="noopener noreferrer">远程连接 &amp; 免密远程~文档<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://github.com/cubxxw/awesome-cs-course/blob/master/linux/linux-web/7.md" target="_blank" rel="noopener noreferrer">远程连接 &amp; 免密远程~文档<ExternalLinkIcon/></a></li>
 </ul>
 <h3 id="遇到的坑和解决方案" tabindex="-1"><a class="header-anchor" href="#遇到的坑和解决方案" aria-hidden="true">#</a> 遇到的坑和解决方案</h3>
 <ul>
@@ -479,5 +479,3 @@ $ kubectl taint <span class="token function">node</span> <span class="token para
 </li>
 </ul>
 </div></template>
-
-

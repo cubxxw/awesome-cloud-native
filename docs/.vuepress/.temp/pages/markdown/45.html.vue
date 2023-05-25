@@ -54,7 +54,7 @@
 </table>
 <p><strong>配置实例：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>http://localhost:49154/
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>我们使用GitHub作为版本控制服务器，我会使用的是最近创建的项目，<a href="https://github.com/3293172751/cubgo-os" target="_blank" rel="noopener noreferrer">Go语言实现os<ExternalLinkIcon/></a>来进行演示</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>我们使用GitHub作为版本控制服务器，我会使用的是最近创建的项目，<a href="https://github.com/cubxxw/cubgo-os" target="_blank" rel="noopener noreferrer">Go语言实现os<ExternalLinkIcon/></a>来进行演示</p>
 <p><strong>创建任务名称：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>cubgo-os
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>选择自由风格：<code v-pre>Freestyle project</code></strong></p>

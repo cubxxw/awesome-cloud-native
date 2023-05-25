@@ -225,7 +225,7 @@ export default {
                 children: [
                   {
                     text: 'Github仓库',
-                    link: 'https://github.com/3293172751/cs-awesome-Block_Chain',
+                    link: 'https://github.com/cubxxw/awesome-cs-cloudnative-blockchain',
                     target: '_self',
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
@@ -246,7 +246,7 @@ export default {
                   },
                   {
                     text: '⛓️链学社组织',
-                    link: 'https://github.com/C-UB/',
+                    link: 'https://github.com/kubecub/',
                     target:'_blank',
                   },
                 ],

@@ -5,16 +5,16 @@
 <div><a href = '8.md' style='float:left'>⬆️上一节🔗  </a><a href = '10.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/3293172751/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
 <h2 id="code-module" tabindex="-1"><a class="header-anchor" href="#code-module" aria-hidden="true">#</a> code module</h2>
 <div class="custom-container tip"><p class="custom-container-title">ISSUES 1859</p>
 <p><a href="https://github.com/sealerio/sealer/issues/1859#top" target="_blank" rel="noopener noreferrer">feature] want to implement the k3s runtime module<ExternalLinkIcon/></a>#1859</p>
-<p><a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">3293172751<ExternalLinkIcon/></a> opened this issue 前天 · 4 comments</p>
-<p>What a good start <a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a>! Now i have some suggestions maybe make you more understand about sealer runtime.</p>
-<p>the Achieve Interface step is definitely correct. but it would be some misunderstand about k3s's cluterimage rootfs in your chapter  <em><strong>k3s - rootfs</strong></em> , i think we do not need to care too much about k3s install package distribution in this stage. I propose a step which is my learning path of sealer,FYI <a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a> .</p>
+<p><a href="https://github.com/cubxxw" target="_blank" rel="noopener noreferrer">3293172751<ExternalLinkIcon/></a> opened this issue 前天 · 4 comments</p>
+<p>What a good start <a href="https://github.com/cubxxw" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a>! Now i have some suggestions maybe make you more understand about sealer runtime.</p>
+<p>the Achieve Interface step is definitely correct. but it would be some misunderstand about k3s's cluterimage rootfs in your chapter  <em><strong>k3s - rootfs</strong></em> , i think we do not need to care too much about k3s install package distribution in this stage. I propose a step which is my learning path of sealer,FYI <a href="https://github.com/cubxxw" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a> .</p>
 <ul>
 <li>k8s runtiem interface 逻辑是什么?</li>
 <li>sealer 如何以及何时安装私人注册表?</li>
@@ -26,7 +26,7 @@
 <p>And you mentioned about the k3s installation [online\offline]. I have little confusions.
 If sqlite couldn't support cluster HA installation? How to specify the database?
 Another question is about install step. AFAIK, k3s support join node by <code v-pre>k3s agent</code> <code v-pre>k3s server</code>, so whether you tried this method?
-Last, k3s support custom private registry, how to config this? and whether k3s could support external CRI? <a href="https://github.com/3293172751" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a></p>
+Last, k3s support custom private registry, how to config this? and whether k3s could support external CRI? <a href="https://github.com/cubxxw" target="_blank" rel="noopener noreferrer">@3293172751<ExternalLinkIcon/></a></p>
 <p>最后，k3s支持自定义私有注册表，如何配置?k3是否可以支持外部CRI?</p>
 <p>🎉about [online\offline]</p>
 <p>🎉 about HA install and  single node</p>

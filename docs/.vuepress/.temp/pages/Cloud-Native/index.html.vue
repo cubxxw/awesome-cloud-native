@@ -1,22 +1,22 @@
 <template><div><div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>这将会是一个很特别的仓库</p>
-<p>喜欢一定要在<a href="https://github.com/3293172751/cs-awesome-Block_Chain" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a>上给个⭐</p>
+<p>喜欢一定要在<a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a>上给个⭐</p>
 </div>
 <h2 id="⭕学习k8s-云原生" tabindex="-1"><a class="header-anchor" href="#⭕学习k8s-云原生" aria-hidden="true">#</a> ⭕学习K8s &amp; 云原生~</h2>
 <blockquote>
 <p>基础：</p>
 <ul>
-<li><a href="https://github.com/3293172751/Block_Chain/blob/master/web/README.md" target="_blank" rel="noopener noreferrer">计算机网络 – TCP/IP – 抓包 – Linux网络编程<ExternalLinkIcon/></a> （有一点网络基础就好）</li>
-<li><a href="https://github.com/3293172751/CS_COURSE/blob/master/linux/README.md" target="_blank" rel="noopener noreferrer">有Linux的基础<ExternalLinkIcon/></a></li>
-<li><a href="https://github.com/3293172751/awesome-cs-course/blob/master/Git/README.md" target="_blank" rel="noopener noreferrer">有Git的基础<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/blob/master/web/README.md" target="_blank" rel="noopener noreferrer">计算机网络 – TCP/IP – 抓包 – Linux网络编程<ExternalLinkIcon/></a> （有一点网络基础就好）</li>
+<li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/linux/README.md" target="_blank" rel="noopener noreferrer">有Linux的基础<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/Git/README.md" target="_blank" rel="noopener noreferrer">有Git的基础<ExternalLinkIcon/></a></li>
 <li><a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker的基础<ExternalLinkIcon/></a></li>
 </ul>
 <p><strong>编程语言不限</strong></p>
 <ul>
-<li><a href="https://github.com/3293172751/Block_Chain/blob/master/TOC.md" target="_blank" rel="noopener noreferrer">🖱️GO 基础部分🔥<ExternalLinkIcon/></a></li>
-<li><a href="https://github.com/3293172751/Block_Chain/blob/master/go-web" target="_blank" rel="noopener noreferrer">🖱️GO web框架<ExternalLinkIcon/></a></li>
-<li><a href="https://github.com/3293172751/Block_Chain/blob/master/Gomd_super/README.md" target="_blank" rel="noopener noreferrer">🖱️Go语言100篇进阶🔥<ExternalLinkIcon/></a></li>
-<li><a href="https://github.com/3293172751/Block_Chain/blob/master/go-advancend/README.md" target="_blank" rel="noopener noreferrer">🖱️Go 高级篇<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/blob/master/TOC.md" target="_blank" rel="noopener noreferrer">🖱️GO 基础部分🔥<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/blob/master/go-web" target="_blank" rel="noopener noreferrer">🖱️GO web框架<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/blob/master/Gomd_super/README.md" target="_blank" rel="noopener noreferrer">🖱️Go语言100篇进阶🔥<ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/blob/master/go-advancend/README.md" target="_blank" rel="noopener noreferrer">🖱️Go 高级篇<ExternalLinkIcon/></a></li>
 </ul>
 <hr>
 </blockquote>
@@ -127,7 +127,7 @@
 <p><strong><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer">🫵参与贡献❤️❤️💕💕<ExternalLinkIcon/></a></strong></p>
 <p><strong>要求：</strong></p>
 <ul>
-<li><a href="https://github.com/3293172751/CS_COURSE/blob/master/markdown/README.md" target="_blank" rel="noopener noreferrer"><strong>你需要学会使用markdown🖱️</strong><ExternalLinkIcon/></a></li>
+<li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/markdown/README.md" target="_blank" rel="noopener noreferrer"><strong>你需要学会使用markdown🖱️</strong><ExternalLinkIcon/></a></li>
 <li><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/" target="_blank" rel="noopener noreferrer"><strong>符合Google代码规范</strong><ExternalLinkIcon/></a></li>
 </ul>
 <p>如果你也想对本项目做出贡献，那么你可以先把该项目进行 <code v-pre>fork</code> 或者 <code v-pre>git clone</code> 到本地，然后自己建立一个分支 <code v-pre>your-branch</code>，然后上传资料到 对应目录 下，图片信息可以上传到<code v-pre> /images</code>，然后更新 <code v-pre>README</code>。</p>
