@@ -68,7 +68,7 @@
 <li>GitHub将自动化与批量测试逻辑合并。</li>
 <li>用于查看作业、合并队列状态、动态生成的帮助信息等的前端。</li>
 <li>基于配置的源代码管理的自动部署。</li>
-<li>在源代码控制中配置的自动<code v-pre>GitHub org/repo</code>管理。</li>
+<li>在源代码控制中配置的自动 <code v-pre>GitHub org/repo</code> 管理。</li>
 <li>专为具有数十个存储库的多组织规模而设计。(The Kubernetes Prow实例仅使用1个GitHub bot令牌！）</li>
 <li>高可用性是在Kubernetes上运行的好处。（复制、负载平衡、滚动更新...）</li>
 <li>JSON结构化日志。</li>
@@ -82,8 +82,8 @@
 </ul>
 <p><strong>Getting started：我们分为三个大的板块</strong></p>
 <ul>
-<li>使用自己的Prow部署</li>
-<li>为Prow开发</li>
+<li>使用自己的 Prow 部署</li>
+<li>为 Prow 开发</li>
 <li>As a job author: <a href="https://docs.prow.k8s.io/docs/jobs/" target="_blank" rel="noopener noreferrer">ProwJobs<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="使用自己的prow部署" tabindex="-1"><a class="header-anchor" href="#使用自己的prow部署" aria-hidden="true">#</a> 使用自己的Prow部署</h2>
@@ -262,6 +262,7 @@ file - 将所有相关log输出到更根目录的 `log` 文件夹中。
 <ul>
 <li><a href="https://github.com/xuexb/github-bot" target="_blank" rel="noopener noreferrer">xuexb GitHub<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/labring/gh-rebot" target="_blank" rel="noopener noreferrer">sealos gh rebot<ExternalLinkIcon/></a></li>
+<li>https://www.amoyw.com/2020/10/22/Prow/</li>
 </ul>
 <h3 id="导航" tabindex="-1"><a class="header-anchor" href="#导航" aria-hidden="true">#</a> 导航</h3>
 <ul><li><div><a href = '70.md' style='float:left'>⬆️上一节🔗  </a><a href = '72.md' style='float: right'>  ️下一节🔗</a></div></li></ul>

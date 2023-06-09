@@ -1,11 +1,11 @@
 ---
 home: true
 lang: zh-CN
-title: Cub链学社（c-universal blockchain）
+title: kubecub 社区
 description: docker学习
 heroImage: https://sm.nsddd.top//typora/logo_transparent.png?mail:3293172751@qq.com
 heroText: 云原生
-tagline: 链学社在保障用户安全，信息的完整性同时为大众带来更多的选择，笔记分享，视频分享，版权保护，以及其他的关于学信数据、电子证书、荣誉证明、成绩证明、信息授权的相关工具。
+tagline: kubecub 公益性的帮助每一位开发者和学生参与和贡献开源
 actions:
   - text: docker基础 & 进阶
     link: /markdown

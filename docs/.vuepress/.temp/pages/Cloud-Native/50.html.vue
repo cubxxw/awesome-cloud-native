@@ -135,6 +135,9 @@
 <p>LLM 任务自动化也可能开辟新的市场和就业机会。如果企业和人们能够将许多平凡的琐事自动化，他们将能够专注于更困难和富有想象力的项目。</p>
 <h2 id="auto-gpt替代品-用agentgpt实现任务自动化" tabindex="-1"><a class="header-anchor" href="#auto-gpt替代品-用agentgpt实现任务自动化" aria-hidden="true">#</a> Auto-GPT替代品： 用AgentGPT实现任务自动化</h2>
 <p>如果你不想在本地设置Auto-GPT，并希望有一个易于使用的解决方案来自动化和部署任务，你可以使用AgentGPT。它建立在Auto-GPT上，但你可以在浏览器中直接访问它。不需要摆弄终端和命令。以下是它的工作原理。</p>
+<blockquote>
+<p>缺点：就是不能访问本地 ~</p>
+</blockquote>
 <h3 id="打开使用" tabindex="-1"><a class="header-anchor" href="#打开使用" aria-hidden="true">#</a> 打开使用</h3>
 <ul>
 <li><a href="https://agentgpt.reworkd.ai/zh" target="_blank" rel="noopener noreferrer">https://agentgpt.reworkd.ai/zh<ExternalLinkIcon/></a></li>
