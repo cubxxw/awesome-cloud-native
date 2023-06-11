@@ -8,7 +8,7 @@ heroText: 云原生
 tagline: kubecub 公益性的帮助每一位开发者和学生参与和贡献开源
 actions:
   - text: docker基础 & 进阶
-    link: /markdown
+    link: /markdown/
     type: primary
   - text: Kubernetes 刨析学习
     link: /Cloud-Native-k8s/
