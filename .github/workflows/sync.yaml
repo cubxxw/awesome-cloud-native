@@ -7,10 +7,12 @@ name: Synchronize kubecub public code to other repositories
 on:
     push:
         branches:
+          - master
           - main
     pull_request:
         branches:
           - main
+          - master
     workflow_dispatch:
 
 jobs:
