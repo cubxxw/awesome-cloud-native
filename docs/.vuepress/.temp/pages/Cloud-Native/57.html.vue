@@ -10,7 +10,7 @@
 <hr>
 <p>[TOC]</p>
 <h1 id="中文-sealer-构建工程设计" tabindex="-1"><a class="header-anchor" href="#中文-sealer-构建工程设计" aria-hidden="true">#</a> [中文] sealer 构建工程设计</h1>
-<h2 id="起因" tabindex="-1"><a class="header-anchor" href="#起因" aria-hidden="true">#</a> 起因</h2>
+<h2 id="🔥-questions-that-can-be-solved-with-documentation-and-search-don-t-ask" tabindex="-1"><a class="header-anchor" href="#🔥-questions-that-can-be-solved-with-documentation-and-search-don-t-ask" aria-hidden="true">#</a> 🔥 Questions THAT can BE SOLVED WITH DOCUMENTATION and SEARCH, DON'T ASK !!!</h2>
 <p>sealer 的 Makefile 设计过于单一和简陋，构建脚本(<a href="http://build.sh" target="_blank" rel="noopener noreferrer">build.sh<ExternalLinkIcon/></a>) 过于陈旧和厚重，我们可以通过一些设计方案来对 Makefile 和 <a href="http://build.sh" target="_blank" rel="noopener noreferrer">build.sh<ExternalLinkIcon/></a> 进行设计以及改进，让它们看上去很友好。</p>
 <p>Makefile 的重构设计到很多的改变，包括一些模块的微调和 CICD actions 的变化，这些都会涉及到，也会慢慢设计，为此，之前我提过一个 RFC，移步到 → https://github.com/sealerio/sealer/issues/2148</p>
 <p><strong>Notion 文档：</strong></p>
@@ -50,8 +50,7 @@
 </li>
 </ul>
 <hr>
-<aside> 🔥 分为三个模块，分别是新扩展的 Makefile 演示、脚本改进的演示，以及 CICD 流的改进：
-</aside>
+<p>🔥 分为三个模块，分别是新扩展的 Makefile 演示、脚本改进的演示，以及 CICD 流的改进：</p>
 <h2 id="makefile" tabindex="-1"><a class="header-anchor" href="#makefile" aria-hidden="true">#</a> makefile</h2>
 <p>最常用的帮助信息，放入到 <code v-pre>Makefile/</code></p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>❯ <span class="token builtin">make</span> help

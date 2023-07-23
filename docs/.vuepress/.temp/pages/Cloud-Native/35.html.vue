@@ -75,7 +75,7 @@
 <ul>
 <li><strong>方法：</strong> 整理源代码</li>
 <li><strong>说明：</strong> 仔细阅读源代码，整理出项目结构和流程，将所有源代码或者部分源代码整理一遍，包括将包名全部改掉，编译/测试/运行 通过</li>
-<li><strong>学习效果：</strong> 2 ~ 3</li>
+<li>🔥 分为三个模块，分别是新扩展的 Makefile 演示、脚本改进的演示，以及 CICD 流的改进：</li>
 <li><strong>有产出</strong>：  没有产出（加入没有输出分享）</li>
 <li><strong>是否达成学习闭环：</strong> 整理出项目结构和流程后，进行总结和复盘</li>
 <li><strong>Get 到的技能点</strong>：整理源代码的能力、更细粒度的源码阅读能力</li>

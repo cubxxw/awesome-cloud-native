@@ -4254,9 +4254,9 @@ export const searchIndex = [
     "headers": [
       {
         "level": 2,
-        "title": "起因",
-        "slug": "起因",
-        "link": "#起因",
+        "title": "🔥 Questions THAT can BE SOLVED WITH DOCUMENTATION and SEARCH, DON'T ASK !!!",
+        "slug": "🔥-questions-that-can-be-solved-with-documentation-and-search-don-t-ask",
+        "link": "#🔥-questions-that-can-be-solved-with-documentation-and-search-don-t-ask",
         "children": []
       },
       {
@@ -7392,8 +7392,144 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第80节",
+    "title": "第80节 跨平台编译",
     "headers": [
+      {
+        "level": 2,
+        "title": "前言",
+        "slug": "前言",
+        "link": "#前言",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "构建方案",
+        "slug": "构建方案",
+        "link": "#构建方案",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "启用试验性功能",
+        "slug": "启用试验性功能",
+        "link": "#启用试验性功能",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用buildx构建",
+        "slug": "使用buildx构建",
+        "link": "#使用buildx构建",
+        "children": [
+          {
+            "level": 3,
+            "title": "创建 buildx 构建器",
+            "slug": "创建-buildx-构建器",
+            "link": "#创建-buildx-构建器",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "修改Dockerfile",
+            "slug": "修改dockerfile",
+            "link": "#修改dockerfile",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "docker buildx 构建arm64镜像的命令",
+            "slug": "docker-buildx-构建arm64镜像的命令",
+            "link": "#docker-buildx-构建arm64镜像的命令",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "检查构建成果",
+            "slug": "检查构建成果",
+            "link": "#检查构建成果",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "在x86上运行arm镜像",
+        "slug": "在x86上运行arm镜像",
+        "link": "#在x86上运行arm镜像",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "在x86平台下使用Buildx构建跨平台镜像并运行arm应用",
+        "slug": "在x86平台下使用buildx构建跨平台镜像并运行arm应用",
+        "link": "#在x86平台下使用buildx构建跨平台镜像并运行arm应用",
+        "children": [
+          {
+            "level": 3,
+            "title": "安装 qemu 多平台支持",
+            "slug": "安装-qemu-多平台支持",
+            "link": "#安装-qemu-多平台支持",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创建新的 builder 实例并设为默认",
+            "slug": "创建新的-builder-实例并设为默认",
+            "link": "#创建新的-builder-实例并设为默认",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用 Buildx 构建多平台镜像",
+            "slug": "使用-buildx-构建多平台镜像",
+            "link": "#使用-buildx-构建多平台镜像",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "使用 GitHub Action 自动构建多平台镜像",
+        "slug": "使用-github-action-自动构建多平台镜像",
+        "link": "#使用-github-action-自动构建多平台镜像",
+        "children": [
+          {
+            "level": 3,
+            "title": "跨平台运行容器的策略",
+            "slug": "跨平台运行容器的策略",
+            "link": "#跨平台运行容器的策略",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "案例演示",
+            "slug": "案例演示",
+            "link": "#案例演示",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "测试多平台镜像",
+            "slug": "测试多平台镜像",
+            "link": "#测试多平台镜像",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "buildx 的跨平台构建策略",
+        "slug": "buildx-的跨平台构建策略",
+        "link": "#buildx-的跨平台构建策略",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "OpenIM 跨平台编译实战",
+        "slug": "openim-跨平台编译实战",
+        "link": "#openim-跨平台编译实战",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7407,8 +7543,50 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第81节",
+    "title": "第81节 kafka 服务器教程",
     "headers": [
+      {
+        "level": 2,
+        "title": "需要的步骤 ✏️",
+        "slug": "需要的步骤-✏️",
+        "link": "#需要的步骤-✏️",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": ".github 🐙",
+        "slug": "github-🐙",
+        "link": "#github-🐙",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Why Choose Kubecub? 🤔",
+        "slug": "why-choose-kubecub-🤔",
+        "link": "#why-choose-kubecub-🤔",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "What can you find？ 🚀",
+        "slug": "what-can-you-find-🚀",
+        "link": "#what-can-you-find-🚀",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Contact Us 👋",
+        "slug": "contact-us-👋",
+        "link": "#contact-us-👋",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Backers",
+        "slug": "backers",
+        "link": "#backers",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7422,8 +7600,505 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第82节",
+    "title": "第82节 actions",
     "headers": [
+      {
+        "level": 2,
+        "title": "创建 actions",
+        "slug": "创建-actions",
+        "link": "#创建-actions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "docker 容器操作",
+        "slug": "docker-容器操作",
+        "link": "#docker-容器操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "对操作进行发布管理",
+        "slug": "对操作进行发布管理",
+        "link": "#对操作进行发布管理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用标签进行发布管理",
+        "slug": "使用标签进行发布管理",
+        "link": "#使用标签进行发布管理",
+        "children": [
+          {
+            "level": 3,
+            "title": "带有查询参数的发布表单自动化",
+            "slug": "带有查询参数的发布表单自动化",
+            "link": "#带有查询参数的发布表单自动化",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "如何引用版本",
+            "slug": "如何引用版本",
+            "link": "#如何引用版本",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "使用分支进行版本管理",
+        "slug": "使用分支进行版本管理",
+        "link": "#使用分支进行版本管理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用提交的SHA进行发布管理",
+        "slug": "使用提交的sha进行发布管理",
+        "link": "#使用提交的sha进行发布管理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "GitHub actions 和 GitHub apps 的对比",
+        "slug": "github-actions-和-github-apps-的对比",
+        "link": "#github-actions-和-github-apps-的对比",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "创建 docker 容器 actions",
+        "slug": "创建-docker-容器-actions",
+        "link": "#创建-docker-容器-actions",
+        "children": [
+          {
+            "level": 3,
+            "title": "Creating a Dockerfile",
+            "slug": "creating-a-dockerfile",
+            "link": "#creating-a-dockerfile",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "元数据 actions 语法",
+            "slug": "元数据-actions-语法",
+            "link": "#元数据-actions-语法",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创建操作元数据文件",
+            "slug": "创建操作元数据文件",
+            "link": "#创建操作元数据文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "编写操作代码",
+            "slug": "编写操作代码",
+            "link": "#编写操作代码",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "在工作流中测试您的操作",
+        "slug": "在工作流中测试您的操作",
+        "link": "#在工作流中测试您的操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用工作流",
+        "slug": "使用工作流",
+        "link": "#使用工作流",
+        "children": [
+          {
+            "level": 3,
+            "title": "在工作流编辑器中浏览Marketplace操作",
+            "slug": "在工作流编辑器中浏览marketplace操作",
+            "link": "#在工作流编辑器中浏览marketplace操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "向工作流添加操作向工作流添加操作",
+            "slug": "向工作流添加操作向工作流添加操作",
+            "link": "#向工作流添加操作向工作流添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从GitHub Marketplace添加操作",
+            "slug": "从github-marketplace添加操作",
+            "link": "#从github-marketplace添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从同一存储库添加操作",
+            "slug": "从同一存储库添加操作",
+            "link": "#从同一存储库添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从其他存储库添加操作",
+            "slug": "从其他存储库添加操作",
+            "link": "#从其他存储库添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "在Docker Hub上引用容器",
+            "slug": "在docker-hub上引用容器",
+            "link": "#在docker-hub上引用容器",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "action 的基本特征",
+        "slug": "action-的基本特征",
+        "link": "#action-的基本特征",
+        "children": [
+          {
+            "level": 3,
+            "title": "在工作流中使用变量",
+            "slug": "在工作流中使用变量",
+            "link": "#在工作流中使用变量",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "向工作流添加脚本",
+            "slug": "向工作流添加脚本",
+            "link": "#向工作流添加脚本",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "在作业之间共享数据",
+            "slug": "在作业之间共享数据",
+            "link": "#在作业之间共享数据",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "context",
+        "slug": "context",
+        "link": "#context",
+        "children": [
+          {
+            "level": 3,
+            "title": "Context availability",
+            "slug": "context-availability",
+            "link": "#context-availability",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "GitHub context",
+            "slug": "github-context",
+            "link": "#github-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "一些功能案例",
+            "slug": "一些功能案例",
+            "link": "#一些功能案例",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "actions 高级功能",
+        "slug": "actions-高级功能",
+        "link": "#actions-高级功能",
+        "children": [
+          {
+            "level": 3,
+            "title": "储存秘密",
+            "slug": "储存秘密",
+            "link": "#储存秘密",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创造依赖工作",
+            "slug": "创造依赖工作",
+            "link": "#创造依赖工作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用矩阵",
+            "slug": "使用矩阵",
+            "link": "#使用矩阵",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "缓存依赖项",
+            "slug": "缓存依赖项",
+            "link": "#缓存依赖项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用数据库和服务容器",
+            "slug": "使用数据库和服务容器",
+            "link": "#使用数据库和服务容器",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用标签来路由工作流程",
+            "slug": "使用标签来路由工作流程",
+            "link": "#使用标签来路由工作流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "重用工作流程",
+            "slug": "重用工作流程",
+            "link": "#重用工作流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用环境",
+            "slug": "使用环境",
+            "link": "#使用环境",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "并发工作",
+        "slug": "并发工作",
+        "link": "#并发工作",
+        "children": [
+          {
+            "level": 3,
+            "title": "示例：使用并发和默认行为",
+            "slug": "示例-使用并发和默认行为",
+            "link": "#示例-使用并发和默认行为",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "示例：使用并发取消任何正在进行的作业或运行",
+            "slug": "示例-使用并发取消任何正在进行的作业或运行",
+            "link": "#示例-使用并发取消任何正在进行的作业或运行",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "容器中运行",
+        "slug": "容器中运行",
+        "link": "#容器中运行",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "定义容器镜像",
+        "slug": "定义容器镜像",
+        "link": "#定义容器镜像",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "将环境变量与容器一起使用",
+        "slug": "将环境变量与容器一起使用",
+        "link": "#将环境变量与容器一起使用",
+        "children": [
+          {
+            "level": 3,
+            "title": "示例：在容器中安装卷",
+            "slug": "示例-在容器中安装卷",
+            "link": "#示例-在容器中安装卷",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "定义将应用于工作流中的所有作业或作业中所有步骤的默认设置",
+        "slug": "定义将应用于工作流中的所有作业或作业中所有步骤的默认设置",
+        "link": "#定义将应用于工作流中的所有作业或作业中所有步骤的默认设置",
+        "children": [
+          {
+            "level": 3,
+            "title": "设置默认外壳和工作目录",
+            "slug": "设置默认外壳和工作目录",
+            "link": "#设置默认外壳和工作目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "设置作业的默认shell和工作目录",
+            "slug": "设置作业的默认shell和工作目录",
+            "link": "#设置作业的默认shell和工作目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "设置 run 作业的默认步骤选项",
+            "slug": "设置-run-作业的默认步骤选项",
+            "link": "#设置-run-作业的默认步骤选项",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "为作业分配权限",
+        "slug": "为作业分配权限",
+        "link": "#为作业分配权限",
+        "children": [
+          {
+            "level": 3,
+            "title": "为GITHUB_TOKEN分配权限",
+            "slug": "为github-token分配权限",
+            "link": "#为github-token分配权限",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "示例：设置特定作业的权限",
+            "slug": "示例-设置特定作业的权限",
+            "link": "#示例-设置特定作业的权限",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "构建和测试(CI)",
+        "slug": "构建和测试-ci",
+        "link": "#构建和测试-ci",
+        "children": [
+          {
+            "level": 3,
+            "title": "关于使用GitHub Actions进行持续集成",
+            "slug": "关于使用github-actions进行持续集成",
+            "link": "#关于使用github-actions进行持续集成",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Starter workflow",
+        "slug": "starter-workflow",
+        "link": "#starter-workflow",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关于持续部署(CD)",
+        "slug": "关于持续部署-cd",
+        "link": "#关于持续部署-cd",
+        "children": [
+          {
+            "level": 3,
+            "title": "触发部署",
+            "slug": "触发部署",
+            "link": "#触发部署",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用并发",
+            "slug": "使用并发",
+            "link": "#使用并发",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Choosing a runner",
+            "slug": "choosing-a-runner",
+            "link": "#choosing-a-runner",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "关于使用 GitHub Actions 进行打包",
+        "slug": "关于使用-github-actions-进行打包",
+        "link": "#关于使用-github-actions-进行打包",
+        "children": [
+          {
+            "level": 3,
+            "title": "发布包的工作流程",
+            "slug": "发布包的工作流程",
+            "link": "#发布包的工作流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "发布 Docker 镜像",
+            "slug": "发布-docker-镜像",
+            "link": "#发布-docker-镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将图像发布到 GitHub 包",
+            "slug": "将图像发布到-github-包",
+            "link": "#将图像发布到-github-包",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将镜像发布到 Docker Hub 和 GitHub 包",
+            "slug": "将镜像发布到-docker-hub-和-github-包",
+            "link": "#将镜像发布到-docker-hub-和-github-包",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "项目管理",
+        "slug": "项目管理",
+        "link": "#项目管理",
+        "children": [
+          {
+            "level": 3,
+            "title": "添加 labels",
+            "slug": "添加-labels",
+            "link": "#添加-labels",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "在项目板上移动分配的问题",
+            "slug": "在项目板上移动分配的问题",
+            "link": "#在项目板上移动分配的问题",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创建工作流程",
+            "slug": "创建工作流程",
+            "link": "#创建工作流程",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7437,8 +8112,505 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第83节",
+    "title": "第83节 Custom actions",
     "headers": [
+      {
+        "level": 2,
+        "title": "创建 actions",
+        "slug": "创建-actions",
+        "link": "#创建-actions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "docker 容器操作",
+        "slug": "docker-容器操作",
+        "link": "#docker-容器操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "对操作进行发布管理",
+        "slug": "对操作进行发布管理",
+        "link": "#对操作进行发布管理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用标签进行发布管理",
+        "slug": "使用标签进行发布管理",
+        "link": "#使用标签进行发布管理",
+        "children": [
+          {
+            "level": 3,
+            "title": "带有查询参数的发布表单自动化",
+            "slug": "带有查询参数的发布表单自动化",
+            "link": "#带有查询参数的发布表单自动化",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "如何引用版本",
+            "slug": "如何引用版本",
+            "link": "#如何引用版本",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "使用分支进行版本管理",
+        "slug": "使用分支进行版本管理",
+        "link": "#使用分支进行版本管理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用提交的SHA进行发布管理",
+        "slug": "使用提交的sha进行发布管理",
+        "link": "#使用提交的sha进行发布管理",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "GitHub actions 和 GitHub apps 的对比",
+        "slug": "github-actions-和-github-apps-的对比",
+        "link": "#github-actions-和-github-apps-的对比",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "创建 docker 容器 actions",
+        "slug": "创建-docker-容器-actions",
+        "link": "#创建-docker-容器-actions",
+        "children": [
+          {
+            "level": 3,
+            "title": "Creating a Dockerfile",
+            "slug": "creating-a-dockerfile",
+            "link": "#creating-a-dockerfile",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "元数据 actions 语法",
+            "slug": "元数据-actions-语法",
+            "link": "#元数据-actions-语法",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创建操作元数据文件",
+            "slug": "创建操作元数据文件",
+            "link": "#创建操作元数据文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "编写操作代码",
+            "slug": "编写操作代码",
+            "link": "#编写操作代码",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "在工作流中测试您的操作",
+        "slug": "在工作流中测试您的操作",
+        "link": "#在工作流中测试您的操作",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "使用工作流",
+        "slug": "使用工作流",
+        "link": "#使用工作流",
+        "children": [
+          {
+            "level": 3,
+            "title": "在工作流编辑器中浏览Marketplace操作",
+            "slug": "在工作流编辑器中浏览marketplace操作",
+            "link": "#在工作流编辑器中浏览marketplace操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "向工作流添加操作向工作流添加操作",
+            "slug": "向工作流添加操作向工作流添加操作",
+            "link": "#向工作流添加操作向工作流添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从GitHub Marketplace添加操作",
+            "slug": "从github-marketplace添加操作",
+            "link": "#从github-marketplace添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从同一存储库添加操作",
+            "slug": "从同一存储库添加操作",
+            "link": "#从同一存储库添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "从其他存储库添加操作",
+            "slug": "从其他存储库添加操作",
+            "link": "#从其他存储库添加操作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "在Docker Hub上引用容器",
+            "slug": "在docker-hub上引用容器",
+            "link": "#在docker-hub上引用容器",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "action 的基本特征",
+        "slug": "action-的基本特征",
+        "link": "#action-的基本特征",
+        "children": [
+          {
+            "level": 3,
+            "title": "在工作流中使用变量",
+            "slug": "在工作流中使用变量",
+            "link": "#在工作流中使用变量",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "向工作流添加脚本",
+            "slug": "向工作流添加脚本",
+            "link": "#向工作流添加脚本",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "在作业之间共享数据",
+            "slug": "在作业之间共享数据",
+            "link": "#在作业之间共享数据",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "context",
+        "slug": "context",
+        "link": "#context",
+        "children": [
+          {
+            "level": 3,
+            "title": "Context availability",
+            "slug": "context-availability",
+            "link": "#context-availability",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "GitHub context",
+            "slug": "github-context",
+            "link": "#github-context",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "一些功能案例",
+            "slug": "一些功能案例",
+            "link": "#一些功能案例",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "actions 高级功能",
+        "slug": "actions-高级功能",
+        "link": "#actions-高级功能",
+        "children": [
+          {
+            "level": 3,
+            "title": "储存秘密",
+            "slug": "储存秘密",
+            "link": "#储存秘密",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创造依赖工作",
+            "slug": "创造依赖工作",
+            "link": "#创造依赖工作",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用矩阵",
+            "slug": "使用矩阵",
+            "link": "#使用矩阵",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "缓存依赖项",
+            "slug": "缓存依赖项",
+            "link": "#缓存依赖项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用数据库和服务容器",
+            "slug": "使用数据库和服务容器",
+            "link": "#使用数据库和服务容器",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用标签来路由工作流程",
+            "slug": "使用标签来路由工作流程",
+            "link": "#使用标签来路由工作流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "重用工作流程",
+            "slug": "重用工作流程",
+            "link": "#重用工作流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用环境",
+            "slug": "使用环境",
+            "link": "#使用环境",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "并发工作",
+        "slug": "并发工作",
+        "link": "#并发工作",
+        "children": [
+          {
+            "level": 3,
+            "title": "示例：使用并发和默认行为",
+            "slug": "示例-使用并发和默认行为",
+            "link": "#示例-使用并发和默认行为",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "示例：使用并发取消任何正在进行的作业或运行",
+            "slug": "示例-使用并发取消任何正在进行的作业或运行",
+            "link": "#示例-使用并发取消任何正在进行的作业或运行",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "容器中运行",
+        "slug": "容器中运行",
+        "link": "#容器中运行",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "定义容器镜像",
+        "slug": "定义容器镜像",
+        "link": "#定义容器镜像",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "将环境变量与容器一起使用",
+        "slug": "将环境变量与容器一起使用",
+        "link": "#将环境变量与容器一起使用",
+        "children": [
+          {
+            "level": 3,
+            "title": "示例：在容器中安装卷",
+            "slug": "示例-在容器中安装卷",
+            "link": "#示例-在容器中安装卷",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "定义将应用于工作流中的所有作业或作业中所有步骤的默认设置",
+        "slug": "定义将应用于工作流中的所有作业或作业中所有步骤的默认设置",
+        "link": "#定义将应用于工作流中的所有作业或作业中所有步骤的默认设置",
+        "children": [
+          {
+            "level": 3,
+            "title": "设置默认外壳和工作目录",
+            "slug": "设置默认外壳和工作目录",
+            "link": "#设置默认外壳和工作目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "设置作业的默认shell和工作目录",
+            "slug": "设置作业的默认shell和工作目录",
+            "link": "#设置作业的默认shell和工作目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "设置 run 作业的默认步骤选项",
+            "slug": "设置-run-作业的默认步骤选项",
+            "link": "#设置-run-作业的默认步骤选项",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "为作业分配权限",
+        "slug": "为作业分配权限",
+        "link": "#为作业分配权限",
+        "children": [
+          {
+            "level": 3,
+            "title": "为GITHUB_TOKEN分配权限",
+            "slug": "为github-token分配权限",
+            "link": "#为github-token分配权限",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "示例：设置特定作业的权限",
+            "slug": "示例-设置特定作业的权限",
+            "link": "#示例-设置特定作业的权限",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "构建和测试(CI)",
+        "slug": "构建和测试-ci",
+        "link": "#构建和测试-ci",
+        "children": [
+          {
+            "level": 3,
+            "title": "关于使用GitHub Actions进行持续集成",
+            "slug": "关于使用github-actions进行持续集成",
+            "link": "#关于使用github-actions进行持续集成",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Starter workflow",
+        "slug": "starter-workflow",
+        "link": "#starter-workflow",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "关于持续部署(CD)",
+        "slug": "关于持续部署-cd",
+        "link": "#关于持续部署-cd",
+        "children": [
+          {
+            "level": 3,
+            "title": "触发部署",
+            "slug": "触发部署",
+            "link": "#触发部署",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "使用并发",
+            "slug": "使用并发",
+            "link": "#使用并发",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Choosing a runner",
+            "slug": "choosing-a-runner",
+            "link": "#choosing-a-runner",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "关于使用 GitHub Actions 进行打包",
+        "slug": "关于使用-github-actions-进行打包",
+        "link": "#关于使用-github-actions-进行打包",
+        "children": [
+          {
+            "level": 3,
+            "title": "发布包的工作流程",
+            "slug": "发布包的工作流程",
+            "link": "#发布包的工作流程",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "发布 Docker 镜像",
+            "slug": "发布-docker-镜像",
+            "link": "#发布-docker-镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将图像发布到 GitHub 包",
+            "slug": "将图像发布到-github-包",
+            "link": "#将图像发布到-github-包",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将镜像发布到 Docker Hub 和 GitHub 包",
+            "slug": "将镜像发布到-docker-hub-和-github-包",
+            "link": "#将镜像发布到-docker-hub-和-github-包",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "项目管理",
+        "slug": "项目管理",
+        "link": "#项目管理",
+        "children": [
+          {
+            "level": 3,
+            "title": "添加 labels",
+            "slug": "添加-labels",
+            "link": "#添加-labels",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "在项目板上移动分配的问题",
+            "slug": "在项目板上移动分配的问题",
+            "link": "#在项目板上移动分配的问题",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "创建工作流程",
+            "slug": "创建工作流程",
+            "link": "#创建工作流程",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7452,8 +8624,92 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第84节",
+    "title": "第84节 OpenIM standardization",
     "headers": [
+      {
+        "level": 2,
+        "title": "document-driven",
+        "slug": "document-driven",
+        "link": "#document-driven",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Automation and Simplification",
+        "slug": "automation-and-simplification",
+        "link": "#automation-and-simplification",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "OpenIM Owner Culture",
+        "slug": "openim-owner-culture",
+        "link": "#openim-owner-culture",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Review Culture *",
+        "slug": "review-culture",
+        "link": "#review-culture",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Collaborative tool *",
+        "slug": "collaborative-tool",
+        "link": "#collaborative-tool",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Goal and commitment (1 & 0)",
+        "slug": "goal-and-commitment-1-0",
+        "link": "#goal-and-commitment-1-0",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Release agreement *",
+        "slug": "release-agreement",
+        "link": "#release-agreement",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Distribution agreement *",
+        "slug": "distribution-agreement",
+        "link": "#distribution-agreement",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Biweekly meeting *",
+        "slug": "biweekly-meeting",
+        "link": "#biweekly-meeting",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Representative-OpenKF",
+        "slug": "representative-openkf",
+        "link": "#representative-openkf",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "END",
+        "slug": "end",
+        "link": "#end",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Link",
+        "slug": "link",
+        "link": "#link",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7467,8 +8723,73 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第85节",
+    "title": "第85节 DevOps OpenIM 的标准设计 (1)",
     "headers": [
+      {
+        "level": 2,
+        "title": "DevOps",
+        "slug": "devops",
+        "link": "#devops",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "敏捷体系",
+        "slug": "敏捷体系",
+        "link": "#敏捷体系",
+        "children": [
+          {
+            "level": 3,
+            "title": "四个核心价值观",
+            "slug": "四个核心价值观",
+            "link": "#四个核心价值观",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "十二个原则",
+            "slug": "十二个原则",
+            "link": "#十二个原则",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "敏捷开发框架",
+        "slug": "敏捷开发框架",
+        "link": "#敏捷开发框架",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "敏捷 VS DevOps",
+        "slug": "敏捷-vs-devops",
+        "link": "#敏捷-vs-devops",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "精益理论体系知识",
+        "slug": "精益理论体系知识",
+        "link": "#精益理论体系知识",
+        "children": [
+          {
+            "level": 3,
+            "title": "精益和 DevOps",
+            "slug": "精益和-devops",
+            "link": "#精益和-devops",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "项目管理工具",
+        "slug": "项目管理工具",
+        "link": "#项目管理工具",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7482,8 +8803,346 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第86节",
+    "title": "第86节 Gorelease",
     "headers": [
+      {
+        "level": 2,
+        "title": "Quick Start",
+        "slug": "quick-start",
+        "link": "#quick-start",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "github actions",
+        "slug": "github-actions",
+        "link": "#github-actions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "定制化需求",
+        "slug": "定制化需求",
+        "link": "#定制化需求",
+        "children": [
+          {
+            "level": 3,
+            "title": "名称模板",
+            "slug": "名称模板",
+            "link": "#名称模板",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "配置选项",
+            "slug": "配置选项",
+            "link": "#配置选项",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "构建选项",
+            "slug": "构建选项",
+            "link": "#构建选项",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "build hooks",
+        "slug": "build-hooks",
+        "link": "#build-hooks",
+        "children": [
+          {
+            "level": 3,
+            "title": "模块",
+            "slug": "模块",
+            "link": "#模块",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "",
+        "slug": "",
+        "link": "#",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "archives",
+        "slug": "archives",
+        "link": "#archives",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "linux 软件包",
+        "slug": "linux-软件包",
+        "link": "#linux-软件包",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Checksums 校验",
+        "slug": "checksums-校验",
+        "link": "#checksums-校验",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Snapcraft Packages (snaps) Snapcraft Packages",
+        "slug": "snapcraft-packages-snaps-snapcraft-packages",
+        "link": "#snapcraft-packages-snaps-snapcraft-packages",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker Images",
+        "slug": "docker-images",
+        "link": "#docker-images",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker Images",
+        "slug": "docker-images-1",
+        "link": "#docker-images-1",
+        "children": [
+          {
+            "level": 3,
+            "title": "通用映像名称",
+            "slug": "通用映像名称",
+            "link": "#通用映像名称",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "保持当前主要内容的 docker 映像更新",
+            "slug": "保持当前主要内容的-docker-映像更新",
+            "link": "#保持当前主要内容的-docker-映像更新",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "发布到多个 docker 注册表",
+            "slug": "发布到多个-docker-注册表",
+            "link": "#发布到多个-docker-注册表",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "应用 Docker 构建标志",
+            "slug": "应用-docker-构建标志",
+            "link": "#应用-docker-构建标志",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "将特定的构建器与 Docker buildx 一起使用",
+            "slug": "将特定的构建器与-docker-buildx-一起使用",
+            "link": "#将特定的构建器与-docker-buildx-一起使用",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Podman",
+            "slug": "podman",
+            "link": "#podman",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Docker Manifests",
+        "slug": "docker-manifests",
+        "link": "#docker-manifests",
+        "children": [
+          {
+            "level": 3,
+            "title": "Manifest 命令",
+            "slug": "manifest-命令",
+            "link": "#manifest-命令",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "push",
+            "slug": "push",
+            "link": "#push",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "inspect",
+            "slug": "inspect",
+            "link": "#inspect",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "annotate",
+            "slug": "annotate",
+            "link": "#annotate",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "rm",
+        "slug": "rm",
+        "link": "#rm",
+        "children": [
+          {
+            "level": 3,
+            "title": "Customization",
+            "slug": "customization",
+            "link": "#customization",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "KO",
+        "slug": "ko",
+        "link": "#ko",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Docker Images with Ko",
+        "slug": "docker-images-with-ko",
+        "link": "#docker-images-with-ko",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "包的大小",
+        "slug": "包的大小",
+        "link": "#包的大小",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Metadata 元数据",
+        "slug": "metadata-元数据",
+        "link": "#metadata-元数据",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "签名校验",
+        "slug": "签名校验",
+        "link": "#签名校验",
+        "children": [
+          {
+            "level": 3,
+            "title": "可用的变量名称",
+            "slug": "可用的变量名称",
+            "link": "#可用的变量名称",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "对 Docker 映像和清单进行签名",
+        "slug": "对-docker-映像和清单进行签名",
+        "link": "#对-docker-映像和清单进行签名",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Release",
+        "slug": "release",
+        "link": "#release",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "GPG 认证",
+        "slug": "gpg-认证",
+        "link": "#gpg-认证",
+        "children": [
+          {
+            "level": 3,
+            "title": "检查现有 GPG 密钥",
+            "slug": "检查现有-gpg-密钥",
+            "link": "#检查现有-gpg-密钥",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "生成新的 GPG 密钥",
+            "slug": "生成新的-gpg-密钥",
+            "link": "#生成新的-gpg-密钥",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "签名标签",
+            "slug": "签名标签",
+            "link": "#签名标签",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "云存储服务",
+        "slug": "云存储服务",
+        "link": "#云存储服务",
+        "children": [
+          {
+            "level": 3,
+            "title": "Fury.io (apt 和 rpm 存储库）",
+            "slug": "fury-io-apt-和-rpm-存储库",
+            "link": "#fury-io-apt-和-rpm-存储库",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Homebrew Taps",
+        "slug": "homebrew-taps",
+        "link": "#homebrew-taps",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Announce",
+        "slug": "announce",
+        "link": "#announce",
+        "children": [
+          {
+            "level": 3,
+            "title": "目前支持很多个账户",
+            "slug": "目前支持很多个账户",
+            "link": "#目前支持很多个账户",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "slack",
+            "slug": "slack",
+            "link": "#slack",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "链接",
+        "slug": "链接",
+        "link": "#链接",
+        "children": []
+      },
       {
         "level": 2,
         "title": "END 链接",
@@ -7497,8 +9156,138 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "第87节",
+    "title": "第87节 OpenIM wasm 任务",
     "headers": [
+      {
+        "level": 2,
+        "title": "wasm 学习",
+        "slug": "wasm-学习",
+        "link": "#wasm-学习",
+        "children": [
+          {
+            "level": 3,
+            "title": "注册函数(Register Functions)",
+            "slug": "注册函数-register-functions",
+            "link": "#注册函数-register-functions",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "操作 DOM",
+            "slug": "操作-dom",
+            "link": "#操作-dom",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "回调函数(Callback Functions)",
+        "slug": "回调函数-callback-functions",
+        "link": "#回调函数-callback-functions",
+        "children": [
+          {
+            "level": 3,
+            "title": "工具框架",
+            "slug": "工具框架",
+            "link": "#工具框架",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Gorm 学习教程",
+        "slug": "gorm-学习教程",
+        "link": "#gorm-学习教程",
+        "children": [
+          {
+            "level": 3,
+            "title": "结构体标记（tags）",
+            "slug": "结构体标记-tags",
+            "link": "#结构体标记-tags",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "支持的结构体标记（Struct tags）",
+            "slug": "支持的结构体标记-struct-tags",
+            "link": "#支持的结构体标记-struct-tags",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "关联相关标记（tags）",
+            "slug": "关联相关标记-tags",
+            "link": "#关联相关标记-tags",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "OpenIM 客服端的 Wasm 设计",
+        "slug": "openim-客服端的-wasm-设计",
+        "link": "#openim-客服端的-wasm-设计",
+        "children": [
+          {
+            "level": 3,
+            "title": "chat_log_model",
+            "slug": "chat-log-model",
+            "link": "#chat-log-model",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "chat_log_model",
+            "slug": "chat-log-model-1",
+            "link": "#chat-log-model-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "wasm 模块获取到 messgae 实现",
+            "slug": "wasm-模块获取到-messgae-实现",
+            "link": "#wasm-模块获取到-messgae-实现",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "对应的 db 模块 message实现:",
+            "slug": "对应的-db-模块-message实现",
+            "link": "#对应的-db-模块-message实现",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "文档的实现（给前端同学看的，只需要修改 data 的备注，是对象转化为什么类型）",
+            "slug": "文档的实现-给前端同学看的-只需要修改-data-的备注-是对象转化为什么类型",
+            "link": "#文档的实现-给前端同学看的-只需要修改-data-的备注-是对象转化为什么类型",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "wasm 的getMessageList 的实现",
+            "slug": "wasm-的getmessagelist-的实现",
+            "link": "#wasm-的getmessagelist-的实现",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "对应的 db 模块 message实现",
+            "slug": "对应的-db-模块-message实现-1",
+            "link": "#对应的-db-模块-message实现-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "文档的实现（给前端同学看的，只需要修改 data 的备注，是对象转化为什么类型）",
+            "slug": "文档的实现-给前端同学看的-只需要修改-data-的备注-是对象转化为什么类型-1",
+            "link": "#文档的实现-给前端同学看的-只需要修改-data-的备注-是对象转化为什么类型-1",
+            "children": []
+          }
+        ]
+      },
       {
         "level": 2,
         "title": "END 链接",
