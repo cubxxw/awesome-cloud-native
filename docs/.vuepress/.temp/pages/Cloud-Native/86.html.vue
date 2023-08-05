@@ -9,109 +9,107 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
-<p>GoReleaser 的目标是自动化发布软件时的大部分无聊工作，最好使用合理的默认值并使最常见的用例变得简单。</p>
-<p><strong>需要哪些东西：</strong></p>
+<h1 id="goreleaser-自动化你的软件发布" tabindex="-1"><a class="header-anchor" href="#goreleaser-自动化你的软件发布" aria-hidden="true">#</a> GoReleaser：自动化你的软件发布</h1>
+<p>GoReleaser 的目标是自动化发布软件时的大部分繁琐工作，通过使用合理的默认值并使最常见的用例变得简单。</p>
+<h2 id="准备工作" tabindex="-1"><a class="header-anchor" href="#准备工作" aria-hidden="true">#</a> 准备工作：</h2>
 <ul>
-<li>
-<p><code v-pre>.goreleaser.yaml</code><a href="https://goreleaser.com/customization" target="_blank" rel="noopener noreferrer">部分）<ExternalLinkIcon/></a></p>
-<p>包含配置的文件（有关更多信息，请参阅自定义</p>
-</li>
-<li>
-<p>一棵干净的工作树</p>
-</li>
-<li>
-<p>SemVer 兼容版本（例如<code v-pre>10.21.34-prerelease+buildmeta</code>）</p>
-</li>
+<li><code v-pre>.goreleaser.yaml</code> 文件：包含所有配置信息。（有关更多信息，请参阅 <a href="https://goreleaser.com/customization/" target="_blank" rel="noopener noreferrer">自定义<ExternalLinkIcon/></a>）</li>
+<li>干净的工作树：确保代码是最新的，并且已经提交了所有改动。</li>
+<li>符合 SemVer 的版本号（例如 <code v-pre>10.21.34-prerelease+buildmeta</code>）</li>
 </ul>
-<p><strong>GoReleaser 运行分为 4 个主要步骤：</strong></p>
-<ul>
+<h2 id="goreleaser-的运行步骤" tabindex="-1"><a class="header-anchor" href="#goreleaser-的运行步骤" aria-hidden="true">#</a> GoReleaser 的运行步骤：</h2>
+<p>GoReleaser 的运行主要分为以下四个步骤：</p>
+<ol>
 <li><strong>defaulting</strong>：为每个步骤配置合理的默认值</li>
-<li><strong>Building</strong>：构建二进制文件、档案、包、Docker 镜像等</li>
-<li><strong>release</strong>：将版本发布到配置的 SCM、Docker 注册表、blob 存储...</li>
+<li><strong>building</strong>：构建二进制文件、档案、包、Docker 镜像等</li>
+<li><strong>releasing</strong>：将版本发布到配置的 SCM、Docker 注册表、blob 存储等</li>
 <li><strong>announcing</strong>：向配置的频道宣布您的发布</li>
-</ul>
-<p>使用 -like 标志可能会跳过某些步骤<code v-pre>--skip-foo</code></p>
-<h2 id="quick-start" tabindex="-1"><a class="header-anchor" href="#quick-start" aria-hidden="true">#</a> <strong>Quick Start</strong></h2>
-<p>运行<a href="https://goreleaser.com/cmd/goreleaser_init/" target="_blank" rel="noopener noreferrer">init<ExternalLinkIcon/></a>命令来创建示例<code v-pre>.goreleaser.yaml</code>文件：</p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>goreleaser init
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>现在，让我们运行一个“仅限本地”版本，看看它是否可以使用<a href="https://goreleaser.com/cmd/goreleaser_release/" target="_blank" rel="noopener noreferrer">release<ExternalLinkIcon/></a>命令运行：</p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>goreleaser release <span class="token punctuation">-</span><span class="token punctuation">-</span>snapshot <span class="token punctuation">-</span><span class="token punctuation">-</span>clean
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>此时，您可以<a href="https://goreleaser.com/customization/" target="_blank" rel="noopener noreferrer">自定义<ExternalLinkIcon/></a>生成的内容<code v-pre>.goreleaser.yaml</code>或保持原样，这取决于您。最佳做法是检查<code v-pre>.goreleaser.yaml</code>源代码控制。</p>
-<p>您还可以使用 GoReleaser仅为给定的 GOOS/GOARCH<a href="https://goreleaser.com/cmd/goreleaser_build/" target="_blank" rel="noopener noreferrer">构建二进制文件，这对于本地开发很有用：<ExternalLinkIcon/></a></p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>goreleaser build <span class="token punctuation">-</span><span class="token punctuation">-</span>single<span class="token punctuation">-</span>target
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>需要用 Token:</p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>export GITHUB_TOKEN="YOUR_GH_TOKEN"
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>GoReleaser 将使用您存储库的最新<a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging" target="_blank" rel="noopener noreferrer">Git 标签<ExternalLinkIcon/></a>。</p>
-<p>现在，创建一个标签并将其推送到 GitHub：</p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>git tag <span class="token punctuation">-</span>a v0.1.0 <span class="token punctuation">-</span>m "First release"
-git push origin v0.1.0
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>现在您可以在存储库的根目录运行 GoReleaser：</p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>goreleaser release
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="github-actions" tabindex="-1"><a class="header-anchor" href="#github-actions" aria-hidden="true">#</a> github actions</h2>
-<p>GoReleaser 还可以通过<a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions在我们的官方<ExternalLinkIcon/></a><a href="https://github.com/goreleaser/goreleaser-action" target="_blank" rel="noopener noreferrer">GoReleaser Action<ExternalLinkIcon/></a>中使用。</p>
-<p>您可以通过将 YAML 配置放入<code v-pre>.github/workflows/release.yml</code>.</p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> goreleaser
+</ol>
+<p>使用 <code v-pre>-like</code> 标志可能会跳过某些步骤，如 <code v-pre>--skip-foo</code></p>
+<h2 id="快速开始" tabindex="-1"><a class="header-anchor" href="#快速开始" aria-hidden="true">#</a> 快速开始</h2>
+<p>首先，运行 <a href="https://goreleaser.com/cmd/goreleaser_init/" target="_blank" rel="noopener noreferrer">init<ExternalLinkIcon/></a> 命令来创建示例的 <code v-pre>.goreleaser.yaml</code> 文件：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>goreleaser init
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>然后，我们运行一个“仅限本地”版本，看看它是否可以使用 <a href="https://goreleaser.com/cmd/goreleaser_release/" target="_blank" rel="noopener noreferrer">release<ExternalLinkIcon/></a> 命令运行：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>goreleaser release --snapshot --rm-dist
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>此时，您可以 <a href="https://goreleaser.com/customization/" target="_blank" rel="noopener noreferrer">自定义<ExternalLinkIcon/></a> 生成的 <code v-pre>.goreleaser.yaml</code> 文件，或保持原样，这取决于您。最佳做法是将 <code v-pre>.goreleaser.yaml</code> 文件放入版本控制系统中。</p>
+<p>您还可以使用 GoReleaser 为给定的 GOOS/GOARCH <a href="https://goreleaser.com/cmd/goreleaser_build/" target="_blank" rel="noopener noreferrer">构建二进制文件<ExternalLinkIcon/></a>，这对于本地开发非常有用：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>goreleaser build --single-target
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>准备 GitHub 的 Token：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>export GITHUB_TOKEN="YOUR_GH_TOKEN"
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>GoReleaser 将使用您存储库的最新 <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging" target="_blank" rel="noopener noreferrer">Git 标签<ExternalLinkIcon/></a>。</p>
+<p>创建一个标签并将其推送到 GitHub：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>git push origin v0.1.0
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>现在，您可以在项目的根目录运行 GoReleaser：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>goreleaser release
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="在-github-actions-中使用-goreleaser" tabindex="-1"><a class="header-anchor" href="#在-github-actions-中使用-goreleaser" aria-hidden="true">#</a> 在 GitHub Actions 中使用 GoReleaser</h2>
+<p>GoReleaser 还可以通过 <a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions<ExternalLinkIcon/></a> 在我们的官方 <a href="https://github.com/goreleaser/goreleaser-action" target="_blank" rel="noopener noreferrer">GoReleaser Action<ExternalLinkIcon/></a> 中使用。</p>
+<p>您可以通过将 YAML 配置放入 <code v-pre>.github/workflows/release.yml</code> 文件中。</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>bashcodename: goreleaser
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token comment"># run only against tags</span>
-    <span class="token key atrule">tags</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token string">'*'</span>
+on:
+  push:
+    <span class="token comment"># 只对标签进行运行</span>
+    tags:
+      - <span class="token string">'*'</span>
 
-<span class="token key atrule">permissions</span><span class="token punctuation">:</span>
-  <span class="token key atrule">contents</span><span class="token punctuation">:</span> write
+permissions:
+  contents: <span class="token function">write</span>
   <span class="token comment"># packages: write</span>
   <span class="token comment"># issues: write</span>
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">goreleaser</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v3
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">fetch-depth</span><span class="token punctuation">:</span> <span class="token number">0</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> git fetch <span class="token punctuation">-</span><span class="token punctuation">-</span>force <span class="token punctuation">-</span><span class="token punctuation">-</span>tags
-      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>go@v4
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">go-version</span><span class="token punctuation">:</span> stable
-      <span class="token comment"># More assembly might be required: Docker logins, GPG, etc. It all depends</span>
-      <span class="token comment"># on your needs.</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> goreleaser/goreleaser<span class="token punctuation">-</span>action@v4
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token comment"># either 'goreleaser' (default) or 'goreleaser-pro':</span>
-          <span class="token key atrule">distribution</span><span class="token punctuation">:</span> goreleaser
-          <span class="token key atrule">version</span><span class="token punctuation">:</span> latest
-          <span class="token key atrule">args</span><span class="token punctuation">:</span> release <span class="token punctuation">-</span><span class="token punctuation">-</span>clean
-        <span class="token key atrule">env</span><span class="token punctuation">:</span>
-          <span class="token key atrule">GITHUB_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GITHUB_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span>
-          <span class="token comment"># Your GoReleaser Pro key, if you are using the 'goreleaser-pro'</span>
-          <span class="token comment"># distribution:</span>
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: <span class="token number">0</span>
+      - run: <span class="token function">git</span> fetch <span class="token parameter variable">--force</span> <span class="token parameter variable">--tags</span>
+      - uses: actions/setup-go@v4
+        with:
+          go-version: stable
+      <span class="token comment"># 更多设置可能需要，如 Docker 登录、GPG 等。这些都取决于您的需求。</span>
+      - uses: goreleaser/goreleaser-action@v4
+        with:
+          <span class="token comment"># 可以选择 'goreleaser'（默认）或 'goreleaser-pro'</span>
+          distribution: goreleaser
+          version: latest
+          args: release --rm-dist
+        env:
+          GITHUB_TOKEN: <span class="token variable">${{ secrets.GITHUB_TOKEN }</span><span class="token punctuation">}</span>
+          <span class="token comment"># 如果你正在使用 'goreleaser-pro' 发行版，你需要 GoReleaser Pro 的密钥：</span>
           <span class="token comment"># GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>GoReleaser 需要以下<a href="https://docs.github.com/en/actions/reference/authentication-in-a-workflow#permissions-for-the-github_token" target="_blank" rel="noopener noreferrer">权限：<ExternalLinkIcon/></a></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>GoReleaser 需要以下 <a href="https://docs.github.com/en/actions/reference/authentication-in-a-workflow#permissions-for-the-github_token" target="_blank" rel="noopener noreferrer">权限<ExternalLinkIcon/></a>：</p>
 <ul>
-<li><code v-pre>contents: write</code>如果你愿意
+<li>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>contents: write
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>，如果你打算：</p>
 <ul>
 <li><a href="https://goreleaser.com/customization/release/" target="_blank" rel="noopener noreferrer">将档案上传为 GitHub Releases<ExternalLinkIcon/></a>，或</li>
-<li>发布到<a href="https://goreleaser.com/customization/homebrew/" target="_blank" rel="noopener noreferrer">Homebrew<ExternalLinkIcon/></a>或<a href="https://goreleaser.com/customization/scoop/" target="_blank" rel="noopener noreferrer">Scoop<ExternalLinkIcon/></a>（假设它是同一存储库的一部分）</li>
+<li>发布到 <a href="https://goreleaser.com/customization/homebrew/" target="_blank" rel="noopener noreferrer">Homebrew<ExternalLinkIcon/></a> 或 <a href="https://goreleaser.com/customization/scoop/" target="_blank" rel="noopener noreferrer">Scoop<ExternalLinkIcon/></a>（假设它是同一存储库的一部分）</li>
 </ul>
 </li>
-<li>或者<code v-pre>contents: read</code>如果您不需要以上任何一项</li>
-<li><code v-pre>packages: write</code>如果你<a href="https://goreleaser.com/customization/docker/" target="_blank" rel="noopener noreferrer">将 Docker 镜像推送到<ExternalLinkIcon/></a>GitHub</li>
-<li><code v-pre>issues: write</code>如果您使用<a href="https://goreleaser.com/customization/milestone/" target="_blank" rel="noopener noreferrer">里程碑关闭功能<ExternalLinkIcon/></a></li>
+<li>
+<p><code v-pre>packages: write</code>，如果你打算 <a href="https://goreleaser.com/customization/docker/" target="_blank" rel="noopener noreferrer">将 Docker 镜像推送到<ExternalLinkIcon/></a> GitHub</p>
+</li>
+<li>
+<p><code v-pre>issues: write</code>，如果你使用了 <a href="https://goreleaser.com/customization/milestone/" target="_blank" rel="noopener noreferrer">里程碑关闭功能<ExternalLinkIcon/></a></p>
+</li>
 </ul>
-<p><code v-pre>GITHUB_TOKEN</code>权限<a href="https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#about-the-github_token-secret" target="_blank" rel="noopener noreferrer">仅限于<ExternalLinkIcon/></a>包含您的工作流程的存储库。</p>
-<p>如果您需要将自制程序 Tap 推送到另一个存储库，则必须创建一个具有权限的自定义<a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/" target="_blank" rel="noopener noreferrer">个人访问令牌，并将<ExternalLinkIcon/></a><a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets" target="_blank" rel="noopener noreferrer">其添加为存储库中的机密<ExternalLinkIcon/></a>。如果您创建名为 的机密，则步骤将如下所示：<code v-pre>repoGH_PAT</code></p>
-<div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Run GoReleaser
+<p><code v-pre>GITHUB_TOKEN</code> 权限 <a href="https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#about-the-github_token-secret" target="_blank" rel="noopener noreferrer">只限于<ExternalLinkIcon/></a> 包含你的工作流的存储库。</p>
+<p>如果你需要将 Homebrew Tap 推送到另一个存储库，那么你必须创建一个有权访问的个人访问令牌，并将其添加为存储库的秘密。如果你创建了一个名为 <code v-pre>GH_PAT</code> 的秘密，那么步骤将如下：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>yaml
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Run GoReleaser
         <span class="token key atrule">uses</span><span class="token punctuation">:</span> goreleaser/goreleaser<span class="token punctuation">-</span>action@v4
         <span class="token key atrule">with</span><span class="token punctuation">:</span>
           <span class="token key atrule">version</span><span class="token punctuation">:</span> latest
-          <span class="token key atrule">args</span><span class="token punctuation">:</span> release <span class="token punctuation">-</span><span class="token punctuation">-</span>clean
+          <span class="token key atrule">args</span><span class="token punctuation">:</span> release <span class="token punctuation">-</span><span class="token punctuation">-</span>rm<span class="token punctuation">-</span>dist
         <span class="token key atrule">env</span><span class="token punctuation">:</span>
           <span class="token key atrule">GITHUB_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GH_PAT <span class="token punctuation">}</span><span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="定制化需求" tabindex="-1"><a class="header-anchor" href="#定制化需求" aria-hidden="true">#</a> 定制化需求</h2>
 <p>GoReleaser 可以通过调整<code v-pre>.goreleaser.yaml</code>文件来定制。</p>
-<p><code v-pre>[goreleaser init](https://goreleaser.com/cmd/goreleaser_init/)</code>您可以通过运行或从头开始生成示例配置。</p>
-<p>您还可以通过运行来检查您的配置是否有效<code v-pre>[goreleaser check](https://goreleaser.com/cmd/goreleaser_check/)</code>，这会告诉您是否使用了已弃用或无效的选项。</p>
+<p><a href="https://goreleaser.com/cmd/goreleaser_init/" target="_blank" rel="noopener noreferrer">goreleaser init<ExternalLinkIcon/></a>您可以通过运行或从头开始生成示例配置。</p>
+<p>您还可以通过运行来检查您的配置是否有效<a href="https://goreleaser.com/cmd/goreleaser_check/" target="_blank" rel="noopener noreferrer">goreleaser check<ExternalLinkIcon/></a>，这会告诉您是否使用了已弃用或无效的选项。</p>
 <h3 id="名称模板" tabindex="-1"><a class="header-anchor" href="#名称模板" aria-hidden="true">#</a> 名称模板</h3>
 <table>
 <thead>
@@ -122,163 +120,163 @@ git push origin v0.1.0
 </thead>
 <tbody>
 <tr>
-<td>.ProjectName</td>
+<td><code v-pre>.ProjectName</code></td>
 <td>项目名称</td>
 </tr>
 <tr>
-<td>.Version</td>
-<td>正在发布的版本https://goreleaser.com/customization/templates/#fn:version-prefix</td>
+<td><code v-pre>.Version</code></td>
+<td>正在发布的版本 (<a href="https://goreleaser.com/customization/templates/#fn:version-prefix" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.Branch</td>
+<td><code v-pre>.Branch</code></td>
 <td>当前的 git 分支</td>
 </tr>
 <tr>
-<td>.PrefixedTag</td>
+<td><code v-pre>.PrefixedTag</code></td>
 <td>以 monorepo 配置标签前缀为前缀的当前 git 标签（如果有）</td>
 </tr>
 <tr>
-<td>.Tag</td>
+<td><code v-pre>.Tag</code></td>
 <td>当前的 git 标签</td>
 </tr>
 <tr>
-<td>.PrefixedPreviousTag</td>
+<td><code v-pre>.PrefixedPreviousTag</code></td>
 <td>之前的 git 标签带有 monorepo 配置标签前缀（如果有）</td>
 </tr>
 <tr>
-<td>.PreviousTag</td>
+<td><code v-pre>.PreviousTag</code></td>
 <td>之前的 git 标签，如果没有之前的标签则为空</td>
 </tr>
 <tr>
-<td>.ShortCommit</td>
+<td><code v-pre>.ShortCommit</code></td>
 <td>git 提交短哈希</td>
 </tr>
 <tr>
-<td>.FullCommit</td>
+<td><code v-pre>.FullCommit</code></td>
 <td>git 提交完整哈希值</td>
 </tr>
 <tr>
-<td>.Commit</td>
+<td><code v-pre>.Commit</code></td>
 <td>git 提交哈希（已弃用）</td>
 </tr>
 <tr>
-<td>.CommitDate</td>
+<td><code v-pre>.CommitDate</code></td>
 <td>RFC 3339 格式的 UTC 提交日期</td>
 </tr>
 <tr>
-<td>.CommitTimestamp</td>
+<td><code v-pre>.CommitTimestamp</code></td>
 <td>Unix 格式的 UTC 提交日期</td>
 </tr>
 <tr>
-<td>.GitURL</td>
+<td><code v-pre>.GitURL</code></td>
 <td>git 远程 URL</td>
 </tr>
 <tr>
-<td>.IsGitDirty</td>
+<td><code v-pre>.IsGitDirty</code></td>
 <td>当前 git 状态是否脏。自 v1.19 起。</td>
 </tr>
 <tr>
-<td>.Major</td>
-<td>版本https://goreleaser.com/customization/templates/#fn:tag-is-semver</td>
+<td><code v-pre>.Major</code></td>
+<td>版本 (<a href="https://goreleaser.com/customization/templates/#fn:tag-is-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.Minor</td>
-<td>版本https://goreleaser.com/customization/templates/#fn:tag-is-semver</td>
+<td><code v-pre>.Minor</code></td>
+<td>版本 (<a href="https://goreleaser.com/customization/templates/#fn:tag-is-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.Patch</td>
-<td>https://goreleaser.com/customization/templates/#fn:tag-is-semver的补丁部分</td>
+<td><code v-pre>.Patch</code></td>
+<td>补丁部分 (<a href="https://goreleaser.com/customization/templates/#fn:tag-is-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.Prerelease</td>
-<td>版本的预发行部分，例如betahttps://goreleaser.com/customization/templates/#fn:tag-is-semver</td>
+<td><code v-pre>.Prerelease</code></td>
+<td>版本的预发行部分，例如beta (<a href="https://goreleaser.com/customization/templates/#fn:tag-is-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.RawVersion</td>
-<td>https://goreleaser.com/customization/templates/#fn:tag-is-semver组成{Major}.{Minor}.{Patch}</td>
+<td><code v-pre>.RawVersion</code></td>
+<td>组成 <code v-pre>{Major}.{Minor}.{Patch}</code> (<a href="https://goreleaser.com/customization/templates/#fn:tag-is-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.ReleaseNotes</td>
+<td><code v-pre>.ReleaseNotes</code></td>
 <td>生成的发行说明，在执行变更日志步骤后可用</td>
 </tr>
 <tr>
-<td>.IsDraft</td>
-<td>trueifrelease.draft在配置中设置，false否则。自 v1.17 起。</td>
+<td><code v-pre>.IsDraft</code></td>
+<td>true if <code v-pre>release.draft</code> 在配置中设置，false否则。自 v1.17 起。</td>
 </tr>
 <tr>
-<td>.IsSnapshot</td>
-<td>true如果--snapshot已设置，false否则</td>
+<td><code v-pre>.IsSnapshot</code></td>
+<td>true 如果 <code v-pre>--snapshot</code> 已设置，false否则</td>
 </tr>
 <tr>
-<td>.IsNightly</td>
-<td>true如果--nightly已设置，false否则</td>
+<td><code v-pre>.IsNightly</code></td>
+<td>true 如果 <code v-pre>--nightly</code> 已设置，false否则</td>
 </tr>
 <tr>
-<td>.Env</td>
+<td><code v-pre>.Env</code></td>
 <td>包含系统环境变量的映射</td>
 </tr>
 <tr>
-<td>.Date</td>
+<td><code v-pre>.Date</code></td>
 <td>RFC 3339 格式的当前 UTC 日期</td>
 </tr>
 <tr>
-<td>.Now</td>
-<td>当前 UTC 日期作为time.Time结构，允许所有time.Time功能（例如{{ .Now.Format &quot;2006&quot; }}）。自 v1.17 起。</td>
+<td><code v-pre>.Now</code></td>
+<td>当前 UTC 日期作为 <code v-pre>time.Time</code> 结构，允许所有 <code v-pre>time.Time</code> 功能（例如 <code v-pre>{{ .Now.Format &quot;2006&quot; }}</code> ）。自 v1.17 起。</td>
 </tr>
 <tr>
-<td>.Timestamp</td>
+<td><code v-pre>.Timestamp</code></td>
 <td>Unix 格式的当前 UTC 时间</td>
 </tr>
 <tr>
-<td>.ModulePath</td>
-<td>go 模块路径，如报告所示go list -m</td>
+<td><code v-pre>.ModulePath</code></td>
+<td>go 模块路径，如报告所示 <code v-pre>go list -m</code></td>
 </tr>
 <tr>
-<td>incpatch &quot;v1.2.4&quot;</td>
-<td>https://goreleaser.com/customization/templates/#fn:panic-if-not-semver的补丁</td>
+<td><code v-pre>incpatch &quot;v1.2.4&quot;</code></td>
+<td>补丁 (<a href="https://goreleaser.com/customization/templates/#fn:panic-if-not-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>incminor &quot;v1.2.4&quot;</td>
-<td>https://goreleaser.com/customization/templates/#fn:panic-if-not-semver的次要版本</td>
+<td><code v-pre>incminor &quot;v1.2.4&quot;</code></td>
+<td>次要版本 (<a href="https://goreleaser.com/customization/templates/#fn:panic-if-not-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>incmajor &quot;v1.2.4&quot;</td>
-<td>增加给定版本https://goreleaser.com/customization/templates/#fn:panic-if-not-semver</td>
+<td><code v-pre>incmajor &quot;v1.2.4&quot;</code></td>
+<td>增加给定版本 (<a href="https://goreleaser.com/customization/templates/#fn:panic-if-not-semver" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.ReleaseURL</td>
-<td>当前版本下载地址https://goreleaser.com/customization/templates/#fn:scm-release-url</td>
+<td><code v-pre>.ReleaseURL</code></td>
+<td>当前版本下载地址 (<a href="https://goreleaser.com/customization/templates/#fn:scm-release-url" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.Summary</td>
-<td>git 摘要，例如v1.0.0-10-g34f56g3https://goreleaser.com/customization/templates/#fn:git-summary</td>
+<td><code v-pre>.Summary</code></td>
+<td>git 摘要，例如 <code v-pre>v1.0.0-10-g34f56g3</code> (<a href="https://goreleaser.com/customization/templates/#fn:git-summary" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)</td>
 </tr>
 <tr>
-<td>.PrefixedSummary</td>
+<td><code v-pre>.PrefixedSummary</code></td>
 <td>以 monorepo 配置标签前缀为前缀的 git 摘要（如果有）</td>
 </tr>
 <tr>
-<td>.TagSubject</td>
-<td>带注释的标签消息主题，或者它指出的提交的消息主题https://goreleaser.com/customization/templates/#fn:git-tag-subject。从 v1.2 开始。</td>
+<td><code v-pre>.TagSubject</code></td>
+<td>带注释的标签消息主题，或者它指出的提交的消息主题 (<a href="https://goreleaser.com/customization/templates/#fn:git-tag-subject" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)。从 v1.2 开始。</td>
 </tr>
 <tr>
-<td>.TagContents</td>
-<td>带注释的标签消息，或者它指出的提交消息https://goreleaser.com/customization/templates/#fn:git-tag-body . 从 v1.2 开始。</td>
+<td><code v-pre>.TagContents</code></td>
+<td>带注释的标签消息，或者它指出的提交消息 (<a href="https://goreleaser.com/customization/templates/#fn:git-tag-body" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>) . 从 v1.2 开始。</td>
 </tr>
 <tr>
-<td>.TagBody</td>
-<td>带注释的标签消息正文，或其指出的提交的消息正文https://goreleaser.com/customization/templates/#fn:git-tag-body。从 v1.2 开始。</td>
+<td><code v-pre>.TagBody</code></td>
+<td>带注释的标签消息正文，或其指出的提交的消息正文 (<a href="https://goreleaser.com/customization/templates/#fn:git-tag-body" target="_blank" rel="noopener noreferrer">详情<ExternalLinkIcon/></a>)。从 v1.2 开始。</td>
 </tr>
 <tr>
-<td>.Runtime.Goos</td>
-<td>相当于runtime.GOOS. 从 v1.5 开始。</td>
+<td><code v-pre>.Runtime.Goos</code></td>
+<td>相当于 <code v-pre>runtime.GOOS</code>. 从 v1.5 开始。</td>
 </tr>
 <tr>
-<td>.Runtime.Goarch</td>
-<td>相当于runtime.GOARCH. 从 v1.5 开始。</td>
+<td><code v-pre>.Runtime.Goarch</code></td>
+<td>相当于 <code v-pre>runtime.GOARCH</code>. 从 v1.5 开始。</td>
 </tr>
 <tr>
-<td>.Artifacts</td>
+<td><code v-pre>.Artifacts</code></td>
 <td>当前工件列表。字段见下表。自 v1.16-pro 起。</td>
 </tr>
 </tbody>
@@ -301,7 +299,7 @@ git push origin v0.1.0
   <span class="token key atrule">prerelease_suffix</span><span class="token punctuation">:</span> <span class="token string">"-"</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="构建选项" tabindex="-1"><a class="header-anchor" href="#构建选项" aria-hidden="true">#</a> 构建选项</h3>
 <p>可以通过多种方式定制构建。您可以指定构建哪些<code v-pre>GOOS</code>,<code v-pre>GOARCH</code>和<code v-pre>GOARM</code>二进制文件（GoReleaser 将生成所有组合的矩阵），并且您可以更改二进制文件的名称、标志、环境变量、挂钩等。</p>
-<p>builds 是配置文件中最重要的一个选项：</p>
+<p><strong>builds 是配置文件中最重要的一个选项：</strong></p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token comment"># .goreleaser.yaml</span>
 <span class="token key atrule">builds</span><span class="token punctuation">:</span>
   <span class="token comment"># You can have multiple builds defined as a yaml list</span>
@@ -614,8 +612,8 @@ git push origin v0.1.0
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后你可以运行：</p>
 <p><code v-pre>GOVERSION=$(go version) goreleaser</code></p>
 <h2 id="build-hooks" tabindex="-1"><a class="header-anchor" href="#build-hooks" aria-hidden="true">#</a> build hooks</h2>
-<p>pre 和 post 挂钩都<strong>针对每个构建目标</strong>运行，无论这些目标是通过操作系统和架构矩阵生成还是显式定义。</p>
-<p>除了上面所示的简单声明之外，还可以声明<em>多个挂钩，以帮助保持不同构建环境之间配置的可重用性。</em></p>
+<p>pre 和 post 挂钩都 <strong>针对每个构建目标</strong> 运行，无论这些目标是通过操作系统和架构矩阵生成还是显式定义。</p>
+<p>除了上面所示的简单声明之外，还可以声明多个挂钩，以帮助保持不同构建环境之间配置的可重用性。</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token comment"># .goreleaser.yaml</span>
 <span class="token key atrule">builds</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> <span class="token string">"with-hooks"</span>
@@ -688,8 +686,7 @@ git push origin v0.1.0
   <span class="token key atrule">hooks</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> go mod tidy
 <span class="token comment"># rest of the file...</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="" tabindex="-1"><a class="header-anchor" href="#" aria-hidden="true">#</a> </h2>
-<h2 id="archives" tabindex="-1"><a class="header-anchor" href="#archives" aria-hidden="true">#</a> archives</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="archives" tabindex="-1"><a class="header-anchor" href="#archives" aria-hidden="true">#</a> archives</h2>
 <p><code v-pre>README</code>构建的二进制文件将与和文件一起归档<code v-pre>LICENSE</code>到一个<code v-pre>tar.gz</code>文件中。在此<code v-pre>archives</code>部分中，您可以自定义存档名称、其他文件和格式。</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token comment"># .goreleaser.yaml</span>
 <span class="token key atrule">archives</span><span class="token punctuation">:</span>
@@ -858,7 +855,7 @@ git push origin v0.1.0
     <span class="token comment"># Disables the binary count check.</span>
     <span class="token key atrule">allow_different_binary_count</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="linux-软件包" tabindex="-1"><a class="header-anchor" href="#linux-软件包" aria-hidden="true">#</a> linux 软件包</h2>
-<p>GoReleaser 可以连接到<a href="https://github.com/goreleaser/nfpm" target="_blank" rel="noopener noreferrer">nfpm<ExternalLinkIcon/></a>以生成和发布<code v-pre>.deb</code>、<code v-pre>.rpm</code>、<code v-pre>.apk</code>和 Archlinux 软件包。</p>
+<p>GoReleaser 可以连接到<a href="https://github.com/goreleaser/nfpm" target="_blank" rel="noopener noreferrer">nfpm<ExternalLinkIcon/></a>以生成和发布 <code v-pre>.deb</code>、<code v-pre>.rpm</code>、<code v-pre>.apk</code> 和 <code v-pre>Archlinux</code> 软件包。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># .goreleaser.yaml</span>
 nfpms:
   <span class="token comment"># note that this is an array of nfpm configs</span>
@@ -1280,7 +1277,7 @@ nfpms:
       <span class="token comment"># with the maintainer, which is the person who maintains the software.</span>
       packager: GoReleaser <span class="token operator">&lt;</span>staff@goreleaser.com<span class="token operator">></span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Learn more about the <a href="https://goreleaser.com/customization/templates/" target="_blank" rel="noopener noreferrer">name template engine<ExternalLinkIcon/></a>.</p>
-<h2 id="checksums-校验" tabindex="-1"><a class="header-anchor" href="#checksums-校验" aria-hidden="true">#</a> <strong>Checksums 校验</strong></h2>
+<h2 id="checksums-校验" tabindex="-1"><a class="header-anchor" href="#checksums-校验" aria-hidden="true">#</a> Checksums 校验</h2>
 <p>GoReleaser 会生成一个文件并将其与版本一起上传，以便您的用户可以验证下载的文件是否正确。</p>
 <p>该部分允许自定义文件名：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
@@ -1330,13 +1327,13 @@ nfpms:
   <span class="token literal-property property">templated_extra_files</span><span class="token operator">:</span>
     <span class="token operator">-</span> src<span class="token operator">:</span> <span class="token constant">LICENSE</span><span class="token punctuation">.</span>tpl
       <span class="token literal-property property">dst</span><span class="token operator">:</span> <span class="token constant">LICENSE</span><span class="token punctuation">.</span>txt
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="snapcraft-packages-snaps-snapcraft-packages" tabindex="-1"><a class="header-anchor" href="#snapcraft-packages-snaps-snapcraft-packages" aria-hidden="true">#</a> <strong>Snapcraft Packages (snaps) Snapcraft Packages</strong></h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="snapcraft-packages-snaps-snapcraft-packages" tabindex="-1"><a class="header-anchor" href="#snapcraft-packages-snaps-snapcraft-packages" aria-hidden="true">#</a> Snapcraft Packages (snaps) Snapcraft Packages</h2>
 <p>GoReleaser也可以生成软件包。Snaps 是一种新的打包格式，可让您将项目直接发布到 Ubuntu 商店。从那里，它可以安装在所有受支持的Linux发行版中，并进行自动和事务性更新。</p>
 <p>您可以在 snapcraft 文档中阅读更多相关信息。</p>
 <p><strong>Snaps是适用于桌面</strong>、<strong>云</strong>和<strong>物联网</strong>的 Linux 应用程序包，易于安装、安全、跨平台且无依赖性。</p>
 <p>它们会<strong>自动更新，并且通常在有限的</strong>基于<strong>事务的</strong>环境中运行。<strong>安全性和稳健性</strong>是其主要特点，此外还<strong>易于安装</strong>、<strong>易于维护</strong>和<strong>易于升级</strong>。</p>
 <p><strong>Snapd 发布流程</strong></p>
-<p>snapd 是管理和维护快照的后台服务。它本身可以作为 snap 包或传统的 Linux 软件包（例如<em>deb</em>或 RPM）提供。</p>
+<p>snapd 是管理和维护快照的后台服务。它本身可以作为 snap 包或传统的 Linux 软件包（例如 <em>deb</em> 或 RPM）提供。</p>
 <p>有两种类型的发布；主要和次要版本，由其版本号的数字状态表示，并带有次要句点和为次要版本保留的数字：</p>
 <ul>
 <li>主要版本发布：2.53、2.54、2.55</li>
@@ -1352,7 +1349,7 @@ nfpms:
 <p>生成一个初始工程：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>$ snapcraft init
 Created snap<span class="token operator">/</span>snapcraft<span class="token punctuation">.</span>yaml<span class="token punctuation">.</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="docker-images" tabindex="-1"><a class="header-anchor" href="#docker-images" aria-hidden="true">#</a> <strong>Docker Images</strong></h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="docker-images" tabindex="-1"><a class="header-anchor" href="#docker-images" aria-hidden="true">#</a> Docker Images</h2>
 <p>GoReleaser 可以构建和推送 Docker 镜像。让我们看看它是如何工作的。</p>
 <p>您可以声明多个 Docker 映像。它们将与节生成的二进制文件和节生成的包进行匹配。</p>
 <p>如果您只有一个设置，则配置就像将映像名称添加到文件中一样简单：</p>
@@ -1475,7 +1472,7 @@ Created snap<span class="token operator">/</span>snapcraft<span class="token pun
       <span class="token operator">-</span> src<span class="token operator">:</span> <span class="token constant">LICENSE</span><span class="token punctuation">.</span>tpl
         <span class="token literal-property property">dst</span><span class="token operator">:</span> <span class="token constant">LICENSE</span><span class="token punctuation">.</span>txt
         <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token number">0644</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="docker-images-1" tabindex="-1"><a class="header-anchor" href="#docker-images-1" aria-hidden="true">#</a> <strong>Docker Images</strong></h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="docker-images-1" tabindex="-1"><a class="header-anchor" href="#docker-images-1" aria-hidden="true">#</a> Docker Images</h2>
 <p>GoReleaser 可以构建和推送 Docker 镜像。让我们看看它是如何工作的。</p>
 <p>您可以声明多个 Docker 映像。它们将与节生成的二进制文件和节生成的包进行匹配。</p>
 <p>如果您只有一个 build 设置，则配置就像将映像名称添加到文件中一样简单：</p>
@@ -1603,7 +1600,7 @@ Created snap<span class="token operator">/</span>snapcraft<span class="token pun
 <p>请注意，您必须手动登录到要推送到的Docker注册表 - GoReleaser不会自行登录。</p>
 </blockquote>
 <p>这些设置应该允许您生成多个 Docker 映像，例如，使用多个语句，以及为项目中的每个二进制文件生成一个映像或一个具有多个二进制文件的映像，以及安装生成的包而不是手动复制二进制文件和配置。</p>
-<h3 id="通用映像名称" tabindex="-1"><a class="header-anchor" href="#通用映像名称" aria-hidden="true">#</a> <strong>通用映像名称</strong></h3>
+<h3 id="通用映像名称" tabindex="-1"><a class="header-anchor" href="#通用映像名称" aria-hidden="true">#</a> 通用映像名称</h3>
 <p>某些用户可能希望使其映像名称尽可能通用。这可以通过在定义中添加模板语言来实现：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 <span class="token literal-property property">project_name</span><span class="token operator">:</span> foo
@@ -1614,7 +1611,7 @@ Created snap<span class="token operator">/</span>snapcraft<span class="token pun
 <ul>
 <li><code v-pre>myuser/foo</code></li>
 </ul>
-<h3 id="保持当前主要内容的-docker-映像更新" tabindex="-1"><a class="header-anchor" href="#保持当前主要内容的-docker-映像更新" aria-hidden="true">#</a> <strong>保持当前主要内容的 docker 映像更新</strong></h3>
+<h3 id="保持当前主要内容的-docker-映像更新" tabindex="-1"><a class="header-anchor" href="#保持当前主要内容的-docker-映像更新" aria-hidden="true">#</a> 保持当前主要内容的 docker 映像更新</h3>
 <p>一些用户可能想要推送 docker 标记 、 以及何时（例如）构建。这可以通过使用多个：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 <span class="token literal-property property">dockers</span><span class="token operator">:</span>
@@ -1631,7 +1628,7 @@ Created snap<span class="token operator">/</span>snapcraft<span class="token pun
 <li><code v-pre>myuser/myimage:latest</code></li>
 </ul>
 <p>通过这些设置，您可以希望推送多个具有多个标签的 Docker 映像。</p>
-<h3 id="发布到多个-docker-注册表" tabindex="-1"><a class="header-anchor" href="#发布到多个-docker-注册表" aria-hidden="true">#</a> <strong>发布到多个 docker 注册表</strong></h3>
+<h3 id="发布到多个-docker-注册表" tabindex="-1"><a class="header-anchor" href="#发布到多个-docker-注册表" aria-hidden="true">#</a> 发布到多个 docker 注册表</h3>
 <p>某些用户可能希望将映像推送到多个 docker 注册表。这可以通过使用多个：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 <span class="token literal-property property">dockers</span><span class="token operator">:</span>
@@ -1647,7 +1644,7 @@ Created snap<span class="token operator">/</span>snapcraft<span class="token pun
 <li><code v-pre>gcr.io/myuser/myimage:v1.6.4</code></li>
 <li><code v-pre>gcr.io/myuser/myimage:latest</code></li>
 </ul>
-<h3 id="应用-docker-构建标志" tabindex="-1"><a class="header-anchor" href="#应用-docker-构建标志" aria-hidden="true">#</a> <strong>应用 Docker 构建标志</strong></h3>
+<h3 id="应用-docker-构建标志" tabindex="-1"><a class="header-anchor" href="#应用-docker-构建标志" aria-hidden="true">#</a> 应用 Docker 构建标志</h3>
 <p>可以使用 应用生成标志。这些标志必须是有效的 Docker 构建标志。</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 <span class="token literal-property property">dockers</span><span class="token operator">:</span>
@@ -1666,7 +1663,7 @@ Created snap<span class="token operator">/</span>snapcraft<span class="token pun
   <span class="token operator">--</span>label<span class="token operator">=</span>org<span class="token punctuation">.</span>opencontainers<span class="token punctuation">.</span>image<span class="token punctuation">.</span>title<span class="token operator">=</span>mybinary \
   <span class="token operator">--</span>label<span class="token operator">=</span>org<span class="token punctuation">.</span>opencontainers<span class="token punctuation">.</span>image<span class="token punctuation">.</span>revision<span class="token operator">=</span>da39a3ee5e6b4b0d3255bfef95601890afd80709 \
   <span class="token operator">--</span>label<span class="token operator">=</span>org<span class="token punctuation">.</span>opencontainers<span class="token punctuation">.</span>image<span class="token punctuation">.</span>version<span class="token operator">=</span><span class="token number">1.6</span><span class="token number">.4</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="将特定的构建器与-docker-buildx-一起使用" tabindex="-1"><a class="header-anchor" href="#将特定的构建器与-docker-buildx-一起使用" aria-hidden="true">#</a> <strong>将特定的构建器与 Docker buildx 一起使用</strong></h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="将特定的构建器与-docker-buildx-一起使用" tabindex="-1"><a class="header-anchor" href="#将特定的构建器与-docker-buildx-一起使用" aria-hidden="true">#</a> 将特定的构建器与 Docker buildx 一起使用</h3>
 <p>如果启用，则在构建映像时使用上下文构建器。此构建器始终可用，并由 Docker 引擎中的 BuildKit 提供支持。如果要使用其他构建器，可以使用以下字段指定它：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 <span class="token literal-property property">dockers</span><span class="token operator">:</span>
@@ -1683,7 +1680,7 @@ Created snap<span class="token operator">/</span>snapcraft<span class="token pun
       <span class="token operator">-</span> <span class="token string">"myuser/myimage"</span>
     <span class="token literal-property property">use</span><span class="token operator">:</span> podman
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>请注意，GoReleaser 不会为您安装 Podman，也不会更改其任何配置。</p>
-<h2 id="docker-manifests" tabindex="-1"><a class="header-anchor" href="#docker-manifests" aria-hidden="true">#</a> <strong>Docker Manifests</strong></h2>
+<h2 id="docker-manifests" tabindex="-1"><a class="header-anchor" href="#docker-manifests" aria-hidden="true">#</a> Docker Manifests</h2>
 <p>GoReleaser 还可以使用该工具创建和推送 Docker 多平台映像。</p>
 <p>无需切换设备，在 Apple M2 芯片的机器上我们可以直接构建 <code v-pre>amd64</code> 也就是 Linux 平台镜像，<code v-pre>docker build</code> 命令提供了 <code v-pre>--platform</code> 参数可以构建跨平台镜像。</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>docker build <span class="token operator">--</span>platform<span class="token operator">=</span>linux<span class="token operator">/</span>amd64 <span class="token operator">-</span>t kubecub<span class="token operator">/</span>echo<span class="token operator">-</span>platform<span class="token operator">-</span>amd64 <span class="token punctuation">.</span>
@@ -1708,16 +1705,16 @@ Linux buildkitsandbox <span class="token number">5.15</span><span class="token n
 <p>可以发现，<code v-pre>docker manifest</code> 共提供了 <code v-pre>annotate</code>、<code v-pre>create</code>、<code v-pre>inspect</code>、<code v-pre>push</code>、<code v-pre>rm</code> 这 5 个子命。</p>
 <p>可以发现，<code v-pre>create</code> 子命令支持两个可选参数 <code v-pre>-a/--amend</code> 用来修订已存在的多架构镜像。</p>
 <p>指定 <code v-pre>--insecure</code> 参数则允许使用不安全的（非 https）镜像仓库。</p>
-<h3 id="push" tabindex="-1"><a class="header-anchor" href="#push" aria-hidden="true">#</a> <strong>push</strong></h3>
+<h3 id="push" tabindex="-1"><a class="header-anchor" href="#push" aria-hidden="true">#</a> push</h3>
 <p><code v-pre>push</code> 子命令我们也见过了，使用 <code v-pre>push</code> 可以将多架构镜像推送到镜像仓库。</p>
 <p>同样的，<code v-pre>push</code> 也有一个 <code v-pre>--insecure</code> 参数允许使用不安全的（非 https）镜像仓库。</p>
 <ul>
 <li><code v-pre>p/--purge</code> 选项的作用是推送本地镜像到远程仓库后，删除本地 <code v-pre>manifest list</code>。</li>
 </ul>
-<h3 id="inspect" tabindex="-1"><a class="header-anchor" href="#inspect" aria-hidden="true">#</a> <strong>inspect</strong></h3>
+<h3 id="inspect" tabindex="-1"><a class="header-anchor" href="#inspect" aria-hidden="true">#</a> inspect</h3>
 <p><code v-pre>inspect</code> 用来查看 <code v-pre>manifest</code>/<code v-pre>manifest list</code> 所包含的镜像信息。</p>
 <p><code v-pre>--insecure</code> 参数允许使用不安全的（非 https）镜像仓库。这已经是我们第三次看见这个参数了，这也验证了 <code v-pre>docker manifest</code> 命令需要联网才能使用的说法，因为这些子命令基本都涉及到和远程镜像仓库的交互。</p>
-<h3 id="annotate" tabindex="-1"><a class="header-anchor" href="#annotate" aria-hidden="true">#</a> <strong>annotate</strong></h3>
+<h3 id="annotate" tabindex="-1"><a class="header-anchor" href="#annotate" aria-hidden="true">#</a> annotate</h3>
 <p><code v-pre>annotate</code> 子命令可以给一个本地镜像 <code v-pre>manifest</code> 添加附加的信息。这有点像 K8s Annotations 的意思。</p>
 <p>可选参数列表如下：</p>
 <table>
@@ -1752,7 +1749,7 @@ Linux buildkitsandbox <span class="token number">5.15</span><span class="token n
 </table>
 <h2 id="rm" tabindex="-1"><a class="header-anchor" href="#rm" aria-hidden="true">#</a> rm</h2>
 <p>最后要介绍的子命令是 <code v-pre>rm</code>，使用 <code v-pre>rm</code> 可以删除本地一个或多个多架构镜像（<code v-pre>manifest lists</code>）。</p>
-<h3 id="customization" tabindex="-1"><a class="header-anchor" href="#customization" aria-hidden="true">#</a> <strong>Customization</strong></h3>
+<h3 id="customization" tabindex="-1"><a class="header-anchor" href="#customization" aria-hidden="true">#</a> Customization</h3>
 <p>您可以在一次 GoReleaser 运行中创建多个清单，以下是所有可用的选项：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 <span class="token literal-property property">docker_manifests</span><span class="token operator">:</span>
@@ -1842,7 +1839,7 @@ Linux buildkitsandbox <span class="token number">5.15</span><span class="token n
 <span class="token keyword">export</span> <span class="token constant">KO_DOCKER_REPO</span><span class="token operator">=</span>ghcr<span class="token punctuation">.</span>io<span class="token operator">/</span>kubecub<span class="token operator">/</span>exporter<span class="token punctuation">;</span> ko build <span class="token punctuation">.</span><span class="token operator">/</span>cmd<span class="token operator">/</span>exporter
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>测试：</strong></p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>docker run <span class="token operator">-</span>p <span class="token number">8080</span><span class="token operator">:</span><span class="token number">8080</span> <span class="token function">$</span><span class="token punctuation">(</span>ko build <span class="token punctuation">.</span><span class="token operator">/</span>cmd<span class="token operator">/</span>app<span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="docker-images-with-ko" tabindex="-1"><a class="header-anchor" href="#docker-images-with-ko" aria-hidden="true">#</a> <strong>Docker Images with Ko</strong></h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="docker-images-with-ko" tabindex="-1"><a class="header-anchor" href="#docker-images-with-ko" aria-hidden="true">#</a> Docker Images with Ko</h2>
 <p>请注意 ko 将再次构建您的二进制文件。这不应该过多地增加发布时间，因为它会在可能的情况下使用与构建管道相同的构建选项，因此结果可能会被缓存。</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 <span class="token literal-property property">kos</span><span class="token operator">:</span>
@@ -1976,7 +1973,7 @@ Linux buildkitsandbox <span class="token number">5.15</span><span class="token n
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 # Whether to enable the size reporting or not<span class="token punctuation">.</span>
 <span class="token literal-property property">report_sizes</span><span class="token operator">:</span> <span class="token boolean">true</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="metadata-元数据" tabindex="-1"><a class="header-anchor" href="#metadata-元数据" aria-hidden="true">#</a> <strong>Metadata 元数据</strong></h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="metadata-元数据" tabindex="-1"><a class="header-anchor" href="#metadata-元数据" aria-hidden="true">#</a> Metadata 元数据</h2>
 <p>GoReleaser 在完成运行之前会在文件夹中创建一些元数据文件。</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
 #
@@ -2090,7 +2087,7 @@ Linux buildkitsandbox <span class="token number">5.15</span><span class="token n
   <span class="token literal-property property">artifacts</span><span class="token operator">:</span> all
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后，您的用户可以通过以下方式验证签名：</p>
 <p><code v-pre>cosign verify-blob -key cosign.pub -signature file.tar.gz.sig file.tar.gz</code></p>
-<h2 id="对-docker-映像和清单进行签名" tabindex="-1"><a class="header-anchor" href="#对-docker-映像和清单进行签名" aria-hidden="true">#</a> <strong>对 Docker 映像和清单进行签名</strong></h2>
+<h2 id="对-docker-映像和清单进行签名" tabindex="-1"><a class="header-anchor" href="#对-docker-映像和清单进行签名" aria-hidden="true">#</a> 对 Docker 映像和清单进行签名</h2>
 <p>使用 GoReleaser 也可以对 Docker 映像和清单进行签名。该管道是根据通用标志管道设计的，并考虑了共签名。</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yml
 <span class="token literal-property property">docker_signs</span><span class="token operator">:</span>
@@ -2157,7 +2154,7 @@ Linux buildkitsandbox <span class="token number">5.15</span><span class="token n
 <li><code v-pre>${artifactID}</code>: 将要签名的项目的 ID</li>
 <li><code v-pre>${certificate}</code>: 证书文件名（如果提供）</li>
 </ul>
-<h2 id="release" tabindex="-1"><a class="header-anchor" href="#release" aria-hidden="true">#</a> <strong>Release</strong></h2>
+<h2 id="release" tabindex="-1"><a class="header-anchor" href="#release" aria-hidden="true">#</a> Release</h2>
 <p>GoReleaser 可以使用当前标签创建 GitHub/GitLab/Gitea 版本，上传所有工件，并根据自上一个标签以来的新提交生成更改日志。</p>
 <p>让我们看看 GitHub 部分可以自定义的内容：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml
@@ -2308,10 +2305,10 @@ Linux buildkitsandbox <span class="token number">5.15</span><span class="token n
       <span class="token literal-property property">dst</span><span class="token operator">:</span> <span class="token constant">LICENSE</span><span class="token punctuation">.</span>txt
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="gpg-认证" tabindex="-1"><a class="header-anchor" href="#gpg-认证" aria-hidden="true">#</a> GPG 认证</h2>
 <p>GitHub 支持多种 GPG 关键算法。如果您尝试添加使用不受支持的算法生成的密钥，则可能会遇到错误。</p>
-<h3 id="检查现有-gpg-密钥" tabindex="-1"><a class="header-anchor" href="#检查现有-gpg-密钥" aria-hidden="true">#</a> <strong>检查现有 GPG 密钥</strong></h3>
+<h3 id="检查现有-gpg-密钥" tabindex="-1"><a class="header-anchor" href="#检查现有-gpg-密钥" aria-hidden="true">#</a> 检查现有 GPG 密钥</h3>
 <p>使用该<code v-pre>gpg --list-secret-keys --keyid-format=long</code>命令列出您拥有公钥和私钥的 GPG 密钥的长格式。签署提交或标签需要私钥。</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>gpg <span class="token operator">--</span>list<span class="token operator">-</span>secret<span class="token operator">-</span>keys <span class="token operator">--</span>keyid<span class="token operator">-</span>format<span class="token operator">=</span>long
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="生成新的-gpg-密钥" tabindex="-1"><a class="header-anchor" href="#生成新的-gpg-密钥" aria-hidden="true">#</a> <strong>生成新的 GPG 密钥</strong></h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="生成新的-gpg-密钥" tabindex="-1"><a class="header-anchor" href="#生成新的-gpg-密钥" aria-hidden="true">#</a> 生成新的 GPG 密钥</h3>
 <p>通过 git 的参数校验。配置：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>git config <span class="token operator">--</span>global gpg<span class="token punctuation">.</span>program gpg2
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>生成密钥对：</strong></p>
@@ -2369,7 +2366,7 @@ ssb   4096R<span class="token operator">/</span>4BB6D45482678BE3 <span class="to
 <p>您可以使用现有的 SSH 密钥来签署提交和标签，或生成专门用于签名的新密钥。有关更多信息，请参阅“<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener noreferrer">生成新的 SSH 密钥并将其添加到 ssh-agent<ExternalLinkIcon/></a> ”。</p>
 <p><strong>注意：</strong></p>
 <p>我们可能需要将 <code v-pre>export GPG_TTY=$(tty)</code> 添加到环境变量中</p>
-<h3 id="签名标签" tabindex="-1"><a class="header-anchor" href="#签名标签" aria-hidden="true">#</a> <strong>签名标签</strong></h3>
+<h3 id="签名标签" tabindex="-1"><a class="header-anchor" href="#签名标签" aria-hidden="true">#</a> 签名标签</h3>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code>$ git tag <span class="token operator">-</span>s <span class="token constant">MYTAG</span>
 # Creates a signed tag
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>通过运行验证您的签名标签<code v-pre>git tag -v [tag-name]</code>。</p>
@@ -2458,7 +2455,7 @@ ssb   4096R<span class="token operator">/</span>4BB6D45482678BE3 <span class="to
   <span class="token operator">-</span> provider<span class="token operator">:</span> s3
     <span class="token literal-property property">bucket</span><span class="token operator">:</span> goreleaser<span class="token operator">-</span>bucket
     <span class="token literal-property property">folder</span><span class="token operator">:</span> <span class="token string">"foo/bar/{{.Version}}"</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="fury-io-apt-和-rpm-存储库" tabindex="-1"><a class="header-anchor" href="#fury-io-apt-和-rpm-存储库" aria-hidden="true">#</a> <strong>Fury.io (apt 和 rpm 存储库）</strong></h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="fury-io-apt-和-rpm-存储库" tabindex="-1"><a class="header-anchor" href="#fury-io-apt-和-rpm-存储库" aria-hidden="true">#</a> Fury.io (apt 和 rpm 存储库）</h3>
 <p><strong>这是一个高级功能</strong>，但是 sealos 也使用了，用的是 bash 逻辑</p>
 <p>您可以使用 GoReleaser 轻松地在 fury.io 上创建和存储库。</p>
 <p>首先，您需要在 fury.io 上创建一个帐户并获取推送令牌。</p>
@@ -2501,9 +2498,9 @@ ssb   4096R<span class="token operator">/</span>4BB6D45482678BE3 <span class="to
     # Default<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'deb'</span><span class="token punctuation">,</span> <span class="token string">'rpm'</span><span class="token punctuation">]</span>
     <span class="token literal-property property">formats</span><span class="token operator">:</span>
       <span class="token operator">-</span> deb
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="homebrew-taps" tabindex="-1"><a class="header-anchor" href="#homebrew-taps" aria-hidden="true">#</a> <strong>Homebrew Taps</strong></h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="homebrew-taps" tabindex="-1"><a class="header-anchor" href="#homebrew-taps" aria-hidden="true">#</a> Homebrew Taps</h2>
 <p>发布到 GitHub、GitLab 或 Gitea 后，GoReleaser 可以生成 <em>homebrew-tap</em> 并将其发布到您有权访问的存储库中。</p>
-<h2 id="announce" tabindex="-1"><a class="header-anchor" href="#announce" aria-hidden="true">#</a> <strong>Announce</strong></h2>
+<h2 id="announce" tabindex="-1"><a class="header-anchor" href="#announce" aria-hidden="true">#</a> Announce</h2>
 <p>GoReleaser还可以在社交网络，聊天室和电子邮件上宣布新版本！</p>
 <p>它在管道的最末端运行，可以使用命令的标志或通过 skip 属性跳过：</p>
 <div class="language-jsx ext-jsx line-numbers-mode"><pre v-pre class="language-jsx"><code># <span class="token punctuation">.</span>goreleaser<span class="token punctuation">.</span>yaml

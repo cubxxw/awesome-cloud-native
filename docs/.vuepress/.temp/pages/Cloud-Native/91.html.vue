@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第91节" tabindex="-1"><a class="header-anchor" href="#第91节" aria-hidden="true">#</a> 第91节</h1>
+<h1 id="第91节-openim-集群化构建" tabindex="-1"><a class="header-anchor" href="#第91节-openim-集群化构建" aria-hidden="true">#</a> 第91节 OpenIM 集群化构建</h1>
 <div><a href = '90.md' style='float:left'>⬆️上一节🔗  </a><a href = '92.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
@@ -9,6 +9,11 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="拆分微服务" tabindex="-1"><a class="header-anchor" href="#拆分微服务" aria-hidden="true">#</a> 拆分微服务</h2>
+<p>OpenIM 的集群化部署的第一步就是拆分镜像，我们以 chat 仓库作为基准，去做整个集群的操作</p>
+<ul>
+<li>debug</li>
+</ul>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '90.md' style='float:left'>⬆️上一节🔗  </a><a href = '92.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
