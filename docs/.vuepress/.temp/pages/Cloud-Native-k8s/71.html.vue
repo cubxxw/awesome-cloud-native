@@ -219,15 +219,56 @@ jobs:
           <span class="token key atrule">token</span><span class="token punctuation">:</span> <span class="token string">"${{ secrets.BOT_GITHUB_TOKEN }}"</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="如何使用指定的github-robot-代替-github-actions" tabindex="-1"><a class="header-anchor" href="#如何使用指定的github-robot-代替-github-actions" aria-hidden="true">#</a> 如何使用指定的GitHub robot 代替 GitHub actions</h3>
 <p>每一次看到 GitHub actions，感觉看着不顺眼，还不如搞一个自己的 robot。</p>
+<p>但是一不小心搞了两个 😒</p>
+<ul>
+<li>https://github.com/kubbot: I am a member bot of <a href="https://github.com/OpenIMSDK" target="_blank" rel="noopener noreferrer">@OpenIMSDK<ExternalLinkIcon/></a> and the older brother of <a href="https://github.com/openimbot" target="_blank" rel="noopener noreferrer">@openimbot<ExternalLinkIcon/></a></li>
+<li>https://github.com/openimbot: I am a member bot of <a href="https://github.com/OpenIMSDK" target="_blank" rel="noopener noreferrer">@OpenIMSDK<ExternalLinkIcon/></a> openim and a sister of <a href="https://github.com/kubbot" target="_blank" rel="noopener noreferrer">@kubbot<ExternalLinkIcon/></a></li>
+</ul>
 <h3 id="lighthouse" tabindex="-1"><a class="header-anchor" href="#lighthouse" aria-hidden="true">#</a> Lighthouse</h3>
+<ul>
+<li>https://github.com/jenkins-x/lighthouse</li>
+</ul>
 <p>Lighthouse是一个轻量级的基于 ChatOps 的 webhook 处理程序，可以基于来自多个git提供商（如GitHub，GitHub Enterprise，BitBucket Server和GitLab）的webhook触发Jenkins X Pipelines，Tekton Pipelines或Jenkins Jobs。</p>
 <p>Lighthouse 最开始的时候也是基于 prow 的，并且是从他们的基础代码的副本开始。</p>
 <p>目前，Lighthouse支持标准的Prow插件，并处理将webhook推送到分支，然后在您选择的代理上触发管道执行。</p>
 <p>Lighthouse使用与Prow相同的 <code v-pre>config.yaml</code> 和 <code v-pre>plugins.yaml</code> 进行配置。</p>
+<h2 id="test-infra-介绍" tabindex="-1"><a class="header-anchor" href="#test-infra-介绍" aria-hidden="true">#</a> Test-Infra 介绍</h2>
+<p>作为 kubernetes 基础保障，test-infra 功能非常的强大。</p>
+<p><img src="https://raw.githubusercontent.com/kubernetes/test-infra/9771710c13868bddd1476170a77ddab36941c512/docs/architecture.svg" alt="img"></p>
+<p><strong>架构解释：</strong></p>
+<p>对于 test-infra 的架构，我们首先可以发现，其相对复杂，并且包含许多微服务组件。值得注意的一点是，test-infra 中的微服务与其他微服务之间的交互并不采用我们熟知的传统方式，例如，它并不通过 grpc 进行调用，这与 OpenIM 等传统微服务有所区别。</p>
+<p>test-infra 的架构的核心组成部分是 Hooks，它负责接收不同类型的事件。然后，test-infra 会通过一套插件系统，根据事件类型将其分发给不同的插件进行处理。例如，如果我们考虑一个实例，那么在 kubernetes test-infra 仓库的 prow 目录下，我们可以找到一个名为 plugins 的插件集合，其中一个插件名为 <code v-pre>transfer-issue</code>。此插件负责处理 PR 请求。</p>
+<p>另一方面，对于单元请求，它将进行单元测试，对于合并请求，它将进行合并测试。在这个系统中，我们还有一个称为 <code v-pre>prowjob</code> 的CRD资源，它提供了一种高层次的抽象，以及一个自定义的控制器。</p>
+<p>所有的测试结果会被回传到 GitHub 的测试面板上。状态更新会通过 crier 进行，然后传入到对应的组织和仓库地址。</p>
+<p>在可视化方面，test-infra 提供了一个名为 deck 的组件。对应的网站是 prow.k8s.io，它提供了前端视图，使得用户可以更直观地理解和掌控整个测试流程。</p>
+<p>这样的设计让 test-infra 的架构显得既复杂又灵活，但也带来了极高的定制性和扩展性。</p>
+<p><strong>基本组件：</strong></p>
+<ol>
+<li>Prow Controller Manager：Prow控制器管理器是Prow的核心组件，负责协调Prow的各个子系统。它监控Git存储库中的事件，并根据配置触发相应的操作。</li>
+<li>Prow Job：Prow Job定义了CI/CD系统中的一个任务或作业。它描述了要运行的代码、测试和部署步骤，并指定了触发该作业的条件。</li>
+<li>Prow Plugin：Prow插件是一种扩展机制，允许开发人员为Prow系统添加自定义功能。插件可以监听事件并执行相应的操作，例如自动化代码审查、生成报告等。</li>
+<li>Prow Dashboard：Prow仪表板是一个Web界面，用于监视和管理Prow系统的运行状态。它提供了对作业、插件和事件的可视化界面，方便用户查看和操作。</li>
+<li>Plank：Plank是Prow的任务调度器，负责将Prow Job分配给可用的工作节点进行执行。它会监控作业队列，并将作业分发给合适的工作节点，以便并行执行作业。</li>
+<li>Hook：Hook是Prow的事件处理器，用于接收和处理来自Git存储库的事件。它会监听Git存储库中的事件，并将这些事件转发给Prow的Controller Manager进行处理。</li>
+<li>Deck：Deck是Prow的用户界面，提供了一个Web界面，用于查看Prow系统中的作业、插件和事件等信息。开发人员可以使用Deck来监视和管理CI/CD流程，查看作业的状态和日志等。</li>
+<li>Sinker：Sinker是Prow的清理器，负责清理过期的作业和资源。它会定期检查作业的状态，并清理已完成或过期的作业，以释放资源并保持系统的整洁。</li>
+<li>Tide：Tide是Prow的自动合并管理器，用于管理代码合并流程。它会监视Git存储库中的Pull Request，并根据配置的规则自动合并符合条件的Pull Request。</li>
+</ol>
+<h3 id="k8s-prow-能支持哪些日志存储" tabindex="-1"><a class="header-anchor" href="#k8s-prow-能支持哪些日志存储" aria-hidden="true">#</a> k8s prow 能支持哪些日志存储</h3>
+<p><strong>之前 kubesphere 中听过两句话：</strong></p>
+<p>Prow  目前只是支持 Github ，Gerrit，对于 gitlab 的支持短期难以看到。</p>
+<blockquote>
+<p>但是我们可以通过 <code v-pre>Lighthouse</code> 去支持</p>
+</blockquote>
+<p><s>prow 的持久化存储只支持 GCP，但是可以使用 Jenkins X，它使用了 Knative 来跑 Job</s></p>
+<blockquote>
+<p>这句话不对，我们可以通过 prow 找到，是可以支持其他的云的。Prow 并不仅用 GCP，只要是兼容 s3 的 sdk ，就可以。</p>
+</blockquote>
 <h3 id="基础满足" tabindex="-1"><a class="header-anchor" href="#基础满足" aria-hidden="true">#</a> 基础满足</h3>
 <h3 id="创建-access-tokens" tabindex="-1"><a class="header-anchor" href="#创建-access-tokens" aria-hidden="true">#</a> 创建 access tokens</h3>
 <p>https://github.com/settings/tokens （<em>需要在 <code v-pre>.env</code> 里配置</em>）</p>
 <h3 id="创建-webhook" tabindex="-1"><a class="header-anchor" href="#创建-webhook" aria-hidden="true">#</a> 创建 webhook</h3>
+<p>仓库的所有事件，都需要通过 webhook 去监听使用的。</p>
 <p>https://github.com/用户名/项目名/settings/hooks/new</p>
 <ul>
 <li>Payload URL: <a href="http://www.example.com:8000/" target="_blank" rel="noopener noreferrer">www.example.com:8000<ExternalLinkIcon/></a></li>
@@ -264,6 +305,28 @@ file - 将所有相关log输出到更根目录的 `log` 文件夹中。
 <li><a href="https://github.com/labring/gh-rebot" target="_blank" rel="noopener noreferrer">sealos gh rebot<ExternalLinkIcon/></a></li>
 <li>https://www.amoyw.com/2020/10/22/Prow/</li>
 </ul>
+<h3 id="test-infra" tabindex="-1"><a class="header-anchor" href="#test-infra" aria-hidden="true">#</a> Test Infra</h3>
+<p>包含 prow：</p>
+<ul>
+<li>Istio: https://github.com/istio/test-infra</li>
+<li>Kubernetes: https://github.com/kubernetes/test-infra</li>
+<li>Knative: https://github.com/knative/test-infra</li>
+</ul>
+<p>不含有 prow：</p>
+<ul>
+<li>prometheus： https://github.com/prometheus/test-infra</li>
+<li>kyma-project： https://github.com/kyma-project/test-infra</li>
+<li>Grpc: https://github.com/grpc/test-infra</li>
+</ul>
+<h3 id="文档" tabindex="-1"><a class="header-anchor" href="#文档" aria-hidden="true">#</a> 文档</h3>
+<p><a href="https://kurtmadel.com/posts/native-kubernetes-continuous-delivery/prow/" target="_blank" rel="noopener noreferrer">Prow: Keeping Kubernetes CI/CD Above Water - Kurt Madel<ExternalLinkIcon/></a></p>
+<p><a href="https://www.alldaydevops.com/blog/prow-jenkins-x-pipeline-operator-and-tekton-going-serverless-with-jenkins-x" target="_blank" rel="noopener noreferrer">Prow, Jenkins X Pipeline Operator, and Tekton: Going Serverless With Jenkins X<ExternalLinkIcon/></a></p>
+<p><a href="https://devclass.com/2020/06/18/jenkins-x-cloudbees-may-update/" target="_blank" rel="noopener noreferrer">Jenkins X replaces Prow with Lighthouse for better source control compatibility • DEVCLASS<ExternalLinkIcon/></a></p>
+<p><a href="https://www.velotio.com/engineering-blog/prow-for-native-kubernetes-ci-cd" target="_blank" rel="noopener noreferrer">Prow + Kubernetes - A Perfect Combination To Execute CI/CD At Scale<ExternalLinkIcon/></a></p>
+<h4 id="参考" tabindex="-1"><a class="header-anchor" href="#参考" aria-hidden="true">#</a> 参考</h4>
+<p><a href="https://docs.prow.k8s.io/docs/overview/" target="_blank" rel="noopener noreferrer">Overview<ExternalLinkIcon/></a></p>
+<h4 id="代码部分" tabindex="-1"><a class="header-anchor" href="#代码部分" aria-hidden="true">#</a> 代码部分：</h4>
+<p><a href="https://github.com/kubernetes/test-infra/tree/master/prow#bots-home" target="_blank" rel="noopener noreferrer">test-infra/prow at master · kubernetes/test-infra<ExternalLinkIcon/></a></p>
 <h3 id="导航" tabindex="-1"><a class="header-anchor" href="#导航" aria-hidden="true">#</a> 导航</h3>
 <ul><li><div><a href = '70.md' style='float:left'>⬆️上一节🔗  </a><a href = '72.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
