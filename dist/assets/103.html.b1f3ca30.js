@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-e8f3f5a8","path":"/Cloud-Native/103.html","title":"","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"\u{1F680} Quick Start","slug":"quick-start","link":"#quick-start","children":[]}],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"Cloud-Native/103.md"}');export{t as data};
