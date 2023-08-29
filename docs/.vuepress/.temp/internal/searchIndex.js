@@ -1409,6 +1409,13 @@ export const searchIndex = [
         "slug": "openim-配置-system",
         "link": "#openim-配置-system",
         "children": []
+      },
+      {
+        "level": 2,
+        "title": "实现",
+        "slug": "实现",
+        "link": "#实现",
+        "children": []
       }
     ],
     "path": "/Cloud-Native/111.html",
@@ -1416,7 +1423,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
+    "title": "OpenIM PR Bug About Actions",
     "headers": [
       {
         "level": 2,
@@ -1427,6 +1434,363 @@ export const searchIndex = [
       }
     ],
     "path": "/Cloud-Native/112.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "OpenIM 离线部署设计",
+    "headers": [
+      {
+        "level": 2,
+        "title": "1. 基础镜像",
+        "slug": "_1-基础镜像",
+        "link": "#_1-基础镜像",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "2. OpenIM 与 Chat 镜像",
+        "slug": "_2-openim-与-chat-镜像",
+        "link": "#_2-openim-与-chat-镜像",
+        "children": [
+          {
+            "level": 3,
+            "title": "OpenIM 镜像",
+            "slug": "openim-镜像",
+            "link": "#openim-镜像",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Chat 镜像",
+            "slug": "chat-镜像",
+            "link": "#chat-镜像",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "3. 镜像存储选择",
+        "slug": "_3-镜像存储选择",
+        "link": "#_3-镜像存储选择",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "4. 版本选择",
+        "slug": "_4-版本选择",
+        "link": "#_4-版本选择",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "5. 离线部署步骤",
+        "slug": "_5-离线部署步骤",
+        "link": "#_5-离线部署步骤",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "6. 参考链接",
+        "slug": "_6-参考链接",
+        "link": "#_6-参考链接",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "1. Base Images",
+        "slug": "_1-base-images",
+        "link": "#_1-base-images",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "2. OpenIM & Chat Images",
+        "slug": "_2-openim-chat-images",
+        "link": "#_2-openim-chat-images",
+        "children": [
+          {
+            "level": 3,
+            "title": "OpenIM Image",
+            "slug": "openim-image",
+            "link": "#openim-image",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "Chat Image",
+            "slug": "chat-image",
+            "link": "#chat-image",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "3. Image Storage Selection",
+        "slug": "_3-image-storage-selection",
+        "link": "#_3-image-storage-selection",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "4. Version Selection",
+        "slug": "_4-version-selection",
+        "link": "#_4-version-selection",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "5. Offline Deployment Steps",
+        "slug": "_5-offline-deployment-steps",
+        "link": "#_5-offline-deployment-steps",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "6. Reference Links",
+        "slug": "_6-reference-links",
+        "link": "#_6-reference-links",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/113.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "深入刨析 Github CRL",
+    "headers": [
+      {
+        "level": 2,
+        "title": "项目布局",
+        "slug": "项目布局",
+        "link": "#项目布局",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "上手",
+        "slug": "上手",
+        "link": "#上手",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "如何添加新命令",
+        "slug": "如何添加新命令",
+        "link": "#如何添加新命令",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/114.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Development of a Diagnostic Tool in Go",
+    "headers": [],
+    "path": "/Cloud-Native/115.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "OpenIM Component-Base",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Table of Contents",
+        "slug": "table-of-contents",
+        "link": "#table-of-contents",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Introduction",
+        "slug": "introduction",
+        "link": "#introduction",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Motivation",
+        "slug": "motivation",
+        "link": "#motivation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Getting Started",
+        "slug": "getting-started",
+        "link": "#getting-started",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Components",
+        "slug": "components",
+        "link": "#components",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Contribution",
+        "slug": "contribution",
+        "link": "#contribution",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Prior Art",
+        "slug": "prior-art",
+        "link": "#prior-art",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "License",
+        "slug": "license",
+        "link": "#license",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Meta",
+        "slug": "meta",
+        "link": "#meta",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📇Topics",
+        "slug": "📇topics",
+        "link": "#📇topics",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Summary",
+        "slug": "summary",
+        "link": "#summary",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Motivation",
+        "slug": "motivation-1",
+        "link": "#motivation-1",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "What it is",
+        "slug": "what-it-is",
+        "link": "#what-it-is",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "How it Works",
+        "slug": "how-it-works",
+        "link": "#how-it-works",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Migration",
+        "slug": "migration",
+        "link": "#migration",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Drawbacks",
+        "slug": "drawbacks",
+        "link": "#drawbacks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Alternatives",
+        "slug": "alternatives",
+        "link": "#alternatives",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Prior Art",
+        "slug": "prior-art-1",
+        "link": "#prior-art-1",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Unresolved Questions",
+        "slug": "unresolved-questions",
+        "link": "#unresolved-questions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Spec. Changes (OPTIONAL)",
+        "slug": "spec-changes-optional",
+        "link": "#spec-changes-optional",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "History",
+        "slug": "history",
+        "link": "#history",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/116.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "OpenIM Component-Base 介绍",
+    "headers": [
+      {
+        "level": 2,
+        "title": "version",
+        "slug": "version",
+        "link": "#version",
+        "children": [
+          {
+            "level": 3,
+            "title": "Go中的版本解析和比较",
+            "slug": "go中的版本解析和比较",
+            "link": "#go中的版本解析和比较",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "亮点：",
+            "slug": "亮点",
+            "link": "#亮点",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "如何使用：",
+            "slug": "如何使用",
+            "link": "#如何使用",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "总结：",
+            "slug": "总结",
+            "link": "#总结",
+            "children": []
+          }
+        ]
+      }
+    ],
+    "path": "/Cloud-Native/117.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1463,6 +1827,120 @@ export const searchIndex = [
       }
     ],
     "path": "/Cloud-Native/12.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "OpenIM CTL (imctl) 设计",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Meta",
+        "slug": "meta",
+        "link": "#meta",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "📇Topics",
+        "slug": "📇topics",
+        "link": "#📇topics",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Summary",
+        "slug": "summary",
+        "link": "#summary",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Definitions",
+        "slug": "definitions",
+        "link": "#definitions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Motivation",
+        "slug": "motivation",
+        "link": "#motivation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "What it is",
+        "slug": "what-it-is",
+        "link": "#what-it-is",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "How it Works",
+        "slug": "how-it-works",
+        "link": "#how-it-works",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Migration",
+        "slug": "migration",
+        "link": "#migration",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Drawbacks",
+        "slug": "drawbacks",
+        "link": "#drawbacks",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Alternatives",
+        "slug": "alternatives",
+        "link": "#alternatives",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Prior Art",
+        "slug": "prior-art",
+        "link": "#prior-art",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Unresolved Questions",
+        "slug": "unresolved-questions",
+        "link": "#unresolved-questions",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Spec. Changes (OPTIONAL)",
+        "slug": "spec-changes-optional",
+        "link": "#spec-changes-optional",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/123.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "IMCTL 设计技巧",
+    "headers": [
+      {
+        "level": 2,
+        "title": "架构图",
+        "slug": "架构图",
+        "link": "#架构图",
+        "children": []
+      }
+    ],
+    "path": "/Cloud-Native/124.html",
     "pathLocale": "/",
     "extraFields": []
   },

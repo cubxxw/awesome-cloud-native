@@ -436,6 +436,157 @@ $ <span class="token function">sudo</span> journalctl --vacuum-time<span class="
 </tr>
 </tbody>
 </table>
-</div></template>
+<h2 id="实现" tabindex="-1"><a class="header-anchor" href="#实现" aria-hidden="true">#</a> 实现</h2>
+<p>以 <code v-pre>openim-crontask</code> 为例：</p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token shebang important">#!/usr/bin/env bash</span>
+
+<span class="token comment"># Copyright © 2023 OpenIM. All rights reserved.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Licensed under the Apache License, Version 2.0 (the "License");</span>
+<span class="token comment"># you may not use this file except in compliance with the License.</span>
+<span class="token comment"># You may obtain a copy of the License at</span>
+<span class="token comment">#</span>
+<span class="token comment">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="token comment">#</span>
+<span class="token comment"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="token comment"># distributed under the License is distributed on an "AS IS" BASIS,</span>
+<span class="token comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="token comment"># See the License for the specific language governing permissions and</span>
+<span class="token comment"># limitations under the License.</span>
+<span class="token comment"># </span>
+<span class="token comment"># OpenIM CronTask Control Script</span>
+<span class="token comment"># </span>
+<span class="token comment"># Description:</span>
+<span class="token comment"># This script provides a control interface for the OpenIM CronTask service within a Linux environment. It supports two installation methods: installation via function calls to systemctl, and direct installation through background processes.</span>
+<span class="token comment"># </span>
+<span class="token comment"># Features:</span>
+<span class="token comment"># 1. Robust error handling leveraging Bash built-ins such as 'errexit', 'nounset', and 'pipefail'.</span>
+<span class="token comment"># 2. Capability to source common utility functions and configurations, ensuring environmental consistency.</span>
+<span class="token comment"># 3. Comprehensive logging tools, offering clear operational insights.</span>
+<span class="token comment"># 4. Support for creating, managing, and interacting with Linux systemd services.</span>
+<span class="token comment"># 5. Mechanisms to verify the successful running of the service.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Usage:</span>
+<span class="token comment"># 1. Direct Script Execution:</span>
+<span class="token comment">#    This will start the OpenIM CronTask directly through a background process.</span>
+<span class="token comment">#    Example: ./openim-crontask.sh openim::crontask::start</span>
+<span class="token comment"># </span>
+<span class="token comment"># 2. Controlling through Functions for systemctl operations:</span>
+<span class="token comment">#    Specific operations like installation, uninstallation, and status check can be executed by passing the respective function name as an argument to the script.</span>
+<span class="token comment">#    Example: ./openim-crontask.sh openim::crontask::install</span>
+<span class="token comment"># </span>
+<span class="token comment"># Note: Ensure that the appropriate permissions and environmental variables are set prior to script execution.</span>
+<span class="token comment"># </span>
+
+<span class="token assign-left variable">OPENIM_ROOT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dirname</span> <span class="token string">"<span class="token variable">${<span class="token environment constant">BASH_SOURCE</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span>}</span>"</span><span class="token variable">)</span></span>"</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">pwd</span> <span class="token parameter variable">-P</span><span class="token variable">)</span></span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token variable">${COMMON_SOURCED}</span> <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">source</span> <span class="token string">"<span class="token variable">${OPENIM_ROOT}</span>"</span>/scripts/install/common.sh
+
+<span class="token assign-left variable">SERVER_NAME</span><span class="token operator">=</span><span class="token string">"openim-crontask"</span>
+
+<span class="token keyword">function</span> openim::crontask::<span class="token function-name function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    openim::log::info <span class="token string">"Start OpenIM Cron, binary root: <span class="token variable">${SERVER_NAME}</span>"</span>
+    openim::log::status <span class="token string">"Start OpenIM Cron, path: <span class="token variable">${OPENIM_CRONTASK_BINARY}</span>"</span>
+
+    openim::util::stop_services_with_name <span class="token variable">${SERVER_NAME}</span>
+
+    openim::log::status <span class="token string">"start cron_task process, path: <span class="token variable">${OPENIM_CRONTASK_BINARY}</span>"</span>
+    <span class="token function">nohup</span> <span class="token variable">${OPENIM_CRONTASK_BINARY}</span> <span class="token operator">>></span> <span class="token variable">${LOG_FILE}</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+    openim::util::check_process_names <span class="token variable">${SERVER_NAME}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">###################################### Linux Systemd ######################################</span>
+<span class="token assign-left variable">SYSTEM_FILE_PATH</span><span class="token operator">=</span><span class="token string">"/etc/systemd/system/<span class="token variable">${SERVER_NAME}</span>.service"</span>
+
+<span class="token comment"># Print the necessary information after installation</span>
+<span class="token keyword">function</span> openim::crontask::<span class="token function-name function">info</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+openim-crontask listen on: <span class="token variable">${OPENIM_CRONTASK_HOST}</span>
+EOF</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># install openim-crontask</span>
+<span class="token keyword">function</span> openim::crontask::<span class="token function-name function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token function">pushd</span> <span class="token string">"<span class="token variable">${OPENIM_ROOT}</span>"</span>
+
+  <span class="token comment"># 1. Build openim-crontask</span>
+  <span class="token function">make</span> build <span class="token assign-left variable">BINS</span><span class="token operator">=</span><span class="token variable">${SERVER_NAME}</span>
+  openim::common::sudo <span class="token string">"cp <span class="token variable">${OPENIM_OUTPUT_HOSTBIN}</span>/<span class="token variable">${SERVER_NAME}</span> <span class="token variable">${OPENIM_INSTALL_DIR}</span>/bin"</span>
+
+  openim::log::status <span class="token string">"<span class="token variable">${SERVER_NAME}</span> binary: <span class="token variable">${OPENIM_INSTALL_DIR}</span>/bin/<span class="token variable">${SERVER_NAME}</span>"</span>
+
+  <span class="token comment"># 2. Generate and install the openim-crontask configuration file (openim-crontask.yaml)</span>
+  <span class="token builtin class-name">echo</span> <span class="token variable">${LINUX_PASSWORD}</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token parameter variable">-S</span> <span class="token function">bash</span> <span class="token parameter variable">-c</span> <span class="token punctuation">\</span>
+    <span class="token string">"./scripts/genconfig.sh <span class="token variable">${ENV_FILE}</span> deployments/templates/<span class="token variable">${SERVER_NAME}</span>.yaml > <span class="token variable">${OPENIM_CONFIG_DIR}</span>/<span class="token variable">${SERVER_NAME}</span>.yaml"</span>
+  openim::log::status <span class="token string">"<span class="token variable">${SERVER_NAME}</span> config file: <span class="token variable">${OPENIM_CONFIG_DIR}</span>/<span class="token variable">${SERVER_NAME}</span>.yaml"</span>
+
+  <span class="token comment"># 3. Create and install the ${SERVER_NAME} systemd unit file</span>
+  <span class="token builtin class-name">echo</span> <span class="token variable">${LINUX_PASSWORD}</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token parameter variable">-S</span> <span class="token function">bash</span> <span class="token parameter variable">-c</span> <span class="token punctuation">\</span>
+    <span class="token string">"./scripts/genconfig.sh <span class="token variable">${ENV_FILE}</span> deployments/templates/init/<span class="token variable">${SERVER_NAME}</span>.service > <span class="token variable">${SYSTEM_FILE_PATH}</span>"</span>
+  openim::log::status <span class="token string">"<span class="token variable">${SERVER_NAME}</span> systemd file: <span class="token variable">${SYSTEM_FILE_PATH}</span>"</span>
+
+  <span class="token comment"># 4. Start the openim-crontask service</span>
+  openim::common::sudo <span class="token string">"systemctl daemon-reload"</span>
+  openim::common::sudo <span class="token string">"systemctl restart <span class="token variable">${SERVER_NAME}</span>"</span>
+  openim::common::sudo <span class="token string">"systemctl enable <span class="token variable">${SERVER_NAME}</span>"</span>
+  openim::crontask::status <span class="token operator">||</span> <span class="token builtin class-name">return</span> <span class="token number">1</span>
+  openim::crontask::info
+
+  openim::log::info <span class="token string">"install <span class="token variable">${SERVER_NAME}</span> successfully"</span>
+  <span class="token function">popd</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment"># Unload</span>
+<span class="token keyword">function</span> openim::crontask::<span class="token function-name function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token builtin class-name">set</span> +o errexit
+  openim::common::sudo <span class="token string">"systemctl stop <span class="token variable">${SERVER_NAME}</span>"</span>
+  openim::common::sudo <span class="token string">"systemctl disable <span class="token variable">${SERVER_NAME}</span>"</span>
+  openim::common::sudo <span class="token string">"rm -f <span class="token variable">${OPENIM_INSTALL_DIR}</span>/bin/<span class="token variable">${SERVER_NAME}</span>"</span>
+  openim::common::sudo <span class="token string">"rm -f <span class="token variable">${OPENIM_CONFIG_DIR}</span>/<span class="token variable">${SERVER_NAME}</span>.yaml"</span>
+  openim::common::sudo <span class="token string">"rm -f /etc/systemd/system/<span class="token variable">${SERVER_NAME}</span>.service"</span>
+  <span class="token builtin class-name">set</span> <span class="token parameter variable">-o</span> errexit
+  openim::log::info <span class="token string">"uninstall <span class="token variable">${SERVER_NAME}</span> successfully"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Status Check</span>
+<span class="token keyword">function</span> openim::crontask::<span class="token function-name function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token comment"># Check the running status of the ${SERVER_NAME}. If active (running) is displayed, the ${SERVER_NAME} is started successfully.</span>
+  systemctl status <span class="token variable">${SERVER_NAME}</span><span class="token operator">|</span><span class="token function">grep</span> <span class="token parameter variable">-q</span> <span class="token string">'active'</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+    openim::log::error <span class="token string">"<span class="token variable">${SERVER_NAME}</span> failed to start, maybe not installed properly"</span>
+    <span class="token builtin class-name">return</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment"># The listening port is hardcode in the configuration file</span>
+  <span class="token keyword">if</span> <span class="token builtin class-name">echo</span> <span class="token operator">|</span> telnet <span class="token number">127.0</span>.0.1 <span class="token number">7070</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span><span class="token operator">|</span><span class="token function">grep</span> refused <span class="token operator">&amp;></span>/dev/null<span class="token punctuation">;</span><span class="token keyword">then</span>
+    openim::log::error <span class="token string">"cannot access health check port, <span class="token variable">${SERVER_NAME}</span> maybe not startup"</span>
+    <span class="token builtin class-name">return</span> <span class="token number">1</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$*</span>"</span> <span class="token operator">=~</span> openim::crontask:: <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token builtin class-name">eval</span> <span class="token variable">$*</span>
+<span class="token keyword">fi</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>service:</strong></p>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>OPENIM OPENIM CRONTASK
+<span class="token assign-left variable">Documentation</span><span class="token operator">=</span>Manages the OpenIM CronTask service, with both direct and systemctl installation methods.
+<span class="token assign-left variable">Documentation</span><span class="token operator">=</span>https://github.com/OpenIMSDK/Open-IM-Server/blob/main/deployment/init/README.md
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">WorkingDirectory</span><span class="token operator">=</span><span class="token variable">${OPENIM_DATA_DIR}</span>/openim-crontask
+<span class="token assign-left variable">ExecStartPre</span><span class="token operator">=</span>/usr/bin/mkdir <span class="token parameter variable">-p</span> <span class="token variable">${OPENIM_DATA_DIR}</span>/openim-crontask
+<span class="token assign-left variable">ExecStartPre</span><span class="token operator">=</span>/usr/bin/mkdir <span class="token parameter variable">-p</span> <span class="token variable">${OPENIM_LOG_DIR}</span>
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span><span class="token variable">${OPENIM_INSTALL_DIR}</span>/bin/openim-crontask <span class="token parameter variable">-c</span><span class="token operator">=</span><span class="token variable">${OPENIM_CONFIG_DIR}</span>
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>always
+<span class="token assign-left variable">RestartSec</span><span class="token operator">=</span><span class="token number">5</span>
+<span class="token assign-left variable">StartLimitInterval</span><span class="token operator">=</span><span class="token number">0</span>
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
 
 

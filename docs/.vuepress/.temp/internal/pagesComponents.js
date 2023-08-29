@@ -35,8 +35,22 @@ export const pagesComponents = {
   "v-85fae1a2": defineAsyncComponent(() => import(/* webpackChunkName: "v-85fae1a2" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/111.html.vue")),
   // path: /Cloud-Native/112.html
   "v-82913064": defineAsyncComponent(() => import(/* webpackChunkName: "v-82913064" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/112.html.vue")),
+  // path: /Cloud-Native/113.html
+  "v-7f277f26": defineAsyncComponent(() => import(/* webpackChunkName: "v-7f277f26" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/113.html.vue")),
+  // path: /Cloud-Native/114.html
+  "v-7bbdcde8": defineAsyncComponent(() => import(/* webpackChunkName: "v-7bbdcde8" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/114.html.vue")),
+  // path: /Cloud-Native/115.html
+  "v-78541caa": defineAsyncComponent(() => import(/* webpackChunkName: "v-78541caa" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/115.html.vue")),
+  // path: /Cloud-Native/116.html
+  "v-74ea6b6c": defineAsyncComponent(() => import(/* webpackChunkName: "v-74ea6b6c" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/116.html.vue")),
+  // path: /Cloud-Native/117.html
+  "v-7180ba2e": defineAsyncComponent(() => import(/* webpackChunkName: "v-7180ba2e" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/117.html.vue")),
   // path: /Cloud-Native/12.html
   "v-208428b1": defineAsyncComponent(() => import(/* webpackChunkName: "v-208428b1" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/12.html.vue")),
+  // path: /Cloud-Native/123.html
+  "v-155b08a4": defineAsyncComponent(() => import(/* webpackChunkName: "v-155b08a4" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/123.html.vue")),
+  // path: /Cloud-Native/124.html
+  "v-11f15766": defineAsyncComponent(() => import(/* webpackChunkName: "v-11f15766" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/124.html.vue")),
   // path: /Cloud-Native/13.html
   "v-22390150": defineAsyncComponent(() => import(/* webpackChunkName: "v-22390150" */"C:/Users/Admin/Desktop/docs/awesome-cloud-native/docs/.vuepress/.temp/pages/Cloud-Native/13.html.vue")),
   // path: /Cloud-Native/14.html
