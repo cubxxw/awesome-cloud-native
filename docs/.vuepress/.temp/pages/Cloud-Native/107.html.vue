@@ -1,4 +1,4 @@
-<template><div><h1 id="openim-docker-deployment" tabindex="-1"><a class="header-anchor" href="#openim-docker-deployment" aria-hidden="true">#</a> OpenIM Docker Deployment</h1>
+<template><div><h1 id="_107-openim-docker-deployment" tabindex="-1"><a class="header-anchor" href="#_107-openim-docker-deployment" aria-hidden="true">#</a> 107: OpenIM Docker Deployment</h1>
 <p>OpenIM Docker 提供了一个稳定的 OpenIM 构建和部署解决方案，有非常多的部署方案提供选择，使用 Docker 和 Docker Compose 简化了整个过程。</p>
 <h2 id="目录结构" tabindex="-1"><a class="header-anchor" href="#目录结构" aria-hidden="true">#</a> 目录结构</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>OpenIM Docker Deployment
@@ -88,7 +88,7 @@
 <p>我们鼓励社区贡献并完善这个项目。具体的贡献流程，请查看 <RouterLink to="/Cloud-Native/CONTRIBUTING.html">CONTRIBUTING.md</RouterLink>。</p>
 <h2 id="协议" tabindex="-1"><a class="header-anchor" href="#协议" aria-hidden="true">#</a> 协议</h2>
 <p>本项目使用 MIT 协议。详情请查看 <a href="./LICENSE">LICENSE</a>。</p>
-<h1 id="openim-docker-deployment-1" tabindex="-1"><a class="header-anchor" href="#openim-docker-deployment-1" aria-hidden="true">#</a> OpenIM Docker Deployment</h1>
+<h1 id="openim-docker-deployment" tabindex="-1"><a class="header-anchor" href="#openim-docker-deployment" aria-hidden="true">#</a> OpenIM Docker Deployment</h1>
 <p>OpenIM Docker 提供了一个稳定的 OpenIM 构建和部署解决方案，有非常多的部署方案提供选择，使用 Docker 和 Docker Compose 简化了整个过程。</p>
 <h2 id="目录结构-1" tabindex="-1"><a class="header-anchor" href="#目录结构-1" aria-hidden="true">#</a> 目录结构</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>OpenIM Docker Deployment

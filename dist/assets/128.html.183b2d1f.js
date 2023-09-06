@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-044a926e","path":"/Cloud-Native/128.html","title":"128: Automate Multi-Architecture Image Build for openkf and Push to Multiple Image Repositories","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"Cloud-Native/128.md"}');export{t as data};

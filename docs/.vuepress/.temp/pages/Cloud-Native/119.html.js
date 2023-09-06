@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-6aad57b2\",\"path\":\"/Cloud-Native/119.html\",\"title\":\"119: Optimization and Refactoring of Docker and Docker Compose Network Modes\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"excerpt\":\"\",\"headers\":[],\"git\":{\"updatedTime\":null,\"contributors\":[]},\"filePathRelative\":\"Cloud-Native/119.md\"}")

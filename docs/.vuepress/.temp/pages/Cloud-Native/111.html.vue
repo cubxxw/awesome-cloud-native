@@ -1,4 +1,4 @@
-<template><div><h1 id="openim-多进程管理策略" tabindex="-1"><a class="header-anchor" href="#openim-多进程管理策略" aria-hidden="true">#</a> OpenIM 多进程管理策略</h1>
+<template><div><h1 id="_111-openim-多进程管理策略" tabindex="-1"><a class="header-anchor" href="#_111-openim-多进程管理策略" aria-hidden="true">#</a> 111: OpenIM 多进程管理策略</h1>
 <p>[toc]</p>
 <h2 id="主要模块" tabindex="-1"><a class="header-anchor" href="#主要模块" aria-hidden="true">#</a> 主要模块</h2>
 <p>这篇文章将会从 OpenIM 最基本的单进程前台运行开始，到 nohup 后台运行，到 system 系统进程，然后再到 Supervisord，容器化管理，kubernetes 健康检测。</p>

@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-78541caa","path":"/Cloud-Native/115.html","title":"Development of a Diagnostic Tool in Go","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"Cloud-Native/115.md"}');export{t as data};

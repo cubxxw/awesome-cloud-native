@@ -1,4 +1,4 @@
-<template><div><h1 id="rfc-0000-openimsdk-cluster-management-component-design" tabindex="-1"><a class="header-anchor" href="#rfc-0000-openimsdk-cluster-management-component-design" aria-hidden="true">#</a> [RFC #0000] OpenIMSDK Cluster Management Component Design</h1>
+<template><div><h1 id="_104-rfc-0000-openimsdk-cluster-management-component-design" tabindex="-1"><a class="header-anchor" href="#_104-rfc-0000-openimsdk-cluster-management-component-design" aria-hidden="true">#</a> 104: [RFC #0000] OpenIMSDK Cluster Management Component Design</h1>
 <!-- 🤖 design template: https://github.com/OpenIMSDK/community/blob/main/0000-template.md ⚠️ Please submit a PR to https://github.com/OpenIMSDK/community/tree/main/RFC according to the specification after the design is completed -->
 <h2 id="meta" tabindex="-1"><a class="header-anchor" href="#meta" aria-hidden="true">#</a> Meta</h2>
 <ul>

@@ -1,4 +1,4 @@
-<template><div><h1 id="automate-git-tag-creation-with-github-actions" tabindex="-1"><a class="header-anchor" href="#automate-git-tag-creation-with-github-actions" aria-hidden="true">#</a> Automate Git Tag Creation with GitHub Actions</h1>
+<template><div><h1 id="_108-automate-git-tag-creation-with-github-actions" tabindex="-1"><a class="header-anchor" href="#_108-automate-git-tag-creation-with-github-actions" aria-hidden="true">#</a> 108: Automate Git Tag Creation with GitHub Actions</h1>
 <p>[toc]</p>
 <p><strong>中文描述：</strong></p>
 <p><strong>问题：使用 GitHub Actions 自动化 Git 标签创建</strong></p>

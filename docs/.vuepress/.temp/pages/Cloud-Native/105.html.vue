@@ -1,4 +1,5 @@
-<template><div><p><strong>Description</strong>:</p>
+<template><div><h1 id="_105-openim-automated-release-and-multi-arch" tabindex="-1"><a class="header-anchor" href="#_105-openim-automated-release-and-multi-arch" aria-hidden="true">#</a> 105: OpenIM Automated Release and multi arch</h1>
+<p><strong>Description</strong>:</p>
 <p>In order to address the evolving needs of our user base and streamline our development and deployment processes, it's imperative that we implement an automated release and multi-architecture compilation strategy for the Core Repository. This enhancement will not only reduce manual intervention but also ensure compatibility across diverse hardware architectures.</p>
 <p><strong>Objectives</strong>:</p>
 <ol>

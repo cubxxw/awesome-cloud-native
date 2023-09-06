@@ -1,4 +1,4 @@
-<template><div><h2 id="enhance-the-service-health-check-mechanism" tabindex="-1"><a class="header-anchor" href="#enhance-the-service-health-check-mechanism" aria-hidden="true">#</a> Enhance the Service Health Check Mechanism</h2>
+<template><div><h2 id="_112-enhance-the-service-health-check-mechanism" tabindex="-1"><a class="header-anchor" href="#_112-enhance-the-service-health-check-mechanism" aria-hidden="true">#</a> 112: Enhance the Service Health Check Mechanism</h2>
 <p><strong>Description:</strong></p>
 <p>In our current mechanism to check the health status of various services (MySQL, MongoDB, Minio, etc.), there's a possibility to enhance its maintainability and flexibility:</p>
 <p><strong>Current Behavior:</strong></p>
