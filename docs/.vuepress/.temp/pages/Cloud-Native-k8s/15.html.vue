@@ -1218,7 +1218,7 @@ kube-system   traefik-bb69b68cd-wzt8q                   <span class="token numbe
 </blockquote>
 <p><a href="https://kubenav.io/" target="_blank" rel="noopener noreferrer">Kubenav<ExternalLinkIcon/></a> 也是一个图形化的 Kubernetes 工具。Kubenav 最好的一点是它可用于移动 Android 和 iOS 设备，因此您可以在旅途中管理您的 Kubernetes 集群;)。Kubenav 也是开源的，可在 iOS App Store 和 Play Store 上使用。您也可以从 <a href="https://github.com/kubenav/kubenav/" target="_blank" rel="noopener noreferrer">Github 存储库<ExternalLinkIcon/></a>下载桌面版本.</p>
 <p>安装后导航到“群集”，然后按加号添加群集。向下滚动到“导入 Kubeconfig”，将内容粘贴到文本字段中，然后按“添加”。</p>
-<p><img src="https://sm.nsddd.top/smimage-20221127124516263.png" alt="image-20221127124516263"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221127124516263.png" alt="image-20221127124516263"></p>
 <p>注意：Kubernetes API 端口 （TCP/6443） 必须可用于您的手机。如果您不想打开该端口到互联网，您可以通过VPN连接到集群。请参阅我在 <a href="https://headworq.org/en-how-to-install-wiregurad-on-ubuntu/" target="_blank" rel="noopener noreferrer">Ubuntu 上设置 Wireguard 的指南<ExternalLinkIcon/></a>.</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '14.md' style='float:left'>⬆️上一节🔗  </a><a href = '16.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
@@ -1234,5 +1234,3 @@ kube-system   traefik-bb69b68cd-wzt8q                   <span class="token numbe
 </li>
 </ul>
 </div></template>
-
-

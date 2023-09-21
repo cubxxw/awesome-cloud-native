@@ -726,7 +726,7 @@ Allocating 100Mb memory, raw memory is 104960000
 </ul>
 <p>Union FS:通过一些技术手段,将不同的目录mount到同一个虚拟目录中.每个目录在虚拟目录中可以有独立的权限(readonly、readwirte、write-able).</p>
 <p>通过这种方式,可以将多个不同来源的子目录模拟成一个完整的OS.</p>
-<p><img src="https://sm.nsddd.top/sm202303021915290.jpg" alt="container"></p>
+<p><img src="http://sm.nsddd.top/sm202303021915290.jpg" alt="container"></p>
 <p>📜 <strong>对上面的解释</strong>：</p>
 <p>我们可以看到 两个 dockerfile 是不一样的，但是前两条指令是一样的，也就是说在一个层。</p>
 <p>但是后面两个层是不一样的，所以说后面两个 就开始判断。</p>
@@ -1433,5 +1433,3 @@ Step <span class="token number">2</span>/9 <span class="token builtin class-name
 </li>
 </ul>
 </div></template>
-
-

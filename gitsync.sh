@@ -23,7 +23,7 @@
     # http://xxw.nsddd.top/code?p=%2Fgitsync.sh&id=AN16H9
 
     # Linux一键下载
-    # wget -c -d -O gitsync.sh https://sm.nsddd.top/uploads/2022/10/27/Y0iHb6ix_gitsync.sh?attname=gitsync.sh && echo "gitsync.sh" >> .gitignore && sh gitsync.sh && chmod 777 gitsync.sh \
+    # wget -c -d -O gitsync.sh http://sm.nsddd.top/uploads/2022/10/27/Y0iHb6ix_gitsync.sh?attname=gitsync.sh && echo "gitsync.sh" >> .gitignore && sh gitsync.sh && chmod 777 gitsync.sh \
 
  
  ### 
@@ -47,7 +47,7 @@ if [ 0 -lt ${#is_change} ]; then  # 有文件改动
     echo " "
     echo "Myblog: http://nsddd.top"
     echo
-    echo "脚本地址在线浏览🧷：https://sm.nsddd.top/uploads/2022/10/26/2iCzooCq_gitsync.sh"
+    echo "脚本地址在线浏览🧷：http://sm.nsddd.top/uploads/2022/10/26/2iCzooCq_gitsync.sh"
 
     is_change=$(git status -s)  # 判断是否有文件改动
 

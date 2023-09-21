@@ -951,7 +951,7 @@ crictl info<span class="token operator">|</span><span class="token function">gre
 <p><img src="http://sm.nsddd.top/smimage-20221110202936935.png" alt="image-20221110202936935"></p>
 <details class="custom-container details"><summary>补充containerd</summary>
 <p>containerd从docker就开始熟悉的，那么自然从docker开始介绍：</p>
-<p><img src="https://sm.nsddd.top/sm952033-20180520115357747-1796034956.png" alt="img"></p>
+<p><img src="http://sm.nsddd.top/sm952033-20180520115357747-1796034956.png" alt="img"></p>
 <blockquote>
 <p>在docker1.8之前可以使用 <code v-pre>docker -d</code>。在后面就是 <code v-pre>docker daemon</code> 。1.11以后：<code v-pre>docker</code>、<code v-pre>dockerd</code>。2015年后 OCI 成立，<code v-pre>runtime-spec</code> 制定</p>
 <p><code v-pre>libcotainer –&gt;  runC</code></p>
@@ -2311,5 +2311,3 @@ Could not fetch/save url https://mydream.ink/utils/container/docker-ce.repo to f
 </li>
 </ul>
 </div></template>
-
-

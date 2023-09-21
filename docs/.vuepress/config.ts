@@ -183,8 +183,8 @@ export default {
         sidebarDepth: 1,  //侧边菜单深度
     
         //logo -- 夜间和白剑
-        logoDark: 'https://sm.nsddd.top//typora/1.jpg?mail:3293172751@qq.com',
-        logo: 'https://sm.nsddd.top//typora/4.png?mail:3293172751@qq.com',
+        logoDark: 'http://sm.nsddd.top//typora/1.jpg?mail:3293172751@qq.com',
+        logo: 'http://sm.nsddd.top//typora/4.png?mail:3293172751@qq.com',
         
         // 到github修改页面 如果你按照 `organization组织/repository存储库` 的格式设置它
         // 我们会将它作为一个 GitHub 仓库

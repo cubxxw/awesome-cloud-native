@@ -428,7 +428,7 @@ Events:
 <h2 id="pod-ip" tabindex="-1"><a class="header-anchor" href="#pod-ip" aria-hidden="true">#</a> pod - IP</h2>
 <p>⚡ 每个pod – k8s都会分配一个ip，使用下面命令查看：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get pod <span class="token parameter variable">-owide</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top/smimage-20221022150442624.png" alt="image-20221022150442624"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022150442624.png" alt="image-20221022150442624"></p>
 <h2 id="进入pod并修改pod" tabindex="-1"><a class="header-anchor" href="#进入pod并修改pod" aria-hidden="true">#</a> 进入pod并修改pod</h2>
 <p>🗓️ 回忆我们docker修改容器内部</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> idName <span class="token comment">#/bin/bash</span>
@@ -505,5 +505,3 @@ kubectl delete all <span class="token parameter variable">--all</span>
 </li>
 </ul>
 </div></template>
-
-

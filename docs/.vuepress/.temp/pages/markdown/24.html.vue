@@ -20,7 +20,7 @@
 <li><code v-pre>docker</code> 镜像是软件的交付品</li>
 <li><code v-pre>docker</code> 容器则可以认为是镜像的运行态，也即依照镜像运行的容器实例</li>
 </ul>
-<p><img src="https://sm.nsddd.top/smJqBckovlsptOPSE.jpg?xxw@nsddd.top" alt="docker-graphic"></p>
+<p><img src="http://sm.nsddd.top/smJqBckovlsptOPSE.jpg?xxw@nsddd.top" alt="docker-graphic"></p>
 <h2 id="dockerfile内容基础" tabindex="-1"><a class="header-anchor" href="#dockerfile内容基础" aria-hidden="true">#</a> dockerfile内容基础</h2>
 <ul>
 <li>每条指令必须为<strong>大写字母</strong>并且后至少有一个参数</li>
@@ -167,5 +167,3 @@ Successfully built 038ad4142d2b
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ docker build - &lt; context.tar.gz
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>如果发现标准输入的文件格式是 <code v-pre>gzip</code>、<code v-pre>bzip2</code> 以及 <code v-pre>xz</code> 的话，将会使其为上下文压缩包，直接将其展开，将里面视为上下文，并开始构建。</p>
 </div></template>
-
-

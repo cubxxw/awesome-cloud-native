@@ -37,7 +37,7 @@
 </ol>
 <h3 id="kubernetes-中网络的解决方案" tabindex="-1"><a class="header-anchor" href="#kubernetes-中网络的解决方案" aria-hidden="true">#</a> Kubernetes 中网络的解决方案</h3>
 <p>Kubernetes网络设计用于确保Kubernetes中的不同实体类型可以通信。Kubernetes基础设施的布局在设计上有很大的分离度。名称空间、容器和Pod旨在保持组件之间的区别，因此高度结构化的通信计划非常重要。</p>
-<p><img src="https://sm.nsddd.top/sm202303101350246.png" alt="image-20230310135053049" title="Kubernetes网络方案图"></p>
+<p><img src="http://sm.nsddd.top/sm202303101350246.png" alt="image-20230310135053049" title="Kubernetes网络方案图"></p>
 <p><strong>网络是Kubernetes的核心部分，但要准确了解它的工作方式可能会很有挑战性。有4个不同的网络问题需要解决：</strong></p>
 <ul>
 <li>高度耦合的容器间通信：这个已经被 <a href="https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/" target="_blank" rel="noopener noreferrer">Pod<ExternalLinkIcon/></a> 和 <code v-pre>localhost</code> 通信解决了。</li>
@@ -134,7 +134,7 @@ client
 ❯ <span class="token function">ip</span> <span class="token function">link</span> list <span class="token operator">|</span> <span class="token function">grep</span> veth
 <span class="token number">12</span>: veth-server@veth-client: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,M-DOWN<span class="token operator">></span> mtu <span class="token number">1500</span> qdisc noop state DOWN mode DEFAULT group default qlen <span class="token number">1000</span>
 <span class="token number">13</span>: veth-client@veth-server: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,M-DOWN<span class="token operator">></span> mtu <span class="token number">1500</span> qdisc noop state DOWN mode DEFAULT group default qlen <span class="token number">1000</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top/sm202303101517622.png" alt="image-20230310151749562"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303101517622.png" alt="image-20230310151749562"></p>
 <p><code v-pre>veth</code> 对（电缆）存在于主机网络命名空间中，现在，让我们将 <code v-pre>veth</code> 对的两端移到前面创建的它们各自的名称空间中。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth-client netns client
 ❯ <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth-server netns server
@@ -372,5 +372,3 @@ lo        Link encap:Local Loopback
 </li>
 </ul>
 </div></template>
-
-

@@ -37,7 +37,7 @@
 </blockquote>
 <p><img src="http://sm.nsddd.top/sm202303051431637.png" alt="img"></p>
 <p><strong>更加详细的请求处理流程：</strong></p>
-<p><img src="https://sm.nsddd.top/sm202303051430312.jpeg" alt="img"></p>
+<p><img src="http://sm.nsddd.top/sm202303051430312.jpeg" alt="img"></p>
 <blockquote>
 <p><strong>📜 对上面的解释：</strong></p>
 <p>如何处理API请求：API源码存在于kubernetes/pkg/api路径中，会处理集群内以及集群外客户端的请求。</p>
@@ -253,7 +253,7 @@ cncamp-token,cncamp,1000,<span class="token string">"group1,group2,group3"</span
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
 <li>
 <p>1）添加**<code v-pre>--token-auth-file=/etc/kubernetes/auth/static-token</code>**参数，</p>
-<p><img src="https://sm.nsddd.top/sm202303051620735.png" alt="asd"></p>
+<p><img src="http://sm.nsddd.top/sm202303051620735.png" alt="asd"></p>
 </li>
 <li>
 <p>2）同时由于 <code v-pre>apiserver</code> 是容器化运行的，还需要额外添加<code v-pre>hostpath</code> 的 <code v-pre>mount</code>，把存放 <code v-pre>static token</code> 的目录也挂载到容器中。</p>
@@ -382,7 +382,7 @@ metadata:
 secrets:
 - name: default-token-vkbzr
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>看到这个 ServiceAccount yaml 文件中 有一个 secrets 字段，OMG，这就对应起来了，我们继续看一下细节。</strong></p>
-<p><img src="https://sm.nsddd.top/sm202303051726706.png" alt="image-20230305172613547"></p>
+<p><img src="http://sm.nsddd.top/sm202303051726706.png" alt="image-20230305172613547"></p>
 <p><strong>有 ca.crt， 有namespace，所以 ServiceAccount 是 Kubernetes 自动生成的，并且会自动挂载到 任何容器 的 <code v-pre>/run/secrets/kubernetes.io/serviceaccount</code> 中</strong></p>
 <p>查看某个容器细节：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ k get pod coredns-697ddfb55c-87qws <span class="token parameter variable">-oyaml</span> <span class="token parameter variable">-n</span> kube-system
@@ -737,5 +737,3 @@ user<span class="token punctuation">,</span> <span class="token boolean">_</span
 </li>
 </ul>
 </div></template>
-
-

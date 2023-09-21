@@ -219,7 +219,7 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p>我们知道未来的世界是云原生的世界，如今云原生的应用成指数级增长。</p>
 <h3 id="每台主机一个内核" tabindex="-1"><a class="header-anchor" href="#每台主机一个内核" aria-hidden="true">#</a> 每台主机一个内核</h3>
 <p>要理解为什么 eBPF 在云原生世界中如此强大，你需要搞清楚一个概念：<strong>每台机器（或虚拟机）只有一个内核，所有运行在该机器上的容器都共享同一个内核</strong> ，内核了解主机上运行的所有应用代码。</p>
-<p><img src="https://sm.nsddd.top/sm202303192205066.png" alt="image-20230319220548953"></p>
+<p><img src="http://sm.nsddd.top/sm202303192205066.png" alt="image-20230319220548953"></p>
 <p>对于这些 container 来说，Kernel 至关重要。一些频繁的 System calls 会严重的影响 performance index</p>
 <p>通过对内核的检测，就像我们在使用 eBPF 时做的那样，我们可以同时检测在该机器上运行的所有应用程序代码。当我们将 eBPF 程序加载到内核并将其附加到事件上时，它就会被触发，而不考虑哪个进程与该事件有关。</p>
 <h3 id="ebpf-与-sidecar-模式的比较" tabindex="-1"><a class="header-anchor" href="#ebpf-与-sidecar-模式的比较" aria-hidden="true">#</a> eBPF 与 sidecar 模式的比较</h3>
@@ -227,7 +227,7 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p>每个 sidecar 容器都会消耗资源，而这要乘以注入了 sidecar 的 pod 的数量。这可能是非常重要的 —— 例如，如果每个 sidecar 需要它自己的路由信息副本，或策略规则，这就是浪费（关于这一点，Thomas Graf 写了一篇 <a href="https://isovalent.com/blog/post/2021-12-08-ebpf-servicemesh" target="_blank" rel="noopener noreferrer">关于服务网格 sidecar 与 eBPF 的比较<ExternalLinkIcon/></a>）。</p>
 <p>Sidecar 的另一个问题是，你不能保证机器上的每一个应用程序都被正确检测。设想下有一个攻击者设法破坏了你的一台主机，并启动了一个单独的 pod 来运行，比如，加密货币挖矿程序。他们不可能对你有礼貌，用你的 sidecar 可观测或安全工具来检测他们的挖矿 pod。你需要一个单独的系统来了解这种活动。</p>
 <p>但同样的加密货币矿工与运行在该主机上的合法 pod 共享内核。如果你使用基于 eBPF 的工具，如所示，矿工会自动受到它的影响。</p>
-<p><img src="https://sm.nsddd.top/sm202303192210973.png" alt="image-20230319221050760"></p>
+<p><img src="http://sm.nsddd.top/sm202303192210973.png" alt="image-20230319221050760"></p>
 <h3 id="ebpf-和进程隔离" tabindex="-1"><a class="header-anchor" href="#ebpf-和进程隔离" aria-hidden="true">#</a> eBPF 和进程隔离</h3>
 <p>我主张将功能整合到一个单一的、基于 eBPF 的代理中，而不是每个 pod 的 sidecar 中。如果该代理可以访问机器上运行的所有 pod，这不是一种安全风险吗？我们不是失去了应用程序之间的隔离，而这种隔离可以防止它们相互干扰吗？</p>
 <p>作为一个容器安全领域的过来人，我可以体会到你对此的担忧，但重要的是要挖掘底层机制，以真正理解为什么它不是一开始可能出现的缺陷。</p>
@@ -288,5 +288,3 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 </li>
 </ul>
 </div></template>
-
-

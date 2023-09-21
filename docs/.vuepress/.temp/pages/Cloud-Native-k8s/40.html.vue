@@ -37,7 +37,7 @@
 <li>监控和报告</li>
 </ul>
 <p>Istio 可以帮助你管理服务之间的流量，保护你的服务不被滥用，并提供可观察性来帮助你快速诊断问题。</p>
-<p><img src="https://sm.nsddd.top/sm202304162251167.png" alt="Istio的mindmap"></p>
+<p><img src="http://sm.nsddd.top/sm202304162251167.png" alt="Istio的mindmap"></p>
 <h2 id="架构" tabindex="-1"><a class="header-anchor" href="#架构" aria-hidden="true">#</a> 架构</h2>
 <p>Istio 服务网格从逻辑上分为数据平面和控制平面。</p>
 <ul>
@@ -72,5 +72,3 @@
 </li>
 </ul>
 </div></template>
-
-

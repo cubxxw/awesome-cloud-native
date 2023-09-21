@@ -67,7 +67,7 @@
 <p><img src="http://sm.nsddd.top/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
 <h2 id="核心服务快速启动" tabindex="-1"><a class="header-anchor" href="#核心服务快速启动" aria-hidden="true">#</a> 核心服务快速启动</h2>
 <p><strong>💡 重新把昨天集群全部删除，新开三台服务器，纯新~</strong></p>
-<p><img src="https://sm.nsddd.top/smimage-20221020103019907.png" alt="image-20221020103019907"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221020103019907.png" alt="image-20221020103019907"></p>
 <h3 id="环境准备" tabindex="-1"><a class="header-anchor" href="#环境准备" aria-hidden="true">#</a> 环境准备</h3>
 <blockquote>
 <p>⚠️ 注意：环境一定很重要，不然都跑不起来~</p>
@@ -90,12 +90,12 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><code v-pre>-p</code>：passwd密码</p>
 <p>开启ssh免密不需要些密码了，在这里就实现了。</p>
-<p><img src="https://sm.nsddd.top/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
 </blockquote>
-<p><img src="https://sm.nsddd.top/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
 <p><strong>验证集群：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get nodes
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
 <p><strong>查看版本：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># sealos version</span>
 <span class="token punctuation">{</span><span class="token string">"gitVersion"</span><span class="token builtin class-name">:</span><span class="token string">"4.1.3"</span>,<span class="token string">"gitCommit"</span><span class="token builtin class-name">:</span><span class="token string">"b2ba9705"</span>,<span class="token string">"buildDate"</span><span class="token builtin class-name">:</span><span class="token string">"2022-09-06T06:04:14Z"</span>,<span class="token string">"goVersion"</span><span class="token builtin class-name">:</span><span class="token string">"go1.19"</span>,<span class="token string">"compiler"</span><span class="token builtin class-name">:</span><span class="token string">"gc"</span>,<span class="token string">"platform"</span><span class="token builtin class-name">:</span><span class="token string">"linux/amd64"</span><span class="token punctuation">}</span>
@@ -120,5 +120,3 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 </li>
 </ul>
 </div></template>
-
-

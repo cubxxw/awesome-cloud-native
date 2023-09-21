@@ -18,7 +18,7 @@
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl get nodes
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>查看集群运行中的应用：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl get pod -A
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top/smimage-20221020213451951.png" alt="image-20221020213451951"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020213451951.png" alt="image-20221020213451951"></p>
 <p>过一段时间又可继续使用</p>
 <h2 id="k8s可视化界面dashboard" tabindex="-1"><a class="header-anchor" href="#k8s可视化界面dashboard" aria-hidden="true">#</a> k8s可视化界面dashboard</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 下载并应用文件</span>
@@ -437,5 +437,3 @@ kubectx minikube
 </li>
 </ul>
 </div></template>
-
-

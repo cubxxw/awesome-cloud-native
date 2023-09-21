@@ -7,7 +7,7 @@
 </div>
 <h3 id="经典云计算架构" tabindex="-1"><a class="header-anchor" href="#经典云计算架构" aria-hidden="true">#</a> 经典云计算架构</h3>
 <p>基础云计算架构包括 IaaS （基础即服务）， SaaS（软件即服务）， PaaS（平台即服务）三层服务。</p>
-<p><img src="https://sm.nsddd.top/smiaas-paas-saas-comparison-1024x759.jpg" alt="img"></p>
+<p><img src="http://sm.nsddd.top/smiaas-paas-saas-comparison-1024x759.jpg" alt="img"></p>
 <h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h3>
 <ol>
 <li>
@@ -85,8 +85,8 @@
 <div class="custom-container danger"><p class="custom-container-title">我们在之前知道了虚拟机和容器的区别</p>
 <p>虚拟机的内核和文件系统存在不同的位置，系统加载的时候去启动内核，没有加载就是文件</p>
 <p>容器就是把文件系统打包出去，应用所在的依赖全部保存起来。</p>
-<img src="https://sm.nsddd.top//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-6e94771ad01da3cb20e2190b01dfa54e3a69d0b2_virtualization.png?mail:3293172751@qq.com" alt="a" style="zoom:80%;" />
-<img src="https://sm.nsddd.top//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-5c1a41d44b8602c8f746e8929f484a701869ca25_docker.png?mail:3293172751@qq.com" alt="b" style="zoom:80%;" />
+<img src="http://sm.nsddd.top//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-6e94771ad01da3cb20e2190b01dfa54e3a69d0b2_virtualization.png?mail:3293172751@qq.com" alt="a" style="zoom:80%;" />
+<img src="http://sm.nsddd.top//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-5c1a41d44b8602c8f746e8929f484a701869ca25_docker.png?mail:3293172751@qq.com" alt="b" style="zoom:80%;" />
 <ul>
 <li>虚拟机通过 <code v-pre>Hypervisor</code> 仅进行虚拟化，在这上面去运行操作系统 <code v-pre>Centos</code></li>
 <li>容器通过 <code v-pre>Docker Engine</code> ，基于此实现的容器并不是虚拟化，没有客户机的操作系统，是共享内核的。</li>
@@ -160,5 +160,3 @@
 <li><code v-pre>ns</code> — 名称空间子系统。</li>
 </ul>
 </div></template>
-
-

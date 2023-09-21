@@ -212,7 +212,7 @@
 <p>以太坊和比特币一样，底层框架都是区块链协议，区块链本质上是一个应用了密码学技术的分布式数据库系统。建议看一下<strong>以太坊白皮书（需要有golang编程基础）</strong></p>
 <div align="center">
 <a href="eth/TOC.md">
-	<img src="https://sm.nsddd.top//typora/image-20220630192622583.png?mail:3293172751@qq.com" alt="区块链的学习" style="zoom: 20%;" />
+	<img src="http://sm.nsddd.top//typora/image-20220630192622583.png?mail:3293172751@qq.com" alt="区块链的学习" style="zoom: 20%;" />
 </a></div>
 </blockquote>
 <ul>
@@ -228,7 +228,7 @@
 <p><strong>c-universal blockchain（CUB-链学）</strong></p>
 <div align="center">
 <a href="https://github.com/kubecub">
-	<img src="https://sm.nsddd.top//typora/twitter_header_photo_1.png?mail:3293172751@qq.com" alt="twitter_header_photo_1" style="zoom: 20%;" />
+	<img src="http://sm.nsddd.top//typora/twitter_header_photo_1.png?mail:3293172751@qq.com" alt="twitter_header_photo_1" style="zoom: 20%;" />
 </a></div>
 <p>基于区块链的全民学习平台<code v-pre>C-Universal Blockchain</code>在保障用户安全，信息的完整性同时为大众带来更多的选择，笔记分享，视频分享，版权保护，以及其他的关于学信数据、电子证书、荣誉证明、成绩证明、信息授权的相关工具。</p>
 </blockquote>
@@ -253,8 +253,6 @@
 <a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/pulls" target="_blank" rel="noopener noreferrer"><img src="https://images.repography.com/26892425/3293172751/Block_Chain/recent-activity/04864df8cf8f1f104b2b9453e0b47498_prs.svg" alt="Pull request status graph"><ExternalLinkIcon/></a>
 <img src="https://images.repography.com/26892425/3293172751/Block_Chain/recent-activity/04864df8cf8f1f104b2b9453e0b47498_words.svg" alt="Trending topics"></p>
 <h2 id="版权声明-©" tabindex="-1"><a class="header-anchor" href="#版权声明-©" aria-hidden="true">#</a> 版权声明 ©</h2>
-<p><a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer"><img src="https://sm.nsddd.top//typora/cs-awesome-Block_Chain?mail:3293172751@qq.com" alt="GitHub license"><ExternalLinkIcon/></a></p>
+<p><a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer"><img src="http://sm.nsddd.top//typora/cs-awesome-Block_Chain?mail:3293172751@qq.com" alt="GitHub license"><ExternalLinkIcon/></a></p>
 <p>本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>
 </div></template>
-
-

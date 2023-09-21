@@ -454,12 +454,12 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><code v-pre>-p</code>：passwd密码</p>
 <p>开启ssh免密不需要些密码了，在这里就实现了。</p>
-<p><img src="https://sm.nsddd.top/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
 </blockquote>
-<p><img src="https://sm.nsddd.top/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
+<p><img src="http://sm.nsddd.top/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
 <p><strong>验证集群：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get nodes
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
 <h3 id="单节点" tabindex="-1"><a class="header-anchor" href="#单节点" aria-hidden="true">#</a> 单节点</h3>
 <blockquote>
 <p>Single host</p>
@@ -471,7 +471,7 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1 <span class="token parameter variable">--single</span>
 <span class="token comment"># remove taint</span>
 $ kubectl taint <span class="token function">node</span> <span class="token parameter variable">--all</span> node-role.kubernetes.io/control-plane-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://sm.nsddd.top/smimage-20221020212025716.png" alt="image-20221020212025716"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020212025716.png" alt="image-20221020212025716"></p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <div><a href = '../README.md' style='float:left'>⬆️主目录🔗  </a><a href = '2.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <ul>

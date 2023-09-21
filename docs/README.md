@@ -3,7 +3,7 @@ home: true
 lang: zh-CN
 title: kubecub 社区
 description: docker学习
-heroImage: https://sm.nsddd.top//typora/logo_transparent.png?mail:3293172751@qq.com
+heroImage: http://sm.nsddd.top//typora/logo_transparent.png?mail:3293172751@qq.com
 heroText: 云原生
 tagline: kubecub 公益性的帮助每一位开发者和学生参与和贡献开源
 actions:
@@ -364,7 +364,7 @@ CS 系列选自[🎉awesome-cs-course](https://github.com/cubxxw/awesome-cs-cour
 >
 > <div align="center">
 > <a href="eth/TOC.md">
-> 	<img src="https://sm.nsddd.top//typora/image-20220630192622583.png?mail:3293172751@qq.com" alt="区块链的学习" style="zoom: 20%;" />
+> 	<img src="http://sm.nsddd.top//typora/image-20220630192622583.png?mail:3293172751@qq.com" alt="区块链的学习" style="zoom: 20%;" />
 > </a></div>
 
 +  [🖱️区块链教程🔥](https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/blob/master/C_Universal_Brockchain/README.md)
@@ -379,7 +379,7 @@ CS 系列选自[🎉awesome-cs-course](https://github.com/cubxxw/awesome-cs-cour
 >
 > <div align="center">
 > <a href="https://github.com/kubecub">
-> 	<img src="https://sm.nsddd.top//typora/twitter_header_photo_1.png?mail:3293172751@qq.com" alt="twitter_header_photo_1" style="zoom: 20%;" />
+> 	<img src="http://sm.nsddd.top//typora/twitter_header_photo_1.png?mail:3293172751@qq.com" alt="twitter_header_photo_1" style="zoom: 20%;" />
 > </a></div>
 >
 > 基于区块链的全民学习平台`C-Universal Blockchain`在保障用户安全，信息的完整性同时为大众带来更多的选择，笔记分享，视频分享，版权保护，以及其他的关于学信数据、电子证书、荣誉证明、成绩证明、信息授权的相关工具。
@@ -414,6 +414,6 @@ CS 系列选自[🎉awesome-cs-course](https://github.com/cubxxw/awesome-cs-cour
 
 ## 版权声明 &copy;
 
-[![GitHub license](https://sm.nsddd.top//typora/cs-awesome-Block_Chain?mail:3293172751@qq.com)](http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0协议文本)
+[![GitHub license](http://sm.nsddd.top//typora/cs-awesome-Block_Chain?mail:3293172751@qq.com)](http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0协议文本)
 
 本书所有内容遵循[CC-BY-SA 3.0协议（署名-相同方式共享）&copy;](http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0协议文本) 

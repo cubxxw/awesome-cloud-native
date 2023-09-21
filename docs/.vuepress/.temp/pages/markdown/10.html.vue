@@ -133,7 +133,7 @@ OK
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="从容器中拷贝文件到主机上" tabindex="-1"><a class="header-anchor" href="#从容器中拷贝文件到主机上" aria-hidden="true">#</a> 从容器中拷贝文件到主机上</h2>
 <blockquote>
 <p>如果我们在一家公司，我们在容器中的Ubuntu中新创建了一个文件，怎么把容器中的内容文件拷贝到主机上，用来备份<strong>下面是备份halo博客到本地</strong></p>
-<p><img src="https://sm.nsddd.top//typora/image-20220912191258516.png?mail:3293172751@qq.com" alt="image-20220912191258516"></p>
+<p><img src="http://sm.nsddd.top//typora/image-20220912191258516.png?mail:3293172751@qq.com" alt="image-20220912191258516"></p>
 </blockquote>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker cp 容器ID：容器内路径 目的主机路径
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="@source/markdown/images/hzrfSYwLy3E5lJq.png" alt="image-20220509213628075"></p>
@@ -151,5 +151,3 @@ OK
 <p>导出我一般喜欢提交到远程仓库~</p>
 </div>
 </div></template>
-
-
