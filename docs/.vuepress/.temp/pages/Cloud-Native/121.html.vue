@@ -189,8 +189,7 @@ networks.openim-server.ipam.config value Additional properties are not allowed (
 <h3 id="_6-6-保持耐心" tabindex="-1"><a class="header-anchor" href="#_6-6-保持耐心" aria-hidden="true">#</a> 6.6 保持耐心</h3>
 <p>最后但同样重要的是，保持耐心和开放的心态。遇到问题是软件开发的一个普遍现象，学习如何有效地解决它们可以使你成为一个更好的开发者。</p>
 <p>总的来说，优雅地排查和解决问题需要时间、实践和耐心，但随着时间的推移，你将发展出自己的策略和技术，使这个过程变得更加容易和直观。</p>
-<h1 id="common-docker-compose-questions-and-solutions" tabindex="-1"><a class="header-anchor" href="#common-docker-compose-questions-and-solutions" aria-hidden="true">#</a> Common Docker Compose Questions and Solutions</h1>
-<p>[toc]</p>
+<h1 id="英文-common-docker-compose-questions-and-solutions" tabindex="-1"><a class="header-anchor" href="#英文-common-docker-compose-questions-and-solutions" aria-hidden="true">#</a> 英文：Common Docker Compose Questions and Solutions</h1>
 <h2 id="_1-configuration-file-management" tabindex="-1"><a class="header-anchor" href="#_1-configuration-file-management" aria-hidden="true">#</a> 1. Configuration File Management</h2>
 <p>When using the new version of OpenIM (version &gt;= 3.2.0), managing configuration files becomes crucial. Configuration files not only provide the necessary runtime parameters for applications but also ensure the stability and reliability of system operation.</p>
 <h3 id="_1-1-generating-configuration-files" tabindex="-1"><a class="header-anchor" href="#_1-1-generating-configuration-files" aria-hidden="true">#</a> 1.1 Generating Configuration Files</h3>

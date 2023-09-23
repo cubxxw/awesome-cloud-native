@@ -8,8 +8,6 @@
 <p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
-<p>[TOC]</p>
-<h1 id="custom-actions" tabindex="-1"><a class="header-anchor" href="#custom-actions" aria-hidden="true">#</a> Custom actions</h1>
 <p>[toc]</p>
 <h2 id="创建-actions" tabindex="-1"><a class="header-anchor" href="#创建-actions" aria-hidden="true">#</a> 创建 actions</h2>
 <p><strong>actions 是可以联合收割机以创建作业和自定义工作流的单个任务。您可以创建自己的操作，或使用和自定义GitHub社区共享的操作。</strong></p>

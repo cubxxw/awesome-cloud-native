@@ -167,3 +167,5 @@ Successfully built 038ad4142d2b
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>$ docker build - &lt; context.tar.gz
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>如果发现标准输入的文件格式是 <code v-pre>gzip</code>、<code v-pre>bzip2</code> 以及 <code v-pre>xz</code> 的话，将会使其为上下文压缩包，直接将其展开，将里面视为上下文，并开始构建。</p>
 </div></template>
+
+

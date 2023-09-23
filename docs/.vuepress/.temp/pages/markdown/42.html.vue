@@ -160,3 +160,5 @@ large_client_header_buffers 4 256k;
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="客户端保持连接的时间" tabindex="-1"><a class="header-anchor" href="#客户端保持连接的时间" aria-hidden="true">#</a> 客户端保持连接的时间</h2>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>keepalive_timeout 60s;
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div></template>
+
+

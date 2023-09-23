@@ -1005,7 +1005,7 @@ c--------- <span class="token number">1</span> root root <span class="token numb
 <div class="language-markdown ext-md line-numbers-mode"><pre v-pre class="language-markdown"><code><span class="token title important"><span class="token punctuation">#</span> docker inspect daddac4c0706</span>
 
 <span class="token code"><span class="token punctuation">```</span><span class="token code-language">bash</span>
-<span class="token code-block language-bash language-bash language-bash">        <span class="token string">"Image"</span><span class="token builtin class-name">:</span> <span class="token string">"sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6"</span>,
+<span class="token code-block language-bash">        <span class="token string">"Image"</span><span class="token builtin class-name">:</span> <span class="token string">"sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6"</span>,
         <span class="token string">"ResolvConfPath"</span><span class="token builtin class-name">:</span> <span class="token string">"/var/lib/docker/containers/daddac4c07067978995724d650ed8a6f0f8d8edfc979f13c9883f1a6971b904a/resolv.conf"</span>,
         <span class="token string">"HostnamePath"</span><span class="token builtin class-name">:</span> <span class="token string">"/var/lib/docker/containers/daddac4c07067978995724d650ed8a6f0f8d8edfc979f13c9883f1a6971b904a/hostname"</span>,
         <span class="token string">"HostsPath"</span><span class="token builtin class-name">:</span> <span class="token string">"/var/lib/docker/containers/daddac4c07067978995724d650ed8a6f0f8d8edfc979f13c9883f1a6971b904a/hosts"</span>,
@@ -1433,3 +1433,5 @@ Step <span class="token number">2</span>/9 <span class="token builtin class-name
 </li>
 </ul>
 </div></template>
+
+
