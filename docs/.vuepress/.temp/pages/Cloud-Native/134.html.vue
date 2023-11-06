@@ -1,4 +1,4 @@
-<template><div><h1 id="openim-website-设计" tabindex="-1"><a class="header-anchor" href="#openim-website-设计" aria-hidden="true">#</a> OpenIM WebSite 设计</h1>
+<template><div><h1 id="_134-openim-website-设计" tabindex="-1"><a class="header-anchor" href="#_134-openim-website-设计" aria-hidden="true">#</a> 134: OpenIM WebSite 设计</h1>
 <h2 id="开始" tabindex="-1"><a class="header-anchor" href="#开始" aria-hidden="true">#</a> 开始</h2>
 <p>最近 OpenIM 的文档问题很多，于是我考虑了很久，沉下心来，好好的把 OpenIM 的文档重新设计一遍。</p>
 <p>选择主题：</p>
@@ -461,6 +461,131 @@ hugo v0.118.2-da7983ac4b94d97d776d7c2405040de97e95c03d+extended linux/amd64 Buil
 <p>接着给出了一个错误信息的示例，这条错误信息说明在尝试转换 SCSS 文件时出现了问题，因为当前的 Hugo 版本不支持这个特性。</p>
 <p>接着，文本解释了 Hugo 为何会发布两种版本的二进制文件，并提到了如何在 macOS 上通过 <code v-pre>brew</code> 工具安装 Hugo 扩展版本。要确定是否已经安装了扩展版本，用户可以运行 <code v-pre>hugo version</code> 并检查输出信息中是否有 “extended” 这个词。</p>
 <p>最后，提供了 Hugo 的官方发布页面链接，用户可以在那里找到并下载带有 <code v-pre>extended</code> 标识的版本。</p>
+<h2 id="参考" tabindex="-1"><a class="header-anchor" href="#参考" aria-hidden="true">#</a> 参考</h2>
+<h2 id="docsy-theme-examples" tabindex="-1"><a class="header-anchor" href="#docsy-theme-examples" aria-hidden="true">#</a> Docsy theme examples</h2>
+<p>Example sites that have low to no customization:</p>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th>Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.docsy.dev/docs" target="_blank" rel="noopener noreferrer">This Docsy documentation site<ExternalLinkIcon/></a></td>
+<td>https://github.com/google/docsy</td>
+</tr>
+<tr>
+<td><a href="https://example.docsy.dev/" target="_blank" rel="noopener noreferrer">“Goldydocs” - a Docsy example site<ExternalLinkIcon/></a></td>
+<td>https://github.com/google/docsy-example</td>
+</tr>
+<tr>
+<td>https://www.kubeflow.org/</td>
+<td>https://github.com/kubeflow/website</td>
+</tr>
+<tr>
+<td>https://agones.dev/site/</td>
+<td>https://github.com/googleforgames/agones/tree/main/site</td>
+</tr>
+<tr>
+<td>https://googlecontainertools.github.io/kpt/</td>
+<td>https://github.com/GoogleContainerTools/kpt/tree/main/docs</td>
+</tr>
+<tr>
+<td><a href="https://www.navidrome.org/" target="_blank" rel="noopener noreferrer">Navidrome Music Server<ExternalLinkIcon/></a></td>
+<td>https://github.com/navidrome/website</td>
+</tr>
+<tr>
+<td>https://docs.agilebase.co.uk/</td>
+<td>https://github.com/okohll/abdocs</td>
+</tr>
+<tr>
+<td>https://jvmperf.net/</td>
+<td>https://github.com/cchesser/java-perf-workshop</td>
+</tr>
+<tr>
+<td><a href="https://www.grpc.io/" target="_blank" rel="noopener noreferrer">gRPC<ExternalLinkIcon/></a></td>
+<td>https://github.com/grpc/grpc.io</td>
+</tr>
+<tr>
+<td><a href="https://tekton.dev/" target="_blank" rel="noopener noreferrer">tekton.dev<ExternalLinkIcon/></a></td>
+<td>https://github.com/tektoncd</td>
+</tr>
+<tr>
+<td><a href="https://fluxcd.io/" target="_blank" rel="noopener noreferrer">fluxcd.io<ExternalLinkIcon/></a></td>
+<td>https://github.com/fluxcd/website</td>
+</tr>
+<tr>
+<td><a href="https://graphviz.org/" target="_blank" rel="noopener noreferrer">Graphviz<ExternalLinkIcon/></a></td>
+<td>https://gitlab.com/graphviz/graphviz.gitlab.io</td>
+</tr>
+<tr>
+<td><a href="https://www.cloudpods.org/" target="_blank" rel="noopener noreferrer">Cloudpods<ExternalLinkIcon/></a></td>
+<td>https://github.com/yunionio/docs</td>
+</tr>
+<tr>
+<td><a href="https://www.selenium.dev/" target="_blank" rel="noopener noreferrer">Selenium<ExternalLinkIcon/></a></td>
+<td>https://github.com/SeleniumHQ/seleniumhq.github.io</td>
+</tr>
+<tr>
+<td><a href="https://fission.io/" target="_blank" rel="noopener noreferrer">fission.io<ExternalLinkIcon/></a></td>
+<td>https://github.com/fission/fission.io</td>
+</tr>
+<tr>
+<td><a href="https://gchq.github.io/stroom-docs" target="_blank" rel="noopener noreferrer">Stroom<ExternalLinkIcon/></a></td>
+<td>https://github.com/gchq/stroom-docs</td>
+</tr>
+<tr>
+<td><a href="https://opentelemetry.io/" target="_blank" rel="noopener noreferrer">OpenTelemetry<ExternalLinkIcon/></a></td>
+<td>https://github.com/open-telemetry/opentelemetry.io</td>
+</tr>
+<tr>
+<td><a href="https://www.cloudwego.io/" target="_blank" rel="noopener noreferrer">CloudWeGo<ExternalLinkIcon/></a></td>
+<td>https://github.com/cloudwego/cloudwego.github.io</td>
+</tr>
+<tr>
+<td><a href="https://etcd.io/" target="_blank" rel="noopener noreferrer">etcd<ExternalLinkIcon/></a></td>
+<td>https://github.com/etcd-io/website</td>
+</tr>
+<tr>
+<td><a href="https://protobuf.dev/" target="_blank" rel="noopener noreferrer">protobuf.dev<ExternalLinkIcon/></a></td>
+<td>https://github.com/protocolbuffers/protocolbuffers.github.io</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customized-docsy-examples" tabindex="-1"><a class="header-anchor" href="#customized-docsy-examples" aria-hidden="true">#</a> Customized Docsy examples</h2>
+<p>Example sites that include a moderate to high amount of customization:</p>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th>Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://airflow.apache.org/" target="_blank" rel="noopener noreferrer">Apache Airflow<ExternalLinkIcon/></a></td>
+<td>https://github.com/apache/airflow-site/</td>
+</tr>
+<tr>
+<td><a href="https://mostlydocs.netlify.app/" target="_blank" rel="noopener noreferrer">Docsy Mostly Docs<ExternalLinkIcon/></a></td>
+<td>https://github.com/gwatts/mostlydocs/</td>
+</tr>
+<tr>
+<td><a href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer">Kubernetes<ExternalLinkIcon/></a></td>
+<td>https://github.com/kubernetes/website</td>
+</tr>
+<tr>
+<td><a href="https://xltdoc.xceptance.com/" target="_blank" rel="noopener noreferrer">XLT<ExternalLinkIcon/></a></td>
+<td>https://github.com/Xceptance/xlt-documentation</td>
+</tr>
+<tr>
+<td><a href="https://docs.dapr.io/" target="_blank" rel="noopener noreferrer">Dapr<ExternalLinkIcon/></a></td>
+<td>https://github.com/dapr/docs</td>
+</tr>
+</tbody>
+</table>
 </div></template>
 
 

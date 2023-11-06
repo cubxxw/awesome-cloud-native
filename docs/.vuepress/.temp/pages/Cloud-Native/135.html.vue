@@ -1,4 +1,4 @@
-<template><div><h1 id="deployment-of-openim-on-kubernetes-with-configuration-management-using-helm" tabindex="-1"><a class="header-anchor" href="#deployment-of-openim-on-kubernetes-with-configuration-management-using-helm" aria-hidden="true">#</a> Deployment of <code v-pre>openim</code> on Kubernetes with Configuration Management using Helm</h1>
+<template><div><h1 id="_135-deployment-of-openim-on-kubernetes-with-configuration-management-using-helm" tabindex="-1"><a class="header-anchor" href="#_135-deployment-of-openim-on-kubernetes-with-configuration-management-using-helm" aria-hidden="true">#</a> 135: Deployment of <code v-pre>openim</code> on Kubernetes with Configuration Management using Helm</h1>
 <p><strong>Description</strong>: As part of our infrastructure evolution, we are considering deploying our <code v-pre>openim</code> application on Kubernetes. Given the application's reliance on specific configurations for MySQL and RPC, we need to devise a strategy that securely and efficiently manages these configurations within a Kubernetes environment.</p>
 <p><strong>Proposed Solution</strong>:</p>
 <ol>

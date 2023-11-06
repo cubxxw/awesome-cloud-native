@@ -1,14 +1,14 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第76节" tabindex="-1"><a class="header-anchor" href="#第76节" aria-hidden="true">#</a> 第76节</h1>
+<h1 id="第76节-开源的智能的-ai-客服解决方案" tabindex="-1"><a class="header-anchor" href="#第76节-开源的智能的-ai-客服解决方案" aria-hidden="true">#</a> 第76节 开源的智能的 AI 客服解决方案</h1>
 <div><a href = '75.md' style='float:left'>⬆️上一节🔗  </a><a href = '77.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
 <p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
 </blockquote>
-<hr>
-<p>[TOC]</p>
+<p>[toc]</p>
+<h2 id="开始" tabindex="-1"><a class="header-anchor" href="#开始" aria-hidden="true">#</a> 开始</h2>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '75.md' style='float:left'>⬆️上一节🔗  </a><a href = '77.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

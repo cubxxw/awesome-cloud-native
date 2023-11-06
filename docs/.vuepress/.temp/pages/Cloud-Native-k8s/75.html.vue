@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第75节" tabindex="-1"><a class="header-anchor" href="#第75节" aria-hidden="true">#</a> 第75节</h1>
+<h1 id="第75节-kubernetes-的方案-review-以及-comment" tabindex="-1"><a class="header-anchor" href="#第75节-kubernetes-的方案-review-以及-comment" aria-hidden="true">#</a> 第75节 Kubernetes 的方案 Review 以及 Comment</h1>
 <div><a href = '74.md' style='float:left'>⬆️上一节🔗  </a><a href = '76.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
@@ -9,6 +9,11 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="link" tabindex="-1"><a class="header-anchor" href="#link" aria-hidden="true">#</a> Link</h2>
+<ul>
+<li>https://github.dev/openimsdk/open-im-server/pull/1145</li>
+<li>https://github.com/openimsdk/open-im-server/pull/1145</li>
+</ul>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '74.md' style='float:left'>⬆️上一节🔗  </a><a href = '76.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>

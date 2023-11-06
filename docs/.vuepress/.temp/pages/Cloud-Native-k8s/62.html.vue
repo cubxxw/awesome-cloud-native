@@ -512,7 +512,10 @@ O <span class="token arrow operator">-.-></span> P
 <blockquote>
 <p>Kubernetes 从 1.8 版本起就声称单集群最多可支持 5000 个节点和 15 万个 Pod，我相信很少有公司会部署如此庞大的一个单集群，总有很多情况下因为各种各样的原因我们可能会部署多个集群，但是有时候有想将他们统一起来管理，这时候就需要用到集群联邦（Federation）。</p>
 </blockquote>
-<p>集群联邦（Cluster Federation）是一种将多个 Kubernetes 集群连接起来，实现跨集群资源管理和服务发现的技术。通过集群联邦，企业可以实现跨数据中心、跨可用区的资源管理和负载均衡，从而提高系统的可用性、可伸缩性和性能。</p>
+<p>集群联邦（Cluster Federation）是一种将多个 Kubernetes 集群连接起来，实现跨集群资源管理和服务发现的技术。通过集群联邦，企业可以实现 <strong>跨数据中心</strong>、跨可用区的资源管理和负载均衡，从而提高系统的可用性、可伸缩性和性能。</p>
+<blockquote>
+<p>目前的  OpenIM 很多人都提到过，如何对 OpenIM 上多数据中心，这个一直都是 OpenIM 所面临的问题，多数据中心设计到很多方面。</p>
+</blockquote>
 <p><a href="https://kubernetes.io/blog/2018/12/12/kubernetes-federation-evolution/" target="_blank" rel="noopener noreferrer">Kubernetes 官方博客的文章<ExternalLinkIcon/></a>中介绍了 Kubernetes 集群联邦的演进，该项目是在 SIG Multicluster 中进行的，Federation 是 Kubernetes 的一个子项目，社区对这个项目的兴趣很浓，该项目最初重用 Kubernetes API，以消除现有 Kubernetes 用户的任何附加使用复杂性。但由于以下原因，此方式行不通：</p>
 <ul>
 <li>在集群层面重新实施 Kubernetes API 的困难，因为 Federation 的特定扩展存储在注释中。</li>
@@ -522,12 +525,12 @@ O <span class="token arrow operator">-.-></span> P
 <p>随着 Federation 特定的 API 架构和社区的努力，这些想法有了进一步的发展，改进为 Federation v2。请注意，Federation V1 版本已经归档不再维护和更新，且官方也不再推荐继续使用。如果需要了解更多的 Federation 资料，请参考：<a href="https://github.com/kubernetes-sigs/kubefed" target="_blank" rel="noopener noreferrer">Kubernetes Federation v2<ExternalLinkIcon/></a>。</p>
 <p><strong>集群联邦包括以下要素：</strong></p>
 <ul>
-<li>Kubernetes 集群：分布在不同数据中心或可用区中的 Kubernetes 集群，可以使用不同的云服务提供商或私有数据中心。</li>
-<li>集群联邦控制平面：用于管理和控制集群联邦的核心组件，包括 API Server、Controller Manager、Scheduler 等。</li>
-<li>集群联邦 API：用于定义和管理跨集群的资源和服务，包括 Endpoint、Service、Namespace 等。</li>
-<li>集群联邦 DNS：用于解析跨集群的服务和域名，包括 External DNS 和 CoreDNS 等。</li>
-<li>集群联邦 Ingress：用于管理和配置跨集群的 Ingress 路由和负载均衡，包括 Istio Gateway 和 Traefik 等。</li>
-<li>集群联邦网络：用于实现跨集群的网络互通和安全隔离，包括 Calico、Flannel、Weave Net 等。</li>
+<li><strong>Kubernetes 集群</strong>：分布在不同数据中心或可用区中的 Kubernetes 集群，可以使用不同的云服务提供商或私有数据中心。</li>
+<li><strong>集群联邦控制平面</strong>：用于管理和控制集群联邦的核心组件，包括 API Server、Controller Manager、Scheduler 等。</li>
+<li><strong>集群联邦 API</strong>：用于定义和管理跨集群的资源和服务，包括 Endpoint、Service、Namespace 等。</li>
+<li><strong>集群联邦 DNS</strong>：用于解析跨集群的服务和域名，包括 External DNS 和 CoreDNS 等。</li>
+<li><strong>集群联邦 Ingress</strong>：用于管理和配置跨集群的 Ingress 路由和负载均衡，包括 Istio Gateway 和 Traefik 等。</li>
+<li><strong>集群联邦网络</strong>：用于实现跨集群的网络互通和安全隔离，包括 Calico、Flannel、Weave Net 等。</li>
 </ul>
 <p>在集群联邦中，Istio 作为一种服务网格技术，可以为跨集群的服务提供流量管理、安全策略、可观测性等功能。通过 Istio 中的集群联邦支持，企业可以实现跨数据中心、跨可用区的服务发现和流量管理，从而提高系统的可用性和性能。</p>
 <div class="language-mermaid ext-mermaid line-numbers-mode"><pre v-pre class="language-mermaid"><code><span class="token keyword">graph</span> TD

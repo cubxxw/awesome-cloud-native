@@ -1,0 +1,1 @@
+export const data = JSON.parse("{\"key\":\"v-6288a36e\",\"path\":\"/Cloud-Native/145.html\",\"title\":\"OpenIM JSSDK (三)\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"excerpt\":\"\",\"headers\":[],\"git\":{\"updatedTime\":null,\"contributors\":[]},\"filePathRelative\":\"Cloud-Native/145.md\"}")
