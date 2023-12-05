@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第82节" tabindex="-1"><a class="header-anchor" href="#第82节" aria-hidden="true">#</a> 第82节</h1>
+<h1 id="第82节-openim-application-containerization-deployment-guide" tabindex="-1"><a class="header-anchor" href="#第82节-openim-application-containerization-deployment-guide" aria-hidden="true">#</a> 第82节 OpenIM Application Containerization Deployment Guide</h1>
 <div><a href = '81.md' style='float:left'>⬆️上一节🔗  </a><a href = '83.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>

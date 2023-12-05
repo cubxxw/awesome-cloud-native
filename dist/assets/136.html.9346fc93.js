@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-2f5740cc","path":"/Cloud-Native/136.html","title":"136: Hugo \u8FDB\u9636","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1699262919000,"contributors":[{"name":"Xinwei Xiong","email":"3293172751nss@gmail.com","commits":1}]},"filePathRelative":"Cloud-Native/136.md"}');export{t as data};

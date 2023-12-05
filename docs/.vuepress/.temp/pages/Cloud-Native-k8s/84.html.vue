@@ -10,7 +10,7 @@
 <hr>
 <p>[TOC]</p>
 <h2 id="选择" tabindex="-1"><a class="header-anchor" href="#选择" aria-hidden="true">#</a> 选择</h2>
-<p>如果您正在评估、测试或开发Loki，则可以使用Docker或Docker Compose安装Loki和Promtail。对于生产环境，我们建议使用Tanka或Helm安装。</p>
+<p>如果ni正在评估、测试或开发Loki，则可以使用Docker或Docker Compose安装Loki和Promtail。对于生产环境，我们建议使用Tanka或Helm安装。</p>
 <p>使用这些安装说明获得的配置将Loki作为单个二进制文件运行。</p>
 <h2 id="prerequisites-先决条件" tabindex="-1"><a class="header-anchor" href="#prerequisites-先决条件" aria-hidden="true">#</a> Prerequisites 先决条件</h2>
 <ul>
@@ -100,7 +100,291 @@ services:
 <blockquote>
 <p>注意，对于 Windows 来说，应该使用 <code v-pre>wmi_exporter</code></p>
 </blockquote>
-<h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code># The root of the build/dist directory
+IAM_ROOT=$(dirname "${BASH_SOURCE[0]}")/../..
+[[ -z ${COMMON_SOURCED} ]] &amp;&amp; source ${IAM_ROOT}/scripts/install/common.sh
+
+# API Server API Address:Port
+INSECURE_OPENIMAPI=${IAM_APISERVER_HOST}:${API_OPENIM_PORT}
+INSECURE_OPENIMAUTO=${OPENIM_RPC_AUTH_HOST}:${OPENIM_AUTH_PORT}
+
+CCURL="curl -f -s -XPOST" # Create
+UCURL="curl -f -s -XPUT" # Update
+RCURL="curl -f -s -XGET" # Retrieve
+DCURL="curl -f -s -XDELETE" # Delete
+
+openim::test::check_error() {
+  local response=$1
+  local err_code=$(echo "$response" | jq '.errCode')
+  openim::log::status "Response from user registration: $response"
+  if [[ "$err_code" != "0" ]]; then
+    openim::log::error_exit "Error occurred: $response, You can read the error code in the API documentation https://docs.openim.io/restapi/errcode"
+  else
+    openim::log::success "Operation was successful."
+  fi
+}
+
+# The `openim::test::auth` function serves as a test suite for authentication-related operations.
+function openim::test::auth() {
+  # 1. Retrieve and set the authentication token.
+  openim::test::get_token
+  
+  # 2. Force logout the test user from a specific platform.
+  openim::test::force_logout
+  
+  # Log the completion of the auth test suite.
+  openim::log::success "Auth test suite completed successfully."
+}
+
+#################################### Auth Module ####################################
+
+# Define a function to get a token (Admin Token)
+openim::test::get_token() {
+  token_response=$(${CCURL} "${OperationID}" "${Header}" http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/auth/user_token \
+      -d'{"secret": "'"$SECRET"'","platformID": 1,"userID": "openIM123456"}')
+  token=$(echo $token_response | grep -Po 'token[" :]+\K[^"]+')
+  echo "$token"
+}
+
+Header="-HContent-Type: application/json"
+OperationID="-HoperationID: 1646445464564"
+Token="-Htoken: $(openim::test::get_token)"
+
+# Forces a user to log out from the specified platform by user ID.
+openim::test::force_logout() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "platformID": 2,
+  "userID": "4950983283"
+}
+EOF
+  )
+  echo "Requesting force logout for user: $request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/auth/force_logout" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+
+#################################### User Module ####################################
+
+# Registers a new user with provided user ID, nickname, and face URL using the API.
+openim::test::user_register() {
+  # Assign the parameters to local variables, with defaults if not provided
+  local user_id="${1:-${TEST_USER_ID}}"
+  local nickname="${2:-cubxxw}"
+  local face_url="${3:-https://github.com/cubxxw}"
+
+  # Create the request body using the provided or default values
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "secret": "${SECRET}",
+  "users": [
+    {
+      "userID": "${user_id}",
+      "nickname": "${nickname}",
+      "faceURL": "${face_url}"
+    }
+  ]
+}
+EOF
+)
+
+  echo "Request body for user registration: $request_body"
+
+  # Send the registration request
+  local user_register_response=$(${CCURL} "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/user_register" -d "${request_body}")
+
+  # Check for errors in the response
+  openim::test::check_error "$user_register_response"
+}
+
+# Checks if the provided list of user IDs exist in the system.
+openim::test::check_user_account() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "checkUserIDs": [
+    "${1}",
+    "${MANAGER_USERID_1}",
+    "${MANAGER_USERID_2}",
+    "${MANAGER_USERID_3}"
+  ]
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/account_check" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# Retrieves a list of users with pagination, limited to a specific number per page.
+openim::test::get_users() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "pagination": {
+    "pageNumber": 1,
+    "showNumber": 100
+  }
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/get_users" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# Obtains detailed information for a list of user IDs.
+openim::test::get_users_info() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "userIDs": [
+    "${1}",
+    "${MANAGER_USERID_1}"
+  ]
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/get_users_info" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# Retrieves the online status for a list of user IDs.
+openim::test::get_users_online_status() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "userIDs": [
+    "${TEST_USER_ID}",
+    "${MANAGER_USERID_1}",
+    "${MANAGER_USERID_2}",
+    "${MANAGER_USERID_3}"
+  ]
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/get_users_online_status" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# Updates the information for a user, such as nickname and face URL.
+openim::test::update_user_info() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "userInfo": {
+    "userID": "${TEST_USER_ID}",
+    "nickname": "openimbot",
+    "faceURL": "https://github.com/openimbot"
+  }
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/update_user_info" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# Gets the online status for users that a particular user has subscribed to.
+openim::test::get_subscribe_users_status() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "userID": "${TEST_USER_ID}"
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/get_subscribe_users_status" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# Subscribes to the online status of a list of users for a particular user ID.
+openim::test::subscribe_users_status() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "userID": "9168684795",
+  "userIDs": [
+    "7475779354",
+    "6317136453",
+    "8450535746"
+  ],
+  "genre": 1
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/subscribe_users_status" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# Sets the global message receiving option for a user, determining their messaging preferences.
+openim::test::set_global_msg_recv_opt() {
+  local request_body=$(cat &lt;&lt;EOF
+{
+  "userID": "${TEST_USER_ID}",
+  "globalRecvMsgOpt": 0
+}
+EOF
+)
+  echo "$request_body"
+
+  local response=$(${CCURL} "${Token}" "${OperationID}" "${Header}" "http://${OPENIM_API_HOST}:${API_OPENIM_PORT}/user/set_global_msg_recv_opt" -d "${request_body}")
+
+  openim::test::check_error "$response"
+}
+
+# [openim::test::user function description]
+# The `openim::test::user` function serves as a test suite for user-related operations. 
+# It sequentially invokes all user-related test functions to ensure the API's user operations are functioning correctly.
+function openim::test::user() {
+  # 1. Register a test user.
+  local USER_ID=$RANDOM
+  local TEST_USER_ID=$RANDOM
+  openim::test::user_register "${USER_ID}" "user01" "new_face_url"
+  openim::test::user_register "${TEST_USER_ID}" "user01" "new_face_url"
+  # 2. Check if the test user's account exists.
+  openim::test::check_user_account "${TEST_USER_ID}"
+  
+  # 3. Retrieve a list of users.
+  openim::test::get_users
+  
+  # 4. Get detailed information for the test user.
+  openim::test::get_users_info "${TEST_USER_ID}"
+  
+  # 5. Check the online status of the test user.
+  openim::test::get_users_online_status
+  
+  # 6. Update the test user's information.
+  openim::test::update_user_info
+  
+  # 7. Get the status of users subscribed by the test user.
+  openim::test::get_subscribe_users_status
+  
+  # 8. Subscribe the test user to a set of user statuses.
+  openim::test::subscribe_users_status
+  
+  # 9. Set the message receiving option for the test user.
+  openim::test::set_global_msg_recv_opt
+  
+  # Log the completion of the user test suite.
+  openim::log::success "User test suite completed successfully."
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '83.md' style='float:left'>⬆️上一节🔗  </a><a href = '85.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
 <li>
