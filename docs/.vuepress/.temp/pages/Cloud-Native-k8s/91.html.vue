@@ -1,7 +1,7 @@
 <template><div><ul>
 <li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
-<h1 id="第91节" tabindex="-1"><a class="header-anchor" href="#第91节" aria-hidden="true">#</a> 第91节</h1>
+<h1 id="第91节-gitops-实践理论" tabindex="-1"><a class="header-anchor" href="#第91节-gitops-实践理论" aria-hidden="true">#</a> 第91节 GitOps 实践理论</h1>
 <div><a href = '90.md' style='float:left'>⬆️上一节🔗  </a><a href = '92.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
@@ -9,6 +9,9 @@
 </blockquote>
 <hr>
 <p>[TOC]</p>
+<h2 id="从-gitops-开始实践" tabindex="-1"><a class="header-anchor" href="#从-gitops-开始实践" aria-hidden="true">#</a> 从 GitOps 开始实践</h2>
+<p>上面我们经历了两个大的阶段，我们从开始学习 GitOps 开始，到 GitOps 的高级部分。</p>
+<p>我们到现在，开始正式的实践 GitOps 的，以我们自己的企业生产级别项目 OpenIM 为例开始。</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '90.md' style='float:left'>⬆️上一节🔗  </a><a href = '92.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
