@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第65节-ebpf-刨析以及源码学习" tabindex="-1"><a class="header-anchor" href="#第65节-ebpf-刨析以及源码学习" aria-hidden="true">#</a> 第65节 eBPF 刨析以及源码学习</h1>
 <div><a href = '64.md' style='float:left'>⬆️上一节🔗  </a><a href = '66.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -30,7 +30,7 @@
 <p>Linux 内核是应用程序和它们所运行的硬件之间的软件层。应用程序运行在被称为<strong>用户空间</strong>的非特权层，它不能直接访问硬件。相反，应用程序使用系统调用（syscall）接口发出请求，要求内核代表它行事。这种硬件访问可能涉及到文件的读写，发送或接收网络流量，或者只是访问内存。内核还负责协调并发进程，使许多应用程序可以同时运行。</p>
 <p>谷歌在很久之前对容器的研究中，也是做了一个容器应用程序内核项目 <a href="https://github.com/google/gvisor" target="_blank" rel="noopener noreferrer">gVisor<ExternalLinkIcon/></a></p>
 <p>应用程序开发者通常不直接使用系统调用接口，因为编程语言给了我们更高级别的抽象和<strong>标准库</strong>，开发者更容易掌握这些接口。因此，很多人都不知道在程序运行时内核做了什么。如果你想了解内核调用频率，你可以使用 strace 工具来显示程序所做的所有系统调用。这里有一个例子，用 cat 从文件中读取 hello 这个词并将其写到屏幕上涉及到 100 多个系统调用：</p>
-<p><img src="http://sm.nsddd.top/sm202303192030754.png" alt="image-20230319203030478"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192030754.png" alt="image-20230319203030478"></p>
 <p>由于应用程序在很大程度上依赖于内核，这意味着 <strong>如果我们能够观测到应用程序与内核的交互，我们就可以了解到很多关于它的行为方式</strong>。例如，如果你能够截获打开文件的系统调用，你就可以准确地看到任何应用程序访问了哪些文件。但是，怎么才能做到这种拦截呢？让我们考虑一下，如果我们想修改内核，添加新的代码，在系统调用时创建某种输出，会涉及到什么问题。</p>
 <h3 id="向内核添加新功能" tabindex="-1"><a class="header-anchor" href="#向内核添加新功能" aria-hidden="true">#</a> 向内核添加新功能</h3>
 <p>Linux 内核很复杂，对任何代码库进行修改都需要对现有的代码有一定的熟悉，所以除非你已经是一个内核开发者，否则这很可能是一个挑战。</p>
@@ -60,7 +60,7 @@
 <p>至少在理论上，eBPF 工具的用户空间部分可以用任何语言编写，但在实践中，有一些库只支持相当少的语言。其中包括 C、Go、Rust 和 Python。这种语言的选择更加复杂，因为并不是所有的语言都有支持 libbpf 的库，libbpf 已经成为使 eBPF 程序在不同版本的内核中可移植的流行选择。</p>
 <h3 id="附属于事件的自定义程序" tabindex="-1"><a class="header-anchor" href="#附属于事件的自定义程序" aria-hidden="true">#</a> 附属于事件的自定义程序</h3>
 <p>eBPF 程序本身通常是用 C 或 Rust 编写的，并编入一个对象文件 。这是一个标准的 ELF（可执行和可链接格式，Executable and Linkable Format）文件，可以用像 <strong>readelf</strong> 这样的工具来检查，它包含程序字节码和任何映射的定义（我们很快就会讨论）。</p>
-<p><img src="http://sm.nsddd.top/sm202303192047719.png" alt="image-20230319204748438"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192047719.png" alt="image-20230319204748438"></p>
 <p>eBPF 程序加载到内核中时必须被附加到事件上。每当事件发生，相关的 eBPF 程序就会运行。有一个非常广泛的事件，你可以将程序附加到其中；我不会涵盖所有的事件，但以下是一些更常用的选项。</p>
 <h3 id="从函数中进入或退出" tabindex="-1"><a class="header-anchor" href="#从函数中进入或退出" aria-hidden="true">#</a> 从函数中进入或退出</h3>
 <p>你可以附加一个 eBPF 程序，在内核函数进入或退出时被触发。当前的许多 eBPF 例子都使用了 <code v-pre>kprobes</code>（附加到一个内核函数入口点）和 <code v-pre>kretprobes</code>（函数退出）的机制。在最新的内核版本中，有一个更有效的替代方法，叫做 <code v-pre>fentry/fexit</code> 。</p>
@@ -113,7 +113,7 @@
     <span class="token punctuation">}</span> events <span class="token function">SEC</span><span class="token punctuation">(</span><span class="token string">".maps"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当 ELF 对象文件被创建时，它包含了每个 map 和每个要加载到内核的程序的部分，<code v-pre>SEC()</code> 宏定义了这些部分。</p>
 <p>当我们研究这个程序的时候，你会看到，在系统调用被处理的时候，<code v-pre>start</code> map 被用来临时存储系统调用的参数 —— 包括被打开的文件的名称。<code v-pre>events</code> map <a href="https://lib.jimmysong.io/what-is-ebpf/ebpf-programs/#fn:7" target="_blank" rel="noopener noreferrer">7<ExternalLinkIcon/></a> 用于将事件信息从内核中的 eBPF 代码传递给用户空间的可执行程序。如 <a href="https://lib.jimmysong.io/what-is-ebpf/ebpf-programs/#figure-f-3-2" target="_blank" rel="noopener noreferrer">图 3-2<ExternalLinkIcon/></a> 所示。</p>
-<p><img src="http://sm.nsddd.top/sm202303192152204.jpeg" alt="图 3-2"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192152204.jpeg" alt="图 3-2"></p>
 <p>在 <code v-pre>opensnoop.bpf.c</code> 文件的后面，你会发现两个极其相似的函数：</p>
 <div class="language-c ext-c line-numbers-mode"><pre v-pre class="language-c"><code><span class="token function">SEC</span><span class="token punctuation">(</span><span class="token string">"tracepoint/syscalls/sys_enter_open"</span><span class="token punctuation">)</span>
 <span class="token keyword">int</span> <span class="token function">tracepoint__syscalls__sys_enter_open</span><span class="token punctuation">(</span><span class="token keyword">struct</span>         <span class="token class-name">trace_event_raw_sys_enter</span><span class="token operator">*</span> ctx<span class="token punctuation">)</span>
@@ -219,7 +219,7 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p>我们知道未来的世界是云原生的世界，如今云原生的应用成指数级增长。</p>
 <h3 id="每台主机一个内核" tabindex="-1"><a class="header-anchor" href="#每台主机一个内核" aria-hidden="true">#</a> 每台主机一个内核</h3>
 <p>要理解为什么 eBPF 在云原生世界中如此强大，你需要搞清楚一个概念：<strong>每台机器（或虚拟机）只有一个内核，所有运行在该机器上的容器都共享同一个内核</strong> ，内核了解主机上运行的所有应用代码。</p>
-<p><img src="http://sm.nsddd.top/sm202303192205066.png" alt="image-20230319220548953"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192205066.png" alt="image-20230319220548953"></p>
 <p>对于这些 container 来说，Kernel 至关重要。一些频繁的 System calls 会严重的影响 performance index</p>
 <p>通过对内核的检测，就像我们在使用 eBPF 时做的那样，我们可以同时检测在该机器上运行的所有应用程序代码。当我们将 eBPF 程序加载到内核并将其附加到事件上时，它就会被触发，而不考虑哪个进程与该事件有关。</p>
 <h3 id="ebpf-与-sidecar-模式的比较" tabindex="-1"><a class="header-anchor" href="#ebpf-与-sidecar-模式的比较" aria-hidden="true">#</a> eBPF 与 sidecar 模式的比较</h3>
@@ -227,7 +227,7 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p>每个 sidecar 容器都会消耗资源，而这要乘以注入了 sidecar 的 pod 的数量。这可能是非常重要的 —— 例如，如果每个 sidecar 需要它自己的路由信息副本，或策略规则，这就是浪费（关于这一点，Thomas Graf 写了一篇 <a href="https://isovalent.com/blog/post/2021-12-08-ebpf-servicemesh" target="_blank" rel="noopener noreferrer">关于服务网格 sidecar 与 eBPF 的比较<ExternalLinkIcon/></a>）。</p>
 <p>Sidecar 的另一个问题是，你不能保证机器上的每一个应用程序都被正确检测。设想下有一个攻击者设法破坏了你的一台主机，并启动了一个单独的 pod 来运行，比如，加密货币挖矿程序。他们不可能对你有礼貌，用你的 sidecar 可观测或安全工具来检测他们的挖矿 pod。你需要一个单独的系统来了解这种活动。</p>
 <p>但同样的加密货币矿工与运行在该主机上的合法 pod 共享内核。如果你使用基于 eBPF 的工具，如所示，矿工会自动受到它的影响。</p>
-<p><img src="http://sm.nsddd.top/sm202303192210973.png" alt="image-20230319221050760"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192210973.png" alt="image-20230319221050760"></p>
 <h3 id="ebpf-和进程隔离" tabindex="-1"><a class="header-anchor" href="#ebpf-和进程隔离" aria-hidden="true">#</a> eBPF 和进程隔离</h3>
 <p>我主张将功能整合到一个单一的、基于 eBPF 的代理中，而不是每个 pod 的 sidecar 中。如果该代理可以访问机器上运行的所有 pod，这不是一种安全风险吗？我们不是失去了应用程序之间的隔离，而这种隔离可以防止它们相互干扰吗？</p>
 <p>作为一个容器安全领域的过来人，我可以体会到你对此的担忧，但重要的是要挖掘底层机制，以真正理解为什么它不是一开始可能出现的缺陷。</p>
@@ -251,7 +251,7 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p><img src="https://lib.jimmysong.io/what-is-ebpf/images/f-6-1.jpg" alt="pod-eBPF"></p>
 <h4 id="服务网格" tabindex="-1"><a class="header-anchor" href="#服务网格" aria-hidden="true">#</a> 服务网格</h4>
 <p>eBPF 作为服务网格数据平面的基础也是非常有意义的。许多服务网格在七层，即应用层运行，并使用代理组件（如 Envoy）来辅助应用程序（Istio)。在 Kubernetes 中，这些代理通常以 sidecar 模式部署，每个 pod 中有一个代理容器，这样代理就可以访问 pod 的网络命名空间。eBPF 有一个比 sidecar 模型更有效的方法。由于内核可以访问主机中所有 pod 的命名空间，我们可以使用 eBPF 连接 pod 中的应用和主机上的代理。</p>
-<p><img src="http://sm.nsddd.top/sm202303192218828.jpeg" alt="图 6-2"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192218828.jpeg" alt="图 6-2"></p>
 <blockquote>
 <p>eBPF 实现了服务网格的高效无 sidecar 模型，每个节点一个代理，而不是每个应用 pod 一个代理</p>
 </blockquote>
@@ -260,10 +260,10 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p>在本报告的前面，你已经看到了 BCC 项目，几年来，Brendan Gregg 在 Netflix 做了开创性的工作，展示了这些 eBPF 工具如何被用来 <a href="https://www.brendangregg.com/" target="_blank" rel="noopener noreferrer">观测我们感兴趣的几乎任何指标<ExternalLinkIcon/></a>，而且是大规模和高性能的。</p>
 <p>Kinvolk 的 <a href="https://github.com/kinvolk/inspektor-gadget" target="_blank" rel="noopener noreferrer">Inspektor Gadget<ExternalLinkIcon/></a> 将其中一些起源于 BCC 的工具带入了 Kubernetes 的世界，这样你就可以在命令行上轻松观测特定的工作负载。</p>
 <p>新一代的项目和工具正在这项工作的基础上，提供基于 GUI 的观测能力。CNCF 项目 <a href="https://px.dev/" target="_blank" rel="noopener noreferrer">Pixie<ExternalLinkIcon/></a> 可以让你运行预先写好的或自定义的脚本，通过一个强大的、视觉上吸引人的用户界面查看指标和日志。因为它是基于 eBPF 的，这意味着你可以自动检测所有应用程序，获得性能数据，而无需进行任何代码修改或配置。显示的只是 Pixie 中众多可视化的一个例子。</p>
-<p><img src="http://sm.nsddd.top/sm202303192220647.png" alt="image-20230319222037405"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192220647.png" alt="image-20230319222037405"></p>
 <p>另一个名为 <a href="https://github.com/parca-dev/parca" target="_blank" rel="noopener noreferrer">Parca<ExternalLinkIcon/></a> 的可观测性项目专注于连续剖析，使用 eBPF 对 CPU 使用率等指标进行有效采样，可以用来检测性能瓶颈。</p>
 <p>Cilium 的 <a href="https://github.com/cilium/hubble" target="_blank" rel="noopener noreferrer">Hubble<ExternalLinkIcon/></a> 组件是一个具有命令行界面和用户界面的可观测性工具（如 <a href="https://lib.jimmysong.io/what-is-ebpf/ebpf-tools/#figure-f-6-4" target="_blank" rel="noopener noreferrer">图 6-4<ExternalLinkIcon/></a> 所示），它专注于 Kubernetes 集群中的网络流。</p>
-<p><img src="http://sm.nsddd.top/sm202303192221723.png" alt="image-20230319222100579"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192221723.png" alt="image-20230319222100579"></p>
 <p>在云原生环境中，IP 地址不断被动态重新分配，基于 IP 地址的传统网络观测工具的作用非常有限。作为一个 CNI，Cilium 可以访问工作负载身份信息，这意味着 Hubble 可以显示由 Kubernetes pod、服务和命名空间标识的服务映射和流量数据。这对于诊断网络问题十分有用。</p>
 <p>能够观测到活动，这是安全工具的基础，这些工具将正在发生的事情与策略或规则相比较，以了解该活动是预期的还是可疑的。让我们来看看一些使用 eBPF 来提供云原生安全能力的工具。</p>
 <h3 id="安全" tabindex="-1"><a class="header-anchor" href="#安全" aria-hidden="true">#</a> 安全</h3>
@@ -273,7 +273,7 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p>这里有一个 eBPF 早期在生产中大规模使用的一个例子 —— <a href="https://blog.cloudflare.com/how-to-drop-10-million-packets/" target="_blank" rel="noopener noreferrer">Cloudflare<ExternalLinkIcon/></a> 的 DDoS（分布式拒绝服务）保护。DDoS 攻击者用许多网络信息淹没目标机，希望目标机忙于处理这些信息，导致无法提供有效工作。Cloudflare 的工程师使用 eBPF 程序，在数据包到达后立即对其进行检查，并迅速确定一个数据包是否是这种攻击的一部分，如果是，则将其丢弃。数据包不必通过内核的网络堆栈，因此需要的处理资源要少得多，而且目标可以应对更大规模的恶意流量。</p>
 <p>eBPF 程序也被用于动态缓解 ”死亡数据包“ 的内核漏洞 。攻击者以这样的方式制作一个网络工作数据包——利用了内核中的一个错误，使其无法正确处理该数据包。与其等待内核补丁的推出，不如通过加载一个 eBPF 程序来缓解攻击，该程序可以寻找这些特别制作的数据包并将其丢弃。这一点的真正好处是，eBPF 程序可以动态加载，而不必改变机器上的任何东西。</p>
 <p>在 Kubernetes 中，<a href="https://networkpolicy.io/" target="_blank" rel="noopener noreferrer">网络策略<ExternalLinkIcon/></a> 是一等资源，但它是由网络插件来执行的。一些 CNI，包括 Cilium 和 Calico，为更强大的规则提供了扩展的网络策略功能，例如允许或禁止流量到一个由完全限定域名而不是仅仅由 IP 地址指定的目的地。在 <a href="https://app.networkpolicy.io/" target="_blank" rel="noopener noreferrer">app.networkpolicy.io<ExternalLinkIcon/></a> 有一个探索网络策略及其效果的好工具。</p>
-<p><img src="http://sm.nsddd.top/sm202303192222568.jpeg" alt="图 6-5"></p>
+<p><img src="http://sm.cubxxw.com/sm202303192222568.jpeg" alt="图 6-5"></p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '64.md' style='float:left'>⬆️上一节🔗  </a><a href = '66.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
@@ -281,7 +281,7 @@ args<span class="token punctuation">.</span>flags <span class="token operator">=
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

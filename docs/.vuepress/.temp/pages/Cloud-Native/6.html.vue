@@ -1,12 +1,12 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第6节-k3s-runtime-design" tabindex="-1"><a class="header-anchor" href="#第6节-k3s-runtime-design" aria-hidden="true">#</a> 第6节 k3s Runtime Design</h1>
 <br>
 <div><a href = '5.md' style='float:left'>⬆️上一节🔗  </a><a href = '7.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -21,7 +21,7 @@
 <li><code v-pre>new_runtime.go</code> determines which <code v-pre>runtime.go</code> to call based on the parameters passed in</li>
 <li>k3s rootfs</li>
 <li>Add a corresponding test function</li>
-<li>Minimum resource test <a href="https://docker.nsddd.top/Cloud-Native/7.html" target="_blank" rel="noopener noreferrer">k3s vs k0s<ExternalLinkIcon/></a></li>
+<li>Minimum resource test <a href="https://docker.cubxxw.com/Cloud-Native/7.html" target="_blank" rel="noopener noreferrer">k3s vs k0s<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="module-list" tabindex="-1"><a class="header-anchor" href="#module-list" aria-hidden="true">#</a> module list</h2>
 <div class="language-ABAP ext-ABAP line-numbers-mode"><pre v-pre class="language-ABAP"><code>#runtime
@@ -95,14 +95,14 @@ BASE rootfs cache
 <p>My talking about packaging up a minimal Linux distribution to run K3s, similar to https://github.com/rancher/k3os? Or mean just the root filesystem, such as we provide with k3s via https://github.com/k3s-io/k3s-root ?⚠️</p>
 </blockquote>
 <ol>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/14.html#%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85%E7%9A%84%E8%A7%A3%E6%9E%90" target="_blank" rel="noopener noreferrer">Online<ExternalLinkIcon/></a> Installation</li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/14.html#%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85%E7%9A%84%E8%A7%A3%E6%9E%90" target="_blank" rel="noopener noreferrer">Online<ExternalLinkIcon/></a> Installation</li>
 </ol>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>FROM scratch
 COPY imageList manifests
 RUN <span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_VERSION</span><span class="token operator">=</span>v1.25.3 <span class="token function">sh</span> -
 COPY <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/14.html#%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E8%A7%A3%E9%87%8A" target="_blank" rel="noopener noreferrer">Offline<ExternalLinkIcon/></a> installation</li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/14.html#%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E8%A7%A3%E9%87%8A" target="_blank" rel="noopener noreferrer">Offline<ExternalLinkIcon/></a> installation</li>
 </ol>
 <blockquote>
 <p><code v-pre>k3s-insatll.sh</code> 、<code v-pre>k3s-airgap-images-$ARCH.tar</code>、<code v-pre>k3s</code>binary system</p>
@@ -129,8 +129,8 @@ COPY . .
 └── README.md
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="about-the-k3s-difference" tabindex="-1"><a class="header-anchor" href="#about-the-k3s-difference" aria-hidden="true">#</a> About the k3s difference</h2>
 <ul>
-<li>Comparison of <a href="https://docker.nsddd.top/Cloud-Native/7.html" target="_blank" rel="noopener noreferrer">k3s vs k0s<ExternalLinkIcon/></a></li>
-<li>Comparison of <a href="https://docker.nsddd.top/Cloud-Native-k8s/14.html#containerd" target="_blank" rel="noopener noreferrer">containerd vs docker<ExternalLinkIcon/></a></li>
+<li>Comparison of <a href="https://docker.cubxxw.com/Cloud-Native/7.html" target="_blank" rel="noopener noreferrer">k3s vs k0s<ExternalLinkIcon/></a></li>
+<li>Comparison of <a href="https://docker.cubxxw.com/Cloud-Native-k8s/14.html#containerd" target="_blank" rel="noopener noreferrer">containerd vs docker<ExternalLinkIcon/></a></li>
 </ul>
 <p>**The installation script is k3s-insatll.sh. **</p>
 <p><strong>cluster role:</strong></p>
@@ -266,7 +266,7 @@ a. Distribute the k3s configuration to connect to private registry. (ref: https:
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

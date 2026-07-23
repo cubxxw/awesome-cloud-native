@@ -1,6 +1,6 @@
 <template><div><h1 id="_130-重新搭建我的博客-静态" tabindex="-1"><a class="header-anchor" href="#_130-重新搭建我的博客-静态" aria-hidden="true">#</a> 130: 重新搭建我的博客（静态）</h1>
 <p>冤大头回来了 …</p>
-<p>太难了这次，准备简历的时候，发现我的博客没了，我最亲爱的，陪伴了一年的，备受好评的博客 <a href="nsddd.top">nsddd.top</a> 牺牲了 呜呜呜呜</p>
+<p>太难了这次，准备简历的时候，发现我的博客没了，我最亲爱的，陪伴了一年的，备受好评的博客 <a href="cubxxw.com">cubxxw.com</a> 牺牲了 呜呜呜呜</p>
 <p>别急别急，吸取教训，第一件事是什么，坚决不用动态博客了，从大一的第一代博客使用 workpress， 那时候用的服务器管理工具是 著名顶顶的 宝塔 ， 虽然现在我还在用，哈哈哈，不过以后绝对绝对不会再用了 。第二代博客还记得吗 ，第二代博客就是我刚刚牺牲掉的博客，使用 docker 搭建，存活了两年（大二到大三），服务器中途都换了一次，不过得益于 Docker 优雅的移植性haha，所以我的博客得以存活。</p>
 <p>那这次为啥挂了？？？ 挂的时间是 2023 年 9 月 1 日。原因是 Java 出现故障，发现 swtich 空间不足，然后，准备移植的，修复的，实在是觉得无力维护，我希望我的博客可以长久生存几年，十几年，甚至是几十年上百年。</p>
 <p>所以，从头开始 !!!</p>
@@ -35,7 +35,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></blockquote>
 <p><strong>添加主题到 hugo.toml 中：</strong></p>
 <p>推荐使用 yaml 或者是 toml ，我比较喜欢用 yaml 哈哈，当然，用 https://tooltt.com/yaml2toml/ 工具可以随便转换</p>
-<div class="language-toml ext-toml line-numbers-mode"><pre v-pre class="language-toml"><code><span class="token key property">baseURL</span> <span class="token punctuation">=</span> <span class="token string">'https://nsddd.top'</span>
+<div class="language-toml ext-toml line-numbers-mode"><pre v-pre class="language-toml"><code><span class="token key property">baseURL</span> <span class="token punctuation">=</span> <span class="token string">'https://cubxxw.com'</span>
 <span class="token key property">languageCode</span> <span class="token punctuation">=</span> <span class="token string">'en-us'</span>
 <span class="token key property">title</span> <span class="token punctuation">=</span> <span class="token string">'cubxxw is blog'</span>
 <span class="token key property">theme</span> <span class="token punctuation">=</span> <span class="token string">"PaperMod"</span>
@@ -272,7 +272,7 @@ summary: archives
 <p><strong>使用 <code v-pre>hugo server</code> 启动：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ hugo server
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>然后访问：http://localhost:1313/</p>
-<p><img src="http://sm.nsddd.top/sm202309132220842.png" alt="image-20230913222054387"></p>
+<p><img src="http://sm.cubxxw.com/sm202309132220842.png" alt="image-20230913222054387"></p>
 <p>点击 <strong>月亮</strong> ，支持设置 <strong>明暗</strong> 。</p>
 <h3 id="常规模式-默认模式" tabindex="-1"><a class="header-anchor" href="#常规模式-默认模式" aria-hidden="true">#</a> 常规模式（默认模式）</h3>
 <p>使用第1个条目作为某些信息:</p>

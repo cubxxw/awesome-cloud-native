@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第58节-kubernetes-网络" tabindex="-1"><a class="header-anchor" href="#第58节-kubernetes-网络" aria-hidden="true">#</a> 第58节 Kubernetes 网络</h1>
 <div><a href = '57.md' style='float:left'>⬆️上一节🔗  </a><a href = '59.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -27,7 +27,7 @@
 <li>https://kubernetes.io/docs/concepts/cluster-administration/networking/</li>
 <li>https://dramasamy.medium.com/life-of-a-packet-in-kubernetes-part-1-f9bc0909e051</li>
 </ul>
-<p><strong>这篇文章，最终会归纳到 docs: <a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">https://docker.nsddd.top<ExternalLinkIcon/></a></strong> Kubernetes / CloudNative</p>
+<p><strong>这篇文章，最终会归纳到 docs: <a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">https://docker.cubxxw.com<ExternalLinkIcon/></a></strong> Kubernetes / CloudNative</p>
 <p>Kubernetes网络模型有几条一般规则需要牢记：</p>
 <ol>
 <li><strong>每个Pod都有自己的IP地址</strong>：不需要在Pod之间创建链接，也不需要将容器端口映射到主机端口。</li>
@@ -37,7 +37,7 @@
 </ol>
 <h3 id="kubernetes-中网络的解决方案" tabindex="-1"><a class="header-anchor" href="#kubernetes-中网络的解决方案" aria-hidden="true">#</a> Kubernetes 中网络的解决方案</h3>
 <p>Kubernetes网络设计用于确保Kubernetes中的不同实体类型可以通信。Kubernetes基础设施的布局在设计上有很大的分离度。名称空间、容器和Pod旨在保持组件之间的区别，因此高度结构化的通信计划非常重要。</p>
-<p><img src="http://sm.nsddd.top/sm202303101350246.png" alt="image-20230310135053049" title="Kubernetes网络方案图"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101350246.png" alt="image-20230310135053049" title="Kubernetes网络方案图"></p>
 <p><strong>网络是Kubernetes的核心部分，但要准确了解它的工作方式可能会很有挑战性。有4个不同的网络问题需要解决：</strong></p>
 <ul>
 <li>高度耦合的容器间通信：这个已经被 <a href="https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/" target="_blank" rel="noopener noreferrer">Pod<ExternalLinkIcon/></a> 和 <code v-pre>localhost</code> 通信解决了。</li>
@@ -71,7 +71,7 @@
 </ol>
 <h3 id="pod-to-service-networking" tabindex="-1"><a class="header-anchor" href="#pod-to-service-networking" aria-hidden="true">#</a> Pod-to-Service networking</h3>
 <p>虽然 pod 的 address 是唯一的，但是pod 是非常动态的。它们可能需要根据需求进行扩展或缩减。在应用程序崩溃或节点故障的情况下，可以重新创建它们。这些事件会导致Pod的IP地址发生变化，这将使联网成为一个挑战。</p>
-<p><img src="http://sm.nsddd.top/sm202303101432580.png" alt="image-20230310143159337"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101432580.png" alt="image-20230310143159337"></p>
 <p><strong>我们要解决 pod 的动态问题，那么就需要：</strong></p>
 <ol>
 <li>在前端分配静态虚拟IP地址（virtual IP：VIP），以连接与服务关联的任何后端Pod。</li>
@@ -88,7 +88,7 @@
 </blockquote>
 <h3 id="internet-to-service-networking" tabindex="-1"><a class="header-anchor" href="#internet-to-service-networking" aria-hidden="true">#</a> Internet-to-Service networking</h3>
 <p>到目前为止，我已经讨论了如何在集群中路由流量。不过，Kubernetes网络还有另一面，那就是将应用程序暴露给外部网络。</p>
-<p><img src="http://sm.nsddd.top/sm202303101441314.png" alt="image-20230310144018105"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101441314.png" alt="image-20230310144018105"></p>
 <p><strong>可以通过两种不同的方式将应用程序公开给外部网络:</strong></p>
 <ol>
 <li>Egress：当您希望将流量从Kubernetes服务路由到Internet时，请使用此选项。在本例中，iptables执行源NAT，因此流量似乎来自节点而不是Pod。</li>
@@ -106,7 +106,7 @@
 <p>另外，Kubernetes还支持自定义服务发现插件，以便更好地满足特定应用程序的需求。例如，可以使用自定义插件来实现跨多个Kubernetes集群的服务发现。</p>
 <h3 id="kubernetes-服务发布" tabindex="-1"><a class="header-anchor" href="#kubernetes-服务发布" aria-hidden="true">#</a> Kubernetes 服务发布</h3>
 <p>Kubernetes服务为你提供了一种访问Pod组的方法，通常使用标签选择器进行定义。这可能是试图访问集群中其他应用程序的应用程序，也可能允许您将集群中运行的应用程序公开给外部世界。Kubernetes 服务类型允许您指定所需的服务类型。</p>
-<p><img src="http://sm.nsddd.top/sm202303101453168.png" alt="image-20230310145316045"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101453168.png" alt="image-20230310145316045"></p>
 <p><strong>不同的服务类型包括：</strong></p>
 <ol>
 <li><strong>ClusterIP</strong>：这是默认的服务类型。它使服务只能从集群内访问，并允许集群内的应用程序相互通信。没有外部访问。</li>
@@ -128,18 +128,18 @@ client
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>删除 namespace 命令：<code v-pre>ip netns delete &lt;namespace_name&gt;</code></p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303101516295.png" alt="image-20230310151650219"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101516295.png" alt="image-20230310151650219"></p>
 <p>创建 <code v-pre>veth</code> 对以连接这些网络命名空间。将 <code v-pre>veth</code> 线对视为两端都有连接器的网线（我们在前面讲过 veth)。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">ip</span> <span class="token function">link</span> <span class="token function">add</span> veth-client <span class="token builtin class-name">type</span> veth peer name veth-server
 ❯ <span class="token function">ip</span> <span class="token function">link</span> list <span class="token operator">|</span> <span class="token function">grep</span> veth
 <span class="token number">12</span>: veth-server@veth-client: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,M-DOWN<span class="token operator">></span> mtu <span class="token number">1500</span> qdisc noop state DOWN mode DEFAULT group default qlen <span class="token number">1000</span>
 <span class="token number">13</span>: veth-client@veth-server: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,M-DOWN<span class="token operator">></span> mtu <span class="token number">1500</span> qdisc noop state DOWN mode DEFAULT group default qlen <span class="token number">1000</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303101517622.png" alt="image-20230310151749562"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303101517622.png" alt="image-20230310151749562"></p>
 <p><code v-pre>veth</code> 对（电缆）存在于主机网络命名空间中，现在，让我们将 <code v-pre>veth</code> 对的两端移到前面创建的它们各自的名称空间中。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth-client netns client
 ❯ <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth-server netns server
 ❯ <span class="token function">ip</span> <span class="token function">link</span> list <span class="token operator">|</span> <span class="token function">grep</span> veth <span class="token comment"># doesn’t exist on the host network namespace now</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303101518387.png" alt="image-20230310151854318"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303101518387.png" alt="image-20230310151854318"></p>
 <p>让我们验证 <code v-pre>veth</code> 结束实际上存在于名称空间中。我们将从 <code v-pre>client</code> 名称空间开始</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">ip</span> netns <span class="token builtin class-name">exec</span> client <span class="token function">ip</span> <span class="token function">link</span>
 <span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK<span class="token operator">></span> mtu <span class="token number">65536</span> qdisc noop state DOWN mode DEFAULT group default qlen <span class="token number">1000</span>
@@ -176,7 +176,7 @@ client
        valid_lft forever preferred_lft forever
     inet6 fe80::4836:cfff:fe93:ebd3/64 scope <span class="token function">link</span> 
        valid_lft forever preferred_lft forever
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303101522150.png" alt="image-20230310152215060"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303101522150.png" alt="image-20230310152215060"></p>
 <p>使用ping命令，我们可以验证两个网络名称空间已经连接并且可以访问，</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">ip</span> netns <span class="token builtin class-name">exec</span> client <span class="token function">ping</span> <span class="token number">10.0</span>.0.12
 PING <span class="token number">10.0</span>.0.12 <span class="token punctuation">(</span><span class="token number">10.0</span>.0.12<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
@@ -186,7 +186,7 @@ PING <span class="token number">10.0</span>.0.12 <span class="token punctuation"
 <span class="token number">64</span> bytes from <span class="token number">10.0</span>.0.12: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">4</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.037</span> ms
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果我们想创建更多的网络名称空间并将它们连接在一起，为名称空间的每个组合创建 <code v-pre>veth</code> 对可能不是一个可伸缩的解决方案。相反，可以创建一个Linux桥，并将这些网络名称空间连接到桥以获得连接。这正是Docker在同一主机上运行的容器之间建立网络的方式！</p>
 <p>让我们创建名称空间并将其附加到 bridge。</p>
-<p><img src="http://sm.nsddd.top/sm202303101523717.png" alt="image-20230310152321642"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101523717.png" alt="image-20230310152321642"></p>
 <h3 id="如何从外部服务器访问专用网络" tabindex="-1"><a class="header-anchor" href="#如何从外部服务器访问专用网络" aria-hidden="true">#</a> 如何从外部服务器访问专用网络？</h3>
 <p>让我们使用Docker来模拟该场景。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> web <span class="token parameter variable">--rm</span> nginx
@@ -273,11 +273,11 @@ Commercial support is available at
 <span class="token operator">&lt;</span>/body<span class="token operator">></span>
 <span class="token operator">&lt;</span>/html<span class="token operator">></span>
 node01 $
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303101623625.png" alt="image-20230310162317474"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303101623625.png" alt="image-20230310162317474"></p>
 <h3 id="cni-1" tabindex="-1"><a class="header-anchor" href="#cni-1" aria-hidden="true">#</a> CNI</h3>
 <p>“CNI插件负责将网络接口插入容器网络名称空间（例如，veth对的一端），并在主机上进行任何必要的更改（例如，将veth的另一端连接到网桥）。然后，它应将IP分配给接口，并通过调用相应的IPAM插件设置与IP地址管理部分一致的路由。”</p>
 <p>CNI（容器网络接口）是云原生计算基金会的一个项目，由一个规范和库组成，用于编写插件来配置Linux容器中的网络接口，沿着许多受支持的插件。CNI只关心容器的网络连通性，并在删除容器时移除分配的资源。由于这一重点，CNI得到了广泛的支持，并且规范易于实现。</p>
-<p><img src="http://sm.nsddd.top/sm202303101624384.png" alt="image-20230310162410292"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101624384.png" alt="image-20230310162410292"></p>
 <p>注意：运行时可以是任何东西-例如 Kubernetes, PodMan, cloud foundry, etc</p>
 <h3 id="创建-cni" tabindex="-1"><a class="header-anchor" href="#创建-cni" aria-hidden="true">#</a> 创建 CNI</h3>
 <p><strong>步骤1：下载CNI插件</strong></p>
@@ -365,7 +365,7 @@ lo        Link encap:Local Loopback
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

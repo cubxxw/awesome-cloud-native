@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第1节-第一阶段" tabindex="-1"><a class="header-anchor" href="#第1节-第一阶段" aria-hidden="true">#</a> 第1节 第一阶段</h1>
 <div><a href = '../README.md' style='float:left'>⬆️主目录🔗  </a><a href = '2.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">k8s、docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">k8s、docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -62,7 +62,7 @@
 </ul>
 <p>对于发现的<strong>安全</strong>问题，建议使用发送邮箱的方式告知<a href="mailto:admin@sealyun.com">admin@sealyun.com</a></p>
 <p>对于<strong>一般</strong> 的问题，或许你可以选择 [issues](<a href="https://github.com/labring/sealos/issues/new/choose" target="_blank" rel="noopener noreferrer">New Issue · labring/sealos (github.com)<ExternalLinkIcon/></a>) 来指出问题</p>
-<p><img src="http://sm.nsddd.top/smimage-20221019161049208.png" alt="image-20221019161049208"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019161049208.png" alt="image-20221019161049208"></p>
 <p>⚡ 显然，相比较<code v-pre>issues</code>，我更喜欢<code v-pre>pr</code> ，你可以发现下面的问题并且改进</p>
 <ul>
 <li>如果您发现拼写错误，请尝试修复它！</li>
@@ -78,8 +78,8 @@
 </ul>
 <h3 id="🧷-补充阅读" tabindex="-1"><a class="header-anchor" href="#🧷-补充阅读" aria-hidden="true">#</a> 🧷 补充阅读</h3>
 <ol>
-<li><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer">如何参与github项目或许你可以参考这篇文章~<ExternalLinkIcon/></a></li>
-<li><a href="https://nsddd.top/archives/actions" target="_blank" rel="noopener noreferrer">如何使用actions自动部署实现自动更新远程~<ExternalLinkIcon/></a></li>
+<li><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer">如何参与github项目或许你可以参考这篇文章~<ExternalLinkIcon/></a></li>
+<li><a href="https://cubxxw.com/archives/actions" target="_blank" rel="noopener noreferrer">如何使用actions自动部署实现自动更新远程~<ExternalLinkIcon/></a></li>
 </ol>
 <h3 id="💡-步骤" tabindex="-1"><a class="header-anchor" href="#💡-步骤" aria-hidden="true">#</a> 💡 步骤</h3>
 <ul>
@@ -128,7 +128,7 @@ origin     https://github.com/<span class="token operator">&lt;</span>your-usern
 upstream   https://github.com/labring/sealos.git <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
 upstream   no-pushing <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>添加此内容，我们可以轻松地将本地分支与上游分支同步。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221019162733226.png" alt="image-20221019162733226"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019162733226.png" alt="image-20221019162733226"></p>
 <p><strong>2. 创建分支</strong>以添加新功能或修复问题</p>
 <p>更新本地工作目录和远程分叉存储库：</p>
 <blockquote>
@@ -152,7 +152,7 @@ upstream   no-pushing <span class="token punctuation">(</span>push<span class="t
 发布版本		release-*	发布定期要上线的功能
 修复分支		bug-*		修复线上代码的 bug
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221019164941695.png" alt="image-20221019164941695"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019164941695.png" alt="image-20221019164941695"></p>
 <p><strong>3. 将分支推送</strong>到分叉的存储库，尽量不要在 pr 中生成多个提交消息。</p>
 <blockquote>
 <p><code v-pre>git commit -a -s -m &quot;message for your changes&quot;</code></p>
@@ -160,14 +160,14 @@ upstream   no-pushing <span class="token punctuation">(</span>push<span class="t
 <li><code v-pre>-a</code> 参数设置修改文件后不需要执行 <code v-pre>git add</code> 命令，直接来提交</li>
 <li><code v-pre>-s</code> 表示添加了一个签名，加入了自己的信息</li>
 </ul>
-<p><img src="http://sm.nsddd.top/smimage-20221019190552361.png" alt="image-20221019190552361"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019190552361.png" alt="image-20221019190552361"></p>
 </blockquote>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>golangci-lint run <span class="token parameter variable">-c</span> .golangci.yml <span class="token comment"># lint</span>
 <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>
 <span class="token function">git</span> commit <span class="token parameter variable">-a</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-m</span> <span class="token string">"message for your changes"</span> <span class="token comment"># -a is git add ., -s adds a Signed-off-by trailer</span>
 <span class="token function">git</span> rebase <span class="token parameter variable">-i</span>	<span class="token operator">&lt;</span>commit-id<span class="token operator">></span>  <span class="token comment"># 如果你的pr有多次提交</span>
 <span class="token function">git</span> push   <span class="token comment"># 在rebase完成后推送到分叉库，如果是第一次推送，运行git push --set-upstream origin &lt;new-branch></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221019190409127.png" alt="image-20221019190409127"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221019190409127.png" alt="image-20221019190409127"></p>
 <blockquote>
 <p>为每个 Markdown 代码块指定一种语言，除非没有关联的语言。</p>
 </blockquote>
@@ -185,7 +185,7 @@ upstream   no-pushing <span class="token punctuation">(</span>push<span class="t
 <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token parameter variable">-s</span> <span class="token string">"init infra"</span>
 <span class="token comment"># then create pull request, and merge</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>提交拉取请求给主分支：</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221019192522791.png" alt="image-20221019192522791"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019192522791.png" alt="image-20221019192522791"></p>
 <h2 id="使用-sealos-快速构建-kubernetes" tabindex="-1"><a class="header-anchor" href="#使用-sealos-快速构建-kubernetes" aria-hidden="true">#</a> 使用 sealos 快速构建 kubernetes</h2>
 <blockquote>
 <p>⚠️ 安装注意事项：</p>
@@ -229,7 +229,7 @@ make build
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></blockquote>
 <hr>
 <p>😂 让我很喜欢的一点是：<code v-pre>sealos</code>能一次性把环境搭建好，想当年，我真是废了九牛二虎之力才搭建~失败的。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
 <h3 id="远程连接" tabindex="-1"><a class="header-anchor" href="#远程连接" aria-hidden="true">#</a> 远程连接</h3>
 <ul>
 <li>[x] <a href="https://github.com/cubxxw/awesome-cs-course/blob/master/linux/linux-web/7.md" target="_blank" rel="noopener noreferrer">远程连接 &amp; 免密远程~文档<ExternalLinkIcon/></a></li>
@@ -278,17 +278,17 @@ root@VM-4-3-ubuntu:/<span class="token comment"># </span>
 </ul>
 <h3 id="docker、k8s、云原生笔记" tabindex="-1"><a class="header-anchor" href="#docker、k8s、云原生笔记" aria-hidden="true">#</a> docker、k8s、云原生笔记</h3>
 <ul>
-<li>[x] <a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker.nsddd.top<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">docker.cubxxw.com<ExternalLinkIcon/></a></li>
 </ul>
 <h3 id="任务块" tabindex="-1"><a class="header-anchor" href="#任务块" aria-hidden="true">#</a> 任务块</h3>
 <ul>
 <li>
 <p>基本使用：</p>
 <ul>
-<li>创建一个 <code v-pre>pod</code> 并理解什么是 <code v-pre>pod</code>   ➡️  <a href="https://docker.nsddd.top/Cloud-Native-k8s/9.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
-<li>创建一个 <code v-pre>deployment</code> 理解 <code v-pre>deployment</code> 与 <code v-pre>pod</code> 的关系  ➡️  <a href="https://docker.nsddd.top/Cloud-Native-k8s/10.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
-<li>创建一个 <code v-pre>configmap</code>， 理解挂载配置文件给 <code v-pre>pod</code>  ➡️  <a href="https://docker.nsddd.top/Cloud-Native-k8s/13.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
-<li>创建一个 <code v-pre>service</code>，通过 <code v-pre>service</code> 在集群内访问 <code v-pre>pod</code>  ➡️  <a href="https://docker.nsddd.top/Cloud-Native-k8s/11.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
+<li>创建一个 <code v-pre>pod</code> 并理解什么是 <code v-pre>pod</code>   ➡️  <a href="https://docker.cubxxw.com/Cloud-Native-k8s/9.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
+<li>创建一个 <code v-pre>deployment</code> 理解 <code v-pre>deployment</code> 与 <code v-pre>pod</code> 的关系  ➡️  <a href="https://docker.cubxxw.com/Cloud-Native-k8s/10.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
+<li>创建一个 <code v-pre>configmap</code>， 理解挂载配置文件给 <code v-pre>pod</code>  ➡️  <a href="https://docker.cubxxw.com/Cloud-Native-k8s/13.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
+<li>创建一个 <code v-pre>service</code>，通过 <code v-pre>service</code> 在集群内访问 <code v-pre>pod</code>  ➡️  <a href="https://docker.cubxxw.com/Cloud-Native-k8s/11.html" target="_blank" rel="noopener noreferrer">🧷记录<ExternalLinkIcon/></a></li>
 </ul>
 </li>
 <li>
@@ -318,7 +318,7 @@ root@VM-4-3-ubuntu:/<span class="token comment"># </span>
 </ul>
 <p><strong>what is <code v-pre>pod</code>？</strong></p>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/9.html#%E4%BF%AE%E6%94%B9pod" target="_blank" rel="noopener noreferrer">🧷 Go to cub to learn pod <ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/9.html#%E4%BF%AE%E6%94%B9pod" target="_blank" rel="noopener noreferrer">🧷 Go to cub to learn pod <ExternalLinkIcon/></a></li>
 </ul>
 <p>Pod is the smallest scheduling unit in <code v-pre>Kubernetes</code>. A Pod encapsulates a container (or multiple containers). Containers in a Pod share storage, network, etc. That is, you can think of the entire pod as a virtual machine, and then each container is equivalent to a process running on the virtual machine. All containers in the same pod are scheduled and scheduled uniformly.</p>
 <blockquote>
@@ -421,10 +421,10 @@ No resources found <span class="token keyword">in</span> default namespace.
 </blockquote>
 <hr>
 <p>😂 让我很喜欢的一点是：<code v-pre>sealos</code>能一次性把环境搭建好，想当年，我真是废了九牛二虎之力才搭建~失败的。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
 <h2 id="核心服务快速启动" tabindex="-1"><a class="header-anchor" href="#核心服务快速启动" aria-hidden="true">#</a> 核心服务快速启动</h2>
 <p><strong>💡 重新把昨天集群全部删除，新开三台服务器，纯新~</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221021151347038.png" alt="image-20221021151347038"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221021151347038.png" alt="image-20221021151347038"></p>
 <h3 id="环境准备" tabindex="-1"><a class="header-anchor" href="#环境准备" aria-hidden="true">#</a> 环境准备</h3>
 <blockquote>
 <p>⚠️ 注意：环境一定很重要，不然都跑不起来~</p>
@@ -447,12 +447,12 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><code v-pre>-p</code>：passwd密码</p>
 <p>开启ssh免密不需要些密码了，在这里就实现了。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
 <p><strong>验证集群：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get nodes
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
 <h3 id="单节点" tabindex="-1"><a class="header-anchor" href="#单节点" aria-hidden="true">#</a> 单节点</h3>
 <blockquote>
 <p>Single host</p>
@@ -464,7 +464,7 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1 <span class="token parameter variable">--single</span>
 <span class="token comment"># remove taint</span>
 $ kubectl taint <span class="token function">node</span> <span class="token parameter variable">--all</span> node-role.kubernetes.io/control-plane-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020212025716.png" alt="image-20221020212025716"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221020212025716.png" alt="image-20221020212025716"></p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <div><a href = '../README.md' style='float:left'>⬆️主目录🔗  </a><a href = '2.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <ul>
@@ -472,7 +472,7 @@ $ kubectl taint <span class="token function">node</span> <span class="token para
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

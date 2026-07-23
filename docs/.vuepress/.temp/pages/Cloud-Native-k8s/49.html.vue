@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第49节-深入理解-kube-apiserver" tabindex="-1"><a class="header-anchor" href="#第49节-深入理解-kube-apiserver" aria-hidden="true">#</a> 第49节 深入理解 Kube-APIServer</h1>
 <div><a href = '48.md' style='float:left'>⬆️上一节🔗  </a><a href = '50.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -35,9 +35,9 @@
 <blockquote>
 <p>前面的是 Mutating Webhook，可以改一个对象的值，而 Validating Webhook 是不可以修改对象的值，不生效的。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303051431637.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051431637.png" alt="img"></p>
 <p><strong>更加详细的请求处理流程：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303051430312.jpeg" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051430312.jpeg" alt="img"></p>
 <blockquote>
 <p><strong>📜 对上面的解释：</strong></p>
 <p>如何处理API请求：API源码存在于kubernetes/pkg/api路径中，会处理集群内以及集群外客户端的请求。</p>
@@ -143,7 +143,7 @@
 <li>服务器单向认证：服务器端持有证书证明自己身份，用于服务端不关心客户端身份而客户端需要确认服务器身份的场景。例如火车票购票网站，我们必须保证其是官方而非恶意服务器，但网站允许任何客户端进行连接访问；</li>
 <li>双向TLS认证：双方都要持有证书，并验证对方证书确认身份。一般用于服务端持有信息比较敏感，只有特定客户端才能访问的场景。例如：K8s内组件提供的接口往往包含集群内部信息，若被非法访问会影响整体安全，所以K8s内部组件之间都是双向TLS认证。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303051505019.webp" alt="图2 双向TLS过程"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051505019.webp" alt="图2 双向TLS过程"></p>
 <p>当两个组件进行双向TLS认证时，会涉及到下表中的相关文件：</p>
 <table>
 <thead>
@@ -253,12 +253,12 @@ cncamp-token,cncamp,1000,<span class="token string">"group1,group2,group3"</span
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
 <li>
 <p>1）添加**<code v-pre>--token-auth-file=/etc/kubernetes/auth/static-token</code>**参数，</p>
-<p><img src="http://sm.nsddd.top/sm202303051620735.png" alt="asd"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051620735.png" alt="asd"></p>
 </li>
 <li>
 <p>2）同时由于 <code v-pre>apiserver</code> 是容器化运行的，还需要额外添加<code v-pre>hostpath</code> 的 <code v-pre>mount</code>，把存放 <code v-pre>static token</code> 的目录也挂载到容器中。</p>
-<p><img src="http://sm.nsddd.top/sm202303051623527.png" alt="image-20230305162319477"></p>
-<p><img src="http://sm.nsddd.top/sm202303051625169.png" alt="image-20230305162510114"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051623527.png" alt="image-20230305162319477"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051625169.png" alt="image-20230305162510114"></p>
 </li>
 </ul>
 <p>修改完成后 kubelet 就会自动重启 <code v-pre>apiserver pod</code>。</p>
@@ -357,7 +357,7 @@ k8s的Authorization机制目前支持多种授权模型，如：</p>
 </ul>
 <h3 id="静态密码文件" tabindex="-1"><a class="header-anchor" href="#静态密码文件" aria-hidden="true">#</a> 静态密码文件</h3>
 <p><strong>我们加入一个用户:（~/.kube/config)</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303051717736.png" alt="image-20230305171723601"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051717736.png" alt="image-20230305171723601"></p>
 <p><strong>登录：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ k get ns <span class="token parameter variable">--user</span> cncamp
 Error from server <span class="token punctuation">(</span>Forbidden<span class="token punctuation">)</span>: namespaces is forbidden: User <span class="token string">"cncamp"</span> cannot list resource <span class="token string">"namespaces"</span> <span class="token keyword">in</span> API group <span class="token string">""</span> at the cluster scope
@@ -382,7 +382,7 @@ metadata:
 secrets:
 - name: default-token-vkbzr
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>看到这个 ServiceAccount yaml 文件中 有一个 secrets 字段，OMG，这就对应起来了，我们继续看一下细节。</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303051726706.png" alt="image-20230305172613547"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051726706.png" alt="image-20230305172613547"></p>
 <p><strong>有 ca.crt， 有namespace，所以 ServiceAccount 是 Kubernetes 自动生成的，并且会自动挂载到 任何容器 的 <code v-pre>/run/secrets/kubernetes.io/serviceaccount</code> 中</strong></p>
 <p>查看某个容器细节：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ k get pod coredns-697ddfb55c-87qws <span class="token parameter variable">-oyaml</span> <span class="token parameter variable">-n</span> kube-system
@@ -586,7 +586,7 @@ user<span class="token punctuation">,</span> <span class="token boolean">_</span
 <p>ClusterRoleBindings 和 RoleBindings 也是一样，也就是说如果是通过 ClusterRoleBindings 绑定某个用户，那么这个用户默认就在 所有的 Namespace 上拥有 权限。RoleBindings 会限制在 namespace</p>
 </li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303051947235.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051947235.png" alt="img"></p>
 <blockquote>
 <p><strong>最后实现的效果是： 谁（who) 能对 哪些对象（what）做哪些操作（how)</strong></p>
 </blockquote>
@@ -730,7 +730,7 @@ user<span class="token punctuation">,</span> <span class="token boolean">_</span
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

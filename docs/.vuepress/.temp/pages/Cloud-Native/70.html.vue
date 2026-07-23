@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第70节-架构设计" tabindex="-1"><a class="header-anchor" href="#第70节-架构设计" aria-hidden="true">#</a> 第70节 架构设计</h1>
 <div><a href = '69.md' style='float:left'>⬆️上一节🔗  </a><a href = '71.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -65,11 +65,11 @@
 └─────────────────────┘
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="占主导地位的控制器" tabindex="-1"><a class="header-anchor" href="#占主导地位的控制器" aria-hidden="true">#</a> 占主导地位的控制器</h3>
 <p>MVC 架构模式的三个组成部分：Model、View 和 Controller 中最重要的就是控制器，它承担了整个架构中的大部分业务逻辑，同时在用户请求到达或者事件发生时都会首先通知控制器并由它来决定如何响应这次请求或者事件。</p>
-<p><img src="http://sm.nsddd.top/sm202305211244629.png" alt="image-20230521124442575"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211244629.png" alt="image-20230521124442575"></p>
 <p>在 MVC 中，所有的用户请求都会首先交给控制器，再由控制器来决定如何响应用户的输入，无论是更新模型中的信息还是渲染相应的视图，都是通过控制器来决定的；也就是说，在 MVC 中，控制器占据主导地位，它决定用户的输入是如何被处理的。</p>
 <h3 id="被动的模型" tabindex="-1"><a class="header-anchor" href="#被动的模型" aria-hidden="true">#</a> 被动的模型</h3>
 <p>在绝大多数的 MVC 架构模式中，模型都不会主动向视图或者控制器推送消息；模型都是被动的，它只存储整个应用中的数据，而信息的获取和更新都是由控制器来驱动的。</p>
-<p><img src="http://sm.nsddd.top/sm202305211245766.png" alt="image-20230521124502673"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211245766.png" alt="image-20230521124502673"></p>
 <p>但是当模型中的数据发生变化时，却需要通过一些方式通知对应的视图进行更新，在这种情况下其实也不需要模型<strong>主动</strong>将数据变化的消息推送给视图；因为所有对于模型层的改变都是<strong>由用户的操作导致的</strong>，而用户的操作都是通过控制器来处理的，所以只需要在控制器改变模型时，将更新的信息发送给视图就可以了；当然，我们也可以通过<strong>观察者模式</strong>向未知的观察者发送通知，以保证状态在不同模块之间能够保持同步。</p>
 <h2 id="三层架构" tabindex="-1"><a class="header-anchor" href="#三层架构" aria-hidden="true">#</a> 三层架构</h2>
 <p>三层架构就是为了符合“高内聚，低耦合”思想，把各个功能模块划分为表示层（UI）、业务逻辑层（BLL）和数据访问层（DAL）三层架构。</p>
@@ -147,20 +147,20 @@ C <span class="token arrow operator">--></span> J<span class="token text string"
 <p><strong>那么后面的 MVA、MVP 和 MVVM 架构是什么样子的？</strong></p>
 <p>MVP 架构模式是 MVC 的一个变种，很多框架都自称遵循 MVC 架构模式，但是它们实际上却实现了 MVP 模式；MVC 与 MVP 之间的区别其实并不明显，作者认为两者之间最大的区别就是 MVP 中使用 Presenter 对视图和模型进行了解耦，它们彼此都对对方一无所知，沟通都通过 Presenter 进行。</p>
 <p>MVP 作为一个比较有争议的架构模式，在维基百科的 <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter" target="_blank" rel="noopener noreferrer">Model-view-presenter<ExternalLinkIcon/></a> 词条中被描述为 MVC 设计模式的变种（derivation），自上个世纪 90 年代出现在 IBM 之后，随着不断的演化，虽然有着很多分支，不过 Martin Fowler 对 MVP 架构模式的定义最终被广泛接受和讨论。</p>
-<p><img src="http://sm.nsddd.top/sm202305211242568.png" alt="image-20230521124242385"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211242568.png" alt="image-20230521124242385"></p>
 <p>在 MVP 中，<code v-pre>Presenter</code> 可以理解为松散的控制器，其中包含了视图的 UI 业务逻辑，所有从视图发出的事件，都会通过代理给 Presenter 进行处理；同时，Presenter 也通过视图暴露的接口与其进行通信。</p>
 <p>目前常见的 MVP 架构模式其实都是它的变种：<a href="https://www.martinfowler.com/eaaDev/PassiveScreen.html" target="_blank" rel="noopener noreferrer">Passive View<ExternalLinkIcon/></a> 和 <a href="https://www.martinfowler.com/eaaDev/SupervisingPresenter.html" target="_blank" rel="noopener noreferrer">Supervising Controller<ExternalLinkIcon/></a>，接下来的内容也是围绕这两种变种进行展开的。</p>
 <h3 id="被动视图" tabindex="-1"><a class="header-anchor" href="#被动视图" aria-hidden="true">#</a> 被动视图</h3>
 <p>MVP 的第一个主要变种就是被动视图（Passive View）；顾名思义，在该变种的架构模式中，视图层是被动的，它本身不会改变自己的任何的状态，所有的状态都是通过 Presenter 来间接改变的。</p>
-<p><img src="http://sm.nsddd.top/sm202305211247699.png" alt="image-20230521124753638"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211247699.png" alt="image-20230521124753638"></p>
 <p>被动的视图层就像前端中的 HTML 和 CSS 代码，只负责展示视图的结构和内容，本身不具有任何的逻辑：</p>
 <h3 id="依赖关系" tabindex="-1"><a class="header-anchor" href="#依赖关系" aria-hidden="true">#</a> 依赖关系</h3>
 <p>视图成为了完全被动的并且不再根据模型来更新视图本身的内容，也就是说，不同于 MVC 中的依赖关系；在被动视图中，视图层对于模型层没有任何的依赖：</p>
-<p><img src="http://sm.nsddd.top/sm202305211248804.png" alt="image-20230521124853749"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211248804.png" alt="image-20230521124853749"></p>
 <p>因为视图层不依赖与其他任何层级也就最大化了视图层的可测试性，同时也将视图层和模型层进行了合理的分离，两者不再相互依赖。</p>
 <h3 id="通信方式" tabindex="-1"><a class="header-anchor" href="#通信方式" aria-hidden="true">#</a> 通信方式</h3>
 <p>被动视图的示意图中一共有四条线，用于表示 Model、View 和 Presenter 之间的通信：</p>
-<p><img src="http://sm.nsddd.top/sm202305211249170.png" alt="image-20230521124918111"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211249170.png" alt="image-20230521124918111"></p>
 <ol>
 <li>当视图接收到来自用户的事件时，会将事件转交给 Presenter 进行处理；</li>
 <li>被动的视图向外界暴露接口，当需要更新视图时 Presenter 通过视图暴露的接口更新视图的内容；</li>
@@ -173,18 +173,18 @@ C <span class="token arrow operator">--></span> J<span class="token text string"
 <p>相较于 MVC 和 MVP 模式，MVVM 在定义上就明确得多，同时，维基百科上对于 <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel" target="_blank" rel="noopener noreferrer">Model-View-ViewModel<ExternalLinkIcon/></a> 的词条也没有歧义；不过，在谈 MVVM 架构模式之前，我们需要先了解它是如何发展和演变的。</p>
 <h3 id="演变" tabindex="-1"><a class="header-anchor" href="#演变" aria-hidden="true">#</a> 演变</h3>
 <p>早在 2004 年，Martin Fowler 发表了一篇名为 <a href="https://www.martinfowler.com/eaaDev/PresentationModel.html" target="_blank" rel="noopener noreferrer">Presentation Model<ExternalLinkIcon/></a> （以下简称为 PM 模式）的文章，PM 模式与 MVP 比较相似，它从视图层中分离了行为和状态；PM 模式中创建了一个视图的抽象，叫做 Presentation Model，而视图也成为了这个模型的『渲染』结果。</p>
-<p><img src="http://sm.nsddd.top/sm202305211252715.png" alt="image-20230521125228667"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211252715.png" alt="image-20230521125228667"></p>
 <p>既然 MVVM 是展示模型 <a href="https://www.martinfowler.com/eaaDev/PresentationModel.html" target="_blank" rel="noopener noreferrer">Presentation Model<ExternalLinkIcon/></a> 的一个实现，那么在介绍 Model-View-ViewModel 之前，我们就需要了解 PM 模式到底是什么。</p>
 <p>在 MVC 一节中曾经有过对展示层和领域层进行分离的讨论，而 PM 模式就与分离展示层 <a href="https://www.martinfowler.com/eaaDev/SeparatedPresentation.html" target="_blank" rel="noopener noreferrer">Separated Presentation<ExternalLinkIcon/></a> 有一定的关系。</p>
 <p>在监督控制器中，视图层与模型层中的一些简单属性进行绑定，在模型属性变化时直接更新视图，而 PM 通过引入展示模型将<strong>模型层中的数据与复杂的业务逻辑封装成属性与简单的数据同时暴露给视图，让视图和展示模型中的属性进行同步</strong>。</p>
-<p><img src="http://sm.nsddd.top/sm202305211253735.png" alt="image-20230521125330663"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211253735.png" alt="image-20230521125330663"></p>
 <p>展示模型中包含所有的视图渲染需要的动态信息，包括视图的内容（text、color）、组件是否启用（enable），除此之外还会将一些方法暴露给视图用于某些事件的响应。</p>
 <h3 id="mvvm-与-wpf" tabindex="-1"><a class="header-anchor" href="#mvvm-与-wpf" aria-hidden="true">#</a> MVVM 与 WPF</h3>
 <p>MVVM 架构模式是微软在 2005 年诞生的，从诞生一开始就与 WPF 框架的联系非常紧密，在这一节中，我们将介绍 MVVM 模式是如何遵循 PM 模式实现的，WPF 作为微软用于处理 GUI 软件的框架，提供了一套非常优雅的解决方案。</p>
-<p><img src="http://sm.nsddd.top/sm202305211254709.png" alt="image-20230521125400634"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211254709.png" alt="image-20230521125400634"></p>
 <p>从 Model-View-ViewModel 这个名字来看，它由三个部分组成，也就是 Model、View 和 ViewModel；其中视图模型（ViewModel）其实就是 PM 模式中的展示模型，在 MVVM 中叫做视图模型。</p>
 <p>除了我们非常熟悉的 Model、View 和 ViewModel 这三个部分，在 MVVM 的实现中，还引入了<strong>隐式的</strong>一个 Binder 层，而声明式的数据和命令的绑定在 MVVM 模式中就是通过它完成的。</p>
-<p><img src="http://sm.nsddd.top/sm202305211254690.png" alt="image-20230521125415637"></p>
+<p><img src="http://sm.cubxxw.com/sm202305211254690.png" alt="image-20230521125415637"></p>
 <p>在实现 PM 模式时，我们需要处理视图和展示模型之间状态的同步，也就是 MVVM 中的视图和视图模型，我们使用隐式的 Binder 和 XAML 文件来完成视图和视图模型两者之间的双向绑定：</p>
 <div class="language-html ext-html line-numbers-mode"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Window</span> <span class="token attr-name"><span class="token namespace">x:</span>Class</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>WPFDataBinding.MainWindow<span class="token punctuation">"</span></span> <span class="token attr-name">Title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MainWindow<span class="token punctuation">"</span></span> <span class="token attr-name">Height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>350<span class="token punctuation">"</span></span> <span class="token attr-name">Width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>604<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Grid</span><span class="token punctuation">></span></span>
@@ -314,7 +314,7 @@ I <span class="token arrow operator">--></span> A
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

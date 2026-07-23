@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第21节-minikube-和-kind" tabindex="-1"><a class="header-anchor" href="#第21节-minikube-和-kind" aria-hidden="true">#</a> 第21节 Minikube 和 Kind</h1>
 <div><a href = '20.md' style='float:left'>⬆️上一节🔗  </a><a href = '22.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -84,7 +84,7 @@ KubeDNS is running at https://127.0.0.1:37949/api/v1/namespaces/kube-system/serv
 <p>Kind 部署集群的 Kubernetes 端口默认是 37949 端口，而 Kubernetes 默认 master 是 6443</p>
 </blockquote>
 <p>访问端口：</p>
-<p><img src="http://sm.nsddd.top/sm202303171022581.png" alt="image-20230317102243422"></p>
+<p><img src="http://sm.cubxxw.com/sm202303171022581.png" alt="image-20230317102243422"></p>
 <p><strong>可以看到Windows浏览器可以打开 WSL 中部署的集群，这正是 WSL2 集成 docker Desktop for Windows 的真正优势。</strong></p>
 <p><strong>获取集群</strong>：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ ./kind get clusters
@@ -158,18 +158,18 @@ subjects:
 EOF</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接下来：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl <span class="token parameter variable">-n</span> kubernetes-dashboard describe secret <span class="token variable"><span class="token variable">$(</span>kubectl <span class="token parameter variable">-n</span> kubernetes-dashboard get secret <span class="token operator">|</span> <span class="token function">grep</span> admin-user <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1}'</span><span class="token variable">)</span></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303171034444.png" alt="image-20230317103458214"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303171034444.png" alt="image-20230317103458214"></p>
 <p>再访问：http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</p>
 <p>我们需要的是上面生成的 Token：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>eyJhbGciOiJSUzI1NiIsImtpZCI6ImpOcy1RQ0Rack9QYlJueHQ5YldYM25rVjZWN2VPUkhaUUJJWUl1SDFQaFkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXRkOGttIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJkYmM3YjJhYi0zZjBhLTRiODItYjJmNC1mODg2OGI3ZjEzNmQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.awBu9cBxgphOEc4kNIVCbfHWBhZW7Iz5pgOk0v_YElmGk86mQ5Y-bPwko7pRyGB-d92sbkYoeW3Y5fucUeBtM-jAHRhxaZWs3eP6V_EMKA7olkW73CyXzmuLzhInyv1K23t3pUXDyar8lPBVOO1ZKmD_eP5pCt7wVqPyy4sJy3tvIscKeg76gBG-PG7D9zt7_x_7eHCPS0Zgo1GjV5q3SHWv8JrJX9E11uVafoYLe5y4EZKcFsGBvOcIYKuDkFg4rmz4OMsxKuLmlSpys_wQl5DGg6xAq14kY6qumCx6xYMqAW979tCRp61R3lmW1cuqUEvBlkvCo74EX0PRQ19MNA
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>然后我们就进来了：</p>
-<p><img src="http://sm.nsddd.top/sm202303171040950.png" alt="image-20230317104014702"></p>
+<p><img src="http://sm.cubxxw.com/sm202303171040950.png" alt="image-20230317104014702"></p>
 <h2 id="和k3s比较" tabindex="-1"><a class="header-anchor" href="#和k3s比较" aria-hidden="true">#</a> 和k3s比较</h2>
 <p>我做了大量关于 k3s  的文章，甚至详细不亚于官方的文档。</p>
 <ul>
-<li>https://docker.nsddd.top/Cloud-Native-k8s/14.html</li>
-<li>https://docker.nsddd.top/Cloud-Native-k8s/15.html</li>
-<li>https://docker.nsddd.top/Cloud-Native-k8s/27.html</li>
+<li>https://docker.cubxxw.com/Cloud-Native-k8s/14.html</li>
+<li>https://docker.cubxxw.com/Cloud-Native-k8s/15.html</li>
+<li>https://docker.cubxxw.com/Cloud-Native-k8s/27.html</li>
 </ul>
 <p>K3s是由 rancher 实验室开发的Kubernetes的缩小版。通过删除可有可无的特性（传统的、alpha的、非默认的树内插件）和使用轻量级组件（例如sqlite3而不是etcd3），它们实现了显著的精简。这将产生一个大小约为60MB的二进制文件。</p>
 <table>
@@ -245,7 +245,7 @@ EOF</span>
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第32节-kubernetes-目录结构" tabindex="-1"><a class="header-anchor" href="#第32节-kubernetes-目录结构" aria-hidden="true">#</a> 第32节 kubernetes 目录结构</h1>
 <div><a href = '31.md' style='float:left'>⬆️上一节🔗  </a><a href = '33.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -485,7 +485,7 @@ authentication         CONTRIBUTING.md     extensions    networking   resource
 <p>在Kubernetes中，pkg/apis/目录下的代码定义了API资源的抽象接口。这些接口描述了资源的类型、字段和操作，但没有实现具体的逻辑。相反，staging/src/k8s.io/api/目录下的代码实现了这些接口。这些实现提供了资源的具体功能，并将其与Kubernetes系统的其他部分集成在一起。</p>
 <p>例如，pkg/apis/apps/目录下定义了一组接口，用于表示应用程序资源。 staging/src/k8s.io/api/apps/目录下的代码实现了这些接口，并提供了应用程序资源的具体功能。</p>
 <p><strong>为了跟清楚的了解，我截取了它们的目录结构：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202301071411550.png" alt="image-20230107141113159"></p>
+<p><img src="http://sm.cubxxw.com/sm202301071411550.png" alt="image-20230107141113159"></p>
 <p><strong>总结：</strong></p>
 <ol>
 <li>pkg/apis/apps/目录和staging/src/k8s.io/api/apps/目录都是Kubernetes源码的一部分。它们都是用于管理应用程序资源的代码。</li>
@@ -535,7 +535,7 @@ apiserver.go  app  OWNERS
 <p>Kubernetes 是很多组件的 二进制 相互配合 部署起来的。</p>
 <h3 id="kube-apiserver" tabindex="-1"><a class="header-anchor" href="#kube-apiserver" aria-hidden="true">#</a> kube-apiserver</h3>
 <p>以 kube-apiserver cmd 目录为例：</p>
-<p><img src="http://sm.nsddd.top/sm202303031350297.png" alt="image-20230303135004177"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031350297.png" alt="image-20230303135004177"></p>
 <p>📜 对上面的解释：</p>
 <ul>
 <li><code v-pre>options</code> ： 一般里面的 options 是解析 入参，并且进行入参校验</li>
@@ -994,7 +994,7 @@ plugin/
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

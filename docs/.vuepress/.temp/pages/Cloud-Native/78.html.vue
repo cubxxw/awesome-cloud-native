@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第78节-开源的文档自动化设计" tabindex="-1"><a class="header-anchor" href="#第78节-开源的文档自动化设计" aria-hidden="true">#</a> 第78节 开源的文档自动化设计</h1>
 <div><a href = '77.md' style='float:left'>⬆️上一节🔗  </a><a href = '79.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -26,10 +26,10 @@
 </blockquote>
 <h3 id="静态页面设置" tabindex="-1"><a class="header-anchor" href="#静态页面设置" aria-hidden="true">#</a> 静态页面设置</h3>
 <p>接下来，我们要打开COS的静态页面访问功能，请选择页面菜单栏中的基础配置，拉取页面到最下方，然后找到静态网站设置。</p>
-<p><img src="http://sm.nsddd.top/sm202306091843730.png" alt="image"></p>
+<p><img src="http://sm.cubxxw.com/sm202306091843730.png" alt="image"></p>
 <p>现在，打开浏览器访问系统自动给出的<code v-pre>访问节点</code>内的网址<code v-pre>https://openim-*******.cos-website.ap-guangzhou.myqcloud.com </code>。我们看到我们部署的静态网站已经可以正常访问了。</p>
 <h2 id="使用自定义域名进行访问" tabindex="-1"><a class="header-anchor" href="#使用自定义域名进行访问" aria-hidden="true">#</a> 使用自定义域名进行访问</h2>
-<p>默认情况下是不能通过自己的域名进行访问的，我们需要修改相关设置才能通过自己的域名进行访问。请点击菜单栏的域名管理，我们选择菜单栏的域名管理，在请输入域名处填写你自己的域名，我这里以<code v-pre>kubecub.nsddd.top</code>为例，源站类型设置为<code v-pre>静态网站源站</code>，然后点击保存。</p>
+<p>默认情况下是不能通过自己的域名进行访问的，我们需要修改相关设置才能通过自己的域名进行访问。请点击菜单栏的域名管理，我们选择菜单栏的域名管理，在请输入域名处填写你自己的域名，我这里以<code v-pre>kubecub.cubxxw.com</code>为例，源站类型设置为<code v-pre>静态网站源站</code>，然后点击保存。</p>
 <h2 id="文档自动化设计思路" tabindex="-1"><a class="header-anchor" href="#文档自动化设计思路" aria-hidden="true">#</a> 文档自动化设计思路</h2>
 <p>使用 https://github.com/peaceiris/actions-gh-pages 可以实现对 GitHub pages 的自动化部署</p>
 <p>这是最简单的逻辑，在 https://vercel.com/，可以设置自动对 GitHub 仓库的拉取操作来完成自动化。</p>
@@ -65,7 +65,7 @@ install<span class="token punctuation">.</span>coscmd<span class="token punctuat
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

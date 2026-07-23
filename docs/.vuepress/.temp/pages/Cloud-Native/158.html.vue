@@ -69,7 +69,7 @@
 <p><strong>frp的作用和原理：</strong></p>
 <p>除了常规内网穿透方式以外，使用frp技术进行内网穿透也是非常好用的，frp而且最大的优势在于可以蹭公网IP。</p>
 <p>frp是如何实现的：首先frp分客户端和服务端，通过分别在客户端和服务端安装配置frp，达到内网穿透的效果。一般被访问的PC上安装客户端程序，在拥有公网ip（或与互联网连通）的PC上安装服务器程序。拓扑图如下：</p>
-<p><img src="http://sm.nsddd.top/sm202311251045726.png" alt="image-20231125104523412"></p>
+<p><img src="http://sm.cubxxw.com/sm202311251045726.png" alt="image-20231125104523412"></p>
 <p>FRP 通过客户端和服务端的配合实现内网穿透，允许用户借助公网 IP 访问内部网络资源。</p>
 <h3 id="frp-部署步骤" tabindex="-1"><a class="header-anchor" href="#frp-部署步骤" aria-hidden="true">#</a> FRP 部署步骤</h3>
 <ol>

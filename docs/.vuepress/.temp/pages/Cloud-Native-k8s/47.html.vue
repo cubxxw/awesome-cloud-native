@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第47节-kubernetes-概念以及架构" tabindex="-1"><a class="header-anchor" href="#第47节-kubernetes-概念以及架构" aria-hidden="true">#</a> 第47节 Kubernetes 概念以及架构</h1>
 <div><a href = '46.md' style='float:left'>⬆️上一节🔗  </a><a href = '48.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -77,7 +77,7 @@
 <li>高可靠性和高可用性的操作，同时支持应用程序相关特性</li>
 <li>有效的在数以万计的机器上运行工作负载</li>
 </ol>
-<p><img src="http://sm.nsddd.top/sm202303031236389.png" alt="image-20230303123623225"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031236389.png" alt="image-20230303123623225"></p>
 <h2 id="概念" tabindex="-1"><a class="header-anchor" href="#概念" aria-hidden="true">#</a> 概念</h2>
 <p>Borg 的面向用户为运行 Google 应用程序和服务的 Google 开发者和系统管理员（Google 内部称为网站高可用工程师或者简写 SRE）。用户向 Borg 以作业（ <code v-pre>jobs</code> ）的方式提交工作，每个 job 由包含着相同程序的一个或多个任务（ <code v-pre>tasks</code> ）组成。每个 job 运行在一个 Borg <code v-pre>cell</code> (一组机器集合管理单元) 上。</p>
 <h3 id="the-workload" tabindex="-1"><a class="header-anchor" href="#the-workload" aria-hidden="true">#</a> The workload</h3>
@@ -197,7 +197,7 @@
 <p><code v-pre>保留的资源数量 = (1 + 阈值) * 作业真实使用的资源</code></p>
 <p>将剩余的部分(即<code v-pre>申请的资源数量 - 保留的资源数量</code>)全都回收掉。这样就有效提升了整个集群的资源利用率。</p>
 <p>换言之，用户可以声明很多的资源，但是当用户提交的作业达不到一定的利用率时，Borg会把用户声明的资源中的一部分回收走，交给其他作业使用。这样整个集群的资源利用率就提高了。</p>
-<p><img src="http://sm.nsddd.top/sm202303031304375.png" alt="image-20230303130447210"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031304375.png" alt="image-20230303130447210"></p>
 <h3 id="隔离性" tabindex="-1"><a class="header-anchor" href="#隔离性" aria-hidden="true">#</a> 隔离性</h3>
 <p>安全性隔离:</p>
 <blockquote>
@@ -274,11 +274,11 @@
 <p>声明式系统适用于微服务架构。很多时候调用者发送一个请求给Server端时，调用者是不知道一个Server端到底要针对这个请求处理多久的。如果按照交互式的系统，那么客户端就阻塞在发送请求之后了。整个系统的并发能力就会很差。</p>
 <h2 id="kubernetes-架构" tabindex="-1"><a class="header-anchor" href="#kubernetes-架构" aria-hidden="true">#</a> Kubernetes 架构</h2>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">Kubernetes 的架构请看这篇文章<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">Kubernetes 的架构请看这篇文章<ExternalLinkIcon/></a></li>
 </ul>
 <p><strong>我们回过头看 Kubernetes 和 Borg 类似的架构：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303031415779.jpg" alt="Kubernetes架构"></p>
-<p><img src="http://sm.nsddd.top/sm202303031414370.jpg" alt="Kubernetes主要组件"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031415779.jpg" alt="Kubernetes架构"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031414370.jpg" alt="Kubernetes主要组件"></p>
 <h2 id="kubernetes-的主节点" tabindex="-1"><a class="header-anchor" href="#kubernetes-的主节点" aria-hidden="true">#</a> Kubernetes 的主节点</h2>
 <p>和Borg一样，假设集群中有5000个节点，选2~3台节点作为管理节点即可。管理节点上运行的就是控制平面的组件。</p>
 <blockquote>
@@ -305,7 +305,7 @@
 <p>负责节点的网络，在主机上维护网络规则并执行连接转发。它还负责对正在服务的pods进行负载均衡。</p>
 <p><strong>不管是 master 节点，或者是 worker 节点，每一个组件都是非常非常复杂的。</strong></p>
 <h2 id="etcd" tabindex="-1"><a class="header-anchor" href="#etcd" aria-hidden="true">#</a> ETCD</h2>
-<p>ETCD 的学习笔记，之前做的比较全面了，直接参考 <a href="https://docker.nsddd.top/Cloud-Native-k8s/24.html" target="_blank" rel="noopener noreferrer">这一篇笔记~<ExternalLinkIcon/></a></p>
+<p>ETCD 的学习笔记，之前做的比较全面了，直接参考 <a href="https://docker.cubxxw.com/Cloud-Native-k8s/24.html" target="_blank" rel="noopener noreferrer">这一篇笔记~<ExternalLinkIcon/></a></p>
 <h2 id="api-server" tabindex="-1"><a class="header-anchor" href="#api-server" aria-hidden="true">#</a> API Server</h2>
 <p>Kube-APIServer是Kubernetes最重要的核心组件之一。API Server本身是一个REST Server，因此它的扩展比较简单。</p>
 <p>和etcd不同。<strong>etcd是一个有状态应用的集群。对于这种有状态应用，加减member或替换member还是有些复杂的。</strong> 像etcd就需要花一些时间做配置。因为在有状态应用的集群中，每一个member都是有意义的。比如向集群(假设此时集群中有n个member)中添加一个member，那么所有member的协商对象就会发生改变。原来有n个memeber参与协商，添加后有n+1个member参与，所以etcd要去更改所有memeber的协商对象，修改协商对象的一些配置文件。</p>
@@ -326,7 +326,7 @@
 <p><strong>准入阶段不通过，则整个请求不会被存储至etcd。</strong></p>
 </blockquote>
 <p><strong>结构图</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303031454538.jpg" alt="APIServer展开"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031454538.jpg" alt="APIServer展开"></p>
 <p>其他模块通过APIServer查询或修改数据，只有APIServer才能操作etcd</p>
 <h3 id="提供数据的缓存" tabindex="-1"><a class="header-anchor" href="#提供数据的缓存" aria-hidden="true">#</a> 提供数据的缓存</h3>
 <p><strong>提供etcd数据缓存以减少集群对etcd的访问</strong></p>
@@ -358,9 +358,9 @@
 <p>在本例中，就可以使用超时控制的思路来解决这个问题。为该次申请设置一个超时时间(假设超时时间为T小时)，若提交申请后的T小时当Kubernetes还没有为该申请成功创建出3个处于Running状态的Pod，则报错。报错后就可以使用原有系统的申请失败机制来处理了。这样就可以与原有系统适配了。</p>
 </blockquote>
 <h3 id="工作流程" tabindex="-1"><a class="header-anchor" href="#工作流程" aria-hidden="true">#</a> 工作流程</h3>
-<p><img src="http://sm.nsddd.top/sm202303031504490.jpg" alt="控制器的工作流程"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031504490.jpg" alt="控制器的工作流程"></p>
 <h3 id="informer-内部机制" tabindex="-1"><a class="header-anchor" href="#informer-内部机制" aria-hidden="true">#</a> Informer 内部机制</h3>
-<p><img src="http://sm.nsddd.top/sm202303031504516.jpg" alt="Informer的内部机制"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031504516.jpg" alt="Informer的内部机制"></p>
 <p>Kubernetes 中使用 http 进行通信，<strong>如何不依赖中间件的情况下保证消息的实时性，可靠性和顺序性等呢</strong>？答案就是利用了 Informer 机制。Informer 的机制，降低了了 Kubernetes 各个组件跟 Etcd 与 Kubernetes API Server 的通信压力。</p>
 <blockquote>
 <p>这么一说，可能还是不理解，雀氏，我参考收集了书籍和文档，归纳如下：</p>
@@ -409,7 +409,7 @@
 ├── thread_safe_store.go  <span class="token comment"># 包含：ThreadSafeStore、threadSafeMap</span>
 ├── undelta_store.go
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>架构设计：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303031528585.png" alt="image-20230303152835356"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031528585.png" alt="image-20230303152835356"></p>
 <p>⚠️ 这张图分为两部分，黄色图标是开发者需要自行开发的部分，而其它的部分是 client-go 已经提供的，直接使用即可。</p>
 <ol>
 <li><strong>Reflector</strong>：用于 Watch 指定的 Kubernetes 资源，当 watch 的资源发生变化时，触发变更的事件，比如 Added，Updated 和 Deleted 事件，并将资源对象存放到本地缓存 DeltaFIFO；</li>
@@ -505,7 +505,7 @@ nginx-deployment-6799fc88d8   <span class="token number">1</span>         <span 
 <p>Deployment Controller会去解析Deployment对象，并创建ReplicaSet对象(副本集对象)。相当于Deployment Controller告知APIServer：Deployment Controller要创建一个ReplicaSet对象，并将模板(yaml文件中的template部分)发送给APIServer.</p>
 <p>ReplicaSet对象同样经过认证、鉴权、准入的步骤后，被存储至了etcd.之后ReplicaSet Controller会Watch APIServer,监听ReplicaSet对象。当ReplicaSet Controller监听到ReplicaSet对象被创建后，同样会去解析该ReplicaSet对象。通过解析得知副本数量、Pod模板等信息后，ReplicaSet Controller就可以完成Pod的创建了。</p>
 <p>创建Pod这一操作同样也作为一个请求被发送到了APIServer。该Pod在创建时没有经过调度。</p>
-<p><img src="http://sm.nsddd.top/sm202303031609453.png" alt="image-20230303160957300"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031609453.png" alt="image-20230303160957300"></p>
 <blockquote>
 <p><strong>可以看到 deployment 并不是直接控制 pod ，而是 通过 创建 ReplicaSer 间接的控制 / 创建 Pod ，但是 deployment 只是负责水平迁移。所以是一个 双层控制器 实现故障转移和 HA（通过滚动升级实现）~</strong></p>
 </blockquote>
@@ -531,7 +531,7 @@ nginx-deployment-6799fc88d8   <span class="token number">1</span>         <span 
 <p>将计算节点与Pod绑定，完成调度。</p>
 </li>
 </ul>
-<img src="http://sm.nsddd.top/sm202303031617515.jpg" alt="Scheduler" style="zoom:25%;" />
+<img src="http://sm.cubxxw.com/sm202303031617515.jpg" alt="Scheduler" style="zoom:25%;" />
 <h3 id="kubelet-1" tabindex="-1"><a class="header-anchor" href="#kubelet-1" aria-hidden="true">#</a> Kubelet</h3>
 <p>Kubernetes的初始化系统(init system)</p>
 <p>很重要的组件，负责启动 pod，职责也是非常复杂的。</p>
@@ -545,7 +545,7 @@ nginx-deployment-6799fc88d8   <span class="token number">1</span>         <span 
 <blockquote>
 <p>调度阶段完成后，目标节点上的kubelet会发现该Pod和当前节点存在绑定关系，kubelet会调用CRI、CNI和CSI来启动这个容器。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303031627228.jpg" alt="kubelet"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031627228.jpg" alt="kubelet"></p>
 <h3 id="kube-proxy-1" tabindex="-1"><a class="header-anchor" href="#kube-proxy-1" aria-hidden="true">#</a> Kube-proxy</h3>
 <p>kube-proxy 也是在每个节点上都运行的。它是实现Kubernetes Service 机制的重要组件。毫无意外，kube-proxy 也是一个“控制器”。<strong>它也从API Server 监听Service 和Endpoint对象的变化，并根据Endpoint 对象的信息设置Service 到后端Pod 的路由，维护网络规则，执行TCP、UDP 和SCTP 流转发。</strong></p>
 <p>监控集群中用户发布的服务，并完成<strong>负载均衡</strong>的配置。</p>
@@ -556,7 +556,7 @@ nginx-deployment-6799fc88d8   <span class="token number">1</span>         <span 
 <li>iptabes</li>
 <li>ipvs</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303031636618.jpg" alt="Kube-proxy"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031636618.jpg" alt="Kube-proxy"></p>
 <h2 id="add-ons" tabindex="-1"><a class="header-anchor" href="#add-ons" aria-hidden="true">#</a> Add-ons</h2>
 <p>以上都是Kubernetes的核心组件，Kubernetes还有一些 Add-on.</p>
 <blockquote>
@@ -586,7 +586,7 @@ I0303 09:04:45.393763  <span class="token number">137729</span> round_trippers.g
 <span class="token punctuation">..</span><span class="token punctuation">..</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>可以看到 kubectl 是对 API 的封装。</strong></p>
 <p>我们看一下配置文件有什么：</p>
-<p><img src="http://sm.nsddd.top/sm202303031706631.png" alt="image-20230303170628489"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031706631.png" alt="image-20230303170628489"></p>
 <p>我们可以看一下所有的命令都会读取 kubectl 配置文件</p>
 <ul>
 <li>contexts：我们用哪个用户去链接</li>
@@ -649,8 +649,8 @@ kube-system       Active   10m
 <li><strong>Kubernetes 外部</strong>：日志、监控、配置管理、CI、CD、Workflow、FaaS、OTS 应用、ChatOps 等；</li>
 <li><strong>Kubernetes 内部</strong>：CRI、CNI、CVI、镜像仓库、Cloud Provider、集群自身的配置和管理等。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303031740791.png" alt="k8s-ecosystem"></p>
-<p><img src="http://sm.nsddd.top/sm202303031802991.png" alt="image-20230303180255785"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031740791.png" alt="k8s-ecosystem"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031802991.png" alt="image-20230303180255785"></p>
 <blockquote>
 <p>如果你一定要分类的话，Kubernetes 和 docker 是和 paas 相关的。</p>
 </blockquote>
@@ -660,7 +660,7 @@ kube-system       Active   10m
 <li>数据平面： pod、PVC、Service、Ingress</li>
 <li>控制平面：核心组件、插件、用户空间控制器、Assertion</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303031749132.jpg" alt="v2-ea9a19b19e366f74a8bfff0e8eb60397_720w"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031749132.jpg" alt="v2-ea9a19b19e366f74a8bfff0e8eb60397_720w"></p>
 <blockquote>
 <p>Kubernetes 本身也是有分层架构，这保证了他的可扩展性。</p>
 </blockquote>
@@ -706,7 +706,7 @@ kube-system       Active   10m
 </ul>
 <h3 id="kubernetes-如何通过对象的组合完成业务描述" tabindex="-1"><a class="header-anchor" href="#kubernetes-如何通过对象的组合完成业务描述" aria-hidden="true">#</a> Kubernetes 如何通过对象的组合完成业务描述</h3>
 <p><strong>我们知道 Kubernetes 中组合也是很重要的，Kubernetes 是如何使用组合的：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303031810278.png" alt="image-20230303181034135"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031810278.png" alt="image-20230303181034135"></p>
 <p>通过一个<code v-pre>deployment</code>创建一次业务部署这样的对象，<code v-pre>deployment control</code>会去建<code v-pre>replicaset</code>，<code v-pre>replicaset</code>会去建<code v-pre>pod</code>，<code v-pre>pod</code>会被调度器产生绑定关系，这是业务部署描述的部分，还有涉及的对象就是业务要发布的时候，我要去定义一个<code v-pre>service</code>，<code v-pre>service</code>创建之后<code v-pre>kube-proxy</code>会为它配置各种负载均衡的配置以及<code v-pre>dns</code>会为它配置域名服务，要将服务发布出去我要去定义一个<code v-pre>service</code>对象，<strong><code v-pre>service</code>又可以通过<code v-pre>ingress</code>一个流量入口来发布到整个集群数据面API网关里面。</strong></p>
 <p>所以通过各种对象的组合来完成整个业务部署的描述。</p>
 <blockquote>
@@ -746,12 +746,12 @@ kube-system       Active   10m
 <blockquote>
 <p>Kubernetes 可用性是第一原则，HA。</p>
 <p>第二保证控制平面也是高可用的，如果我们把 Kubernetes 的控制平面组件也容器化了，那么是不是可以让 Kubernetes 自己管自己了。</p>
-<p><img src="http://sm.nsddd.top/sm202303031844222.png" alt="image-20230303184456054">，但是没有<code v-pre>kebelet</code>，因为 <code v-pre>kubelet</code> 需要启动 pod 是 Kubernetes 的初始化（init) 系统，所以不是以容器的形式。</p>
+<p><img src="http://sm.cubxxw.com/sm202303031844222.png" alt="image-20230303184456054">，但是没有<code v-pre>kebelet</code>，因为 <code v-pre>kubelet</code> 需要启动 pod 是 Kubernetes 的初始化（init) 系统，所以不是以容器的形式。</p>
 </blockquote>
 <p><strong>Kubelet 拉取机制：</strong></p>
 <p>监听 API Server~</p>
 <p>查看 Kubelet 配置：</p>
-<p><img src="http://sm.nsddd.top/sm202303031846848.png" alt="image-20230303184652726"></p>
+<p><img src="http://sm.cubxxw.com/sm202303031846848.png" alt="image-20230303184652726"></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">cat</span> /var/lib/kubelet/config.yaml
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
 <p>可以发现有一个 <code v-pre>staticPodPath</code> ，kubelet 会一直扫描 staticPodPath 目录中的文件，只要我们把任意一个 pod 丢进去， kubelet 就认为你会启动这个。</p>
@@ -840,7 +840,7 @@ status:
 <li>与 TypeMeta 和 Metadata 等通用属性不同，Spec 和 Status 是每个对象独有的。</li>
 </ul>
 <h4 id="常用对象及其分组" tabindex="-1"><a class="header-anchor" href="#常用对象及其分组" aria-hidden="true">#</a> 常用对象及其分组</h4>
-<p><img src="http://sm.nsddd.top/sm202303032013212.jpg" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303032013212.jpg" alt="img"></p>
 <h3 id="核心对象概览" tabindex="-1"><a class="header-anchor" href="#核心对象概览" aria-hidden="true">#</a> 核心对象概览</h3>
 <h4 id="node" tabindex="-1"><a class="header-anchor" href="#node" aria-hidden="true">#</a> Node</h4>
 <ul>
@@ -945,7 +945,7 @@ deployment <span class="token string">"nginx"</span> resource requirements updat
 <h4 id="service" tabindex="-1"><a class="header-anchor" href="#service" aria-hidden="true">#</a> Service</h4>
 <p>Service 是应用服务的抽象，通过 labels 为应用提供负载均衡和服务发现。匹 配 labels 的 Pod IP 和端口列表组成 endpoints，由 Kube-proxy 负责将服务IP 负载均衡到这些 endpoints 上。</p>
 <p>每个 Service 都会自动分配一个 cluster IP（仅在集群内部可访问的虚拟地址） 和 DNS 名，其他容器可以通过该地址或 DNS 来访问服务，而不需要了解后端容器的运行。</p>
-<p><img src="http://sm.nsddd.top/sm202303032030221.png" alt="image-20230303203041938"></p>
+<p><img src="http://sm.cubxxw.com/sm202303032030221.png" alt="image-20230303203041938"></p>
 <h4 id="replica-set" tabindex="-1"><a class="header-anchor" href="#replica-set" aria-hidden="true">#</a> Replica Set</h4>
 <ul>
 <li>Pod 只是单个应用实例的抽象，要构建高可用应用，通常需要构建多个同样的副本，提供同一个服务。</li>
@@ -1024,7 +1024,7 @@ deployment <span class="token string">"nginx"</span> resource requirements updat
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

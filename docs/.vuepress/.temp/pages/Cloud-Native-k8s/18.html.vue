@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第18节kubernetes-api-访问控制" tabindex="-1"><a class="header-anchor" href="#第18节kubernetes-api-访问控制" aria-hidden="true">#</a> 第18节kubernetes API 访问控制</h1>
 <div><a href = '17.md' style='float:left'>⬆️上一节🔗  </a><a href = '19.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#基本概念">基本概念</router-link></li><li><router-link to="#kubernetes-扩展">kubernetes 扩展</router-link><ul><li><router-link to="#kubectl">kubectl</router-link></li><li><router-link to="#apiserver">APIServer</router-link></li><li><router-link to="#kubernetes-资源">Kubernetes 资源</router-link></li><li><router-link to="#controller-控制器">Controller 控制器</router-link></li><li><router-link to="#schedule-调度器">Schedule 调度器</router-link></li><li><router-link to="#cni-网络插件">CNI 网络插件</router-link></li><li><router-link to="#csi-存储插件">CSI 存储插件</router-link></li><li><router-link to="#cri-容器运行时">CRI 容器运行时</router-link></li></ul></li><li><router-link to="#operator">Operator</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -51,7 +51,7 @@
 <p>虽然现在 Kubernetes 已经是容器编排的事实标准，其本身的功能也非常丰富并且灵活，但是也不能满足所有人的需求，在遇到 Kubernetes 提供的能力无法满足我们需求的时候，我们就可以利用其强大的扩展能力进行定制。</p>
 </div>
 <p>在sealos上就显而易见了，<a href="https://github.com/labring/sealos/tree/main/controllers" target="_blank" rel="noopener noreferrer">controllers<ExternalLinkIcon/></a> 控制器中实现了大量的扩展，从而达到满足我们的需求。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221102144550488.png" alt="image-20221102144550488"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221102144550488.png" alt="image-20221102144550488"></p>
 <h3 id="kubectl" tabindex="-1"><a class="header-anchor" href="#kubectl" aria-hidden="true">#</a> kubectl</h3>
 <p>kubectl 是我们平时和 Kubernetes 交互使用的最多的客户端工具，常见的运维操作都会通过 kubectl 来完成，kubectl 为我们提供了插件机制来方便扩展。</p>
 <p>kubectl 插件其实就是以<code v-pre>kubectl-</code>为前缀的任意可执行文件 ，执行 kubectl 插件的时候可以通过 <code v-pre>kubectl 插件名 参数</code> 的方式运行插件。</p>
@@ -117,7 +117,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

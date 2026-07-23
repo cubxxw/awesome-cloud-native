@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第34节-api-server" tabindex="-1"><a class="header-anchor" href="#第34节-api-server" aria-hidden="true">#</a> 第34节 API Server</h1>
 <div><a href = '33.md' style='float:left'>⬆️上一节🔗  </a><a href = '35.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -15,7 +15,7 @@
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>我们知道 kubernetes 控制层面的核心组件包括 API-Server、 Controller Manager、Scheduler，其中 API-Server 对内与分布式存储系统 etcd 交互实现 kubernetes 资源（例如 pod、namespace、configMap、service 等）的持久化，对外提供通过 RESTFul 的形式提供 kubernetes API 的访问接口，除此之外，它还负责 API 请求的认证(authN)、授权(authZ)以及验证。刚提到的“对外”是相对的概念，因为除了像 kubectl 之类的命令行工具之外，kubernetes 的其他组件也会通过各种客户端库来访问 kubernetes API，关于官方提供的各种客户端库请查看 client-libraries 列表，其中最典型的是 Go 语言的客户端库 client-go。</p>
 </div>
-<p><img src="http://sm.nsddd.top/smimage-20221203150413748.png" alt="image-20221203150413748"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221203150413748.png" alt="image-20221203150413748"></p>
 <p>⚠️ 前面知道：<strong>apis 是包含内建 API Groups 和 API Objects 的，而 scheme 相关的代码大部分在这里。</strong></p>
 <h2 id="三个重要的-api-名词" tabindex="-1"><a class="header-anchor" href="#三个重要的-api-名词" aria-hidden="true">#</a> 三个重要的 API 名词</h2>
 <h3 id="api-object" tabindex="-1"><a class="header-anchor" href="#api-object" aria-hidden="true">#</a> API Object</h3>
@@ -104,7 +104,7 @@
     <span class="token key atrule">app</span><span class="token punctuation">:</span> exp
 <span class="token punctuation">...</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>API 分组也体现在访问资源的 <code v-pre>RESTful API</code> 路径上，<strong>core 组</strong> 中的资源访问路径一般为 <code v-pre>/api/$VERSION</code>，其他命名组的资源访问路径则是 <code v-pre>/apis/$GROUP_NAME/$VERSION</code>，此外还有一些系统级别的资源，如集群指标信息 <code v-pre>/metrics</code>，以上这些就基本构成了 kubernetes API 的树结构：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221203150759615.png" alt="image-20221203150759615"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221203150759615.png" alt="image-20221203150759615"></p>
 <h3 id="api-version" tabindex="-1"><a class="header-anchor" href="#api-version" aria-hidden="true">#</a> API-version</h3>
 <p>为了支持独立的演进，kubernetes API 也支持不同的版本，不同的版本代表不同的成熟度。注意，这里说的是 <strong>API 而非资源</strong>支持多版本。因为多版本支持是针对 API 级别，而不是特定的资源或者资源的字段。一般来说，我们根据 API 分组、资源类型、namespace 以及 name 来区分不同的资源对象，对于同一个资源对象的不同版本，API-Server 负责不同版本之间的无损切换，这点对于客户端来说是完全透明的。事实上，不同版本的同类型的资源在持久化层的数据可能是相同的。<em>例如，对于同一种资源类型支持 <code v-pre>v1</code> 和 <code v-pre>v1beta1</code> 两个 API 版本，以 <code v-pre>v1beta1</code> 版本创建该资源的对象，后续可以以<code v-pre>v1</code> 或者 <code v-pre>v1beta1</code> 来更新或者删除该资源对象。</em></p>
 <p>API 多版本支持一般通过将资源分组置于不同的版本中来实现，例如，<code v-pre>batch</code> 同时存在 <code v-pre>v2alph1</code> 与 <code v-pre>v1</code> 版本。一般来说，新的资源分组先出现 <code v-pre>v1alpha1</code> 版本，随着稳定性的提高被推进到 <code v-pre>v1beta1</code> ，最后从 <code v-pre>v1</code> 版本毕业。</p>
@@ -236,7 +236,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

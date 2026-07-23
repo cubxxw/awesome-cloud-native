@@ -1,12 +1,12 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第5节-sealer-runtime-设计" tabindex="-1"><a class="header-anchor" href="#第5节-sealer-runtime-设计" aria-hidden="true">#</a> 第5节 sealer runtime 设计</h1>
 <br>
 <div><a href = '4.md' style='float:left'>⬆️上一节🔗  </a><a href = '6.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>[TOC]</p>
 <h2 id="项目规范" tabindex="-1"><a class="header-anchor" href="#项目规范" aria-hidden="true">#</a> 项目规范</h2>
@@ -498,7 +498,7 @@ const <span class="token punctuation">(</span>
 	<span class="token function">Root</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>  <span class="token comment">// Root returns the root path of the application.</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="data" tabindex="-1"><a class="header-anchor" href="#data" aria-hidden="true">#</a> data</h2>
-<p><img src="http://sm.nsddd.top/smetcd&amp;sqlite" alt="在这里插入图片描述"></p>
+<p><img src="http://sm.cubxxw.com/smetcd&amp;sqlite" alt="在这里插入图片描述"></p>
 <blockquote>
 <p>📜 对上面的解释：</p>
 <p>etcd &amp; DQLite 使用的都是 raft 共识算法。</p>
@@ -758,7 +758,7 @@ BASE rootfs cache
 </li>
 </ul>
 <h2 id="表格-cn" tabindex="-1"><a class="header-anchor" href="#表格-cn" aria-hidden="true">#</a> 表格（CN）</h2>
-<p><img src="http://sm.nsddd.top/smimage-20221113000126421.png" alt="image-20221113000126421"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221113000126421.png" alt="image-20221113000126421"></p>
 <h2 id="code-runtime-module" tabindex="-1"><a class="header-anchor" href="#code-runtime-module" aria-hidden="true">#</a> code runtime module</h2>
 <p><strong>util.go：</strong></p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token comment">/*
@@ -1147,7 +1147,7 @@ EOF
 aa  bb  cc
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>🚀 编译：</p>
 <div class="language-docker ext-docker line-numbers-mode"><pre v-pre class="language-docker"><code>docker build -t aabbcc .
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221125191615259.png" alt="image-20221125191615259"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221125191615259.png" alt="image-20221125191615259"></p>
 <p>上面的一系列操作制作了一个名字为aabbcc的image。此时可以在/var/lib/docker/overlay 下面观察到新的层已经生成了。这里每copy一个文件就会生成新的一层。</p>
 <p>观察一下/var/lib/docker/overlay/目录。aa文件出现了三次，bb文件出现了两次，cc文件只出现了一次，这也与我们拷贝它们的顺序相吻合。</p>
 <p>层级结构一目了然。</p>
@@ -1218,7 +1218,7 @@ systemctl stop k3s
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

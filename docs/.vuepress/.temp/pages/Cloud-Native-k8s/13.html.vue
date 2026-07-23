@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第13节-存储抽象" tabindex="-1"><a class="header-anchor" href="#第13节-存储抽象" aria-hidden="true">#</a> 第13节 存储抽象</h1>
 <div><a href = '12.md' style='float:left'>⬆️上一节🔗  </a><a href = '14.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -50,7 +50,7 @@
 systemctl <span class="token builtin class-name">enable</span> nfs-server <span class="token parameter variable">--now</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>检查：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>exportfs
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022204801491.png" alt="image-20221022204801491"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022204801491.png" alt="image-20221022204801491"></p>
 <blockquote>
 <p>查看私有网络的ip地址给从结点使用：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># ip a | grep "eth0"</span>
@@ -71,7 +71,7 @@ Export list <span class="token keyword">for</span> <span class="token number">19
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># mount -t nfs 192.168.0.2:/nfs/data /nfs/data</span>
 <span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># cd /nfs/data/</span>
 <span class="token punctuation">[</span>root@k8s-master01 data<span class="token punctuation">]</span><span class="token comment"># echo "111" >> README.md</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022210439304.png" alt="image-20221022210439304"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022210439304.png" alt="image-20221022210439304"></p>
 <h2 id="原生方式数据挂载" tabindex="-1"><a class="header-anchor" href="#原生方式数据挂载" aria-hidden="true">#</a> 原生方式数据挂载</h2>
 <p><strong>创建文件<code v-pre>deploy.yaml</code>：</strong></p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
@@ -105,11 +105,11 @@ Export list <span class="token keyword">for</span> <span class="token number">19
 <p><code v-pre>/usr/share/nginx/html</code>和<code v-pre>/nfs/data/nginx-pv</code>形成一个映射关系（类似于<code v-pre>docker -v</code>）</p>
 </div>
 <p>🚀 编译结果如下：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221022213410525.png" alt="image-20221022213410525"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022213410525.png" alt="image-20221022213410525"></p>
 <div class="custom-container tip"><p class="custom-container-title">提醒</p>
 <p>我们发现一直没办法刷新出来（0/1），我们使用描述命令来打开看看</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl describe pod nginx-pv-demo-75ff4fbcf7-5prbw 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022214019506.png" alt="image-20221022214019506"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022214019506.png" alt="image-20221022214019506"></p>
 <p><strong>failedmount表示挂载失败</strong></p>
 <p>⬇️ 重新部署一下：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master02 data<span class="token punctuation">]</span><span class="token comment"># kubectl delete -f deploy.yaml </span>
@@ -123,7 +123,7 @@ deployment.apps/nginx-pv-demo created
 删除<code v-pre>deploy.yaml </code>文件不会删除，浪费空间。</p>
 <p><strong>PV</strong>：持久卷（Persistent Volume），将应用需要持久化的数据保存到指定位置，比如Volume的类型、挂载目录、远程存储服务器地址等</p>
 <p><strong>PVC</strong>：持久卷申明（Persistent Volume Claim），申明需要使用的持久卷规格，比如存储大小、读写权限等。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221022220215815.png" alt="image-20221022220215815"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022220215815.png" alt="image-20221022220215815"></p>
 <blockquote>
 <p>我们的<code v-pre>pod</code>需要用多大的空间，需要用PVC写一份申请书，按照申请书给出一个实际的大小空间，申请书删除掉，那么这个空间就会被回收，空间删除掉，申请书也被删除了~</p>
 </blockquote>
@@ -133,7 +133,7 @@ deployment.apps/nginx-pv-demo created
 <p>存储的时候需要<code v-pre>StorageClass</code>指定块存储或者文件存储~</p>
 <p><strong>我们在前面也是知道了存储是分类的，我们需要指定<code v-pre>StorageClass</code></strong></p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221022220407744.png" alt="image-20221022220407744"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022220407744.png" alt="image-20221022220407744"></p>
 <h3 id="创建pv池" tabindex="-1"><a class="header-anchor" href="#创建pv池" aria-hidden="true">#</a> 创建pv池</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment">#nfs主节点</span>
 <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /nfs/data/01
@@ -197,7 +197,7 @@ persistentvolume/pv03-3gi created
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get persistentvolume
 <span class="token comment"># 也可以简写</span>
 kubectl get <span class="token function">pv</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022221346394.png" alt="image-20221022221346394"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022221346394.png" alt="image-20221022221346394"></p>
 <div class="custom-container warning"><p class="custom-container-title">PVC创建与绑定</p>
 <p>⚡ 创建PVC <code v-pre>pvc.ymal</code></p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolumeClaim
@@ -211,7 +211,7 @@ kubectl get <span class="token function">pv</span>
     <span class="token key atrule">requests</span><span class="token punctuation">:</span>
       <span class="token key atrule">storage</span><span class="token punctuation">:</span> 200Mi  <span class="token comment"># 我需要200M，找到合适的空间绑定</span>
   <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> nfs  <span class="token comment"># 对应的是上面的空间名称（分组）</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022222002874.png" alt="image-20221022222002874"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022222002874.png" alt="image-20221022222002874"></p>
 <p>📜 对上面的解释：</p>
 <blockquote>
 <p>绑定了合适的PV</p>
@@ -270,7 +270,7 @@ redis-conf         <span class="token number">1</span>      19s
 <p>这个配置集存在<code v-pre>etcd</code>档案库中，只要k8s还活着，配置集就不会丢。</p>
 <p><strong>查看配置集：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get cm redis-conf <span class="token parameter variable">-oyaml</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022224249770.png" alt="image-20221022224249770"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022224249770.png" alt="image-20221022224249770"></p>
 </div>
 <p><strong>⚠️ 如何引用上面的配置集：</strong></p>
 <div class="custom-container tip"><p class="custom-container-title">创建一个Pod</p>
@@ -369,7 +369,7 @@ redis-conf         <span class="token number">1</span>      19s
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

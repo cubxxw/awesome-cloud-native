@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第6节-sealos搭建k8s" tabindex="-1"><a class="header-anchor" href="#第6节-sealos搭建k8s" aria-hidden="true">#</a> 第6节 sealos搭建k8s</h1>
 <div><a href = '5.md' style='float:left'>⬆️上一节🔗  </a><a href = '7.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#开始">开始</router-link><ul><li><router-link to="#什么是sealos">什么是sealos?</router-link></li></ul></li><li><router-link to="#sealos-特性与优势">Sealos 特性与优势</router-link></li><li><router-link to="#选择rancher还是sealos">选择rancher还是sealos</router-link><ul><li><router-link to="#为什么不用-keepalived-和-haproxy-实现集群高可用">为什么不用 KeepAlived 和 HAProxy 实现集群高可用</router-link></li></ul></li><li><router-link to="#使用-sealos-快速构建-kubernetes">使用 sealos 快速构建 kubernetes</router-link><ul><li><router-link to="#构建项目">构建项目</router-link></li></ul></li><li><router-link to="#核心服务快速启动">核心服务快速启动</router-link><ul><li><router-link to="#环境准备">环境准备</router-link></li><li><router-link to="#查看内核版本">查看内核版本</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -64,10 +64,10 @@
 </blockquote>
 <hr>
 <p>😂 让我很喜欢的一点是：<code v-pre>sealos</code>能一次性把环境搭建好，想当年，我真是废了九牛二虎之力才搭建~失败的。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221019194939030.png" alt="image-20221019194939030"></p>
 <h2 id="核心服务快速启动" tabindex="-1"><a class="header-anchor" href="#核心服务快速启动" aria-hidden="true">#</a> 核心服务快速启动</h2>
 <p><strong>💡 重新把昨天集群全部删除，新开三台服务器，纯新~</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221020103019907.png" alt="image-20221020103019907"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221020103019907.png" alt="image-20221020103019907"></p>
 <h3 id="环境准备" tabindex="-1"><a class="header-anchor" href="#环境准备" aria-hidden="true">#</a> 环境准备</h3>
 <blockquote>
 <p>⚠️ 注意：环境一定很重要，不然都跑不起来~</p>
@@ -90,12 +90,12 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><code v-pre>-p</code>：passwd密码</p>
 <p>开启ssh免密不需要些密码了，在这里就实现了。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221020111912006.png" alt="image-20221020111912006"></p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221020105230320.png" alt="image-20221020105230320"></p>
 <p><strong>验证集群：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get nodes
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221020113615770.png" alt="image-20221020113615770"></p>
 <p><strong>查看版本：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># sealos version</span>
 <span class="token punctuation">{</span><span class="token string">"gitVersion"</span><span class="token builtin class-name">:</span><span class="token string">"4.1.3"</span>,<span class="token string">"gitCommit"</span><span class="token builtin class-name">:</span><span class="token string">"b2ba9705"</span>,<span class="token string">"buildDate"</span><span class="token builtin class-name">:</span><span class="token string">"2022-09-06T06:04:14Z"</span>,<span class="token string">"goVersion"</span><span class="token builtin class-name">:</span><span class="token string">"go1.19"</span>,<span class="token string">"compiler"</span><span class="token builtin class-name">:</span><span class="token string">"gc"</span>,<span class="token string">"platform"</span><span class="token builtin class-name">:</span><span class="token string">"linux/amd64"</span><span class="token punctuation">}</span>
@@ -113,7 +113,7 @@ sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -57,7 +57,7 @@
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container warning"><p class="custom-container-title">📜 对上面的解释</p>
-<p><img src="http://sm.nsddd.top/smimage-20221125163549549.png" alt="image-20221125163549549"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221125163549549.png" alt="image-20221125163549549"></p>
 <ul>
 <li>LowerDir：包含容器内所有层的文件系统，最后一层除外</li>
 <li>UpperDir：容器最上层的文件系统。这也是反映任何运行时修改的地方。</li>

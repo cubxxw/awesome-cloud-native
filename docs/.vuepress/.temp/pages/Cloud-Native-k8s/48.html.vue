@@ -13,7 +13,7 @@
 <blockquote>
 <p>ETCD 是 Kubernetes 中所有组件中最难的，因为 ETCD 是有状态的，而不是无状态的。</p>
 </blockquote>
-<p>我在之前做 k3s runtime 设计的时候，了解了一些关于 ETCD 和 Raft 算法相关的概念，作为前奏知识，请分别前往 <a href="https://docker.nsddd.top/Cloud-Native-k8s/24.html" target="_blank" rel="noopener noreferrer">ETCD<ExternalLinkIcon/></a> 以及 <a href="https://docker.nsddd.top/Cloud-Native-k8s/25.html" target="_blank" rel="noopener noreferrer">Raft算法<ExternalLinkIcon/></a> 进行前奏学习。</p>
+<p>我在之前做 k3s runtime 设计的时候，了解了一些关于 ETCD 和 Raft 算法相关的概念，作为前奏知识，请分别前往 <a href="https://docker.cubxxw.com/Cloud-Native-k8s/24.html" target="_blank" rel="noopener noreferrer">ETCD<ExternalLinkIcon/></a> 以及 <a href="https://docker.cubxxw.com/Cloud-Native-k8s/25.html" target="_blank" rel="noopener noreferrer">Raft算法<ExternalLinkIcon/></a> 进行前奏学习。</p>
 <p><strong>这一篇来深入并且贯穿的讲解 ETCD 和 Raft。并且站在 Kubernetes 的角度来深入 剖析 ETCD。</strong></p>
 <h2 id="etcd" tabindex="-1"><a class="header-anchor" href="#etcd" aria-hidden="true">#</a> ETCD</h2>
 <h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h3>
@@ -88,7 +88,7 @@
  --initial-cluster <span class="token string">'default=http://localhost:12380'</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="演示" tabindex="-1"><a class="header-anchor" href="#演示" aria-hidden="true">#</a> 演示</h3>
 <p>查看集群 member：</p>
-<p><img src="http://sm.nsddd.top/sm202303041708430.png" alt="image-20230304170809258"></p>
+<p><img src="http://sm.cubxxw.com/sm202303041708430.png" alt="image-20230304170809258"></p>
 <p><strong>一些简单的操作：</strong></p>
 <blockquote>
 <p>前言有很多案例，请移步~</p>
@@ -238,7 +238,7 @@ wg<span class="token punctuation">.</span><span class="token function">Group</sp
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>这将把 watcher1 添加到名为 &quot;group1&quot; 的 WatcherGroup 中，把 watcher2 添加到名为 &quot;group2&quot; 的 WatcherGroup 中。</p>
 <p>通过使用 watcherGroup，可以更好地管理 Watcher 并提高 ETCD 集群的性能和可扩展性。</p>
 <h3 id="etcd-请求流程图" tabindex="-1"><a class="header-anchor" href="#etcd-请求流程图" aria-hidden="true">#</a> ETCD  请求流程图</h3>
-<p><img src="http://sm.nsddd.top/sm202303041941660.png" alt="image-20230304194117423"></p>
+<p><img src="http://sm.cubxxw.com/sm202303041941660.png" alt="image-20230304194117423"></p>
 <p><strong>MVCC模块</strong></p>
 <blockquote>
 <p>Kubernetes的API Server在默认情况下并不提供缓存机制，它总是从etcd中读取最新的数据并返回给客户端。这是因为etcd作为Kubernetes的存储后端，已经具备了高可用性和可靠性等方面的保障，因此API Server可以直接从etcd中读取数据来保证数据的一致性和可靠性。</p>
@@ -437,7 +437,7 @@ wg<span class="token punctuation">.</span><span class="token function">Group</sp
 <p>https://bitnami.com/stack/etcd/helm</p>
 <p>https://github.com/bitnami/charts/blob/master/bitnami/etcd</p>
 <h3 id="etcd-operator" tabindex="-1"><a class="header-anchor" href="#etcd-operator" aria-hidden="true">#</a> Etcd Operator</h3>
-<p><img src="http://sm.nsddd.top/sm202303051230490.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051230490.png" alt="img"></p>
 <h3 id="基于-bitnami-安装etcd高可用集群" tabindex="-1"><a class="header-anchor" href="#基于-bitnami-安装etcd高可用集群" aria-hidden="true">#</a> 基于 Bitnami 安装etcd高可用集群</h3>
 <p>安装helm</p>
 <p>https://github.com/helm/helm/releases</p>
@@ -487,10 +487,10 @@ ectl get <span class="token parameter variable">--prefix</span> --keys-only /
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="堆叠式etcd集群的高可用拓扑" tabindex="-1"><a class="header-anchor" href="#堆叠式etcd集群的高可用拓扑" aria-hidden="true">#</a> 堆叠式etcd集群的高可用拓扑</h3>
 <p>这种拓扑将相同节点上的控制平面和etcd成员耦合在一起。</p>
 <p>优点在于建立起来非常容易，并且对副本的管理也更容易。但是，堆叠式存在耦合失败的风险。如果一个节点发生故障，则etcd成员和控制平面实例都会丢失，并且集群冗余也会受到损害。可以通过添加更多控制平面节点来减轻这种风险。因此为实现集群高可用应该至少运行三个堆叠的Master节点。</p>
-<p><img src="http://sm.nsddd.top/sm202303051232586.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051232586.png" alt="img"></p>
 <h3 id="外部etcd集群的高可用拓扑" tabindex="-1"><a class="header-anchor" href="#外部etcd集群的高可用拓扑" aria-hidden="true">#</a> 外部etcd集群的高可用拓扑</h3>
 <p>该拓扑将控制平面和etcd成员解耦。如果丢失一个Master节点，对etcd成员的影响较小，并且不会像堆叠式拓扑那样对集群冗余产生太大影响。但是，此拓扑所需的主机数量是堆叠式拓扑的两倍。具有此拓扑的群集至少需要三个主机用于控制平面节点，三个主机用于etcd集群。</p>
-<p><img src="http://sm.nsddd.top/sm202303051232839.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303051232839.png" alt="img"></p>
 <h3 id="实践-etcd集群高可用" tabindex="-1"><a class="header-anchor" href="#实践-etcd集群高可用" aria-hidden="true">#</a> 实践-etcd集群高可用</h3>
 <h4 id="多少个peer最适合" tabindex="-1"><a class="header-anchor" href="#多少个peer最适合" aria-hidden="true">#</a> 多少个peer最适合</h4>
 <ul>

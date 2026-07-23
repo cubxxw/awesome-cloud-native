@@ -16,8 +16,8 @@
 <p>之前和 Apache APISIX 的某个小姐姐聊天，她说的一句话感触很深。也有很多适应不了远程工作的同事一一离去，这也是一个适者生存的达尔文法则。</p>
 <p>关于 OpenIM 的远程工作，以及企业的文化，强烈推荐阅读下面的博客：</p>
 <ul>
-<li><strong><a href="https://nsddd.top/posts/openim-remote-work-culture/" target="_blank" rel="noopener noreferrer">Englist Version<ExternalLinkIcon/></a></strong></li>
-<li><strong><a href="https://nsddd.top/zh/posts/openim-remote-work-culture/" target="_blank" rel="noopener noreferrer">中文版本<ExternalLinkIcon/></a></strong></li>
+<li><strong><a href="https://cubxxw.com/posts/openim-remote-work-culture/" target="_blank" rel="noopener noreferrer">Englist Version<ExternalLinkIcon/></a></strong></li>
+<li><strong><a href="https://cubxxw.com/zh/posts/openim-remote-work-culture/" target="_blank" rel="noopener noreferrer">中文版本<ExternalLinkIcon/></a></strong></li>
 </ul>
 <h2 id="出海挑战-中国互联网企业的全球化之旅" tabindex="-1"><a class="header-anchor" href="#出海挑战-中国互联网企业的全球化之旅" aria-hidden="true">#</a> 出海挑战：中国互联网企业的全球化之旅</h2>
 <p>中国互联网企业在全球化道路上的探索充满挑战与机遇。从初涉海外市场的尝试到在竞争激烈的国际环境中求生存，它们不断在新的市场环境中寻找增长点。这一过程中，企业需要超越传统的商业模式，适应多元文化和不同的市场需求。</p>

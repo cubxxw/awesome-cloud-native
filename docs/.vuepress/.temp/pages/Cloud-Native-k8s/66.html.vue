@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第66节-kubernetes-二次开发-crd-学习" tabindex="-1"><a class="header-anchor" href="#第66节-kubernetes-二次开发-crd-学习" aria-hidden="true">#</a> 第66节 Kubernetes 二次开发 CRD 学习</h1>
 <div><a href = '65.md' style='float:left'>⬆️上一节🔗  </a><a href = '67.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -33,7 +33,7 @@ nginx-deployment   <span class="token number">3</span>/3     <span class="token 
 <p>review：<a href="https://github.com/muzi502" target="_blank" rel="noopener noreferrer">@muzi502<ExternalLinkIcon/></a></p>
 <p>author:  <a href="https://github.com/cubxxw" target="_blank" rel="noopener noreferrer">@cubxxw<ExternalLinkIcon/></a></p>
 <blockquote>
-<p>这篇文章将参考各个博客和 kubebuilder 官方文档 以及 <a href="https://github.com/kubernetes/sample-controller" target="_blank" rel="noopener noreferrer">kubernetes/sample-controller<ExternalLinkIcon/></a>  进行学习，最后实践一个项目的步骤，对静态博客（<a href="https://docker.nsddd.top/" target="_blank" rel="noopener noreferrer">docker.nsddd.top<ExternalLinkIcon/></a> 或者 <a href="https://go.nsddd.top/" target="_blank" rel="noopener noreferrer">go.nsddd.top<ExternalLinkIcon/></a>) 进行 CRD，形成学习闭环~</p>
+<p>这篇文章将参考各个博客和 kubebuilder 官方文档 以及 <a href="https://github.com/kubernetes/sample-controller" target="_blank" rel="noopener noreferrer">kubernetes/sample-controller<ExternalLinkIcon/></a>  进行学习，最后实践一个项目的步骤，对静态博客（<a href="https://docker.cubxxw.com/" target="_blank" rel="noopener noreferrer">docker.cubxxw.com<ExternalLinkIcon/></a> 或者 <a href="https://go.cubxxw.com/" target="_blank" rel="noopener noreferrer">go.cubxxw.com<ExternalLinkIcon/></a>) 进行 CRD，形成学习闭环~</p>
 <ol>
 <li>创建自定义API对象（Custom Resource Definition），名为Blog；</li>
 <li>用代码生成工具生成informer和client相关代码；</li>
@@ -53,7 +53,7 @@ nginx-deployment   <span class="token number">3</span>/3     <span class="token 
 <p><strong>CRD 允许你定义自己的 Kubernetes API 对象，而自定义控制器可以监听这些对象的事件并执行相应的操作。</strong></p>
 <h3 id="kubebuilder-架构图" tabindex="-1"><a class="header-anchor" href="#kubebuilder-架构图" aria-hidden="true">#</a> kubebuilder 架构图</h3>
 <p><strong>图片来自官网站：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202304081027380.png" alt="image-20230408102740099"></p>
+<p><img src="http://sm.cubxxw.com/sm202304081027380.png" alt="image-20230408102740099"></p>
 <h2 id="installation-kubebuilder" tabindex="-1"><a class="header-anchor" href="#installation-kubebuilder" aria-hidden="true">#</a> installation kubebuilder</h2>
 <p>安装kubebuilder：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-o</span> kubebuilder https://go.kubebuilder.io/dl/latest/<span class="token variable"><span class="token variable">$(</span>go <span class="token function">env</span> GOOS<span class="token variable">)</span></span>/<span class="token variable"><span class="token variable">$(</span>go <span class="token function">env</span> GOARCH<span class="token variable">)</span></span>
@@ -492,7 +492,7 @@ setupLog<span class="token punctuation">.</span><span class="token function">Inf
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="groups-versions-kinds-and-resources" tabindex="-1"><a class="header-anchor" href="#groups-versions-kinds-and-resources" aria-hidden="true">#</a> groups, versions, kinds, and resources</h2>
 <p>当我们谈论Kubernetes中的API时，我们经常使用4个术语：组、版本、种类和资源。</p>
-<p>没错，我们在 <a href="https://docker.nsddd.top/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">https://docker.nsddd.top/Cloud-Native-k8s/<ExternalLinkIcon/></a> 中介绍过很多关于 GVK 和 GVR 的介绍，为什么在 Kubebuilder 中尤其需要再提一次。</p>
+<p>没错，我们在 <a href="https://docker.cubxxw.com/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">https://docker.cubxxw.com/Cloud-Native-k8s/<ExternalLinkIcon/></a> 中介绍过很多关于 GVK 和 GVR 的介绍，为什么在 Kubebuilder 中尤其需要再提一次。</p>
 <p>当我们在一个特定的组版本中引用一个种类时，我们将其称为GroupVersionKind，或简称为GVK。资源和GVR也是如此。我们很快就会看到，每个GVK对应于包中给定的 root Go type。走进源码，体会这种感觉~</p>
 <h3 id="create-an-api-1" tabindex="-1"><a class="header-anchor" href="#create-an-api-1" aria-hidden="true">#</a> create an API</h3>
 <p>我们在前面创建过 API ，<code v-pre>kubebuilder create api --group webapp --version v1 --kind Guestbook</code> 命令创建了一个 组为 <code v-pre>webapp</code>，版本为 <code v-pre>v1</code>，类型为 <code v-pre>Guestbook</code> 的API 资源对象。</p>
@@ -932,7 +932,7 @@ kind load docker-image
 <p>Kubeilder 已经屏蔽了 client-go 的细节，但是如果希望深入掌握 Operator 开发机制，还是需要对 Client-go 熟悉的。</p>
 <p>这是一篇还没入门的概念了解笔记：</p>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/35.html" target="_blank" rel="noopener noreferrer">笔记部分 ~<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/35.html" target="_blank" rel="noopener noreferrer">笔记部分 ~<ExternalLinkIcon/></a></li>
 </ul>
 <p>Kubernetes API是一组REST API，用于与Kubernetes集群交互。这些API允许开发人员执行各种操作，包括管理Pod、Deployment、Service、Namespace等。Kubernetes API由一组资源对象表示，例如Pod、Service、ReplicaSet等。这些资源对象由Kubernetes API Server管理，并可以通过kubectl等工具进行查询和修改。</p>
 <table>
@@ -2159,7 +2159,7 @@ genericdaemon.mygroup.mydomain.com/genericdaemon-sample created
 NAME                   AGE
 genericdaemon-sample   11s
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="博客元数据" tabindex="-1"><a class="header-anchor" href="#博客元数据" aria-hidden="true">#</a> 博客元数据</h2>
-<p>可以将Sample-Controller用于管理 我的博客（<a href="https://docker.nsddd.top/" target="_blank" rel="noopener noreferrer">docker.nsddd.top<ExternalLinkIcon/></a> OR  <a href="https://go.nsddd.top/" target="_blank" rel="noopener noreferrer">go.nsddd.top<ExternalLinkIcon/></a>） 的元数据。</p>
+<p>可以将Sample-Controller用于管理 我的博客（<a href="https://docker.cubxxw.com/" target="_blank" rel="noopener noreferrer">docker.cubxxw.com<ExternalLinkIcon/></a> OR  <a href="https://go.cubxxw.com/" target="_blank" rel="noopener noreferrer">go.cubxxw.com<ExternalLinkIcon/></a>） 的元数据。</p>
 <ul>
 <li><a href="https://github.com/cubxxw/sample-controller/pull/7" target="_blank" rel="noopener noreferrer">对应的 PR 请求<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/cubxxw/sample-controller/" target="_blank" rel="noopener noreferrer">仓库地址<ExternalLinkIcon/></a></li>
@@ -2183,9 +2183,9 @@ genericdaemon-sample   11s
 <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apiextensions.k8s.io/v1beta1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> CustomResourceDefinition
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-  <span class="token key atrule">name</span><span class="token punctuation">:</span> blogs.controller.nsddd.top
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> blogs.controller.cubxxw.com
 <span class="token key atrule">spec</span><span class="token punctuation">:</span>
-  <span class="token key atrule">group</span><span class="token punctuation">:</span> controller.nsddd.top
+  <span class="token key atrule">group</span><span class="token punctuation">:</span> controller.cubxxw.com
   <span class="token key atrule">version</span><span class="token punctuation">:</span> v1beta1
   <span class="token key atrule">names</span><span class="token punctuation">:</span>
     <span class="token key atrule">kind</span><span class="token punctuation">:</span> Blog
@@ -2193,13 +2193,13 @@ genericdaemon-sample   11s
   <span class="token key atrule">scope</span><span class="token punctuation">:</span> Namespaced
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>部署该资源定义:</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ k apply <span class="token parameter variable">-f</span>  artifacts/examples/crd-blog.yaml
-customresourcedefinition.apiextensions.k8s.io/blogs.controller.nsddd.top created
+customresourcedefinition.apiextensions.k8s.io/blogs.controller.cubxxw.com created
 ❯ k get crd
 NAME                                  CREATED AT
-blogs.controller.nsddd.top            <span class="token number">2023</span>-04-09T04:13:15Z
+blogs.controller.cubxxw.com            <span class="token number">2023</span>-04-09T04:13:15Z
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>构建 examples <code v-pre>example-blog.yaml</code>：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">cat</span> example-blog.yaml
-apiVersion: controller.nsddd.top/v1beta1
+apiVersion: controller.cubxxw.com/v1beta1
 kind: Blog
 metadata:
   name: example-blog
@@ -2214,7 +2214,7 @@ spec:
   next: <span class="token string">""</span>
 
 ❯ k apply <span class="token parameter variable">-f</span>  artifacts/examples/example-blog.yaml
-blog.controller.nsddd.top/example-blog created
+blog.controller.cubxxw.com/example-blog created
 
 ❯ k get Blog
 NAME           AGE
@@ -2953,7 +2953,7 @@ kubectl get deployments
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

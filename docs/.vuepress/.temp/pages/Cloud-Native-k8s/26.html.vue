@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第26节-helm-教程" tabindex="-1"><a class="header-anchor" href="#第26节-helm-教程" aria-hidden="true">#</a> 第26节 helm 教程</h1>
 <div><a href = '25.md' style='float:left'>⬆️上一节🔗  </a><a href = '27.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#helm介绍">helm介绍</router-link></li><li><router-link to="#k3s-helm">k3s helm</router-link><ul><li><router-link to="#自动部署-helm-charts">自动部署 Helm charts</router-link></li><li><router-link to="#使用-helm-crd">使用 Helm CRD</router-link></li><li><router-link to="#helmchart-字段定义">HelmChart 字段定义</router-link></li><li><router-link to="#使用-helmchartconfig-自定义打包的组件">使用 HelmChartConfig 自定义打包的组件</router-link></li></ul></li><li><router-link to="#v2-vs-v3">v2 vs v3</router-link><ul><li><router-link to="#区别对比">区别对比</router-link></li></ul></li><li><router-link to="#helm-controller">Helm Controller</router-link></li><li><router-link to="#helm安装">helm安装</router-link><ul><li><router-link to="#用二进制版本安装">用二进制版本安装</router-link></li><li><router-link to="#使用脚本安装">使用脚本安装</router-link></li></ul></li><li><router-link to="#配置helm源">配置helm源</router-link></li><li><router-link to="#快速上手">快速上手</router-link><ul><li><router-link to="#和docker一样-搜索可用的包">和docker一样，搜索可用的包：</router-link></li><li><router-link to="#helm包拉取">helm包拉取</router-link></li><li><router-link to="#安装集群镜像">安装集群镜像</router-link></li></ul></li><li><router-link to="#helm-配置安装集群">helm 配置安装集群</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -206,10 +206,10 @@
 <h3 id="区别对比" tabindex="-1"><a class="header-anchor" href="#区别对比" aria-hidden="true">#</a> 区别对比</h3>
 <p><strong>1、移除了Tiller(from SA to kubeconfig)</strong></p>
 <p>原来Helm v2需要在 Kubernetes 集群中部署<code v-pre>Tiller</code>（<code v-pre>Tiller</code> 用于接收 Helm 的请求，并根据 <code v-pre>Chart</code> 生成 Kubernetes 的部署文件），<code v-pre>Tiller pod</code> 根据自身SA权限部署应用。并且在多租户环境下，为了进行权限管理需要部署多个<code v-pre>Tiller</code>。</p>
-<p><img src="http://sm.nsddd.top/smwebp" alt="img">在 Helm v3 中，Tiller 被移除了。<strong>新的 Helm 客户端会像 kubectl 命令一样，读取本地的 kubeconfig 文件，使用我们在 kubeconfig 中预先定义好的SA权限来进行一系列操作。这样做法即简单，又安全。</strong></p>
+<p><img src="http://sm.cubxxw.com/smwebp" alt="img">在 Helm v3 中，Tiller 被移除了。<strong>新的 Helm 客户端会像 kubectl 命令一样，读取本地的 kubeconfig 文件，使用我们在 kubeconfig 中预先定义好的SA权限来进行一系列操作。这样做法即简单，又安全。</strong></p>
 <p><strong>2、三方会谈 (Three-way Strategic merge patch)</strong></p>
 <p>会兼容通过第三方修改的属性（如通过kubectl edit修改的属性，在helm upgrade时会考虑进去）</p>
-<p><img src="http://sm.nsddd.top/smwebp2" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/smwebp2" alt="img"></p>
 <p><strong>3、使用Secret作为默认存储</strong></p>
 <p><strong>4、crd-install hook迁移到了crds/路径等</strong></p>
 <details class="custom-container details"><summary>什么是CRD？</summary>
@@ -238,7 +238,7 @@
 <p>CRD 资源可以动态注册到集群中，注册完毕后，用户可以通过 kubectl 来创建访问这个自定义的资源对象，类似于操作 Pod 一样。</p>
 <h2 id="helm-controller" tabindex="-1"><a class="header-anchor" href="#helm-controller" aria-hidden="true">#</a> Helm Controller</h2>
 <p>Helm Controller实际上就是一个CRD Controller，管理的是HelmChart类型的CRD API</p>
-<p><img src="http://sm.nsddd.top/sm23094781.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm23094781.png" alt="img"></p>
 <p><strong>设计原理：</strong></p>
 <p>1、<code v-pre>Helm-controller</code> 运行在<code v-pre>master</code>节点并<code v-pre>list/watch HelmChart CRD</code>对象</p>
 <p>2、<code v-pre>CRD onChange</code>时执行<code v-pre>Job</code>更新</p>
@@ -307,7 +307,7 @@ version.BuildInfo<span class="token punctuation">{</span>Version:<span class="to
 </ul>
 <p><strong>chart包拉取：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>helm pull azure/mysql --version=1.6.4
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221104202213778.png" alt="image-20221104202213778"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221104202213778.png" alt="image-20221104202213778"></p>
 <p><strong>helm install：安装Chart：</strong></p>
 <blockquote>
 <p>这个命令是直接拉取安装，而上面的是可以实现离线安装的~</p>
@@ -315,9 +315,9 @@ version.BuildInfo<span class="token punctuation">{</span>Version:<span class="to
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>helm <span class="token function">install</span> db azure/mysql <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token number">1.6</span>.4
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>拉取的chart包详细信息，通过解压之后查看：</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>tar -zxvf mysql-1.6.4.tgz
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221104203359659.png" alt="image-20221104203359659"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221104203359659.png" alt="image-20221104203359659"></p>
 <p><strong>关键文件：</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221104203553063.png" alt="image-20221104203553063"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221104203553063.png" alt="image-20221104203553063"></p>
 <p><strong>对于下载好的<code v-pre>yaml</code>文件，我们可以修改后使用<code v-pre>helm package</code>重新打包</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">rm</span> <span class="token parameter variable">-rf</span> mysql-1.6.4.tgz <span class="token operator">&amp;&amp;</span> helm package  mysql/
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
@@ -384,7 +384,7 @@ kubectl port-forward svc/my-mongo-mongodb <span class="token number">27017</span
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

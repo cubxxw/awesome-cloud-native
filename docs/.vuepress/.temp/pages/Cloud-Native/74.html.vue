@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第74节-kubecub-readme" tabindex="-1"><a class="header-anchor" href="#第74节-kubecub-readme" aria-hidden="true">#</a> 第74节 kubecub README</h1>
 <div><a href = '73.md' style='float:left'>⬆️上一节🔗  </a><a href = '75.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -38,7 +38,7 @@
 <p>甚至，你可以什么都不用干 ~ 随便进入一个 项目的 pull requests 中，看到哪段代码不舒服吐槽两句~</p>
 <h2 id="从哪里开始" tabindex="-1"><a class="header-anchor" href="#从哪里开始" aria-hidden="true">#</a> 从哪里开始</h2>
 <p>我们有一个 https://github.com/kubecub/community 仓库，定义了社区的规范，以及各种模板。</p>
-<p><img src="http://sm.nsddd.top/sm202306012140301.png" alt="yangzi"></p>
+<p><img src="http://sm.cubxxw.com/sm202306012140301.png" alt="yangzi"></p>
 <p><strong><a href="http://0000-template.md/" target="_blank" rel="noopener noreferrer">0000-template.md<ExternalLinkIcon/></a></strong>  是模板，我们可以用这个模板，然后可以写一个 markdown 格式的 proposal 到 PRC 目录中，以 PR 的形式~ 也算是走了一遍完整的PR。并且做好了开启一个项目前的策划工作。</p>
 <p>阅读我们的 <a href="https://github.com/kubecub/community/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">贡献者指南<ExternalLinkIcon/></a>，在里面，你能学习到为一个开源项目贡献代码的最佳规范和实践。</p>
 <h2 id="后期方向" tabindex="-1"><a class="header-anchor" href="#后期方向" aria-hidden="true">#</a> 后期方向</h2>
@@ -51,7 +51,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

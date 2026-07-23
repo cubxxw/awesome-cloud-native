@@ -6,7 +6,7 @@
 <div><a href = '0.md' style='float:left'>⬆️上一节🔗  </a><a href = '2.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕实现当初学习docker的愿望，自己撸一个docker，为云原生开发充实基础。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕实现当初学习docker的愿望，自己撸一个docker，为云原生开发充实基础。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#关于云开发">关于云开发</router-link></li><li><router-link to="#docker-实现">docker 实现</router-link></li><li><router-link to="#运行命令">运行命令</router-link></li><li><router-link to="#程序">程序</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -26,7 +26,7 @@
 <li>Cgroup (限制)</li>
 <li>AUFS (联合文件系统)</li>
 </ul>
-<p><img src="http://sm.nsddd.top/smimage-20221115214301527.png" alt="image-20221115214301527"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221115214301527.png" alt="image-20221115214301527"></p>
 <h2 id="运行命令" tabindex="-1"><a class="header-anchor" href="#运行命令" aria-hidden="true">#</a> 运行命令</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">-it</span> ubuntu /bin/bash
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="程序" tabindex="-1"><a class="header-anchor" href="#程序" aria-hidden="true">#</a> 程序</h2>
@@ -89,7 +89,7 @@ $ <span class="token function">ps</span> <span class="token parameter variable">
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

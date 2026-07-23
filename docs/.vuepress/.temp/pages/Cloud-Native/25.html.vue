@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第25节-buildah-podman-以及在-rootless-模式下工作原理" tabindex="-1"><a class="header-anchor" href="#第25节-buildah-podman-以及在-rootless-模式下工作原理" aria-hidden="true">#</a> 第25节 Buildah / podman 以及在 rootless 模式下工作原理</h1>
 <div><a href = '24.md' style='float:left'>⬆️上一节🔗  </a><a href = '26.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -137,7 +137,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>您可以通过运行以下命令来查看这个新的空容器：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>buildah containers
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>您应该看到类似于以下内容的输出：</p>
-<p><img src="http://sm.nsddd.top/sm202302081630890.png" alt="image-20230208163025720"></p>
+<p><img src="http://sm.cubxxw.com/sm202302081630890.png" alt="image-20230208163025720"></p>
 <p>它的容器名称默认为 working-container 并且存储在<code v-pre>$newcontainer</code>变量中。请注意图像名称 (IMAGE NAME) 是“scratch”。这是一个特殊值，表示工作容器不是基于图像。当我们运行时：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>buildah images
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>我们没有看到列出的“scratch”图像。没有相应的划痕图像。基于“scratch”的容器从无到有。</p>
@@ -551,7 +551,7 @@ total <span class="token number">0</span>
 </ul>
 <h2 id="podman-在-rootless-下是如何工作的" tabindex="-1"><a class="header-anchor" href="#podman-在-rootless-下是如何工作的" aria-hidden="true">#</a> Podman 在 rootless 下是如何工作的</h2>
 <p>Podman是libpod库的一部分，使用户能够管理pod、容器和容器映像。</p>
-<p>我们在 <a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker <ExternalLinkIcon/></a> 中了解到，用户名称空间是分隔容器的一个很好的特性。<strong>用户命名空间允许指定用户标识符（UID）和组标识符（GID）映射以运行容器。</strong></p>
+<p>我们在 <a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">docker <ExternalLinkIcon/></a> 中了解到，用户名称空间是分隔容器的一个很好的特性。<strong>用户命名空间允许指定用户标识符（UID）和组标识符（GID）映射以运行容器。</strong></p>
 <p>这意味着您可以在容器内以 <code v-pre>UID 0</code> 运行，在容器外以 <code v-pre>UID 100000</code> 运行。如果容器进程脱离容器，<strong>内核</strong> 会将它们视为 <code v-pre>UID 100000</code>。</p>
 <p>不仅如此，UID 拥有的任何文件对象如果没有映射到用户名称空间，都将被视为&quot;nobody&quot;（65534，kernel. overflowuid）拥有，并且容器进程将不被允许访问，除非该对象可以被&quot;other&quot;（完全可读/可写）访问。</p>
 <p>如果您有一个由&quot;真实&quot;根拥有权限 <code v-pre>660</code> 的文件，并且用户名称空间中的容器进程试图读取它，则它们将被阻止访问它，并将看到该文件不为任何人拥有。</p>
@@ -667,7 +667,7 @@ drwx------ <span class="token number">10</span> root root <span class="token num
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -1,21 +1,21 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第2节-使用-sealos-搭建-k8s-helm学习" tabindex="-1"><a class="header-anchor" href="#第2节-使用-sealos-搭建-k8s-helm学习" aria-hidden="true">#</a> 第2节 使用 sealos 搭建 k8s，helm学习</h1>
 <br>
 <div><a href = '1.md' style='float:left'>⬆️上一节🔗  </a><a href = '3.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
 <h2 id="关于sealos搭建k8s" tabindex="-1"><a class="header-anchor" href="#关于sealos搭建k8s" aria-hidden="true">#</a> 关于sealos搭建k8s</h2>
 <ul>
-<li>[x] <a href="https://docker.nsddd.top/Cloud-Native-k8s/6.html" target="_blank" rel="noopener noreferrer">文档地址<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://docker.cubxxw.com/Cloud-Native-k8s/6.html" target="_blank" rel="noopener noreferrer">文档地址<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="关于sealos" tabindex="-1"><a class="header-anchor" href="#关于sealos" aria-hidden="true">#</a> 关于sealos</h2>
-<p><img src="http://sm.nsddd.top/smimage-20221023205145184.png" alt="image-20221023205145184"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221023205145184.png" alt="image-20221023205145184"></p>
 <div class="custom-container tip"><p class="custom-container-title">sealos就是？</p>
 <p>sealos 是用来管理数据中心所有机器的云操作系统，kubernetes 就是这个操作系统的内核，sealos上 面会跑各种各样的分布式应用。</p>
 <ul>
@@ -25,7 +25,7 @@
 </ul>
 </div>
 <h2 id="解决方案" tabindex="-1"><a class="header-anchor" href="#解决方案" aria-hidden="true">#</a> 解决方案</h2>
-<p><img src="http://sm.nsddd.top/smimage-20221023205623196.png" alt="image-20221023205623196"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221023205623196.png" alt="image-20221023205623196"></p>
 <blockquote>
 <p>提供一个开源开放的云操作系统，利用云原生的能力做一个目前云厂商的可替代品</p>
 </blockquote>
@@ -85,7 +85,7 @@ sealos run labring/minio-operator:v4.4.16 labring/ingress-nginx:4.1.0 <span clas
 <details class="custom-container details"><summary>helm介绍</summary>
 <p>helm的官网文档地址：</p>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/15.html" target="_blank" rel="noopener noreferrer">文档地址<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/15.html" target="_blank" rel="noopener noreferrer">文档地址<ExternalLinkIcon/></a></li>
 </ul>
 <p><strong>Helm 是什么？？</strong></p>
 <p>Helm 是 Kubernetes 的包管理器。包管理器类似于我们在 Ubuntu 中使用的apt、Centos中使用的yum 或者Python中的 pip 一样，能快速查找、下载和安装软件包。Helm 由客户端组件 helm 和服务端组件 Tiller 组成, 能够将一组K8S资源打包统一管理, 是查找、共享和使用为Kubernetes构建的软件的最佳方式。</p>
@@ -109,9 +109,9 @@ sealos run labring/minio-operator:v4.4.16 labring/ingress-nginx:4.1.0 <span clas
 </details>
 <p><strong>Helm 原理：</strong></p>
 <p>下面两张图描述了 Helm 的几个关键组件 Helm（客户端）、Tiller（服务器）、Repository（Chart 软件仓库）、Chart（软件包）之间的关系以及它们之间如何通信。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221023214555169.png" alt="image-20221023214555169"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221023214555169.png" alt="image-20221023214555169"></p>
 <p><strong>helm 组件通信：</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221023214604275.png" alt="image-20221023214604275"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221023214604275.png" alt="image-20221023214604275"></p>
 <p><strong>helm 架构</strong></p>
 <p><strong>创建release：</strong></p>
 <ul>
@@ -135,7 +135,7 @@ sealos run labring/minio-operator:v4.4.16 labring/ingress-nginx:4.1.0 <span clas
 </ul>
 <h3 id="chart-的基本结构" tabindex="-1"><a class="header-anchor" href="#chart-的基本结构" aria-hidden="true">#</a> chart 的基本结构</h3>
 <p>Helm的打包格式叫做chart，所谓<code v-pre>chart</code>就是一系列文件, 它描述了一组相关的 k8s 集群资源。Chart中的文件安装特定的目录结构组织, 最简单的 <code v-pre>chart</code> 目录如下所示：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221023214623073.png" alt="image-20221023214623073"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221023214623073.png" alt="image-20221023214623073"></p>
 <p>chart 结构</p>
 <ul>
 <li><code v-pre>charts</code> 目录存放依赖的chart</li>
@@ -625,7 +625,7 @@ k8s.gcr.io/coredns:1.7.0
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

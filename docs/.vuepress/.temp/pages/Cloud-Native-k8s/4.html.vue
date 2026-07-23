@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第4节-kubernetes-k8s-教程" tabindex="-1"><a class="header-anchor" href="#第4节-kubernetes-k8s-教程" aria-hidden="true">#</a> 第4节 kubernetes(k8s)教程</h1>
 <div><a href = '3.md' style='float:left'>⬆️上一节🔗  </a><a href = '5.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#正片开始">正片开始~</router-link></li><li><router-link to="#为什么-kubernetes-弃用了-docker">为什么 kubernetes 弃用了 docker</router-link></li><li><router-link to="#kubernetes-k8s">kubernetes(k8s)</router-link></li><li><router-link to="#k8s架构">k8s架构</router-link><ul><li><router-link to="#工作方式">工作方式</router-link></li><li><router-link to="#组织架构">组织架构</router-link></li></ul></li><li><router-link to="#集群架构与组件">集群架构与组件</router-link><ul><li><router-link to="#master节点">Master节点</router-link></li><li><router-link to="#work-node节点">Work Node节点</router-link></li><li><router-link to="#etcd数据存储">etcd数据存储</router-link></li><li><router-link to="#核心附件">核心附件</router-link></li><li><router-link to="#网络插件">网络插件</router-link></li></ul></li><li><router-link to="#kubernetes基本概念">Kubernetes基本概念</router-link><ul><li><router-link to="#label-资源标签">Label 资源标签</router-link></li><li><router-link to="#labe-selector标签选择器">Labe Selector标签选择器</router-link></li><li><router-link to="#pod资源对象">Pod资源对象</router-link></li><li><router-link to="#pod控制器-controller">Pod控制器（Controller）</router-link></li><li><router-link to="#service服务资源">Service服务资源</router-link></li><li><router-link to="#ingress">Ingress</router-link></li><li><router-link to="#volume存储卷">Volume存储卷</router-link></li><li><router-link to="#name和namespace">Name和Namespace</router-link></li><li><router-link to="#annotation注解">Annotation注解</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -40,7 +40,7 @@
 <div class="custom-container tip"><p class="custom-container-title">sealos 是什么</p>
 <p><strong><a href="https://www.sealos.io/zh-Hans/docs/Intro" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a> 是以 kubernetes 为内核的云操作系统发行版</strong></p>
 <p>早期单机操作系统也是分层架构，后来才演变成 linux windows 这种内核架构，云操作系统从容器诞生之日起分层架构被击穿，未来也会朝着高内聚的&quot;云内核&quot;架构迁移</p>
-<p><img src="http://sm.nsddd.top/smimage-20221017222736688.png" alt="image-20221017222736688"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221017222736688.png" alt="image-20221017222736688"></p>
 <ul>
 <li>从现在开始，把你数据中心所有机器想象成一台&quot;抽象&quot;的超级计算机，sealos 就是用来管理这台超级计算机的操作系统，kubernetes 就是</li>
 <li>.这个操作系统的内核！</li>
@@ -76,10 +76,10 @@
 <blockquote>
 <p>我觉得尚硅谷的例子可以让我们很好的理解：</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221018110649854.png" alt="image-20221018110649854"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018110649854.png" alt="image-20221018110649854"></p>
 <div class="custom-container warning"><p class="custom-container-title">Kubernetes Control Plane</p>
 <p>Kubernetes control Plane 负责维护集群中任何对象的 Desire State。它还管理工作节点和 Pod。它由 Kube-api-server 等五个组件组成，即 <code v-pre>Kube-scheduler</code>、<code v-pre>Kube-controller-manager</code> 和 <code v-pre>cloud-controller-manager</code>。运行这些组件的节点称为“主节点”。这些组件可以在单个节点或多个节点上运行，但建议在生产中在多个节点上运行以提供高可用性和容错性。每个控制平面的组件都有自己的职责，但是它们一起对集群做出全局决策，检测和响应由用户或任何集成的第三方应用程序生成的集群事件。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221126204020843.png" alt="image-20221126204020843"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221126204020843.png" alt="image-20221126204020843"></p>
 <p>让我们了解 Kubernetes Control Plane的不同组件。Kubernetes Control Plane有以下五个组件：</p>
 <ul>
 <li>Kube-api-server</li>
@@ -113,7 +113,7 @@
 </ul>
 </div>
 <h2 id="集群架构与组件" tabindex="-1"><a class="header-anchor" href="#集群架构与组件" aria-hidden="true">#</a> 集群架构与组件</h2>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523175956216-940931564.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523175956216-940931564.png" alt="img"></p>
 <h3 id="master节点" tabindex="-1"><a class="header-anchor" href="#master节点" aria-hidden="true">#</a> Master节点</h3>
 <p>Master是集群的网关和中枢枢纽，主要作用：暴露API接口，跟踪其他服务器的健康状态、以最优方式调度负载，以及编排其他组件之间的通信。单个的Master节点可以完成所有的功能，但是考虑单点故障的痛点，生产环境中通常要部署多个Master节点，组成Cluster。</p>
 <table>
@@ -222,7 +222,7 @@
 <td>供网络策略，配合flannel使用。</td>
 </tr>
 <tr>
-<td><img src="http://sm.nsddd.top/sm1363565-20200523180136695-2145890184.png" alt="img"></td>
+<td><img src="http://sm.cubxxw.com/sm1363565-20200523180136695-2145890184.png" alt="img"></td>
 <td></td>
 </tr>
 </tbody>
@@ -276,17 +276,17 @@
 </table>
 <h3 id="label-资源标签" tabindex="-1"><a class="header-anchor" href="#label-资源标签" aria-hidden="true">#</a> Label 资源标签</h3>
 <p>资源标签具体化的就是一个键值型（key/values)数据；使用标签是为了对指定对象进行辨识，比如Pod对象。标签可以在对象创建时进行附加，也可以创建后进行添加或修改。值得注意的是<strong>一个对象可以有多个标签，一个标签页可以附加到多个对象</strong>。</p>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523180226573-1554114165.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523180226573-1554114165.png" alt="img"></p>
 <h3 id="labe-selector标签选择器" tabindex="-1"><a class="header-anchor" href="#labe-selector标签选择器" aria-hidden="true">#</a> Labe Selector标签选择器</h3>
 <p>有标签，当然就有标签选择器；例如将含有标签<code v-pre>role: backend</code>的所有Pod对象挑选出来归并为一组。通常在使用过程中，会通过标签对资源对象进行分类，然后再通过标签选择器进行筛选，最常见的应用就是为一组同样标签的Pod资源对象创建某个Service的端点。</p>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523180332039-330736525.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523180332039-330736525.png" alt="img"></p>
 <h3 id="pod资源对象" tabindex="-1"><a class="header-anchor" href="#pod资源对象" aria-hidden="true">#</a> Pod资源对象</h3>
 <p>Pod是kubernetes的最小调度单元；是一组容器的集合</p>
 <blockquote>
 <p>Pod可以封装一个活多个容器！同一个Pod中共享网络名称空间和存储资源，而容器之间可以通过本地回环接口：lo 直接通信，但是彼此之间又在Mount、User和Pid等名称空间上保持了隔离。</p>
 </blockquote>
 <p>Pod其实就是一个应用程序运行的单一实例，它通常由共享资源且关系紧密的一个或2多个应用容器组成。</p>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523180259373-1808638376.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523180259373-1808638376.png" alt="img"></p>
 <p>我们将每一个Pod对象类比为一个物理主机，那么运行在同一个Pod对象中的多个进程，也就类似于物理主机上的独立进程，而不同的是Pod对象中的各个进程都运行在彼此隔离的容器当中，而各个容器之间共享两种关键性资源;</p>
 <p>网络&amp;&amp;存储卷。</p>
 <ul>
@@ -340,7 +340,7 @@
 </table>
 <p>控制器是更高级层次对象，用于部署和管理Pod。</p>
 <p>以Deployment为例，它负责确保定义的Pod对象的副本数量符合预期的设置，这样用户只需要声明应用的期望状态，控制器就会自动地对其进行管理。</p>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523180401866-1621029241.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523180401866-1621029241.png" alt="img"></p>
 <p>用户通过手工创建或者通过Controller直接创建的Pod对象会被调度器（Scheduler）调度到集群中的某个工作节点上运行，等到容器应用进程运行结束之后正常终止，随后就会被删除。</p>
 <blockquote>
 <p>当节点的资源耗尽或者故障，也会导致Pod对象的回收。</p>
@@ -351,7 +351,7 @@
 <p>例如，在某个节点故障，相关的控制器会将运行在该节点上的Pod对象重新调度到其他节点上进行重建。</p>
 </blockquote>
 <p>控制器本身也是一种资源类型，它们都统称为Pod控制器。如下图的Deployment就是这类控制器的代表实现，是目前用于管理无状态应用的Pod控制器。</p>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523180431487-339597555.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523180431487-339597555.png" alt="img"></p>
 <p>Pod Controller的定义通常由期望的副本数量、Pod模板、标签选择器组成。Pod Controller会根据Labe Selector来对Pod对象的标签进行匹配筛选，所有满足选择条件的Pod都会被当前Controller进行管理并计入副本总数，确保数目能够达到预期的状态副本数。</p>
 <blockquote>
 <p>在实际的应用场景中，在接收到的请求流量负载低于或接近当前已有Pod副本的承载能力时，需要我们手动修改Pod控制器中的期望副本数量以实现应用规模的扩容和缩容。而在集群中部署了HeapSet或者Prometheus的这一类资源监控组件时，用户还可以通过HPA（HorizontalPodAutoscaler）来计算出合适的Pod副本数量，并自动地修改Pod控制器中期望的副本数，从而实现应用规模的动态伸缩，提高集群资源的利用率。</p>
@@ -382,7 +382,7 @@
 </blockquote>
 <p>Service资源就是在被访问的Pod对象中添加一个有着固定IP地址的中间层，客户端向该地址发起访问请求后，由相关的Service资源进行调度并代理到后端的Pod对象。</p>
 <p>Service并不是一个具体的组件，而是一个通过规则定义出由多个Pod对象组成而成的逻辑集合，并附带着访问这组Pod对象的策略。Service对象挑选和关联Pod对象的方式和Pod控制器是一样的，都是通过标签选择器进行定义。</p>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523180459175-924096694.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523180459175-924096694.png" alt="img"></p>
 <hr>
 <p>Service IP是一种虚拟IP，也称为<code v-pre>Cluster IP</code>，专用于集群内通信</p>
 <blockquote>
@@ -415,7 +415,7 @@
 <h3 id="name和namespace" tabindex="-1"><a class="header-anchor" href="#name和namespace" aria-hidden="true">#</a> Name和Namespace</h3>
 <p>名称空间通常用于实现租户或项目的资源隔离，从而形成逻辑分组。关于此概念可以参考Docker文档中的概念https://www.jb51.net/article/136411.htm</p>
 <p>如图：创建的Pod和Service等资源对象都属于名称空间级别，未指定时，都属于默认的名称空间<code v-pre>default</code></p>
-<p><img src="http://sm.nsddd.top/sm1363565-20200523180512841-2018842328.png" alt="这个图片挂了⚠️ ~"></p>
+<p><img src="http://sm.cubxxw.com/sm1363565-20200523180512841-2018842328.png" alt="这个图片挂了⚠️ ~"></p>
 <h3 id="annotation注解" tabindex="-1"><a class="header-anchor" href="#annotation注解" aria-hidden="true">#</a> Annotation注解</h3>
 <p>Annotation是另一种附加在对象上的一种键值类型的数据，常用于将各种非标识型元数据（metadata）附加到对象上，但它并不能用于标识和选择对象。其作用是方便工具或用户阅读及查找。</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
@@ -425,7 +425,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

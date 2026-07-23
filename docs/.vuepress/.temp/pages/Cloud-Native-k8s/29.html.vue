@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第29节-cloudnative-kubernetes-学习资源整理" tabindex="-1"><a class="header-anchor" href="#第29节-cloudnative-kubernetes-学习资源整理" aria-hidden="true">#</a> 第29节 CloudNative / Kubernetes 学习资源整理</h1>
 <div><a href = '28.md' style='float:left'>⬆️上一节🔗  </a><a href = '30.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -39,8 +39,8 @@
 </ul>
 <p><strong>自己写作的一些资源：</strong></p>
 <ul>
-<li><a href="https://docker.nsddd.top/" target="_blank" rel="noopener noreferrer">云原生学习<ExternalLinkIcon/></a></li>
-<li><a href="https://go.nsddd.top/" target="_blank" rel="noopener noreferrer">golang 学习<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/" target="_blank" rel="noopener noreferrer">云原生学习<ExternalLinkIcon/></a></li>
+<li><a href="https://go.cubxxw.com/" target="_blank" rel="noopener noreferrer">golang 学习<ExternalLinkIcon/></a></li>
 </ul>
 <blockquote>
 <p>都收纳到 awesome 仓库中，覆盖 📚 菜鸟成长手册🚀 CS系列 、云原生系列、区块链系列、web3系列🔥、Golang系列💡...... 访问 GitHub👀 https://github.com/cubxxw/awesome-cs-cloudnative-blockchain</p>
@@ -249,7 +249,7 @@
 </ul>
 <h3 id="源码统计" tabindex="-1"><a class="header-anchor" href="#源码统计" aria-hidden="true">#</a> 源码统计</h3>
 <p><code v-pre>Kubernetes</code> 代码特别庞大，使用 cloc 统计 <strong>（⏱️ 2023-03-17）</strong>：</p>
-<p><img src="http://sm.nsddd.top/sm202303172221221.png" alt="image-20230317222140890"></p>
+<p><img src="http://sm.cubxxw.com/sm202303172221221.png" alt="image-20230317222140890"></p>
 <h3 id="其他源码统计" tabindex="-1"><a class="header-anchor" href="#其他源码统计" aria-hidden="true">#</a> 其他源码统计</h3>
 <p><strong>⚠️ 数据截止到 2023 年 3 月 17 日</strong></p>
 <ul>
@@ -265,7 +265,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

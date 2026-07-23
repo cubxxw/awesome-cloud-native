@@ -1,16 +1,16 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第26节-oci-cri-runc-containerd-cri-containerd-dockershim等组件解释" tabindex="-1"><a class="header-anchor" href="#第26节-oci-cri-runc-containerd-cri-containerd-dockershim等组件解释" aria-hidden="true">#</a> 第26节 OCI，CRI，runc，containerd，cri-containerd，dockershim等组件解释</h1>
 <div><a href = '25.md' style='float:left'>⬆️上一节🔗  </a><a href = '27.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
 <h2 id="层级调用关系" tabindex="-1"><a class="header-anchor" href="#层级调用关系" aria-hidden="true">#</a> 层级调用关系</h2>
-<p><img src="http://sm.nsddd.top/sm202302071135076.png" alt="image-20230207113509803"></p>
+<p><img src="http://sm.cubxxw.com/sm202302071135076.png" alt="image-20230207113509803"></p>
 <h2 id="oci-open-container-initiative" tabindex="-1"><a class="header-anchor" href="#oci-open-container-initiative" aria-hidden="true">#</a> OCI（Open Container Initiative）</h2>
 <p>OCI（Open Container Initiative）即开放的容器运行时<code v-pre>规范</code>，目的在于定义一个容器运行时及镜像的相关标准和规范，其中包括</p>
 <ul>
@@ -63,9 +63,9 @@ GLOBAL OPTIONS:
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="cantainerd" tabindex="-1"><a class="header-anchor" href="#cantainerd" aria-hidden="true">#</a> cantainerd</h2>
 <p>针对 runtime module</p>
 <p><code v-pre>containerd（container daemon）</code>是一个daemon进程用来管理和运行容器，可以用来拉取/推送镜像和管理容器的存储和网络。其中可以调用 <code v-pre>runc</code> 来创建和运行容器。</p>
-<p><img src="http://sm.nsddd.top/sm202302071321448.png" alt="image-20230207132129355"></p>
+<p><img src="http://sm.cubxxw.com/sm202302071321448.png" alt="image-20230207132129355"></p>
 <h2 id="docker与containerd、runc的关系图" tabindex="-1"><a class="header-anchor" href="#docker与containerd、runc的关系图" aria-hidden="true">#</a> docker与containerd、runc的关系图</h2>
-<p><img src="http://sm.nsddd.top/sm202302071322165.png" alt="image-20230207132203099"></p>
+<p><img src="http://sm.cubxxw.com/sm202302071322165.png" alt="image-20230207132203099"></p>
 <blockquote>
 <ul>
 <li>最终用户使用docker命令创建并运行容器。</li>
@@ -75,7 +75,7 @@ GLOBAL OPTIONS:
 </blockquote>
 <p>更具体的调用逻辑：</p>
 <p>Containerd 是在 Docker 1.11 中引入的，用于管理节点上的 runC 容器。如下所示，它为每个容器创建一个containerd-shim，shim管理其对应容器的生命周期。</p>
-<p><img src="http://sm.nsddd.top/sm202302071322276.png" alt="image-20230207132215193"></p>
+<p><img src="http://sm.cubxxw.com/sm202302071322276.png" alt="image-20230207132215193"></p>
 <h2 id="cri-container-runtime-interface" tabindex="-1"><a class="header-anchor" href="#cri-container-runtime-interface" aria-hidden="true">#</a> CRI（Container Runtime Interface ）</h2>
 <p><strong>CRI即容器运行时接口，主要用来定义k8s与容器运行时的API调用</strong>，kubelet通过CRI来调用容器运行时，只要实现了CRI接口的容器运行时就可以对接到k8s的kubelet组件。</p>
 <p>Kubernetes 所有项目在所有版本中出产的工件（Kubernetes 二进制文件）都经过了验证。</p>
@@ -86,9 +86,9 @@ GLOBAL OPTIONS:
 <li><a href="https://github.com/cri-o/cri-o/blob/master/ADOPTERS.md" target="_blank" rel="noopener noreferrer">CRI-O<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="docker与k8s调用containerd的关系图" tabindex="-1"><a class="header-anchor" href="#docker与k8s调用containerd的关系图" aria-hidden="true">#</a> docker与k8s调用containerd的关系图</h2>
-<p><img src="http://sm.nsddd.top/sm202302071325602.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202302071325602.png" alt="img"></p>
 <h2 id="cri-containerd" tabindex="-1"><a class="header-anchor" href="#cri-containerd" aria-hidden="true">#</a> cri-containerd</h2>
-<p><img src="http://sm.nsddd.top/sm202302071329741.png" alt="image-20230207132921651"></p>
+<p><img src="http://sm.cubxxw.com/sm202302071329741.png" alt="image-20230207132921651"></p>
 <h3 id="cri-plugin调用流程" tabindex="-1"><a class="header-anchor" href="#cri-plugin调用流程" aria-hidden="true">#</a> CRI Plugin调用流程</h3>
 <p><a href="https://github.com/containerd/cri/blob/release/1.4/docs/architecture.md" target="_blank" rel="noopener noreferrer">Link🔍 <ExternalLinkIcon/></a></p>
 <ol>
@@ -101,7 +101,7 @@ GLOBAL OPTIONS:
 <h2 id="k8s对runtime调用的演进" tabindex="-1"><a class="header-anchor" href="#k8s对runtime调用的演进" aria-hidden="true">#</a> k8s对runtime调用的演进</h2>
 <p>k3s 也是如此，关于对 Kubernetes 的调用，其中的</p>
 <p>由原来通过dockershim调用docker再调用containerd，直接变成通过cri-containerd调用containerd，从而减少了一层docker调用逻辑。</p>
-<p><img src="http://sm.nsddd.top/sm202302071335179.png" alt="image-20230207133512109"></p>
+<p><img src="http://sm.cubxxw.com/sm202302071335179.png" alt="image-20230207133512109"></p>
 <h3 id="dockershim" tabindex="-1"><a class="header-anchor" href="#dockershim" aria-hidden="true">#</a> dockershim</h3>
 <p>这是个被淘汰的家伙。</p>
 <p>在旧版本的k8s中，由于docker没有实现CRI接口，因此增加一个Dockershim来实现k8s对docker的调用。（shim：垫片，一般用来表示对第三方组件API调用的适配插件，例如k8s使用Dockershim来实现对docker接口的适配调用）</p>
@@ -144,7 +144,7 @@ GLOBAL OPTIONS:
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

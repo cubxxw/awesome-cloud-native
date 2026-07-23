@@ -41,7 +41,7 @@
 <div class="custom-container warning"><p class="custom-container-title">注意</p>
 <p>⚠️ 正在更新⚡~关注等待~</p>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">k8s &amp; 云原生<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">k8s &amp; 云原生<ExternalLinkIcon/></a></li>
 </ul>
 </div>
 <h3 id="💱安装docker" tabindex="-1"><a class="header-anchor" href="#💱安装docker" aria-hidden="true">#</a> 💱安装docker</h3>
@@ -114,7 +114,7 @@
 </ul>
 <hr>
 <h2 id="✨参与贡献" tabindex="-1"><a class="header-anchor" href="#✨参与贡献" aria-hidden="true">#</a> ✨参与贡献</h2>
-<p><strong><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer">🫵参与贡献❤️❤️💕💕<ExternalLinkIcon/></a></strong></p>
+<p><strong><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer">🫵参与贡献❤️❤️💕💕<ExternalLinkIcon/></a></strong></p>
 <p><strong>要求：</strong></p>
 <ul>
 <li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/markdown/README.md" target="_blank" rel="noopener noreferrer"><strong>你需要学会使用markdown🖱️</strong><ExternalLinkIcon/></a></li>

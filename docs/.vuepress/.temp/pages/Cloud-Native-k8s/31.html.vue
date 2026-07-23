@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第31节-kubernetes-的编译和调试" tabindex="-1"><a class="header-anchor" href="#第31节-kubernetes-的编译和调试" aria-hidden="true">#</a> 第31节 kubernetes 的编译和调试</h1>
 <div><a href = '30.md' style='float:left'>⬆️上一节🔗  </a><a href = '32.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -263,12 +263,12 @@ cluster/kubectl.sh describe node
     <span class="token comment">#     goldflags="${goldflags} -s -w"</span>
     <span class="token comment"># fi</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>观察此时的进程：</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221201140939729.png" alt="image-20221201140939729"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221201140939729.png" alt="image-20221201140939729"></p>
 <h2 id="delve-调试" tabindex="-1"><a class="header-anchor" href="#delve-调试" aria-hidden="true">#</a> delve 调试</h2>
 <p><strong>或许你可以选择 GDB，或许也有一个更适合的方式：go-delve:</strong></p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native/14.html" target="_blank" rel="noopener noreferrer">delve<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native/14.html" target="_blank" rel="noopener noreferrer">delve<ExternalLinkIcon/></a></li>
 </ul>
 </div>
 <h3 id="特性" tabindex="-1"><a class="header-anchor" href="#特性" aria-hidden="true">#</a> 特性</h3>
@@ -347,7 +347,7 @@ root       <span class="token number">33017</span>    <span class="token number"
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

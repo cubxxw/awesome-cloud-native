@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第57节-kube-proxy" tabindex="-1"><a class="header-anchor" href="#第57节-kube-proxy" aria-hidden="true">#</a> 第57节 kube-proxy</h1>
 <div><a href = '56.md' style='float:left'>⬆️上一节🔗  </a><a href = '58.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -40,7 +40,7 @@
 <p>除了 iptables 之外，Netfilter 框架还支持一些其他的子系统，比如 <code v-pre>ip6tables</code>（IPv6）、<code v-pre>ebtables</code>（Ethernet）等，它们可以分别用于处理不同类型的网络数据包。Netfilter 框架也支持一些扩展模块，比如 <code v-pre>conntrack</code>、<code v-pre>nat</code> 等，它们可以用于实现一些高级的网络功能，比如连接跟踪、端口映射等。</p>
 <p>除了 iptables 之外，kube-proxy 还支持 ipvs 和 userspace 两种模式来实现负载均衡。ipvs 模式是指使用 Linux 内核的 ipvs 模块来实现负载均衡，它比 iptables 模式更加高效，但需要额外安装 <code v-pre>ipvsadm</code> 工具和内核模块。<code v-pre>userspace</code> 模式则是指使用 kube-proxy 内置的负载均衡算法来实现负载均衡，它比 iptables 模式更加灵活，但相对来说性能较差。</p>
 <p><strong>在 Kubernetes 中，负载均衡是一个非常重要的主题。除了 kube-proxy 之外，还有一些第三方的负载均衡器，比如 haproxy、Nginx 等，它们可以通过 Kubernetes 的 Ingress API 来实现负载均衡。</strong> 相比于 kube-proxy，这些第三方负载均衡器通常具有更加强大的负载均衡功能和调度策略，但需要额外安装和配置。</p>
-<p><img src="http://sm.nsddd.top/sm202303101236503.png" alt="image-20230310123653298"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101236503.png" alt="image-20230310123653298"></p>
 <h2 id="netfilter-iptables" tabindex="-1"><a class="header-anchor" href="#netfilter-iptables" aria-hidden="true">#</a> netfilter &amp; iptables</h2>
 <p>在 Linux 系统中，网络数据包的处理流程通常可以分为用户空间和内核空间两个阶段。</p>
 <ul>
@@ -53,7 +53,7 @@
 <p>在 Linux 系统中，用户空间的网络处理程序通常是通过套接字（socket）接口与内核空间的网络协议栈进行通信的。套接字是一种抽象的网络接口，它提供了一种简单而通用的编程接口，用于在应用程序和网络协议栈之间传递网络数据包。应用程序通过套接字接口向内核空间发送网络数据包，并通过该接口接收来自内核空间的网络数据包。</p>
 <p>在 Linux 系统中，网络数据包的处理通常需要经过不同的网络协议栈处理。具体来说，当一个数据包到达网卡时，<strong>它会首先被传递到内核空间的网络协议栈中，经过各种协议的处理后，最终到达用户空间的网络处理程序。</strong> 而当一个数据包从用户空间返回时，它也需要经过相同的处理流程，最终到达网卡并被发送到网络中。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303101255094.png" alt="image-20230310125525179"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101255094.png" alt="image-20230310125525179"></p>
 <h2 id="iptables-支持的锚点" tabindex="-1"><a class="header-anchor" href="#iptables-支持的锚点" aria-hidden="true">#</a> iptables 支持的锚点</h2>
 <ul>
 <li><strong>INPUT</strong> - 控制进入系统的流量和数据包。通过此链可以拒绝不必要的数据包以保证安全。</li>
@@ -138,9 +138,9 @@
 </ul>
 <p>注意，<code v-pre>BINPUT</code>、<code v-pre>BOUTPUT</code>、<code v-pre>BPREROUTING</code> 和 <code v-pre>BPOSTROUTING</code> 链是在 <code v-pre>mangle</code> 表中的，它们在数据包进入/离开网络栈之前可以修改数据包。</p>
 <p><strong>iptables：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303101304089.png" alt="image-20230310130403937"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101304089.png" alt="image-20230310130403937"></p>
 <h2 id="kube-proxy-工作原理" tabindex="-1"><a class="header-anchor" href="#kube-proxy-工作原理" aria-hidden="true">#</a> kube-proxy 工作原理</h2>
-<p><img src="http://sm.nsddd.top/sm202303101318439.png" alt="image-20230310131852316"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101318439.png" alt="image-20230310131852316"></p>
 <p><strong>查看 iptables 规则：</strong></p>
 <ul>
 <li>
@@ -201,9 +201,9 @@
 <p>因此 LB 压力会非常大，这部分需要做很多优化。</p>
 <h2 id="真实场景-iptables-规则分析" tabindex="-1"><a class="header-anchor" href="#真实场景-iptables-规则分析" aria-hidden="true">#</a> 真实场景 iptables 规则分析</h2>
 <p>svc ip 为 <code v-pre>10.97.35.60</code>，port 为 80，svc 代理的 pod 为 3个 nginx pod，IP分别如下：</p>
-<p><img src="http://sm.nsddd.top/sm202303101329007.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101329007.png" alt="img"></p>
 <p>该 <code v-pre>svc</code> 对应的 <code v-pre>iptables</code> 规则为：</p>
-<p><img src="http://sm.nsddd.top/sm202303101329310.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101329310.png" alt="img"></p>
 <ul>
 <li>其中带箭头的第一条 <code v-pre>--dprot 30207</code> 是NodePort 类型的 svc 生成的规则</li>
 <li>带箭头的第二条 <code v-pre>-d 10.97.356.60/32 -p tcp --dport 80</code> 是 ClusterIP 类型 svc 生成的规则</li>
@@ -216,7 +216,7 @@
 <p>因为 iptables 中该 svc 对应的规则中指定的是 目标IP+目标端口+ tcp 协议才处理，而 ping 是 icmp 协议。</p>
 </blockquote>
 <h2 id="k8s-的-iptables-规则" tabindex="-1"><a class="header-anchor" href="#k8s-的-iptables-规则" aria-hidden="true">#</a> k8s 的 iptables 规则</h2>
-<p><img src="http://sm.nsddd.top/sm202303101327113.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101327113.png" alt="img"></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code> KUBE-MARK-DROP <span class="token parameter variable">-j</span> MARK --set-xmark 0x8000/0x8000
 
 <span class="token parameter variable">-A</span> KUBE-MARK-MASQ <span class="token parameter variable">-j</span> MARK --set-xmark 0x4000/0x4000
@@ -256,7 +256,7 @@ probability <span class="token number">0.50000000000</span> <span class="token p
 <p>在Kubernetes中，IPVS可以用于实现Service的负载均衡和服务发现。当一个Service被创建时，Kubernetes会自动创建一个对应的IPVS虚拟服务器（Virtual Server），并将其配置为监听Service的ClusterIP地址和端口号。当有流量到达虚拟服务器时，IPVS会根据负载均衡算法选择一个或多个后端Pod，并将流量转发给它们。如果后端Pod发生故障或下线，IPVS会及时检测并自动从负载均衡池中删除它。</p>
 <p>使用 IPVS 作为 Service 代理有多个优点。首先，IPVS 具有极高的性能和吞吐量，可以处理大量的并发请求。其次，IPVS支持多种负载均衡算法，可以根据实际情况选择最适合的算法。最后，IPVS支持会话保持和健康检查等高级功能，可以提高服务的可靠性和稳定性。</p>
 <p>ipvs 和 iptables 类似，都是 netfilter 插件，但是钩子点不一样。</p>
-<p><img src="http://sm.nsddd.top/sm202303101327722.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303101327722.png" alt="img"></p>
 <p>ipvs 只有 <code v-pre>LOCAL_IN</code>、<code v-pre>FORWARD</code>、<code v-pre>LOCAL_OUT</code> 这 3 个地方有钩子，<code v-pre>PREROUTING</code> 这里是没有的，因此不能在路由之前做一些操作。</p>
 <p>因此，如果按照 <code v-pre>iptables</code> 的逻辑在走的话，访问 <code v-pre>svc</code> 的流量过来后，在 PREROUTING 由于不能修改，因此会拿着 真实的 <code v-pre>clusterIP</code> 去路由，然后一看发现这个 IP 根本就达到不了，数据包直接就被丢弃了，或者能网络上这个IP能达到，就转发出去了。</p>
 <blockquote>
@@ -340,7 +340,7 @@ probability <span class="token number">0.50000000000</span> <span class="token p
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

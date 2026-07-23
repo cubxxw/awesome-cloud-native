@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第40节-速读-sealos-源码" tabindex="-1"><a class="header-anchor" href="#第40节-速读-sealos-源码" aria-hidden="true">#</a> 第40节 速读 sealos 源码</h1>
 <div><a href = '39.md' style='float:left'>⬆️上一节🔗  </a><a href = '41.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -49,7 +49,7 @@
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>作为 sealos 成就 Kubernetes 集群最主要的命令，我们来尝试一下 <code v-pre>sealos run</code></p>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/6.html" target="_blank" rel="noopener noreferrer">使用 sealos 快速搭建 HA cluster<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/6.html" target="_blank" rel="noopener noreferrer">使用 sealos 快速搭建 HA cluster<ExternalLinkIcon/></a></li>
 </ul>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>sealos run labring/kubernetes:v1.25.0 labring/helm:v3.8.2 labring/calico:v3.24.1 <span class="token punctuation">\</span>
      <span class="token parameter variable">--masters</span> <span class="token number">192.168</span>.0.2,192.168.0.3<span class="token punctuation">\</span>
@@ -175,7 +175,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="创建-applier" tabindex="-1"><a class="header-anchor" href="#创建-applier" aria-hidden="true">#</a> 创建 Applier</h2>
 <p>创建 Applier 的逻辑：</p>
 <p><code v-pre>buildah mount</code> 命令是用于将容器镜像挂载到本地文件系统上的工具。通过该命令可以方便地查看、编辑容器镜像中的文件。具体用法可以参考 <a href="https://buildah.io/commands/mount/" target="_blank" rel="noopener noreferrer">官方文档<ExternalLinkIcon/></a>。</p>
-<p><img src="http://sm.nsddd.top/sm202304152156333.png" alt="Untitled"></p>
+<p><img src="http://sm.cubxxw.com/sm202304152156333.png" alt="Untitled"></p>
 <p><strong>创建一个 <code v-pre>Applier</code> 会经过以下步骤：</strong></p>
 <ol>
 <li>判断是否已经存在 <code v-pre>ClusterFile</code> ，如果存在，那么直接读取，构建出集群状态 <code v-pre>Cluster</code>。否则，初始化创建一个空的集群状态 <code v-pre>Cluster</code>。</li>
@@ -605,7 +605,7 @@ func <span class="token punctuation">(</span>c *CreateProcessor<span class="toke
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>
 <p>方便理解，这里盗用 sealer 图</p>
-<p><img src="http://sm.nsddd.top/sm202304152338621.png" alt="sdUntitled"></p>
+<p><img src="http://sm.cubxxw.com/sm202304152338621.png" alt="sdUntitled"></p>
 </li>
 </ul>
 <p>接下来会执行一系列 pipeline，正式进入实际的集群部署过程中：</p>
@@ -695,7 +695,7 @@ logger <span class="token string">"init containerd rootfs success"</span>
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

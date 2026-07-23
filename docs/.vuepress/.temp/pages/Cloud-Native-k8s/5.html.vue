@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第5节-集群搭建" tabindex="-1"><a class="header-anchor" href="#第5节-集群搭建" aria-hidden="true">#</a> 第5节 集群搭建</h1>
 <div><a href = '4.md' style='float:left'>⬆️上一节🔗  </a><a href = '6.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#购买三台机器">购买三台机器</router-link><ul><li><router-link to="#推荐使用一个远程ssh工具">推荐使用一个远程ssh工具</router-link></li><li><router-link to="#创建私有网络">创建私有网络</router-link></li><li><router-link to="#使用交换机划分为隔离网络的小区域">使用交换机划分为隔离网络的小区域</router-link></li><li><router-link to="#过程截图">过程截图</router-link></li><li><router-link to="#搭建成功">搭建成功</router-link></li><li><router-link to="#显示图形化界面">显示图形化界面</router-link></li><li><router-link to="#必须要打开安全组的组内通信">必须要打开安全组的组内通信</router-link></li><li><router-link to="#vpc设置端口转化">vpc设置端口转化</router-link></li><li><router-link to="#准备链接">准备链接</router-link></li></ul></li><li><router-link to="#docker安装">docker安装</router-link><ul><li><router-link to="#_1、移除以前docker相关包">1、移除以前docker相关包</router-link></li><li><router-link to="#_2、配置yum源">2、配置yum源</router-link></li><li><router-link to="#_3、安装docker">3、安装docker</router-link></li><li><router-link to="#_4、启动">4、启动</router-link></li><li><router-link to="#_5、配置加速">5、配置加速</router-link></li></ul></li><li><router-link to="#kubeadm创建集群预备环境">kubeadm创建集群预备环境</router-link><ul><li><router-link to="#安装kubeadm">安装kubeadm</router-link></li><li><router-link to="#设置所有机器的主机名称">设置所有机器的主机名称</router-link></li><li><router-link to="#将-selinux-设置为-permissive-模式">将 SELinux 设置为 permissive 模式</router-link></li><li><router-link to="#关闭所有机器的交换分区">关闭所有机器的交换分区</router-link></li><li><router-link to="#允许-iptables-检查桥接流量">允许 iptables 检查桥接流量</router-link></li></ul></li><li><router-link to="#安装集群的三大件">安装集群的三大件</router-link></li><li><router-link to="#使用kubeadm引导集群">使用kubeadm引导集群</router-link><ul><li><router-link to="#下载各个机器需要的镜像">下载各个机器需要的镜像</router-link></li><li><router-link to="#初始化主结点">初始化主结点</router-link></li><li><router-link to="#根据提示继续">根据提示继续</router-link></li><li><router-link to="#加入node节点">加入node节点</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -13,7 +13,7 @@
 <h2 id="购买三台机器" tabindex="-1"><a class="header-anchor" href="#购买三台机器" aria-hidden="true">#</a> 购买三台机器</h2>
 <blockquote>
 <p>在青鸟云上创建账户，并且联系客户申请IP扩容为三个</p>
-<p><img src="http://sm.nsddd.top/smimage-20221018114541669.png" alt="image-20221018114541669"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018114541669.png" alt="image-20221018114541669"></p>
 </blockquote>
 <h3 id="推荐使用一个远程ssh工具" tabindex="-1"><a class="header-anchor" href="#推荐使用一个远程ssh工具" aria-hidden="true">#</a> 推荐使用一个远程ssh工具</h3>
 <blockquote>
@@ -22,30 +22,30 @@
 <ul>
 <li>[x] <a href="https://electerm.github.io/electerm/" target="_blank" rel="noopener noreferrer">electerm开源地址<ExternalLinkIcon/></a></li>
 </ul>
-<p><img src="http://sm.nsddd.top/smimage-20221018122201424.png" alt="image-20221018122201424"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018122201424.png" alt="image-20221018122201424"></p>
 <h3 id="创建私有网络" tabindex="-1"><a class="header-anchor" href="#创建私有网络" aria-hidden="true">#</a> 创建私有网络</h3>
-<p><img src="http://sm.nsddd.top/smimage-20221018142107989.png" alt="image-20221018142107989"></p>
-<p><img src="http://sm.nsddd.top/smimage-20221018142057391.png" alt="image-20221018142057391"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018142107989.png" alt="image-20221018142107989"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018142057391.png" alt="image-20221018142057391"></p>
 <h3 id="使用交换机划分为隔离网络的小区域" tabindex="-1"><a class="header-anchor" href="#使用交换机划分为隔离网络的小区域" aria-hidden="true">#</a> 使用交换机划分为隔离网络的小区域</h3>
-<p><img src="http://sm.nsddd.top/smimage-20221018142311011.png" alt="image-20221018142311011"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018142311011.png" alt="image-20221018142311011"></p>
 <h3 id="过程截图" tabindex="-1"><a class="header-anchor" href="#过程截图" aria-hidden="true">#</a> 过程截图</h3>
-<p><img src="http://sm.nsddd.top/smimage-20221018143420128.png" alt="image-20221018143420128"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018143420128.png" alt="image-20221018143420128"></p>
 <blockquote>
 <p>⚠️ 上面一定要注意：内网的范围一定要选择<code v-pre>172.31.0.24/24</code></p>
 <p>因为后面安装docker的时候，docker占了<code v-pre>172.17</code>占了</p>
 </blockquote>
 <h3 id="搭建成功" tabindex="-1"><a class="header-anchor" href="#搭建成功" aria-hidden="true">#</a> 搭建成功</h3>
-<p><img src="http://sm.nsddd.top/smimage-20221018143510468.png" alt="image-20221018143510468"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018143510468.png" alt="image-20221018143510468"></p>
 <h3 id="显示图形化界面" tabindex="-1"><a class="header-anchor" href="#显示图形化界面" aria-hidden="true">#</a> 显示图形化界面</h3>
 <blockquote>
 <p>可以看到<code v-pre>vpc</code>和防火墙以及三台主机之间的关联。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221018143709858.png" alt="image-20221018143709858"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018143709858.png" alt="image-20221018143709858"></p>
 <h3 id="必须要打开安全组的组内通信" tabindex="-1"><a class="header-anchor" href="#必须要打开安全组的组内通信" aria-hidden="true">#</a> 必须要打开安全组的组内通信</h3>
 <blockquote>
 <p><strong>只有打开组内通信</strong>，防火墙即使不开端口也是可以互相访问的~</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221018143918187.png" alt="image-20221018143918187"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018143918187.png" alt="image-20221018143918187"></p>
 <h3 id="vpc设置端口转化" tabindex="-1"><a class="header-anchor" href="#vpc设置端口转化" aria-hidden="true">#</a> vpc设置端口转化</h3>
 <blockquote>
 <p>vpc默认免费的是不会提供公网IP的，因为现在公网的IP紧缺，所以vpc在一定程度上需要满足这个条件，使用vpc的端口转化，可以帮助我们解决问题。这是因为vpc外网端口可以自定义。</p>
@@ -101,12 +101,12 @@
 </tr>
 </tbody>
 </table>
-<p><img src="http://sm.nsddd.top/smimage-20221018151846925.png" alt="image-20221018151846925"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018151846925.png" alt="image-20221018151846925"></p>
 <h3 id="准备链接" tabindex="-1"><a class="header-anchor" href="#准备链接" aria-hidden="true">#</a> 准备链接</h3>
 <blockquote>
 <p>我开始也设置了一些基础的脚本，方便ce'shi</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221018152452648.png" alt="image-20221018152452648"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018152452648.png" alt="image-20221018152452648"></p>
 <h2 id="docker安装" tabindex="-1"><a class="header-anchor" href="#docker安装" aria-hidden="true">#</a> docker安装</h2>
 <h3 id="_1、移除以前docker相关包" tabindex="-1"><a class="header-anchor" href="#_1、移除以前docker相关包" aria-hidden="true">#</a> 1、移除以前docker相关包</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> yum remove <span class="token function">docker</span> <span class="token punctuation">\</span>
@@ -261,14 +261,14 @@ EOF</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>大概等了一会会就可以检索了</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker images
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221018173701125.png" alt="image-20221018173701125"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221018173701125.png" alt="image-20221018173701125"></p>
 </blockquote>
 <h3 id="初始化主结点" tabindex="-1"><a class="header-anchor" href="#初始化主结点" aria-hidden="true">#</a> 初始化主结点</h3>
 <blockquote>
 <p>⚠️ 下面一定要按照自己的情况修改</p>
 <p>使用<code v-pre>ip addr(ip a)</code>查看自己的内网地址。</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>192.168.0.2
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221018174044509.png" alt="image-20221018174044509"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221018174044509.png" alt="image-20221018174044509"></p>
 </blockquote>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment">#所有机器添加master域名映射，以下需要修改为自己的</span>
 <span class="token builtin class-name">echo</span> <span class="token string">"192.168.0.2  cluster-endpoint"</span> <span class="token operator">>></span> /etc/hosts  <span class="token comment"># 每一个结点都需要输入</span>
@@ -345,7 +345,7 @@ kubectl apply <span class="token parameter variable">-f</span> xxxx.yaml
 kubectl get pods <span class="token parameter variable">-A</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="根据提示继续" tabindex="-1"><a class="header-anchor" href="#根据提示继续" aria-hidden="true">#</a> 根据提示继续</h3>
 <p>master成功后提示如下：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221018185049721.png" alt=""></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221018185049721.png" alt=""></p>
 <p>1、设置<code v-pre>.kube/config</code></p>
 <p>2、安装网络组件</p>
 <ul>
@@ -369,7 +369,7 @@ kubectl apply <span class="token parameter variable">-f</span> calico.yaml
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

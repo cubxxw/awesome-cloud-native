@@ -118,7 +118,7 @@ export default {
     docsearchPlugin({
         apiKey: "e0bc57bb5910bb4cbaff54471af173d4",
         appId: "LIPIDXUN7V",
-        indexName: "docker.nsddd.top",
+        indexName: "docker.cubxxw.com",
         searchParameters: {
           attributesToSnippet: ["lvl1:30", "content:25"],
         },
@@ -183,8 +183,8 @@ export default {
         sidebarDepth: 1,  //侧边菜单深度
     
         //logo -- 夜间和白剑
-        logoDark: 'http://sm.nsddd.top//typora/1.jpg?mail:3293172751@qq.com',
-        logo: 'http://sm.nsddd.top//typora/4.png?mail:3293172751@qq.com',
+        logoDark: 'http://sm.cubxxw.com//typora/1.jpg?mail:3293172751@qq.com',
+        logo: 'http://sm.cubxxw.com//typora/4.png?mail:3293172751@qq.com',
         
         // 到github修改页面 如果你按照 `organization组织/repository存储库` 的格式设置它
         // 我们会将它作为一个 GitHub 仓库
@@ -211,7 +211,7 @@ export default {
           '我们怎么到这来了？',
           '这是一个 404 页面',
           '看起来我们进入了错误的链接',
-          '你可以返回首页<href="https//docker.nsddd.top">首页</a>',
+          '你可以返回首页<href="https//docker.cubxxw.com">首页</a>',
         ],
         backToHome: '返回首页',
         // a11y
@@ -232,7 +232,7 @@ export default {
                   },
                   {
                     text: '我的博客',
-                    link: 'http://nsddd.top',
+                    link: 'http://cubxxw.com',
                     target: '_self',
                     // 该元素将一直处于激活状态
                     activeMatch: '/',
@@ -257,7 +257,7 @@ export default {
             },
             {
                 text: '📚Go语言学习',
-                link: 'https://go.nsddd.top',
+                link: 'https://go.cubxxw.com',
             },
             {
                 text: '⚡ k8s学习篇',
@@ -281,7 +281,7 @@ export default {
                 // SidebarItem
                  {
                     text: '💱个人云盘地址',
-                    link: 'https://xxw.nsddd.top/s/wRSz'
+                    link: 'https://xxw.cubxxw.com/s/wRSz'
                  },
               {
                 text: '🔥 docker学习篇',
@@ -338,7 +338,7 @@ export default {
                     '50.md',                    
                     {
                         text: '💝如何参与贡献？',
-                        link: 'https://nsddd.top/archives/contributors',
+                        link: 'https://cubxxw.com/archives/contributors',
                     //   children: [],
                     },  
                 ],
@@ -352,7 +352,7 @@ export default {
                 // SidebarItem
                  {
                     text: '💱个人云盘地址',
-                    link: 'https://xxw.nsddd.top/s/wRSz'
+                    link: 'https://xxw.cubxxw.com/s/wRSz'
                  },
               {
                 text: '⚡ k8s云原生学习篇',
@@ -459,7 +459,7 @@ export default {
                     '100.md',
                     {
                         text: '💝如何参与贡献？',
-                        link: 'https://nsddd.top/archives/contributors',
+                        link: 'https://cubxxw.com/archives/contributors',
                         //children: [],
                     },  
                 ],
@@ -473,7 +473,7 @@ export default {
                 // SidebarItem
                     {
                         text: '💱个人云盘地址',
-                        link: 'https://xxw.nsddd.top/s/wRSz'
+                        link: 'https://xxw.cubxxw.com/s/wRSz'
                     },
                 {
                     text: '🏄‍♂️ 云原生学习篇',

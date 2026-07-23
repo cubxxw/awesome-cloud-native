@@ -14,7 +14,7 @@
 </ol>
 <h2 id="方法" tabindex="-1"><a class="header-anchor" href="#方法" aria-hidden="true">#</a> 方法</h2>
 <p>利用 protobuf 来定义接口的方式非常令人心动，因为 protobuf 当中包含了接口的函数签名，入参和返回值同时还支持注释，就是一份天然的文档，同时也不用担心出现代码更新了但是文档没有更新的情况，因为它既是文档也是代码，服务端也需要使用，所以代码更新之后文档也一定会更新。自然而然的就少了很多沟通的成本。</p>
-<p><img src="http://sm.nsddd.top/sm202311081708323.jpeg" alt="api 定义方式 (1).jpg"></p>
+<p><img src="http://sm.cubxxw.com/sm202311081708323.jpeg" alt="api 定义方式 (1).jpg"></p>
 <p>如上图所示于此同时我们还可以利用 protobuf 文件生成对应语言的客户端代码，就不用每个项目都去维护一套 sdk 了，同时我们使用接口生成代码，在 go 当中可以使用 gomock 非常方便的对代码进行 mock。</p>
 <p>参考项目：</p>
 <ul>
@@ -24,7 +24,7 @@
 <h3 id="api-project" tabindex="-1"><a class="header-anchor" href="#api-project" aria-hidden="true">#</a> API Project</h3>
 <p>使用 protobuf 定义接口可以解决我们找到 api 文档之后，文档不准确，缺失的问题，但是我们应该如何找到我们的 api 呢？我们生成出的 api 文件调用方应该如何引用呢？难道我们给每个调用方都去开一个项目的权限么？那明显是不太行的，接下来我们就看看我们 api 该如何管理和组织。</p>
 <p>统一存放 api 定义文档，然后通过 ci/cd 生成对应的客户端代码放到各个语言的子仓库当中</p>
-<p><img src="http://sm.nsddd.top/sm202311081717157.png" alt="image-20231108171738096"></p>
+<p><img src="http://sm.cubxxw.com/sm202311081717157.png" alt="image-20231108171738096"></p>
 <p>工作流程如上图所示</p>
 <ul>
 <li>开发同学修改了 proto 文件定义之后 push 到对应的业务应用仓库当中</li>
@@ -40,7 +40,7 @@
 </ul>
 <h3 id="api-project-layout" tabindex="-1"><a class="header-anchor" href="#api-project-layout" aria-hidden="true">#</a> API Project Layout</h3>
 <p>我们的 api 项目是如何定义的呢？看下图
-<img src="http://sm.nsddd.top/sm202311081726561.jpeg" alt="Frame 1 (2).jpg"></p>
+<img src="http://sm.cubxxw.com/sm202311081726561.jpeg" alt="Frame 1 (2).jpg"></p>
 <ul>
 <li>首先是在业务项目当中，我们顶层会有一个 api 目录
 <ul>

@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第4节-第二阶段-第二部分" tabindex="-1"><a class="header-anchor" href="#第4节-第二阶段-第二部分" aria-hidden="true">#</a> 第4节 第二阶段 第二部分</h1>
 <div><a href = '3.md' style='float:left'>⬆️上一节🔗  </a><a href = '5.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -79,7 +79,7 @@
 </ol>
 <p><strong>I need solutions：</strong></p>
 <p>repeat images（auto cleaning)？</p>
-<p><img src="http://sm.nsddd.top/smimage-20221103200214386.png" alt="image-20221103200214386"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221103200214386.png" alt="image-20221103200214386"></p>
 <p><strong>添加镜像列表：</strong></p>
 <blockquote>
 <p>sealos 会下载镜像列表中的镜像并缓存到 registry 目录。</p>
@@ -100,7 +100,7 @@ $ sealos push docker.io/fanux/ingress-nginx:v1.2.0
 <ul>
 <li>对不同版本有着明确的划分，新的功能</li>
 </ul>
-<p><img src="http://sm.nsddd.top/smimage-20221103181641807.png" alt="image-20221103181641807"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221103181641807.png" alt="image-20221103181641807"></p>
 <p>我们或许可以取消 文档贡献（Docs）关于 <code v-pre>-m</code> 邮箱的限定</p>
 <p>新人 –&gt; 内部的技术文档，开发者会议~</p>
 <h2 id="else" tabindex="-1"><a class="header-anchor" href="#else" aria-hidden="true">#</a> else</h2>
@@ -112,7 +112,7 @@ $ sealos push docker.io/fanux/ingress-nginx:v1.2.0
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

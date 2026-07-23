@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第15节-k3s-补充" tabindex="-1"><a class="header-anchor" href="#第15节-k3s-补充" aria-hidden="true">#</a> 第15节 k3s 补充</h1>
 <div><a href = '14.md' style='float:left'>⬆️上一节🔗  </a><a href = '16.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#资源分析">资源分析</router-link><ul><li><router-link to="#usr-local-bin-重要二进制">/usr/local/bin 重要二进制</router-link></li></ul></li><li><router-link to="#脚本安装选项">脚本安装选项</router-link><ul><li><router-link to="#总结">总结</router-link></li></ul></li><li><router-link to="#对二进制的安装高级补充">对二进制的安装高级补充</router-link></li><li><router-link to="#通过配置文件启动-k3s">通过配置文件启动 K3s</router-link></li><li><router-link to="#k3s-server-agent-配置">K3s Server/Agent 配置</router-link></li><li><router-link to="#网络选项">网络选项</router-link><ul><li><router-link to="#flannel-选项">Flannel 选项</router-link></li><li><router-link to="#flannel-backend-使用-host-gw">flannel-backend 使用 host-gw</router-link></li><li><router-link to="#启用-directrouting">启用 Directrouting</router-link></li></ul></li><li><router-link to="#自定义-cni">自定义 CNI</router-link></li><li><router-link to="#使用外部数据库实现高可用安装">使用外部数据库实现高可用安装</router-link><ul><li><router-link to="#环境准备">环境准备</router-link></li><li><router-link to="#外部数据库高可用">外部数据库高可用</router-link></li><li><router-link to="#agent-加入">agent 加入</router-link></li><li><router-link to="#没有-cli-标志启动-agent-加入">没有 CLI 标志启动 agent 加入</router-link></li></ul></li><li><router-link to="#嵌入式db-ha">嵌入式DB HA</router-link></li><li><router-link to="#集群数据存储选项">集群数据存储选项</router-link><ul><li><router-link to="#配置参数">配置参数</router-link></li></ul></li><li><router-link to="#私有仓库">私有仓库</router-link><ul><li><router-link to="#registries-yaml-文件">registries.yaml 文件</router-link></li><li><router-link to="#配置-containerd">配置 Containerd</router-link></li><li><router-link to="#将映像添加到专用注册表">将映像添加到专用注册表</router-link></li></ul></li><li><router-link to="#离线安装">离线安装</router-link><ul><li><router-link to="#通过私有镜像仓库安装-k3s">通过私有镜像仓库安装 K3s</router-link></li></ul></li><li><router-link to="#升级-k3s">升级 K3s</router-link><ul><li><router-link to="#通过脚本升级">通过脚本升级</router-link></li><li><router-link to="#在线脚本升级">在线脚本升级</router-link></li><li><router-link to="#channels-说明">Channels 说明</router-link></li><li><router-link to="#使用安装脚本升级-k3s">使用安装脚本升级 K3s</router-link></li><li><router-link to="#自动升级">自动升级</router-link></li></ul></li><li><router-link to="#连接到-k3s-kubernets-集群的三种方式">连接到 k3s kubernets 集群的三种方式</router-link><ul><li><router-link to="#kubeconfig">kubeconfig</router-link></li><li><router-link to="#kubectl">kubectl</router-link></li><li><router-link to="#lens-kubernetes-ide">Lens Kubernetes IDE</router-link></li></ul></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -13,7 +13,7 @@
 <div class="custom-container danger"><p class="custom-container-title">警告</p>
 <p>页面内容太多卡顿，新开后半部分补充~</p>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native/7.html" target="_blank" rel="noopener noreferrer">k3s vs k0s<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native/7.html" target="_blank" rel="noopener noreferrer">k3s vs k0s<ExternalLinkIcon/></a></li>
 </ul>
 </div>
 <h2 id="资源分析" tabindex="-1"><a class="header-anchor" href="#资源分析" aria-hidden="true">#</a> 资源分析</h2>
@@ -182,7 +182,7 @@ EOF</span>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
   <span class="token assign-left variable">K3S_CONFIG_FILE</span><span class="token operator">=</span>/opt/config.yaml <span class="token punctuation">\</span>
   <span class="token function">sh</span> -
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221126211751303.png" alt="image-20221126211751303"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221126211751303.png" alt="image-20221126211751303"></p>
 <p><code v-pre>K3S_TOKEN</code> -- 用于将 server 或 agent 加入集群的共享 secret。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_MIRROR</span><span class="token operator">=</span>cn <span class="token punctuation">\</span>
   <span class="token assign-left variable">K3S_TOKEN</span><span class="token operator">=</span>rancher-k3s <span class="token punctuation">\</span>
@@ -1105,7 +1105,7 @@ spec:
 kubectl -n system-upgrade get jobs -o yaml
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="连接到-k3s-kubernets-集群的三种方式" tabindex="-1"><a class="header-anchor" href="#连接到-k3s-kubernets-集群的三种方式" aria-hidden="true">#</a> 连接到 k3s kubernets 集群的三种方式</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
-<p>同时也是对 <a href="https://docker.nsddd.top/Cloud-Native-k8s/23.html" target="_blank" rel="noopener noreferrer">23 节<ExternalLinkIcon/></a>，<a href="https://docker.nsddd.top/Cloud-Native-k8s/23.html" target="_blank" rel="noopener noreferrer">Kubeconfig &amp;&amp; token<ExternalLinkIcon/></a> 的补充</p>
+<p>同时也是对 <a href="https://docker.cubxxw.com/Cloud-Native-k8s/23.html" target="_blank" rel="noopener noreferrer">23 节<ExternalLinkIcon/></a>，<a href="https://docker.cubxxw.com/Cloud-Native-k8s/23.html" target="_blank" rel="noopener noreferrer">Kubeconfig &amp;&amp; token<ExternalLinkIcon/></a> 的补充</p>
 <ul>
 <li><a href="https://headworq.org/en/how-to-connect-to-kubernetes/#" target="_blank" rel="noopener noreferrer">参考https://headworq.org/en/how-to-connect-to-kubernetes/#<ExternalLinkIcon/></a></li>
 </ul>
@@ -1218,7 +1218,7 @@ kube-system   traefik-bb69b68cd-wzt8q                   <span class="token numbe
 </blockquote>
 <p><a href="https://kubenav.io/" target="_blank" rel="noopener noreferrer">Kubenav<ExternalLinkIcon/></a> 也是一个图形化的 Kubernetes 工具。Kubenav 最好的一点是它可用于移动 Android 和 iOS 设备，因此您可以在旅途中管理您的 Kubernetes 集群;)。Kubenav 也是开源的，可在 iOS App Store 和 Play Store 上使用。您也可以从 <a href="https://github.com/kubenav/kubenav/" target="_blank" rel="noopener noreferrer">Github 存储库<ExternalLinkIcon/></a>下载桌面版本.</p>
 <p>安装后导航到“群集”，然后按加号添加群集。向下滚动到“导入 Kubeconfig”，将内容粘贴到文本字段中，然后按“添加”。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221127124516263.png" alt="image-20221127124516263"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221127124516263.png" alt="image-20221127124516263"></p>
 <p>注意：Kubernetes API 端口 （TCP/6443） 必须可用于您的手机。如果您不想打开该端口到互联网，您可以通过VPN连接到集群。请参阅我在 <a href="https://headworq.org/en-how-to-install-wiregurad-on-ubuntu/" target="_blank" rel="noopener noreferrer">Ubuntu 上设置 Wireguard 的指南<ExternalLinkIcon/></a>.</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '14.md' style='float:left'>⬆️上一节🔗  </a><a href = '16.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
@@ -1227,7 +1227,7 @@ kube-system   traefik-bb69b68cd-wzt8q                   <span class="token numbe
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

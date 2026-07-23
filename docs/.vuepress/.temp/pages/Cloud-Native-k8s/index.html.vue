@@ -9,7 +9,7 @@
 <li><a href="https://github.com/cubxxw/awesome-cs-cloudnative-blockchain/blob/master/web/README.md" target="_blank" rel="noopener noreferrer">计算机网络 – TCP/IP – 抓包 – Linux网络编程<ExternalLinkIcon/></a> （有一点网络基础就好）</li>
 <li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/linux/README.md" target="_blank" rel="noopener noreferrer">有Linux的基础<ExternalLinkIcon/></a></li>
 <li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/Git/README.md" target="_blank" rel="noopener noreferrer">有Git的基础<ExternalLinkIcon/></a></li>
-<li><a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker的基础<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">docker的基础<ExternalLinkIcon/></a></li>
 </ul>
 <p><strong>编程语言不限</strong></p>
 <ul>
@@ -74,7 +74,7 @@
 </ul>
 <hr>
 <h2 id="✨参与贡献" tabindex="-1"><a class="header-anchor" href="#✨参与贡献" aria-hidden="true">#</a> ✨参与贡献</h2>
-<p><strong><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer">🫵参与贡献❤️❤️💕💕<ExternalLinkIcon/></a></strong></p>
+<p><strong><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer">🫵参与贡献❤️❤️💕💕<ExternalLinkIcon/></a></strong></p>
 <p><strong>要求：</strong></p>
 <ul>
 <li><a href="https://github.com/cubxxw/awesome-cs-course/blob/master/markdown/README.md" target="_blank" rel="noopener noreferrer"><strong>你需要学会使用markdown🖱️</strong><ExternalLinkIcon/></a></li>

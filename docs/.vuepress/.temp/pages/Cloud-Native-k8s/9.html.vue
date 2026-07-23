@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第9节-pod" tabindex="-1"><a class="header-anchor" href="#第9节-pod" aria-hidden="true">#</a> 第9节 Pod</h1>
 <div><a href = '8.md' style='float:left'>⬆️上一节🔗  </a><a href = '10.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#理解pod">理解Pod</router-link><ul><li><router-link to="#pod-状态">Pod 状态</router-link></li><li><router-link to="#pod-的重启策略">Pod 的重启策略</router-link></li><li><router-link to="#pod-中健康检查">Pod 中健康检查</router-link></li></ul></li><li><router-link to="#删除pod">删除pod</router-link></li><li><router-link to="#管理对象的两种方式">管理对象的两种方式</router-link><ul><li><router-link to="#命令行指令">命令行指令</router-link></li><li><router-link to="#声明式配置">声明式配置</router-link></li></ul></li><li><router-link to="#yaml-语法介绍">yaml 语法介绍</router-link><ul><li><router-link to="#yaml-语法">yaml 语法</router-link></li><li><router-link to="#如何编写-yaml">如何编写 yaml</router-link></li></ul></li><li><router-link to="#离线任务">离线任务</router-link><ul><li><router-link to="#如何使用-yaml-描述-job">如何使用 YAML 描述 Job</router-link></li><li><router-link to="#如何在-kubernetes-里操作-job">如何在 Kubernetes 里操作 Job</router-link></li></ul></li><li><router-link to="#配置对象">配置对象</router-link></li><li><router-link to="#配置文件创建pod">配置文件创建pod</router-link></li><li><router-link to="#可视化界面创建pod">可视化界面创建pod</router-link></li><li><router-link to="#pod日志">pod日志</router-link></li><li><router-link to="#pod-ip">pod - IP</router-link></li><li><router-link to="#进入pod并修改pod">进入pod并修改pod</router-link></li><li><router-link to="#多容器pod细节">多容器pod细节</router-link></li><li><router-link to="#更多命令">更多命令</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -13,7 +13,7 @@
 <h2 id="理解pod" tabindex="-1"><a class="header-anchor" href="#理解pod" aria-hidden="true">#</a> 理解Pod</h2>
 <blockquote>
 <p>什么是pod？</p>
-<p><img src="http://sm.nsddd.top/sm981878-20181221191353859-412884495.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm981878-20181221191353859-412884495.png" alt="img"></p>
 </blockquote>
 <p>pod是<strong>运行中的一组容器</strong>，pod是kubernetes中应用的最小单位。</p>
 <blockquote>
@@ -282,7 +282,7 @@ kubectl create job echo-job <span class="token parameter variable">--image</span
 <p>如果你理解了刚才说的面向对象设计思想，就会明白这种做法的道理。它其实就是在 Job 对象里应用了组合模式，template 字段定义了一个“应用模板”，里面嵌入了一个 Pod，这样 Job 就可以从这个模板来创建出 Pod。</p>
 <p>而这个 Pod 因为受 Job 的管理控制，不直接和 apiserver 打交道，也就没必要重复 apiVersion 等“头字段”，只需要定义好关键的 spec，描述清楚容器相关的信息就可以了，可以说是一个“无头”的 Pod 对象。</p>
 <p>为了辅助你理解，我把 Job 对象重新组织了一下，用不同的颜色来区分字段，这样你就能够很容易看出来，其实这个“echo-job”里并没有太多额外的功能，只是把 Pod 做了个简单的包装：</p>
-<p><img src="http://sm.nsddd.top/sm202303132320813.png" alt="image-20230313231329255"></p>
+<p><img src="http://sm.cubxxw.com/sm202303132320813.png" alt="image-20230313231329255"></p>
 <p>总的来说，这里的 Pod 工作非常简单，在 containers 里写好名字和镜像，command 执行 <code v-pre>/bin/echo</code>，输出“hello world”。</p>
 <p>不过，因为 Job 业务的特殊性，所以我们还要在 spec 里多加一个字段 <code v-pre>restartPolicy</code>，确定 Pod 运行失败时的策略，<strong>OnFailure 是失败原地重启容器，而 Never 则是不重启容器</strong>，让 Job 去重新调度生成一个新的 Pod。</p>
 <h3 id="如何在-kubernetes-里操作-job" tabindex="-1"><a class="header-anchor" href="#如何在-kubernetes-里操作-job" aria-hidden="true">#</a> 如何在 Kubernetes 里操作 Job</h3>
@@ -329,7 +329,7 @@ echo-job-tl75m   <span class="token number">0</span>/1     Pending   <span class
     <span class="token key atrule">name</span><span class="token punctuation">:</span> mytomcat
   <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
     <span class="token key atrule">name</span><span class="token punctuation">:</span> myredis
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022153945150.png" alt="image-20221022153945150"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022153945150.png" alt="image-20221022153945150"></p>
 <blockquote>
 <p>可能会出现pod状态处于ContainerCreating的情况，常见的原因之一是镜像拉取失败。</p>
 </blockquote>
@@ -409,7 +409,7 @@ Events:
   Normal  Created    23s   kubelet            Created container myredis
   Normal  Started    23s   kubelet            Started container myredis
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
-<p><img src="http://sm.nsddd.top/smimage-20221022132504701.png" alt="image-20221022132504701"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022132504701.png" alt="image-20221022132504701"></p>
 <h2 id="可视化界面创建pod" tabindex="-1"><a class="header-anchor" href="#可视化界面创建pod" aria-hidden="true">#</a> 可视化界面创建pod</h2>
 <div class="custom-container danger"><p class="custom-container-title">注意</p>
 <p>这个板块待补充~ 欢迎pr</p>
@@ -421,14 +421,14 @@ Events:
 </blockquote>
 <p>我们查看pod日志：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl logs mynginx
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022133031267.png" alt="image-20221022133031267"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022133031267.png" alt="image-20221022133031267"></p>
 <p>⚡ 可以加上 <code v-pre>-f</code> 追踪式日志</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl logs -f  mynginx
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022133159587.png" alt="image-20221022133159587"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022133159587.png" alt="image-20221022133159587"></p>
 <h2 id="pod-ip" tabindex="-1"><a class="header-anchor" href="#pod-ip" aria-hidden="true">#</a> pod - IP</h2>
 <p>⚡ 每个pod – k8s都会分配一个ip，使用下面命令查看：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get pod <span class="token parameter variable">-owide</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022150442624.png" alt="image-20221022150442624"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022150442624.png" alt="image-20221022150442624"></p>
 <h2 id="进入pod并修改pod" tabindex="-1"><a class="header-anchor" href="#进入pod并修改pod" aria-hidden="true">#</a> 进入pod并修改pod</h2>
 <p>🗓️ 回忆我们docker修改容器内部</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> idName <span class="token comment">#/bin/bash</span>
@@ -437,7 +437,7 @@ Events:
 <p>和docker命令大致一样，注意后面有 <code v-pre>–</code></p>
 </blockquote>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mynginx -- /bin/bash
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022151001187.png" alt="image-20221022151001187"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022151001187.png" alt="image-20221022151001187"></p>
 <div class="custom-container tip"><p class="custom-container-title">可视化界面</p>
 <p>可以直接进去k8s的可视化界面进行修改~</p>
 </div>
@@ -498,7 +498,7 @@ kubectl delete all <span class="token parameter variable">--all</span>
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

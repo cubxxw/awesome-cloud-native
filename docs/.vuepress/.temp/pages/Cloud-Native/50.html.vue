@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第50节-如何安装和使用自主人工智能工具auto-gpt" tabindex="-1"><a class="header-anchor" href="#第50节-如何安装和使用自主人工智能工具auto-gpt" aria-hidden="true">#</a> 第50节 如何安装和使用自主人工智能工具Auto-GPT</h1>
 <div><a href = '49.md' style='float:left'>⬆️上一节🔗  </a><a href = '51.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -13,7 +13,7 @@
 <p>🔮 在我的 Slack 工作区中，集成了多个 AI，分别有 ChatGPT 4、ChatGPT 3.5、Claude ……</p>
 <p>我们可以通过 Slack 免费并且无限制的和 AI 交互，欢迎大家加入到 Slack，这里是 链接：</p>
 <p><a href="https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ" target="_blank" rel="noopener noreferrer">https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ<ExternalLinkIcon/></a></p>
-<p><img src="http://sm.nsddd.top/sm202305142151717.png" alt="image-20230514215132365"></p>
+<p><img src="http://sm.cubxxw.com/sm202305142151717.png" alt="image-20230514215132365"></p>
 <h2 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h2>
 <p>很早之前就了解到了 Auto-GPT，作为 GitHub 上近期增长速度最快的项目（没有之一），Auto-GPT 在开源社区可谓是人尽皆知，甚至 star 已经很快就超过 Kubernetes，目前有 <code v-pre>125k star</code>。</p>
 <p>得益于 Auto-GPT 的出色技术，可以高精度和高效率地自动执行许多任务。 它利用了 GPT-4 强大的自然语言处理功能。</p>
@@ -84,7 +84,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接下来，打开<a href="https://www.wbolt.com/go?_=baa37b74edaHR0cHM6Ly93d3cucGluZWNvbmUuaW8v" target="_blank" rel="noopener noreferrer">pinecone.io<ExternalLinkIcon/></a>并创建一个免费账户。它将允许LLM从内存中检索相关信息，用于AI应用。</p>
 <p>在这里，点击左侧边栏的 <code v-pre>API Keys</code>，并点击右侧窗格的 <code v-pre>Create API Key</code></p>
 <p>给一个名字，如 <code v-pre>autogpt</code>，然后点击 <code v-pre>Create Key</code></p>
-<p><img src="http://sm.nsddd.top/sm202305031712718.png" alt="image-20230503171039991"></p>
+<p><img src="http://sm.cubxxw.com/sm202305031712718.png" alt="image-20230503171039991"></p>
 <p>复制 Key Value，用 <code v-pre>vim</code> 打开，将其粘贴在 <code v-pre>PINECONE_API_KEY</code> 旁边。</p>
 <p>同样地，复制 <code v-pre>Environment</code> 下的数值。</p>
 <p>现在，把它粘贴到<code v-pre>PINECONE_ENV</code>旁边。</p>
@@ -143,10 +143,10 @@
 <li><a href="https://agentgpt.reworkd.ai/zh" target="_blank" rel="noopener noreferrer">https://agentgpt.reworkd.ai/zh<ExternalLinkIcon/></a></li>
 </ul>
 <p>在这里，添加你的OpenAI API密钥。你可以从<a href="https://www.wbolt.com/go?_=e7e2fef44aaHR0cHM6Ly9wbGF0Zm9ybS5vcGVuYWkuY29tL2FjY291bnQvYXBpLWtleXM%3D" target="_blank" rel="noopener noreferrer">这里<ExternalLinkIcon/></a><strong>获得API密钥</strong>。如果你不能访问<a href="https://www.wbolt.com/how-to-use-gpt-4-free.html" target="_blank" rel="noopener noreferrer">GPT-4<ExternalLinkIcon/></a> API，选择 <code v-pre>gpt-3.5-turbo</code> 作为模型，然后点击 <code v-pre>Save</code></p>
-<p><img src="http://sm.nsddd.top/sm202305031744911.png" alt="image-20230503174431508"></p>
+<p><img src="http://sm.cubxxw.com/sm202305031744911.png" alt="image-20230503174431508"></p>
 <p>接下来，给你的人工智能代理起个名字，并设定你希望实现的目标。现在，点击Auto-GPT AI的 <code v-pre>Deploy Agent</code>，开始考虑你的投入。</p>
 <p>我发现我没钱了~</p>
-<p><img src="http://sm.nsddd.top/sm202305031755504.png" alt="image-20230503175554002"></p>
+<p><img src="http://sm.cubxxw.com/sm202305031755504.png" alt="image-20230503175554002"></p>
 <p>一旦任务完成，你可以点击 “<strong>Save</strong>“或 “Copy” 来获得最终结果。</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <h3 id="参考文章" tabindex="-1"><a class="header-anchor" href="#参考文章" aria-hidden="true">#</a> 参考文章</h3>
@@ -173,7 +173,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

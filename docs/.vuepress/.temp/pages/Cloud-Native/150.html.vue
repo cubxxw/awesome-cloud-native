@@ -15,7 +15,7 @@
 <p>单元测试也可以测试外部依赖，我们在前面讲过可以 Mock 外部依赖，如果我把 Database、MessageBus 都 Mock 了，那不就也可以做单元测试了么？</p>
 <p>你能想到这一层，说明你已经关注概念背后真正的事情了。是的，如果所有的外部服务都 Mock 了，集成测试就变成了单元测试，往另外一个方向，如果所有的外部服务都是真实的，集成测试又变成了端到端的测试。集成测试就是处在单元测试和端到端测试中间的一个状态。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202311081137018.png" alt="image-20231108113757794"></p>
+<p><img src="http://sm.cubxxw.com/sm202311081137018.png" alt="image-20231108113757794"></p>
 <p><strong>目录结构：</strong></p>
 <ul>
 <li><strong>conformance</strong>：包含扫描 e2e 测试源代码以获取一致性测试声明的工具。</li>

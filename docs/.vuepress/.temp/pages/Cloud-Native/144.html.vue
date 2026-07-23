@@ -86,7 +86,7 @@ r <span class="token operator">=</span> tty
 w = r.(io.Writer)
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>接口变量w的pair与r的pair相同，都是: <code v-pre>(tty, *os.File)</code>，即使w是空接口类型，pair也是不变的。</p>
 <p>interface及其pair的存在，是Golang中实现反射的前提，理解了pair，就更容易理解反射。反射就是用来检测存储在接口变量内部(值value；类型concrete type) pair对的一种机制。</p>
-<p><img src="http://sm.nsddd.top/sm202310312105266.png" alt="image-20231031210550170"></p>
+<p><img src="http://sm.cubxxw.com/sm202310312105266.png" alt="image-20231031210550170"></p>
 <h3 id="reflect的基本功能typeof和valueof" tabindex="-1"><a class="header-anchor" href="#reflect的基本功能typeof和valueof" aria-hidden="true">#</a> reflect的基本功能TypeOf和ValueOf</h3>
 <p>既然反射就是用来检测存储在接口变量内部(值value；类型concrete type) pair对的一种机制。</p>
 <p>那么在 Golang 的 reflect 反射包中有什么样的方式可以让我们直接获取到变量内部的信息呢？ 它提供了两种类型（或者说两个方法）让我们可以很容易的访问接口变量内容，分别是 <code v-pre>reflect.ValueOf()</code> 和 <code v-pre>reflect.TypeOf()</code>，看看官方的解释</p>

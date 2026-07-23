@@ -1,18 +1,18 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第2节-docker实用操作" tabindex="-1"><a class="header-anchor" href="#第2节-docker实用操作" aria-hidden="true">#</a> 第2节 docker实用操作</h1>
 <div><a href = '1.md' style='float:left'>⬆️上一节🔗  </a><a href = '3.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#前言">前言</router-link></li><li><router-link to="#由docker引入k8s">由docker引入k8s</router-link><ul><li><router-link to="#docker容器化技术">docker容器化技术</router-link></li></ul></li><li><router-link to="#dockerfile">dockerfile</router-link></li><li><router-link to="#run命令">run命令</router-link></li><li><router-link to="#镜像压缩和发送">镜像压缩和发送</router-link><ul><li><router-link to="#远程传输scp">远程传输scp</router-link></li><li><router-link to="#新的机器启用镜像">新的机器启用镜像</router-link></li></ul></li><li><router-link to="#推送到远程仓库">推送到远程仓库</router-link></li><li><router-link to="#将应用打包为镜像">将应用打包为镜像</router-link><ul><li><router-link to="#以前的土方法">以前的土方法</router-link></li><li><router-link to="#docker解决方案">docker解决方案</router-link></li></ul></li><li><router-link to="#docker-清理使用的空间">docker 清理使用的空间</router-link><ul><li><router-link to="#dockerinit">Dockerinit</router-link></li></ul></li><li><router-link to="#容器进程和应用进程">容器进程和应用进程</router-link></li><li><router-link to="#linux-绑定挂载机制">Linux 绑定挂载机制</router-link></li><li><router-link to="#end-链接">END 链接</router-link><ul><li><router-link to="#参考">参考</router-link></li></ul></li></ul></nav>
 <p>[TOC]</p>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
 <ul>
-<li>[x] <a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker学习<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">docker学习<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="由docker引入k8s" tabindex="-1"><a class="header-anchor" href="#由docker引入k8s" aria-hidden="true">#</a> 由docker引入k8s</h2>
 <h3 id="docker容器化技术" tabindex="-1"><a class="header-anchor" href="#docker容器化技术" aria-hidden="true">#</a> docker容器化技术</h3>
@@ -43,7 +43,7 @@ RUN <span class="token builtin class-name">echo</span> <span class="token string
 <div class="custom-container tip"><p class="custom-container-title">scratch空白镜像</p>
 <p>如果你以<code v-pre>scratch</code>为基础镜像的话，意味着你不以任何镜像为基础，接下来所写的指令将作为镜像第一层开始存在。没有任何基础镜像，我怎么去执行我的程序呢，其实对于 Linux 下静态编译的程序来说，并不需要有操作系统提供运行时支持，所需的一切库都已经在可执行文件里了，因此直接<code v-pre>FROM scratch</code>会让镜像体积更加小巧。使用 Go 语言 开发的应用很多会使用这种方式来制作镜像，这也是为什么有人认为 Go 是特别适合容器微服务架构的语言的原因之一。</p>
 <ul>
-<li>[x] <a href="https://go.nsddd.top" target="_blank" rel="noopener noreferrer">Go语言的学习（CUB打造的Go语言学习docs）<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://go.cubxxw.com" target="_blank" rel="noopener noreferrer">Go语言的学习（CUB打造的Go语言学习docs）<ExternalLinkIcon/></a></li>
 </ul>
 </div>
 <h2 id="run命令" tabindex="-1"><a class="header-anchor" href="#run命令" aria-hidden="true">#</a> run命令</h2>
@@ -78,12 +78,12 @@ my_cloudreve.tar
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></blockquote>
 <h3 id="远程传输scp" tabindex="-1"><a class="header-anchor" href="#远程传输scp" aria-hidden="true">#</a> 远程传输scp</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>[root@VM-4-6-centos ~]# scp my_cloudreve.tar root@110.42.175.115:/scp/
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221018100209153.png" alt="image-20221018100209153"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221018100209153.png" alt="image-20221018100209153"></p>
 <h3 id="新的机器启用镜像" tabindex="-1"><a class="header-anchor" href="#新的机器启用镜像" aria-hidden="true">#</a> 新的机器启用镜像</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> load <span class="token parameter variable">-i</span> 压缩包名称.tar
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="推送到远程仓库" tabindex="-1"><a class="header-anchor" href="#推送到远程仓库" aria-hidden="true">#</a> 推送到远程仓库</h2>
 <ul>
-<li><a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker教程<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">docker教程<ExternalLinkIcon/></a></li>
 </ul>
 <h2 id="将应用打包为镜像" tabindex="-1"><a class="header-anchor" href="#将应用打包为镜像" aria-hidden="true">#</a> 将应用打包为镜像</h2>
 <h3 id="以前的土方法" tabindex="-1"><a class="header-anchor" href="#以前的土方法" aria-hidden="true">#</a> 以前的土方法</h3>
@@ -157,7 +157,7 @@ my_cloudreve.tar
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第10节-deployment" tabindex="-1"><a class="header-anchor" href="#第10节-deployment" aria-hidden="true">#</a> 第10节 Deployment</h1>
 <div><a href = '9.md' style='float:left'>⬆️上一节🔗  </a><a href = '11.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br><br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#deployment">Deployment</router-link></li><li><router-link to="#用deployment创建有何不同">用deployment创建有何不同</router-link><ul><li><router-link to="#如果想要真正的删除怎么办">如果想要真正的删除怎么办？</router-link></li></ul></li><li><router-link to="#多副本">多副本</router-link></li><li><router-link to="#工作负载-deployment扩容缩容能力">工作负载-deployment扩容缩容能力</router-link><ul><li><router-link to="#扩缩容">扩缩容</router-link></li><li><router-link to="#你可以直接修改deplot配置文件达到扩缩容">你可以直接修改deplot配置文件达到扩缩容</router-link></li></ul></li><li><router-link to="#yaml-声明式创建">yaml 声明式创建</router-link></li><li><router-link to="#自愈和故障转移">自愈和故障转移</router-link></li><li><router-link to="#depoyment滚动和更新能力">depoyment滚动和更新能力</router-link><ul><li><router-link to="#滚动更新">滚动更新</router-link></li></ul></li><li><router-link to="#版本回退">版本回退</router-link></li><li><router-link to="#其他工作负载">其他工作负载</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -28,11 +28,11 @@ kubectl  run mynginx <span class="token parameter variable">--image</span><span 
 
 kubectl create deployment mytomcat <span class="token parameter variable">--image</span><span class="token operator">=</span>tomcat:8.5.68  <span class="token comment">#第二条</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>🚀 结果如下：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221022160112746.png" alt="image-20221022160112746"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022160112746.png" alt="image-20221022160112746"></p>
 <div class="custom-container tip"><p class="custom-container-title">📜 对上面的解释：</p>
 <p>可能我们现在没办法看出来很大的区别，但是我们使用<code v-pre>delete</code>删除这个<code v-pre>deployment</code>部署<code v-pre>tomcat</code>会怎么样？</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl delete pod mytomcat-dc7db794-mkfxn mynginx 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022160515168.png" alt="image-20221022160515168"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022160515168.png" alt="image-20221022160515168"></p>
 <blockquote>
 <p>可以看出是没有办法删除掉的，因为删除后k8s又拉取了，这个功能是很强大的~yyds</p>
 <p><strong>这样的话即使机器宕机了也是不会影响的~</strong></p>
@@ -60,7 +60,7 @@ my-nginx   <span class="token number">3</span>/3     <span class="token number">
 <p><strong>我们可以指定副本个数，比如说下面指定三份：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl create deployment my-dep <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx <span class="token parameter variable">--replicas</span><span class="token operator">=</span><span class="token number">3</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="custom-container tip"><p class="custom-container-title">📜 对上面的解释：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221022161337428.png" alt="image-20221022161337428"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022161337428.png" alt="image-20221022161337428"></p>
 <ul>
 <li>UP-TO-DATE：表示成功启动的个数</li>
 <li>AVAILABLE：表示一共副本的总数</li>
@@ -70,7 +70,7 @@ my-nginx   <span class="token number">3</span>/3     <span class="token number">
 </blockquote>
 <p>⚡ 我们还可以用下面命令打印<code v-pre>pod</code>详细信息：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code> kubectl get pod -owide
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022161843319.png" alt="image-20221022161843319"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022161843319.png" alt="image-20221022161843319"></p>
 <p>每台机器都创建了一台，同样的，每台机器的<code v-pre>ip</code>是不一样的~</p>
 </div>
 <h2 id="工作负载-deployment扩容缩容能力" tabindex="-1"><a class="header-anchor" href="#工作负载-deployment扩容缩容能力" aria-hidden="true">#</a> 工作负载-deployment扩容缩容能力</h2>
@@ -84,18 +84,18 @@ my-nginx   <span class="token number">3</span>/3     <span class="token number">
 <p>缩容为两份</p>
 </blockquote>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl scale deploy/my-nginx  <span class="token parameter variable">--replicas</span><span class="token operator">=</span><span class="token number">2</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022163051069.png" alt="image-20221022163051069"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022163051069.png" alt="image-20221022163051069"></p>
 <blockquote>
 <p>扩容为三份</p>
 </blockquote>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl scale deploy/my-nginx  --replicas=3
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022163210228.png" alt="image-20221022163210228"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022163210228.png" alt="image-20221022163210228"></p>
 <div class="custom-container warning"><p class="custom-container-title">注意：你是可以扩容多份（即使你的服务器没有这么多）</p>
-<p><img src="http://sm.nsddd.top/smimage-20221022163510801.png" alt="image-20221022163510801"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022163510801.png" alt="image-20221022163510801"></p>
 </div>
 <h3 id="你可以直接修改deplot配置文件达到扩缩容" tabindex="-1"><a class="header-anchor" href="#你可以直接修改deplot配置文件达到扩缩容" aria-hidden="true">#</a> 你可以直接修改deplot配置文件达到扩缩容</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl edit deploy my-nginx
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022163752641.png" alt="image-20221022163752641"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022163752641.png" alt="image-20221022163752641"></p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>当然你也可以用可视化界面实现（点击缩放：可以实现扩容和缩容）</p>
 </div>
@@ -108,7 +108,7 @@ my-nginx   <span class="token number">3</span>/3     <span class="token number">
 <h2 id="depoyment滚动和更新能力" tabindex="-1"><a class="header-anchor" href="#depoyment滚动和更新能力" aria-hidden="true">#</a> depoyment滚动和更新能力</h2>
 <p>🚸 如果pod有新的版本，我们怎么样去升级pod？</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>v1 --> v2
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smformat,png" alt="查看源图像"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smformat,png" alt="查看源图像"></p>
 <div class="custom-container warning"><p class="custom-container-title">注意⚠️</p>
 <p>我们是不会同时更新所有的pod，因为这样的话需要停机维护，成本很大。</p>
 <p>我们使用的方式是滚动更新，一个pod更新完了再更新下一个。</p>
@@ -122,9 +122,9 @@ my-nginx   <span class="token number">3</span>/3     <span class="token number">
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl <span class="token builtin class-name">set</span> image deploy/my-nginx <span class="token assign-left variable">nginx</span><span class="token operator">=</span><span class="token number">1.16</span>.1  <span class="token parameter variable">--record</span> 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>升级前效果：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get pod <span class="token parameter variable">-w</span> <span class="token comment">#可以观察到实时的更新状态</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022170358831.png" alt="image-20221022170358831"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022170358831.png" alt="image-20221022170358831"></p>
 <p><strong>升级后效果：</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221022170823962.png" alt="image-20221022170823962"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022170823962.png" alt="image-20221022170823962"></p>
 <h2 id="版本回退" tabindex="-1"><a class="header-anchor" href="#版本回退" aria-hidden="true">#</a> 版本回退</h2>
 <p><strong>查看当前的pod版本：</strong></p>
 <blockquote>
@@ -151,7 +151,7 @@ REVISION  CHANGE-CAUSE
 <div class="custom-container warning"><p class="custom-container-title">回滚到上一次</p>
 <p>我们使用<code v-pre>rollout</code>命令</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl rollout undo deploy/my-dep --to-revision<span class="token operator">=</span><span class="token number">1</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022171946361.png" alt="image-20221022171946361"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022171946361.png" alt="image-20221022171946361"></p>
 </div>
 <h2 id="其他工作负载" tabindex="-1"><a class="header-anchor" href="#其他工作负载" aria-hidden="true">#</a> 其他工作负载</h2>
 <div class="custom-container tip"><p class="custom-container-title">工作负载是在kubernetes上运行的应用程序</p>
@@ -168,7 +168,7 @@ REVISION  CHANGE-CAUSE
 </ul>
 </div>
 <p><strong>在平常我们是不会直接的创建<code v-pre>pod</code>，而是使用工作负载来创建<code v-pre>pod</code></strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221022172816219.png" alt="image-20221022172816219"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022172816219.png" alt="image-20221022172816219"></p>
 <div class="custom-container warning"><p class="custom-container-title">⚠️注意</p>
 <p>我们所有的部署（mysql、redis、tomcat）都是没办法通过浏览器访问的，所以没有办法看到效果，或许我们可以通过内网的地址访问（curl）</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master01 ~<span class="token punctuation">]</span><span class="token comment"># curl 100.66.195.43</span>
@@ -203,7 +203,7 @@ Commercial support is available at
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -383,7 +383,7 @@ hugo v0.118.2-da7983ac4b94d97d776d7c2405040de97e95c03d+extended linux/amd64 Buil
   <span class="token key atrule">filename</span><span class="token punctuation">:</span> sitemap.xml
   <span class="token key atrule">priority</span><span class="token punctuation">:</span> <span class="token number">0.5</span>
 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>比如说我的 blog 的站点地图：https://nsddd.top/sitemap.xml</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>比如说我的 blog 的站点地图：https://cubxxw.com/sitemap.xml</p>
 <p>要为给定页面覆盖这些值中的任何一个，请在页面frontmatter中指定它：</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Adding Content"</span>

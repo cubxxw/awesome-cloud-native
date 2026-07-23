@@ -1,17 +1,17 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第54节-kubernetes-生命周期管理和服务发现" tabindex="-1"><a class="header-anchor" href="#第54节-kubernetes-生命周期管理和服务发现" aria-hidden="true">#</a> 第54节 Kubernetes 生命周期管理和服务发现</h1>
 <div><a href = '53.md' style='float:left'>⬆️上一节🔗  </a><a href = '55.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
 <h2 id="有何优雅的管理pod生命周期" tabindex="-1"><a class="header-anchor" href="#有何优雅的管理pod生命周期" aria-hidden="true">#</a> 有何优雅的管理Pod生命周期</h2>
 <p>要优雅地管理Pod的生命周期，可以避免容器进程被终止和Pod被驱逐，设置合理的资源限制和确保数据写入不超过emptyDir的限制，防止OOMKill和Pod被驱逐。此外，还可以设置健康检查探针，包括livenessProbe、readinessProbe和startupProbe，其中readinessProbe可在livenessProbe执行前处理状态。探测方法包括ExecAction、TCPSocketAction和HTTPGetAction。可以通过添加readinessGates condition来引入自定义的就绪条件，除了由k8s内部的探针控制之外，还可以由k8s外部controller来控制。</p>
-<p><img src="http://sm.nsddd.top/sm202303091924004.png" alt="image-20230309192447683"></p>
+<p><img src="http://sm.cubxxw.com/sm202303091924004.png" alt="image-20230309192447683"></p>
 <h3 id="pod-状态机" tabindex="-1"><a class="header-anchor" href="#pod-状态机" aria-hidden="true">#</a> Pod 状态机</h3>
 <p>Pod 的状态可以分为以下几种：</p>
 <ul>
@@ -22,7 +22,7 @@
 <li>Unknown：无法获取 Pod 的状态信息，通常是由于调度器或者控制器组件出现问题导致的。</li>
 </ul>
 <p>在 Pod 运行过程中，由于各种原因，Pod 的状态可能会发生变化，比如容器意外终止、节点故障等。Kubernetes 会不断地监控 Pod 的状态，确保 Pod 能够保持正常运行。</p>
-<p><img src="http://sm.nsddd.top/sm202303171925468.png" alt="image-20230309192455697"></p>
+<p><img src="http://sm.cubxxw.com/sm202303171925468.png" alt="image-20230309192455697"></p>
 <h3 id="pod-phase" tabindex="-1"><a class="header-anchor" href="#pod-phase" aria-hidden="true">#</a> Pod Phase</h3>
 <p><strong>kubectl get pod 显示的状态信息是由 podstatus 的 conditions 和 phase 计算出来的</strong></p>
 <h3 id="pod-状态计算细节" tabindex="-1"><a class="header-anchor" href="#pod-状态计算细节" aria-hidden="true">#</a> Pod 状态计算细节</h3>
@@ -303,13 +303,13 @@ qosClass: Burstable
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>该 Pod 运行后就会由于 readinessGates Not Ready 导致整个 Pod 进入Not Ready 的状态，直到外部控制器修改了 readinessGates condition 的值为 True。</p>
 <h3 id="post-start和pre-stop-hook" tabindex="-1"><a class="header-anchor" href="#post-start和pre-stop-hook" aria-hidden="true">#</a> Post-start和Pre-Stop Hook</h3>
 <p>在启动后或者停止前可以执行自定义 hook：</p>
-<p><img src="http://sm.nsddd.top/sm202303091925831.png" alt="image-20230309192549695"></p>
+<p><img src="http://sm.cubxxw.com/sm202303091925831.png" alt="image-20230309192549695"></p>
 <p>注意点：</p>
 <ul>
 <li>无法保证 postStart 脚本的容器的 Entrypoint 哪个先执行</li>
 <li>postStart 结束之前，容器不会被标记为 Running 状态</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303091925137.png" alt="image-20230309192528965"></p>
+<p><img src="http://sm.cubxxw.com/sm202303091925137.png" alt="image-20230309192528965"></p>
 <p>注意事项：</p>
 <ul>
 <li>容器有一个terminationGracePeriodSeconds 时间，默认为 30 秒，如果超过这个时间会被强制 kill
@@ -333,7 +333,7 @@ qosClass: Burstable
             <span class="token literal-property property">command</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"/bin/sh"</span><span class="token punctuation">,</span><span class="token string">"-c"</span><span class="token punctuation">,</span><span class="token string">"nginx -s quit; while killall -0 nginx; do sleep 1; done"</span> <span class="token punctuation">]</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="terminationgraceperiodseconds-的分解" tabindex="-1"><a class="header-anchor" href="#terminationgraceperiodseconds-的分解" aria-hidden="true">#</a> terminationGracePeriodSeconds 的分解</h3>
 <p>terminationGracePeriodSeconds 定义了 Pod 退出到强制 kill 中间的间隔时间。</p>
-<p><img src="http://sm.nsddd.top/sm202303091926192.png" alt="image-20230309192608101"></p>
+<p><img src="http://sm.cubxxw.com/sm202303091926192.png" alt="image-20230309192608101"></p>
 <p>长连接场景下对 terminationGracePeriodSeconds 依赖比较大，比如一个视频会议的服务，一个视频会议可能一开就是几个小时，甚至更长时间都有可能，这种情况下业务如何做滚动升级呢？</p>
 <blockquote>
 <p>一升级就会把现有连接 kill 掉，用户体验就很糟糕。</p>
@@ -538,7 +538,7 @@ qosClass: Burstable
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

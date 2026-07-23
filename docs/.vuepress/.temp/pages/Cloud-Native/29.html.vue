@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第29节-feat-support-nvidia-docker-and-nonroot-2048" tabindex="-1"><a class="header-anchor" href="#第29节-feat-support-nvidia-docker-and-nonroot-2048" aria-hidden="true">#</a> 第29节 Feat/support nvidia docker and nonroot #2048</h1>
 <div><a href = '28.md' style='float:left'>⬆️上一节🔗  </a><a href = '30.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -32,13 +32,13 @@
 <ul>
 <li>VinceCui:feat/support-nvidia-docker-and-nonroot</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202302181813288.png" alt="image-20230218181350175"></p>
+<p><img src="http://sm.cubxxw.com/sm202302181813288.png" alt="image-20230218181350175"></p>
 <h3 id="add-remote-repository" tabindex="-1"><a class="header-anchor" href="#add-remote-repository" aria-hidden="true">#</a> Add remote repository</h3>
 <p>**First you need to add the <code v-pre>pull request</code> author's repository locally as another remote repository: **</p>
 <ul>
 <li>https://github.com/VinceCui/sealer/tree/feat/support-nvidia-docker-and-nonroot</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202302181837003.png" alt="image-20230218183733938"></p>
+<p><img src="http://sm.cubxxw.com/sm202302181837003.png" alt="image-20230218183733938"></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">git</span> remote set-url VinceCui https://ghproxy.com/https://github.com/VinceCui/sealer/
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>**Synchronize warehouse and update remote warehouse content: **</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ <span class="token function">git</span> fetch VinceCui feat/support-nvidia-docker-and-nonroot
@@ -86,7 +86,7 @@ $ <span class="token function">sudo</span> <span class="token function">chmod</s
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

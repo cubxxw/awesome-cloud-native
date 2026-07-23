@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第58节-lychee-实现-docs-检查" tabindex="-1"><a class="header-anchor" href="#第58节-lychee-实现-docs-检查" aria-hidden="true">#</a> 第58节 lychee 实现 docs 检查</h1>
 <div><a href = '57.md' style='float:left'>⬆️上一节🔗  </a><a href = '59.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -279,7 +279,7 @@ Options:
 <p>如果您总是希望使用最新的功能，但又避免破坏性的更改，则可以将版本替换为 <code v-pre>lycheeverse/lychee-action@v1</code></p>
 <div class="custom-container warning"><p class="custom-container-title">注意</p>
 <p>可以对照这个加一些参数，比如 -E 屏蔽所有 localhost 和内网ip的检查，以及忽略401和403的错误，429那个是GitHub的限速报错（可加可不加）</p>
-<p><img src="http://sm.nsddd.top/sm202305131950121.png" alt="image-20230513195026852"></p>
+<p><img src="http://sm.cubxxw.com/sm202305131950121.png" alt="image-20230513195026852"></p>
 </div>
 <h3 id="alternative-approach-替代方法" tabindex="-1"><a class="header-anchor" href="#alternative-approach-替代方法" aria-hidden="true">#</a> Alternative approach (替代方法)</h3>
 <p>这将在任何git push事件和所有pull请求期间检查所有存储库链接。如果出现错误，操作将失败。</p>
@@ -311,7 +311,7 @@ Options:
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第14节-k3s" tabindex="-1"><a class="header-anchor" href="#第14节-k3s" aria-hidden="true">#</a> 第14节 k3s</h1>
 <div><a href = '13.md' style='float:left'>⬆️上一节🔗  </a><a href = '15.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#k3s介绍">k3s介绍</router-link></li><li><router-link to="#k3s和k8s区别">k3s和k8s区别</router-link></li><li><router-link to="#架构">架构</router-link></li><li><router-link to="#sqlite-和-dqlite">Sqlite 和 Dqlite</router-link></li><li><router-link to="#新版本默认支持-etcd">新版本默认支持 etcd</router-link></li><li><router-link to="#在线-docs-cloud-native-k8s-15-第15节-k3s-补充-脚本安装-k3s">在线 [[docs/Cloud-Native-k8s/15#第15节 k3s 补充|脚本安装]]  k3s</router-link></li><li><router-link to="#在线安装的解析">在线安装的解析</router-link><ul><li><router-link to="#安装内容">安装内容</router-link></li><li><router-link to="#执行操作">执行操作</router-link></li><li><router-link to="#指定版本">指定版本</router-link></li><li><router-link to="#指定数据库">指定数据库</router-link></li><li><router-link to="#指定容器运行时">指定容器运行时</router-link></li></ul></li><li><router-link to="#离线安装解释">离线安装解释</router-link><ul><li><router-link to="#步骤">步骤</router-link></li><li><router-link to="#前提条件">前提条件</router-link></li><li><router-link to="#containerd-手动部署镜像方式">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#docker-手动部署镜像方式">Docker + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-手动部署镜像方式-1">Containerd + 手动部署镜像方式</router-link></li><li><router-link to="#containerd-私有镜像仓库方式">Containerd + 私有镜像仓库方式</router-link></li><li><router-link to="#docker-私有镜像仓库方式">Docker + 私有镜像仓库方式</router-link></li><li><router-link to="#单结点高可用离线安装">单结点高可用离线安装</router-link></li></ul></li><li><router-link to="#为kubelet-设置别名">为kubelet 设置别名</router-link></li><li><router-link to="#扩展work节点">扩展work节点</router-link></li><li><router-link to="#cri-cni-csi">CRI CNI  CSI</router-link></li><li><router-link to="#嵌入式数据库高可用">嵌入式数据库高可用</router-link></li><li><router-link to="#ha-部署实验">HA 部署实验</router-link></li><li><router-link to="#卸载k3s">卸载k3s</router-link><ul><li><router-link to="#针对-docker-cri">针对 docker CRI</router-link></li></ul></li><li><router-link to="#k3s-的一些重要目录">k3s 的一些重要目录</router-link><ul><li><router-link to="#var-lib-rancher-k3s">/var/lib/rancher/k3s</router-link></li><li><router-link to="#etc-rancher">/etc/rancher</router-link></li><li><router-link to="#var-run">/var/run</router-link></li></ul></li><li><router-link to="#镜像加速">镜像加速</router-link></li><li><router-link to="#containerd">containerd</router-link><ul><li><router-link to="#架构图">架构图</router-link></li><li><router-link to="#命令">命令</router-link></li><li><router-link to="#containerd的配置管理">containerd的配置管理</router-link></li></ul></li><li><router-link to="#二进制工具">二进制工具</router-link></li><li><router-link to="#边缘计算">边缘计算</router-link></li><li><router-link to="#单节点-sqlite-扩展为-etcd-高可用">单节点 SQLite 扩展为 etcd 高可用</router-link></li><li><router-link to="#安装脚本">安装脚本</router-link><ul><li><router-link to="#理解安装的步骤">理解安装的步骤</router-link></li><li><router-link to="#标志和环境变量">标志和环境变量</router-link></li><li><router-link to="#k3s-server-agent-常用配置">K3s Server/Agent - 常用配置</router-link></li><li><router-link to="#k3s-server-agent-数据库选项">K3s Server/Agent - 数据库选项</router-link></li><li><router-link to="#k3s-安装事项-网络选项">K3s 安装事项 - 网络选项</router-link></li><li><router-link to="#外部数据库">外部数据库</router-link></li><li><router-link to="#集群数据存储选项">集群数据存储选项</router-link></li></ul></li><li><router-link to="#私有镜像仓库">私有镜像仓库</router-link></li><li><router-link to="#安装事项-注意事项">安装事项 - 注意事项</router-link></li><li><router-link to="#k3s-集群升级">K3s 集群升级</router-link></li><li><router-link to="#k3s-备份恢复">K3s 备份恢复</router-link></li><li><router-link to="#k3s-卷和存储">K3s 卷和存储</router-link></li><li><router-link to="#k3s-网络相关">K3s 网络相关</router-link></li><li><router-link to="#helm-k3s">helm(k3s)</router-link></li><li><router-link to="#k3s-高级选项">K3s 高级选项</router-link></li><li><router-link to="#所遇到的问题">所遇到的问题</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -39,7 +39,7 @@
 </ul>
 </div>
 <p><strong>架构图：</strong></p>
-<p><img src="http://sm.nsddd.top/smhow-it-works-k3s.svg" alt="k3s下载"></p>
+<p><img src="http://sm.cubxxw.com/smhow-it-works-k3s.svg" alt="k3s下载"></p>
 <h2 id="k3s和k8s区别" tabindex="-1"><a class="header-anchor" href="#k3s和k8s区别" aria-hidden="true">#</a> k3s和k8s区别</h2>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>K3s是一个独立的服务器，与K8s不同，它是Kubernetes集群的一部分。K8s依靠CRI-O来整合Kubernetes与CRI（容器运行时接口），而K3s使用CRI-O与所有支持的容器运行时兼容。K8s使用kubelet来调度容器，但K3s使用主机的调度机制来调度容器。</p>
@@ -66,7 +66,7 @@
 <p>K3s 单节点集群的架构如下图所示，该集群有一个内嵌 SQLite 数据库的单节点  <code v-pre>K3s server</code> 。</p>
 <p>在这种配置中，每个  <code v-pre>agent</code> 节点都注册到同一个  <code v-pre>server</code> 节点。K3s 用户可以通过调用  <code v-pre>server</code> 节点上的 K3s API 来操作 Kubernetes 资源。</p>
 <p><strong>单节点 <code v-pre>K3s server</code> 的架构：</strong></p>
-<p><img src="http://sm.nsddd.top/sm1660616402558126.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1660616402558126.png" alt="img"></p>
 <p><strong>高可用架构：</strong></p>
 <p>虽然单节点 k3s 集群可以满足各种用例，但对于 Kubernetes control-plane 的正常运行至关重要的环境，您可以在高可用配置中运行 K3s。一个高可用 K3s 集群由以下几个部分组成：</p>
 <ul>
@@ -74,7 +74,7 @@
 <li><strong>外部数据库</strong> ：与单节点 k3s 设置中使用的嵌入式 <code v-pre>SQLite</code> 数据存储相反，高可用 K3s 需要挂载一个 <code v-pre>external database</code> 外部数据库作为数据存储的媒介。</li>
 </ul>
 <p><strong>K3s高可用架构（非嵌入式架构图）：</strong></p>
-<p><img src="http://sm.nsddd.top/sm1660616476551520.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm1660616476551520.png" alt="img"></p>
 <p><strong>高可用架构（嵌入式架构）：</strong></p>
 <blockquote>
 <p>注意：高可用结构同样可以使用<strong>嵌入式数据库</strong></p>
@@ -82,10 +82,10 @@
 <p><strong>嵌入数据库是指数据在内存中数据库，英文称为–embedded</strong>，又称in-memory embedded database，如H2, HSQL and Derby databases。</p>
 <p><strong>非嵌入式数据库是指数据在磁盘中的数据库</strong>，如MariaDB, MySQL and Oracle。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221117173105788.png" alt="image-20221117173105788"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117173105788.png" alt="image-20221117173105788"></p>
 <p><strong>固定  <code v-pre>agent</code> 节点的注册地址：</strong></p>
 <p>在高可用   <code v-pre>K3s server</code>  配置中，每个节点还必须使用固定的注册地址向 Kubernetes API 注册，注册后， <code v-pre>agent</code> 节点直接与其中一个  <code v-pre>server</code> 节点建立连接：</p>
-<img src="http://sm.nsddd.top/sm1660616545857393.svg" alt="k3s-production-setup" style="zoom: 25%;" />
+<img src="http://sm.cubxxw.com/sm1660616545857393.svg" alt="k3s-production-setup" style="zoom: 25%;" />
 <p><strong>注册  <code v-pre>agent</code> 节点：</strong></p>
 <p><code v-pre>agent</code> 节点用<code v-pre>k3s agent</code>进程发起的 websocket 连接注册，连接由作为代理进程一部分运行的客户端负载均衡器维护。</p>
 <p><code v-pre>agent</code> 将使用节点集群 <code v-pre>secret</code> 以及随机生成的节点密码向   <code v-pre>K3s server</code>  注册，密码存储在 <code v-pre>/etc/rancher/node/password</code>路径下。 <code v-pre>K3s server</code> 将把各个节点的密码存储为 <code v-pre>Kubernetes secrets</code>，随后的任何尝试都必须使用相同的密码。节点密码秘密存储在<code v-pre>kube-system</code>命名空间中，名称使用模板<code v-pre>&lt;host&gt;.node-password.k3s</code>。</p>
@@ -170,7 +170,7 @@ kubectl get all <span class="token parameter variable">-n</span> kube-system
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token assign-left variable">INSTALL_K3S_VERSION</span><span class="token operator">=</span>v1.25.3 <span class="token function">sh</span> -
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="指定数据库" tabindex="-1"><a class="header-anchor" href="#指定数据库" aria-hidden="true">#</a> 指定数据库</h3>
 <div class="custom-container tip"><p class="custom-container-title">场景</p>
-<p><img src="http://sm.nsddd.top/smimage-20221124193104746.png" alt="image-20221124193104746"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221124193104746.png" alt="image-20221124193104746"></p>
 </div>
 <p><strong>以MySQL为例：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sfL</span> https://get.k3s.io <span class="token operator">|</span> <span class="token function">sh</span> <span class="token parameter variable">-s</span> - server --datastore-endpoint<span class="token operator">=</span><span class="token string">'mysql://admin:Rancher2019k3s@tcp(k3s-mysql.csrskwupj33i.ca-central-1.rds.amazonaws.com:3306)/k3sdb'</span>
@@ -283,7 +283,7 @@ GLOBAL OPTIONS:
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">wget</span> https://ghproxy.com/https://github.com/k3s-io/k3s/releases/download/v1.25.3%2Bk3s1/k3s-airgap-images-amd64.tar
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
 <p><strong>These files are available in the <a href="https://github.com/k3s-io/k3s/" target="_blank" rel="noopener noreferrer">GitHub<ExternalLinkIcon/></a> repository</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221109164523589.png" alt="image-20221109164523589"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221109164523589.png" alt="image-20221109164523589"></p>
 </blockquote>
 </div>
 <h3 id="步骤" tabindex="-1"><a class="header-anchor" href="#步骤" aria-hidden="true">#</a> 步骤</h3>
@@ -838,7 +838,7 @@ lrwxrwxrwx  <span class="token number">1</span> root root        <span class="to
 <p>只删除一个连接并不影响索引节点本身和其它的连接，只有当最后一个链接被删除后，文件的数据块及目录的连接才会被释放，也就是说，文件才会被真正删除。</p>
 <p>⚠️ 注意这并不是 <code v-pre>cp</code> ，这不是重复文件，注意！！！它们只是指向同一个文件的索引。</p>
 <p><strong>软连接：</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221125211941734.png" alt="image-20221125211941734"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221125211941734.png" alt="image-20221125211941734"></p>
 <p>软链接又叫符号链接，这个文件包含了另一个文件的路径名，例如在上图中，<code v-pre>foo.txt</code> 就是 <code v-pre>bar.txt</code> 的软连接，<code v-pre>bar.txt</code> 是实际的文件，<code v-pre>foo.txt</code>包含的是对于 <code v-pre>bar.txt</code> 的 inode 的记录。</p>
 <p>软连接可以是任意文件或目录，可以链接不同文件系统的文件，在对符号文件进行读或写操作的时候，系统会自动把该操作转换为对源文件的操作，但删除链接文件时，系统仅仅删除链接文件，而不删除源文件本身，这一点类似于 Windows 操作系统下的快捷方式。</p>
 <blockquote>
@@ -942,16 +942,16 @@ EOF</span>
 <span class="token function">sudo</span> crictl info <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">2</span> <span class="token string">"endpoint"</span>
 
 crictl info<span class="token operator">|</span><span class="token function">grep</span>  <span class="token parameter variable">-A</span> <span class="token number">5</span> registry
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221031112848849.png" alt="image-20221031112848849"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221031112848849.png" alt="image-20221031112848849"></p>
 <h2 id="containerd" tabindex="-1"><a class="header-anchor" href="#containerd" aria-hidden="true">#</a> containerd</h2>
 <ul>
 <li><a href="https://containerd.io/" target="_blank" rel="noopener noreferrer">https://containerd.io/<ExternalLinkIcon/></a></li>
 </ul>
 <h3 id="架构图" tabindex="-1"><a class="header-anchor" href="#架构图" aria-hidden="true">#</a> 架构图</h3>
-<p><img src="http://sm.nsddd.top/smimage-20221110202936935.png" alt="image-20221110202936935"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221110202936935.png" alt="image-20221110202936935"></p>
 <details class="custom-container details"><summary>补充containerd</summary>
 <p>containerd从docker就开始熟悉的，那么自然从docker开始介绍：</p>
-<p><img src="http://sm.nsddd.top/sm952033-20180520115357747-1796034956.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm952033-20180520115357747-1796034956.png" alt="img"></p>
 <blockquote>
 <p>在docker1.8之前可以使用 <code v-pre>docker -d</code>。在后面就是 <code v-pre>docker daemon</code> 。1.11以后：<code v-pre>docker</code>、<code v-pre>dockerd</code>。2015年后 OCI 成立，<code v-pre>runtime-spec</code> 制定</p>
 <p><code v-pre>libcotainer –&gt;  runC</code></p>
@@ -972,13 +972,13 @@ crictl info<span class="token operator">|</span><span class="token function">gre
 <li>管理容器网络接口及网络</li>
 </ul>
 <p>⚠️ 注意：<strong>Containerd 被设计成嵌入到一个更大的系统中，而不是直接由开发人员或终端用户使用。</strong></p>
-<p><img src="http://sm.nsddd.top/smimage-20221031142456840.png" alt="image-20221031142456840"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221031142456840.png" alt="image-20221031142456840"></p>
 </details>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>在上面的安装我们知道了可以选择默认的docker安装。</p>
 </div>
 <h3 id="命令" tabindex="-1"><a class="header-anchor" href="#命令" aria-hidden="true">#</a> 命令</h3>
-<p><img src="http://sm.nsddd.top/smcontainerd-docker-k8s-images" alt="查看源图像"></p>
+<p><img src="http://sm.cubxxw.com/smcontainerd-docker-k8s-images" alt="查看源图像"></p>
 <h3 id="containerd的配置管理" tabindex="-1"><a class="header-anchor" href="#containerd的配置管理" aria-hidden="true">#</a> containerd的配置管理</h3>
 <div class="custom-container warning"><p class="custom-container-title">总结</p>
 <p>k3s 安装后内置以下 containerd 客户端</p>
@@ -1895,7 +1895,7 @@ spec:
     image: rancher/k3s-upgrade
   channel: https://update.k3s.io/v1-release/channels/stable
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
-<p><img src="http://sm.nsddd.top/smimage-20221126000754469.png" alt="image-20221126000754469"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221126000754469.png" alt="image-20221126000754469"></p>
 <h2 id="k3s-备份恢复" tabindex="-1"><a class="header-anchor" href="#k3s-备份恢复" aria-hidden="true">#</a> K3s 备份恢复</h2>
 <blockquote>
 <p><strong>SQLite + etcd + 外部数据存储</strong></p>
@@ -2123,7 +2123,7 @@ $ kubectl get addon <span class="token parameter variable">-A</span>
 
 <span class="token comment"># 也可以将Helm-Chart作为AddOns部署</span>
 https://github.com/rancher/helm-controller/
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221126114506014.png" alt="image-20221126114506014"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221126114506014.png" alt="image-20221126114506014"></p>
 <p><strong>使用 Helm CRD</strong></p>
 <p><code v-pre>HelmChart CRD</code> 捕获了大多数你通常会传递给 <code v-pre>helm</code> 命令行工具的选项。下面是一个例子，说明如何从默认的 <code v-pre>Chart</code> 资源库中部署 <code v-pre>Grafana</code>，覆盖一些默认的 <code v-pre>Chart</code> 值。请注意，<code v-pre>HelmChart</code> 资源本身在 <code v-pre>kube-system</code> 命名空间，但 <code v-pre>Chart</code> 资源将被部署到 <code v-pre>monitoring</code> 命名空间。</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code>
@@ -2304,7 +2304,7 @@ Could not fetch/save url https://mydream.ink/utils/container/docker-ce.repo to f
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

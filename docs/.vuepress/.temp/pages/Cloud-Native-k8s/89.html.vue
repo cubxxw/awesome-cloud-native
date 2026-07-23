@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第89节-gitops-实践理论-上部分" tabindex="-1"><a class="header-anchor" href="#第89节-gitops-实践理论-上部分" aria-hidden="true">#</a> 第89节 GitOps 实践理论（上部分）</h1>
 <div><a href = '88.md' style='float:left'>⬆️上一节🔗  </a><a href = '90.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -419,7 +419,7 @@ $ kubectl <span class="token parameter variable">-n</span> prod <span class="tok
 <h3 id="持续集成" tabindex="-1"><a class="header-anchor" href="#持续集成" aria-hidden="true">#</a> 持续集成</h3>
 <p><strong>步骤如下：</strong></p>
 <p>流程将从“拉取请求”开始，经过多个阶段，如“代码审核”、“漏洞扫描”、“代码分析”、“构建”、“单元测试”、“代码覆盖”、“Docker构建”、“Docker推送”、“Git克隆配置仓库”、“更新配置清单”、“Git提交和推送”、“发布CI指标”，最后到达“构建通知”。</p>
-<p><img src="http://sm.nsddd.top/sm202311261925321.webp" alt="544991a1-6499-4de0-acef-bb43af85fdb3"></p>
+<p><img src="http://sm.cubxxw.com/sm202311261925321.webp" alt="544991a1-6499-4de0-acef-bb43af85fdb3"></p>
 <p>集成 Go 语言和其他的一些工具：</p>
 <ol>
 <li><strong>GitHub Actions 集成</strong>：在流程图中的各个阶段，如“代码审核”、“漏洞扫描”、“代码分析”等，可以通过 GitHub Actions 自动化执行。这意味着每个步骤可以被配置为 GitHub Actions 的一个工作流，从而实现自动化和流程控制。</li>
@@ -435,7 +435,7 @@ $ kubectl <span class="token parameter variable">-n</span> prod <span class="tok
 <li><strong>Docker 与 Go</strong>：在 Docker 构建阶段，可以使用针对 Go 应用的 Dockerfile，确保应用被正确打包。</li>
 <li><strong>配置管理</strong>：对于“Git 克隆配置仓库”和“更新配置清单”阶段，可以考虑使用如 <code v-pre>Viper</code> 或 <code v-pre>Consul</code> 等 Go 语言配置管理工具，以便更好地管理和维护配置。</li>
 </ol>
-<p><img src="http://sm.nsddd.top/sm202311261938086.png" alt="chatp"></p>
+<p><img src="http://sm.cubxxw.com/sm202311261938086.png" alt="chatp"></p>
 <h3 id="持续交付" tabindex="-1"><a class="header-anchor" href="#持续交付" aria-hidden="true">#</a> 持续交付</h3>
 <p>持续集成后，就进入到持续交付的环节了，</p>
 <p>建立在 GitOps CICD 基础上的完整的 CD 流水线</p>
@@ -447,7 +447,7 @@ $ kubectl <span class="token parameter variable">-n</span> prod <span class="tok
 <li><strong>运行时漏洞扫描</strong>：使用适合 Kubernetes 环境的工具来检测运行时的安全漏洞。</li>
 <li><strong>发布 CD 指标</strong>：收集和发布部署相关的指标，可能通过集成的监控工具或定制脚本实现。</li>
 </ol>
-<p><img src="http://sm.nsddd.top/sm202311261945127.webp" alt="50629a41-bded-4f36-abfe-b3dfadd7c9d3"></p>
+<p><img src="http://sm.cubxxw.com/sm202311261945127.webp" alt="50629a41-bded-4f36-abfe-b3dfadd7c9d3"></p>
 <h3 id="推动晋级工作" tabindex="-1"><a class="header-anchor" href="#推动晋级工作" aria-hidden="true">#</a> 推动晋级工作</h3>
 <p>我们知道，Kubernetes 清单和代码一般不放在同一个仓库，这样可以获取到更灵活的部署选择，更好的访问控制和审计能力。那么我们应该在哪里维护特定的环境依赖的应用配置，如数据库链接和分布式缓存。</p>
 <ol>
@@ -508,7 +508,7 @@ A---B---C---F---G    test , master
 <li><strong>滚动更新</strong>：<code v-pre>Deployment</code> 支持滚动更新，允许你逐渐替换旧版本的 Pod 为新版本，而不会导致停机。</li>
 <li><strong>适用于 GitOps</strong>：由于其声明式的特性，<code v-pre>Deployment</code> 非常适合 GitOps 的工作流。你可以在 Git 仓库中声明应用的期望状态，然后使用自动化工具（如 Argocd 或 Flux）来监视仓库并将更改应用到 Kubernetes 集群。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202311262010756.png" alt="gitops-deployment-replicaset"></p>
+<p><img src="http://sm.cubxxw.com/sm202311262010756.png" alt="gitops-deployment-replicaset"></p>
 <h3 id="流量路由-traffic-routing" tabindex="-1"><a class="header-anchor" href="#流量路由-traffic-routing" aria-hidden="true">#</a> 流量路由 Traffic Routing</h3>
 <p>在Kubernetes中，Service 是一种抽象，它定义了一组逻辑的Pods和访问它们的策略。服务所针对的豆 Pod targeted由以下选择器确定</p>
 <p>Service minifest 中的字段。然后，服务将流量转发到带有选择器指定的匹配标签的Pods。如果底层的Pods是无状态和向后兼容的，那么Service可以进行循环负载平衡，并且非常适合滚动更新。如果需要为部署定制负载平衡，则需要探索其他路由替代方案。</p>
@@ -519,7 +519,7 @@ A---B---C---F---G    test , master
 <p>对于需要更复杂路由逻辑或定制负载平衡的部署，可能需要探索Kubernetes提供的其他路由替代方案。例如，使用Ingress Controllers和Ingress Resources可以提供更高级的路由能力，比如基于URL的路由、SSL/TLS终端加密和负载均衡策略。</p>
 <h4 id="标签驱动的路由" tabindex="-1"><a class="header-anchor" href="#标签驱动的路由" aria-hidden="true">#</a> 标签驱动的路由</h4>
 <p>Kubernetes中的服务路由是完全基于标签的。这意味着，例如，一个标记为“blue”的Service只会将流量路由到带有“blue”标签的Pods，而一个标记为“green”的Service则只路由到带有“green”标签的Pods。这种设计允许简单而直观的流量分配和管理。</p>
-<p><img src="http://sm.nsddd.top/sm202311262110507.png" alt="ingree-istio"></p>
+<p><img src="http://sm.cubxxw.com/sm202311262110507.png" alt="ingree-istio"></p>
 <h4 id="nginx-ingress-controller" tabindex="-1"><a class="header-anchor" href="#nginx-ingress-controller" aria-hidden="true">#</a> NGINX Ingress Controller</h4>
 <p>NGINX Ingress Controller是一个功能强大的工具，用于在Kubernetes环境中管理进入集群的流量。它支持多种负载平衡和路由规则，适用于广泛的用例。关键特点包括：</p>
 <ul>
@@ -535,7 +535,7 @@ A---B---C---F---G    test , master
 <li><strong>端口和协议规范</strong>：Istio Gateway允许定义一组要公开的端口，以及相关的协议类型，确保流量按照既定的规则和协议流动。</li>
 <li><strong>集成与Istio服务网格</strong>：作为Istio生态系统的一部分，它与Istio的服务网格功能紧密集成，提供高级的流量管理和安全性功能。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202311262115919.png" alt="istio-ingress"></p>
+<p><img src="http://sm.cubxxw.com/sm202311262115919.png" alt="istio-ingress"></p>
 <blockquote>
 <p>说明通过Kubernetes中的Ingress控制器的流量流和Istio服务网格中的流量流的图表已经准备好了。这些图表清晰地比较了每个系统在Kubernetes环境中如何处理流量路由和管理，包括入口控制器和Istio网关的角色。</p>
 </blockquote>
@@ -759,7 +759,7 @@ kubectl apply <span class="token parameter variable">-n</span> argo-rollouts <sp
 </li>
 </ol>
 <h3 id="使用-deployment-实现蓝绿部署" tabindex="-1"><a class="header-anchor" href="#使用-deployment-实现蓝绿部署" aria-hidden="true">#</a> 使用 Deployment 实现蓝绿部署</h3>
-<p><img src="http://sm.nsddd.top/sm202311270932090.png" alt="deployment-blue-green"></p>
+<p><img src="http://sm.cubxxw.com/sm202311270932090.png" alt="deployment-blue-green"></p>
 <blockquote>
 <p>The diagram illustrating the concept of Blue-Green Deployment in a Kubernetes environment using NGINX Ingress and Deployments is ready. It visually explains how traffic is directed to either the Blue or Green Deployments, showcasing the clear separation and traffic management between these two deployments.</p>
 </blockquote>
@@ -1154,7 +1154,7 @@ spec:
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

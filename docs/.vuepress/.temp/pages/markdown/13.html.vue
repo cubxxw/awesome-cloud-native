@@ -34,7 +34,7 @@
 <p>😄 windown下推送MySQL到win</p>
 </blockquote>
 <h3 id="先到hub上面搞一个开源的仓库" tabindex="-1"><a class="header-anchor" href="#先到hub上面搞一个开源的仓库" aria-hidden="true">#</a> 先到hub上面搞一个开源的仓库</h3>
-<p><img src="http://sm.nsddd.top//typora/image-20220923201147595.png?mail:3293172751@qq.com" alt="image-20220923201147595"></p>
+<p><img src="http://sm.cubxxw.com//typora/image-20220923201147595.png?mail:3293172751@qq.com" alt="image-20220923201147595"></p>
 <p><strong>注意右边的推送，我们打标签的时候要按照这个来打</strong></p>
 <p>❗❗ <code v-pre>commit</code>提交是给我们自己在本地看的</p>
 <ul>
@@ -50,9 +50,9 @@
 <p>❗❗ 最后是<code v-pre>push</code></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> push <span class="token number">3293172751</span>/mysql5.7:5.7
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>❗❗ 远程记录</p>
-<p><img src="http://sm.nsddd.top//typora/image-20220923201741572.png?mail:3293172751@qq.com" alt="image-20220923201741572"></p>
+<p><img src="http://sm.cubxxw.com//typora/image-20220923201741572.png?mail:3293172751@qq.com" alt="image-20220923201741572"></p>
 <h3 id="docker-desktop上面推送" tabindex="-1"><a class="header-anchor" href="#docker-desktop上面推送" aria-hidden="true">#</a> docker desktop上面推送</h3>
-<p><img src="http://sm.nsddd.top//typora/image-20220923201633725.png?mail:3293172751@qq.com" alt="image-20220923201633725"></p>
+<p><img src="http://sm.cubxxw.com//typora/image-20220923201633725.png?mail:3293172751@qq.com" alt="image-20220923201633725"></p>
 <p><strong>在desktop上面没有标签标志，还是需要打标签的！！！</strong></p>
 <blockquote>
 <p>如果有标签可以直接推送</p>
@@ -65,7 +65,7 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED        STATUS
 84b04bbb5c02   nginx              <span class="token string">"/docker-entrypoint.…"</span>   <span class="token number">6</span> days ago     Up <span class="token number">39</span> seconds   <span class="token number">0.0</span>.0.0:3344-<span class="token operator">></span><span class="token number">80</span>/tcp, :::3344-<span class="token operator">></span><span class="token number">80</span>/tcp              nginx
 846fec372f81   mysql:5.7          <span class="token string">"docker-entrypoint.s…"</span>   <span class="token number">7</span> days ago     Up <span class="token number">39</span> seconds   <span class="token number">0</span>/tcp, <span class="token number">0.0</span>.0.0:3307-<span class="token operator">></span><span class="token number">3306</span>/tcp, :::3307-<span class="token operator">></span><span class="token number">3306</span>/tcp   mysql_beifena
 f19e7fbc3d18   v2fly/v2fly-core   <span class="token string">"/usr/bin/v2ray -con…"</span>   <span class="token number">4</span> months ago   Up <span class="token number">40</span> seconds     
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top//typora/image-20220923202155083.png?mail:3293172751@qq.com" alt="image-20220923202155083"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com//typora/image-20220923202155083.png?mail:3293172751@qq.com" alt="image-20220923202155083"></p>
 <h3 id="登陆" tabindex="-1"><a class="header-anchor" href="#登陆" aria-hidden="true">#</a> 登陆</h3>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker login
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="mysql我们可以提交到同一个仓库-但是换个tag" tabindex="-1"><a class="header-anchor" href="#mysql我们可以提交到同一个仓库-但是换个tag" aria-hidden="true">#</a> mysql我们可以提交到同一个仓库，但是换个tag</h2>

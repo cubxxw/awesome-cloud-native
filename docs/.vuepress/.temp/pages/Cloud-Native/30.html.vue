@@ -1,10 +1,10 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第30节-localregistry-s-info-into-a-secret-in-namespace-kube-system-2056" tabindex="-1"><a class="header-anchor" href="#第30节-localregistry-s-info-into-a-secret-in-namespace-kube-system-2056" aria-hidden="true">#</a> 第30节  localRegistry's info into a secret in namespace kube-system #2056</h1>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -31,7 +31,7 @@
 <p>端口密码，转存到 System namespace</p>
 <p>默认生成。</p>
 <p><code v-pre>pkg/cluster-runtime/installer.go</code></p>
-<p><img src="http://sm.nsddd.top/sm202302211739502.png" alt="be19b04545eacc4fb0a793db36c3cc7a"></p>
+<p><img src="http://sm.cubxxw.com/sm202302211739502.png" alt="be19b04545eacc4fb0a793db36c3cc7a"></p>
 <h2 id="registry" tabindex="-1"><a class="header-anchor" href="#registry" aria-hidden="true">#</a> Registry</h2>
 <p>There are at least three types of registry, Kubernetes Registry, Docker Registry and container registry. The following are the explanations for these registries:</p>
 <p><a href="https://betterme.xin/posts/2021-09/k8s04/" target="_blank" rel="noopener noreferrer">maybe u should read this articre<ExternalLinkIcon/></a></p>
@@ -253,7 +253,7 @@ kubectl get secret <span class="token operator">&lt;</span>registry-secret-name<
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

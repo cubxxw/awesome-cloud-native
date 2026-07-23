@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第25节-raft-算法" tabindex="-1"><a class="header-anchor" href="#第25节-raft-算法" aria-hidden="true">#</a> 第25节 raft 算法</h1>
 <div><a href = '24.md' style='float:left'>⬆️上一节🔗  </a><a href = '26.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#为什么raft出现">为什么raft出现</router-link></li><li><router-link to="#raft-特性">raft 特性</router-link></li><li><router-link to="#结构">结构</router-link><ul><li><router-link to="#角色转化">角色转化</router-link></li></ul></li><li><router-link to="#不同节点的状态参数">不同节点的状态参数</router-link></li><li><router-link to="#raft-rpc">raft RPC</router-link><ul><li><router-link to="#模式">模式</router-link></li><li><router-link to="#日志和心跳">日志和心跳</router-link></li><li><router-link to="#appendentries-rpc">AppendEntries RPC</router-link></li><li><router-link to="#requestvote-rpc">RequestVote RPC</router-link></li><li><router-link to="#follower-处理循环">Follower 处理循环</router-link></li><li><router-link to="#candidate-处理循环">Candidate 处理循环</router-link></li><li><router-link to="#leader-处理循环">Leader 处理循环</router-link></li></ul></li><li><router-link to="#raft-特性-1">raft 特性</router-link><ul><li><router-link to="#选举限制">选举限制</router-link></li><li><router-link to="#节点之间通信-rpc">节点之间通信：RPC</router-link></li></ul></li><li><router-link to="#leader-选举">Leader 选举</router-link><ul><li><router-link to="#heartbeat-和选举触发流程">Heartbeat 和选举触发流程</router-link></li><li><router-link to="#选举过程">选举过程</router-link></li><li><router-link to="#获胜的判断条件">获胜的判断条件</router-link></li><li><router-link to="#避免无限循环的投票分裂-随机选举超时">避免无限循环的投票分裂：随机选举超时</router-link></li></ul></li><li><router-link to="#leader-向其他节点复制日志-log">Leader 向其他节点复制日志（log）</router-link><ul><li><router-link to="#复制流程">复制流程</router-link></li><li><router-link to="#log-文件组织结构">Log 文件组织结构</router-link></li><li><router-link to="#提交-commit-的定义">提交（commit）的定义</router-link></li><li><router-link to="#log-matching-特性-保证-log-内容一致">Log matching 特性（保证 log 内容一致）</router-link></li><li><router-link to="#log-不一致场景">Log 不一致场景</router-link></li><li><router-link to="#避免-log-不一致-appendentries-中的一致性检查">避免 log 不一致：AppendEntries 中的一致性检查</router-link></li><li><router-link to="#优化">优化</router-link></li></ul></li><li><router-link to="#安全-确保状态机以相同顺序执行相同命令流">安全：确保状态机以相同顺序执行相同命令流</router-link><ul><li><router-link to="#限制一-包含所有已提交-entry-的节点才能被选为-leader">限制一：包含所有已提交 entry 的节点才能被选为 leader</router-link></li><li><router-link to="#限制二-当前任期-副本数量过半-entry-才能提交">限制二：当前任期+副本数量过半，entry 才能提交</router-link></li><li><router-link to="#安全性的简要证明">安全性的简要证明</router-link></li></ul></li><li><router-link to="#follower-candidate-故障-无限重试-请求幂等">Follower/candidate 故障：无限重试 + 请求幂等</router-link></li><li><router-link to="#时序和可用性">时序和可用性</router-link></li><li><router-link to="#集群节点数量变化-membership-changes">集群节点数量变化（membership changes）</router-link></li><li><router-link to="#增删节点可能导致集群分裂">增删节点可能导致集群分裂</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -62,11 +62,11 @@
 </ul>
 </div>
 <h3 id="角色转化" tabindex="-1"><a class="header-anchor" href="#角色转化" aria-hidden="true">#</a> 角色转化</h3>
-<p><img src="http://sm.nsddd.top/smraft-124.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/smraft-124.png" alt="img"></p>
 <p>Follower 只响应其他服务器的请求。如果 Follower 超时没有收到 Leader 的消息，它会成为一个 Candidate 并且开始一次 Leader 选举。收到大多数服务器投票的 Candidate 会成为新的 Leader。Leader 在宕机之前会一直保持 Leader 的状态。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117200855825.png" alt="image-20221117200855825"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117200855825.png" alt="image-20221117200855825"></p>
 <p>Raft 算法将时间分为一个个的任期（term），每一个 term 的开始都是 Leader 选举。在成功选举 Leader 之后，Leader 会在整个 term 内管理整个集群。如果 Leader 选举失败，该 term 就会因为没有 Leader 而结束。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117201221179.png" alt="image-20221117201221179"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117201221179.png" alt="image-20221117201221179"></p>
 <p>**选举出 Leader 后，Leader 通过定期向所有 Followers 发送心跳信息维持其统治。**若 Follower 一段时间未收到 Leader 的心跳则认为 Leader 可能已经挂了，<strong>再次发起 Leader 选举过程。</strong></p>
 <p>Leader 可能会挂掉（fail）或从集群中失联（disconnected），这种情况下会选举一个新 leader。</p>
 <div class="custom-container tip"><p class="custom-container-title">leader</p>
@@ -155,7 +155,7 @@
 </div>
 <div class="custom-container tip"><p class="custom-container-title">日志同步</p>
 <p>Leader 选出后，就开始接收客户端的请求。Leader 把请求作为日志条目（Log entries）加入到它的日志中，然后并行的向其他服务器发起 AppendEntries RPC 、复制日志条目。当这条日志被复制到大多数服务器上，Leader 将这条日志应用到它的状态机并向客户端返回执行结果。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117211226288.png" alt="image-20221117211226288"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117211226288.png" alt="image-20221117211226288"></p>
 <p>某些 Followers 可能没有成功的复制日志，Leader 会无限的重试 AppendEntries RPC 直到所有的 Followers 最终存储了所有的日志条目。</p>
 <p>日志由有序编号（log index）的日志条目组成。每个日志条目包含它被创建时的任期号（term），和用于状态机执行的命令。如果一个日志条目被复制到大多数服务器上，就被认为可以提交（commit）了。</p>
 </div>
@@ -427,7 +427,7 @@
 <p>一个 Raft cluster 包括若干台节点，例如典型的 5 台，这样一个集群能容忍 2 台节点发生故障。</p>
 <p><strong>再一次理解任期：</strong></p>
 <p>Raft 将时间划分为<strong>长度不固定的任期</strong>，任期用连续的整数表示</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117214044046.png" alt="image-20221117214044046"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117214044046.png" alt="image-20221117214044046"></p>
 <ol>
 <li><strong>每个任期都是从选举开始的</strong>，此时多个 candidate 都试图成为 leader。</li>
 <li>某个 candidate 赢得选举后，就会成为该任期内的 leader。 <strong>Raft 保证了在任意一个任期内，最多只会有一个 leader</strong>。</li>
@@ -449,7 +449,7 @@
 </div>
 <h3 id="选举限制" tabindex="-1"><a class="header-anchor" href="#选举限制" aria-hidden="true">#</a> 选举限制</h3>
 <p>我们再解释一下选举限制</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117214551553.png" alt="image-20221117214551553"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117214551553.png" alt="image-20221117214551553"></p>
 <div class="custom-container tip"><p class="custom-container-title">我们必须要📜 对上面的解释</p>
 <p>在阶段 a，term 为 2，S1 是 Leader，且 S1 写入日志（term, index）为 (2, 2)，并且日志被同步写入了 S2；</p>
 <p>在阶段 b，S1 离线，触发一次新的选主，此时 S5 被选为新的 Leader，此时系统 term 为 3，且写入了日志（term, index）为（3， 2）;</p>
@@ -511,7 +511,7 @@
 </ul>
 <h3 id="log-文件组织结构" tabindex="-1"><a class="header-anchor" href="#log-文件组织结构" aria-hidden="true">#</a> Log 文件组织结构</h3>
 <p>如下图所示：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117215504215.png" alt="image-20221117215504215"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117215504215.png" alt="image-20221117215504215"></p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>Log 由 log entry 组成，每个 entry 都是<strong>顺序编号</strong>的，这个整数索引标识了该 entry 在 log 中的位置。</p>
 <p>每个 entry 包含了</p>
@@ -548,7 +548,7 @@
 </ol>
 <h3 id="log-不一致场景" tabindex="-1"><a class="header-anchor" href="#log-不一致场景" aria-hidden="true">#</a> Log 不一致场景</h3>
 <p>正常情况下，leader 和 follower 的 log 能保持一致，但 leader 挂掉会导致 log 不一致 （leader 还未将其 log 中的 entry 都复制到其他节点就挂了）。 这些不一致会导致一系列复杂的 leader 和 follower crash。 Figure 7 展示了 follower log 与新的 leader log 的几种可能不同</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117215917742.png" alt="image-20221117215917742"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117215917742.png" alt="image-20221117215917742"></p>
 <p>图中每个方框表示一个 log entry，其中的数字表示它的 term。可能的情况包括：</p>
 <ul>
 <li>丢失记录(a–b) ；</li>
@@ -668,7 +668,7 @@
 <h3 id="限制二-当前任期-副本数量过半-entry-才能提交" tabindex="-1"><a class="header-anchor" href="#限制二-当前任期-副本数量过半-entry-才能提交" aria-hidden="true">#</a> 限制二：当前任期+副本数量过半，entry 才能提交</h3>
 <p>新 leader 如何提交之前任期内遗留下来的、副本数量过集群半数的 entries？</p>
 <p>5.3 小节提到，如果一个 entry 已经存储到了集群中的大多数节点上，leader 就认为这个 entry（在这个 term 内）提交成功了。 如果 leader 在提交这个 entry 之前挂了（即没有同步到大多数节点上），那下一个 leader 将承担这个 entry 的同步和提交任务。 但这里有一些新的问题，图 8 是一个例子：<strong>即使某个 entry 已经存储到了大多数节点，它仍然可能被新 leader 覆盖掉</strong>：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117221132134.png" alt="image-20221117221132134"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117221132134.png" alt="image-20221117221132134"></p>
 <blockquote>
 <p><em>Fig 8. 时序图：举例说明为什么一个新 leader 上任之后，无法判断是否要提交前任 leader 遗留下来的未提交 entries</em></p>
 </blockquote>
@@ -697,7 +697,7 @@
 <li>leaderU 当选为 leader 的时刻，这个 entry 一定不在其 log 中，因为 leader 不会删除或覆盖 entries；</li>
 <li>leaderT 已经将这个 entry 同步到大部分节点上，而 leaderU 已经收到了大部 分节点的投票。因此，<strong>至少一个节点（“某个特定的投票者”）既接受了 leaderT 复制过来的记录，又投票给了 leaderU</strong>， 如图 9 所示。这个特殊的投票者是导致矛盾关键。</li>
 </ol>
-<p><img src="http://sm.nsddd.top/smimage-20221117221225902.png" alt="image-20221117221225902"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117221225902.png" alt="image-20221117221225902"></p>
 <p>这个投票者一定是在投票给 leaderU 之前接受的这个 entry，否则它会拒绝那次来自 leaderT 的 AppendEntries 请求（它当前的 term 会被 T 更大）；</p>
 <p>这个投票者在投票给 leaderU 之前仍然存储着这个 entry，因为每个 后面的 leader 都会包含这个记录 (by assumption), leaders 从不删除记录， 而 followers 只会在与 leader 冲突时才会删除记录。</p>
 <p>这个投票者将选票给了 leaderU，这<strong>说明 leaderU 的 log 至少与该投票者是一样新的</strong> （as up-to-date as the voter’s）。这会导致如下两个矛盾：</p>
@@ -739,7 +739,7 @@ $$</p>
 <p>到目前为止，我们都是假设了<strong>集群配置（节点集合）是不变的</strong>。 但在实际场景中，有时需要增加或删除节点，例如节点故障时用新节点替换某个老节点，或者直接添加或删除节点。 显然，<code v-pre>关闭集群 -&gt; 更新配置文件 -&gt; 重庆开启集群</code> 的方式可以工作，但问题是操作期间集群不可用， 而且还可能因为其中的手动操作引发故障。为避免这些问题，我们决定<strong>自动化配置变更，并将其包含到共识算法中</strong>。</p>
 <h2 id="增删节点可能导致集群分裂" tabindex="-1"><a class="header-anchor" href="#增删节点可能导致集群分裂" aria-hidden="true">#</a> 增删节点可能导致集群分裂</h2>
 <p>这里的本质问题就是<strong>避免在增删节点期间同时出现两个及以上 leader</strong>。 不幸的是，<strong>不管用什么方式，这个过程都是不安全的</strong>（unsafe）：我们 无法在同一时刻原子地切换所有节点，因此在变更时，集群可能会分裂为两个独立的大多数 （two independent majorities）</p>
-<p><img src="http://sm.nsddd.top/smimage-20221117221447782.png" alt="image-20221117221447782"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221117221447782.png" alt="image-20221117221447782"></p>
 <p>节点数量从 3 个增加到 5 个。 这个过程是不安全的，因为不同节点的切换发生在不同时刻：例如 箭头指向的时刻，集群分裂成了两个大多数，分别用的老配置 Cold（server 1/2）和新配置 Cnew（server 3/4/5）， 各自选出了一个 leader。</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '24.md' style='float:left'>⬆️上一节🔗  </a><a href = '26.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
@@ -748,7 +748,7 @@ $$</p>
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第59节-coredns-和-ingress" tabindex="-1"><a class="header-anchor" href="#第59节-coredns-和-ingress" aria-hidden="true">#</a> 第59节 CoreDNS 和 Ingress</h1>
 <div><a href = '58.md' style='float:left'>⬆️上一节🔗  </a><a href = '60.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -31,7 +31,7 @@
 <p>在 Kubernetes 中，CoreDNS 通常作为 Kubernetes 集群中的默认 DNS 服务器。为了使用 CoreDNS，<strong>管理员需要在 Kubernetes 中创建一个 ConfigMap，其中包含 CoreDNS 的配置信息。</strong> 然后，管理员可以使用 <code v-pre>kubectl apply</code> 命令将此 ConfigMap 应用到 Kubernetes 集群中。一旦 CoreDNS 配置完成，<strong>Kubernetes 用户可以使用 DNS 解析服务的 DNS 域名来访问其服务，而无需了解服务的底层 IP 地址。</strong></p>
 <p>CoreDNS 包含一个内存态 DNS，以及与其他 controller 类似的控制器。</p>
 <p><strong>CoreDNS 的实现原理是：控制器监听 Service 和 Endpoint 的变化并配置 DNS，客户端 Pod 在进行域名解析时，从CoreDNS 中查询服务对应的地址记录。</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303121718455.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303121718455.png" alt="img"></p>
 <h3 id="不同类型服务的解析记录" tabindex="-1"><a class="header-anchor" href="#不同类型服务的解析记录" aria-hidden="true">#</a> 不同类型服务的解析记录</h3>
 <p><strong>普通 Service：</strong></p>
 <p>Service DNS 记录是用于服务发现的记录。每个 Kubernetes Service 都会被分配一个唯一的 DNS 名称，这个 DNS 名称将会被映射到 Service 的 Cluster IP。这个 DNS 名称的格式为：<code v-pre>&lt;service-name&gt;.&lt;namespace-name&gt;.svc.cluster.local</code>。</p>
@@ -150,7 +150,7 @@ options ndots:5
 <p>总之，虽然<code v-pre>Service</code>是Kubernetes中的一种基本对象，但是在一些场景中可能无法满足需求。如果需要更加灵活和强大的负载均衡机制，就需要使用Ingress。使用Ingress可以根据HTTP请求的URL路径、主机名等信息进行负载均衡，提供SSL终止和基于名称的虚拟托管等功能，从而更加灵活地控制服务的流量。因此，在一些需要强大负载均衡机制的场景中，<code v-pre>Ingress</code>是必不可少的。</p>
 </blockquote>
 <h3 id="service-和-ingress-对比" tabindex="-1"><a class="header-anchor" href="#service-和-ingress-对比" aria-hidden="true">#</a> Service 和 Ingress 对比</h3>
-<p><img src="http://sm.nsddd.top/sm202303131655593.png" alt="test"></p>
+<p><img src="http://sm.cubxxw.com/sm202303131655593.png" alt="test"></p>
 <p><strong>网络七层也称为OSI参考模型：</strong> 物理层、数据链路层、网络层、传输层、会话层、表示层和应用层。</p>
 <p><strong>基于 L4（传输层） 的服务</strong></p>
 <ul>
@@ -216,7 +216,7 @@ options ndots:5
 </tbody>
 </table>
 <h3 id="ingress规则" tabindex="-1"><a class="header-anchor" href="#ingress规则" aria-hidden="true">#</a> Ingress规则</h3>
-<p><img src="http://sm.nsddd.top/sm202303131740631.png" alt="image-20230313174006575"></p>
+<p><img src="http://sm.cubxxw.com/sm202303131740631.png" alt="image-20230313174006575"></p>
 <p>Ingress规则通过定义不同的 URL 路径以及应该将请求路由到哪个后端服务来实现外部流量的路由。每个规则都包含了一个或多个 HTTP 路径以及对应的后端服务。下面是一个例子：</p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1beta1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
@@ -316,7 +316,7 @@ options ndots:5
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

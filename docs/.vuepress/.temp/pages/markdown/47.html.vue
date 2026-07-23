@@ -7,7 +7,7 @@
 </div>
 <h3 id="经典云计算架构" tabindex="-1"><a class="header-anchor" href="#经典云计算架构" aria-hidden="true">#</a> 经典云计算架构</h3>
 <p>基础云计算架构包括 IaaS （基础即服务）， SaaS（软件即服务）， PaaS（平台即服务）三层服务。</p>
-<p><img src="http://sm.nsddd.top/smiaas-paas-saas-comparison-1024x759.jpg" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/smiaas-paas-saas-comparison-1024x759.jpg" alt="img"></p>
 <h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍" aria-hidden="true">#</a> 介绍</h3>
 <ol>
 <li>
@@ -29,14 +29,14 @@
 </blockquote>
 </li>
 </ol>
-<p><img src="http://sm.nsddd.top/sm123141231" alt="查看源图像"></p>
+<p><img src="http://sm.cubxxw.com/sm123141231" alt="查看源图像"></p>
 <div class="custom-container tip"><p class="custom-container-title">SaaS vs PaaS vs IaaS</p>
 <p>总体而言，每种云模型都提供了自己的特定功能和特性，因此您的解组织了解这些差异至关重要。 无论您是在寻找云存储软件，还是一个能创建定自定义应用程序的平滑平台，，或者希望完全控制整个基础架构而无需对其进行物理维护，您可以使用云服务。 无论您选择哪个选项，迁移到云都是业务和技术的未来，并且很必要让大家正确的了解这一点。</p>
 </div>
 <h3 id="baas-区块链即服务" tabindex="-1"><a class="header-anchor" href="#baas-区块链即服务" aria-hidden="true">#</a> BaaS：区块链即服务</h3>
 <details class="custom-container details"><summary>Baas 区块链即服务什么是区块链即服务（BaaS）？</summary>
 <p>区块链即服务（BaaS）是为从事构建区块链应用程序业务的公司创建和管理的基于云的网络的第三方创建和管理。这些第三方服务是不断发展的区块链技术领域中相对较新的发展。区块链技术的应用已经远远超出了其在加密货币交易中最广为人知的用途，并已扩展到解决各种安全交易。因此，对托管服务有需求。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221031173356050.png" alt="image-20221031173356050"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221031173356050.png" alt="image-20221031173356050"></p>
 <p>现在区块链不光是各个IT巨头，金融机构，咨询公司等也都参与其中，创业型区块链公司也存在不少，随着技术的不断发展，竞争也相当激烈。Hyperledger之前也发布了fabric1.0正式版，改进了架构更适合应用落地。区块链是一个分布式的应用，去中心化多节点，即使有spv认证模式，还是要求有一部分节点下载完整的数据记录，以比特币为例，目前几百G的数据，随着数据量的不断增长，对本地计算资源和存储资源都是一种挑战，之前有人这样说过：本地资源永远是有限的，只有云资源可以不断扩展，理解云资源可以不断扩展。先不论这种说法的正确性，区块链结合云计算存储平台必然是一种发展趋势。云平台目前最为广泛的就是iaas、paas、saas，那么区块链结合云平台我们称为BaaS，理解区块链即服务。</p>
 <p>那么区块链切入云平台，根据这个BaaS中的“B”，blockchain，应该怎么理解。或者应该区分BaaS和btaas，BaaS和btaas根据网络上一些说法baas是指区块链即服务btaas是指区块链技术即服务。各种观念的提出都有自己的理论基础，这里不做定义，只是对两个理解做一个笔者自己的简单理解，如有不对希望及时指正。</p>
 <p>上图很好的说明的这两种概念定义。</p>
@@ -57,7 +57,7 @@
 <p>BaaS 运营商通常提供支持活动，例如带宽管理、适当的资源分配、托管要求和数据安全功能。BaaS运营商使客户能够专注于核心工作：区块链的功能。</p>
 <p><strong>区块链即服务（BaaS）示例：</strong></p>
 <p>下图展示了区块链即服务Hyperledger Cello的工作模型，这是一个类似BaaS的区块链模块工具包和<a href="https://www.investopedia.com/terms/b/blockchain.asp" target="_blank" rel="noopener noreferrer">Hyperledger<ExternalLinkIcon/></a>项目下的实用程序系统。</p>
-<p><img src="http://sm.nsddd.top/smBlockchain-as-a-ServiceBaaS2-baedb4b071464c7cbaa71f7ef13c0c83.png" alt="Cello"></p>
+<p><img src="http://sm.cubxxw.com/smBlockchain-as-a-ServiceBaaS2-baedb4b071464c7cbaa71f7ef13c0c83.png" alt="Cello"></p>
 <p>实际上，BaaS提供商的角色类似于网络托管提供商的角色。网站创建者在自己的个人计算机上创建和运行所有网站内容。他们可能会雇用支持人员或与亚马逊网络服务或 HostGator 等外部托管服务提供商签约。这些第三方公司负责基础设施和维护问题。</p>
 <p>BaaS可能是导致区块链技术在各个行业部门和业务中更广泛和更深入渗透的催化剂。无论大小，企业现在都可以简单地外包技术复杂的工作并专注于其核心活动，而不是创建和运行自己的区块链。</p>
 </details>
@@ -85,8 +85,8 @@
 <div class="custom-container danger"><p class="custom-container-title">我们在之前知道了虚拟机和容器的区别</p>
 <p>虚拟机的内核和文件系统存在不同的位置，系统加载的时候去启动内核，没有加载就是文件</p>
 <p>容器就是把文件系统打包出去，应用所在的依赖全部保存起来。</p>
-<img src="http://sm.nsddd.top//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-6e94771ad01da3cb20e2190b01dfa54e3a69d0b2_virtualization.png?mail:3293172751@qq.com" alt="a" style="zoom:80%;" />
-<img src="http://sm.nsddd.top//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-5c1a41d44b8602c8f746e8929f484a701869ca25_docker.png?mail:3293172751@qq.com" alt="b" style="zoom:80%;" />
+<img src="http://sm.cubxxw.com//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-6e94771ad01da3cb20e2190b01dfa54e3a69d0b2_virtualization.png?mail:3293172751@qq.com" alt="a" style="zoom:80%;" />
+<img src="http://sm.cubxxw.com//typora/spaces_-M5xTVjmK7ax94c8ZQcm_uploads_git-blob-5c1a41d44b8602c8f746e8929f484a701869ca25_docker.png?mail:3293172751@qq.com" alt="b" style="zoom:80%;" />
 <ul>
 <li>虚拟机通过 <code v-pre>Hypervisor</code> 仅进行虚拟化，在这上面去运行操作系统 <code v-pre>Centos</code></li>
 <li>容器通过 <code v-pre>Docker Engine</code> ，基于此实现的容器并不是虚拟化，没有客户机的操作系统，是共享内核的。</li>
@@ -101,25 +101,25 @@
 <blockquote>
 <p><strong><code v-pre>docker</code> 也依旧是这样，我们进去容器的内部根文件系统。</strong></p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221031192452458.png" alt="image-20221031192452458"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221031192452458.png" alt="image-20221031192452458"></p>
 </div>
 <p><strong><code v-pre>rootfs</code> 是 <code v-pre>docker</code> 容器在启动时内部进程可见的文件系统，即 <code v-pre>docker</code> 容器根目录， <code v-pre>rootfs</code> 通常包含一个操作系统运行所需的文件系统。</strong></p>
 <p>在传统的 <code v-pre>linux</code> 启动的时候，首先挂载一个只读的 <code v-pre>rootfs</code> ，当系统检测器完整性后，再切换为读写模式； 而在 <code v-pre>docker</code> 架构中，当 <code v-pre>docekr daemon</code> 为 <code v-pre>docker</code> 容器挂载 <code v-pre>rootfs</code> 时，沿用的 <code v-pre>linux</code> 内核启动时的方法，即将 <code v-pre>rootfs</code> 设置为只读模式， 挂载完毕后，<strong>利用联合文件系统技术</strong> 在已有的只读 <code v-pre>rootfs</code> 上再挂载一个读写层，这样，读写层位于 <code v-pre>docker</code> 容器文件系统的最顶层，其下可能联合挂载了多个只读层。</p>
 <p><code v-pre>rootfs</code> 只是一个操作系统包含的文件、配置、目录，并不包括操作系统，在Linux中，这两个部分是分开存放的。</p>
 <blockquote>
 <p><code v-pre>linux</code> 内核默认存放到 <code v-pre>/boot</code> 下，而 <code v-pre>/usr/src</code> 中可查看内核的信息。有个 <code v-pre>.img</code> 的文件，这就是系统内核映像文件。</p>
-<p><img src="http://sm.nsddd.top/smimage-20221031195613278.png" alt="image-20221031195613278"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221031195613278.png" alt="image-20221031195613278"></p>
 </blockquote>
 <h2 id="namespace" tabindex="-1"><a class="header-anchor" href="#namespace" aria-hidden="true">#</a> Namespace</h2>
 <div class="custom-container tip"><p class="custom-container-title">什么是 Namespace ？</p>
 <p>我们的docker是共享同一个内核的，使用 <code v-pre>Namespace</code> 可以创建隔离，决定进程可以看到或者使用哪些资源。</p>
 </div>
 <p><code v-pre>namespace</code> 是 Linux 内核用来隔离内核资源的方式，通过 namespace 可以让一些进程只能看到与自己相关的一部分资源，而另外一些进程也只能看到与它们自己相关的资源。</p>
-<p><img src="http://sm.nsddd.top/smformat12344" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/smformat12344" alt="img"></p>
 <div class="custom-container warning"><p class="custom-container-title">进程命名空间查看</p>
 <p>进程命名空间查看：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">ls</span> /proc/<span class="token punctuation">{</span>PD<span class="token punctuation">}</span>/ns
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221031201635589.png" alt="image-20221031201635589"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221031201635589.png" alt="image-20221031201635589"></p>
 </div>
 <h2 id="control-groups" tabindex="-1"><a class="header-anchor" href="#control-groups" aria-hidden="true">#</a> control groups</h2>
 <blockquote>

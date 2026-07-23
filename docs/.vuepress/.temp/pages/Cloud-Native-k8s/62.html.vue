@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第62节-istio-高级流量管理" tabindex="-1"><a class="header-anchor" href="#第62节-istio-高级流量管理" aria-hidden="true">#</a> 第62节 Istio 高级流量管理</h1>
 <div><a href = '61.md' style='float:left'>⬆️上一节🔗  </a><a href = '63.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -187,7 +187,7 @@ O <span class="token arrow operator">-.-></span> P
 💡 Sidecar
 Sidecar 是一个模式，它将一个辅助容器作为主容器的一个辅助进程来运行。在微服务架构中，使用 Sidecar 模式可以将代理作为辅助容器与每个微服务实例一起运行，以便实现流量管理、安全管理和可观察性等功能。Sidecar 模式还可以将监控、日志记录和跟踪工具作为辅助容器与主容器一起运行，以便对微服务进行可观察性监控。Istio 服务网格使用 Sidecar 模式来管理网络流量，并使用 Envoy 代理作为辅助容器进行流量管理和安全管理。</aside>
 <p>Service Mesh 把认证鉴权、服务发现、负载均衡、熔断等通用能力整合到 Sidecar 里，让业务专注于业务本身。</p>
-<p><img src="http://sm.nsddd.top/sm202303171416883.png" alt="image-20230317141628657"></p>
+<p><img src="http://sm.cubxxw.com/sm202303171416883.png" alt="image-20230317141628657"></p>
 <h3 id="服务网格可选方案" tabindex="-1"><a class="header-anchor" href="#服务网格可选方案" aria-hidden="true">#</a> 服务网格可选方案</h3>
 <p>在 Istio 之前，已经有了一些服务网格的解决方案。下面是一些可选方案：</p>
 <ul>
@@ -252,7 +252,7 @@ O <span class="token arrow operator">-.-></span> P
 <ul>
 <li>从微服务回归单体</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303171417914.png" alt="image-20230317141702836"></p>
+<p><img src="http://sm.cubxxw.com/sm202303171417914.png" alt="image-20230317141702836"></p>
 <p>Istio有三个控制平面组件：Pilot、Mixer和Citadel。</p>
 <ul>
 <li><strong>Pilot</strong>：负责流量管理，包括流量路由、流量转移、请求重试、故障注入、流量镜像等功能。Pilot将流量管理规则下发到Envoy代理，控制流量的转发和策略的执行。</li>
@@ -616,7 +616,7 @@ O <span class="token arrow operator">-.-></span> P
 </table>
 <p>Kubernetes Cluster Federation 又名 KubeFed 或 Federation v2，v2 架构在 Federation v1 基础之上，简化扩展 Federated API 过程，并加强跨集群服务发现与编排的功能。另外 KubeFed 在设计之初，有两个最重要核心理念是 KubeFed 希望实现的，分别为 Modularization（模块化）与 Customizable (定制化)，这两个理念大概是希望 KubeFed 能够跟随着 Kubernetes 生态发展，并持续保持相容性与扩展性。</p>
 <p>由于 Federation 试图解决一系列复杂的问题，因此需要将这些问题的不同部分分解开来。Federation 中涉及的概念和架构图如下所示。</p>
-<p><img src="http://sm.nsddd.top/sm202303171417779.png" alt="image-20230317141724631"></p>
+<p><img src="http://sm.cubxxw.com/sm202303171417779.png" alt="image-20230317141724631"></p>
 <h3 id="集群的注册中心" tabindex="-1"><a class="header-anchor" href="#集群的注册中心" aria-hidden="true">#</a> 集群的注册中心</h3>
 <p>集群注册中心 （ClusterRegistry) 提供了所有联邦下的集群清单，以及每一个集群的认证信息、状态信息。</p>
 <h2 id="kind-搭建集群联邦" tabindex="-1"><a class="header-anchor" href="#kind-搭建集群联邦" aria-hidden="true">#</a> Kind 搭建集群联邦</h2>
@@ -761,7 +761,7 @@ chmod +x kubefedctl-$(uname)-$(arch)
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

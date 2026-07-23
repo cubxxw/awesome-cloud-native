@@ -87,7 +87,7 @@ helm <span class="token function">install</span> kubeblocks kubeblocks/kubeblock
 <li>要试用KubeBlocks并测试数据库功能，或使用低流测试进行基准测试，请参阅在测试环境中连接数据库。</li>
 <li>若要在生产环境中连接数据库，或进行高流量压力测试，请参见在生产环境中连接数据库。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202311152112253.png" alt="Connect database"></p>
+<p><img src="http://sm.cubxxw.com/sm202311152112253.png" alt="Connect database"></p>
 <h3 id="在测试环境中连接数据库" tabindex="-1"><a class="header-anchor" href="#在测试环境中连接数据库" aria-hidden="true">#</a> 在测试环境中连接数据库</h3>
 <p><strong>程序1.使用kblog cluster connect命令</strong></p>
 <p>您可以使用 <code v-pre>kbcli cluster connect</code> 命令并指定要连接的群集名称。</p>
@@ -114,7 +114,7 @@ helm <span class="token function">install</span> kubeblocks kubeblocks/kubeblock
 <li>场景3：Client 3和数据库位于不同的私有网络中，例如其他私有网络或公网。要连接client3和数据库，请参见过程4。</li>
 </ul>
 <p>请参阅下图以获得网络位置的清晰图像。</p>
-<p><img src="http://sm.nsddd.top/sm202311152130380.png" alt="image-20231115213009244"></p>
+<p><img src="http://sm.cubxxw.com/sm202311152130380.png" alt="image-20231115213009244"></p>
 <p><strong>步骤3.连接同一Kubernetes集群中的数据库</strong></p>
 <p>您可以使用数据库连接的域名或网址。要检查数据库端点，请使用 <code v-pre>kbcli cluster describe ${cluster-name}</code> 。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kbcli cluster describe x

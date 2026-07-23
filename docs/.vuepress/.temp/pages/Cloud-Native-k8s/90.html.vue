@@ -1,16 +1,16 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第90节-gitops-进阶理论" tabindex="-1"><a class="header-anchor" href="#第90节-gitops-进阶理论" aria-hidden="true">#</a> 第90节 GitOps 进阶理论</h1>
 <div><a href = '89.md' style='float:left'>⬆️上一节🔗  </a><a href = '91.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
 <h2 id="前言" tabindex="-1"><a class="header-anchor" href="#前言" aria-hidden="true">#</a> 前言</h2>
-<p>前面我们介绍了 GitOps 的基础理论。阅读GitOps 实践理论：Kubernetes 部署策略深入解析：https://nsddd.top/zh/posts/gitops-practice-theory-part/</p>
+<p>前面我们介绍了 GitOps 的基础理论。阅读GitOps 实践理论：Kubernetes 部署策略深入解析：https://cubxxw.com/zh/posts/gitops-practice-theory-part/</p>
 <p>这一节我们来看看 GitOps 的进阶部分，包括访问控制与安全处理，Secret ，以及 可观测性表现。</p>
 <p>话不多说，我们立马开始  ~</p>
 <h2 id="访问控制" tabindex="-1"><a class="header-anchor" href="#访问控制" aria-hidden="true">#</a> 访问控制</h2>
@@ -20,7 +20,7 @@
 <p>为了更好地结合GitOps理解访问控制的细微差别，我们先来了解一下什么是访问控制。访问控制是限制对系统或物理或虚拟资源的访问的一种方式。它规定了允许谁访问受保护的资源以及允许执行哪些操作。访问控制由两部分组成：身份验证，确保用户是他们所说的那个人；授权，确保他们有适当的访问权来对指定的资源执行所请求的操作。不管在哪个领域，访问控制包括三个主要组成部分：主体、客体和引用监视器。访问控制系统最直接的演示是一个物理世界的例子：一个人试图通过门进入建筑物。人是一个试图接近客体的主体，客体是一个建筑物。门是一个参考监视器，只有当试图进入的人拥有门钥匙时，它才会授权访问请求。</p>
 </blockquote>
 <p>就比如说对于我们 OpenIM 团队来说，可能每个人都需要一套环境，需要一套 namespace，如何做到隔离性和访问控制对于我们来说尤为重要。</p>
-<p><img src="http://sm.nsddd.top/sm202311282113848.png" alt="image-20231128211345647"></p>
+<p><img src="http://sm.cubxxw.com/sm202311282113848.png" alt="image-20231128211345647"></p>
 <p><strong>要保护什么？</strong></p>
 <p>将应用程序交付流程端到端地保护到Kubernetes集群时，需要保护许多不同的组件。其中包括（但不限于）</p>
 <ul>
@@ -54,10 +54,10 @@
 <p>GitOps Operator 根据您选择的GitOps操作符，保护操作符可能是一个选项，也可能不是。一个基本的GitOps操作符，比如我们在之前提到的基于Cron Job的GitOps操作符，没有其他的安全含义，因为它不是一个可以对外公开的服务，也没有任何形式的管理功能。另一方面，像Argo CD、Helm或 Jenckins X 这样的工具是要向最终用户公开的。因此，它有额外的安全考虑，因为它可能是一个攻击向量。</p>
 <p>首先，让我们弄清楚连续交付（CD）安全模型中的访问控制主体和对象。正如我们已经了解到的，对象是必须被保护的资源。CD表面攻击很大，但不可变的基础结构和Kubernetes将其限制为两件事:Kubernetes配置和部署工件。您已经知道，Kubernetes配置由Kubernetes资源集合表示。资源清单存储在Git中，并自动应用到目标Kubernetes群集。部署工件是容器映像。有了这两个，你就可以以任何方式塑造你的作品，甚至可以在任何时候从头开始重新创作。</p>
 <p>访问控制主体是工程师和自动化流程，如CI管道。工程师们正在利用自动化不断生成新的容器映像，并更新Kubernetes配置以部署这些映像。除非您使用的是GitOps，否则Kubernetes配置将在持续集成中手动更新或编写脚本。这种方法有时被称为CIOps</p>
-<p><img src="https://sm.nsddd.top/sm202312051501894.png" alt="image-20231205150119614"></p>
+<p><img src="https://sm.cubxxw.com/sm202312051501894.png" alt="image-20231205150119614"></p>
 <p>CIOps安全模型并不安全，因为它提供了对工程师和CI系统的集群访问。这里的问题是CI系统获得了对群集的控制权，并被允许进行任意的Kubernetes配置更改。这大大扩大了攻击面，使保护集群变得困难。</p>
 <p>那么GitOps如何改善这种情况呢？GitOps统一了从Git repo向集群应用更改的过程。这使得访问令牌更靠近集群，并有效地将保护对集群的访问的负担转移到Git存储库。保护Git仓库中的配置仍然需要付出努力。它的伟大之处在于，我们可以使用用于保护应用程序源代码的相同工具。Git托管提供商，如GitHub和GitLab，允许我们定义和执行变更流程，比如对每个变更进行强制审查或静态分析。</p>
-<p><img src="http://sm.nsddd.top/sm202312051504029.png" alt="image-20231205150411886"></p>
+<p><img src="http://sm.cubxxw.com/sm202312051504029.png" alt="image-20231205150411886"></p>
 <p>GitOps安全模型将群集访问权限仅限于GitOps操作符。攻击面大大减少，对集群的保护也简单得多。</p>
 <p>由于GitOps操作员是唯一具有集群访问权限的主体，因此工程团队可以更轻松地定义哪些可以部署到集群中，哪些不能部署到集群中，从而显著提高集群安全性。让我们继续学习如何保护Git存储库中的Kubernetes配置以及如何微调Kubernetes访问控制。</p>
 <p><strong>访问限制</strong></p>
@@ -90,10 +90,10 @@
 <li>ABAC也称为基于策略的访问控制，它定义了一种访问控制范式，通过使用将属性结合在一起的策略将访问权限授予用户。</li>
 </ul>
 <p>ABAC非常灵活，可能是列表中最强大的模型。由于其强大的功能，ABAC最初被选为Kubernetes安全模型。然而，后来，社区意识到ABAC的概念和它们的实施方式在Kuber netes是很难理解和使用。在此基础上，提出了一种基于RBAC的授权机制。2017年，基于RBAC的授权进入测试版，ABAC被宣布弃用。目前，RBAC是Kubernetes中首选的授权机制，并建议对在Kubernetes上运行的每个应用程序使用。RBAC模型包括以下三个主要元素：主语、资源和动词。主题表示希望访问资源的用户或进程，谓词是可以对资源执行的操作。那么如何将这些元素映射到Kubernetes API对象呢？RBAC资源由常规Kubernetes资源（如Pod或Deploy-ment）表示。为了表示动词，在Kubernetes中引入了两套新的专门资源。动词由Role和RoleBinding资源表示，主题由User和ServiceAccount资源表示。</p>
-<p><img src="http://sm.nsddd.top/sm202312062034456.png" alt="image-20231206203417134"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062034456.png" alt="image-20231206203417134"></p>
 <p>Kubernetes角色绑定将角色中定义的权限授予用户和ServiceAccounts。ServiceAccount为在Pod中运行的进程提供标识。</p>
 <p>角色和角色绑定角色资源用于连接动词和Kubernetes资源。示例角色定义在以下代码列表中表示。</p>
-<p><img src="http://sm.nsddd.top/sm202312062034741.png" alt="image-20231206203450535"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062034741.png" alt="image-20231206203450535"></p>
 <h3 id="镜像仓库访问" tabindex="-1"><a class="header-anchor" href="#镜像仓库访问" aria-hidden="true">#</a> 镜像仓库访问</h3>
 <p>通过保护 Kubernetes 的集群，我们可以保证集群配置描述了引用正确Docker映像的正确工作负载，并最终运行我们想要的软件。受保护的部署存储库和完全自动化的GitOps驱动的部署过程提供了可审计性和可观察性。最后一个未受保护的部分是Docker映像本身。我们将讨论Docker图像保护的最后，但这绝对不是最不重要的话题。图像内容最终定义了将在集群内部执行的二进制文件。因此，即使其他一切都是安全的，Docker registry保护的漏洞击败了所有其他的安全门。那么Docker图像保护在实践中意味着什么呢？我们必须处理以下两个问题：</p>
 <ul>
@@ -125,16 +125,16 @@
 <p>好吧，面对现实吧。全新的新建项目并不一定要以非常安全的部署过程开始。事实上，年轻的项目甚至没有自动匹配的部署过程。首席工程师可能是唯一一个能够部署项目的人，他们可以在笔记本电脑上进行部署。通常，当部署所有应用程序服务的时间越来越长时，团队开始添加自动化。随着未经授权访问的潜在成本和损害的增加，自动化的安全性变得越来越重要。</p>
 <p><strong>完全访问权限</strong></p>
 <p>几乎每个新项目的初始安全模型都完全基于团队成员之间的信任。每个团队成员都有完全的访问权限，部署更改不一定会被记录下来，也不一定可用于以后的审计。</p>
-<p><img src="http://sm.nsddd.top/sm202312062050315.png" alt="image-20231206205048176"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062050315.png" alt="image-20231206205048176"></p>
 <p>起初，薄弱的安全并不一定是一件坏事。完全访问意味着很少的障碍，使团队更加灵活，行动更快。虽然生产中没有重要的客户数据，但这是一个专注于速度和塑造项目的完美机会，直到您准备好进入生产。但可能迟早，你将需要把适当的安全控制到位，而不是不仅适用于生产环境中的客户数据，而且还可以确保部署到生产环境中的代码的完整性。</p>
 <p><strong>Deployment repo access</strong></p>
 <p>默认情况下禁止开发人员直接访问Kubernetes，从安全角度来说是向前迈出的一大步。如果您使用的是GitOps，这是最常见的模式。在此模型中，开发人员仍然可以完全访问部署存储库，但必须依赖GitOps操作符将更改推送到Kubernetes群集。</p>
-<p><img src="http://sm.nsddd.top/sm202312062054688.png" alt="image-20231206205408602"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062054688.png" alt="image-20231206205408602"></p>
 <p>GitOps操作符允许删除群集访问。此时，工程师只需要访问部署存储库。</p>
 <p>除了更好的安全性之外，这种模式还提供了可审计性。假设没有人有权访问Kubernetes配置，则部署存储库历史记录包含所有群集配置更改。模式仍不完善。随着项目的成熟，团队不断改进部署配置，手动更新部署存储库感觉非常好。然而，经过一段时间后，每个应用程序版本将只需要更改图像标记。在这个阶段，部署存储库的维护仍然是非常有价值的，但可能会感觉有很大的开销。</p>
 <p><strong>仅限代码访问</strong></p>
 <p>仅代码访问模式是部署-存储库-仅访问方法的逻辑延续。如果部署存储库中的发布更改是可预测的，那么就有可能在ci管道中编写配置更改流程。</p>
-<p><img src="http://sm.nsddd.top/sm202312062101262.png" alt="image-20231206210104068"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062101262.png" alt="image-20231206210104068"></p>
 <p>模式简化了开发过程，大大减少了人工工作量。还从几个方面提高了部署安全性：</p>
 <ul>
 <li>开发团队不再需要访问部署存储库。只有专用的自动化帐户才有权限推送到日志中。</li>
@@ -161,13 +161,13 @@
 <li>Kubernetes API访问</li>
 </ul>
 <h4 id="作为-config-转入-pod-中" tabindex="-1"><a class="header-anchor" href="#作为-config-转入-pod-中" aria-hidden="true">#</a> 作为 config 转入 pod 中</h4>
-<p><img src="http://sm.nsddd.top/sm202312062122875.png" alt="image-20231206212222760"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062122875.png" alt="image-20231206212222760"></p>
 <p>Secret卷用于向Pods传递敏感信息，如密码。秘密卷由tmpfs（支持RAM的文件系统）支持所以它们永远不会写入非易失性存储器。</p>
 <blockquote>
 <p><code v-pre>tmpfs</code> 是一种基于内存的文件系统，它使用主机的 RAM 和交换空间来存储文件和目录。在 Linux 和其他类 Unix 操作系统中，<code v-pre>tmpfs</code> 提供了一种高效的方式来存储临时数据，因为访问 RAM 的速度远远超过常规的硬盘存储。</p>
 </blockquote>
 <p>使用Secrets的第一个技巧是将它们作为卷装载到Pod中。为此，您首先声明以下内容。</p>
-<p><img src="http://sm.nsddd.top/sm202312062135614.png" alt="image-20231206213554511"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062135614.png" alt="image-20231206213554511"></p>
 <p>当将Secret（或ConfigMap）作为文件卷投影到Pod中时，对底层Secret的更改最终会更新Pod中挂载的文件。这使得应用程序有机会重新配置自己，或热重新加载，而无需重新启动容器/Pod。</p>
 <p><strong>特点</strong>:</p>
 <ul>
@@ -181,7 +181,7 @@
 </ul>
 <h4 id="使用环境变量" tabindex="-1"><a class="header-anchor" href="#使用环境变量" aria-hidden="true">#</a> 使用环境变量</h4>
 <p>使用Secrets作为环境变量使用Kubernetes Secrets的第二种方式是将它们设置为环境变量。</p>
-<p><img src="http://sm.nsddd.top/sm202312062139548.png" alt="image-20231206213938465"></p>
+<p><img src="http://sm.cubxxw.com/sm202312062139548.png" alt="image-20231206213938465"></p>
 <p>将Secrets作为环境变量公开到容器中，虽然很方便，但可能不是使用Secrets的最佳方式，因为它比将它们作为卷挂载文件使用更不安全。当Secret被设置为环境变量时，容器中的所有进程（包括子进程）都将继承OS环境，并能够读取环境变量值，从而读取Secret数据。例如，forked shell脚本可以通过运行env实用程序读取环境变量。</p>
 <p>使用Secrets作为环境变量的Secret环境变量的第二个缺点是，与Secrets projected intovolumes不同，如果Secret在容器启动后被更新，Secret环境变量的值将不会被更新。容器或Pod重启将是必要的，以通知更改。</p>
 <ul>
@@ -299,7 +299,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

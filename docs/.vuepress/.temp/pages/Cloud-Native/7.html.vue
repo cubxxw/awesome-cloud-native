@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第7节-k3s-vs-k0s" tabindex="-1"><a class="header-anchor" href="#第7节-k3s-vs-k0s" aria-hidden="true">#</a> 第7节 k3s vs k0s</h1>
 <div><a href = '6.md' style='float:left'>⬆️上一节🔗  </a><a href = '8.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -43,7 +43,7 @@
 <p>K3s 是经过 CNCF（云原生计算基金会）认证的 Kubernetes 发行版，可确保所有其他 Kubernetes 版本都支持所需的 API，就像开源产品一样。</p>
 <p>K3s 具有非常轻量级的设计，其二进制大小很小。Rancher 通过删除许多可以通过附加组件轻松实现的组件来实现这一点。</p>
 <p>K3s 对资源的要求非常低，这意味着它可以很容易地在集群上运行或部署。k0s 的采用和增长也在迅速发生，自 2019 年推出以来已有 1800 多名贡献者，k3s 已成为小型 Kubernetes 的主要选择之一</p>
-<p><img src="http://sm.nsddd.top/smimage-20221113132824829.png" alt="image-20221113132824829"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221113132824829.png" alt="image-20221113132824829"></p>
 <h2 id="k3s-与-k0s" tabindex="-1"><a class="header-anchor" href="#k3s-与-k0s" aria-hidden="true">#</a> k3s 与 k0s</h2>
 <p>在开始比较之前，需要指出的是，K3s 和 K0s 发行版的核心是相同的上游开源版本 Kubernetes。这些发行版可能有不同的发布期，但它们都利用了上游 Kubernetes 并将其与其他技术相结合，以满足市场的期望需求。</p>
 <p>k3s 和 k0s 发行版都具有简单的设计，打包和部署为单个二进制文件。与 k0s(~150Mb) 相比，用户可能会使用 k3s(50Mb) 获得更轻的版本，但他们都可以在几秒钟内获得一个完整的 Kubernetes 集群。通过在集群节点上运行脚本，安装也非常简单。</p>
@@ -147,7 +147,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

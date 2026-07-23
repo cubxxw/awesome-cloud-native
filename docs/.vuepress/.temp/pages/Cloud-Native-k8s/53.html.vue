@@ -1,17 +1,17 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第53节-cri、cni、csi-底层刨析" tabindex="-1"><a class="header-anchor" href="#第53节-cri、cni、csi-底层刨析" aria-hidden="true">#</a> 第53节 CRI、CNI、CSI 底层刨析</h1>
 <div><a href = '52.md' style='float:left'>⬆️上一节🔗  </a><a href = '54.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
 <h2 id="容器运行时" tabindex="-1"><a class="header-anchor" href="#容器运行时" aria-hidden="true">#</a> 容器运行时</h2>
 <p>容器运行时(Container Runtime)，运行于Kubernetes (k8s)集群的每个节点中，负责容器的整 个生命周期。其中Docker是目前应用最广的。随着容器云的发展,越来越多的容器运行时涌现。为了 解决这些容器运行时和Kubernetes的集成问题，在Kubernetes 1.5版本中，社区推出了CRI ( Container Runtime Interface,容器运行时接口)以支持更多的容器运行时。</p>
-<p><img src="http://sm.nsddd.top/sm202303082036547.png" alt="image-20230308203547983"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082036547.png" alt="image-20230308203547983"></p>
 <h3 id="什么是-cri" tabindex="-1"><a class="header-anchor" href="#什么是-cri" aria-hidden="true">#</a> 什么是 CRI</h3>
 <p><strong>CRI 是 Kubernetes 定义的一组 gRPC 服务。</strong></p>
 <p>kubelet 作为客户端，<strong>基于 gRPC 框架，通过 Socket 和容器运行时通信</strong>。它包括两类服务:</p>
@@ -19,7 +19,7 @@
 <li><strong>镜像服务(Image Service)</strong>：提供下载、检查和删除镜像的远程程序调用；</li>
 <li><strong>运行时服务(Runtime Service)</strong>：包含用于管理容器生命周期，以及与容器交互的调用(exec/ attach / port-forward)的远程程序调用。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303082035460.png" alt="image-20230308203517139"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082035460.png" alt="image-20230308203517139"></p>
 <h3 id="运行时的层级" tabindex="-1"><a class="header-anchor" href="#运行时的层级" aria-hidden="true">#</a> 运行时的层级</h3>
 <p>容器运行时可以分为高层和低层的运行时：</p>
 <blockquote>
@@ -46,20 +46,20 @@
 <li><strong>运行时规范(Runtime Specification)</strong>：描述了如何从 OCI 运行时文件系统包运行容器程序，并且定义它的配置、运行环境和生命周期，如何为新容器设置命名空间(namepsaces)和控制组(cgroups) ，以及挂载根文件系统等等操作。</li>
 </ul>
 <h3 id="cri-方法列表" tabindex="-1"><a class="header-anchor" href="#cri-方法列表" aria-hidden="true">#</a> CRI 方法列表</h3>
-<p><img src="http://sm.nsddd.top/sm202303082048941.png" alt="image-20230308204826501"></p>
-<p><img src="http://sm.nsddd.top/sm202303082048989.png" alt="image-20230308204850894"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082048941.png" alt="image-20230308204826501"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082048989.png" alt="image-20230308204850894"></p>
 <h3 id="开源运行时的比较" tabindex="-1"><a class="header-anchor" href="#开源运行时的比较" aria-hidden="true">#</a> 开源运行时的比较</h3>
 <p><code v-pre>Docker</code> 的多层封装和调用，导致其在可维护性上略逊一筹,增加了线上问题的定位难度;几乎除了重启 <code v-pre>Docker</code>，我们就毫无他法了。 <code v-pre>containerd</code> 和 <code v-pre>CRI-O</code> 的方案比起 <code v-pre>Docker</code> 简洁很多。</p>
 <blockquote>
 <p>docker 可以理解为 containerd 的一个超集，如果你用 docker 作为 运行时，那么相当于启动了一个厚重的 dockershim。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303082049718.png" alt="image-20230308204923967"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082049718.png" alt="image-20230308204923967"></p>
 <h4 id="性能差异" tabindex="-1"><a class="header-anchor" href="#性能差异" aria-hidden="true">#</a> 性能差异</h4>
 <p>containerd 在各个方面都表现良好，除了启动容器这项。从总用时来看，containerd 的用时还是要比 CRI-O 要短的。</p>
 <blockquote>
 <p>所以最终是 containerd 赢了，最优的方案，当然 cri-o + runc 也是可以的。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303082049094.png" alt="image-20230308204953887"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082049094.png" alt="image-20230308204953887"></p>
 <h4 id="优劣对比" tabindex="-1"><a class="header-anchor" href="#优劣对比" aria-hidden="true">#</a> 优劣对比</h4>
 <p>功能性来讲，<code v-pre>containerd</code> 和 <code v-pre>CRI-O</code> 都符合 <code v-pre>CRI</code> 和 <code v-pre>OCI</code> 的标准;；在稳定性上，containerd 略胜一筹; 从性能上讲，containerd 胜出。</p>
 <table>
@@ -101,7 +101,7 @@
 <p>相对于 Docker而言，containerd 减少了Docker 所需的处理模块 Dockerd 和 Docker-shim,并且对 Docker 支持的存储驱动进行了优化，因此在容器的创建启动停止和删除，以及对镜像的拉取上，都具有性能上的优势。架构的简化同时也带来了维护的便利。</p>
 <p>当然 Docker 也具有很多 containerd 不具有的功能，例如支持 zfs 存储驱动，支持对日志的大小和文件限制，在以 overlayfs2 做存储驱动的情况下，可以通过 xfs_quota 来对容器的可写层进行大小限制等。尽管如此，containerd 目前也基本上能够满足容器的众多管理需求，所以将它作为运行时的也越来越多。</p>
 <h4 id="docker-和-containerd-的差异细节" tabindex="-1"><a class="header-anchor" href="#docker-和-containerd-的差异细节" aria-hidden="true">#</a> docker 和 containerd 的差异细节</h4>
-<img src="http://sm.nsddd.top/sm202303082050059.png" alt="image-20230308205012033" style="zoom:67%;" />
+<img src="http://sm.cubxxw.com/sm202303082050059.png" alt="image-20230308205012033" style="zoom:67%;" />
 <p>可以看到 docker 中有许多 k8s 不需要的功能，k8s 需要的只是 红框中的部分，其他的都是冗余，即便去掉这部分，剩下的调用链也是非常的长。</p>
 <p>相比之下 containerd 整个代码和调用链都远优于 docker 的。</p>
 <h3 id="如何从-docker-切换到-containerd" tabindex="-1"><a class="header-anchor" href="#如何从-docker-切换到-containerd" aria-hidden="true">#</a> 如何从 Docker 切换到 Containerd</h3>
@@ -133,7 +133,7 @@ containerd config default <span class="token operator">|</span> <span class="tok
 <span class="token assign-left variable">Environment</span><span class="token operator">=</span><span class="token string">"KUBELET_EXTRA_ARGS=--container-runtime=remote --container-runtime-endpoint=unix:///run/containerd/containerd.sock --pod-infra-container-image=registry.aliyuncs.com/google_containers/pause:3.5"</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>接下来就是 修改 Kubernetes 的启动参数，告诉 Kubernetes 我的运行时 要改为 containerd。</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303082108767.png" alt="image-20230308210827670"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082108767.png" alt="image-20230308210827670"></p>
 <p>这个位置就是 kubelete gPRC 调用的位置。</p>
 </blockquote>
 <p>Restart</p>
@@ -198,12 +198,12 @@ EOF
 <p>后续 k8s v1.24 彻底移除 docker 之后就不用考虑这种特殊情况了。</p>
 </blockquote>
 <p><strong>具体流程如下：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303082216727.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082216727.png" alt="img"></p>
 <p><strong>完整的调用链如下：</strong></p>
 <p>首先 Pod 是由 <code v-pre>kubelet</code> 来起的，然后 <code v-pre>kubelet</code> 通过 <code v-pre>CRI</code> 接口来起 Pod。</p>
 <p>而起 Pod 的过程中又包含 <strong>网络相关配置</strong>，这部分就要由 CRI 来调用 CNI 实现了。</p>
 <p>因此整个调用链就是 <code v-pre>kubelet --&gt; CRI --&gt; CNI</code>。</p>
-<img src="http://sm.nsddd.top/sm202303082216115.jpeg" alt="img" style="zoom:33%;" />
+<img src="http://sm.cubxxw.com/sm202303082216115.jpeg" alt="img" style="zoom:33%;" />
 <h3 id="cni-部署" tabindex="-1"><a class="header-anchor" href="#cni-部署" aria-hidden="true">#</a> CNI 部署？</h3>
 <p>CNI 插件部署的时候一般会启动一个 DaemonSet，然后把 镜像里的二进制文件复制到宿主机的 <code v-pre>/opt/cni/bin</code> 目录下，这样就算是完成了部署。</p>
 <blockquote>
@@ -231,7 +231,7 @@ EOF
 <p>Flannel 是由 CoreOS 开发的项目，是 CNI 插件早期的入门产品，简单易用。 Flannel 使用 Kubernetes 集群的现有 etcd 集群来存储其状态信息，从而不必提供专用的数据存储，只需要在每个节点上运行 flanneld 来守护进程。</p>
 <p>每个节点都被分配一一个子网，为该节点上的 Pod 分配 IP 地址。 同一主机内的 Pod 可以使用网桥进行通信，而不同主机上的 Pod 将通过 flanneld 将其流量封装在 UDP 数据包中，以路由到适当的目的地。 封装方式默认和推荐的方法是使用 VxLAN,因为它具有良好的性能,并且比其他选项要少些人为干预。虽然使用VxLAN 之类的技术封装的解决方案效果很好，但缺点就是该过程使流量跟踪变得困难。</p>
 <p>同时 Flannel 不支持 network policy。</p>
-<p><img src="http://sm.nsddd.top/sm202303082217859.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082217859.png" alt="img"></p>
 <p>Flannel 通过封包解包方式实现。</p>
 <h3 id="calico" tabindex="-1"><a class="header-anchor" href="#calico" aria-hidden="true">#</a> Calico</h3>
 <p>Calico 以其性能、灵活性和网络策略而闻名，不仅涉及在主机和 Pod 之间提供网络连接，而且还涉及网络安全和 策略管理。</p>
@@ -245,14 +245,14 @@ EOF
 <li>封包解包的隧道模式</li>
 <li>动态路由模式</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303082217415.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082217415.png" alt="img"></p>
 <h4 id="calico-运行流程" tabindex="-1"><a class="header-anchor" href="#calico-运行流程" aria-hidden="true">#</a> Calico 运行流程</h4>
 <p>插件部署后会启动 DaemonSet，该 DaemonSet 会把存放配置文件(<code v-pre>/etc/cni/net.d</code>)和二进制文件(<code v-pre>/opt/cni/bin</code>)的目录挂载到 Pod 里去，后把镜像里的配置文件和二进制文件复制到对应目录。</p>
 <blockquote>
 <p>DaemonSet 会运行再所有节点上，所以添加或者删除节点时都可以处理。</p>
 </blockquote>
 <h4 id="calico-vxlan" tabindex="-1"><a class="header-anchor" href="#calico-vxlan" aria-hidden="true">#</a> Calico VxLAN</h4>
-<p><img src="http://sm.nsddd.top/sm202303091558883.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303091558883.png" alt="img"></p>
 <p>Pod1 和 Pod2 处于不同 Node，且不属于同一网段，无法直接路由到达。</p>
 <p>然后安装了 Calico 之后会在每个节点上都有一个 <code v-pre>vxland</code> 进程和 <code v-pre>vxlan-calico</code> 的网络设备，Pod 中的数据通过 <code v-pre>vxlan-calico</code> 设备转发到 vxland 进程，这个 vxland 进程就会进行封包，把 Pod 里发出来的网络包整个作为 payload，然后再次增加 IP 头，这里添加的源IP就是当前节点的<code v-pre>IP+vxland</code> 监听的 4789 端口，目标IP就是Pod2所在Node的IP，然后这个包就走外部节点的路由从master 节点到了 node 节点，然后 node 节点的 vxland 进行解包后又通过<code v-pre>vxlan-calico</code> 设备进入到 Pod2 里面。</p>
 <blockquote>
@@ -459,7 +459,7 @@ protocol direct <span class="token punctuation">{</span>
 <blockquote>
 <p>注意这是运行时存储，是一个文件系统，这个用作拉取运行时就好了，不建议写任何东西或者日志，这样会影响效率。</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303082238763.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082238763.png" alt="img"></p>
 <h3 id="存储卷插件管理" tabindex="-1"><a class="header-anchor" href="#存储卷插件管理" aria-hidden="true">#</a> 存储卷插件管理</h3>
 <p>Kubernetes支持以插件的形式来实现对不同存储的支持和扩展，这些扩展基于如下三种方式:</p>
 <ul>
@@ -547,7 +547,7 @@ protocol direct <span class="token punctuation">{</span>
 </tr>
 </tbody>
 </table>
-<p><img src="http://sm.nsddd.top/sm202303082239511.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082239511.png" alt="img"></p>
 <p><strong>hostPath 卷</strong>是 Kubernetes 中最简单和最常见的一种卷类型，它可以将节点上的目录或文件挂载到容器中。hostPath 卷非常适合用于<strong>临时存储</strong>，如日志文件等。但是，由于 hostPath 卷的生命周期与 Pod 的生命周期密切相关，因此它并不适合用于持久化存储。如果 Pod 被删除，hostPath 卷中的数据不被清理就会留在这边。。</p>
 <p><strong>emptyDir 卷</strong>是 Kubernetes 中另一种简单的卷类型，它是一个空目录，并在 Pod 创建时创建。<strong>emptyDir 卷可以用于在容器之间共享文件，也可以用于存储临时数据，如日志文件等。与 hostPath 卷不同，emptyDir 卷的生命周期与 Pod 的生命周期相同。当 Pod 被删除时，emptyDir 卷中的数据也会被删除。</strong></p>
 <ul>
@@ -631,7 +631,7 @@ protocol direct <span class="token punctuation">{</span>
 </blockquote>
 <h4 id="存储对象关系" tabindex="-1"><a class="header-anchor" href="#存储对象关系" aria-hidden="true">#</a> 存储对象关系</h4>
 <p><strong>用户通过创建 PVC 来申请存储。控制器通过 PVC 的 StorageClass 和请求的大小声明来存储后端创建卷，进而创建 PV, Pod 通过指定 PVC 来引用存储。</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303082240666.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082240666.png" alt="img"></p>
 <p>pod 什么需要使用的 pvc，pvc 和 pv 关联，pv 对应后端存储。</p>
 <blockquote>
 <p>具体需要创建哪个插件控制的后端存储就是由 pvc 中指定的 StorageClass 来控制了。</p>
@@ -699,7 +699,7 @@ protocol direct <span class="token punctuation">{</span>
 <li><strong>Pod调度到节点</strong>：如果 PVC 的状态变为 Bound 则说明调度成功，而如果 PVC 一直处于 pending 状态，超时后会再次进行调度。</li>
 <li><strong>Mount 卷启动容器</strong>：kubelet 监听到有 Pod 已经调度到节点上，对本地存储进行 mount 操作，并启动容器。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303082240376.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082240376.png" alt="img"></p>
 <h3 id="dynamic-local-volume" tabindex="-1"><a class="header-anchor" href="#dynamic-local-volume" aria-hidden="true">#</a> Dynamic Local Volume</h3>
 <p>Dynamic Local Volume 是 Kubernetes 中的一种存储卷类型，它可以动态地创建和删除本地存储卷，以提供独占的存储空间。与其他类型的存储卷不同，Dynamic Local Volume 不需要提前手动创建本地存储卷，而是在 Pod 创建时动态地创建本地存储卷。这使得在 Kubernetes 集群中使用本地存储卷更加灵活和方便。</p>
 <p>Dynamic Local Volume 可以通过 Kubernetes 插件或本地存储系统来实现。在使用 Dynamic Local Volume 之前，需要先在 Kubernetes 集群中设置 LocalVolumeDiscovery 插件。LocalVolumeDiscovery 插件用于自动发现并创建本地存储卷，以便将其与 Pod 关联起来。</p>
@@ -722,7 +722,7 @@ protocol direct <span class="token punctuation">{</span>
 <li><strong>Mount 卷</strong>：kubelet 监听到有 Pod 已经调度到节点上,对本地存储进行 mount 操作。</li>
 <li><strong>启动容器</strong>：启动容器。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303082240603.png" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/sm202303082240603.png" alt="img"></p>
 <h3 id="local-dynamic-的挑战" tabindex="-1"><a class="header-anchor" href="#local-dynamic-的挑战" aria-hidden="true">#</a> Local Dynamic 的挑战</h3>
 <p>如果将磁盘空间作为一个存储池(例如 LVM )来动态分配，那么在分配出来的逻辑卷空间的使用上,可能会受到其他逻辑卷的 I/O 干扰，因为底层的物理卷可能是同一个。</p>
 <p>如果 PV 后端的磁盘空间是一块独立的物理磁盘，则 I/O 就不会受到干扰。</p>
@@ -739,7 +739,7 @@ protocol direct <span class="token punctuation">{</span>
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

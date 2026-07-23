@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第33节-sealos-pr" tabindex="-1"><a class="header-anchor" href="#第33节-sealos-pr" aria-hidden="true">#</a> 第33节 sealos PR</h1>
 <div><a href = '32.md' style='float:left'>⬆️上一节🔗  </a><a href = '34.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -13,7 +13,7 @@
 <h2 id="problem-description" tabindex="-1"><a class="header-anchor" href="#problem-description" aria-hidden="true">#</a> Problem Description</h2>
 <p>#2863</p>
 <p>Sealos currently does not support the k3s runtime and requires the redesign of the runtime interface to avoid excessive coupling with the Processor and to add verification.</p>
-<p>Here is a record of <a href="https://docker.nsddd.top/Cloud-Native-k8s/15.html" target="_blank" rel="noopener noreferrer">testing various k3s installation methods<ExternalLinkIcon/></a>. If you're curious about k3s, be sure to read <a href="https://docker.nsddd.top/Cloud-Native-k8s/14.html" target="_blank" rel="noopener noreferrer">this note<ExternalLinkIcon/></a>, as well as k3s • <strong><a href="https://www.rancher.cn/k3s/" target="_blank" rel="noopener noreferrer">official<ExternalLinkIcon/></a> and <a href="https://docs.rancher.cn/" target="_blank" rel="noopener noreferrer">documentation<ExternalLinkIcon/></a></strong>, and its GitHub • <strong><a href="https://github.com/k3s-io/k3s/" target="_blank" rel="noopener noreferrer">open source address<ExternalLinkIcon/></a></strong>.</p>
+<p>Here is a record of <a href="https://docker.cubxxw.com/Cloud-Native-k8s/15.html" target="_blank" rel="noopener noreferrer">testing various k3s installation methods<ExternalLinkIcon/></a>. If you're curious about k3s, be sure to read <a href="https://docker.cubxxw.com/Cloud-Native-k8s/14.html" target="_blank" rel="noopener noreferrer">this note<ExternalLinkIcon/></a>, as well as k3s • <strong><a href="https://www.rancher.cn/k3s/" target="_blank" rel="noopener noreferrer">official<ExternalLinkIcon/></a> and <a href="https://docs.rancher.cn/" target="_blank" rel="noopener noreferrer">documentation<ExternalLinkIcon/></a></strong>, and its GitHub • <strong><a href="https://github.com/k3s-io/k3s/" target="_blank" rel="noopener noreferrer">open source address<ExternalLinkIcon/></a></strong>.</p>
 <br>
 <h2 id="solution" tabindex="-1"><a class="header-anchor" href="#solution" aria-hidden="true">#</a> Solution</h2>
 <h4 id="design-a-new-runtime-interface" tabindex="-1"><a class="header-anchor" href="#design-a-new-runtime-interface" aria-hidden="true">#</a> Design a new runtime interface</h4>
@@ -102,7 +102,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

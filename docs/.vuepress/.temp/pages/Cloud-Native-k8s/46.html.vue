@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第46节-深挖容器底层技术" tabindex="-1"><a class="header-anchor" href="#第46节-深挖容器底层技术" aria-hidden="true">#</a> 第46节 深挖容器底层技术</h1>
 <div><a href = '45.md' style='float:left'>⬆️上一节🔗  </a><a href = '47.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -30,7 +30,7 @@
 <ul>
 <li><a href="https://github.com/torvalds/linux/blob/master/include/linux/sched.h#L737" target="_blank" rel="noopener noreferrer">https://github.com/torvalds/linux/blob/master/include/linux/sched.h#L737<ExternalLinkIcon/></a></li>
 </ul>
-<p><strong>具体细节不展开，之前写过很多关于 namespces 的文章（<a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">https://docker.nsddd.top<ExternalLinkIcon/></a>)</strong></p>
+<p><strong>具体细节不展开，之前写过很多关于 namespces 的文章（<a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">https://docker.cubxxw.com<ExternalLinkIcon/></a>)</strong></p>
 <div class="language-c ext-c line-numbers-mode"><pre v-pre class="language-c"><code><span class="token comment">/*
  * A structure to contain pointers to all per-process
  * namespaces - fs (mount), uts, network, sysvipc, etc.
@@ -59,9 +59,9 @@
 	<span class="token keyword">struct</span> <span class="token class-name">cgroup_namespace</span> <span class="token operator">*</span>cgroup_ns<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">extern</span> <span class="token keyword">struct</span> <span class="token class-name">nsproxy</span> init_nsproxy<span class="token punctuation">;</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>我们会以 namespces 为例，即使是其他的，比如说 联合文件系统，我们之前写过一篇文章讲过，<a href="https://docker.nsddd.top/markdown/50.html" target="_blank" rel="noopener noreferrer">可以参考那篇文章<ExternalLinkIcon/></a></strong></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>我们会以 namespces 为例，即使是其他的，比如说 联合文件系统，我们之前写过一篇文章讲过，<a href="https://docker.cubxxw.com/markdown/50.html" target="_blank" rel="noopener noreferrer">可以参考那篇文章<ExternalLinkIcon/></a></strong></p>
 <p><strong>我在网上找到了不同 kernel 版本对应的 namespace ，作为参考</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303021701928.png" alt="image-20230302170104810"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021701928.png" alt="image-20230302170104810"></p>
 <h3 id="查看和操控主机的-namespace" tabindex="-1"><a class="header-anchor" href="#查看和操控主机的-namespace" aria-hidden="true">#</a> 查看和操控主机的  Namespace</h3>
 <p><strong>查看当前系统的 namespace：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>lsns <span class="token parameter variable">-t</span> <span class="token operator">&lt;</span>type<span class="token operator">></span>
@@ -142,7 +142,7 @@ lrwxrwxrwx <span class="token number">1</span> root root <span class="token numb
 <blockquote>
 <p>聪明的你应该猜到了，主进程的话，那必然也是一样的（因为我平常不用 docker 了，所以只是将 docker 作为 runtime），如下：</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/sm202303021610738.png" alt="image-20230302161048465"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021610738.png" alt="image-20230302161048465"></p>
 <p><strong>这和我们进入 容器 中，在输入 <code v-pre>ip addr</code> 结果是一样的，网络隔离的效果一样。</strong></p>
 <p>我们后面 Kubernetes 调试容器也是经常用到的。</p>
 <p><strong>我以网络为例，其他的 namespace 也是一样的：</strong></p>
@@ -189,7 +189,7 @@ lrwxrwxrwx <span class="token number">1</span> root root <span class="token numb
 <p>⚠️ 我还是想提醒一下，或许你看过我的文章，或许你可以去 Wiki 上面看，因为 namespace 出现时间不一样，所以不能一概而论。</p>
 </blockquote>
 <h3 id="unshare" tabindex="-1"><a class="header-anchor" href="#unshare" aria-hidden="true">#</a> unshare</h3>
-<p>好熟悉的地方不是吗，或许你看过我<a href="https://docker.nsddd.top/Cloud-Native/27.html" target="_blank" rel="noopener noreferrer">以前的文章，里面提到过<ExternalLinkIcon/></a></p>
+<p>好熟悉的地方不是吗，或许你看过我<a href="https://docker.cubxxw.com/Cloud-Native/27.html" target="_blank" rel="noopener noreferrer">以前的文章，里面提到过<ExternalLinkIcon/></a></p>
 <ul>
 <li><code v-pre>unshare</code>: unshare 允许进程在运行时创建和隔离新的命名空间。例如，可以使用 unshare 创建一个新的 PID 命名空间，从而使一个进程在新的命名空间中运行，并且与原来的命名空间隔离。</li>
 <li><code v-pre>newuidmap</code>: newuidmap 工具用于在容器中控制用户 ID 映射，这是实现容器的必要步骤。在容器中，需要在主机和容器间进行用户 ID 的映射，以便使容器中的进程具有访问文件系统的权限。</li>
@@ -236,11 +236,11 @@ root@cubmaster01:/<span class="token comment"># exit</span>
 root@cubmaster01 / 2m 15s                                                                                         08:18:01
 ❯ 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
-<p>⚠️ <strong>关于Kubernetes namespace 的通信问题以及 Linux namespace 通信问题，我写过一篇文章，<a href="https://docker.nsddd.top/Cloud-Native-k8s/45.html" target="_blank" rel="noopener noreferrer">请移步到这里<ExternalLinkIcon/></a></strong></p>
+<p>⚠️ <strong>关于Kubernetes namespace 的通信问题以及 Linux namespace 通信问题，我写过一篇文章，<a href="https://docker.cubxxw.com/Cloud-Native-k8s/45.html" target="_blank" rel="noopener noreferrer">请移步到这里<ExternalLinkIcon/></a></strong></p>
 </blockquote>
 <h2 id="cgroups" tabindex="-1"><a class="header-anchor" href="#cgroups" aria-hidden="true">#</a> Cgroups</h2>
 <ul>
-<li><a href="https://docker.nsddd.top/markdown/47.html#control-groups" target="_blank" rel="noopener noreferrer">我们在这篇文章中也写过<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/markdown/47.html#control-groups" target="_blank" rel="noopener noreferrer">我们在这篇文章中也写过<ExternalLinkIcon/></a></li>
 </ul>
 <p><strong>但是我们今天进一步学习，刨析它的底层实现：</strong></p>
 <ul>
@@ -516,25 +516,25 @@ root@cubmaster01 / 2m 15s                                                       
 </blockquote>
 <h3 id="案例-1" tabindex="-1"><a class="header-anchor" href="#案例-1" aria-hidden="true">#</a> 案例</h3>
 <p>在<code v-pre>/sys/fs/cgroup/cpu</code>下,创建目录<code v-pre>cpudemo</code>并进入：</p>
-<p><img src="http://sm.nsddd.top/sm202303021716799.png" alt="image-20230302171641725"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021716799.png" alt="image-20230302171641725"></p>
 <blockquote>
 <p>惊讶的发现：可以看到控制文件被自动创建出来了</p>
 </blockquote>
 <p>我们继续：创建一个<code v-pre>go</code>文件,在该<code v-pre>go</code>文件中,启动2个死循环,1个死循环跑在主线程上,另一个跑在子线程上</p>
-<p><img src="http://sm.nsddd.top/sm202303021720082.png" alt="image-20230302172004968"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021720082.png" alt="image-20230302172004968"></p>
 <p>继续：编译并运行该程序.运行的同时再起一个连接执行<code v-pre>top</code>命令</p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>❯ <span class="token keyword">go</span> build busyloop<span class="token punctuation">.</span><span class="token keyword">go</span>
 ❯ <span class="token punctuation">.</span><span class="token operator">/</span>busyloop
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>可以 用 top 看到我们的资源都被占用了</p>
-<p><img src="http://sm.nsddd.top/sm202303021724917.png" alt="image-20230302172435633"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021724917.png" alt="image-20230302172435633"></p>
 <p>可以看到<code v-pre>busyloop</code>进程吃满了2个CPU，记住PID为<code v-pre>978527</code></p>
 </blockquote>
 <p>继续：将该进程加入到CGroups的管理中</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token builtin class-name">cd</span> /sys/fs/cgroup/cpu/cpudemo/<span class="token punctuation">;</span> 
 <span class="token builtin class-name">echo</span> <span class="token number">978527</span> <span class="token operator">></span> cgroup.procs<span class="token punctuation">;</span><span class="token function">ls</span><span class="token punctuation">;</span>
 <span class="token function">cat</span> cgroup.procs
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303021727739.png" alt="image-20230302172709668"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303021727739.png" alt="image-20230302172709668"></p>
 <p>此时还没改,只是纳入管理.所以<code v-pre>top</code>查看还是200%</p>
 <p>继续: 查看<code v-pre>cpu.shares</code>和<code v-pre>cpu.cfs_period_us</code> <code v-pre>cpu.cfs_quota_us</code>：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token function">cat</span> cpu.shares<span class="token punctuation">;</span><span class="token function">cat</span> cpu.cfs_period_us <span class="token punctuation">;</span><span class="token function">cat</span> cpu.cfs_quota_us
@@ -547,14 +547,14 @@ root@cubmaster01 / 2m 15s                                                       
 <span class="token number">100000</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>此时<code v-pre>quota</code>值和<code v-pre>period</code>值是相同的.说明只能给该进程1个CPU.</p>
 <p>最后：我们可以执行<code v-pre>top</code>命令查看：</p>
-<p><img src="http://sm.nsddd.top/sm202303021730492.png" alt="image-20230302173020362"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021730492.png" alt="image-20230302173020362"></p>
 <blockquote>
 <p>可以看到该进程现在只能占用1个CPU了.</p>
 </blockquote>
 <p>补充：将<code v-pre>quota</code>限制为50000,再<code v-pre>top</code>查看</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>❯ <span class="token builtin class-name">echo</span> <span class="token number">50000</span> <span class="token operator">></span> cpu.cfs_quota_us <span class="token punctuation">;</span><span class="token function">cat</span> cpu.cfs_quota_us
 <span class="token number">50000</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303021734387.png" alt="image-20230302173412314"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303021734387.png" alt="image-20230302173412314"></p>
 <blockquote>
 <p>则此时只能占用1个CPU的50%了.</p>
 </blockquote>
@@ -692,9 +692,9 @@ Allocating 100Mb memory, raw memory is 104960000
 <p>注意:此时时hang在这的</p>
 </blockquote>
 <p><strong>再起一个窗口,查看该进程的内存占用情况</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303021755684.png" alt="image-20230302175501610"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021755684.png" alt="image-20230302175501610"></p>
 <p><strong>在<code v-pre>/sys/fs/cgroup/memory/</code>下创建目录<code v-pre>memorydemo1</code></strong></p>
-<p><img src="http://sm.nsddd.top/sm202303021756159.png" alt="image-20230302175613089"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021756159.png" alt="image-20230302175613089"></p>
 <p><strong>查看<code v-pre>memory</code>进程的PID</strong></p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>❯ ps -ef|grep memory|grep -v grep|awk '{print $2}'
 992008
@@ -709,7 +709,7 @@ Allocating 100Mb memory, raw memory is 104960000
 </blockquote>
 <h2 id="文件系统" tabindex="-1"><a class="header-anchor" href="#文件系统" aria-hidden="true">#</a> 文件系统</h2>
 <ul>
-<li><a href="https://docker.nsddd.top/markdown/50.html" target="_blank" rel="noopener noreferrer">之前做的一些关于 Union FS 笔记<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/markdown/50.html" target="_blank" rel="noopener noreferrer">之前做的一些关于 Union FS 笔记<ExternalLinkIcon/></a></li>
 </ul>
 <h3 id="union-fs" tabindex="-1"><a class="header-anchor" href="#union-fs" aria-hidden="true">#</a> Union FS</h3>
 <p>😊 docker中namespace是创新点嘛，不是的，<strong>docker的创新点准确来说是并不是 runtime，而是在文件系统中(Union FS)。</strong></p>
@@ -726,7 +726,7 @@ Allocating 100Mb memory, raw memory is 104960000
 </ul>
 <p>Union FS:通过一些技术手段,将不同的目录mount到同一个虚拟目录中.每个目录在虚拟目录中可以有独立的权限(readonly、readwirte、write-able).</p>
 <p>通过这种方式,可以将多个不同来源的子目录模拟成一个完整的OS.</p>
-<p><img src="http://sm.nsddd.top/sm202303021915290.jpg" alt="container"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021915290.jpg" alt="container"></p>
 <p>📜 <strong>对上面的解释</strong>：</p>
 <p>我们可以看到 两个 dockerfile 是不一样的，但是前两条指令是一样的，也就是说在一个层。</p>
 <p>但是后面两个层是不一样的，所以说后面两个 就开始判断。</p>
@@ -859,7 +859,7 @@ Allocating 100Mb memory, raw memory is 104960000
 <li><code v-pre>lower</code>层代表镜像层</li>
 <li><code v-pre>upper</code>层代表容器可写层</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202303021935227.png" alt="image-20230302193525073"></p>
+<p><img src="http://sm.cubxxw.com/sm202303021935227.png" alt="image-20230302193525073"></p>
 <p><strong>由此可见，如果一个文件在上层或者是在下层，那么他们在合并层是可见的。</strong></p>
 <p><strong>如果一个文件在上下层都存在，那么就会出现在上层。</strong></p>
 <p>所以基础镜像是下层，每一次都叠加一次，最终看到的操作系统就是上层的。</p>
@@ -1012,7 +1012,7 @@ c--------- <span class="token number">1</span> root root <span class="token numb
         <span class="token string">"LogPath"</span><span class="token builtin class-name">:</span> <span class="token string">""</span>,</span>
 <span class="token punctuation">```</span></span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="docker-引擎架构" tabindex="-1"><a class="header-anchor" href="#docker-引擎架构" aria-hidden="true">#</a> docker 引擎架构</h3>
-<p><img src="http://sm.nsddd.top/sm202303022022669.png" alt="image-20230302202242442"></p>
+<p><img src="http://sm.cubxxw.com/sm202303022022669.png" alt="image-20230302202242442"></p>
 <ul>
 <li><code v-pre>Docker daemon</code>：Docker后台的服务端，事实上是一套 REST API</li>
 <li><code v-pre>Docker command</code>：命令行.可以把docker的命令作为一个请求发送给 Docker daemon</li>
@@ -1025,13 +1025,13 @@ c--------- <span class="token number">1</span> root root <span class="token numb
 <blockquote>
 <p>docker 结构图 我们都知道，我们开始学 docker 的时候第一件事就是看架构，不管什么项目，始于架构，也忠于架构。</p>
 <ul>
-<li><a href="https://docker.nsddd.top/markdown/2.html" target="_blank" rel="noopener noreferrer">docker 系统架构笔记<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/markdown/2.html" target="_blank" rel="noopener noreferrer">docker 系统架构笔记<ExternalLinkIcon/></a></li>
 </ul>
 </blockquote>
 <h2 id="网络" tabindex="-1"><a class="header-anchor" href="#网络" aria-hidden="true">#</a> 网络</h2>
 <p><strong>😍 终于到了 网络 部分了，docker 网络是可以有 独立的 namespace ，但是也并不是这么简单的，接下来该好好研究网络了。</strong></p>
 <ul>
-<li><a href="https://docker.nsddd.top/markdown/30.html" target="_blank" rel="noopener noreferrer">关于 docker 网络的基础，入门级别使用篇，请看这一篇我写的笔记<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/markdown/30.html" target="_blank" rel="noopener noreferrer">关于 docker 网络的基础，入门级别使用篇，请看这一篇我写的笔记<ExternalLinkIcon/></a></li>
 </ul>
 <p><strong>docker网络的几种模式：</strong></p>
 <ul>
@@ -1086,7 +1086,7 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
             <span class="token string">"PidMode"</span><span class="token builtin class-name">:</span> <span class="token string">""</span>,
             <span class="token string">"PidsLimit"</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>在宿主机上查看容器进程的网络情况</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303022228599.png" alt="image-20230302222853324"></p>
+<p><img src="http://sm.cubxxw.com/sm202303022228599.png" alt="image-20230302222853324"></p>
 <p>可以看到只有loopback地址,没有其他网络配置。也就是说现在是无法通过外部的网络调用来访问这个服务的，但是该进程的 <code v-pre>network namespace</code> 是已经被建立了.</p>
 <p><strong>创建容器进程的network namespace</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@dev workspces<span class="token punctuation">]</span><span class="token comment"># mkdir -p /var/run/netns</span>
@@ -1124,14 +1124,14 @@ docker0		<span class="token number">8000</span>.02420bb43568	no
 <p><strong>不指定网络模式，启动一个nginx容器</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@dev workspces<span class="token punctuation">]</span><span class="token comment"># docker run -d nginx;docker ps</span>
 9f27121bb2f4ea27809830be982a705852430c7ed324b810ee2658452f289758
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/sm202303022249976.png" alt="image-20230302224925864"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/sm202303022249976.png" alt="image-20230302224925864"></p>
 <p><strong>查看该容器的网络设备情况</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@dev workspces<span class="token punctuation">]</span><span class="token comment"># docker inspect 9f|grep -i pid</span>
             <span class="token string">"Pid"</span><span class="token builtin class-name">:</span> <span class="token number">19942</span>,
             <span class="token string">"PidMode"</span><span class="token builtin class-name">:</span> <span class="token string">""</span>,
             <span class="token string">"PidsLimit"</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>查看容器网络：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303022251344.png" alt="image-20230302225109202"></p>
+<p><img src="http://sm.cubxxw.com/sm202303022251344.png" alt="image-20230302225109202"></p>
 <blockquote>
 <p>可以看到,该容器的IP地址为:<code v-pre>172.17.0.5</code>，还可以这样：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token punctuation">[</span>root@dev workspces<span class="token punctuation">]</span><span class="token comment"># docker inspect 9f | grep -i ip</span>
@@ -1208,7 +1208,7 @@ docker0		<span class="token number">8000</span>.02420bb43568	no
 </blockquote>
 <h2 id="dockerbuild" tabindex="-1"><a class="header-anchor" href="#dockerbuild" aria-hidden="true">#</a> Dockerbuild</h2>
 <ul>
-<li><a href="https://docker.nsddd.top/markdown/24.html" target="_blank" rel="noopener noreferrer">如果你对 dockerfile 基础不是很了解，请看我写的这篇文章~<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/markdown/24.html" target="_blank" rel="noopener noreferrer">如果你对 dockerfile 基础不是很了解，请看我写的这篇文章~<ExternalLinkIcon/></a></li>
 </ul>
 <p>Dockerfile：用来构建镜像的文档，文档内容包含了一条构建镜像所需要的命令和说明。可以认为是创建一个虚拟机时，对操作的一个。</p>
 <p>可以基于Dockerfile来定义整个容器镜像。包括容器的基础镜像、中间件、可运行的文件等。</p>
@@ -1366,15 +1366,15 @@ Step <span class="token number">2</span>/9 <span class="token builtin class-name
 </blockquote>
 <h3 id="docker-私有仓库" tabindex="-1"><a class="header-anchor" href="#docker-私有仓库" aria-hidden="true">#</a> docker 私有仓库</h3>
 <p>如今私有仓库几乎是企业必备的需求，而且以前 docker 基础提高过：</p>
-<p>在 <a href="https://docker.nsddd.top/Cloud-Native-k8s/15.html#%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93" target="_blank" rel="noopener noreferrer">k3s 教程中<ExternalLinkIcon/></a> 我们补充过 Kubernetes 、 k3s 私有注册表的配置，我们再提一提：</p>
+<p>在 <a href="https://docker.cubxxw.com/Cloud-Native-k8s/15.html#%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93" target="_blank" rel="noopener noreferrer">k3s 教程中<ExternalLinkIcon/></a> 我们补充过 Kubernetes 、 k3s 私有注册表的配置，我们再提一提：</p>
 <ul>
 <li>docker hub : https://hub.docker.com</li>
 </ul>
 <blockquote>
-<p>docker 官方镜像有 <a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">文档，之前做过笔记<ExternalLinkIcon/></a>  就不提了</p>
+<p>docker 官方镜像有 <a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">文档，之前做过笔记<ExternalLinkIcon/></a>  就不提了</p>
 </blockquote>
 <p><strong>查看 registry 私有镜像仓库：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303022355132.png" alt="image-20230302235533019"></p>
+<p><img src="http://sm.cubxxw.com/sm202303022355132.png" alt="image-20230302235533019"></p>
 <p><strong>使用registry镜像创建私有仓库：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> 宿主机端口:容器端口 registry:TAG
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>运行官方提供的<code v-pre>registry</code>镜像。(注：官方建议<code v-pre>TAG</code>为2)，你还需要的参数：</p>
@@ -1387,7 +1387,7 @@ Step <span class="token number">2</span>/9 <span class="token builtin class-name
 ❯ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">5003</span>:5000 <span class="token parameter variable">-v</span> <span class="token variable">$REG</span>:/var/lib/registry registry:2
 30c6d0d0ac384d60f72c04e6fb479fab6baeb20fe64790248896b139b591e20a
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>查看结果：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202303030002418.png" alt="image-20230303000238300"></p>
+<p><img src="http://sm.cubxxw.com/sm202303030002418.png" alt="image-20230303000238300"></p>
 <h4 id="管理私有仓库" tabindex="-1"><a class="header-anchor" href="#管理私有仓库" aria-hidden="true">#</a> 管理私有仓库</h4>
 <p>我当前的环境：</p>
 <ul>
@@ -1426,7 +1426,7 @@ Step <span class="token number">2</span>/9 <span class="token builtin class-name
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

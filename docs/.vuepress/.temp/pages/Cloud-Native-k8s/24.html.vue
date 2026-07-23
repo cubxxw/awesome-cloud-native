@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第24节-etcd" tabindex="-1"><a class="header-anchor" href="#第24节-etcd" aria-hidden="true">#</a> 第24节 ETCD</h1>
 <div><a href = '23.md' style='float:left'>⬆️上一节🔗  </a><a href = '25.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -175,7 +175,7 @@
 </ul>
 </div>
 <h3 id="架构" tabindex="-1"><a class="header-anchor" href="#架构" aria-hidden="true">#</a> 架构</h3>
-<p><img src="http://sm.nsddd.top/smwebp123" alt="img"></p>
+<p><img src="http://sm.cubxxw.com/smwebp123" alt="img"></p>
 <h2 id="搭建-etcd" tabindex="-1"><a class="header-anchor" href="#搭建-etcd" aria-hidden="true">#</a> 搭建 etcd</h2>
 <p>可以使用：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>yum install etcd 
@@ -257,7 +257,7 @@ root@ubuntu:~<span class="token comment"># docker images | grep "etcd"</span>
 quay.io/coreos/etcd                                latest                           61ad63875109   <span class="token number">4</span> years ago     <span class="token number">39</span>.5MB
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="创建自定义docker网络" tabindex="-1"><a class="header-anchor" href="#创建自定义docker网络" aria-hidden="true">#</a> 创建自定义Docker网络</h3>
 <blockquote>
-<p><a href="https://docker.nsddd.top" target="_blank" rel="noopener noreferrer">docker 基础篇<ExternalLinkIcon/></a> 我们知道啦docker网络模式，我们选择<a href="https://docker.nsddd.top/markdown/31.html#%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener noreferrer">自定义网络<ExternalLinkIcon/></a>。</p>
+<p><a href="https://docker.cubxxw.com" target="_blank" rel="noopener noreferrer">docker 基础篇<ExternalLinkIcon/></a> 我们知道啦docker网络模式，我们选择<a href="https://docker.cubxxw.com/markdown/31.html#%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener noreferrer">自定义网络<ExternalLinkIcon/></a>。</p>
 </blockquote>
 <p>首先构建个自定义网络，因为我们要给各个节点分配IP地址，Docker容器默认网络只能自动配IP无法手动分配。</p>
 <blockquote>
@@ -277,7 +277,7 @@ be11fe7f1fc8   mynet2                     bridge    <span class="token builtin c
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="创建并启动etcd镜像节点" tabindex="-1"><a class="header-anchor" href="#创建并启动etcd镜像节点" aria-hidden="true">#</a> 创建并启动Etcd镜像节点</h3>
 <div class="custom-container tip"><p class="custom-container-title">参数📜 对下面的解释</p>
 <p>如图表：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221118192826609.png" alt="image-20221118192826609"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221118192826609.png" alt="image-20221118192826609"></p>
 </div>
 <details class="custom-container details"><summary>节点 1 🔽</summary>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
@@ -335,13 +335,13 @@ etcd <span class="token punctuation">\</span>
 2986d95eedd4   quay.io/coreos/etcd:latest   <span class="token string">"etcd -name node3 -a…"</span>   <span class="token number">50</span> seconds ago       Up <span class="token number">49</span> seconds   <span class="token number">0.0</span>.0.0:2679-<span class="token operator">></span><span class="token number">2379</span>/tcp, :::2679-<span class="token operator">></span><span class="token number">2379</span>/tcp, <span class="token number">0.0</span>
 93e41bb72642   quay.io/coreos/etcd:latest   <span class="token string">"etcd -name node2 -a…"</span>   <span class="token number">54</span> seconds ago       Up <span class="token number">53</span> seconds   <span class="token number">0.0</span>.0.0:2579-<span class="token operator">></span><span class="token number">2379</span>/tcp, :::2579-<span class="token operator">></span><span class="token number">2379</span>/tcp, <span class="token number">0.0</span>
 bae0df00930c   quay.io/coreos/etcd:latest   <span class="token string">"etcd -name node1 -a…"</span>   About a minute ago   Up <span class="token number">59</span> seconds   <span class="token number">0.0</span>.0.0:2479-<span class="token operator">></span><span class="token number">2379</span>/tcp, :::2479-<span class="token operator">></span><span class="token number">2379</span>/tcp, <span class="token number">0.0</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221118193208499.png" alt="image-20221118193208499"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221118193208499.png" alt="image-20221118193208499"></p>
 <div class="custom-container tip"><p class="custom-container-title">succeed</p>
 <p>通过etcdctl member list命令可以查询出所有集群节点的列表即为成功</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker exec -it node1 etcdctl member list
 docker exec -it node2 etcdctl member list
 docker exec -it node3 etcdctl member list
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221118193514366.png" alt="image-20221118193514366"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221118193514366.png" alt="image-20221118193514366"></p>
 </div>
 <p><strong>自定义网络本身就维护好了主机名和ip的对应关系（ip和域名都能通）</strong></p>
 <h2 id="动态发现启动-etcd" tabindex="-1"><a class="header-anchor" href="#动态发现启动-etcd" aria-hidden="true">#</a> 动态发现启动 etcd</h2>
@@ -707,7 +707,7 @@ sh-5.0<span class="token comment"># </span>
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

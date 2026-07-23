@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第87节-openim-使用-argocd-生产级部署" tabindex="-1"><a class="header-anchor" href="#第87节-openim-使用-argocd-生产级部署" aria-hidden="true">#</a> 第87节 OpenIM 使用 ArgoCD 生产级部署</h1>
 <div><a href = '86.md' style='float:left'>⬆️上一节🔗  </a><a href = '88.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -62,7 +62,7 @@ kubectl apply <span class="token operator">-</span>n argocd <span class="token o
 <p>在Git存储库中对目标状态所做的任何修改都可以自动应用并反映在指定的目标环境中。</p>
 <h2 id="gitops-工作流总览" tabindex="-1"><a class="header-anchor" href="#gitops-工作流总览" aria-hidden="true">#</a> GitOps 工作流总览</h2>
 <p>到这里，你是不是已经迫不及待想要构建工作流了？别急，在创建 GitOps 工作流之前，我们先来认识一下一个完整 GitOps 工作流都需要哪些关键步骤。</p>
-<p><img src="http://sm.nsddd.top/sm202311131520639.png" alt="image-20231113152036458"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131520639.png" alt="image-20231113152036458"></p>
 <p>我们可以把这个完整的 GitOps 工作流分成三个部分来看。</p>
 <ul>
 <li>第一部分是开发者推送代码到 GitHub 仓库，然后触发 GitHub Action 自动构建。</li>
@@ -91,7 +91,7 @@ kubectl apply <span class="token operator">-</span>n argocd <span class="token o
 <p>登录成功后，通过 argocd repo add 命令添加你的示例应用仓库。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>$ argocd repo <span class="token function">add</span> https://github.com/lyzhang1999/kubernetes-example.git <span class="token parameter variable">--username</span> <span class="token variable">$USERNAME</span> <span class="token parameter variable">--password</span> <span class="token variable">$PASSWORD</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这里要注意将仓库地址修改为你实际的 GitHub 仓库地址，并将 <code v-pre>$USERNAME</code> 替换为 GitHub 账户 ID，将 <code v-pre>$PASSWORD</code> 替换为 GitHub Personal Token。你可以在这个页面创建 GitHub Personal Token，并赋予仓库相关权限，如下图所示。</p>
-<p><img src="http://sm.nsddd.top/sm202311131558750.png" alt="image-20231113155844653"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131558750.png" alt="image-20231113155844653"></p>
 <p>接下来，就可以创建 ArgoCD 应用了。ArgoCD 同时支持使用 Helm Chart、Kustomize 和 Manifest 来创建应用，这里我们以示例应用的 Helm Chart 为例。</p>
 <p>你可以通过 argocd app create 命令来创建应用。</p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>$ argocd app create example <span class="token operator">--</span>sync<span class="token operator">-</span>policy automated <span class="token operator">--</span>repo https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>lyzhang1999<span class="token operator">/</span>kubernetes<span class="token operator">-</span>example<span class="token punctuation">.</span>git <span class="token operator">--</span>revision main <span class="token operator">--</span>path helm <span class="token operator">--</span>dest<span class="token operator">-</span>namespace gitops<span class="token operator">-</span>example <span class="token operator">--</span>dest<span class="token operator">-</span>server https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>kubernetes<span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">.</span>svc <span class="token operator">--</span>sync<span class="token operator">-</span>option CreateNamespace<span class="token operator">=</span><span class="token boolean">true</span>
@@ -106,7 +106,7 @@ kubectl apply <span class="token operator">-</span>n argocd <span class="token o
 </ul>
 <h2 id="查看-argocd-同步状态" tabindex="-1"><a class="header-anchor" href="#查看-argocd-同步状态" aria-hidden="true">#</a> 查看 ArgoCD 同步状态</h2>
 <p>创建好应用之后，GitOps 工作流中的自动同步部分也就建立起来了。现在，你可以打开 ArgoCD 控制台，进入左侧的“Application”菜单来查看示例应用详情。</p>
-<p><img src="http://sm.nsddd.top/sm202311131615541.png" alt="image-20231113161506439"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131615541.png" alt="image-20231113161506439"></p>
 <p>在应用详情页面，我们需要重点关注三个状态。</p>
 <p><strong>APP HEALTH：应用整体的健康状态，它包含下面三个值。</strong></p>
 <ul>
@@ -128,7 +128,7 @@ kubectl apply <span class="token operator">-</span>n argocd <span class="token o
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>然后，使用浏览器访问 http://127.0.0.1，你应该能看到示例应用的界面，如下图所示。</p>
 <h2 id="连接-gitops-工作流" tabindex="-1"><a class="header-anchor" href="#连接-gitops-工作流" aria-hidden="true">#</a> 连接 GitOps 工作流</h2>
 <p>在完成 ArgoCD 的应用配置之后，我们就已经将示例应用的 Helm Chart 定义和集群资源关联起来了，但整个 GitOps 工作流还缺少非常重要的一部分，就是我在上面提到的自动更新 Helm Chart values.yaml 文件镜像版本的部分，我在下面这张示意图中用“❌”把这个环节标记了出来。</p>
-<p><img src="http://sm.nsddd.top/sm202311131619876.png" alt="image-20231113161933798"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131619876.png" alt="image-20231113161933798"></p>
 <p>在这部分工作流没有打通之前，提交的新代码虽然会构建出新的镜像，但是 Helm Chart 定义的镜像版本并不会产生变化，这会导致 ArgoCD 不能自动更新集群内工作负载的镜像版本。</p>
 <p>要解决这个问题，我们还需要在 GitHub Action 中添加自动修改 Helm Chart 并重新推送到仓库操作。</p>
 <p>接下来，我们修改示例应用的 <code v-pre>.github/workflows/build.yaml</code> 文件，在“Build frontend and push”阶段后面添加一个新的阶段，代码如下。</p>
@@ -148,21 +148,21 @@ kubectl apply <span class="token operator">-</span>n argocd <span class="token o
 <p>到这里，一个完整的 GitOps 工作流就建立好了。</p>
 <h2 id="体验-gitops-工作流" tabindex="-1"><a class="header-anchor" href="#体验-gitops-工作流" aria-hidden="true">#</a> 体验 GitOps 工作流</h2>
 <p>接下来，你可以尝试修改 frontend/src/App.js 文件，例如修改文件第 49 行的“Hi! I am a geekbang”。修改完成后，将代码推送到 GitHub 仓库 main 分支，此时，GitHub Action 会自动构建镜像，并且还会更新代码仓库中 Helm <code v-pre>values.yaml</code> 文件的镜像版本。</p>
-<p><img src="http://sm.nsddd.top/sm202311131620038.png" alt="image-20231113162058980"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131620038.png" alt="image-20231113162058980"></p>
 <p>ArgoCD 默认每 3 分钟会拉取仓库检查是否有新的提交，你也可以在 ArgoCD 控制台手动点击 Sync 按钮来触发同步。</p>
-<p><img src="http://sm.nsddd.top/sm202311131621365.png" alt="image-20231113162159315"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131621365.png" alt="image-20231113162159315"></p>
 <p>ArgoCD 同步完成后，我们可以在“LAST SYNC RESULT”一栏中看到 GitHub Action 修改 values.yaml 的提交记录，当应用状态为 Healthy 时，我们就可以访问新的应用版本了。</p>
-<p><img src="http://sm.nsddd.top/sm202311131622578.png" alt="image-20231113162210506"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131622578.png" alt="image-20231113162210506"></p>
 <p>从截图可以看出，前端界面输出内容为“Hi, I am GitOps workflow”，说明 ArgoCD 已经将新版本的应用部署到集群中了。</p>
 <h2 id="监听镜像" tabindex="-1"><a class="header-anchor" href="#监听镜像" aria-hidden="true">#</a> 监听镜像</h2>
 <p>在开发和发布分工明确的团队中，我更推荐你将源码和应用定义分离，考虑到安全性和发布的严谨性，也尽量不要通过 CI 直接修改应用定义。</p>
 <p>更合理的研发规范设计应该是这样的：开发负责编写代码，并通过 CI 生成制品，也就是 Docker 镜像，并对生成的制品负责。而基础架构部门或者 SRE 团队则对应用定义负责。在发布环节，开发可以随时控制要发布的镜像版本，而无需关注其他的应用细节，他们之间的工作流程图如下。</p>
-<p><img src="http://sm.nsddd.top/sm202311131637652.png" alt="image-20231113163746574"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131637652.png" alt="image-20231113163746574"></p>
 <p>从上面这张工作流程图我们可以看出，开发和 SRE 团队各司其职，只操作和自己相关的 Git 仓库，互不干扰。但 SRE 团队要怎么知道开发团队什么时候发布以及发布什么版本的镜像呢？</p>
 <p>最原始的办法是：开发在需要发布的时候将镜像版本告诉 SRE 团队，SRE 团队手动修改 Helm Chart 镜像版本并推送到 Git 仓库，等待 ArgoCD 同步完成。</p>
 <p>借助 ArgoCD Image Updater，我们可以让 ArgoCD 自动监控镜像仓库的更新情况，一旦工作负载的镜像版本有更新，ArgoCD 就会自动将工作负载升级为新的镜像版本，并且还可以自动将镜像的版本号回写到 Helm Chart 仓库中，保持应用定义和集群状态的一致性。</p>
 <p>这节课，我会进一步改造在上一节课创建的 GitOps 工作流，并加入 ArgoCD Image Updater，实现自动监听镜像变更以及回写 Helm Chart。</p>
-<p><img src="http://sm.nsddd.top/sm202311131638364.png" alt="image-20231113163823286"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131638364.png" alt="image-20231113163823286"></p>
 <p>此外，由于在日常开发中，我们一般会采用多分支进行开发，这就随时可能产生新的镜像版本。为了将开发过程和需要发布到生产环境的镜像区分开，我们会为 Main 分支构建出来的镜像增加一个 Prefix 标识，例如 <code v-pre>main-${commit_Id}</code>，并配置 ArgoCD Image Updater 只监控包含特定标识的镜像版本。</p>
 <p>最终实现的效果是，当开发将代码提交到 Git 仓库 Main 分支后，将触发自动构建，并将新的镜像版本推送到镜像仓库。ArgoCD Image Updater 会以 Poll 的方式每 2 分钟检查一次工作负载的镜像是否有新的版本，如果有，那么就将工作负载的镜像更新为最新版本，并将镜像版本号写入到存放 Helm Chart 的仓库中。</p>
 <p><strong>安装：</strong></p>
@@ -243,11 +243,11 @@ spec:
 <h2 id="体验-gitops-工作流-1" tabindex="-1"><a class="header-anchor" href="#体验-gitops-工作流-1" aria-hidden="true">#</a> 体验 GitOps 工作流</h2>
 <p>接下来，你可以尝试修改 <code v-pre>frontend/src/App.js</code> 文件，例如修改文件第 49 行的“Hi! I am a geekbang”内容。修改完成后，将代码推送到 GitHub 的 main 分支。</p>
 <p>此时会触发两个 GitHub Action 工作流。其中，当 build-every-branch 工作流被触发时，它将构建 Tag 为 main 开头的镜像版本，并将其推送到镜像仓库中，如下图所示。</p>
-<p><img src="http://sm.nsddd.top/sm202311131655333.png" alt="image-20231113165517265"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131655333.png" alt="image-20231113165517265"></p>
 <p>和我们上一节课介绍的另一个 GitHub Action 工作流不同的是，它也不会去主动修改 kubernetes-example-helm 仓库的 values.yaml 文件，在完成镜像推送后工作流也就结束了。</p>
 <p>与此同时，ArgoCD Image Updater 将会每 2 分钟从镜像仓库检索 frontend 和 backend 的镜像版本，一旦发现有新的并且以 main 开头的镜像版本，它将自动使用新版本来更新集群内工作负载的镜像，并将镜像版本回写到 kubernetes-example-helm 仓库。</p>
 <p>在回写时，ArgoCD Image Updater 并不会直接修改仓库的 values.yaml 文件，而是会创建一个专门用于覆盖 Helm Chart values.yaml 的 <code v-pre>.argocd-source-example.yaml</code> 文件。</p>
-<p><img src="http://sm.nsddd.top/sm202311131656906.png" alt="image-20231113165601860"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131656906.png" alt="image-20231113165601860"></p>
 <p>当我们看到这个文件时，说明 ArgoCD Image Updater 已经触发了镜像更新，并且成功将镜像版本回写到了镜像仓库。同时，这个文件记录了详细的覆盖 values.yaml 值的策略。</p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code>helm<span class="token punctuation">:</span>
   parameters<span class="token punctuation">:</span>
@@ -290,7 +290,7 @@ spec:
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

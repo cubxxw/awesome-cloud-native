@@ -2,7 +2,7 @@
 <p>[toc]</p>
 <h2 id="云原生" tabindex="-1"><a class="header-anchor" href="#云原生" aria-hidden="true">#</a> 云原生</h2>
 <ul>
-<li><a href="https://docker.nsddd.top/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">云原生<ExternalLinkIcon/></a></li>
+<li><a href="https://docker.cubxxw.com/Cloud-Native-k8s/" target="_blank" rel="noopener noreferrer">云原生<ExternalLinkIcon/></a></li>
 </ul>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>本地的微服务项目我们如何将其部署并且运行到 <code v-pre>docker</code> 上面，这或许就是 <code v-pre>docker</code> 的核心</p>
@@ -41,7 +41,7 @@
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker build -t cub:1.0 .
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>查看镜像：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>docker images
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221104123834352.png" alt="image-20221104123834352"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221104123834352.png" alt="image-20221104123834352"></p>
 <p>运行镜像就ok</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">-P</span> 57a3473097df
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="后期推送" tabindex="-1"><a class="header-anchor" href="#后期推送" aria-hidden="true">#</a> 后期推送~</h2>

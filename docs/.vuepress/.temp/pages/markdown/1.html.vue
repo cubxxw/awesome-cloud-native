@@ -37,7 +37,7 @@
 <blockquote>
 <p>关于PESTAPI好像是在网路里面有讲</p>
 </blockquote>
-<p><img src="http://sm.nsddd.top/smimage-20221003095407215.png" alt="image-20221003095407215"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221003095407215.png" alt="image-20221003095407215"></p>
 <blockquote>
 <p>client是客户端，docker_host是一个引擎，如果是有镜像，就会组成一个个服务器实例,是本地的库，如果本地库1没有的话就是从远程库registry上zhao</p>
 </blockquote>
@@ -78,7 +78,7 @@
 <blockquote>
 <p>后面会对docker的底层源码进行解析，有兴趣的可以关注我的博客</p>
 <ul>
-<li>[x] <a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">Myblog<ExternalLinkIcon/></a></li>
+<li>[x] <a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">Myblog<ExternalLinkIcon/></a></li>
 </ul>
 </blockquote>
 <h3 id="docker的目标" tabindex="-1"><a class="header-anchor" href="#docker的目标" aria-hidden="true">#</a> docker的目标</h3>

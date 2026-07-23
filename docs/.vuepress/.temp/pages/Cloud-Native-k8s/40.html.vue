@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第40节-istio" tabindex="-1"><a class="header-anchor" href="#第40节-istio" aria-hidden="true">#</a> 第40节 Istio</h1>
 <div><a href = '39.md' style='float:left'>⬆️上一节🔗  </a><a href = '41.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -37,7 +37,7 @@
 <li>监控和报告</li>
 </ul>
 <p>Istio 可以帮助你管理服务之间的流量，保护你的服务不被滥用，并提供可观察性来帮助你快速诊断问题。</p>
-<p><img src="http://sm.nsddd.top/sm202304162251167.png" alt="Istio的mindmap"></p>
+<p><img src="http://sm.cubxxw.com/sm202304162251167.png" alt="Istio的mindmap"></p>
 <h2 id="架构" tabindex="-1"><a class="header-anchor" href="#架构" aria-hidden="true">#</a> 架构</h2>
 <p>Istio 服务网格从逻辑上分为数据平面和控制平面。</p>
 <ul>
@@ -57,7 +57,7 @@
 <li>Pilot 管理 Envoy 代理的配置，并向 Envoy 发送服务发现信息。</li>
 <li>Mixer 收集网络流量数据，并与其他组件集成来提供访问控制、计费、监控等功能。</li>
 </ol>
-<p><img src="http://sm.nsddd.top/sm202301061530498.png" alt="image-20230106153033404"></p>
+<p><img src="http://sm.cubxxw.com/sm202301061530498.png" alt="image-20230106153033404"></p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
 <ul><li><div><a href = '39.md' style='float:left'>⬆️上一节🔗  </a><a href = '41.md' style='float: right'>  ️下一节🔗</a></div></li></ul>
 <ul>
@@ -65,7 +65,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

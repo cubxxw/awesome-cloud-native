@@ -11,7 +11,7 @@
 <li><strong>swarm mananger</strong>：负责整个集群的管理工作包括集群配置、服务管理等所有跟集群有关的工作。</li>
 <li><strong>work node</strong>：即图中的 available node，主要负责运行相应的服务来执行任务（task）。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/smimage-20221122204223589.png" alt="image-20221122204223589"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221122204223589.png" alt="image-20221122204223589"></p>
 <h3 id="共识算法" tabindex="-1"><a class="header-anchor" href="#共识算法" aria-hidden="true">#</a> 共识算法</h3>
 <p><strong>swarm 的共识算法和 etcd 共识算法是类似的，使用的是 raft 共识算法，来保证集群的稳定性。</strong></p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>

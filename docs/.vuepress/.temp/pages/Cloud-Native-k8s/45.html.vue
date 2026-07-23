@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第45节-namespace-通信问题" tabindex="-1"><a class="header-anchor" href="#第45节-namespace-通信问题" aria-hidden="true">#</a> 第45节 namespace 通信问题</h1>
 <div><a href = '44.md' style='float:left'>⬆️上一节🔗  </a><a href = '46.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -185,7 +185,7 @@ freezer on /sys/fs/cgroup/freezer type cgroup (rw,relatime,freezer)
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>net<span class="token punctuation">.</span>ipv4<span class="token punctuation">.</span>ip_forward <span class="token operator">=</span> <span class="token number">1</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="实践" tabindex="-1"><a class="header-anchor" href="#实践" aria-hidden="true">#</a> 实践</h3>
 <p>为了降低大家实践的难度，我们就不创建虚拟机了，直接使用 namespace，一条 <code v-pre>ip</code> 命令就可以搞定所有的操作。</p>
-<p><img src="http://sm.nsddd.top/sm202302261156342.png" alt="image-20230226115627130"></p>
+<p><img src="http://sm.cubxxw.com/sm202302261156342.png" alt="image-20230226115627130"></p>
 <p><strong>创建两个 namespace：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">ip</span> netns <span class="token function">add</span> ns1
 <span class="token function">ip</span> netns <span class="token function">add</span> ns2
@@ -270,7 +270,7 @@ rtt min/avg/max/mdev <span class="token operator">=</span> <span class="token nu
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -6,7 +6,7 @@
 <div class="custom-container tip"><p class="custom-container-title">sealos 是什么</p>
 <p><strong><a href="https://www.sealos.io/zh-Hans/docs/Intro" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a> 是以 kubernetes 为内核的云操作系统发行版</strong></p>
 <p>早期单机操作系统也是分层架构，后来才演变成 linux windows 这种内核架构，云操作系统从容器诞生之日起分层架构被击穿，未来也会朝着高内聚的&quot;云内核&quot;架构迁移</p>
-<p><img src="http://sm.nsddd.top/smimage-20221017222736688.png" alt="image-20221017222736688"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221017222736688.png" alt="image-20221017222736688"></p>
 <ul>
 <li>从现在开始，把你数据中心所有机器想象成一台&quot;抽象&quot;的超级计算机，sealos 就是用来管理这台超级计算机的操作系统，kubernetes 就是这个操作系统的内核！</li>
 <li>云计算从此刻起再无 IaaS PaaS SaaS 之分，只有云操作系统驱动(CSI CNI CRI 实现) 云操作系统内核(kubernetes) 和 分布式应用组成</li>
@@ -45,7 +45,7 @@ RUN <span class="token builtin class-name">echo</span> <span class="token string
 <div class="custom-container tip"><p class="custom-container-title">scratch空白镜像</p>
 <p>如果你以<code v-pre>scratch</code>为基础镜像的话，意味着你不以任何镜像为基础，接下来所写的指令将作为镜像第一层开始存在。没有任何基础镜像，我怎么去执行我的程序呢，其实对于 Linux 下静态编译的程序来说，并不需要有操作系统提供运行时支持，所需的一切库都已经在可执行文件里了，因此直接<code v-pre>FROM scratch</code>会让镜像体积更加小巧。使用 Go 语言 开发的应用很多会使用这种方式来制作镜像，这也是为什么有人认为 Go 是特别适合容器微服务架构的语言的原因之一。</p>
 <ul>
-<li>[x] <a href="https://go.nsddd.top" target="_blank" rel="noopener noreferrer">Go语言的学习（CUB打造的Go语言学习docs）<ExternalLinkIcon/></a></li>
+<li>[x] <a href="https://go.cubxxw.com" target="_blank" rel="noopener noreferrer">Go语言的学习（CUB打造的Go语言学习docs）<ExternalLinkIcon/></a></li>
 </ul>
 </div>
 <h2 id="run命令" tabindex="-1"><a class="header-anchor" href="#run命令" aria-hidden="true">#</a> run命令</h2>

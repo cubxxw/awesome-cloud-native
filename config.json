@@ -1,6 +1,6 @@
 {
-    "index_name": "docker.nsddd.top",
-    "start_urls": [{ "url": "https://docker.nsddd.top/", "variables": { "lang": ["zh-CN"] } }],
+    "index_name": "docker.cubxxw.com",
+    "start_urls": [{ "url": "https://docker.cubxxw.com/", "variables": { "lang": ["zh-CN"] } }],
     "selectors": {
       "lvl0": ".sidebar-heading.active",
       "lvl1": ".theme-default-content h1",

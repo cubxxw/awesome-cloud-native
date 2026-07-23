@@ -35,7 +35,7 @@
 </ol>
 <h2 id="自动化测试的价值量化" tabindex="-1"><a class="header-anchor" href="#自动化测试的价值量化" aria-hidden="true">#</a> 自动化测试的价值量化</h2>
 <p>自动化很明显，是后期的手动成本很低，也就是说，随着时间的推移，自动化运行的次数增多，自动化的价值 ROI 变高</p>
-<p><img src="http://sm.nsddd.top/sm202310151019816.png" alt="image-20231015101916672"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151019816.png" alt="image-20231015101916672"></p>
 <p>除了开发成本，还有维护成本。自动化测试开发出来后，还需要维护版本升级、诊断错误、优化结构等等的工作，这笔成本是需要持续投入的。</p>
 <p>所以，得出公式如下：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>产出 / 投入 <span class="token operator">=</span> <span class="token number">0.5</span>*N/<span class="token punctuation">(</span><span class="token number">8</span>+ 维护成本）
@@ -81,14 +81,14 @@
 <p>我们知道不同的阶段，测试的时间以及测试的频率是不同的。</p>
 <p><strong>测试 ROI 金字塔</strong></p>
 <p>在测试设计领域，经常提到的方法是分层。具体就是给定一个系统，结构上划分三个层级，单元在最小圈；服务包含多个单元，在中圈；而系统又包含多个服务，是外部的最大圈。结构图如下：</p>
-<img src="http://sm.nsddd.top/sm202310151032767.png" alt="image-20231015103231709" style="zoom:50%;" />
+<img src="http://sm.cubxxw.com/sm202310151032767.png" alt="image-20231015103231709" style="zoom:50%;" />
 <p>在实践中，这三种测试该怎么组合安排呢？迈克·科恩在 2009 年他的新书《敏捷成功之道》中首次提出了测试金字塔模型。单元测试自动化在金字塔底部，接口测试自动化在中部，而 UI 测试自动化在金字塔顶部。</p>
-<img src="http://sm.nsddd.top/sm202310151032517.png" alt="image-20231015103245476" style="zoom:50%;" />
+<img src="http://sm.cubxxw.com/sm202310151032517.png" alt="image-20231015103245476" style="zoom:50%;" />
 <p>为什么是金字塔？要是不去理解规律背后这个“为什么”，你就用不好这个规律。上一讲我们知道了“ROI 其实是自动化测试的隐式命脉”，现在我们就利用 ROI 思维，分析一下测试金字塔规律。</p>
-<img src="http://sm.nsddd.top/sm202310151033215.png" alt="image-20231015103316990" style="zoom:50%;" />
+<img src="http://sm.cubxxw.com/sm202310151033215.png" alt="image-20231015103316990" style="zoom:50%;" />
 <p>下面，我们分别看看每层的 ROI。单元测试可以在开发人员每次 code commit 触发运行，回归频率高；接口测试在每轮集成测试运行，回归频率中；UI 自动化测试在用户验收测试，回归频率低。</p>
 <p>按照 ROI 模型，我们可以得出 3 种类型自动化测试的 ROI 排序，如下表：</p>
-<p><img src="http://sm.nsddd.top/sm202310151035602.png" alt="image-20231015103511548"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151035602.png" alt="image-20231015103511548"></p>
 <p>对照测试金字塔不难发现，实际上三类自动化测试的 ROI 是自底向上由高到低的。</p>
 <p>那么，我们应该优先投入精力做 ROI 最高的单元测试，再做 ROI 中的接口测试，最后完成 UI 测试。</p>
 <h3 id="分层测试为啥会-内卷" tabindex="-1"><a class="header-anchor" href="#分层测试为啥会-内卷" aria-hidden="true">#</a> 分层测试为啥会“内卷”</h3>
@@ -133,7 +133,7 @@
 <p>UI测试主要针对应用程序的用户界面。我们同样可以使用Selenium或其他工具来模拟用户交互，并验证登录页面的UI元素。</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>// 使用 Selenium 或类似工具进行UI测试
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>可以看到，一个请求，从浏览器页面发起，进入 API 网关，再传递到服务里的 Login 函数，经过了 UI 测试、API 测试和单元测试三个测试截面。</p>
-<p><img src="http://sm.nsddd.top/sm202310151100216.png" alt="image-20231015110008134"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151100216.png" alt="image-20231015110008134"></p>
 <p>三个测试截面测的是一个请求在不同层面上的形态，那么每一个截面都可以测试全部的案例，也可以测试部分的案例。就像 3 个人负责 1 个项目一样，如果没有经过事先的协调和安排，3 个人可能做了重复的事情，造成浪费，也可能存在一件事 3 个人都没干，形成测试盲区。</p>
 <h3 id="需求-策略矩阵" tabindex="-1"><a class="header-anchor" href="#需求-策略矩阵" aria-hidden="true">#</a> 需求 / 策略矩阵</h3>
 <p>咱们先看看测试需求是什么，用 FURPS 模型来理一下需求。FURPS 是用 5 个维度来描述一个软件的功能需求，FURPS 这个单词对应着每个需求的英文首字母：</p>
@@ -146,7 +146,7 @@
 </ul>
 <h2 id="选择工具框架" tabindex="-1"><a class="header-anchor" href="#选择工具框架" aria-hidden="true">#</a> 选择工具框架</h2>
 <p>工具选型很重要，在大型企业中，无论你是作为评审者，还是方案建议人。不过常常出现的场景就是，方案建议人讲了一通新工具 A 如何优秀强大，从问题分析到方案解决一应俱全。但参会专家并不是全都熟悉这个新工具，就会问出一堆类似“为什么你不用工具 B”的问题。</p>
-<p><img src="http://sm.nsddd.top/sm202310151150865.png" alt="image-20231015115013681"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151150865.png" alt="image-20231015115013681"></p>
 <p>通过这个模型，我们得到一个重要结论：一个自动化测试案例的开发工作量，在给定条件下，什么经验的工程师用什么工具，需要多长时间完成，这是可以估算的定值。但维护工作量包含了多种可变因素，是自动化测试项目的风险所在。</p>
 <h3 id="录制和回放" tabindex="-1"><a class="header-anchor" href="#录制和回放" aria-hidden="true">#</a> 录制和回放</h3>
 <p>第一代的自动化测试工具大多基于录制回放，像最早的 WinRunner 就是录制桌面 UI 应用的。目前代表工具就是 Selenium IDE。</p>
@@ -155,17 +155,17 @@
 <h3 id="方法二-关键字驱动" tabindex="-1"><a class="header-anchor" href="#方法二-关键字驱动" aria-hidden="true">#</a> 方法二：关键字驱动</h3>
 <p>不过，录制回放产生的脚本，还是面向过程的一个个函数，还需要测试人员有一定代码基础，才能扩展和维护这些函数。</p>
 <p>那么，有没有办法，让没有代码经验的人也能编辑、维护脚本呢？关键字驱动方式应运而生了，它增加了页面控件对象的概念，调用对象的方法就是操作对象运行，在这种机制下，对象、对象的行为、输入的数据和描述信息，这些内容都能用一个表格的形式呈现。业务人员只需要编辑表格，就能修改运行逻辑了，这就叫做关键字驱动。</p>
-<p><img src="http://sm.nsddd.top/sm202310151152295.png" alt="image-20231015115240280"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151152295.png" alt="image-20231015115240280"></p>
 <p>相比录制回放，关键字驱动框架的优势在于降低了测试开发人员的技术要求。而且测试开发人员对代码还有了更多的逻辑控制能力，比如增加循环结构、wait time、log 输出，只要框架提供足够丰富的关键字就行。</p>
 <p>但你也不难看出，编辑表格的人和维护关键字仓库的人，并不是同一拨人。前者是对业务了解的测试人员，后者是技术能力强的开发人员，这样开发维护起来会增加难度。</p>
 <h3 id="方法三-模块库开发" tabindex="-1"><a class="header-anchor" href="#方法三-模块库开发" aria-hidden="true">#</a> 方法三：模块库开发</h3>
 <p>随着软件技术的发展，自动化测试人员的技术水平也在提高，要解决的问题也更加复杂。比如自动化测试的代码怎么能够有效地复用，有没有好的扩展能力等等。这个扩展能力是二维的，分为水平功能扩展和垂直层级扩展。</p>
 <p>水平功能扩展指的是测试功能增多，自动化测试代码就借鉴了软件的模块设计思维，一个应用的测试场景可以切分成多个功能模块。比如订餐的流程可以分成登录模块、下单模块、快递模块，模块之间通过调用关系连接起来，组成测试场景。</p>
-<p><img src="http://sm.nsddd.top/sm202310151208198.png" alt="image-20231015120834151"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151208198.png" alt="image-20231015120834151"></p>
 <p>而在技术层面上，又可以垂直切分出功能案例库和通用库。比如页面的组件可以形成复用库、page 对象、button 对象、link 对象等等，把和开发技术耦合的技术层封装在复用库里，而和测试相关的业务功能实现在功能案例库里。</p>
-<p><img src="http://sm.nsddd.top/sm202310151208653.png" alt="image-20231015120850603"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151208653.png" alt="image-20231015120850603"></p>
 <p>这样的设计，遵循了高内聚低耦合的软件设计思想，未来自动化测试规模扩展时也很方便。比方说增加一个支付功能，就可以把支付页面的对象写到复用库里，新创建一个支付测试案例，前面和下单模块衔接，后面和快递模块对接，就能跑起来了。</p>
-<p><img src="http://sm.nsddd.top/sm202310151211541.png" alt="image-20231015121109504"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151211541.png" alt="image-20231015121109504"></p>
 <h3 id="方法四-bdd-混合框架" tabindex="-1"><a class="header-anchor" href="#方法四-bdd-混合框架" aria-hidden="true">#</a> 方法四：BDD 混合框架</h3>
 <p>还有一种方法是 BDD 混合框架。BDD 全称是 Behavior Drive Development，行为驱动开发，它通过 Gherkin 语法定义测试场景。</p>
 <p>Gherkin 语法包含一套类自然语言的关键字：when、given、then，given 描述条件，when 描述行为，then 描述结果。这样一个场景的 3 要素：上下文、动作和结果就说明白了。</p>
@@ -176,7 +176,7 @@
 <p>我也曾看过一些 AI 根据规则自动生成测试案例的演示，但演示只是演示，它演示的方案需要的很多条件，现实还不具备，比如基于非常理想的数据模型等等。所以，我认为 AI“落地”的定义是，它的形式是产品，而不是个人业余的项目或者一段开源代码。</p>
 <p>相比 AI 测试，我更看好另外一种自动化生成测试的思路，就是基于规则化或可以模式化的业务场景，把案例的生成和代码生成一并自动化，形成一种可以量化的案例发现方案。我会在第 5 讲带你了解这个思路如何实现。</p>
 <p>记住，测试工作是要能证明软件功能的成败，其方法论基石是确定论，而不是未知论。说得通俗一点，测试是在编网，虽然网会漏鱼，但我很确信只要投入人手和时间，就能把网编到什么程度，网住什么鱼。 而不是今天我捉到一条鱼，明天不知道鱼在哪里。这是我不认为 AI 能完全替代手工测试工作的原因。</p>
-<p><img src="http://sm.nsddd.top/sm202310151212869.png" alt="image-20231015121227807"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151212869.png" alt="image-20231015121227807"></p>
 <h3 id="脚本复用-什么样的代码才值得写" tabindex="-1"><a class="header-anchor" href="#脚本复用-什么样的代码才值得写" aria-hidden="true">#</a> 脚本复用：什么样的代码才值得写</h3>
 <p>我们看一下下一段用 go 语言写的代码：</p>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token keyword">package</span> main
@@ -247,7 +247,7 @@
 </ol>
 <h3 id="提高复用率-一份代码-多浏览器运行" tabindex="-1"><a class="header-anchor" href="#提高复用率-一份代码-多浏览器运行" aria-hidden="true">#</a> 提高复用率：一份代码，多浏览器运行</h3>
 <p>可以看到，脚本运行的测试案例只在 chrome 上，但作为一个 web 应用，一般是要支持市面上主流的浏览器，看一下 <a href="https://help.aliyun.com/document_detail/211434.html" target="_blank" rel="noopener noreferrer">阿里云网站<ExternalLinkIcon/></a> 支持 12 种浏览器，列表如下：</p>
-<p><img src="http://sm.nsddd.top/sm202310151426520.png" alt="image-20231015142646429"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151426520.png" alt="image-20231015142646429"></p>
 <p>那么，有没有办法让我们的脚本能够一下子测试 12 种浏览器呢？此时我们需要修改脚本，支持调用多个浏览器 driver：</p>
 <div class="language-java ext-java line-numbers-mode"><pre v-pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">main</span>
 
@@ -558,16 +558,16 @@ func <span class="token function">main</span><span class="token punctuation">(</
 <h2 id="auto-gen-auto-所有测试工作即代码" tabindex="-1"><a class="header-anchor" href="#auto-gen-auto-所有测试工作即代码" aria-hidden="true">#</a> Auto Gen Auto：所有测试工作即代码</h2>
 <p>我们前面用了 4 讲篇幅，讨论 ROI 模型和由此衍生出来的一套实践原则，从分层测试、选型思路和具体代码多个角度探索提升 ROI 的方法。</p>
 <p>这些方法还都是基于常规的自动化测试开发流程，先有测试需求，再设计测试案例，然后做自动化。以登录测试为例：</p>
-<p><img src="http://sm.nsddd.top/sm202310151448753.png" alt="image-20231015144845702"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151448753.png" alt="image-20231015144845702"></p>
 <p>自动化测试的开发成本，就是把测试需求转变成自动化测试代码这个过程花费的时间。在我们的图里，它是从左向右，所以我管它叫做水平开发成本。</p>
-<p><img src="http://sm.nsddd.top/sm202310151452286.png" alt="image-20231015145252236"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151452286.png" alt="image-20231015145252236"></p>
 <p>当登录功能测试需求发生变化时，就会重新走一遍这个流程，出现了多个版本的测试需求，也会带来多个版本的自动化测试案例。从下图可见，这个版本是自上向下增加，所以我管它叫做垂直维护成本。</p>
-<p><img src="http://sm.nsddd.top/sm202310151453839.png" alt="image-20231015145304785"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151453839.png" alt="image-20231015145304785"></p>
 <p>我们现在可以直观地看到开发成本和维护成本了。好，问题来了，有没有办法从流程上动手术，来降低这两个成本呢？</p>
 <p>这就是我们今天要讲的 Automation Generate Automation，也叫自动化产生自动化测试代码，为了方便起见，下面的篇幅用缩写 Auto Gen Auto 来指代。</p>
 <h3 id="auto-gen-auto-技术" tabindex="-1"><a class="header-anchor" href="#auto-gen-auto-技术" aria-hidden="true">#</a> Auto Gen Auto 技术</h3>
 <p>常规的自动化测试，是指用代码实现设计好的 TestCase，而 Auto Gen Auto 的目的是让 Test Case 生成也自动化，如下图所示。</p>
-<p><img src="http://sm.nsddd.top/sm202310151454180.png" alt="image-20231015145419121"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151454180.png" alt="image-20231015145419121"></p>
 <p>因为从测试需求到自动化测试案例是完全自动化的，每次需求改变的时候，只需运行一次 Auto Gen Auto 即可生成新的自动化案例，垂直维护成本为零。所以 Auto Gen Auto 技术如果能落地，ROI 就会大大提高。</p>
 <h3 id="从何处下手" tabindex="-1"><a class="header-anchor" href="#从何处下手" aria-hidden="true">#</a> 从何处下手</h3>
 <p>业界熟知的测试方法是黑盒测试和白盒测试。白盒测试从测试案例设计开始，需要我们先了解代码逻辑结果，一个函数里有几个判断分支，处理那些数据。基于这些了解，再设计案例验证函数输出和达成代码覆盖率。</p>
@@ -577,7 +577,7 @@ func <span class="token function">main</span><span class="token punctuation">(</
 <h3 id="如何实现" tabindex="-1"><a class="header-anchor" href="#如何实现" aria-hidden="true">#</a> 如何实现</h3>
 <p>怎么做到 Auto Gen Auto 呢？用代码生成代码，前提是测试需求得有一定的规则或模式，然后代码才能解析规则，根据规则生成最终的测试代码。</p>
 <p>这个实现思路，在开发中是很常用的，比如 Maven Archetype 使用模版自动生成项目代码，Soap 使用 WSDL 来生成调用桩等等，原理图如下。</p>
-<p><img src="http://sm.nsddd.top/sm202310151458728.png" alt="image-20231015145823666"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151458728.png" alt="image-20231015145823666"></p>
 <p>所以，要做 Auto Gen Auto，我们的目标是先要找出测试需求里的这些规则，并把它们表达出来，放在一个规则文件里。我们看看下面的例子。</p>
 <h3 id="测试等价类的规则" tabindex="-1"><a class="header-anchor" href="#测试等价类的规则" aria-hidden="true">#</a> 测试等价类的规则</h3>
 <p>远在天边，近在眼前，我们在测试案例设计中经常用到的等价类和边价值方法，就可以作为 Auto Gen Auto 的规则。</p>
@@ -594,7 +594,7 @@ func <span class="token function">main</span><span class="token punctuation">(</
       <span class="token key atrule">express</span><span class="token punctuation">:</span> value<span class="token punctuation">></span>=97 and value&lt;=122
       <span class="token key atrule">express</span><span class="token punctuation">:</span> value<span class="token punctuation">></span>=48 and value&lt;=57
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后，我们写一段代码，从这个 YAML 文件中直接把规则加载进来，在内存中形成一个分类树。</p>
-<p><img src="http://sm.nsddd.top/sm202310151510385.png" alt="image-20231015151026332"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151510385.png" alt="image-20231015151026332"></p>
 <h3 id="业务的逻辑规则" tabindex="-1"><a class="header-anchor" href="#业务的逻辑规则" aria-hidden="true">#</a> 业务的逻辑规则</h3>
 <p>用等价类的规则表达小试牛刀后，我们尝到了甜头。看来，只要能把规则表达出来，生成测试案例这个工作就可以交给代码去做。我们再找一个更加实用的场景，来看看怎么落地。</p>
 <p>在做 API 测试的时候，restAPI 的接口一般是通过 Open API 规范来描述。在设计阶段，开发先定义要实现的 API 接口，Client 要发送什么样的 Request，Server 要返回什么样的 Response。</p>
@@ -654,14 +654,14 @@ func <span class="token function">main</span><span class="token punctuation">(</
 <p>所以，你要找到更多的土壤让自动化测试落地生长。如果你想在工作中推广自动化测试，哪些落地场景更容易出业绩呢？除了之前说过的回归测试领域，我们不妨把眼光从测试工作放宽到更多的领域，Dev 和 Ops 领域，自动化测试在这些领域里一样可以发挥价值，我叫它自动化测试左移和自动化测试右移。</p>
 <h3 id="自动化测试左移" tabindex="-1"><a class="header-anchor" href="#自动化测试左移" aria-hidden="true">#</a> 自动化测试左移</h3>
 <p>如果把软件的生命周期的一个个阶段，软件需求分析、软件设计、软件开发、单元测试、集成测试、系统测试，从左向右排列，开发活动在左侧，测试在后面也就是右侧。如下图：</p>
-<p><img src="http://sm.nsddd.top/sm202310151527474.png" alt="image-20231015152729411"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151527474.png" alt="image-20231015152729411"></p>
 <p>测试左移，就是说本来在生命周期后期的测试活动提前，在软件开发阶段就参与进来，能让软件质量内建到开发阶段，而不是在后期通过软件测试去发现。比如在需求分析阶段参与需求评审和规范制定，在软件设计阶段就开始测试案例设计。形象地看，是测试活动从右侧向左侧移动，即测试左移。</p>
-<p><img src="http://sm.nsddd.top/sm202310151527891.png" alt="image-20231015152743823"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151527891.png" alt="image-20231015152743823"></p>
 <p>测试左移后，当然也会带动自动化测试的变化。在传统模式下，按照软件生命周期顺序，自动化测试是这么安排的：编码完成之后运行单元测试，集成阶段运行接口测试，系统阶段运行 UI 自动化测试。</p>
-<p><img src="http://sm.nsddd.top/sm202310151529112.png" alt="image-20231015152904051"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151529112.png" alt="image-20231015152904051"></p>
 <p>这种流水线做法只能说中规中矩，那还有优化提升空间么？从图上看到，我们如果在编码阶段引入了 bug，影响接口的 bug 要等到集成测试阶段才能发现，影响 UI 的 bug 要等到系统阶段才能发现。我们既然已经有了接口和 UI 自动化测试，可不可以把它们利用起来，尽早测试呢？</p>
 <p>现在我提出一个新概念，自动化测试左移，在构建阶段建立一个冒烟测试集合的概念，包括单元测试和部分接口测试，甚至部分 UI 自动化测试，它们一起运行，来验证版本的每一次构建甚至代码的每一次提交。只要这个冒烟测试集合足够快和稳定，就可以被开发人员接受。</p>
-<p><img src="http://sm.nsddd.top/sm202310151529821.png" alt="image-20231015152959751"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151529821.png" alt="image-20231015152959751"></p>
 <p>自动化测试左移都有哪些好处呢？</p>
 <p>最直观的好处是提早确认代码的变更，满足最终需求，尽早发现回归 bug。软件测试领域有一个理论，叫做验证和确认，在每个软件阶段，都要做两种测试工作：第一是验证当前阶段做好了本阶段要求的事情。比如，编码阶段要把详细设计实现；第二是确认当前阶段实现的功能，可以满足最终的用户需求。</p>
 <p>应用到具体场景里，在编码阶段做单元测试这叫验证，在编码阶段运行接口测试和 UI 自动化测试则是确认，都是有价值的测试活动。</p>
@@ -676,18 +676,18 @@ func <span class="token function">main</span><span class="token punctuation">(</
 <p>Ops 工具看似很强大，能输出一堆软件服务的各种度量指标，告诉我们软件服务在生产环境里是健康运行的，但是有一个关键的事情，我们无法从 Ops 那里得知：那就是服务是不是按照客户的期望运行的，这对产品价值非常重要，但只有运行测试才能知道。</p>
 <p>结合具体场景，我们分析一下这个问题是怎么产生和解决的。</p>
 <p>线上升级常用的做法是红绿部署（也叫蓝绿部署）。红绿部署的机制是这样的，当准备升级软件服务时，保持原有的服务红色环境不变，部署一套新的服务绿色环境。在路由层面，把流量切换到绿色环境，完成软件的升级。这样做的好处是，软件升级对用户影响微小，风险也可控。</p>
-<p><img src="http://sm.nsddd.top/sm202310151536246.png" alt="image-20231015153632189"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151536246.png" alt="image-20231015153632189"></p>
 <p>通过 Post Deployment Test 的通过与否，来设定环境是绿色还是红色。像下图：</p>
-<p><img src="http://sm.nsddd.top/sm202310151537915.png" alt="image-20231015153714856"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151537915.png" alt="image-20231015153714856"></p>
 <h3 id="生产环境定时监测" tabindex="-1"><a class="header-anchor" href="#生产环境定时监测" aria-hidden="true">#</a> 生产环境定时监测</h3>
 <p>部署升级后，生产环境就开始运行了，直到下一次升级为止。在这段线上运行的时间里，是不是就不再需要测试了呢？</p>
 <p>按照传统测试理论，测试的生命周期到正式发布为止，也有的到 Beta 测试为止，而部署到生产环境后，就进入了运维阶段，就是 Ops 工程师的事了，测试人员就不需要关注了。</p>
 <p>但在云时代情况发生了变化。软件开发方不仅交付软件服务，而且也控制着服务器的运行环境。因此测试人员的责任从“在软件发布之前发现 bug”变成了“在客户之前发现 bug”。</p>
 <p>有很多 bug，在测试环境里是发现不了的，只有生产环境才能暴露。这些跟客户的行为、生产环境的数据、特定的错误扩散模式都有关系。只要我们在客户遇到 bug 之前发现它，测试工作仍然是有价值的。</p>
 <p>这时我们可以建立一个机制，通过自动化测试来定时监测生产环境。每天定时触发自动化测试任务的运行，去检测生产环境的业务功能是否正常，然后生成测试报告。</p>
-<p><img src="http://sm.nsddd.top/sm202310151538433.png" alt="image-20231015153805363"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151538433.png" alt="image-20231015153805363"></p>
 <p>对于自动化测试生成的结果报告，我们还可以把它集成到 Ops 的 Oncall 流程里去。当自动化测试任务出了错误，触发 Event 时，就会进入到 Oncall 系统。Oncall 系统会找出值守的测试人员，发送通知，让测试人员来处理测试错误，判断是不是线上出了 bug。</p>
-<p><img src="http://sm.nsddd.top/sm202310151538016.png" alt="image-20231015153818943"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151538016.png" alt="image-20231015153818943"></p>
 <h2 id="cucumber" tabindex="-1"><a class="header-anchor" href="#cucumber" aria-hidden="true">#</a> cucumber</h2>
 <p>Cucumber 是一个支持行为驱动开发 (BDD) 的软件工具，它允许开发者、QA 工程师和非技术干系人在软件开发过程中共同参与。以下是 Cucumber 的主要特点和用法：</p>
 <ol>
@@ -757,7 +757,7 @@ func <span class="token function">main</span><span class="token punctuation">(</
 <p>这里要解释一下，什么是单体系统。一般的理解是，单体系统是一个整体，用一种语言开发，一次构建所有代码，产生一个部署实体，在运行态下是一个进程。比如常见的 Web 应用，就是一个 war 包。</p>
 <p>这个 FoodCome 就是一个 Web 应用，它为用户提供点餐功能。用户可以通过手机下单点餐，订单生成后，餐馆可以接单，厨房制作完成，转给物流交付给用户。</p>
 <p>为了分析测试需求，我们用六边形架构图方法来理清系统内外的交互接口。六边形架构法是把服务画成一个嵌套的六边形，最外层的大六边形是适配器层，代表了本系统和对外的所有交互。里层的六边形是领域业务层。适配器层负责对外交互，这个和业务关系不大，一般是通用的技术，主要是驱动、协议和基础设施，而领域层是业务逻辑的组织和实现。如果你对六边形架构不太熟悉，还可以参考这里了解。</p>
-<p><img src="http://sm.nsddd.top/sm202310151549151.png" alt="image-20231015154901026"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151549151.png" alt="image-20231015154901026"></p>
 <p>FoodCome 是一个单体系统，它运行起来后，外层六边形上的接口有这么 2 种：</p>
 <ol>
 <li>用户接口，用户有 2 种类型，一个是食客顾客，一个是餐馆业主。顾客通过手机下单，进入到 FoodCome 系统，而餐馆通过 FoodCome 的 Web 客户端可以查看和接受订单。</li>
@@ -767,7 +767,7 @@ func <span class="token function">main</span><span class="token punctuation">(</
 <p>想定义测试需求，先要明确功能需求。功能需求是描述软件的功能，听着是不是像循环定义？想描述清楚软件的功能并不容易，这里我们借用迈克·凯恩提出的方法，一个软件软件功能需求要回答这三个问题：第一，这个功能存在的价值是什么？第二，软件是怎么实现这个价值的？第三，这个功能能给谁带来价值？</p>
 <h4 id="测试需求-bdd-feature" tabindex="-1"><a class="header-anchor" href="#测试需求-bdd-feature" aria-hidden="true">#</a> 测试需求 BDD Feature</h4>
 <p>BDD 的全称叫做 Behavior Drive Development，行为驱动开发模式。想达到驱动开发的程度，这个 Behavior 行为的定义就要足够细化，开发人员知道怎么去实现了，同样，测试人员也知道该怎么测试了。</p>
-<p><img src="http://sm.nsddd.top/sm202310151556758.png" alt="image-20231015155648532"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151556758.png" alt="image-20231015155648532"></p>
 <p>BDD 是怎么做的呢？它把 User Story 细化成一个或多个 feature，每一个 feature 都是一个可测试的场景。</p>
 <p>这个 feature 的文件书写也是有格式要求的，通过一个叫做 Gherkins 的语法关键字模版来写 feature 文件。</p>
 <blockquote>
@@ -790,18 +790,18 @@ func <span class="token function">main</span><span class="token punctuation">(</
 <li>账户服务：管理订单里的顾客信息，和外部的支付系统对接。</li>
 <li>通知服务：产生消息通知用户，和外部的邮件系统对接。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202310151558410.png" alt="image-20231015155800338"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151558410.png" alt="image-20231015155800338"></p>
 <p>在这个架构下，原先单体应用的对外接口保持不变，但是单体应用内部被 5 个独立的微服务取代。用户的订单请求先通过 API 网关到达订单服务，完成支付后，餐馆接单，再通过物流系统交付订单。</p>
 <p>每个微服务实现自治，独立开发和发布部署，加快发布速度。而且增加新功能也很方便，比如登录鉴权，在这个图中再增加一个认证服务就可以，这是给客户带来的好处。</p>
 <p>现在的问题是，这给测试带来哪些变化呢？分拆后，FoodCome 系统变成了微服务集群，就像一部巨大机器，由多个零件组成，互相咬合，一起工作。作为测试人员，不但要验证每个零件是合格的，还要有办法预测它们组装起来的机器也能正常工作。</p>
 <p><strong>这里的测试难点是，微服务的数量增加，服务间的交互量也会剧增，相比单体系统，集成测试在微服务集群架构下更加关键。</strong></p>
 <p>要做集成测试，我们就先搞明白微服务间是怎么交互的。在微服务架构下，交互可以有多种风格，比如 RPC 远程过程调用、REST 风格、Message Queue 消息队列等等。根据交互的方法和风格，我把它们整理出一个表格，方便你理解。</p>
-<p><img src="http://sm.nsddd.top/sm202310151622855.png" alt="image-20231015162237793"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151622855.png" alt="image-20231015162237793"></p>
 <p>在 FoodCome 采用了两种交互方式，RestAPI 和 Message Queue。</p>
 <p>RestAPI 用来处理实时性强的服务间交互，比如前端通过 API 网关调用订单服务来下订单。</p>
-<p><img src="http://sm.nsddd.top/sm202310151639976.png" alt="image-20231015163956916"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151639976.png" alt="image-20231015163956916"></p>
 <p>Message Queue 用来处理异步的交互，订单服务和通知服务之间通过 Message Queue 来交换信息.</p>
-<p><img src="http://sm.nsddd.top/sm202310151640438.png" alt="image-20231015164011165"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151640438.png" alt="image-20231015164011165"></p>
 <p>下面我们来看一下这两种交互方式的具体实现，然后找出测试点。</p>
 <h3 id="rest" tabindex="-1"><a class="header-anchor" href="#rest" aria-hidden="true">#</a> REST</h3>
 <p>我们需要先知道 Rest 接口是怎么设计的，才能找出后面都要测什么。</p>
@@ -870,7 +870,7 @@ http://api.foodcome.com/api/v1/restaurants
 <p>首先，要定义消息体，订单服务会向外发出三种消息 OrderCreated、OrderUpdated、OrderCancelled。消息里包含了 order ID、order items、order Status 这些字段。</p>
 <p>其次，还要说明这个消息发送到哪个 channel 里。Channel 就是消息的队列，一个消息代理里可以有多个 channel，每个 channel 有不同的功能。</p>
 <p>因为 order 的消息有严格的时序，比如，OrderCancelled 和 OrderCreated 这两个消息的顺序反了的话，会引起程序处理的混乱。所以，我们把这三种消息都发送到一个叫 order 的 channel 里。</p>
-<p><img src="http://sm.nsddd.top/sm202310151719011.png" alt="image-20231015171958926"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151719011.png" alt="image-20231015171958926"></p>
 <h3 id="异步消息接口规格说明书" tabindex="-1"><a class="header-anchor" href="#异步消息接口规格说明书" aria-hidden="true">#</a> 异步消息接口规格说明书</h3>
 <p>好，下面就到关键环节了，对于测试人员来说，我们最关心的就是接口规格说明书，跟 REST 一样，消息队列也需要找到 IDL 来描述接口上的信息。</p>
 <p>RestAPI 的主流 IDL 是 OpenAPI，相对应地，MessageAPI 的 IDL 是 AsyncAPI。上面的 Order 消息接口，用 AsyncAPI 规范来定义，会是下面这个样子：</p>
@@ -900,10 +900,10 @@ http://api.foodcome.com/api/v1/restaurants
 <p>一份周密、高质量的测试需求，会是成功测试的开始。所以这个接口规格说明书不仅要有，还得规范，能指导我们生成测试案例。</p>
 <p>怎么做到呢？让开发人员写一份 Word 文档？一千个开发人员能写出一千个规格说明。这时，IDL 的价值就显现出来了，它提供一套规范和语法，像一门专用语言，能精准描述接口。而且它与编程语言无关，可以根据 IDL 做 Java 的实现，也可以是 C++, JavaScript，Python 等等。</p>
 <p>OpenAPI 和 AsyncAPI 是 IDL 族群里的 2 种。我这里列出一个常见的 IDL 列表，你可以看看你领域里的 IDL 是什么。</p>
-<p><img src="http://sm.nsddd.top/sm202310151837291.png" alt="image-20231015183758196"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151837291.png" alt="image-20231015183758196"></p>
 <h2 id="_3ku法则-为一个订餐系统设计全栈测试方案" tabindex="-1"><a class="header-anchor" href="#_3ku法则-为一个订餐系统设计全栈测试方案" aria-hidden="true">#</a> 3KU法则：为一个订餐系统设计全栈测试方案</h2>
 <p>对于一个订餐系统来说，我们把测试需求整理如下：</p>
-<p><img src="http://sm.nsddd.top/sm202310151840132.png" alt="image-20231015184013038"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151840132.png" alt="image-20231015184013038"></p>
 <p>订餐系统还有很多其他的测试需求，比如兼容性、安全性等等，因为本专栏的关注点是自动化测试，我在这里就不再列出来了。</p>
 <h3 id="做不做自动化测试" tabindex="-1"><a class="header-anchor" href="#做不做自动化测试" aria-hidden="true">#</a> 做不做自动化测试？</h3>
 <p>有了文档化的测试需求列表后，我们在设计自动化测试方案时，需要先想清楚，这些需求做不做自动化测试？</p>
@@ -911,7 +911,7 @@ http://api.foodcome.com/api/v1/restaurants
 <p>一个维度是 <strong>测试需求的性质</strong>，是技术性还是业务性的？通俗来说就是，如果这个需求越靠近程序员的思维，比如算法、接口、事务等等，它的技术性就越强；而越靠近用户的思维，比如工作流，场景等等，就是业务性越强。</p>
 <p>另一个维度是 <strong>测试需求的等级</strong>，也就是需求属于关键性的还是精益性的？你可以这样理解，关键性的需求指的是，对于用户显式而重要的需求。比方说，一个系统必须能下单，才能成为订餐系统。而精益性的需求指的是用户隐式的需求，没有直接表达出来，但也可能很重要，比如性能、可靠性等等。</p>
 <p>好，明白了性质和等级这 2 个维度后，我们现在用这两个维度把测试需求列表过一遍，把它们填到象限里。</p>
-<p><img src="http://sm.nsddd.top/sm202310151843989.png" alt="image-20231015184305902"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151843989.png" alt="image-20231015184305902"></p>
 <p>先看算法、接口、分布式事务测试，它们技术性强、也是关键需求，放在了第一象限，WebUI 测试业务性强且属于关键需求，放在了第二象限，易用性测试放在第三象限，性能和可靠性放在第四象限。</p>
 <p><strong>针对每个象限，测试四象限法建议自动化测试实施策略如下：</strong></p>
 <ul>
@@ -926,9 +926,9 @@ http://api.foodcome.com/api/v1/restaurants
 <p>确定了测试方式，我们还要进一步考虑，这些测试需求的自动化测试是应该在哪个层面实现呢？在单元测试、接口测试还是 UI 自动化测试？</p>
 <p>在专栏的第二讲里，我们学习过 3KU 测试矩阵和 3KU 测试金字塔，那就可以把它们应用到 FoodCome 的自动化测试设计了。</p>
 <p>排除掉前面表格里提到的手工测试项，我们把其余内容填入到 3KU 测试矩阵里。</p>
-<p><img src="http://sm.nsddd.top/sm202310151901386.png" alt="image-20231015190144305"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151901386.png" alt="image-20231015190144305"></p>
 <p>按照自动化测试寻求最大 ROI 实施层面原则，我们把上面的表格，转换成 ROI 自动化测试金字塔。</p>
-<img src="http://sm.nsddd.top/sm202310151901112.png" alt="image-20231015190158033" style="zoom:50%;" />
+<img src="http://sm.cubxxw.com/sm202310151901112.png" alt="image-20231015190158033" style="zoom:50%;" />
 <h3 id="什么工具做自动化测试" tabindex="-1"><a class="header-anchor" href="#什么工具做自动化测试" aria-hidden="true">#</a> 什么工具做自动化测试？</h3>
 <p>选择对了工具和框架，会让自动化测试事半功倍。这个“选对”的意思，就是工具必须适合你的项目、你的团队。</p>
 <ul>
@@ -943,9 +943,9 @@ http://api.foodcome.com/api/v1/restaurants
 <p>“部署管线是代码从开发人员的个人电脑到生产环境的自动化过程”。</p>
 </blockquote>
 <p>为什么会叫管线呢？因为部署管线由一系列测试的阶段组成，每个阶段首尾相接，这就形成了一条流水线一样的管道。</p>
-<p><img src="http://sm.nsddd.top/sm202310151905862.png" alt="image-20231015190522787"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151905862.png" alt="image-20231015190522787"></p>
 <p>我们把 FoodCome 的自动化测试任务，填充到部署管线的各个阶段里去，如下图所示：</p>
-<p><img src="http://sm.nsddd.top/sm202310151905204.png" alt="image-20231015190551125"></p>
+<p><img src="http://sm.cubxxw.com/sm202310151905204.png" alt="image-20231015190551125"></p>
 <p>沿着部署管线发布的方向，也就是从左向右，自动化测试的运行速度由快变慢，而 ROI 也是由高到低。越靠近代码，活动越频繁，ROI 就越高，而每一个关卡都会有失败的，最后能成功到达可部署生产环境的会是很少一部分，十次代码变更能有二次到生产环境。</p>
 <p>这对于 Actions 中的设计也是很巧妙的，到底是并行执行，还是依次执行。</p>
 <h2 id="单元测试" tabindex="-1"><a class="header-anchor" href="#单元测试" aria-hidden="true">#</a> 单元测试</h2>
@@ -954,7 +954,7 @@ http://api.foodcome.com/api/v1/restaurants
 <p>这个方法当然也能达到测试目标，但是你已经学习过了 3KU 原则，就可以问开发人员一个问题 “同样的验证目标，能不能在 ROI 更高的单元测试阶段实现？”</p>
 <h3 id="制定单元测试策略" tabindex="-1"><a class="header-anchor" href="#制定单元测试策略" aria-hidden="true">#</a> 制定单元测试策略</h3>
 <p>比如，对于一个订单系统（Order）来说。</p>
-<p><img src="http://sm.nsddd.top/sm202310152036616.png" alt="image-20231015203630443"></p>
+<p><img src="http://sm.cubxxw.com/sm202310152036616.png" alt="image-20231015203630443"></p>
 <p>我们先看图里的蓝色色块，通过这五个 Class 就能实现 Order 服务。</p>
 <p>它们是这样分工的：OrderController 接收 Client 发来的 <code v-pre>POST /api/v1/orders&quot; request</code>, 交传给 OrderService createOrder 方法处理，再把生成的订单信息封装成 Response 返还给 Client；</p>
 <p>OrderService 是主要的业务逻辑类，它的 createOrder 完成了一个订单创建的所有工作，计算价格、优惠扣减，调用 AccountClient 做支付验证，调用 RestaurantClient 做餐馆库存查验。订单生成后，就交给 OrderRepository 去写 DB 生成订单记录。</p>
@@ -965,7 +965,7 @@ http://api.foodcome.com/api/v1/restaurants
 <p>如果你问不同的开发人员，可能会得到非常不一样的答案。在过程语言里，比如 C、脚本语言，单元应该就是一个函数，单元测试就是调用这个函数，验证它的输出。而面向对象语言，C++ 或者 Java，单元是一个 Production Class。</p>
 <p>FoodCome 系统是 Java 面向对象语言开发的，包含 5 个 Production Class，做单元测试，我们把规则设得简单一点，开发一个 Test Class 去测试一个 Production Class，保持一对一的关系。</p>
 <p>如下图所示，一个 Test Class 有多个 Test Method。每个 Method 会 Setup 建立 Production Class 的上下文环境，Execute 调用 Production Class 的 Method，Assert 验证输出，TearDown 销毁上下文。</p>
-<p><img src="http://sm.nsddd.top/sm202310152050814.png" alt="image-20231015205031723"></p>
+<p><img src="http://sm.cubxxw.com/sm202310152050814.png" alt="image-20231015205031723"></p>
 <h3 id="孤立型还是社交型" tabindex="-1"><a class="header-anchor" href="#孤立型还是社交型" aria-hidden="true">#</a> 孤立型还是社交型？</h3>
 <div class="language-go ext-go line-numbers-mode"><pre v-pre class="language-go"><code><span class="token keyword">package</span> main
 

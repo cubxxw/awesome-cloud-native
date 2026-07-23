@@ -52,7 +52,7 @@
 <li>在数据源页面，点击“添加数据源”按钮。</li>
 <li>在列表中找到并选择“Prometheus”。</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202311141751692.png" alt="image-20231114175117374"></p>
+<p><img src="http://sm.cubxxw.com/sm202311141751692.png" alt="image-20231114175117374"></p>
 <p>点击 <code v-pre>Add New connection</code> 可以添加更多的数据源，比如说 Loki (负责日志存储和处理查询)</p>
 </li>
 <li>
@@ -66,7 +66,7 @@
 <p>根据需要调整其他设置，例如认证、TLS 设置等。</p>
 </li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202311141803076.png" alt="image-20231114180351923"></p>
+<p><img src="http://sm.cubxxw.com/sm202311141803076.png" alt="image-20231114180351923"></p>
 </li>
 <li>
 <p><strong>保存并测试</strong>:</p>
@@ -165,7 +165,7 @@
 </li>
 </ol>
 <p><strong>图示例：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202311141944953.png" alt="image-20231114194451673"></p>
+<p><img src="http://sm.cubxxw.com/sm202311141944953.png" alt="image-20231114194451673"></p>
 <h3 id="docker-中监控运行指南" tabindex="-1"><a class="header-anchor" href="#docker-中监控运行指南" aria-hidden="true">#</a> Docker 中监控运行指南</h3>
 <h4 id="简介" tabindex="-1"><a class="header-anchor" href="#简介" aria-hidden="true">#</a> 简介</h4>
 <p>本指南提供了如何使用 Docker 运行 OpenIM 的步骤。OpenIM 是一款开源的即时通讯解决方案，可以通过 Docker 快速部署。更多信息请参考 <a href="https://github.com/openimsdk/openim-docker" target="_blank" rel="noopener noreferrer">OpenIM Docker GitHub<ExternalLinkIcon/></a>。</p>
@@ -189,14 +189,14 @@
 <li>测试发送消息和图片。</li>
 </ul>
 <h4 id="运行效果" tabindex="-1"><a class="header-anchor" href="#运行效果" aria-hidden="true">#</a> 运行效果</h4>
-<p><img src="http://sm.nsddd.top/sm202311151008639.png" alt="image-20231115100811208"></p>
+<p><img src="http://sm.cubxxw.com/sm202311151008639.png" alt="image-20231115100811208"></p>
 <h4 id="步骤-4-访问管理后台" tabindex="-1"><a class="header-anchor" href="#步骤-4-访问管理后台" aria-hidden="true">#</a> 步骤 4: 访问管理后台</h4>
 <ul>
 <li>访问 <a href="http://localhost:11002/" target="_blank" rel="noopener noreferrer">OpenIM 管理后台<ExternalLinkIcon/></a>。</li>
 <li>使用默认的用户名和密码 (<code v-pre>admin1:admin1</code>) 登录。</li>
 </ul>
 <p>运行效果图：</p>
-<p><img src="http://sm.nsddd.top/sm202311151010116.png" alt="image-20231115101039837"></p>
+<p><img src="http://sm.cubxxw.com/sm202311151010116.png" alt="image-20231115101039837"></p>
 <h4 id="步骤-5-进入监控界面" tabindex="-1"><a class="header-anchor" href="#步骤-5-进入监控界面" aria-hidden="true">#</a> 步骤 5: 进入监控界面</h4>
 <ul>
 <li>通过上续图片的 <a href="http://localhost:3000/login" target="_blank" rel="noopener noreferrer">监控界面<ExternalLinkIcon/></a> 登录。</li>
@@ -290,7 +290,7 @@
 <li>On the Data Sources page, click the &quot;Add data source&quot; button.</li>
 <li>In the list, find and select &quot;Prometheus.&quot;</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202311141751692.png" alt="image-20231114175117374"></p>
+<p><img src="http://sm.cubxxw.com/sm202311141751692.png" alt="image-20231114175117374"></p>
 <p>Click <code v-pre>Add New connection</code> to add more data sources, such as Loki (responsible for log storage and query processing).</p>
 </li>
 <li>
@@ -299,7 +299,7 @@
 <li>On the configuration page, fill in the details of the Prometheus server. This typically includes the URL of the Prometheus service (e.g., if Prometheus is running on the same machine as OpenIM, the URL might be <code v-pre>http://172.28.0.1:19090</code>, with the address matching the <code v-pre>DOCKER_BRIDGE_GATEWAY</code> variable address). OpenIM and the components are linked via a gateway. The default port used by OpenIM is <code v-pre>19090</code>.</li>
 <li>Adjust other settings as needed, such as authentication and TLS settings.</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202311141803076.png" alt="image-20231114180351923"></p>
+<p><img src="http://sm.cubxxw.com/sm202311141803076.png" alt="image-20231114180351923"></p>
 </li>
 <li>
 <p><strong>Save and Test</strong>:</p>
@@ -395,7 +395,7 @@
 </li>
 </ol>
 <p><strong>Graph Examples:</strong></p>
-<p><img src="http://sm.nsddd.top/sm202311141944953.png" alt="image-20231114194451673"></p>
+<p><img src="http://sm.cubxxw.com/sm202311141944953.png" alt="image-20231114194451673"></p>
 <h3 id="monitoring-running-in-docker-guide" tabindex="-1"><a class="header-anchor" href="#monitoring-running-in-docker-guide" aria-hidden="true">#</a> Monitoring Running in Docker Guide</h3>
 <h4 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction" aria-hidden="true">#</a> Introduction</h4>
 <p>This guide provides the steps to run OpenIM using Docker. OpenIM is an open-source instant messaging solution that can be quickly deployed using Docker. For more information, please refer to the <a href="https://github.com/openimsdk/openim-docker" target="_blank" rel="noopener noreferrer">OpenIM Docker GitHub<ExternalLinkIcon/></a>.</p>
@@ -419,14 +419,14 @@
 <li>Test sending messages and pictures.</li>
 </ul>
 <h4 id="running-effect" tabindex="-1"><a class="header-anchor" href="#running-effect" aria-hidden="true">#</a> Running Effect</h4>
-<p><img src="http://sm.nsddd.top/sm202311151008639.png" alt="image-20231115100811208"></p>
+<p><img src="http://sm.cubxxw.com/sm202311151008639.png" alt="image-20231115100811208"></p>
 <h4 id="step-4-access-the-admin-panel" tabindex="-1"><a class="header-anchor" href="#step-4-access-the-admin-panel" aria-hidden="true">#</a> Step 4: Access the Admin Panel</h4>
 <ul>
 <li>Access the <a href="http://localhost:11002/" target="_blank" rel="noopener noreferrer">OpenIM Admin Panel<ExternalLinkIcon/></a>.</li>
 <li>Log in using the default username and password (<code v-pre>admin1:admin1</code>).</li>
 </ul>
 <p>Running Effect Image:</p>
-<p><img src="http://sm.nsddd.top/sm202311151010116.png" alt="image-20231115101039837"></p>
+<p><img src="http://sm.cubxxw.com/sm202311151010116.png" alt="image-20231115101039837"></p>
 <h4 id="step-5-access-the-monitoring-interface" tabindex="-1"><a class="header-anchor" href="#step-5-access-the-monitoring-interface" aria-hidden="true">#</a> Step 5: Access the Monitoring Interface</h4>
 <ul>
 <li>Log in to the <a href="http://localhost:3000/login" target="_blank" rel="noopener noreferrer">Monitoring Interface<ExternalLinkIcon/></a> using the credentials (<code v-pre>admin:admin</code>).</li>

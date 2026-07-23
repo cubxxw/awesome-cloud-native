@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第48节-contributing-to-name" tabindex="-1"><a class="header-anchor" href="#第48节-contributing-to-name" aria-hidden="true">#</a> 第48节 Contributing to {name}</h1>
 <div><a href = '47.md' style='float:left'>⬆️上一节🔗  </a><a href = '49.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -368,9 +368,9 @@ We recommend reading <a href="https://github.com/markdownlint/markdownlint/blob/
 <ul>
 <li><a href="https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ" target="_blank"><img src="https://img.shields.io/badge/Slack-automation%2B-blueviolet?logo=slack&amp;logoColor=white"></a> We also have Slack channels for you to communicate and discuss. To join, visit https://slack.com/ and join our <a href="https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ" target="_blank" rel="noopener noreferrer">👀 kubecub slack<ExternalLinkIcon/></a> team channel.</li>
 <li><a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=3293172751nss@gmail.com" target="_blank"><img src="https://img.shields.io/badge/gmail-%40kubecub-blue?style=social&kubecubo=gmail&logo=gmail"></a> Get in touch with us on <a href="mailto:3293172751nss@gmail.com">📨Gmail: 3293172751nss@gmail.com</a>.  If you have any questions or issues that need resolving, or any suggestions and feedback for our open source projects, please feel free to contact us via email.</li>
-<li><a href="nsddd.top" target="_blank"><img src="https://img.shields.io/badge/博客-%40kubecub-blue?style=social&logo=Octopus Deploy&logoColor=red"></a> Read our <a href="nsddd.top">🤖kubecub</a>. Our kubecub is a great place to stay up-to-date with kubecub projects and trends. On the kubecub, we share our latest developments, tech trends, and other interesting information.</li>
+<li><a href="cubxxw.com" target="_blank"><img src="https://img.shields.io/badge/博客-%40kubecub-blue?style=social&logo=Octopus Deploy&logoColor=red"></a> Read our <a href="cubxxw.com">🤖kubecub</a>. Our kubecub is a great place to stay up-to-date with kubecub projects and trends. On the kubecub, we share our latest developments, tech trends, and other interesting information.</li>
 <li><a href="https://twitter.com/xxw3293172751" target="_blank"><img src="https://img.shields.io/badge/twitter-%40kubecub-informational?kubecubo=twitter&style=flat-square&logo=twitter"></a> Add <a href="https://twitter.com/xxw3293172751" target="_blank" rel="noopener noreferrer">🕊️Twitter<ExternalLinkIcon/></a> . If you prefer social media, our Twitter account is a great way to stay up-to-date with kubecub project news and trends. On Twitter, we share our latest tech and trends, as well as relevant news and events.</li>
-<li><a href="http://sm.nsddd.top/sm0d220ad72063197b9875379403f6c88.jpg" target="_blank"><img src="https://img.shields.io/badge/微信-smile-brightgreen?kubecubo=wechat&style=flat-square&logo=wechat"></a> Add <a href="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-smile-brightgreen?kubecubo=wechat&amp;style=flat-square" target="_blank" rel="noopener noreferrer">📲Wechat<ExternalLinkIcon/></a> and indicate that you are a user or developer of kubecub. We will process your request as soon as possible.</li>
+<li><a href="http://sm.cubxxw.com/sm0d220ad72063197b9875379403f6c88.jpg" target="_blank"><img src="https://img.shields.io/badge/微信-smile-brightgreen?kubecubo=wechat&style=flat-square&logo=wechat"></a> Add <a href="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-smile-brightgreen?kubecubo=wechat&amp;style=flat-square" target="_blank" rel="noopener noreferrer">📲Wechat<ExternalLinkIcon/></a> and indicate that you are a user or developer of kubecub. We will process your request as soon as possible.</li>
 </ul>
 <p>Whether you're looking to join our community or have any questions or suggestions, we welcome you to get in touch with us.</p>
 <h2 id="end-链接" tabindex="-1"><a class="header-anchor" href="#end-链接" aria-hidden="true">#</a> END 链接</h2>
@@ -380,7 +380,7 @@ We recommend reading <a href="https://github.com/markdownlint/markdownlint/blob/
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第81节-kafka-服务器教程" tabindex="-1"><a class="header-anchor" href="#第81节-kafka-服务器教程" aria-hidden="true">#</a> 第81节 kafka 服务器教程</h1>
 <div><a href = '80.md' style='float:left'>⬆️上一节🔗  </a><a href = '82.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s,docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -142,7 +142,7 @@ func (c *Conversation) setConversationHasReadSeq(ctx context.Context, conversati
 <h2 id="what-can-you-find-🚀" tabindex="-1"><a class="header-anchor" href="#what-can-you-find-🚀" aria-hidden="true">#</a> What can you find？ 🚀</h2>
 <p>您可以参与每个模块。这是一个完全开源的社区，具有区块链安全性，可以帮助您加入开源，帮助您学习，并允许您成为贡献者。</p>
 <p>不管您学习的是 Java、Python、Go、Rust、C/C++、JavaScript、HTML、CSS，甚至是写出优秀文档的能力，您都始终受到 kubecub 的欢迎。即使您认为自己不是一个伟大的 kubecub，我们也希望您成为一个 kubecub。 😄</p>
-<p>如果您想加入我们，请发送电子邮件到 <a href="mailto:cub@nsddd.top">cub@nsddd.top</a>，包括您的 GitHub 地址。 📧</p>
+<p>如果您想加入我们，请发送电子邮件到 <a href="mailto:cub@cubxxw.com">cub@cubxxw.com</a>，包括您的 GitHub 地址。 📧</p>
 <h2 id="contact-us-👋" tabindex="-1"><a class="header-anchor" href="#contact-us-👋" aria-hidden="true">#</a> Contact Us 👋</h2>
 <p>我们在 kubecub 这里非常重视与我们的用户、开发人员和贡献者之间的紧密联系。凭借庞大的社区和维护人员团队，我们始终在这里为您提供帮助和支持。无论您是想加入我们的社区还是有任何问题或建议，我们都欢迎您与我们联系。</p>
 <p>我们最推荐的联系方式是通过 <a href="https://join.slack.com/t/c-ub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ" target="_blank" rel="noopener noreferrer">Slack<ExternalLinkIcon/></a>。即使您在中国，Slack 通常不会被防火墙屏蔽，这使得与我们联系变得很容易。我们的 Slack 社区是与 kubecub 的其他用户和开发人员讨论和分享想法和建议的理想场所。您可以询问技术问题，寻求帮助，或与 kubecub 的其他用户分享您的经验。</p>
@@ -150,9 +150,9 @@ func (c *Conversation) setConversationHasReadSeq(ctx context.Context, conversati
 <ul>
 <li><a href="https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ" target="_blank"><img src="https://img.shields.io/badge/Slack-automation%2B-blueviolet?logo=slack&amp;logoColor=white"></a> 我们还有 Slack 频道供您交流和讨论。访问 https://slack.com/ 并加入我们的 <a href="https://join.slack.com/t/kubecub/shared_invite/zt-1se0k2bae-lkYzz0_T~BYh3rjkvlcUqQ" target="_blank" rel="noopener noreferrer">👀 kubecub slack<ExternalLinkIcon/></a> 团队频道。</li>
 <li><a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=3293172751nss@gmail.com" target="_blank"><img src="https://img.shields.io/badge/gmail-%40kubecub-blue?style=social&kubecubo=gmail&logo=gmail"></a> 通过电子邮件与我们联系 <a href="mailto:3293172751nss@gmail.com">📨Gmail: 3293172751nss@gmail.com</a>。如果您有任何需要解决的问题或问题，或者对我们的开源项目有任何建议和反馈，请随时通过电子邮件与我们联系。</li>
-<li><a href="https://nsddd.top" target="_blank"><img src="https://img.shields.io/badge/博客-%40kubecub-blue?style=social&logo=Octopus Deploy&logoColor=red"></a> 阅读我们的 <a href="https://nsddd.top/" target="_blank" rel="noopener noreferrer">🤖kubecub<ExternalLinkIcon/></a>。我们的 kubecub 是了解 kubecub 项目和趋势的绝佳场所。在 kubecub 上，我们分享我们的最新发展、技术趋势和其他有趣信息。</li>
+<li><a href="https://cubxxw.com" target="_blank"><img src="https://img.shields.io/badge/博客-%40kubecub-blue?style=social&logo=Octopus Deploy&logoColor=red"></a> 阅读我们的 <a href="https://cubxxw.com/" target="_blank" rel="noopener noreferrer">🤖kubecub<ExternalLinkIcon/></a>。我们的 kubecub 是了解 kubecub 项目和趋势的绝佳场所。在 kubecub 上，我们分享我们的最新发展、技术趋势和其他有趣信息。</li>
 <li><a href="https://twitter.com/xxw3293172751" target="_blank"><img src="https://img.shields.io/badge/twitter-%40kubecub-informational?kubecubo=twitter&style=flat-square&logo=twitter"></a> 添加 <a href="https://twitter.com/xxw3293172751" target="_blank" rel="noopener noreferrer">🕊️Twitter<ExternalLinkIcon/></a> 。如果您喜欢社交媒体，我们的 Twitter 帐户是了解 kubecub 项目新闻和趋势的好方法。在 Twitter 上，我们分享我们的最新技术和趋势，以及相关新闻和活动。</li>
-<li><a href="http://sm.nsddd.top/sm0d220ad72063197b9875379403f6c88.jpg" target="_blank"><img src="https://img.shields.io/badge/微信-smile-brightgreen?kubecubo=wechat&style=flat-square?logo=wechat"></a> 添加 <a href="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-smile-brightgreen?kubecubo=wechat&amp;style=flat-square" target="_blank" rel="noopener noreferrer">📲Wechat<ExternalLinkIcon/></a> 并指出您是 kubecub 的用户或开发人员。我们会尽快处理您的请求。</li>
+<li><a href="http://sm.cubxxw.com/sm0d220ad72063197b9875379403f6c88.jpg" target="_blank"><img src="https://img.shields.io/badge/微信-smile-brightgreen?kubecubo=wechat&style=flat-square?logo=wechat"></a> 添加 <a href="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-smile-brightgreen?kubecubo=wechat&amp;style=flat-square" target="_blank" rel="noopener noreferrer">📲Wechat<ExternalLinkIcon/></a> 并指出您是 kubecub 的用户或开发人员。我们会尽快处理您的请求。</li>
 </ul>
 <p>无论您是想加入我们的社区还是有任何问题或建议，我们都欢迎您与我们联系。 👋</p>
 <blockquote>
@@ -170,7 +170,7 @@ func (c *Conversation) setConversationHasReadSeq(ctx context.Context, conversati
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

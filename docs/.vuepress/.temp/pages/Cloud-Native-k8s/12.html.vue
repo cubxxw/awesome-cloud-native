@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第12节-ingress" tabindex="-1"><a class="header-anchor" href="#第12节-ingress" aria-hidden="true">#</a> 第12节 Ingress</h1>
 <div><a href = '11.md' style='float:left'>⬆️上一节🔗  </a><a href = '13.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#ingress">Ingress</router-link></li><li><router-link to="#统一网关">统一网关</router-link></li><li><router-link to="#yaml文件">yaml文件</router-link></li><li><router-link to="#安装nginx测试">安装nginx测试</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -61,7 +61,7 @@
 <p><code v-pre>Ingress</code> 公开从集群外部到集群内服务的 HTTP 和 HTTPS 路由。 流量路由由 <code v-pre>Ingress</code> 资源上定义的规则控制。</p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <p>我们可以看到<code v-pre>Ingress</code>是<code v-pre>Service</code>的上层，<code v-pre>Ingress</code>提供了更好的负载均衡体验~</p>
-<p><img src="http://sm.nsddd.top/smimage-20221022201520335.png" alt="image-20221022201520335"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022201520335.png" alt="image-20221022201520335"></p>
 <blockquote>
 <p>Ingress是基于nginx的实现了方向代理。内网通过<code v-pre>Service</code>访问，<code v-pre>Service</code>实现了负载均衡。</p>
 <p>Ingress其实也可以说<code v-pre>lngress controller</code> ，也就是<code v-pre>Ingress控制器</code>，包含了<code v-pre>nginx</code>，我们平常传统配置<code v-pre>nginx</code>，就是配置反向代理规则。</p>
@@ -93,7 +93,7 @@
 <p>Ingress 需要指定 apiVersion、kind、 metadata和 spec 字段。 Ingress 对象的命名必须是合法的 DNS 子域名名称。 关于如何使用配置文件，请参见部署应用、 配置容器、 管理资源。 Ingress 经常使用注解（annotations）来配置一些选项，具体取决于 Ingress 控制器，例如重写目标注解。 不同的 Ingress 控制器支持不同的注解。 查看你所选的 Ingress 控制器的文档，以了解其支持哪些注解。</p>
 </div>
 <p><strong>编译文件</strong>：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221023202032124.png" alt="image-20221023202032124"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221023202032124.png" alt="image-20221023202032124"></p>
 <h2 id="安装nginx测试" tabindex="-1"><a class="header-anchor" href="#安装nginx测试" aria-hidden="true">#</a> 安装nginx测试</h2>
 <details class="custom-container details"><summary>ingress 80端口实例</summary>
 <p>创建应用pod、service</p>
@@ -127,7 +127,7 @@ kubectl expose deployment web02  --port=80 --protocol=TCP
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

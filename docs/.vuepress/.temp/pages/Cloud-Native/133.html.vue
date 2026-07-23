@@ -1,6 +1,6 @@
 <template><div><h1 id="_133-openim-的集群化实施方案" tabindex="-1"><a class="header-anchor" href="#_133-openim-的集群化实施方案" aria-hidden="true">#</a> 133: OpenIM 的集群化实施方案</h1>
 <p>关于 OpenIM 的集群化实施方案：</p>
-<p>昨天我们基于 OpenIM 的集群化设计，做出了一些讨论，并且整个会议的视频回放，议题文章，以及总结都记录在了 <a href="https://nsddd.top/zh/posts/openim-cluster-deployment-scheme-of/" target="_blank" rel="noopener noreferrer">https://nsddd.top/zh/posts/openim-cluster-deployment-scheme-of/<ExternalLinkIcon/></a></p>
+<p>昨天我们基于 OpenIM 的集群化设计，做出了一些讨论，并且整个会议的视频回放，议题文章，以及总结都记录在了 <a href="https://cubxxw.com/zh/posts/openim-cluster-deployment-scheme-of/" target="_blank" rel="noopener noreferrer">https://cubxxw.com/zh/posts/openim-cluster-deployment-scheme-of/<ExternalLinkIcon/></a></p>
 <p>然后本周，从今天，我们开始对整个集群化做出详细的实施方案：</p>
 <h2 id="设置变量" tabindex="-1"><a class="header-anchor" href="#设置变量" aria-hidden="true">#</a> 设置变量</h2>
 <p>通过设置 alias 来定义变量的别名：</p>

@@ -1,18 +1,18 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第88节-平台工程的学习" tabindex="-1"><a class="header-anchor" href="#第88节-平台工程的学习" aria-hidden="true">#</a> 第88节 平台工程的学习</h1>
 <div><a href = '87.md' style='float:left'>⬆️上一节🔗  </a><a href = '89.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
 <h2 id="什么是平台工程" tabindex="-1"><a class="header-anchor" href="#什么是平台工程" aria-hidden="true">#</a> 什么是平台工程</h2>
 <p>平台工程是为开发人员构建和维护自助服务平台的学科。该平台提供了一套云原生工具和服务，帮助开发者快速高效地交付应用。平台工程的目标是通过标准化和自动化软件交付生命周期 (SDLC) 中的大部分任务来改善开发人员体验 (DX)。开发人员可以专注于使用自动化平台编码和交付业务逻辑，而不是像供应基础设施、管理安全性和学习曲线这样的上下文切换</p>
 <p>平台工程具有内向的视角，因为它专注于优化组织中的开发人员以提高生产力。组织从以最佳水平工作的开发人员中受益匪浅，因为这会导致更快的发布周期。该平台通过提供开发人员将代码投入生产所需的一切来实现这一目标，这样他们就不必等待其他 IT 团队获得基础设施和工具。使开发人员的日常活动更加轻松和自主的自助服务平台称为内部开发人员平台 (IDP)。</p>
-<p><img src="http://sm.nsddd.top/sm202311221757762.png" alt="image-20231122175733496"></p>
+<p><img src="http://sm.cubxxw.com/sm202311221757762.png" alt="image-20231122175733496"></p>
 <p><strong>什么是内部开发者平台 (IDP)</strong></p>
 <p>IDP 是一个包含自助式云原生工具和技术的平台，开发人员可以使用这些工具和技术来构建、测试、部署、监控或执行与应用程序开发和交付有关的几乎任何事情，同时尽可能减少开销。平台工程师或平台团队在咨询开发人员并了解他们独特的挑战和工作流程后构建它。</p>
 <p>在为许多大型高科技企业 讨论和实施Kubernetes CI/CD 管道和GitOps 解决方案之后，我们意识到一个典型的 IDP 将包含以下 5 个支柱：</p>
@@ -204,7 +204,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

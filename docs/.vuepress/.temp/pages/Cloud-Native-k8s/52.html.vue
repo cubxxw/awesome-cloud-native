@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第52节-kubectl" tabindex="-1"><a class="header-anchor" href="#第52节-kubectl" aria-hidden="true">#</a> 第52节 kubectl</h1>
 <div><a href = '51.md' style='float:left'>⬆️上一节🔗  </a><a href = '53.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -37,7 +37,7 @@
 <li>每个 kubelet 进程会在 API Server上注册节点自身信息，定期向 master 节点汇报节点的资源使用情况，并通过 cAdvisor 监控节点和容器的资源。</li>
 </ul>
 <p>kubelet 架构如下图所示：</p>
-<p><img src="http://sm.nsddd.top/sm202303081731495.png" alt="http://sm.nsddd.top/sm202303081731495.png"></p>
+<p><img src="http://sm.cubxxw.com/sm202303081731495.png" alt="http://sm.cubxxw.com/sm202303081731495.png"></p>
 <p>kubelet 默认会监听 4 个端口：</p>
 <ul>
 <li><strong>10250（kubelet API）</strong>：<strong>kubelet server 与 apiserver 通信的端口，定期请求 apiserver 获取自己所应当处理的任务</strong>，通过该端口可以访问获取 node 资源以及状态。<strong>kubectl查看pod的日志和cmd命令，都是通过kubelet端口 10250 访问。</strong></li>
@@ -57,7 +57,7 @@
 <li>ImageManager：调用kubecontainer.ImageService提供的PullImage/GetImageRef/ListImages/RemoveImage/ImageStates的方法来保证pod运行所需要的镜像，主要是为了kubelet支持cni．</li>
 </ul>
 <h2 id="kubelet-管理-pod-的核心流程" tabindex="-1"><a class="header-anchor" href="#kubelet-管理-pod-的核心流程" aria-hidden="true">#</a> <strong>kubelet 管理 Pod 的核心流程</strong></h2>
-<p><img src="http://sm.nsddd.top/sm202303081730574.png" alt="http://sm.nsddd.top/sm202303081730574.png"></p>
+<p><img src="http://sm.cubxxw.com/sm202303081730574.png" alt="http://sm.cubxxw.com/sm202303081730574.png"></p>
 <p>来源包括 file 和 http 两种类型：</p>
 <ul>
 <li>file 主要是用于 static pod</li>
@@ -91,7 +91,7 @@
 </li>
 </ul>
 <h3 id="pod-启动流程" tabindex="-1"><a class="header-anchor" href="#pod-启动流程" aria-hidden="true">#</a> <strong>Pod 启动流程</strong></h3>
-<p><img src="http://sm.nsddd.top/sm202303081731318.png" alt="http://sm.nsddd.top/sm202303081731318.png"></p>
+<p><img src="http://sm.cubxxw.com/sm202303081731318.png" alt="http://sm.cubxxw.com/sm202303081731318.png"></p>
 <p>kubelet 管理 Pod 的核心流程如下：</p>
 <ol>
 <li>kubelet 通过 API Server 或文件等方式获取 Pod 清单。</li>
@@ -111,7 +111,7 @@
 <p>更加详细的流程：</p>
 <blockquote>
 <p>按组件分类，细致到方法级别。</p>
-<p><img src="http://sm.nsddd.top/sm202303081908979.png" alt="http://sm.nsddd.top/sm202303081908979.png"></p>
+<p><img src="http://sm.cubxxw.com/sm202303081908979.png" alt="http://sm.cubxxw.com/sm202303081908979.png"></p>
 </blockquote>
 <p>可以看到 CNI、CRI、CSI 的调用过程，这里有个清晰的认识。</p>
 <h2 id="kubelet-启动-pod-流程" tabindex="-1"><a class="header-anchor" href="#kubelet-启动-pod-流程" aria-hidden="true">#</a> kubelet 启动 Pod 流程</h2>
@@ -141,7 +141,7 @@
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

@@ -20,7 +20,7 @@
 <li><code v-pre>docker</code> 镜像是软件的交付品</li>
 <li><code v-pre>docker</code> 容器则可以认为是镜像的运行态，也即依照镜像运行的容器实例</li>
 </ul>
-<p><img src="http://sm.nsddd.top/smJqBckovlsptOPSE.jpg?xxw@nsddd.top" alt="docker-graphic"></p>
+<p><img src="http://sm.cubxxw.com/smJqBckovlsptOPSE.jpg?xxw@cubxxw.com" alt="docker-graphic"></p>
 <h2 id="dockerfile内容基础" tabindex="-1"><a class="header-anchor" href="#dockerfile内容基础" aria-hidden="true">#</a> dockerfile内容基础</h2>
 <ul>
 <li>每条指令必须为<strong>大写字母</strong>并且后至少有一个参数</li>

@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第64节-automation-为飞书文档制作后台" tabindex="-1"><a class="header-anchor" href="#第64节-automation-为飞书文档制作后台" aria-hidden="true">#</a> 第64节 automation: 为飞书文档制作后台</h1>
 <div><a href = '63.md' style='float:left'>⬆️上一节🔗  </a><a href = '65.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s，docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕记录<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">sealos<ExternalLinkIcon/></a>开源项目的学习过程。<a href="https://github.com/cubxxw/sealos" target="_blank" rel="noopener noreferrer">k8s，docker和云原生的学习<ExternalLinkIcon/></a>。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -245,7 +245,7 @@ B <span class="token arrow operator">--></span><span class="token label property
 <p>使用 <a href="https://open.feishu.cn/document/ukTMukTMukTM/uYDM2YjL2AjN24iNwYjN" target="_blank" rel="noopener noreferrer">编辑文档内容<ExternalLinkIcon/></a> 接口，来编辑更新文档内容，包括更新标题、删除范围、插入内容。</p>
 </li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202305181620165.png" alt="image-20230518162043833"></p>
+<p><img src="http://sm.cubxxw.com/sm202305181620165.png" alt="image-20230518162043833"></p>
 <blockquote>
 <p><strong>Note</strong> 图片来自飞书：https://www.feishu.cn/practice_template/86581</p>
 </blockquote>
@@ -275,7 +275,7 @@ B <span class="token arrow operator">--></span><span class="token label property
 <li><code v-pre>&lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束单元格&gt;</code>
 如：<code v-pre>0b**12!A1:B5</code> 就表示 <code v-pre>0b**12</code> 这个工作表中 <code v-pre>A1:B5</code> 的区域，如下图所示：</li>
 </ul>
-<p><img src="http://sm.nsddd.top/sm202305181712882.png" alt="image-20230518171215634"></p>
+<p><img src="http://sm.cubxxw.com/sm202305181712882.png" alt="image-20230518171215634"></p>
 <ul>
 <li><code v-pre>&lt;sheetId&gt;!&lt;开始列&gt;:&lt;结束列&gt;</code>，如：<code v-pre>0b**12!A:B</code></li>
 <li><code v-pre>&lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束列&gt;</code>，如：<code v-pre>0b**12!A1:B</code></li>
@@ -324,10 +324,10 @@ B <span class="token arrow operator">--></span><span class="token label property
 <li>发布应用，租户管理员通过审核；</li>
 <li><a href="https://open.feishu.cn/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#2431c595" target="_blank" rel="noopener noreferrer">添加应用为文档协作者<ExternalLinkIcon/></a>，需要 文档所有者、知识库管理员 或 其他协作者 为资源 添加文档应用。文档、电子表格、多维表格、知识库 通过云文档 Web 页面右上方「...」-&gt;「...更多」-&gt; 「添加文档应用」入口添加。</li>
 </ol>
-<p><img src="http://sm.nsddd.top/sm202305201224639.png" alt="image-20230520122415273"></p>
+<p><img src="http://sm.cubxxw.com/sm202305201224639.png" alt="image-20230520122415273"></p>
 <h3 id="获取应用id和应用secret" tabindex="-1"><a class="header-anchor" href="#获取应用id和应用secret" aria-hidden="true">#</a> 获取应用Id和应用Secret</h3>
 <p>我们回到应用的界面，这个时候可以获取到 应用Id和应用Secret：</p>
-<p><img src="http://sm.nsddd.top/sm202305201321449.png" alt="image-20230520132104017"></p>
+<p><img src="http://sm.cubxxw.com/sm202305201321449.png" alt="image-20230520132104017"></p>
 <p>更新配置的路径：</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>GET http://IP或域名:8000/set/表格Id/应用Id/应用Secret/密码
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
@@ -534,7 +534,7 @@ B <span class="token arrow operator">--></span><span class="token label property
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

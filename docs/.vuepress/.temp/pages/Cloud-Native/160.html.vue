@@ -103,7 +103,7 @@
 <li>根据 https://github.com/OpenIMSDK/Open-IM-Server/releases 探索更多的部署指南</li>
 </ul>
 <p><strong>设计图：</strong></p>
-<p><img src="http://sm.nsddd.top/sm202311291147052.png" alt="Dopenim"></p>
+<p><img src="http://sm.cubxxw.com/sm202311291147052.png" alt="Dopenim"></p>
 <h3 id="_1-linux-部署方案" tabindex="-1"><a class="header-anchor" href="#_1-linux-部署方案" aria-hidden="true">#</a> 1. Linux 部署方案</h3>
 <p>Linux 是最常见的服务器操作系统，支持多种包管理器。</p>
 <h4 id="a-基于-debian-ubuntu-使用-deb-包" tabindex="-1"><a class="header-anchor" href="#a-基于-debian-ubuntu-使用-deb-包" aria-hidden="true">#</a> a. 基于 Debian/Ubuntu (使用 .deb 包)</h4>

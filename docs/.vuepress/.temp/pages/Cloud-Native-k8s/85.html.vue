@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第85节-argocd-vs-fluxcd-vs-jenkins-x-哪个gitops实现工具最适合你" tabindex="-1"><a class="header-anchor" href="#第85节-argocd-vs-fluxcd-vs-jenkins-x-哪个gitops实现工具最适合你" aria-hidden="true">#</a> 第85节 ArgoCD vs FluxCD vs Jenkins X：哪个GitOps实现工具最适合你？</h1>
 <div><a href = '84.md' style='float:left'>⬆️上一节🔗  </a><a href = '86.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <p>[TOC]</p>
@@ -52,7 +52,7 @@
 <p>CLI和相应的UI提供了一个全面的工具集，便于将git定义的资源部署到Kubernetes集群。</p>
 <p>它专注于管理应用程序部署，具有出色的功能集，包括几个同步选项，用户访问控制，状态检查等。</p>
 <p>此外，ArgoCD还具有友好的现代Web UI，用户可以在其中检查其应用程序部署的状态。同时，管理员可以管理项目和用户访问。</p>
-<p><img src="http://sm.nsddd.top/sm202311131003498.png" alt="image-20231113100313215"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131003498.png" alt="image-20231113100313215"></p>
 <h3 id="argo-cd-介绍" tabindex="-1"><a class="header-anchor" href="#argo-cd-介绍" aria-hidden="true">#</a> Argo CD 介绍</h3>
 <p>Argo CD以原生Kubernetes方式安装和管理。它在Kubernetes上运行在自己的命名空间中，所有配置都保存在 Config Maps，Secrets 和 Custom Resources 中。</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl create namespace argocd
@@ -78,7 +78,7 @@ kubectl apply <span class="token parameter variable">-n</span> argocd <span clas
 <p>虽然Weaveworks开发了Flux，但它目前是CNCF项目。与ArgoCD类似，Flux也是Kubernetes的持续交付工具。</p>
 <p>Flux CD是Kubernetes的GitOps操作符，它将Git存储库中的清单状态转换为集群中正在运行的状态。Flux CD在应用更新的集群中运行。</p>
 <p>虽然在Git中定义部署资源的原则与ArgoCD相似，但部署是基于拉取请求，而不是与Kubernetes集群直接交互。</p>
-<p><img src="http://sm.nsddd.top/sm202311131017040.png" alt="image-20231113101701001"></p>
+<p><img src="http://sm.cubxxw.com/sm202311131017040.png" alt="image-20231113101701001"></p>
 <h3 id="installation" tabindex="-1"><a class="header-anchor" href="#installation" aria-hidden="true">#</a> Installation</h3>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-s</span>  <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span> 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用flux bootstrap命令，您可以在Kubernetes集群上安装Flux，并将其配置为从Git存储库管理自身。</p>
@@ -108,7 +108,7 @@ kubectl apply <span class="token parameter variable">-n</span> argocd <span clas
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>

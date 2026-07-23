@@ -1,11 +1,11 @@
 <template><div><ul>
-<li><a href="http://nsddd.top" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
+<li><a href="http://cubxxw.com" target="_blank" rel="noopener noreferrer">author<ExternalLinkIcon/></a></li>
 </ul>
 <h1 id="第8节-图形界面和命名空间" tabindex="-1"><a class="header-anchor" href="#第8节-图形界面和命名空间" aria-hidden="true">#</a> 第8节 图形界面和命名空间</h1>
 <div><a href = '7.md' style='float:left'>⬆️上一节🔗  </a><a href = '9.md' style='float: right'>  ⬇️下一节🔗</a></div>
 <br>
 <blockquote>
-<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://nsddd.top/" target="_blank" rel="noopener noreferrer">http://nsddd.top<ExternalLinkIcon/></a></p>
+<p>❤️💕💕新时代拥抱云原生，云原生具有环境统一、按需付费、即开即用、稳定性强特点。Myblog:<a href="http://cubxxw.com/" target="_blank" rel="noopener noreferrer">http://cubxxw.com<ExternalLinkIcon/></a></p>
 </blockquote>
 <hr>
 <nav class="table-of-contents"><ul><li><router-link to="#k8s集群自我恢复能力测试">K8s集群自我恢复能力测试</router-link></li><li><router-link to="#k8s可视化界面dashboard">k8s可视化界面dashboard</router-link></li><li><router-link to="#命名空间-namespace">命名空间 Namespace</router-link><ul><li><router-link to="#创建一个名称空间">创建一个名称空间</router-link></li><li><router-link to="#nc命令">nc命令</router-link></li><li><router-link to="#创建和查询命名空间">创建和查询命名空间</router-link></li><li><router-link to="#删除命名空间">删除命名空间</router-link></li></ul></li><li><router-link to="#设置默认的命名空间">设置默认的命名空间</router-link></li><li><router-link to="#快速切换命名空间和集群">快速切换命名空间和集群</router-link></li><li><router-link to="#end-链接">END 链接</router-link></li></ul></nav>
@@ -18,7 +18,7 @@
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl get nodes
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>查看集群运行中的应用：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl get pod -A
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221020213451951.png" alt="image-20221020213451951"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221020213451951.png" alt="image-20221020213451951"></p>
 <p>过一段时间又可继续使用</p>
 <h2 id="k8s可视化界面dashboard" tabindex="-1"><a class="header-anchor" href="#k8s可视化界面dashboard" aria-hidden="true">#</a> k8s可视化界面dashboard</h2>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 下载并应用文件</span>
@@ -344,7 +344,7 @@ kubectl apply <span class="token parameter variable">-f</span> https://raw.githu
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>找到端口，在安全组放行</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get svc <span class="token parameter variable">-A</span> <span class="token operator">|</span> <span class="token function">grep</span> kubernetes-dashboard
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221021121539454.png" alt="image-20221021121539454"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221021121539454.png" alt="image-20221021121539454"></p>
 <blockquote>
 <p>和docker端口映射一个道理，<code v-pre>30250</code>就是我们要访问<code v-pre>k8s</code>端口。</p>
 <p>我们开放就好（自定义安全组添加）</p>
@@ -365,15 +365,15 @@ kubectl delete ns hello  <span class="token comment">#删除命名空间</span>
 <p><strong>不同命名空间下的 <code v-pre>pod</code> 名称与 <code v-pre>dns</code> 是访问不到的。 <code v-pre>pod-ip</code> 是不隔离的。</strong></p>
 <p><strong>🔥 查看命名空间</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get ns
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022115320381.png" alt="image-20221022115320381"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022115320381.png" alt="image-20221022115320381"></p>
 <p><strong>每一个应用都有自己的名称空间</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>kubectl get pod <span class="token parameter variable">-n</span> 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.nsddd.top/smimage-20221022122705824.png" alt="image-20221022122705824"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="http://sm.cubxxw.com/smimage-20221022122705824.png" alt="image-20221022122705824"></p>
 <p><strong>默认名称空间<code v-pre>default</code>（不可以删除）：</strong></p>
 <ul>
 <li><code v-pre>-n</code>：指定名称空间</li>
 </ul>
-<p><img src="http://sm.nsddd.top/smimage-20221022122804888.png" alt="image-20221022122804888"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022122804888.png" alt="image-20221022122804888"></p>
 <h3 id="创建一个名称空间" tabindex="-1"><a class="header-anchor" href="#创建一个名称空间" aria-hidden="true">#</a> 创建一个名称空间</h3>
 <p>💡简单的一个案例如下——创建<code v-pre>hello</code>名称空间：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>vim hello.yaml
@@ -383,7 +383,7 @@ kubectl delete ns hello  <span class="token comment">#删除命名空间</span>
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
   <span class="token key atrule">name</span><span class="token punctuation">:</span> hello
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>🚀 编译结果如下：</p>
-<p><img src="http://sm.nsddd.top/smimage-20221022123347774.png" alt="image-20221022123347774"></p>
+<p><img src="http://sm.cubxxw.com/smimage-20221022123347774.png" alt="image-20221022123347774"></p>
 <p><strong>删除配置文件所创建的命名空间：</strong></p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 第一种和上面一样</span>
 kubectl delect ns hello
@@ -430,7 +430,7 @@ kubectx minikube
 <p><RouterLink to="/">Ⓜ️回到目录🏠</RouterLink></p>
 </li>
 <li>
-<p><a href="https://nsddd.top/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
+<p><a href="https://cubxxw.com/archives/contributors" target="_blank" rel="noopener noreferrer"><strong>🫵参与贡献💞❤️‍🔥💖</strong><ExternalLinkIcon/></a>)</p>
 </li>
 <li>
 <p>✴️版权声明 © ：本书所有内容遵循<a href="http://zh.wikipedia.org/wiki/Wikipedia:CC-by-sa-3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="noopener noreferrer">CC-BY-SA 3.0协议（署名-相同方式共享）©<ExternalLinkIcon/></a></p>
