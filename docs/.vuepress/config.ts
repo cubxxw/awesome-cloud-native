@@ -581,8 +581,8 @@ export default defineUserConfig({
                 },
             ],
             '/': [
-                '/markdown/README.md"',
-                '/Cloud-Native-k8s/README.md"',
+                '/markdown/README.md',
+                '/Cloud-Native-k8s/README.md',
             ] // 侧边栏配置
           },
   }),
