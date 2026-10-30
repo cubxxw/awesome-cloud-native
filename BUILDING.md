@@ -2,7 +2,7 @@
 
 This draft replaces the incomplete dependency updates in #18, #19, #20 and #21. All four remain open until a working replacement is independently reviewed and accepted.
 
-Use Node 22 >=22.18 (the host/CI pin is 22.23.2) and the actual npm 12.0.2 executable. The lock uses the complete VuePress rc30/bundler rc30, theme rc132, search/toc rc131 and docsearch rc132 family. The matching package graph passed in awesome-go; this repository still requires its own frozen installation, real peer graph, audit, 395-source rendering and browser acceptance. No `--force`, legacy peers, overrides or remote-origin policy exceptions are part of this baseline.
+Use Node 22 >=22.22.2 (the host/CI pin is 22.23.2) and the actual npm 12.0.2 executable. The lock uses the complete VuePress rc30/bundler rc30, theme rc132, search/toc rc131 and docsearch rc132 family. The matching package graph passed in awesome-go; this repository still requires its own frozen installation, real peer graph, audit, 395-source rendering and browser acceptance. No `--force`, legacy peers, overrides or remote-origin policy exceptions are part of this baseline.
 
 ```sh
 npm ci --include=dev --ignore-scripts --strict-peer-deps --engine-strict

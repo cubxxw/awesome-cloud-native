@@ -21,8 +21,10 @@ export function assertSourceSnapshot(root) {
 }
 
 export function assertRuntime(nodeVersion, npmVersion) {
-  const [major, minor] = nodeVersion.replace(/^v/, "").split(".").map(Number);
-  assert(major === 22 && minor >= 18, "Use Node 22 >=22.18.0");
+  const match = /^v?(\d+)\.(\d+)\.(\d+)$/.exec(nodeVersion);
+  assert(match, "Use a stable Node 22 version");
+  const [major, minor, patch] = match.slice(1).map(Number);
+  assert(major === 22 && (minor > 22 || (minor === 22 && patch >= 2)), "Use Node 22 >=22.22.2");
   assert.equal(npmVersion, "12.0.2", "Use the actual npm 12.0.2 executable");
 }
 
