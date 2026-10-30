@@ -42,6 +42,7 @@ jobs:
           /.npmrc
           /.gitignore
           /vercel.json
+          /netlify.toml
           /README.md
           /scripts/
           /docs/

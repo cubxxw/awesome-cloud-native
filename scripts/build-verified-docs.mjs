@@ -29,7 +29,8 @@ export function assertRuntime(nodeVersion, npmVersion) {
 }
 
 export function selectCommit(environment, gitCommit) {
-  const declared = environment.VERCEL_GIT_COMMIT_SHA || environment.GITHUB_SHA;
+  const declared = environment.VERCEL_GIT_COMMIT_SHA || environment.GITHUB_SHA
+    || (environment.NETLIFY === "true" ? environment.COMMIT_REF : undefined);
   if (declared) assert(shaPattern.test(declared), "Invalid declared commit SHA");
   if (gitCommit) assert(shaPattern.test(gitCommit), "Invalid checked-out commit SHA");
   if (declared && gitCommit) assert.equal(declared, gitCommit, "Checkout and declared commit differ");

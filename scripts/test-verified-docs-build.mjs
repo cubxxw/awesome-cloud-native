@@ -60,6 +60,11 @@ function simulatedBuild({ failure, ssrError, oldGenerator } = {}) {
 test("exact source commit and Node/npm contracts reject mismatches", () => {
   assert.equal(selectCommit({ GITHUB_SHA: commit }, commit), commit);
   assert.equal(selectCommit({ VERCEL_GIT_COMMIT_SHA: commit }, undefined), commit);
+  assert.equal(selectCommit({ NETLIFY: "true", COMMIT_REF: commit }, commit), commit);
+  assert.equal(selectCommit({ NETLIFY: "true", COMMIT_REF: commit }, undefined), commit);
+  assert.throws(() => selectCommit({ NETLIFY: "true", COMMIT_REF: "b".repeat(40) }, commit));
+  assert.throws(() => selectCommit({ NETLIFY: "true", COMMIT_REF: "not-a-sha" }, undefined));
+  assert.equal(selectCommit({ COMMIT_REF: "b".repeat(40) }, commit), commit);
   assert.throws(() => selectCommit({ GITHUB_SHA: "b".repeat(40) }, commit));
   assert.throws(() => selectCommit({ GITHUB_SHA: "not-a-sha" }, undefined));
   assert.throws(() => selectCommit({}, undefined));
