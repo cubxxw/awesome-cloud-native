@@ -1,0 +1,29 @@
+{
+  "provider": "gitalk",
+  "active": false,
+  "ownershipVerified": false,
+  "status": "Configured repository returned404 under current access; no alternate target or OAuth request attempted.",
+  "configuration": {
+    "clientID": "4479c25f1d6cdcd8187f",
+    "repo": "my-blog-comment",
+    "owner": "3293172751",
+    "pagerDirection": "last",
+    "id": "<%- (frontmatter.permalink || frontmatter.to.path || \"123456789012345\").slice(-16) %>",
+    "title": "「评论」<%- frontmatter.title %>",
+    "body": "页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname || \"123456789012345\") %>",
+    "admin": [
+      "3293172751"
+    ],
+    "labels": [
+      "Gitalk",
+      "Comment"
+    ]
+  },
+  "credentialRemoved": true,
+  "historicalCredentialRevoked": false,
+  "recoverySource": {
+    "commit": "2d004d60b1c7cbdadd29e09c55153606bd13a842",
+    "path": "docs/.vuepress/config.ts",
+    "gitBlobSHA1": "754d4719d697cfc83fdebb628f11fb3f8477086a"
+  }
+}

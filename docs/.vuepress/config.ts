@@ -1,121 +1,12 @@
-import { defaultTheme } from 'vuepress'
-/* 导入插件 */
-import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-import { backToTopPlugin } from '@vuepress/plugin-back-to-top' 
-import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
-import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
-import { searchPlugin } from '@vuepress/plugin-search'
-import { prismjsPlugin } from '@vuepress/plugin-prismjs'
-import { shikiPlugin } from '@vuepress/plugin-shiki'
-import { tocPlugin } from '@vuepress/plugin-toc'
+import { viteBundler } from "@vuepress/bundler-vite";
+import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+import { searchPlugin } from "@vuepress/plugin-search";
+import { tocPlugin } from "@vuepress/plugin-toc";
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
-//评论插件
-import Vue from 'vue';
-// import Vssue from 'vssue';
-import GithubV3 from '@vssue/api-github-v3';
-
-// import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
-export default {
-  //注意，此处需要填写你部署在nginx下的文件夹名称，如果是根目录，那么可以注释掉此行，注释掉后本地打开index.html无法访问
-  base: "/",
-  dest: './dist',
-  lang: 'zh-CN',
-  port: 8888,  //设置端口号
-  title: '你好',  //主页
-  description: '链学社致力于打造出区块链去中心化的学习平台',
-  sidebarDepth: 0,//默认显示H1 H2  -- 1:表示显示H2 H3  -- 2:表示显示H3 H4
-  head:[
-    ["link",{rel:"icon",href:"/img/1.jpg"}]
-    //设置网站seo标志
-  ],
-  plugins: [
-    [
-        'vuepress-plugin-baidu-tongji', // 百度统计
-        {
-          hm: 'bf1bd5693b39d433338099c3aa905d50', // 百度统计id，后面有获取教程
-        },
-      ],
-
-    '@vuepress/nprogress', // 切换进度条
-    [
-      'vuepress-plugin-zooming', // 放大图片
-      {
-        selector: '.theme-vdoing-content img:not(.no-zoom)', // 排除class是no-zoom的图片
-        options: {
-          bgColor: 'rgba(0,0,0,0.6)',
-        },
-      },
-    ],
-    [
-     'one-click-copy', // 复制
-        {
-          copySelector: [
-            'div[class*="language-"] pre',
-            'div[class*="aside-code"] aside',
-          ],
-          copyMessage: '复制成功噢⚡',
-          duration: 1000,
-          showInMobile: false,
-        },
-      ],
-    //   '@vssue/vuepress-plugin-vssue',
-    //   {
-    //     // 设置平台，而不是 `api` 
-    //     platform: 'github-v4',
-  
-    //     // 其他的 Vssue 配置
-    //     owner: '3293192751', // 仓库的拥有者的名称
-    //     repo: 'awesome-docker', // 存储 Issue 和评论的仓库的名称
-    //     clientId: '4479c25f1d6cdcd8187f', // 刚保存下来的  Client ID
-    //     clientSecret: 'ddba2162d94a643e601313646380e48904ded8ee', //  刚才保存下来的 Client secrets
-    //     autoCreateIssue: true,//自动创建评论
-    //   },
-
-      [
-        'vuepress-plugin-comment', // 评论
-        {
-          choosen: 'gitalk',
-          options: {
-            clientID: '4479c25f1d6cdcd8187f', // 第三方登录 clientID
-            clientSecret: 'ddba2162d94a643e601313646380e48904ded8ee', // 第三方登录 clientSecret
-            repo: 'my-blog-comment',   // 你的存储库
-            owner: '3293172751', // 存储库拥有者，填你的 Github 账户
-            admin: ['3293172751'], // 对仓库有写权限的人，填你的 Github 账户
-            pagerDirection: 'last',
-            id:
-              '<%- (frontmatter.permalink || frontmatter.to.path || "123456789012345").slice(-16) %>', //  页面的唯一标识,长度不能超过50
-            title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-            labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-            body:
-              '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname || "123456789012345") %>', // GitHub issue 的内容
-          },
-        },
-      ],
-
-
-    backToTopPlugin(),  //返回顶端按钮
-    externalLinkIconPlugin({  //链接图标
-        locales: {
-          '/': {
-            openInNewWindow: 'open in new window',
-          },
-          '/zh/': {
-            openInNewWindow: '在新窗口打开',
-          },
-        },
-      }),
-    //   mdEnhancePlugin({
-    //     // 启用任务列表
-    //     tasklist: true,
-    //   }),
- 
-     mediumZoomPlugin({
-        // 配置项 --图片缩放
-      }),
-      searchPlugin({
-        // 配置项  -- 轻量搜索
-      }),      
-    docsearchPlugin({
+// Preserve the existing public search configuration without querying it by default.
+const docsearchOptions = {
         apiKey: "e0bc57bb5910bb4cbaff54471af173d4",
         appId: "LIPIDXUN7V",
         indexName: "docker.cubxxw.com",
@@ -165,19 +56,27 @@ export default {
             },
           },
         },
-      }),
-      prismjsPlugin({
-        // 配置项  -- 语法高亮
-      }),
-    //  shikiPlugin({
-    //  // 配置项    -- 代码块高亮
-    // }),
-    tocPlugin({
-        // 配置项  -- toC目录
-      }),
+      };
+const useDocsearch = process.env.CLOUD_NATIVE_DOCSEARCH === "1"
+  && process.env.VERCEL_ENV !== "preview"
+  && process.env.CONTEXT !== "deploy-preview";
 
-    ],
-    theme: defaultTheme({
+export default defineUserConfig({
+  base: "/",
+  dest: ".build-artifacts/manual-docs/dist",
+  temp: ".build-artifacts/manual-docs/temp",
+  cache: ".build-artifacts/manual-docs/cache",
+  lang: "zh-CN",
+  port: 8888,
+  title: "你好",
+  description: "链学社致力于打造出区块链去中心化的学习平台",
+  head: [["link", { rel: "icon", href: "/img/1.jpg" }]],
+  bundler: viteBundler(),
+  plugins: [
+    useDocsearch ? docsearchPlugin(docsearchOptions) : searchPlugin({}),
+    tocPlugin({}),
+  ],
+  theme: defaultTheme({
         //更新时间
         // lastUpdated: 'Last Updated',
         sidebarDepth: 1,  //侧边菜单深度
@@ -687,4 +586,4 @@ export default {
             ] // 侧边栏配置
           },
   }),
-}
+});
