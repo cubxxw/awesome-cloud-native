@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { stripVTControlCharacters } from "node:util";
 import { markdownSources, relativeFile } from "./docs-source-inventory.mjs";
 import { assertTabContent } from "./docs-tab-content.mjs";
+import { assertLegacyFontContent } from "./docs-legacy-html.mjs";
 
 const [dest, buildLog, declaredInventory, declaredSource] = process.argv.slice(2);
 assert(dest && buildLog, "Pass the isolated output directory and complete build log");
@@ -43,6 +44,7 @@ for (const page of inventory.pages) {
     const tabGroups = [...source.matchAll(/^:{3,}\s+(?:code-tabs|tabs)(?:[#\s]|$)/gm)].length;
     assert([...html.matchAll(/role="tablist"/g)].length >= tabGroups, "Every source group must keep its rendered tabs");
     assertTabContent(source, html);
+    assertLegacyFontContent(source, html);
   }
 }
 assert(sources.size > 0 && seenSources.size === sources.size, "Every Markdown source must have a native rendered page");

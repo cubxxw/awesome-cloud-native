@@ -22,6 +22,7 @@ async function fixture(t) {
   await copyFile(new URL("./check-docs-build.mjs", import.meta.url), path.join(root, "scripts/check-docs-build.mjs"));
   await copyFile(new URL("./docs-source-inventory.mjs", import.meta.url), path.join(root, "scripts/docs-source-inventory.mjs"));
   await copyFile(new URL("./docs-tab-content.mjs", import.meta.url), path.join(root, "scripts/docs-tab-content.mjs"));
+  await copyFile(new URL("./docs-legacy-html.mjs", import.meta.url), path.join(root, "scripts/docs-legacy-html.mjs"));
   await mkdir(path.join(root, "node_modules/vuepress"), { recursive: true });
   await writeFile(path.join(root, "node_modules/vuepress/package.json"), '{"version":"2.0.0-rc.30"}');
   const pages = [{ source: null, html: "404.html" }];
@@ -158,4 +159,36 @@ test("shared notes cannot disappear after the tab container closes", async t => 
 test("shared notes remain accepted outside every tab panel", async t => {
   const result = check(await sharedNoteFixture(t, "outside"));
   assert.equal(result.status, 0, result.stderr);
+});
+
+async function legacyFontFixture(t, rendered) {
+  const { root, pages } = await fixture(t);
+  const source = '<font color="gree">Keep the original words.</font>\n';
+  await writeFile(path.join(root, "docs/markdown/1.md"), source);
+  pages.find(page => page.source === "markdown/1.md").sourceSHA256 = createHash("sha256").update(source).digest("hex");
+  await writeFile(path.join(root, "pages.json"), JSON.stringify({ schemaVersion: 1, pages }));
+  await writeFile(path.join(root, "dist/markdown/1.html"), html + rendered);
+  return root;
+}
+
+test("an unresolved legacy font comment fails even when its words occur elsewhere", async t => {
+  assert.notEqual(check(await legacyFontFixture(t, '<!----><p>Keep the original words.</p>')).status, 0);
+});
+
+test("a font element without its original content fails", async t => {
+  assert.notEqual(check(await legacyFontFixture(t, '<font color="gree"></font>')).status, 0);
+});
+
+test("a native font with the original content passes", async t => {
+  const result = check(await legacyFontFixture(t, '<font color="gree">Keep the original words.</font>'));
+  assert.equal(result.status, 0, result.stderr);
+});
+
+test("font tags in literal examples do not require native elements", async t => {
+  const { root, pages } = await fixture(t);
+  const source = '```html\n<font color="gree">example</font>\n```\n`<font>inline example</font>`\n';
+  await writeFile(path.join(root, "docs/markdown/1.md"), source);
+  pages.find(page => page.source === "markdown/1.md").sourceSHA256 = createHash("sha256").update(source).digest("hex");
+  await writeFile(path.join(root, "pages.json"), JSON.stringify({ schemaVersion: 1, pages }));
+  assert.equal(check(root).status, 0);
 });

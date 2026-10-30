@@ -5,6 +5,7 @@ import { tocPlugin } from "@vuepress/plugin-toc";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { docsInventoryPlugin } from "../../scripts/docs-source-inventory.mjs";
+import { legacyHtmlCompilerOptions } from "../../scripts/docs-legacy-html.mjs";
 
 // Preserve the existing public search configuration without querying it by default.
 const docsearchOptions = {
@@ -72,7 +73,9 @@ export default defineUserConfig({
   title: "你好",
   description: "链学社致力于打造出区块链去中心化的学习平台",
   head: [["link", { rel: "icon", href: "/img/1.jpg" }]],
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    vuePluginOptions: { template: { compilerOptions: legacyHtmlCompilerOptions } },
+  }),
   plugins: [
     docsInventoryPlugin(),
     useDocsearch ? docsearchPlugin(docsearchOptions) : searchPlugin({}),

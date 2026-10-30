@@ -19,6 +19,7 @@ async function fixture(t) {
   await copyFile(new URL("./check-docs-build.mjs", import.meta.url), path.join(root, "scripts/check-docs-build.mjs"));
   await copyFile(new URL("./docs-source-inventory.mjs", import.meta.url), path.join(root, "scripts/docs-source-inventory.mjs"));
   await copyFile(new URL("./docs-tab-content.mjs", import.meta.url), path.join(root, "scripts/docs-tab-content.mjs"));
+  await copyFile(new URL("./docs-legacy-html.mjs", import.meta.url), path.join(root, "scripts/docs-legacy-html.mjs"));
   for (const source of ["README.md", "markdown/README.md", "markdown/1.md", "Cloud-Native-k8s/README.md", "Cloud-Native-k8s/1.md"]) {
     await mkdir(path.dirname(path.join(root, "docs", source)), { recursive: true });
     await writeFile(path.join(root, "docs", source), "# fixture\n");
