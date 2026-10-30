@@ -67,6 +67,20 @@ async function tabFixture(t, { secondFence = true, note = true, image = true } =
   return root;
 }
 
+async function sharedNoteFixture(t, placement) {
+  const { root, pages } = await fixture(t);
+  const source = "::: code-tabs\n@tab First\n```sh\nstep-one\n```\n:::\n\n> Shared `note` remains visible.\n\nAnother shared explanation.\n";
+  await writeFile(path.join(root, "docs/markdown/1.md"), source);
+  pages.find(page => page.source === "markdown/1.md").sourceSHA256 = createHash("sha256").update(source).digest("hex");
+  await writeFile(path.join(root, "pages.json"), JSON.stringify({ schemaVersion: 1, pages }));
+  const note = '<blockquote><p>Shared <code>note</code> remains visible.</p></blockquote><p>Another shared explanation.</p>';
+  await writeFile(path.join(root, "dist/markdown/1.html"), html
+    + '<div class="vp-code-tabs"><div role="tabpanel"><pre><code>step-one</code></pre>'
+    + (placement === "panel" ? note : '') + '</div></div>'
+    + (placement === "outside" ? note : ''));
+  return root;
+}
+
 test("all native source pages and current project content are accepted", async t => {
   const { root } = await fixture(t);
   const result = check(root);
@@ -130,5 +144,18 @@ test("tab labels cannot substitute for a source image", async t => {
 
 test("complete tab content remains accepted after HTML highlighting and escaping", async t => {
   const result = check(await tabFixture(t));
+  assert.equal(result.status, 0, result.stderr);
+});
+
+test("shared notes cannot move into the last tab panel", async t => {
+  assert.notEqual(check(await sharedNoteFixture(t, "panel")).status, 0);
+});
+
+test("shared notes cannot disappear after the tab container closes", async t => {
+  assert.notEqual(check(await sharedNoteFixture(t, "missing")).status, 0);
+});
+
+test("shared notes remain accepted outside every tab panel", async t => {
+  const result = check(await sharedNoteFixture(t, "outside"));
   assert.equal(result.status, 0, result.stderr);
 });
