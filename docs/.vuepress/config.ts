@@ -4,6 +4,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 import { tocPlugin } from "@vuepress/plugin-toc";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
+import { docsInventoryPlugin } from "../../scripts/docs-source-inventory.mjs";
 
 // Preserve the existing public search configuration without querying it by default.
 const docsearchOptions = {
@@ -73,6 +74,7 @@ export default defineUserConfig({
   head: [["link", { rel: "icon", href: "/img/1.jpg" }]],
   bundler: viteBundler(),
   plugins: [
+    docsInventoryPlugin(),
     useDocsearch ? docsearchPlugin(docsearchOptions) : searchPlugin({}),
     tocPlugin({}),
   ],

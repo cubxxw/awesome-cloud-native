@@ -4,9 +4,13 @@
   "description": "Docker是一个用于开发，交付和运行应用程序的开放平台。Docker使您能够将应用程序与基础架构分开，从而可以快速交付软件。借助Docker，您可以以与管理应用程序相同的方式来管理基础架构。通过利用Docker的快速交付，测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行代码之间的延迟。",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test --test-concurrency=1 scripts/check-docs-build.test.mjs scripts/docs-source-inventory.test.mjs scripts/docs-source-snapshot.test.mjs scripts/test-verified-docs-build.mjs",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:check-build": "node scripts/check-docs-build.mjs",
+    "docs:check-deps": "npm ls --all",
+    "docs:build:verified": "node scripts/build-verified-docs.mjs",
+    "docs:test-build-runner": "npm test"
   },
   "author": "",
   "license": "ISC",
