@@ -21,6 +21,7 @@ async function fixture(t) {
   await mkdir(path.join(root, "scripts"));
   await copyFile(new URL("./check-docs-build.mjs", import.meta.url), path.join(root, "scripts/check-docs-build.mjs"));
   await copyFile(new URL("./docs-source-inventory.mjs", import.meta.url), path.join(root, "scripts/docs-source-inventory.mjs"));
+  await copyFile(new URL("./docs-tab-content.mjs", import.meta.url), path.join(root, "scripts/docs-tab-content.mjs"));
   await mkdir(path.join(root, "node_modules/vuepress"), { recursive: true });
   await writeFile(path.join(root, "node_modules/vuepress/package.json"), '{"version":"2.0.0-rc.30"}');
   const pages = [{ source: null, html: "404.html" }];
@@ -50,6 +51,20 @@ function check(root) {
   return spawnSync(process.execPath, [path.join(root, "scripts/check-docs-build.mjs"),
     path.join(root, "dist"), path.join(root, "build.log"), path.join(root, "pages.json"),
     path.join(root, "docs")], { cwd: root, encoding: "utf8" });
+}
+
+async function tabFixture(t, { secondFence = true, note = true, image = true } = {}) {
+  const { root, pages } = await fixture(t);
+  const source = "::: code-tabs\n@tab First\n```sh\nstep-one --flag <value>\n```\nKeep the **original** `note`.\n```sh\nstep-two --keep\n```\n![diagram](https://example.invalid/diagram.png)\n:::\n";
+  await writeFile(path.join(root, "docs/markdown/1.md"), source);
+  pages.find(page => page.source === "markdown/1.md").sourceSHA256 = createHash("sha256").update(source).digest("hex");
+  await writeFile(path.join(root, "pages.json"), JSON.stringify({ schemaVersion: 1, pages }));
+  await writeFile(path.join(root, "dist/markdown/1.html"), html
+    + '<pre><code>step-one --flag &lt;value&gt;</code></pre>'
+    + (secondFence ? '<pre><code><span>step-two</span> --keep</code></pre>' : '')
+    + (note ? '<p>Keep the <strong>original</strong> <code>note</code>.</p>' : '')
+    + (image ? '<img src="https://example.invalid/diagram.png" alt="diagram">' : ''));
+  return root;
 }
 
 test("all native source pages and current project content are accepted", async t => {
@@ -99,4 +114,21 @@ test("linked HTML parent directories cannot escape the isolated output", async t
   await rm(path.join(root, "dist/Cloud-Native-k8s"), { recursive: true });
   await symlink(outside, path.join(root, "dist/Cloud-Native-k8s"), "dir");
   assert.notEqual(check(root).status, 0);
+});
+
+test("tab labels cannot substitute for a second fenced instruction", async t => {
+  assert.notEqual(check(await tabFixture(t, { secondFence: false })).status, 0);
+});
+
+test("tab labels cannot substitute for the original explanatory text", async t => {
+  assert.notEqual(check(await tabFixture(t, { note: false })).status, 0);
+});
+
+test("tab labels cannot substitute for a source image", async t => {
+  assert.notEqual(check(await tabFixture(t, { image: false })).status, 0);
+});
+
+test("complete tab content remains accepted after HTML highlighting and escaping", async t => {
+  const result = check(await tabFixture(t));
+  assert.equal(result.status, 0, result.stderr);
 });

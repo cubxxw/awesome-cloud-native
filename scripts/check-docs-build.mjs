@@ -5,6 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { stripVTControlCharacters } from "node:util";
 import { markdownSources, relativeFile } from "./docs-source-inventory.mjs";
+import { assertTabContent } from "./docs-tab-content.mjs";
 
 const [dest, buildLog, declaredInventory, declaredSource] = process.argv.slice(2);
 assert(dest && buildLog, "Pass the isolated output directory and complete build log");
@@ -39,8 +40,9 @@ for (const page of inventory.pages) {
     assert.equal(page.sourceSHA256, sources.get(page.source), "Source changed after native page preparation");
     seenSources.add(page.source);
     const source = await readFile(path.join(sourceDir, page.source), "utf8");
-    const codeTabs = [...source.matchAll(/^:{3,}\s+code-tabs(?:\s|$)/gm)].length;
-    assert([...html.matchAll(/role="tablist"/g)].length >= codeTabs, "Every source code group must keep its rendered tabs");
+    const tabGroups = [...source.matchAll(/^:{3,}\s+(?:code-tabs|tabs)(?:[#\s]|$)/gm)].length;
+    assert([...html.matchAll(/role="tablist"/g)].length >= tabGroups, "Every source group must keep its rendered tabs");
+    assertTabContent(source, html);
   }
 }
 assert(sources.size > 0 && seenSources.size === sources.size, "Every Markdown source must have a native rendered page");
