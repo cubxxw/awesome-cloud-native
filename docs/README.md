@@ -96,22 +96,20 @@ Docker 是世界领先的软件容器平台。
 
 ###  💱安装docker
 
-:::: code-group
-::: code-group-item ubuntu
+::: code-tabs
+@tab ubuntu
 
 ```bash
 sudo apt install docker
 ```
 
-:::
-::: code-group-item centos
+@tab centos
 
 ```shell
 yum install docker
 ```
 
 :::
-::::
 
 
 
